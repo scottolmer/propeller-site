@@ -1,0 +1,1536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PropEdge — AI-Powered DFS & Player Prop Picks for PrizePicks, Pick6 & Underdog</title>
+<meta name="description" content="PropEdge uses an 8-agent AI engine to give you simple confidence scores on NFL and NBA player props. 57% verified win rate across 4,000+ graded picks. Built for PrizePicks, Pick6, and Underdog players — no jargon, just clear picks.">
+<meta name="keywords" content="DFS picks, PrizePicks picks, Pick6 picks, Underdog Fantasy picks, daily fantasy sports, NFL player props, NBA player props, AI prop picks, DFS prop analyzer, parlay builder, player prop predictions, DFS app, pick em picks, fantasy sports picks">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://propedgeapp.com">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://propedgeapp.com">
+<meta property="og:title" content="PropEdge — AI Confidence Scores for DFS & Player Props">
+<meta property="og:description" content="8 AI agents score every NFL and NBA player prop with simple confidence ratings. 57% win rate. Built for PrizePicks, Pick6, and Underdog — no jargon, just clear picks.">
+<meta property="og:site_name" content="PropEdge">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PropEdge — AI Confidence Scores for DFS & Player Props">
+<meta name="twitter:description" content="8 AI agents score every NFL and NBA player prop with simple confidence ratings. 57% win rate. Built for PrizePicks, Pick6, and Underdog — no jargon, just clear picks.">
+
+<!-- Additional SEO -->
+<meta name="author" content="PropEdge">
+<meta name="application-name" content="PropEdge">
+<meta name="apple-mobile-web-app-title" content="PropEdge">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#0AE2A3">
+<meta name="color-scheme" content="dark">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2L28 16L16 30L4 16Z' fill='%230AE2A3'/></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%23000'/><path d='M90 30L150 90L90 150L30 90Z' fill='%230AE2A3'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PropEdge",
+  "applicationCategory": "SportsApplication",
+  "operatingSystem": "iOS, Android",
+  "description": "AI-powered DFS pick recommendation engine for PrizePicks, Pick6, and Underdog. 8 specialized agents analyze NFL and NBA player props and deliver simple confidence scores — no betting jargon required.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "name": "Starter (Free)",
+      "description": "5 props per day, 1 AI parlay, 3 Oracle questions"
+    },
+    {
+      "@type": "Offer",
+      "price": "29.99",
+      "priceCurrency": "USD",
+      "name": "PropEdge Pro",
+      "description": "Unlimited props, AI parlays, Oracle chat, and agent customization",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "billingDuration": "P1M"
+      }
+    }
+  ],
+  "featureList": [
+    "Simple Confidence Scores for Every Prop",
+    "8-Agent AI Analysis Engine",
+    "AI-Built Pick Combos with Risk Grading",
+    "Oracle AI Chat Assistant",
+    "Self-Learning Weight Optimization",
+    "NFL and NBA Player Props",
+    "Works with PrizePicks, Pick6, and Underdog"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does PropEdge work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PropEdge runs every player prop through 8 specialized AI agents covering injury impact, matchup strength, DVOA efficiency, volume trends, pace analysis, and more. Each agent scores independently, then a weighted ensemble produces a single, easy-to-read confidence score. No betting jargon — just a clear number telling you how strong the pick is."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is PropEdge free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Free users get 5 fully-analyzed props per day, 1 AI-generated parlay, 3 Oracle chat questions, and basic odds comparison. PropEdge Pro at $29.99/month or $299.99/year unlocks unlimited access with a 7-day free trial."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What sports does PropEdge cover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "PropEdge currently covers NFL and NBA player props with full analysis from 8 AI agents. It works with all major DFS platforms including PrizePicks, DraftKings Pick6, and Underdog Fantasy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where does the 57% win rate come from?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The 57% win rate is based on over 4,000 graded NFL and NBA player prop legs from the 2025 and 2026 seasons. Every prediction is logged, graded against real results, and tracked."
+      }
+    }
+  ]
+}
+</script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #000000;
+  --card: #111111;
+  --accent: #0AE2A3;
+  --accent-glow: rgba(10, 226, 163, 0.30);
+  --accent-muted: rgba(10, 226, 163, 0.12);
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --text-tertiary: #475569;
+  --success: #10B981;
+  --danger: #EF4444;
+  --gold: #F59E0B;
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-border-active: rgba(10, 226, 163, 0.35);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text-secondary);
+  line-height: 1.5;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-primary);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.label {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-tertiary);
+  font-size: 12px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.card-glow {
+  border-color: var(--glass-border-active);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+  box-shadow: 0 0 16px var(--accent-glow);
+}
+
+.btn-primary:hover { box-shadow: 0 0 24px var(--accent-glow); }
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+}
+
+.btn-secondary:hover { border-color: var(--glass-border-active); }
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ──────────── NAV ──────────── */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 16px 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.nav-links {
+  display: flex;
+  gap: 28px;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: var(--text-primary);
+}
+
+.hamburger svg { display: block; }
+
+@media (max-width: 639px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(16px);
+    padding: 16px 24px;
+    gap: 16px;
+    border-bottom: 1px solid var(--glass-border);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { font-size: 16px; }
+  .hamburger { display: block; }
+}
+
+nav .btn { padding: 10px 20px; font-size: 14px; }
+
+/* ──────────── HERO ──────────── */
+.hero {
+  padding: 160px 0 100px;
+  text-align: center;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+@media (min-width: 960px) {
+  .hero-content {
+    flex-direction: row;
+    text-align: left;
+    align-items: center;
+  }
+  .hero-text { flex: 1; }
+  .hero-phone { flex: 0 0 auto; }
+}
+
+.hero h1 {
+  font-size: clamp(40px, 6vw, 64px);
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+
+.hero h1 span { color: var(--accent); }
+
+.hero p {
+  font-size: 18px;
+  max-width: 520px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 959px) {
+  .hero p { margin-left: auto; margin-right: auto; }
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 959px) {
+  .hero-buttons { justify-content: center; }
+}
+
+/* ── Store Badges ── */
+.store-badge {
+  display: inline-block;
+  transition: transform 0.2s, opacity 0.2s;
+  opacity: 0.9;
+}
+
+.store-badge:hover {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+/* ── Phone Mockup ── */
+.phone-frame {
+  width: 280px;
+  height: 580px;
+  position: relative;
+  border-radius: 36px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6), 0 0 40px var(--accent-glow);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.phone-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+/* Legacy styles kept for reference but unused */
+.phone-notch { display: none; }
+.phone-screen { display: none; }
+.phone-header { display: none; }
+
+.phone-header .label { font-size: 10px; margin-bottom: 2px; }
+
+.phone-header h4 {
+  font-size: 14px;
+  letter-spacing: -0.5px;
+}
+
+.prop-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--glass-border-active);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+.prop-player {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.prop-stat {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.prop-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prop-direction {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-muted);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.prop-confidence {
+  text-align: right;
+}
+
+.prop-confidence .value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.prop-confidence .unit {
+  font-size: 11px;
+  color: var(--text-tertiary);
+}
+
+.gauge-bar {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+.gauge-fill {
+  height: 100%;
+  width: 72%;
+  background: linear-gradient(90deg, var(--accent), #0AFFC8);
+  border-radius: 3px;
+}
+
+.phone-mini-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mini-left .mini-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.mini-left .mini-stat {
+  font-size: 10px;
+  color: var(--text-tertiary);
+}
+
+.mini-badge {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+/* ──────────── STATS BAR ──────────── */
+.stats-bar {
+  padding: 60px 0;
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.stats-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.stat-item { text-align: center; }
+
+.stat-value {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-top: 6px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--glass-border);
+}
+
+@media (max-width: 639px) {
+  .stats-grid { gap: 24px; }
+  .stat-divider { display: none; }
+  .stats-grid { display: grid; grid-template-columns: 1fr 1fr; }
+  .stat-value { font-size: 32px; }
+}
+
+/* ──────────── FEATURES ──────────── */
+.features {
+  padding: 100px 0;
+}
+
+.section-label {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(28px, 4vw, 40px);
+  margin-bottom: 56px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .features-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.feature-card {
+  padding: 32px;
+}
+
+.feature-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-muted);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.feature-card p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ──────────── HOW IT WORKS ──────────── */
+.how-it-works {
+  padding: 100px 0;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .steps { grid-template-columns: 1fr 1fr 1fr; }
+}
+
+.step {
+  padding: 32px;
+  text-align: center;
+  position: relative;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-muted);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0 auto 20px;
+}
+
+.step h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.step p { font-size: 14px; }
+
+@media (min-width: 768px) {
+  .step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 56px;
+    right: -12px;
+    width: 24px;
+    height: 2px;
+    background: rgba(10, 226, 163, 0.3);
+  }
+}
+
+/* ──────────── PRICING ──────────── */
+.pricing {
+  padding: 100px 0;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+  .pricing-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.pricing-card {
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card .label { margin-bottom: 8px; font-size: 13px; }
+
+.pricing-card h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.pricing-price {
+  margin-bottom: 24px;
+}
+
+.pricing-price .amount {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.pricing-price .period {
+  font-size: 14px;
+  color: var(--text-tertiary);
+}
+
+.pricing-yearly {
+  font-size: 13px;
+  color: var(--accent);
+  margin-top: 4px;
+}
+
+.pricing-yearly .save-badge {
+  background: var(--accent-muted);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 11px;
+}
+
+.pricing-features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex: 1;
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.pricing-features li .check {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.pricing-card .btn { text-align: center; justify-content: center; width: 100%; }
+
+.trial-note {
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-tertiary);
+  margin-top: 8px;
+}
+
+/* ──────────── COMPARISON ──────────── */
+.comparison {
+  padding: 100px 0;
+}
+
+.compare-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 0 -24px;
+  padding: 0 24px;
+}
+
+.compare-table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+}
+
+.compare-table thead th {
+  padding: 20px 16px 16px;
+  text-align: center;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--glass-border);
+  vertical-align: bottom;
+}
+
+.compare-table thead th:first-child {
+  text-align: left;
+  width: 220px;
+}
+
+.compare-table thead .col-propedge {
+  background: rgba(10, 226, 163, 0.06);
+  border-top: 2px solid var(--accent);
+  border-left: 1px solid var(--glass-border-active);
+  border-right: 1px solid var(--glass-border-active);
+  border-radius: 12px 12px 0 0;
+  position: relative;
+}
+
+.compare-col-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.compare-col-name {
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.compare-col-price {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  font-weight: 400;
+  margin-top: 4px;
+  display: block;
+}
+
+.compare-table tbody td {
+  padding: 14px 16px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--text-secondary);
+}
+
+.compare-table tbody td:first-child {
+  text-align: left;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.compare-table tbody .col-propedge-cell {
+  background: rgba(10, 226, 163, 0.04);
+  border-left: 1px solid var(--glass-border-active);
+  border-right: 1px solid var(--glass-border-active);
+}
+
+.compare-table tbody tr:last-child .col-propedge-cell {
+  border-bottom: 1px solid var(--glass-border-active);
+  border-radius: 0 0 12px 12px;
+}
+
+.compare-check {
+  color: var(--accent);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.compare-x {
+  color: var(--text-tertiary);
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.compare-partial {
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.compare-note {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+/* ──────────── FAQ ──────────── */
+.faq {
+  padding: 100px 0;
+}
+
+.faq-grid {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: var(--card);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-align: left;
+  transition: border-color 0.2s;
+}
+
+.faq-question:hover { border-color: var(--glass-border-active); }
+
+.faq-question .faq-icon {
+  font-size: 20px;
+  color: var(--accent);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.faq-item.open .faq-question {
+  border-color: var(--glass-border-active);
+  border-radius: 12px 12px 0 0;
+}
+
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background: var(--card);
+  border-left: 1px solid var(--glass-border-active);
+  border-right: 1px solid var(--glass-border-active);
+  border-bottom: 1px solid var(--glass-border-active);
+  border-radius: 0 0 12px 12px;
+}
+
+.faq-answer p {
+  padding: 0 24px 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* ──────────── FINAL CTA ──────────── */
+.final-cta {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.final-cta h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  margin-bottom: 16px;
+}
+
+.final-cta h2 span { color: var(--accent); }
+
+.final-cta p {
+  font-size: 18px;
+  max-width: 520px;
+  margin: 0 auto 36px;
+}
+
+.final-cta .hero-buttons { justify-content: center; }
+
+/* ──────────── FOOTER ──────────── */
+footer {
+  padding: 48px 0;
+  border-top: 1px solid var(--glass-border);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: var(--text-tertiary);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--accent); }
+
+.footer-copy {
+  font-size: 13px;
+  color: var(--text-tertiary);
+}
+
+.footer-disclaimer {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  max-width: 480px;
+  opacity: 0.7;
+}
+
+.legal-disclaimer {
+  border-top: 1px solid var(--glass-border);
+  margin-top: 32px;
+  padding-top: 32px;
+  text-align: center;
+}
+
+.legal-disclaimer-heading {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.legal-disclaimer-text {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  max-width: 720px;
+  margin: 0 auto 12px;
+  line-height: 1.7;
+  opacity: 0.7;
+}
+
+.legal-disclaimer-text strong {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.legal-disclaimer-caps {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  max-width: 720px;
+  margin: 0 auto 12px;
+  line-height: 1.7;
+  opacity: 0.55;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.responsible-gambling {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245, 158, 11, 0.08);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-top: 8px;
+  font-size: 12px;
+  color: var(--gold);
+}
+
+.responsible-gambling a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.age-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  border: 1px solid var(--text-tertiary);
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+</style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <div class="container">
+    <a href="#" class="logo">
+      <div class="logo-icon"></div>
+      PropEdge
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#features" onclick="document.getElementById('navLinks').classList.remove('open')">Features</a>
+      <a href="#pricing" onclick="document.getElementById('navLinks').classList.remove('open')">Pricing</a>
+      <a href="#compare" onclick="document.getElementById('navLinks').classList.remove('open')">Compare</a>
+    </div>
+    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <a href="#pricing" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Get Started</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text fade-in">
+        <h1>Your Picks.<br><span>Clear as a number.</span></h1>
+        <p>No odds. No jargon. Just simple confidence scores powered by 8 AI agents. Open the app, see the top picks for PrizePicks, Pick6, or Underdog — and know exactly why each one is strong. 57% verified win rate across 4,000+ graded picks.</p>
+        <div class="hero-buttons">
+          <a href="#" class="store-badge" aria-label="Download on the App Store">
+            <svg viewBox="0 0 120 40" width="150" height="50" xmlns="http://www.w3.org/2000/svg">
+              <rect width="120" height="40" rx="6" fill="#000" stroke="#A6A6A6" stroke-width="0.8"/>
+              <text x="42" y="12" fill="#fff" font-size="6" font-family="Inter,sans-serif">Download on the</text>
+              <text x="42" y="25" fill="#fff" font-size="12" font-weight="700" font-family="Inter,sans-serif">App Store</text>
+              <g transform="translate(10,6) scale(0.7)" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.81-1.31.05-2.3-1.32-3.14-2.53C4.25 16 2.94 11.03 4.7 7.62c.87-1.68 2.42-2.75 4.12-2.78 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83"/><path d="M15.35 3.53c.67-.82 1.13-1.96 1-3.1-1 .04-2.2.66-2.91 1.5-.63.73-1.19 1.91-1.04 3.03 1.11.09 2.24-.56 2.95-1.43"/></g>
+            </svg>
+          </a>
+          <a href="#" class="store-badge" aria-label="Get it on Google Play">
+            <svg viewBox="0 0 135 40" width="168" height="50" xmlns="http://www.w3.org/2000/svg">
+              <rect width="135" height="40" rx="6" fill="#000" stroke="#A6A6A6" stroke-width="0.8"/>
+              <text x="50" y="11" fill="#A6A6A6" font-size="5.5" font-family="Inter,sans-serif" text-transform="uppercase" letter-spacing="0.5">GET IT ON</text>
+              <text x="50" y="25" fill="#fff" font-size="12" font-weight="700" font-family="Inter,sans-serif">Google Play</text>
+              <g transform="translate(10,8)">
+                <path d="M3 1.5L15 12 3 22.5z" fill="#4285F4"/>
+                <path d="M3 1.5l12 10.5 4-3.5L7.5 0z" fill="#34A853"/>
+                <path d="M3 22.5l12-10.5 4 3.5L7.5 24z" fill="#EA4335"/>
+                <path d="M19 8.5L15 12l4 3.5 3-1.75v-3.5z" fill="#FBBC04"/>
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-phone fade-in" style="transition-delay:0.15s">
+        <div class="phone-frame">
+          <img src="images/app-screenshot.png" alt="PropEdge app showing NBA player props with confidence scores — Jarrett Allen 91%, Joan Beringer, Collin Gillespie, and Jaylon Tyson" width="1179" height="2556" loading="eager">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof Stats -->
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid fade-in">
+      <div class="stat-item">
+        <div class="stat-value" data-count-to="57.2" data-suffix="%" data-decimals="1">0%</div>
+        <div class="stat-label">Win Rate</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-value" data-count-to="4000" data-suffix="+" data-separator=",">0+</div>
+        <div class="stat-label">Props Analyzed</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-value" data-count-to="8">0</div>
+        <div class="stat-label">AI Agents</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-value" data-count-to="2">0</div>
+        <div class="stat-label">Sports (NFL + NBA)</div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:11px;color:var(--text-tertiary);opacity:0.6;margin-top:12px;max-width:600px;margin-left:auto;margin-right:auto;">Based on 4,000+ graded NFL and NBA player prop legs from the 2025 and 2026 seasons. Past performance does not guarantee future results.</p>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features" id="features">
+  <div class="container">
+    <p class="label section-label fade-in">Features</p>
+    <h2 class="section-title fade-in">Built for DFS Players Who Want an Edge</h2>
+    <div class="features-grid">
+      <div class="card feature-card fade-in">
+        <div class="feature-icon"><i data-lucide="brain" width="24" height="24"></i></div>
+        <h3>One Confidence Score. Eight Reasons Why.</h3>
+        <p>Every prop runs through 8 specialized AI agents — Injury, Matchup, DVOA, Volume, Pace, and more. You see one clear confidence score. Tap for the full breakdown of why each agent agrees or disagrees. No spreadsheets, no formulas — just a number you can trust.</p>
+      </div>
+      <div class="card feature-card fade-in" style="transition-delay:0.1s">
+        <div class="feature-icon"><i data-lucide="layers" width="24" height="24"></i></div>
+        <h3>AI-Built Pick Combos</h3>
+        <p>Our engine builds optimized multi-pick entries for PrizePicks, Pick6, and Underdog. Choose from 2-pick safe plays to 6-pick moonshots — each one graded LOW, MEDIUM, or HIGH risk with clear reasoning.</p>
+      </div>
+      <div class="card feature-card fade-in" style="transition-delay:0.2s">
+        <div class="feature-icon"><i data-lucide="message-circle" width="24" height="24"></i></div>
+        <h3>Ask the Oracle</h3>
+        <p>An AI assistant that answers your questions in plain English. Ask "Why is this the top pick?" or "What's the injury impact?" and get analysis powered by live prop data and all 8 agents. No jargon — just clear answers.</p>
+      </div>
+      <div class="card feature-card card-glow fade-in" style="transition-delay:0.3s">
+        <div class="feature-icon"><i data-lucide="refresh-cw" width="24" height="24"></i></div>
+        <h3>Self-Learning Engine</h3>
+        <p>Every week, our system backtests every prediction against real results and automatically adjusts agent weights to maximize win rate. The engine literally gets smarter with every game played — no manual tuning, no stale models.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="how-it-works">
+  <div class="container">
+    <p class="label section-label fade-in">How It Works</p>
+    <h2 class="section-title fade-in">Three Steps to Smarter Picks</h2>
+    <div class="steps">
+      <div class="card step fade-in">
+        <div class="step-number">1</div>
+        <h3>Open</h3>
+        <p>See today's highest-confidence props ranked by our engine. Sorted by confidence — the best picks are always at the top.</p>
+      </div>
+      <div class="card step fade-in" style="transition-delay:0.1s">
+        <div class="step-number">2</div>
+        <h3>Tap</h3>
+        <p>Tap any prop to see the full breakdown — which agents agree, what's driving the score, and how confident the engine is.</p>
+      </div>
+      <div class="card step fade-in" style="transition-delay:0.2s">
+        <div class="step-number">3</div>
+        <h3>Play</h3>
+        <p>Take your picks to PrizePicks, Pick6, or Underdog. Track your record and let the engine learn what works for you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <p class="label section-label fade-in">Pricing</p>
+    <h2 class="section-title fade-in">Pick Your Plan</h2>
+    <div class="pricing-grid">
+      <div class="card pricing-card fade-in">
+        <p class="label">Free</p>
+        <h3>Starter</h3>
+        <div class="pricing-price">
+          <span class="amount">Free</span>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0AE2A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>5 props per day with full analysis</li>
+          <li><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0AE2A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>1 AI parlay per day</li>
+          <li><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0AE2A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>3 Oracle questions per day</li>
+          <li><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0AE2A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Basic odds comparison</li>
+        </ul>
+        <a href="#" class="btn btn-secondary">Get Started</a>
+      </div>
+      <div class="card card-glow pricing-card fade-in" style="transition-delay:0.1s">
+        <p class="label" style="color:var(--accent);">Premium</p>
+        <h3>PropEdge Pro</h3>
+        <div class="pricing-price">
+          <span class="amount">$29.99</span><span class="period"> /mo</span>
+          <div class="pricing-yearly">or $299.99/yr <span class="save-badge">Save 17%</span></div>
+        </div>
+        <ul class="pricing-features">
+          <li><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0AE2A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Unlimited props and full agent breakdowns</li>
+          <li><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0AE2A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>All AI-generated parlays (11+ per day)</li>
+          <li><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0AE2A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Unlimited Oracle chat</li>
+          <li><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0AE2A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Best odds comparison with deep-links</li>
+          <li><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0AE2A3" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Personal performance dashboard</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Start Free Trial</a>
+        <p class="trial-note">7-day free trial · Cancel anytime</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Comparison -->
+<section class="comparison" id="compare">
+  <div class="container">
+    <p class="label section-label fade-in">DFS Tools Compared</p>
+    <h2 class="section-title fade-in">See How PropEdge Stacks Up</h2>
+    <div class="compare-table-wrapper fade-in">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="col-propedge">
+              <span class="compare-col-label">You are here</span>
+              <span class="compare-col-name">PropEdge</span>
+              <span class="compare-col-price">$29.99/mo</span>
+            </th>
+            <th>
+              <span class="compare-col-name">Props.Cash</span>
+              <span class="compare-col-price">Free – $19.99/mo</span>
+            </th>
+            <th>
+              <span class="compare-col-name">Outlier</span>
+              <span class="compare-col-price">$19.99 – $79.99/mo</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Simple confidence scores</td>
+            <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-tertiary)">One clear number per pick</span></td>
+            <td><span class="compare-x">&#10005;</span><br><span style="font-size:11px;color:var(--text-tertiary)">Raw data only</span></td>
+            <td><span class="compare-partial">Market-based</span></td>
+          </tr>
+          <tr>
+            <td>Explains why a pick is strong</td>
+            <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-tertiary)">Per-agent breakdown</span></td>
+            <td><span class="compare-x">&#10005;</span></td>
+            <td><span class="compare-x">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>AI-built pick combos</td>
+            <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-tertiary)">11+ daily, risk-graded</span></td>
+            <td><span class="compare-x">&#10005;</span></td>
+            <td><span class="compare-x">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>AI chat assistant</td>
+            <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-tertiary)">Oracle — ask anything</span></td>
+            <td><span class="compare-x">&#10005;</span></td>
+            <td><span class="compare-x">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>Works with PrizePicks, Pick6, Underdog</td>
+            <td class="col-propedge-cell"><span class="compare-check">&#10003;</span></td>
+            <td><span class="compare-check">&#10003;</span></td>
+            <td><span class="compare-check">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>No betting jargon required</td>
+            <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-tertiary)">Designed jargon-free</span></td>
+            <td><span class="compare-partial">Some terminology</span></td>
+            <td><span class="compare-x">&#10005;</span><br><span style="font-size:11px;color:var(--text-tertiary)">EV/vig heavy</span></td>
+          </tr>
+          <tr>
+            <td>Player prop hit rate data</td>
+            <td class="col-propedge-cell"><span class="compare-check">&#10003;</span></td>
+            <td><span class="compare-check">&#10003;</span></td>
+            <td><span class="compare-check">&#10003;</span></td>
+          </tr>
+          <tr>
+            <td>Injury cascade analysis</td>
+            <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-tertiary)">2nd-order effects</span></td>
+            <td><span class="compare-x">&#10005;</span></td>
+            <td><span class="compare-x">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>Self-learning model</td>
+            <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-tertiary)">Weekly auto-calibration</span></td>
+            <td><span class="compare-x">&#10005;</span></td>
+            <td><span class="compare-x">&#10005;</span></td>
+          </tr>
+          <tr>
+            <td>Free tier</td>
+            <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-tertiary)">5 picks/day free</span></td>
+            <td><span class="compare-check">&#10003;</span></td>
+            <td><span class="compare-partial">7-day trial only</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="compare-note fade-in">Competitor pricing and features verified Feb 2026. PropEdge Premium includes all features at a single price — no upsells or tier upgrades.</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <p class="label section-label fade-in">FAQ</p>
+    <h2 class="section-title fade-in">Common Questions</h2>
+    <div class="faq-grid">
+      <div class="faq-item fade-in">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'">
+          What sports does PropEdge cover?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>PropEdge currently covers the NFL and NBA. Every game day, our engine analyzes hundreds of player props across both leagues and ranks them by confidence. We plan to add MLB and NHL in future seasons.</p></div>
+      </div>
+      <div class="faq-item fade-in" style="transition-delay:0.05s">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'">
+          How is this different from a tipster or picks service?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Tipsters give you a pick and ask you to trust them. PropEdge shows you exactly why each pick is recommended — which agents agree, what the injury impact is, and how confident the engine is. Full transparency, no black boxes. You see the reasoning before you play.</p></div>
+      </div>
+      <div class="faq-item fade-in" style="transition-delay:0.1s">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'">
+          Is PropEdge legal to use?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Yes. PropEdge is a research and analysis tool — we don't accept wagers or handle money. Using data analysis to inform your DFS picks is legal in all US states. You play on your own licensed platform of choice (PrizePicks, Pick6, Underdog, or any sportsbook).</p></div>
+      </div>
+      <div class="faq-item fade-in" style="transition-delay:0.15s">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'">
+          What does the free tier include?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Free users get 5 fully-analyzed props per day, 1 AI-generated parlay, 3 Oracle chat questions, and basic odds comparison. No credit card required — just download and start browsing.</p></div>
+      </div>
+      <div class="faq-item fade-in" style="transition-delay:0.2s">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'">
+          Can I cancel my subscription anytime?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>Absolutely. Premium starts with a 7-day free trial, and you can cancel anytime through the App Store or Google Play. No contracts, no cancellation fees, no tricks.</p></div>
+      </div>
+      <div class="faq-item fade-in" style="transition-delay:0.25s">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'">
+          What do you mean by "self-learning"?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>After every week of games, our system grades every prediction against real player stats. It then backtests different agent weight configurations and automatically adjusts which agents get more or less influence. Agents that were accurate get promoted; agents that were wrong get demoted. This means the model continuously improves — our win rate went from 44% to 57% through this process.</p></div>
+      </div>
+      <div class="faq-item fade-in" style="transition-delay:0.3s">
+        <button class="faq-question" onclick="this.parentElement.classList.toggle('open');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'">
+          Where does the 57% win rate come from?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer"><p>That's our verified hit rate across over 4,000 graded NFL and NBA player prop legs from the 2025 and 2026 season. Every prediction is logged, graded against real results, and tracked — no cherry-picking.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2 class="fade-in">Stop guessing.<br><span>Start winning.</span></h2>
+    <p class="fade-in">Join thousands of Pick 'Em players using AI confidence scores to make smarter picks on PrizePicks, Pick6, and Underdog.</p>
+    <div class="hero-buttons fade-in" style="transition-delay:0.1s">
+      <a href="#" class="store-badge" aria-label="Download on the App Store">
+        <svg viewBox="0 0 120 40" width="150" height="50" xmlns="http://www.w3.org/2000/svg">
+          <rect width="120" height="40" rx="6" fill="#000" stroke="#A6A6A6" stroke-width="0.8"/>
+          <text x="42" y="12" fill="#fff" font-size="6" font-family="Inter,sans-serif">Download on the</text>
+          <text x="42" y="25" fill="#fff" font-size="12" font-weight="700" font-family="Inter,sans-serif">App Store</text>
+          <g transform="translate(10,6) scale(0.7)" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.81-1.31.05-2.3-1.32-3.14-2.53C4.25 16 2.94 11.03 4.7 7.62c.87-1.68 2.42-2.75 4.12-2.78 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83"/><path d="M15.35 3.53c.67-.82 1.13-1.96 1-3.1-1 .04-2.2.66-2.91 1.5-.63.73-1.19 1.91-1.04 3.03 1.11.09 2.24-.56 2.95-1.43"/></g>
+        </svg>
+      </a>
+      <a href="#" class="store-badge" aria-label="Get it on Google Play">
+        <svg viewBox="0 0 135 40" width="168" height="50" xmlns="http://www.w3.org/2000/svg">
+          <rect width="135" height="40" rx="6" fill="#000" stroke="#A6A6A6" stroke-width="0.8"/>
+          <text x="50" y="11" fill="#A6A6A6" font-size="5.5" font-family="Inter,sans-serif" text-transform="uppercase" letter-spacing="0.5">GET IT ON</text>
+          <text x="50" y="25" fill="#fff" font-size="12" font-weight="700" font-family="Inter,sans-serif">Google Play</text>
+          <g transform="translate(10,8)">
+            <path d="M3 1.5L15 12 3 22.5z" fill="#4285F4"/>
+            <path d="M3 1.5l12 10.5 4-3.5L7.5 0z" fill="#34A853"/>
+            <path d="M3 22.5l12-10.5 4 3.5L7.5 24z" fill="#EA4335"/>
+            <path d="M19 8.5L15 12l4 3.5 3-1.75v-3.5z" fill="#FBBC04"/>
+          </g>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 PropEdge. All rights reserved.</p>
+
+      <!-- Legal Disclaimer Section -->
+      <div class="legal-disclaimer">
+        <p class="legal-disclaimer-heading">Legal Disclaimer</p>
+
+        <p class="legal-disclaimer-text">
+          <strong>For entertainment and informational purposes only.</strong>
+          PropEdge is a sports analytics and information service. PropEdge is not a sportsbook, does not accept or place wagers, does not set betting lines, does not escrow funds, and does not pay out on any bets. The analysis, confidence scores, and pick recommendations provided through this service do not constitute betting advice or any recommendation on whether or how to engage in sports betting activities.
+        </p>
+
+        <p class="legal-disclaimer-text">
+          <strong>No guarantee of profit.</strong>
+          Past performance of the PropEdge analysis engine does not guarantee future results. Sports outcomes are inherently unpredictable. The win rates and performance metrics displayed represent historical analytical results and should not be interpreted as a promise of future performance. Any sports betting activity is inherently risky and undertaken at your own risk.
+        </p>
+
+        <p class="legal-disclaimer-text">
+          <strong>Know your local laws.</strong>
+          Sports betting is not legal in all states or jurisdictions. It is your sole responsibility to understand and comply with all applicable laws in your location regarding sports betting. PropEdge does not provide legal advice regarding the legality of sports betting where you live. You must be 21+ to use this service. <span class="age-badge">21+</span>
+        </p>
+
+        <p class="legal-disclaimer-caps">
+          The service is provided "as-is." PropEdge disclaims all warranties, express or implied, including warranties of accuracy, non-infringement, merchantability, and fitness for a particular purpose. Data is sourced from third parties and may contain errors or delays. Under no circumstances will PropEdge be liable for any damages arising from your use of the service, including any loss from sports betting activity.
+        </p>
+
+        <div style="margin-top: 16px;">
+          <span class="responsible-gambling">
+            <i data-lucide="heart" style="width:14px;height:14px;"></i>
+            If you or someone you know has a gambling problem, call <strong>1-800-GAMBLER</strong> or visit <a href="https://www.ncpgambling.org" target="_blank" rel="noopener">ncpgambling.org</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Initialize Lucide icons
+lucide.createIcons();
+
+// Scroll-triggered fade-in animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Animated counter for stats bar
+function animateCounters() {
+  const counters = document.querySelectorAll('[data-count-to]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      if (el.dataset.counted) return;
+      el.dataset.counted = 'true';
+
+      const target = parseFloat(el.dataset.countTo);
+      const suffix = el.dataset.suffix || '';
+      const decimals = parseInt(el.dataset.decimals) || 0;
+      const useSep = el.dataset.separator === ',';
+      const duration = 1200;
+      const start = performance.now();
+
+      function update(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+        const current = eased * target;
+
+        let display;
+        if (decimals > 0) {
+          display = current.toFixed(decimals);
+        } else {
+          display = Math.round(current).toString();
+          if (useSep) display = parseInt(display).toLocaleString();
+        }
+        el.textContent = display + suffix;
+
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    });
+  }, { threshold: 0.3 });
+
+  counters.forEach(el => counterObserver.observe(el));
+}
+animateCounters();
+</script>
+</body>
+</html>
