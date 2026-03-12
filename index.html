@@ -655,45 +655,49 @@ nav .btn { padding: 10px 20px; font-size: 14px; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  transition: transform 0.3s, opacity 0.3s;
-  opacity: 0.5;
+  gap: 8px;
+  transition: transform 0.3s;
 }
 
 .league-logo-item:hover {
-  opacity: 1;
   transform: translateY(-2px);
 }
 
 .league-logo-item svg {
-  width: 32px;
-  height: 32px;
+  width: 48px;
+  height: 48px;
   fill: none;
-  stroke: var(--text-secondary);
+  stroke: var(--text-primary);
   stroke-width: 32px;
   stroke-linecap: round;
   stroke-linejoin: round;
+  opacity: 0.85;
+  transition: opacity 0.3s, stroke 0.3s;
 }
 
 .league-logo-item svg.mci-icon {
-  fill: var(--text-secondary);
+  fill: var(--text-primary);
   stroke: none;
+  opacity: 0.85;
+  transition: opacity 0.3s, fill 0.3s;
 }
 
 .league-logo-item:hover svg {
   stroke: var(--accent);
+  opacity: 1;
 }
 
 .league-logo-item:hover svg.mci-icon {
   fill: var(--accent);
   stroke: none;
+  opacity: 1;
 }
 
 .league-logo-label {
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.8px;
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   text-transform: uppercase;
 }
 
@@ -703,8 +707,8 @@ nav .btn { padding: 10px 20px; font-size: 14px; }
 
 @media (max-width: 639px) {
   .league-logos { gap: 20px; }
-  .league-logo-item svg { width: 26px; height: 26px; }
-  .league-logo-label { font-size: 9px; }
+  .league-logo-item svg { width: 38px; height: 38px; }
+  .league-logo-label { font-size: 10px; }
 }
 
 /* ──────────── PLATFORMS ──────────── */
