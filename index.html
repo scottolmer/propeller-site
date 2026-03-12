@@ -641,13 +641,12 @@ nav .btn { padding: 10px 20px; font-size: 14px; }
 
 .league-logos-title {
   text-align: center;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text-secondary);
-  letter-spacing: 0.5px;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -1px;
   margin-top: 32px;
-  margin-bottom: 0;
-  text-transform: uppercase;
+  margin-bottom: 8px;
 }
 
 /* ── League Logos ── */
@@ -667,41 +666,21 @@ nav .btn { padding: 10px 20px; font-size: 14px; }
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  transition: transform 0.3s;
-}
-
-.league-logo-item:hover {
-  transform: translateY(-2px);
 }
 
 .league-logo-item svg {
   width: 48px;
   height: 48px;
   fill: none;
-  stroke: var(--text-primary);
+  stroke: var(--accent);
   stroke-width: 32px;
   stroke-linecap: round;
   stroke-linejoin: round;
-  opacity: 0.85;
-  transition: opacity 0.3s, stroke 0.3s;
 }
 
 .league-logo-item svg.mci-icon {
-  fill: var(--text-primary);
-  stroke: none;
-  opacity: 0.85;
-  transition: opacity 0.3s, fill 0.3s;
-}
-
-.league-logo-item:hover svg {
-  stroke: var(--accent);
-  opacity: 1;
-}
-
-.league-logo-item:hover svg.mci-icon {
   fill: var(--accent);
   stroke: none;
-  opacity: 1;
 }
 
 .league-logo-label {
@@ -710,10 +689,6 @@ nav .btn { padding: 10px 20px; font-size: 14px; }
   letter-spacing: 0.8px;
   color: var(--text-secondary);
   text-transform: uppercase;
-}
-
-.league-logo-item:hover .league-logo-label {
-  color: var(--accent);
 }
 
 @media (max-width: 639px) {
