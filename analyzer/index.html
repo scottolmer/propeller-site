@@ -624,24 +624,24 @@ nav .btn { padding: 10px 20px; font-size: 14px; }
 }
 
 .search-card {
-  background: rgba(14, 17, 23, 0.9);
-  border: 1px solid var(--glass-border);
+  background: rgba(14, 17, 23, 0.95);
+  border: 2px solid var(--sport-color, var(--accent));
   border-radius: 20px;
   padding: 6px;
-  box-shadow: 0 0 0 0 transparent;
+  box-shadow: 0 0 20px var(--sport-color-glow, var(--accent-glow)), 0 8px 32px rgba(0, 0, 0, 0.4);
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .search-card.focused {
   border-color: var(--sport-color, var(--accent));
-  box-shadow: 0 0 0 4px var(--sport-color-glow, var(--accent-glow)), 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 30px var(--sport-color-glow, var(--accent-glow)), 0 0 60px var(--sport-color-glow, var(--accent-glow)), 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
 .search-inner {
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 14px 20px;
+  gap: 14px;
+  padding: 18px 24px;
 }
 
 .search-icon {
@@ -660,14 +660,14 @@ nav .btn { padding: 10px 20px; font-size: 14px; }
   border: none;
   outline: none;
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   color: var(--text-primary);
   caret-color: var(--sport-color, var(--accent));
 }
 
 .search-input::placeholder {
-  color: var(--text-tertiary);
+  color: var(--text-secondary);
   font-weight: 400;
 }
 
