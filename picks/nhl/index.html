@@ -1865,12 +1865,12 @@ lucide.createIcons();
     });
   }
 
-  const API_URL = `https://web-production-3c1c4.up.railway.app/api/nhl/props/top?game_date=${dateStr}`;
+  const API_URL = `https://web-production-3c1c4.up.railway.app/api/social/picks/nhl?game_date=${dateStr}`;
   const FREE_LIMIT = 5;
   const PREMIUM_BLUR = 3;
 
   try {
-    const res = await fetch(API_URL, { signal: AbortSignal.timeout(45000) });
+    const res = await fetch(API_URL, { signal: AbortSignal.timeout(10000) });
     if (!res.ok) throw new Error(`API ${res.status}`);
     const data = await res.json();
 

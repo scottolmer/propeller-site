@@ -1978,8 +1978,8 @@ async function loadPicks() {
   const empty = document.getElementById('picksEmpty');
 
   try {
-    const url = `https://web-production-3c1c4.up.railway.app/api/nba/props/top?game_date=${today}`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(45000) });
+    const url = `https://web-production-3c1c4.up.railway.app/api/social/picks/nba?game_date=${today}`;
+    const res = await fetch(url, { signal: AbortSignal.timeout(10000) });
 
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
