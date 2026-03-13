@@ -1905,7 +1905,7 @@ function calcConfidence(score) {
 // ---- Build a single pick card ----
 function buildPickCard(prop, locked) {
   const isOver = prop.final_direction === 'OVER';
-  const confidence = calcConfidence(prop.final_score);
+  const confidence = prop.confidence || calcConfidence(prop.final_score);
   const statLabel = formatStatType(prop.stat_type);
   const badgeClass = isOver ? 'pick-direction-over' : 'pick-direction-under';
   const barClass = isOver ? 'confidence-bar-over' : 'confidence-bar-under';
@@ -1979,7 +1979,7 @@ async function loadPicks() {
 
   try {
     const url = `https://web-production-3c1c4.up.railway.app/api/nba/props/top?game_date=${today}`;
-    const res = await fetch(url, { signal: AbortSignal.timeout(12000) });
+    const res = await fetch(url, { signal: AbortSignal.timeout(45000) });
 
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
 
