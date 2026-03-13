@@ -282,15 +282,15 @@ h1, h2, h3, h4 {
 .delay-3 { transition-delay: 0.45s; }
 .delay-4 { transition-delay: 0.6s; }
 
-/* ---- NAV ---- */
+/* ── NAV ── */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
-  padding: 16px 0;
-  background: rgba(6, 8, 13, 0.85);
+  z-index: 200;
+  padding: 0;
+  background: rgba(6, 8, 13, 0.88);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--glass-border);
 }
@@ -299,6 +299,8 @@ nav .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 60px;
+  gap: 8px;
 }
 
 .logo {
@@ -311,6 +313,7 @@ nav .container {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .logo-icon {
@@ -318,54 +321,194 @@ nav .container {
   height: 28px;
   background: var(--accent);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  flex-shrink: 0;
 }
 
+/* ── Nav center links ── */
 .nav-links {
   display: flex;
-  gap: 28px;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  justify-content: center;
 }
 
-.nav-links a {
+/* Each top-level nav item (plain link or dropdown trigger) */
+.nav-item {
+  position: relative;
+}
+
+.nav-item-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  transition: color 0.2s;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.15s;
+  white-space: nowrap;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  line-height: 1;
 }
 
-.nav-links a:hover { color: var(--accent); }
+.nav-item-link:hover,
+.nav-item:hover > .nav-item-link,
+.nav-item.open > .nav-item-link {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
 
+.nav-chevron {
+  width: 12px;
+  height: 12px;
+  opacity: 0.5;
+  transition: transform 0.2s, opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.nav-item:hover > .nav-item-link .nav-chevron,
+.nav-item.open > .nav-item-link .nav-chevron {
+  transform: rotate(180deg);
+  opacity: 0.85;
+}
+
+/* ── Dropdown panel ── */
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  min-width: 230px;
+  background: rgba(14, 17, 23, 0.97);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 300;
+}
+
+/* Show on hover — desktop only */
+@media (min-width: 768px) {
+  .nav-item:hover > .nav-dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 9px 12px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.nav-dropdown a:hover {
+  color: var(--text-primary);
+  background: rgba(249, 115, 22, 0.08);
+}
+
+.nav-dropdown-separator {
+  height: 1px;
+  background: var(--glass-border);
+  margin: 6px 8px;
+}
+
+/* ── Hamburger ── */
 .hamburger {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
   color: var(--text-primary);
+  flex-shrink: 0;
+  border-radius: 8px;
+  transition: background 0.15s;
 }
 
+.hamburger:hover { background: rgba(255,255,255,0.06); }
 .hamburger svg { display: block; }
 
-@media (max-width: 639px) {
+nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
+
+/* ── Mobile nav ── */
+@media (max-width: 767px) {
   .nav-links {
     display: none;
     position: absolute;
-    top: 100%;
+    top: 60px;
     left: 0;
     right: 0;
     flex-direction: column;
-    background: rgba(6, 8, 13, 0.96);
-    backdrop-filter: blur(20px);
-    padding: 16px 24px;
-    gap: 16px;
+    align-items: stretch;
+    background: rgba(6, 8, 13, 0.98);
+    backdrop-filter: blur(24px);
+    padding: 12px 16px 20px;
+    gap: 2px;
     border-bottom: 1px solid var(--glass-border);
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    z-index: 199;
   }
-  .nav-links.open { display: flex; }
-  .nav-links a { font-size: 16px; }
-  .hamburger { display: block; }
-}
 
-nav .btn { padding: 10px 20px; font-size: 14px; }
+  .nav-links.open { display: flex; }
+
+  /* On mobile, plain links are styled as rows */
+  .nav-item { width: 100%; }
+
+  .nav-item-link {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    border-radius: 10px;
+    justify-content: space-between;
+  }
+
+  /* Mobile dropdown — no absolute positioning, just revealed inline */
+  .nav-dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: none;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    margin: 4px 0 4px 12px;
+    padding: 4px;
+    display: none;
+    min-width: 0;
+    transition: none;
+  }
+
+  .nav-item.open > .nav-dropdown { display: block; }
+
+  .nav-dropdown a {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+
+  .hamburger { display: flex; align-items: center; }
+
+  /* Hide Get Started button text on very small — keep as icon-only or hide */
+  nav .btn { display: none; }
+}
 
 /* ---- HERO ---- */
 .hero {
@@ -813,42 +956,137 @@ nav .btn { padding: 10px 20px; font-size: 14px; }
   opacity: 1;
 }
 
-/* ---- FOOTER ---- */
+/* ── FOOTER ── */
 footer {
-  padding: 48px 0;
+  padding: 0;
   border-top: 1px solid var(--glass-border);
 }
 
-.footer-content {
+.footer-top {
+  padding: 60px 0 48px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* Brand column */
+.footer-brand {}
+
+.footer-brand-logo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.footer-brand-logo .logo-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--accent);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  flex-shrink: 0;
+}
+
+.footer-tagline {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+  max-width: 180px;
+}
+
+/* Column headers */
+.footer-col-header {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  font-family: var(--font-display);
+}
+
+/* Column links */
+.footer-col-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
+  gap: 8px;
 }
 
-.footer-links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.footer-links a {
-  color: var(--text-tertiary);
+.footer-col-links a {
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 14px;
+  font-weight: 400;
   transition: color 0.2s;
+  line-height: 1.4;
   display: inline-flex;
   align-items: center;
   gap: 6px;
 }
 
-.footer-links a:hover { color: var(--accent); }
+.footer-col-links a:hover { color: var(--accent); }
+
+.footer-bottom {
+  border-top: 1px solid var(--glass-border);
+  padding: 20px 0;
+}
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
 
 .footer-copy {
   font-size: 13px;
   color: var(--text-tertiary);
+}
+
+/* Responsive footer */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 32px;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+  .footer-tagline { max-width: none; }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.footer-disclaimer {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  max-width: 480px;
+  opacity: 0.7;
 }
 
 .legal-disclaimer {
@@ -879,6 +1117,17 @@ footer {
 .legal-disclaimer-text strong {
   color: var(--text-secondary);
   font-weight: 500;
+}
+
+.legal-disclaimer-caps {
+  font-size: 10px;
+  color: var(--text-tertiary);
+  max-width: 720px;
+  margin: 0 auto 12px;
+  line-height: 1.7;
+  opacity: 0.55;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
 }
 
 .responsible-gambling {
@@ -926,24 +1175,74 @@ footer {
 <nav>
   <div class="container">
     <a href="/" class="logo">
-      <div class="logo-icon" aria-hidden="true"></div>
+      <div class="logo-icon"></div>
       PropEdge
     </a>
+
     <div class="nav-links" id="navLinks">
-      <a href="/analyzer/" onclick="document.getElementById('navLinks').classList.remove('open')">Prop Analyzer</a>
-      <a href="/#features">Features</a>
-      <a href="/how-it-works/">How It Works</a>
-      <a href="/#pricing">Pricing</a>
-      <a href="/#compare">Compare</a>
+
+      <!-- Picks dropdown -->
+      <div class="nav-item" id="navPicks">
+        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navPicks', event)">
+          Picks
+          <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+        </button>
+        <div class="nav-dropdown" role="menu">
+          <a href="/picks/nba/" role="menuitem">NBA Picks Today</a>
+          <a href="/picks/nhl/" role="menuitem">NHL Picks Today</a>
+          <a href="/picks/mlb/" role="menuitem">MLB Picks Today</a>
+          <a href="/picks/nfl/" role="menuitem">NFL Picks Today</a>
+          <a href="/picks/soccer/" role="menuitem">Soccer Picks Today</a>
+          <div class="nav-dropdown-separator"></div>
+          <a href="/picks/prizepicks/" role="menuitem">PrizePicks Picks</a>
+          <a href="/picks/pick6/" role="menuitem">Pick6 Picks</a>
+          <a href="/picks/underdog/" role="menuitem">Underdog Picks</a>
+        </div>
+      </div>
+
+      <!-- Guides dropdown -->
+      <div class="nav-item" id="navGuides">
+        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navGuides', event)">
+          Guides
+          <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+        </button>
+        <div class="nav-dropdown" role="menu">
+          <a href="/guides/prizepicks-strategy/" role="menuitem">PrizePicks Strategy</a>
+          <a href="/guides/pick6-strategy/" role="menuitem">Pick6 Strategy</a>
+          <a href="/guides/nba-prop-betting/" role="menuitem">NBA Prop Betting</a>
+          <div class="nav-dropdown-separator"></div>
+          <a href="/how-it-works/" role="menuitem">How It Works</a>
+        </div>
+      </div>
+
+      <!-- Compare dropdown -->
+      <div class="nav-item" id="navCompare">
+        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navCompare', event)">
+          Compare
+          <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+        </button>
+        <div class="nav-dropdown" role="menu">
+          <a href="/compare/propedge-vs-bettingpros/" role="menuitem">PropEdge vs BettingPros</a>
+          <a href="/compare/propedge-vs-oddsjam/" role="menuitem">PropEdge vs OddsJam</a>
+          <a href="/compare/pick6-vs-prizepicks/" role="menuitem">Pick6 vs PrizePicks</a>
+        </div>
+      </div>
+
+      <!-- Direct links -->
+      <div class="nav-item">
+        <a href="/analyzer/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Analyzer</a>
+      </div>
+      <div class="nav-item">
+        <a href="/results/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Results</a>
+      </div>
+
     </div>
-    <a href="/#pricing" class="btn btn-primary">Get Started</a>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <line x1="3" y1="12" x2="21" y2="12"/>
-        <line x1="3" y1="18" x2="21" y2="18"/>
-      </svg>
+
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
+      <svg id="hamburgerIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
+
+    <a href="/#pricing" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Get Started</a>
   </div>
 </nav>
 
@@ -1036,7 +1335,7 @@ footer {
           <p>
             The single highest-leverage action you can take before locking in an Underdog entry is checking the defensive matchup for each player. A running back facing the league's worst run defense is a structurally different pick than the same player against a top-5 unit — even when the stat line is identical. Matchup context accounts for opponent quality, scheme tendencies, and position-specific defensive grades. A receiver who thrives against press coverage needs to face a soft zone to get the volume his line implies. When multiple matchup factors align in the same direction, you have a real edge.
           </p>
-          <a href="/analyzer/" onclick="document.getElementById('navLinks').classList.remove('open')">Prop Analyzer</a>
+          <a href="/analyzer/">Prop Analyzer</a>
       <a href="/#features" class="tip-propedge-link">
             How PropEdge's matchup agent grades defenses
             <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
@@ -1054,7 +1353,7 @@ footer {
         <p>
           Checking if your player is healthy is obvious. The deeper advantage is understanding what happens to a player's prop when a teammate is ruled out. When a primary ball-carrier is scratched, the backup's rushing volume picks up sharply. When an All-Star sits, teammates absorb usage in ways the original line cannot reflect. Checking injury reports within two hours of game time — and thinking through the second-order effects on every player in your entry — is one of the most underused edges in Underdog Fantasy.
         </p>
-        <a href="/analyzer/" onclick="document.getElementById('navLinks').classList.remove('open')">Prop Analyzer</a>
+        <a href="/analyzer/">Prop Analyzer</a>
       <a href="/#features" class="tip-propedge-link">
           PropEdge injury cascade analysis
           <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
@@ -1071,7 +1370,7 @@ footer {
         <p>
           Underdog sets its lines to attract balanced entry volume, not to perfectly reflect true probability. A player averaging 22 points per game might carry a 21.5 line because that number draws more entries — even if the market consensus from sportsbooks implies 24+. Stripping the house margin from multiple book prices and comparing the resulting true probability to Underdog's implied probability is how you find which props are actually worth playing.
         </p>
-        <a href="/analyzer/" onclick="document.getElementById('navLinks').classList.remove('open')">Prop Analyzer</a>
+        <a href="/analyzer/">Prop Analyzer</a>
       <a href="/#features" class="tip-propedge-link">
           PropEdge no-vig line value detection
           <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
@@ -1088,7 +1387,7 @@ footer {
         <p>
           A player's season average is a starting point, not an edge. A player on a four-game hot streak with increasing role size, healthy usage, and no upcoming opponent variance is a very different bet than one regressing after a fluke big game. Recency-weighted hit rates — how often a player has beaten a comparable line over the last 10 to 15 games — combined with trend direction tells you whether the momentum is with you or against you.
         </p>
-        <a href="/analyzer/" onclick="document.getElementById('navLinks').classList.remove('open')">Prop Analyzer</a>
+        <a href="/analyzer/">Prop Analyzer</a>
       <a href="/#features" class="tip-propedge-link">
           PropEdge recency-weighted hit rate agent
           <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
@@ -1105,7 +1404,7 @@ footer {
         <p>
           A 6-pick entry paying 20x is tempting, but it requires six independent edges to all hit simultaneously. The smarter approach is building a portfolio of entries: 2- and 3-pick entries anchored by your highest-confidence props, with selective longer entries only when you have six genuinely strong signals in the same slate. Never pad a long entry with a mediocre pick just to chase the payout — that is where bankrolls erode.
         </p>
-        <a href="/analyzer/" onclick="document.getElementById('navLinks').classList.remove('open')">Prop Analyzer</a>
+        <a href="/analyzer/">Prop Analyzer</a>
       <a href="/#features" class="tip-propedge-link">
           AI-built combos with risk tier grading
           <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
@@ -1122,7 +1421,7 @@ footer {
         <p>
           Most pick'em players have no idea what their actual win rate is by sport, entry size, or confidence level. Without tracking, you cannot identify whether you have a genuine edge in NBA player props but are giving it all back on MLB. Log every pick and result. After 50 entries you begin seeing patterns. After 100 you know exactly where your edge lives — and where you are leaking money.
         </p>
-        <a href="/analyzer/" onclick="document.getElementById('navLinks').classList.remove('open')">Prop Analyzer</a>
+        <a href="/analyzer/">Prop Analyzer</a>
       <a href="/#features" class="tip-propedge-link">
           PropEdge performance dashboard
           <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
@@ -1139,7 +1438,7 @@ footer {
         <p>
           Selectivity is a discipline. On days when no prop clears a meaningful confidence threshold, the correct play is often to pass. Forcing entries into low-conviction picks to stay active is one of the most common and expensive mistakes in Underdog Fantasy. When all 8 analytical signals agree strongly on a direction, that is when you size up. When only two or three agree, skip it and wait for a better slate.
         </p>
-        <a href="/analyzer/" onclick="document.getElementById('navLinks').classList.remove('open')">Prop Analyzer</a>
+        <a href="/analyzer/">Prop Analyzer</a>
       <a href="/#features" class="tip-propedge-link">
           PropEdge 8-agent confidence scoring
           <i data-lucide="arrow-right" style="width:14px;height:14px;"></i>
@@ -1244,42 +1543,118 @@ footer {
 
 <!-- Footer -->
 <footer>
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/how-it-works/">How It Works</a>
-        <a href="/results/">Results</a>
-        <a href="/pick6/">Pick6 Strategy</a>
-        <a href="/prizepicks/">PrizePicks Strategy</a>
-        <a href="/nfl/">NFL Props</a>
-        <a href="/nba/">NBA Props</a>
-        <a href="/nhl/">NHL Props</a>
-        <a href="/mlb/">MLB Props</a>
-        <a href="/soccer/">Soccer Props</a>
-        <a href="https://x.com/prop_edge_app" target="_blank" rel="noopener" aria-label="Follow PropEdge on X" style="display:inline-flex;align-items:center;gap:6px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          @prop_edge_app
-        </a>
-        <a href="https://www.notion.so/Privacy-Policy-31ce79c608ef8074a5a7db819d6ebf80" target="_blank" rel="noopener">Privacy Policy</a>
-        <a href="https://www.notion.so/Terms-of-Service-31ce79c608ef8094baece5095cd2d523" target="_blank" rel="noopener">Terms of Service</a>
-      </div>
-      <p class="footer-copy">&copy; 2026 PropEdge. All rights reserved.</p>
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
 
-      <div class="legal-disclaimer">
-        <p class="legal-disclaimer-heading">Legal Disclaimer</p>
-        <p class="legal-disclaimer-text">
-          <strong>For entertainment and informational purposes only.</strong> PropEdge is a sports analytics and information service. PropEdge is not a sportsbook, does not accept or place wagers, does not set betting lines, and does not pay out on any bets. The analysis, confidence scores, and pick recommendations provided through this service do not constitute betting advice or any recommendation on whether or how to engage in sports betting activities.
-        </p>
-        <p class="legal-disclaimer-text">
-          <strong>No guarantee of profit.</strong> Past performance of the PropEdge analysis engine does not guarantee future results. Sports outcomes are inherently unpredictable. Win rates and performance metrics represent historical analytical results and should not be interpreted as a promise of future performance. You must be 21+ to use this service. <span class="age-badge">21+</span>
-        </p>
-        <div style="margin-top: 16px;">
-          <span class="responsible-gambling">
-            <i data-lucide="heart" style="width:14px;height:14px;"></i>
-            If you or someone you know has a gambling problem, call <strong>1-800-GAMBLER</strong> or visit <a href="https://www.ncpgambling.org" target="_blank" rel="noopener">ncpgambling.org</a>
-          </span>
+        <!-- Brand column -->
+        <div class="footer-brand">
+          <a href="/" class="footer-brand-logo">
+            <div class="logo-icon"></div>
+            PropEdge
+          </a>
+          <p class="footer-tagline">AI-powered prop analysis for Pick6, Underdog, PrizePicks &amp; FanDuel.</p>
         </div>
+
+        <!-- Daily Picks column -->
+        <div class="footer-col">
+          <p class="footer-col-header">Daily Picks</p>
+          <div class="footer-col-links">
+            <a href="/picks/nba/">NBA Picks Today</a>
+            <a href="/picks/nhl/">NHL Picks Today</a>
+            <a href="/picks/mlb/">MLB Picks Today</a>
+            <a href="/picks/nfl/">NFL Picks Today</a>
+            <a href="/picks/soccer/">Soccer Picks Today</a>
+          </div>
+        </div>
+
+        <!-- Platforms column -->
+        <div class="footer-col">
+          <p class="footer-col-header">Platforms</p>
+          <div class="footer-col-links">
+            <a href="/picks/prizepicks/">PrizePicks Picks</a>
+            <a href="/picks/pick6/">Pick6 Picks</a>
+            <a href="/picks/underdog/">Underdog Picks</a>
+          </div>
+          <p class="footer-col-header" style="margin-top: 20px;">Compare</p>
+          <div class="footer-col-links">
+            <a href="/compare/propedge-vs-bettingpros/">vs BettingPros</a>
+            <a href="/compare/propedge-vs-oddsjam/">vs OddsJam</a>
+            <a href="/compare/pick6-vs-prizepicks/">Pick6 vs PrizePicks</a>
+          </div>
+        </div>
+
+        <!-- Learn column -->
+        <div class="footer-col">
+          <p class="footer-col-header">Learn</p>
+          <div class="footer-col-links">
+            <a href="/how-it-works/">How It Works</a>
+            <a href="/guides/prizepicks-strategy/">PrizePicks Guide</a>
+            <a href="/guides/pick6-strategy/">Pick6 Guide</a>
+            <a href="/guides/nba-prop-betting/">NBA Betting Guide</a>
+            <a href="/analyzer/">Prop Analyzer</a>
+          </div>
+        </div>
+
+        <!-- Company column -->
+        <div class="footer-col">
+          <p class="footer-col-header">Company</p>
+          <div class="footer-col-links">
+            <a href="/results/">Results</a>
+            <a href="/blog/">Blog</a>
+            <a href="https://x.com/prop_edge_app" target="_blank" rel="noopener" aria-label="Follow PropEdge on X">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;opacity:0.7;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Twitter / X
+            </a>
+          </div>
+          <p class="footer-col-header" style="margin-top: 20px;">Legal</p>
+          <div class="footer-col-links">
+            <a href="https://www.notion.so/Privacy-Policy-31ce79c608ef8074a5a7db819d6ebf80" target="_blank" rel="noopener">Privacy Policy</a>
+            <a href="https://www.notion.so/Terms-of-Service-31ce79c608ef8094baece5095cd2d523" target="_blank" rel="noopener">Terms of Service</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-row">
+        <p class="footer-copy">&copy; 2026 PropEdge. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Legal Disclaimer Section -->
+  <div class="container">
+    <div class="legal-disclaimer">
+      <p class="legal-disclaimer-heading">Legal Disclaimer</p>
+
+      <p class="legal-disclaimer-text">
+        <strong>For entertainment and informational purposes only.</strong>
+        PropEdge is a sports analytics and information service. PropEdge is not a sportsbook, does not accept or place wagers, does not set betting lines, does not escrow funds, and does not pay out on any bets. The analysis, confidence scores, and pick recommendations provided through this service do not constitute betting advice or any recommendation on whether or how to engage in sports betting activities.
+      </p>
+
+      <p class="legal-disclaimer-text">
+        <strong>No guarantee of profit.</strong>
+        Past performance of the PropEdge analysis engine does not guarantee future results. Sports outcomes are inherently unpredictable. The win rates and performance metrics displayed represent historical analytical results and should not be interpreted as a promise of future performance. Any sports betting activity is inherently risky and undertaken at your own risk.
+      </p>
+
+      <p class="legal-disclaimer-text">
+        <strong>Know your local laws.</strong>
+        Sports betting is not legal in all states or jurisdictions. It is your sole responsibility to understand and comply with all applicable laws in your location regarding sports betting. PropEdge does not provide legal advice regarding the legality of sports betting where you live. You must be 21+ to use this service. <span class="age-badge">21+</span>
+      </p>
+
+      <p class="legal-disclaimer-caps">
+        The service is provided "as-is." PropEdge disclaims all warranties, express or implied, including warranties of accuracy, non-infringement, merchantability, and fitness for a particular purpose. Data is sourced from third parties and may contain errors or delays. Under no circumstances will PropEdge be liable for any damages arising from your use of the service, including any loss from sports betting activity.
+      </p>
+
+      <div style="margin-top: 16px;">
+        <span class="responsible-gambling">
+          <i data-lucide="heart" style="width:14px;height:14px;"></i>
+          If you or someone you know has a gambling problem, call <strong>1-800-GAMBLER</strong> or visit <a href="https://www.ncpgambling.org" target="_blank" rel="noopener">ncpgambling.org</a>
+        </span>
       </div>
     </div>
   </div>
@@ -1288,6 +1663,77 @@ footer {
 <script>
 // Initialize Lucide icons
 lucide.createIcons();
+
+// ── Nav dropdown / mobile menu logic ──
+const NAV_DROPDOWN_IDS = ['navPicks', 'navGuides', 'navCompare'];
+
+function closeAllNavDropdowns() {
+  NAV_DROPDOWN_IDS.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.classList.remove('open');
+      var btn = el.querySelector('.nav-item-link');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+function toggleNavDropdown(id, event) {
+  event.stopPropagation();
+  var el = document.getElementById(id);
+  if (!el) return;
+  var isOpen = el.classList.contains('open');
+  closeAllNavDropdowns();
+  if (!isOpen) {
+    el.classList.add('open');
+    var btn = el.querySelector('.nav-item-link');
+    if (btn) btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+function closeMobileMenu() {
+  var nav = document.getElementById('navLinks');
+  var btn = document.getElementById('hamburgerBtn');
+  if (nav) nav.classList.remove('open');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
+  setHamburgerIcon(false);
+}
+
+function setHamburgerIcon(isOpen) {
+  var icon = document.getElementById('hamburgerIcon');
+  if (!icon) return;
+  if (isOpen) {
+    icon.innerHTML = '<line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>';
+  } else {
+    icon.innerHTML = '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
+  }
+}
+
+function toggleMobileMenu() {
+  var nav = document.getElementById('navLinks');
+  var btn = document.getElementById('hamburgerBtn');
+  if (!nav) return;
+  var isOpen = nav.classList.toggle('open');
+  if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  setHamburgerIcon(isOpen);
+  if (!isOpen) closeAllNavDropdowns();
+}
+
+// Close dropdowns when clicking outside (desktop)
+document.addEventListener('click', function(e) {
+  var insideNav = e.target.closest('nav');
+  if (!insideNav) {
+    closeAllNavDropdowns();
+  }
+});
+
+// Close mobile menu when a plain nav link is clicked
+document.querySelectorAll('.nav-item > .nav-item-link[href]').forEach(function(link) {
+  link.addEventListener('click', function() {
+    closeMobileMenu();
+    closeAllNavDropdowns();
+  });
+});
 
 // Animated background orbs — requestAnimationFrame drift
 (function() {
@@ -1315,22 +1761,6 @@ var observer = new IntersectionObserver(function(entries) {
 
 document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
 
-// Hamburger menu
-(function() {
-  var btn = document.getElementById('hamburger');
-  var links = document.getElementById('navLinks');
-  if (!btn || !links) return;
-  btn.addEventListener('click', function() {
-    var open = links.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-  links.querySelectorAll('a').forEach(function(a) {
-    a.addEventListener('click', function() {
-      links.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    });
-  });
-})();
 </script>
 </body>
 </html>
