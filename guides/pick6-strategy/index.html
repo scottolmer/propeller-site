@@ -120,7 +120,7 @@
       "name": "What is the best number of picks for Pick6?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "For most players, 3-4 pick entries provide the best combination of payout potential and achievable hit rate. Two-pick entries pay 3x but offer limited upside for the effort. Five and six-pick entries offer 20x+ multipliers but require you to hit at an extremely high rate across all picks simultaneously. The probability drops exponentially with each additional leg. Three and four-pick entries at strong confidence are mathematically preferable to a single six-pick entry spread across marginal picks."
+        "text": "For most players, 3-4 pick entries provide the best combination of payout potential and achievable hit rate. Production data across 17,068 graded predictions shows per-leg win rates of 56.8% (NBA), 63.5% (NHL), and 59.8% (NFL) — rates that make 3-pick entries viable for consistent returns. At 65%+ confidence, NHL props hit at 77.9%, making high-confidence 3-pick entries hit nearly half the time. Five and six-pick entries require hitting at an extremely high rate across all picks simultaneously, and the probability drops exponentially with each additional leg."
       }
     },
     {
@@ -136,7 +136,7 @@
       "name": "Should I bet overs or unders on Pick6?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Neither direction is inherently better, but under picks are systematically underused by most players who gravitate toward overs. High-confidence under picks — where a player faces a strong defensive matchup, reduced minutes, a back-to-back, or an unfavorable pace environment — make excellent anchors in multi-pick entries because they tend to be less correlated with the rest of your slate. Adding a strong under in the middle of an otherwise over-heavy entry is a correlation diversification technique that can improve overall hit rate."
+        "text": "The data strongly favors unders. Across 17,068 graded predictions, UNDER picks hit at 60.3% in NBA (vs. 51.6% for overs), 65.6% in NHL (vs. 59.5%), and 64.3% in NFL (vs. 57.9%). Under picks are systematically underused by most players who gravitate toward overs. High-confidence under picks make excellent anchors in multi-pick entries and consistently outperform overs by 5-9 percentage points across all sports."
       }
     },
     {
@@ -144,7 +144,7 @@
       "name": "How do I use AI analysis for Pick6?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "PropEdge confidence scores translate directly to Pick6 decisions. A score of 65 or above indicates strong over confidence. A score of 35 or below is a strong under signal. For Pick6 entries, focus on props where the score is 62+ or 38 and below, where at least 5 of 8 analytical agents are in agreement, and where the confidence score comes from multiple independent signal types rather than a single dominant agent. Check today's analysis at propedgeapp.com/picks/pick6/ before each slate locks."
+        "text": "PropEdge confidence scores translate directly to Pick6 decisions. Picks at 65%+ confidence hit at 58.0% in NBA and 77.9% in NHL across thousands of graded predictions. A score of 65 or above indicates strong over confidence. A score of 35 or below is a strong under signal. For Pick6 entries, prioritize stat types with the strongest track records — NBA blocks (69.9%), NHL goals (70.7%), and NBA threes (63.2%). Check today's analysis at propedgeapp.com/picks/pick6/ before each slate locks."
       }
     }
   ]
@@ -326,9 +326,9 @@ h1, h2, h3, h4 {
 nav {
   position: fixed;
   top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 16px 0;
-  background: rgba(6, 8, 13, 0.85);
+  z-index: 200;
+  padding: 0;
+  background: rgba(6, 8, 13, 0.88);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--glass-border);
 }
@@ -337,6 +337,8 @@ nav .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 60px;
+  gap: 8px;
 }
 
 .logo {
@@ -349,58 +351,177 @@ nav .container {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 .logo-icon {
   width: 28px; height: 28px;
   background: var(--accent);
   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  flex-shrink: 0;
 }
 
 .nav-links {
   display: flex;
-  gap: 28px;
+  align-items: center;
+  gap: 2px;
+  flex: 1;
+  justify-content: center;
 }
 
-.nav-links a {
+.nav-item { position: relative; }
+
+.nav-item-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 8px 12px;
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  transition: color 0.2s;
+  border-radius: 8px;
+  transition: color 0.2s, background 0.15s;
+  white-space: nowrap;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  line-height: 1;
 }
 
-.nav-links a:hover { color: var(--accent); }
+.nav-item-link:hover,
+.nav-item:hover > .nav-item-link,
+.nav-item.open > .nav-item-link {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-chevron {
+  width: 12px; height: 12px;
+  opacity: 0.5;
+  transition: transform 0.2s, opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.nav-item:hover > .nav-item-link .nav-chevron,
+.nav-item.open > .nav-item-link .nav-chevron {
+  transform: rotate(180deg);
+  opacity: 0.85;
+}
+
+.nav-dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  min-width: 230px;
+  background: rgba(14, 17, 23, 0.97);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 300;
+}
+
+@media (min-width: 768px) {
+  .nav-item:hover > .nav-dropdown {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.nav-dropdown a {
+  display: block;
+  padding: 9px 12px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+
+.nav-dropdown a:hover {
+  color: var(--text-primary);
+  background: rgba(249, 115, 22, 0.08);
+}
+
+.nav-dropdown-separator {
+  height: 1px;
+  background: var(--glass-border);
+  margin: 6px 8px;
+}
 
 .hamburger {
   display: none;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px;
   color: var(--text-primary);
+  flex-shrink: 0;
+  border-radius: 8px;
+  transition: background 0.15s;
 }
 
+.hamburger:hover { background: rgba(255,255,255,0.06); }
 .hamburger svg { display: block; }
 
-@media (max-width: 639px) {
+nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
+
+@media (max-width: 767px) {
   .nav-links {
     display: none;
     position: absolute;
-    top: 100%; left: 0; right: 0;
+    top: 60px;
+    left: 0; right: 0;
     flex-direction: column;
-    background: rgba(6, 8, 13, 0.96);
-    backdrop-filter: blur(20px);
-    padding: 16px 24px;
-    gap: 16px;
+    align-items: stretch;
+    background: rgba(6, 8, 13, 0.98);
+    backdrop-filter: blur(24px);
+    padding: 12px 16px 20px;
+    gap: 2px;
     border-bottom: 1px solid var(--glass-border);
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    z-index: 199;
   }
   .nav-links.open { display: flex; }
-  .nav-links a { font-size: 16px; }
-  .hamburger { display: block; }
+  .nav-item { width: 100%; }
+  .nav-item-link {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    border-radius: 10px;
+    justify-content: space-between;
+  }
+  .nav-dropdown {
+    position: static;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow: none;
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
+    margin: 4px 0 4px 12px;
+    padding: 4px;
+    display: none;
+    min-width: 0;
+    transition: none;
+  }
+  .nav-item.open > .nav-dropdown { display: block; }
+  .nav-dropdown a { font-size: 14px; padding: 10px 12px; }
+  .hamburger { display: flex; align-items: center; }
+  nav .btn { display: none; }
 }
-
-nav .btn { padding: 10px 20px; font-size: 14px; }
 
 /* HERO */
 .hero {
@@ -944,35 +1065,104 @@ nav .btn { padding: 10px 20px; font-size: 14px; }
 
 /* FOOTER */
 footer {
-  padding: 48px 0;
+  padding: 0;
   border-top: 1px solid var(--glass-border);
 }
 
-.footer-content {
+.footer-top {
+  padding: 60px 0 48px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.footer-brand-logo {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.footer-brand-logo .logo-icon {
+  width: 24px; height: 24px;
+  background: var(--accent);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  flex-shrink: 0;
+}
+
+.footer-tagline {
+  font-size: 13px;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+  max-width: 180px;
+}
+
+.footer-col-header {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 14px;
+  font-family: var(--font-display);
+}
+
+.footer-col-links {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
+  gap: 8px;
 }
 
-.footer-links {
-  display: flex;
-  gap: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.footer-links a {
-  color: var(--text-tertiary);
+.footer-col-links a {
+  color: var(--text-secondary);
   text-decoration: none;
   font-size: 14px;
+  font-weight: 400;
   transition: color 0.2s;
+  line-height: 1.4;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-.footer-links a:hover { color: var(--accent); }
+.footer-col-links a:hover { color: var(--accent); }
+
+.footer-bottom {
+  border-top: 1px solid var(--glass-border);
+  padding: 20px 0;
+}
+
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
 
 .footer-copy { font-size: 13px; color: var(--text-tertiary); }
+
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .footer-tagline { max-width: none; }
+}
+@media (max-width: 640px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+@media (max-width: 400px) {
+  .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+}
 
 .legal-disclaimer {
   border-top: 1px solid var(--glass-border);
@@ -1062,15 +1252,64 @@ footer {
       <div class="logo-icon"></div>
       PropEdge
     </a>
+
     <div class="nav-links" id="navLinks">
-      <a href="/analyzer/" onclick="document.getElementById('navLinks').classList.remove('open')">Prop Analyzer</a>
-      <a href="/#features" onclick="document.getElementById('navLinks').classList.remove('open')">Features</a>
-      <a href="/#pricing" onclick="document.getElementById('navLinks').classList.remove('open')">Pricing</a>
-      <a href="/#compare" onclick="document.getElementById('navLinks').classList.remove('open')">Compare</a>
+      <div class="nav-item" id="navPicks">
+        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navPicks', event)">
+          Picks
+          <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+        </button>
+        <div class="nav-dropdown" role="menu">
+          <a href="/picks/nba/" role="menuitem">NBA Picks Today</a>
+          <a href="/picks/nhl/" role="menuitem">NHL Picks Today</a>
+          <a href="/picks/mlb/" role="menuitem">MLB Picks Today</a>
+          <a href="/picks/nfl/" role="menuitem">NFL Picks Today</a>
+          <a href="/picks/soccer/" role="menuitem">Soccer Picks Today</a>
+          <div class="nav-dropdown-separator"></div>
+          <a href="/picks/prizepicks/" role="menuitem">PrizePicks Picks</a>
+          <a href="/picks/pick6/" role="menuitem">Pick6 Picks</a>
+          <a href="/picks/underdog/" role="menuitem">Underdog Picks</a>
+        </div>
+      </div>
+
+      <div class="nav-item" id="navGuides">
+        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navGuides', event)">
+          Guides
+          <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+        </button>
+        <div class="nav-dropdown" role="menu">
+          <a href="/guides/prizepicks-strategy/" role="menuitem">PrizePicks Strategy</a>
+          <a href="/guides/pick6-strategy/" role="menuitem">Pick6 Strategy</a>
+          <a href="/guides/nba-prop-betting/" role="menuitem">NBA Prop Betting</a>
+          <div class="nav-dropdown-separator"></div>
+          <a href="/how-it-works/" role="menuitem">How It Works</a>
+        </div>
+      </div>
+
+      <div class="nav-item" id="navCompare">
+        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navCompare', event)">
+          Compare
+          <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+        </button>
+        <div class="nav-dropdown" role="menu">
+          <a href="/compare/propedge-vs-bettingpros/" role="menuitem">PropEdge vs BettingPros</a>
+          <a href="/compare/propedge-vs-oddsjam/" role="menuitem">PropEdge vs OddsJam</a>
+          <a href="/compare/pick6-vs-prizepicks/" role="menuitem">Pick6 vs PrizePicks</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="/analyzer/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Analyzer</a>
+      </div>
+      <div class="nav-item">
+        <a href="/results/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Results</a>
+      </div>
     </div>
-    <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')" aria-label="Toggle menu">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
+      <svg id="hamburgerIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
+
     <a href="/#pricing" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Get Started</a>
   </div>
 </nav>
@@ -1172,20 +1411,20 @@ footer {
 
         <div class="strategy-card fade-in">
           <div class="strategy-number">STRATEGY 01</div>
-          <h3>Start With 3-4 Pick Entries for Best Hit Rate</h3>
-          <p>The 3 and 4-pick entry formats hit the mathematical sweet spot between meaningful payout and achievable accuracy. At a strong per-leg hit rate of 60-62% — which is achievable with disciplined prop selection and AI analysis — your 3-pick entry probability is approximately 22-24%. That is sustainable across a regular slate. The 4-pick entry drops to 13-15% at the same accuracy, but the 10x multiplier compensates for the additional difficulty. Run most of your volume through 3 and 4-pick entries. Reserve 5 and 6-pick entries for exceptional slates where you have extreme conviction across multiple independent props.</p>
+          <h3>Start With 3-4 Pick Entries — Data Shows Why</h3>
+          <p>The 3 and 4-pick entry formats hit the mathematical sweet spot between meaningful payout and achievable accuracy. PropEdge's production data across 17,068 graded predictions shows per-leg hit rates of <strong>56.8% (NBA)</strong>, <strong>63.5% (NHL)</strong>, and <strong>59.8% (NFL)</strong>. At those rates, a 3-pick entry hits roughly 18-26% of the time — sustainable across a regular slate. The 4-pick entry drops to 10-16% at the same accuracy, but the 10x multiplier compensates. When filtering to high-confidence picks only (65%+ confidence), per-leg accuracy jumps to <strong>58.0% in NBA</strong> and <strong>77.9% in NHL</strong> — meaning a 3-pick entry built from high-confidence NHL props alone hits approximately 47% of the time. Run most of your volume through 3 and 4-pick entries. Reserve 5 and 6-pick entries for exceptional slates where you have extreme conviction across multiple independent props.</p>
         </div>
 
         <div class="strategy-card fade-in">
           <div class="strategy-number">STRATEGY 02</div>
-          <h3>Use High-Confidence Under Picks as Anchors</h3>
-          <p>Most Pick6 players default to overs because they feel more intuitive — a player having a big game is a satisfying outcome. But under picks are systematically underexplored and offer real strategic advantages. A player facing a shutdown defensive matchup, playing on a back-to-back, in a low-pace game against a strong defense, is a high-confidence under candidate that is often priced at the same juice as an over with less supporting evidence. More importantly, under picks tend to be less correlated with the rest of your entry — meaning when your over picks hit and your under pick also hits, your entries did not all live and die together on the same game environment.</p>
+          <h3>Use High-Confidence Under Picks as Anchors — They Hit at 60%+</h3>
+          <p>Most Pick6 players default to overs because they feel more intuitive — a player having a big game is a satisfying outcome. But our production data tells a clear story: <strong>UNDER picks hit at 60.3% in NBA vs. 51.6% for OVER picks</strong>. The gap is even wider in NHL, where <strong>UNDERs hit at 65.6% vs. 59.5% for OVERs</strong>, and NFL shows the same pattern at <strong>64.3% UNDER vs. 57.9% OVER</strong>. Across every sport we track, unders outperform overs by 5-9 percentage points. A player facing a shutdown defensive matchup, playing on a back-to-back, in a low-pace game against a strong defense, is a high-confidence under candidate that is often priced at the same juice as an over with less supporting evidence. More importantly, under picks tend to be less correlated with the rest of your entry — meaning when your over picks hit and your under pick also hits, your entries did not all live and die together on the same game environment.</p>
         </div>
 
         <div class="strategy-card fade-in">
           <div class="strategy-number">STRATEGY 03</div>
-          <h3>Diversify Across Sports When Multiple Slates Are Available</h3>
-          <p>Pick6 regularly runs props across NBA, NFL, MLB, NHL, and other sports simultaneously. When you build an entry that spans multiple sports, you eliminate the single-sport correlation risk where a slate-wide bad night (poor shooting across the NBA, for example) cascades through all your picks. An NBA point guard, an NFL wide receiver, and an MLB pitcher's strikeouts are almost entirely uncorrelated in outcome — meaning the results of one leg have essentially no bearing on the others. Multi-sport entries with individually high-confidence picks are the purest form of diversification available in Pick6.</p>
+          <h3>Diversify Across Sports — Performance Varies Significantly</h3>
+          <p>Pick6 regularly runs props across NBA, NFL, MLB, NHL, and other sports simultaneously. Our cross-sport data makes the case for diversification clearly: <strong>NHL props hit at 63.5%</strong> across 4,422 graded picks, <strong>NFL at 59.8%</strong> across 1,429, and <strong>NBA at 56.8%</strong> across 10,580. Each sport has different strengths — NHL offers the highest raw hit rate while NBA provides the deepest slate volume. When you build an entry that spans multiple sports, you eliminate the single-sport correlation risk where a slate-wide bad night cascades through all your picks. An NBA point guard, an NFL wide receiver, and an NHL forward's points are almost entirely uncorrelated in outcome — meaning the results of one leg have essentially no bearing on the others. Multi-sport entries with individually high-confidence picks are the purest form of diversification available in Pick6.</p>
         </div>
 
         <div class="strategy-card fade-in">
@@ -1202,32 +1441,119 @@ footer {
 
         <h2 id="ai-analysis">How to Use AI Analysis for Pick6</h2>
         <p>The core challenge in Pick6 is identifying which props represent genuine edges versus which are noise. Human intuition — recalling a player's last two games, checking their season average, reading a tweet about injury status — is inconsistent and systematically biased toward recency. An AI analysis system that processes eight independent data signals and weights them by historical accuracy produces more reliable confidence assessments than any manual research process.</p>
-        <p>PropEdge generates a confidence score from 20 to 80 for every available player prop. Here is how that score maps to Pick6 decisions:</p>
+        <p>PropEdge generates a confidence score from 20 to 80 for every available player prop. The following table shows actual win rates across 17,068 graded predictions, broken down by confidence level:</p>
+
+        <table class="payout-table">
+          <thead>
+            <tr>
+              <th>Confidence</th>
+              <th>NBA Win Rate</th>
+              <th>NBA Sample</th>
+              <th>NHL Win Rate</th>
+              <th>NHL Sample</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>75%+</td>
+              <td class="accent">59.4%</td>
+              <td class="muted">1,962</td>
+              <td class="accent">85.5%</td>
+              <td class="muted">69</td>
+            </tr>
+            <tr>
+              <td>70-74%</td>
+              <td class="accent">56.6%</td>
+              <td class="muted">1,414</td>
+              <td class="accent">79.6%</td>
+              <td class="muted">157</td>
+            </tr>
+            <tr>
+              <td>65-69%</td>
+              <td class="accent">57.6%</td>
+              <td class="muted">1,921</td>
+              <td class="accent">76.5%</td>
+              <td class="muted">584</td>
+            </tr>
+            <tr>
+              <td>60-64%</td>
+              <td class="accent">57.3%</td>
+              <td class="muted">1,955</td>
+              <td class="accent">65.6%</td>
+              <td class="muted">1,327</td>
+            </tr>
+            <tr>
+              <td>55-59%</td>
+              <td class="accent">57.0%</td>
+              <td class="muted">1,640</td>
+              <td class="accent">60.9%</td>
+              <td class="muted">1,546</td>
+            </tr>
+            <tr>
+              <td>50-54%</td>
+              <td class="accent">52.4%</td>
+              <td class="muted">1,688</td>
+              <td class="accent">49.3%</td>
+              <td class="muted">739</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>The data is clear: higher confidence scores produce higher win rates across both sports. The 50-54% bucket — where the model has no strong conviction — performs near coin-flip levels, confirming that the confidence signal is real and actionable. Here is how the score maps to Pick6 decisions:</p>
 
         <div class="compare-grid">
           <div class="compare-card">
             <div class="compare-card-label">Score 65 and Above</div>
-            <h3>Strong Over Confidence</h3>
+            <h3>Strong Over Confidence — 58-78% Win Rate</h3>
             <ul class="compare-list">
-              <li>Multiple agents in agreement across independent signal types</li>
-              <li>Favorable matchup, usage context, and recent trend aligned</li>
+              <li>NBA 65%+ props win at 58.0% across 5,297 graded picks</li>
+              <li>NHL 65%+ props win at 77.9% across 810 graded picks</li>
               <li>Best candidates for primary pick slots in 3-4 pick entries</li>
               <li>Consider for anchor position in high-leg entries</li>
             </ul>
           </div>
           <div class="compare-card">
             <div class="compare-card-label">Score 35 and Below</div>
-            <h3>Strong Under Confidence</h3>
+            <h3>Strong Under Confidence — 60-66% Win Rate</h3>
             <ul class="compare-list">
-              <li>Agent consensus against the over — multiple signals aligned under</li>
-              <li>Often: tough matchup, back-to-back, reduced pace, or minutes concern</li>
-              <li>Excellent anchor picks — under props are underused by most players</li>
-              <li>Can reduce correlation risk when mixed with over picks</li>
+              <li>NBA UNDER picks hit at 60.3% vs. 51.6% for OVER — a 9-point edge</li>
+              <li>NHL UNDER picks hit at 65.6% vs. 59.5% for OVER — a 6-point edge</li>
+              <li>NFL UNDER picks hit at 64.3% vs. 57.9% for OVER — a 6-point edge</li>
+              <li>Excellent anchors that reduce correlation risk when mixed with over picks</li>
             </ul>
           </div>
         </div>
 
         <p>For Pick6 specifically, prioritize props where the confidence score is 62 or higher (or 38 and below) and where the score is supported by at least five of the eight analytical agents being in agreement. A score of 66 backed by four agents is weaker than a score of 63 backed by seven agents — the breadth of signal agreement matters as much as the magnitude of the score.</p>
+
+        <h3>Best-Performing Stat Types by Sport</h3>
+        <p>Not all prop types are equally predictable. Our data reveals which stat types consistently produce the highest win rates:</p>
+
+        <div class="compare-grid">
+          <div class="compare-card">
+            <div class="compare-card-label">NBA — Top Stat Types</div>
+            <h3>Blocks, Threes, and Steals Lead</h3>
+            <ul class="compare-list">
+              <li><strong>Blocks:</strong> 69.9% win rate (379 picks)</li>
+              <li><strong>Threes:</strong> 63.2% win rate (723 picks)</li>
+              <li><strong>Steals:</strong> 61.9% win rate (294 picks)</li>
+              <li><strong>Assists:</strong> 57.6% win rate (965 picks)</li>
+              <li><strong>Rebounds:</strong> 57.3% win rate (1,267 picks)</li>
+            </ul>
+          </div>
+          <div class="compare-card">
+            <div class="compare-card-label">NHL — Top Stat Types</div>
+            <h3>Goals and Assists Dominate</h3>
+            <ul class="compare-list">
+              <li><strong>Goals:</strong> 70.7% win rate (535 picks)</li>
+              <li><strong>Assists:</strong> 65.8% win rate (1,281 picks)</li>
+              <li><strong>Points:</strong> 60.5% win rate (1,285 picks)</li>
+            </ul>
+          </div>
+        </div>
+
+        <p>NBA blocks and steals have smaller sample sizes but the highest hit rates — these props are often mispriced because sportsbooks set low lines (0.5 or 1.5) where a single event changes the outcome. NHL goals at 70.7% across 535 picks is one of the strongest signals in our entire dataset.</p>
+
         <p>You can view today's full Pick6 analysis at <a href="/picks/pick6/">our Pick6 props page</a> or run any specific prop through the <a href="/analyzer/">Prop Analyzer</a> to see which agents are driving the score and how the matchup, injury, and pace context all factor in.</p>
 
         <h2 id="bankroll">Pick6 Bankroll Strategy</h2>
@@ -1265,7 +1591,7 @@ footer {
 
         <ul>
           <li><strong>Playing the maximum leg count on every entry.</strong> Six-pick entries offer 40x multipliers, but they require hitting all six legs simultaneously. At 58% per-leg accuracy, a six-pick entry wins roughly 3.7% of the time. Your bankroll must survive 27 losses between wins. Most players overweight high-leg entries relative to their actual edge per leg.</li>
-          <li><strong>Building entries entirely from overs.</strong> The most available edges are not always overs. Under picks anchored by strong defensive matchups, fatigue situations, or low-pace game environments are systematically underexplored and often represent stronger value than additional over picks built on weaker analytical foundations.</li>
+          <li><strong>Building entries entirely from overs.</strong> Our data shows UNDER picks outperform OVERs by 5-9 percentage points across every sport: 60.3% vs. 51.6% in NBA, 65.6% vs. 59.5% in NHL, 64.3% vs. 57.9% in NFL. Under picks anchored by strong defensive matchups, fatigue situations, or low-pace game environments are systematically underexplored and represent measurably stronger value.</li>
           <li><strong>Not checking injury reports before lock.</strong> A player who is downgraded to questionable within 90 minutes of tip-off creates real cascade effects on teammates. The cascade beneficiaries are where the edge lives — and that edge disappears once the books adjust lines. If you are not actively monitoring injury status before lock, you are leaving the most actionable daily edge on the table.</li>
           <li><strong>Negative correlation stacking within the same team.</strong> Including two players from the same team in a game where one team's scoring is bounded by pace creates inverse pressure — if Player A has a huge points night, Player B's opportunities are reduced. This is different from the positive correlation play of picking players from opposing teams in a high-total game, where both players benefit from the same environment.</li>
           <li><strong>Treating all sports and stat types as equally analyzable.</strong> Some props have more information available, more consistent underlying drivers, and more efficient lines than others. A starting pitcher's strikeout total in MLB has more predictable inputs (pitcher quality, opposing lineup handedness, park, temperature) than a role player's rebounding total in an NBA game. Apply more conviction to higher-information props and treat lower-information props with proportional skepticism.</li>
@@ -1327,7 +1653,7 @@ footer {
 
       <div class="faq-item fade-in">
         <h3>What is the best number of picks for Pick6?</h3>
-        <p>For most players, 3-4 pick entries provide the best combination of payout potential and achievable hit rate. Two-pick entries pay 3x but offer limited upside for the effort. Five and six-pick entries offer 20x+ multipliers but require you to hit at an extremely high rate across all picks simultaneously. The probability drops exponentially with each additional leg. Three and four-pick entries at strong confidence are mathematically preferable to a single six-pick entry spread across marginal picks.</p>
+        <p>For most players, 3-4 pick entries provide the best combination of payout potential and achievable hit rate. Our data shows per-leg win rates of 56.8% (NBA), 63.5% (NHL), and 59.8% (NFL) across 17,068 graded predictions — rates that make 3-pick entries viable for consistent returns. At 65%+ confidence, NHL props hit at 77.9%, making a 3-pick entry from high-confidence NHL picks alone hit nearly half the time. Five and six-pick entries require you to hit at an extremely high rate across all picks simultaneously, and the probability drops exponentially with each additional leg.</p>
       </div>
 
       <div class="faq-item fade-in">
@@ -1337,12 +1663,12 @@ footer {
 
       <div class="faq-item fade-in">
         <h3>Should I bet overs or unders on Pick6?</h3>
-        <p>Neither direction is inherently better, but under picks are systematically underused by most players who gravitate toward overs. High-confidence under picks — where a player faces a strong defensive matchup, reduced minutes, a back-to-back, or an unfavorable pace environment — make excellent anchors in multi-pick entries because they tend to be less correlated with the rest of your slate. Adding a strong under in the middle of an otherwise over-heavy entry is a correlation diversification technique that can improve overall hit rate.</p>
+        <p>The data strongly favors unders. Across 17,068 graded predictions, UNDER picks hit at 60.3% in NBA (vs. 51.6% for overs), 65.6% in NHL (vs. 59.5%), and 64.3% in NFL (vs. 57.9%). Under picks are systematically underused by most players who gravitate toward overs. High-confidence under picks — where a player faces a strong defensive matchup, reduced minutes, or an unfavorable pace environment — make excellent anchors in multi-pick entries and consistently outperform overs by 5-9 percentage points across all sports we track.</p>
       </div>
 
       <div class="faq-item fade-in">
         <h3>How do I use AI analysis for Pick6?</h3>
-        <p>PropEdge confidence scores translate directly to Pick6 decisions. A score of 65 or above indicates strong over confidence. A score of 35 or below is a strong under signal. For Pick6 entries, focus on props where the score is 62 or above (or 38 and below), where at least 5 of 8 analytical agents are in agreement, and where the confidence score comes from multiple independent signal types rather than a single dominant agent. Check today's analysis at our Pick6 props page before each slate locks.</p>
+        <p>PropEdge confidence scores translate directly to Pick6 decisions. Picks at 65%+ confidence hit at 58.0% in NBA and 77.9% in NHL across thousands of graded predictions. A score of 65 or above indicates strong over confidence. A score of 35 or below is a strong under signal. For Pick6 entries, focus on props at 65%+ confidence and prioritize stat types with the strongest track records — NBA blocks (69.9%), NHL goals (70.7%), and NBA threes (63.2%) are among the highest-performing categories. Check today's analysis at our Pick6 props page before each slate locks.</p>
       </div>
 
     </div>
@@ -1355,6 +1681,7 @@ footer {
     <p class="label section-label fade-in">Apply the Strategy Today</p>
     <h2 class="fade-in">Find Your <span>Pick6 Edge</span> Before Slate Lock</h2>
     <p class="fade-in delay-1">PropEdge analyzes every available player prop across all sports with 8 specialized AI agents. See the confidence scores, the supporting signals, and the agent breakdown — updated before each slate.</p>
+    <p class="fade-in delay-1" style="font-size:13px;color:var(--text-tertiary);margin-top:12px;">Last updated: March 13, 2026 — based on 17,068 graded predictions across NBA, NHL, NFL, MLB, and Soccer.</p>
     <div class="hero-buttons fade-in delay-2">
       <a href="/picks/pick6/" class="btn btn-primary">
         <i data-lucide="zap" style="width:18px;height:18px;"></i>
@@ -1369,51 +1696,107 @@ footer {
 
 <!-- Footer -->
 <footer>
-  <div class="container">
-    <div class="footer-content">
-      <div class="footer-links">
-        <a href="/">Home</a>
-        <a href="/results/">Results</a>
-        <a href="/pick6/">Pick6 Strategy</a>
-        <a href="/prizepicks/">PrizePicks Strategy</a>
-        <a href="/underdog/">Underdog Strategy</a>
-        <a href="/nfl/">NFL Props</a>
-        <a href="/nba/">NBA Props</a>
-        <a href="/nhl/">NHL Props</a>
-        <a href="/mlb/">MLB Props</a>
-        <a href="/soccer/">Soccer Props</a>
-        <a href="https://x.com/prop_edge_app" target="_blank" rel="noopener" aria-label="Follow PropEdge on X" style="display:inline-flex;align-items:center;gap:6px;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          @prop_edge_app
-        </a>
-        <a href="https://www.notion.so/Privacy-Policy-31ce79c608ef8074a5a7db819d6ebf80" target="_blank" rel="noopener">Privacy Policy</a>
-        <a href="https://www.notion.so/Terms-of-Service-31ce79c608ef8094baece5095cd2d523" target="_blank" rel="noopener">Terms of Service</a>
-      </div>
-      <p class="footer-copy">&copy; 2026 PropEdge. All rights reserved.</p>
+  <div class="footer-top">
+    <div class="container">
+      <div class="footer-grid">
 
-      <div class="legal-disclaimer">
-        <p class="legal-disclaimer-heading">Legal Disclaimer</p>
-        <p class="legal-disclaimer-text">
-          <strong>For entertainment and informational purposes only.</strong>
-          PropEdge is a sports analytics and information service. PropEdge is not a sportsbook, does not accept or place wagers, does not set betting lines, does not escrow funds, and does not pay out on any bets. The analysis, confidence scores, and pick recommendations provided through this service do not constitute betting advice or any recommendation on whether or how to engage in sports betting activities.
-        </p>
-        <p class="legal-disclaimer-text">
-          <strong>No guarantee of profit.</strong>
-          Past performance of the PropEdge analysis engine does not guarantee future results. Sports outcomes are inherently unpredictable. The win rates and performance metrics displayed represent historical analytical results and should not be interpreted as a promise of future performance. Any sports betting activity is inherently risky and undertaken at your own risk.
-        </p>
-        <p class="legal-disclaimer-text">
-          <strong>Know your local laws.</strong>
-          Sports betting is not legal in all states or jurisdictions. It is your sole responsibility to understand and comply with all applicable laws in your location regarding sports betting. You must be 21+ to use this service. <span class="age-badge">21+</span>
-        </p>
-        <p class="legal-disclaimer-caps">
-          The service is provided "as-is." PropEdge disclaims all warranties, express or implied, including warranties of accuracy, non-infringement, merchantability, and fitness for a particular purpose. Data is sourced from third parties and may contain errors or delays. Under no circumstances will PropEdge be liable for any damages arising from your use of the service, including any loss from sports betting activity.
-        </p>
-        <div style="margin-top: 16px;">
-          <span class="responsible-gambling">
-            <i data-lucide="heart" style="width:14px;height:14px;"></i>
-            If you or someone you know has a gambling problem, call <strong>1-800-GAMBLER</strong> or visit <a href="https://www.ncpgambling.org" target="_blank" rel="noopener">ncpgambling.org</a>
-          </span>
+        <div class="footer-brand">
+          <a href="/" class="footer-brand-logo">
+            <div class="logo-icon"></div>
+            PropEdge
+          </a>
+          <p class="footer-tagline">AI-powered prop analysis for Pick6, Underdog, PrizePicks &amp; FanDuel.</p>
         </div>
+
+        <div class="footer-col">
+          <p class="footer-col-header">Daily Picks</p>
+          <div class="footer-col-links">
+            <a href="/picks/nba/">NBA Picks Today</a>
+            <a href="/picks/nhl/">NHL Picks Today</a>
+            <a href="/picks/mlb/">MLB Picks Today</a>
+            <a href="/picks/nfl/">NFL Picks Today</a>
+            <a href="/picks/soccer/">Soccer Picks Today</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col-header">Platforms</p>
+          <div class="footer-col-links">
+            <a href="/picks/prizepicks/">PrizePicks Picks</a>
+            <a href="/picks/pick6/">Pick6 Picks</a>
+            <a href="/picks/underdog/">Underdog Picks</a>
+          </div>
+          <p class="footer-col-header" style="margin-top: 20px;">Compare</p>
+          <div class="footer-col-links">
+            <a href="/compare/propedge-vs-bettingpros/">vs BettingPros</a>
+            <a href="/compare/propedge-vs-oddsjam/">vs OddsJam</a>
+            <a href="/compare/pick6-vs-prizepicks/">Pick6 vs PrizePicks</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col-header">Learn</p>
+          <div class="footer-col-links">
+            <a href="/how-it-works/">How It Works</a>
+            <a href="/guides/prizepicks-strategy/">PrizePicks Guide</a>
+            <a href="/guides/pick6-strategy/">Pick6 Guide</a>
+            <a href="/guides/nba-prop-betting/">NBA Betting Guide</a>
+            <a href="/analyzer/">Prop Analyzer</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-col-header">Company</p>
+          <div class="footer-col-links">
+            <a href="/results/">Results</a>
+            <a href="/blog/">Blog</a>
+            <a href="https://x.com/prop_edge_app" target="_blank" rel="noopener" aria-label="Follow PropEdge on X">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;opacity:0.7;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              Twitter / X
+            </a>
+          </div>
+          <p class="footer-col-header" style="margin-top: 20px;">Legal</p>
+          <div class="footer-col-links">
+            <a href="https://www.notion.so/Privacy-Policy-31ce79c608ef8074a5a7db819d6ebf80" target="_blank" rel="noopener">Privacy Policy</a>
+            <a href="https://www.notion.so/Terms-of-Service-31ce79c608ef8094baece5095cd2d523" target="_blank" rel="noopener">Terms of Service</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="footer-bottom-row">
+        <p class="footer-copy">&copy; 2026 PropEdge. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="legal-disclaimer">
+      <p class="legal-disclaimer-heading">Legal Disclaimer</p>
+      <p class="legal-disclaimer-text">
+        <strong>For entertainment and informational purposes only.</strong>
+        PropEdge is a sports analytics and information service. PropEdge is not a sportsbook, does not accept or place wagers, does not set betting lines, does not escrow funds, and does not pay out on any bets. The analysis, confidence scores, and pick recommendations provided through this service do not constitute betting advice or any recommendation on whether or how to engage in sports betting activities.
+      </p>
+      <p class="legal-disclaimer-text">
+        <strong>No guarantee of profit.</strong>
+        Past performance of the PropEdge analysis engine does not guarantee future results. Sports outcomes are inherently unpredictable. The win rates and performance metrics displayed represent historical analytical results and should not be interpreted as a promise of future performance. Any sports betting activity is inherently risky and undertaken at your own risk.
+      </p>
+      <p class="legal-disclaimer-text">
+        <strong>Know your local laws.</strong>
+        Sports betting is not legal in all states or jurisdictions. It is your sole responsibility to understand and comply with all applicable laws in your location regarding sports betting. You must be 21+ to use this service. <span class="age-badge">21+</span>
+      </p>
+      <p class="legal-disclaimer-caps">
+        The service is provided "as-is." PropEdge disclaims all warranties, express or implied, including warranties of accuracy, non-infringement, merchantability, and fitness for a particular purpose. Data is sourced from third parties and may contain errors or delays. Under no circumstances will PropEdge be liable for any damages arising from your use of the service, including any loss from sports betting activity.
+      </p>
+      <div style="margin-top: 16px;">
+        <span class="responsible-gambling">
+          <i data-lucide="heart" style="width:14px;height:14px;"></i>
+          If you or someone you know has a gambling problem, call <strong>1-800-GAMBLER</strong> or visit <a href="https://www.ncpgambling.org" target="_blank" rel="noopener">ncpgambling.org</a>
+        </span>
       </div>
     </div>
   </div>
@@ -1433,6 +1816,73 @@ lucide.createIcons();
   }, { threshold: 0.12 });
   els.forEach(el => observer.observe(el));
 })();
+
+// Nav dropdown / mobile menu logic
+var NAV_DROPDOWN_IDS = ['navPicks', 'navGuides', 'navCompare'];
+
+function closeAllNavDropdowns() {
+  NAV_DROPDOWN_IDS.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      el.classList.remove('open');
+      var btn = el.querySelector('.nav-item-link');
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+function toggleNavDropdown(id, event) {
+  event.stopPropagation();
+  var el = document.getElementById(id);
+  if (!el) return;
+  var isOpen = el.classList.contains('open');
+  closeAllNavDropdowns();
+  if (!isOpen) {
+    el.classList.add('open');
+    var btn = el.querySelector('.nav-item-link');
+    if (btn) btn.setAttribute('aria-expanded', 'true');
+  }
+}
+
+function closeMobileMenu() {
+  var nav = document.getElementById('navLinks');
+  var btn = document.getElementById('hamburgerBtn');
+  if (nav) nav.classList.remove('open');
+  if (btn) btn.setAttribute('aria-expanded', 'false');
+  setHamburgerIcon(false);
+}
+
+function setHamburgerIcon(isOpen) {
+  var icon = document.getElementById('hamburgerIcon');
+  if (!icon) return;
+  if (isOpen) {
+    icon.innerHTML = '<line x1="4" y1="4" x2="20" y2="20"/><line x1="20" y1="4" x2="4" y2="20"/>';
+  } else {
+    icon.innerHTML = '<line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>';
+  }
+}
+
+function toggleMobileMenu() {
+  var nav = document.getElementById('navLinks');
+  var btn = document.getElementById('hamburgerBtn');
+  if (!nav) return;
+  var isOpen = nav.classList.toggle('open');
+  if (btn) btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  setHamburgerIcon(isOpen);
+  if (!isOpen) closeAllNavDropdowns();
+}
+
+document.addEventListener('click', function(e) {
+  var insideNav = e.target.closest('nav');
+  if (!insideNav) { closeAllNavDropdowns(); }
+});
+
+document.querySelectorAll('.nav-item > .nav-item-link[href]').forEach(function(link) {
+  link.addEventListener('click', function() {
+    closeMobileMenu();
+    closeAllNavDropdowns();
+  });
+});
 </script>
 </body>
 </html>

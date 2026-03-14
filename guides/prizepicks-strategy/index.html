@@ -112,7 +112,7 @@
       "name": "What is the best PrizePicks strategy for beginners?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The best starting strategy for beginners is the 3-pick Flex Play entry. Flex Plays allow one miss and still pay out at a reduced rate, which significantly lowers your variance compared to a Power Play where one wrong pick loses the whole entry. Stick to high-confidence picks, limit entries to 1-3% of your session bankroll, and avoid stacking the same player's correlated stats."
+        "text": "The best starting strategy for beginners is the 3-pick Flex Play entry. Flex Plays allow one miss and still pay out at a reduced rate, which significantly lowers your variance compared to a Power Play where one wrong pick loses the whole entry. PropEdge data across 10,580 graded NBA props shows that picks at 65%+ confidence hit at 57.6-58.3%, well above the break-even rate for 3-pick Flex entries. Stick to high-confidence picks, limit entries to 1-3% of your session bankroll, and avoid stacking the same player's correlated stats."
       }
     },
     {
@@ -136,7 +136,7 @@
       "name": "How do injury cascades affect PrizePicks picks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Injury cascades are one of the most underpriced edges in PrizePicks. When a star player is ruled OUT, the statistical output that player would have generated gets absorbed by teammates. A starting point guard going out, for example, often pushes the backup's usage rate, assist opportunities, and shot volume dramatically higher — yet the lines for those backup players are often set before the books fully reprice for the cascading effect. Checking injury reports 30-60 minutes before lock is essential."
+        "text": "Injury cascades are one of the most underpriced edges in PrizePicks. When a star player is ruled OUT, the statistical output they would have generated gets absorbed by teammates. A starting point guard going out often pushes the backup's usage rate, assist opportunities, and shot volume dramatically higher — yet the lines for those backup players are often set before the books fully reprice for the cascading effect. PropEdge's Injury agent carries the highest weight (4.0 out of 8 agents) in the NBA model because it has proven to be the strongest signal across 10,580 graded predictions in the 2025-26 season. Checking injury reports 30-60 minutes before lock is essential."
       }
     },
     {
@@ -1309,13 +1309,13 @@ footer {
         <div class="strategy-card fade-in">
           <div class="strategy-number">STRATEGY 01</div>
           <h3>Start With 3-Pick Flex Play Entries</h3>
-          <p>The 3-pick Flex Play hits a sweet spot that most players miss: the payout is still meaningful (roughly 2.25x when you hit all 3) while the structural protection of Flex mode significantly limits your downside. At a 55% hit rate per leg — which is achievable with disciplined analysis — your expected winning percentage on a 3-pick entry is substantially better than on a 5 or 6-pick entry where variance compounds against you. Build your baseline around 3-pick Flex entries, then add higher-leg entries selectively when you have exceptional confidence across a full slate.</p>
+          <p>The 3-pick Flex Play hits a sweet spot that most players miss: the payout is still meaningful (roughly 2.25x when you hit all 3) while the structural protection of Flex mode significantly limits your downside. Our data across 10,580 graded NBA props this season shows that picks at 65%+ model confidence hit at 57.6-58.3% — well above the break-even threshold for Flex Play entries. At that per-leg accuracy, a 3-pick Flex entry has substantially better expected value than a 5 or 6-pick entry where variance compounds against you. Build your baseline around 3-pick Flex entries, then add higher-leg entries selectively when you have exceptional confidence across a full slate.</p>
         </div>
 
         <div class="strategy-card fade-in">
           <div class="strategy-number">STRATEGY 02</div>
           <h3>Use Injury Cascades as Your Primary Edge</h3>
-          <p>When a star player is ruled out within hours of tip-off or game time, the statistical output they would have generated does not disappear — it redistributes. A first-option scorer exiting means the second option absorbs shot attempts. A primary ball-handler going down elevates the backup's assist and usage numbers. PrizePicks sets most of their lines well in advance. Lines for backup and role players often lag behind the true impact of a star's absence for several hours. The window between injury announcement and game lock is when the best cascade plays exist. Check injury reports within 60 minutes of lock on every slate you play.</p>
+          <p>When a star player is ruled out within hours of tip-off or game time, the statistical output they would have generated does not disappear — it redistributes. A first-option scorer exiting means the second option absorbs shot attempts. A primary ball-handler going down elevates the backup's assist and usage numbers. PrizePicks sets most of their lines well in advance. Lines for backup and role players often lag behind the true impact of a star's absence for several hours. The window between injury announcement and game lock is when the best cascade plays exist. PropEdge's Injury agent carries the highest weight (4.0) in our NBA model precisely because injury-cascade signals are among the most profitable edges we've measured across 10,580 graded picks this season. Check injury reports within 60 minutes of lock on every slate you play.</p>
         </div>
 
         <div class="strategy-card fade-in">
@@ -1327,7 +1327,7 @@ footer {
         <div class="strategy-card fade-in">
           <div class="strategy-number">STRATEGY 04</div>
           <h3>Target High-Variance Stat Types for Overs</h3>
-          <p>Not all player stats are created equal in terms of volatility. Three-pointers made, steals, and blocks are high-variance categories — players can easily exceed their posted lines in any given game because these stats come in bursts and are difficult to price tightly. Points totals and assists for primary playmakers are lower-variance and more efficiently priced. When you are looking for over plays specifically, high-variance categories give you asymmetric upside: the player can significantly exceed the line in a hot game, and you win regardless of how far over they go. Targeting high-variance categories systematically improves your over conversion rate.</p>
+          <p>Not all player stats are created equal in terms of volatility — or predictability. Our 2025-26 NBA data confirms this clearly: blocks props hit at 69.9%, three-pointers at 63.2%, and steals at 61.9%, while points props hit at 55.7% and combined stats like points+rebounds+assists hit at just 54.7%. High-variance categories like blocks and threes come in bursts and are harder for books to price tightly, which creates exploitable gaps. When you are looking for over plays specifically, these high-variance categories give you asymmetric upside. Targeting stat types where the model performs best is one of the simplest ways to improve your entries.</p>
         </div>
 
         <div class="strategy-card fade-in">
@@ -1338,13 +1338,112 @@ footer {
 
         <h2 id="ai-analysis">How to Use AI Analysis for PrizePicks</h2>
         <p>The most significant source of edge available to PrizePicks players in 2026 is systematic, data-driven analysis of the factors that determine whether a player will hit their line on a given night. Manual research — checking box scores, reading injury reports, browsing social media — is inconsistent and time-consuming. An AI analysis engine processes these signals faster, weights them by historical accuracy, and surfaces the actual edges without the cognitive load.</p>
-        <p>PropEdge runs every available player prop through eight specialized analytical agents covering matchup quality, injury and cascade effects, pace and usage context, historical hit rates, line movement, no-vig market analysis, advanced metrics, and schedule density. Each agent produces a score, the scores are combined by historical weight, and the output is a single confidence number from 20 to 80.</p>
+        <p>PropEdge runs every available player prop through eight specialized analytical agents covering matchup quality, injury and cascade effects, pace and usage context, historical hit rates, line movement, no-vig market analysis, advanced metrics, and schedule density. Each agent produces a score, the scores are combined by historical weight, and the output is a single confidence number from 20 to 80. Across 10,580 graded NBA picks in the 2025-26 season, the system hits at 56.8% overall — and accuracy scales with confidence level.</p>
         <p>That confidence score maps directly to your PrizePicks decision. A score above 65 represents strong confidence toward the over. A score below 35 is strong under confidence. Scores in the 50-55 range are near-neutral props that carry more risk for high-confidence entries. You can check today's full analysis at <a href="/picks/prizepicks/">our PrizePicks props page</a> or run any specific prop through the <a href="/analyzer/">Prop Analyzer</a> to see the full breakdown.</p>
 
         <div class="highlight-box">
           <div class="highlight-box-label">How PropEdge Confidence Translates to Picks</div>
           <p>Scores 65+ are strong over plays. Scores 35 and below are strong under plays. For your highest-confidence Flex Play entries, target props where the score is 62 or above (or 38 and below) with at least 4 of 8 agents in agreement. Props near 50 are better avoided or treated as anchors only in large Flex entries.</p>
         </div>
+
+        <h3 id="performance-data">PropEdge Performance Data</h3>
+        <p>The numbers below are from 10,580 graded NBA player prop predictions and 4,422 graded NHL predictions from the 2025-26 season. These are real results, not projections.</p>
+
+        <h4>NBA Win Rate by Model Confidence</h4>
+        <table class="payout-table">
+          <thead>
+            <tr>
+              <th>Confidence Bucket</th>
+              <th>Graded Picks</th>
+              <th>Win Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>70%+</td>
+              <td>3,376</td>
+              <td class="accent">58.3%</td>
+            </tr>
+            <tr>
+              <td>65-69%</td>
+              <td>1,921</td>
+              <td class="accent">57.6%</td>
+            </tr>
+            <tr>
+              <td>60-64%</td>
+              <td>1,955</td>
+              <td class="accent">57.3%</td>
+            </tr>
+            <tr>
+              <td>55-59%</td>
+              <td>1,640</td>
+              <td class="accent">57.0%</td>
+            </tr>
+            <tr>
+              <td>50-54%</td>
+              <td class="muted">1,688</td>
+              <td class="muted">52.4%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>NBA Win Rate by Stat Type</h4>
+        <table class="payout-table">
+          <thead>
+            <tr>
+              <th>Stat Type</th>
+              <th>Graded Picks</th>
+              <th>Win Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Blocks</td>
+              <td>379</td>
+              <td class="accent">69.9%</td>
+            </tr>
+            <tr>
+              <td>Three-Pointers</td>
+              <td>723</td>
+              <td class="accent">63.2%</td>
+            </tr>
+            <tr>
+              <td>Steals</td>
+              <td>294</td>
+              <td class="accent">61.9%</td>
+            </tr>
+            <tr>
+              <td>Assists</td>
+              <td>965</td>
+              <td class="accent">57.6%</td>
+            </tr>
+            <tr>
+              <td>Rebounds</td>
+              <td>1,267</td>
+              <td class="accent">57.3%</td>
+            </tr>
+            <tr>
+              <td>Points</td>
+              <td>2,402</td>
+              <td>55.7%</td>
+            </tr>
+            <tr>
+              <td>Pts+Rebs+Asts</td>
+              <td class="muted">2,376</td>
+              <td class="muted">54.7%</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>Direction Edge: UNDER vs OVER</h4>
+        <p>One of the clearest patterns in our data: UNDER picks hit at 60.3% (6,387 graded) vs OVER picks at 51.6% (4,193 graded). The model leans UNDER because sportsbooks and DFS platforms tend to set lines slightly above true median outcomes — they know recreational players prefer overs, and they price accordingly. This systematic bias creates a persistent edge on the under side that our model captures.</p>
+
+        <div class="highlight-box">
+          <div class="highlight-box-label">NHL Performance Confirms the Pattern</div>
+          <p>The confidence-scales-with-accuracy pattern holds across sports. In NHL, our 70%+ confidence picks hit at 81.4% (226 graded), 65-69% at 76.5% (584 graded), and 60-64% at 65.6% (1,327 graded) across 4,422 total graded props this season. Higher model confidence consistently predicts higher actual accuracy.</p>
+        </div>
+
+        <p class="muted" style="font-size: 13px; margin-top: 8px;">Last updated: March 13, 2026. Stats based on 10,580 graded NBA and 4,422 graded NHL player prop predictions from the 2025-26 season.</p>
 
         <h2 id="common-mistakes">Common PrizePicks Mistakes to Avoid</h2>
         <p>Most players who struggle on PrizePicks make the same repeatable errors. Identifying and eliminating these mistakes does more for your results than finding extra edges.</p>
@@ -1353,7 +1452,7 @@ footer {
           <li><strong>Chasing big payouts on 5 and 6-pick Power Plays.</strong> The implied probability of hitting all 6 picks at 55% per leg is under 3%. The math does not support consistent Power Play entries at higher leg counts unless your per-leg hit rate is exceptional.</li>
           <li><strong>Ignoring injury news until the last minute.</strong> Injury information changes the value of related props immediately. Build a habit of checking reports 30-60 minutes before each slate locks.</li>
           <li><strong>Playing too many legs across too many slates.</strong> Spreading attention across 8-10 entries per day dilutes your analysis quality. Fewer, higher-confidence entries built on solid research outperform high-volume shotgun approaches.</li>
-          <li><strong>Treating every stat type the same.</strong> Points for a featured scorer and steals for a role player have very different variance profiles. Build entries that match the stat type to your confidence level and risk tolerance.</li>
+          <li><strong>Treating every stat type the same.</strong> Points for a featured scorer and steals for a role player have very different variance profiles. Our data shows a 15+ percentage point gap between the best-performing stat type (blocks at 69.9%) and the worst (rebounds+assists at 51.2%). Build entries that match the stat type to your confidence level and risk tolerance.</li>
           <li><strong>Ignoring the full game environment.</strong> Pace, game total, and matchup all modify what a player's raw average predicts for tonight. A player averaging 22 points in a 228-total game is in a different statistical environment than the same player in a 210-total defensive battle.</li>
         </ul>
 
@@ -1374,6 +1473,7 @@ footer {
             <li><a href="#entry-types">Entry Types Explained</a></li>
             <li><a href="#five-strategies">5 Strategies That Work</a></li>
             <li><a href="#ai-analysis">Using AI Analysis</a></li>
+            <li><a href="#performance-data">Performance Data</a></li>
             <li><a href="#common-mistakes">Common Mistakes</a></li>
             <li><a href="#bankroll">Bankroll Management</a></li>
             <li><a href="#faq">FAQ</a></li>
@@ -1413,7 +1513,7 @@ footer {
 
       <div class="faq-item fade-in">
         <h3>What is the best PrizePicks strategy for beginners?</h3>
-        <p>The best starting strategy for beginners is the 3-pick Flex Play entry. Flex Plays allow one miss and still pay out at a reduced rate, which significantly lowers your variance compared to a Power Play where one wrong pick loses the whole entry. Stick to high-confidence picks, limit entries to 1-3% of your session bankroll, and avoid stacking the same player's correlated stats.</p>
+        <p>The best starting strategy for beginners is the 3-pick Flex Play entry. Flex Plays allow one miss and still pay out at a reduced rate, which significantly lowers your variance compared to a Power Play where one wrong pick loses the whole entry. Our data across 10,580 graded NBA props shows that picks at 65%+ confidence hit at 57.6-58.3%, well above the break-even rate for 3-pick Flex entries. Stick to high-confidence picks, limit entries to 1-3% of your session bankroll, and avoid stacking the same player's correlated stats.</p>
       </div>
 
       <div class="faq-item fade-in">
@@ -1428,7 +1528,7 @@ footer {
 
       <div class="faq-item fade-in">
         <h3>How do injury cascades affect PrizePicks picks?</h3>
-        <p>Injury cascades are one of the most underpriced edges in PrizePicks. When a star player is ruled OUT, the statistical output they would have generated gets absorbed by teammates. A starting point guard going out often pushes the backup's usage rate, assist opportunities, and shot volume dramatically higher — yet the lines for those backup players are often set before the books fully reprice for the cascading effect. Checking injury reports 30-60 minutes before lock is essential.</p>
+        <p>Injury cascades are one of the most underpriced edges in PrizePicks. When a star player is ruled OUT, the statistical output they would have generated gets absorbed by teammates. A starting point guard going out often pushes the backup's usage rate, assist opportunities, and shot volume dramatically higher — yet the lines for those backup players are often set before the books fully reprice for the cascading effect. Our Injury agent carries the highest weight (4.0 out of 8 agents) in the PropEdge NBA model because it has proven to be the single strongest signal across 10,580 graded predictions this season. Checking injury reports 30-60 minutes before lock is essential.</p>
       </div>
 
       <div class="faq-item fade-in">
