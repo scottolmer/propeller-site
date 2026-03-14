@@ -1381,68 +1381,77 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   padding: 100px 0;
 }
 
-.steps {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
-}
-
-@media (min-width: 768px) {
-  .steps { grid-template-columns: 1fr 1fr 1fr; }
-}
-
-.step {
-  padding: 32px;
-  text-align: center;
-  position: relative;
-}
-
-.step-number {
-  width: 48px;
-  height: 48px;
-  background: var(--accent-muted);
-  border: 2px solid var(--accent);
-  border-radius: 50%;
+.pipeline {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 0;
+  padding: 20px 0;
+}
+
+.pipeline-node {
+  text-align: center;
+  padding: 28px 20px;
+  background: var(--card);
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  min-width: 140px;
+  position: relative;
+}
+
+.pipeline-icon {
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.pipeline-label {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.pipeline-sub {
+  font-size: 12px;
+  color: var(--text-secondary);
+  max-width: 140px;
+  margin: 0 auto;
+}
+
+.pipeline-arrow {
+  padding: 0 4px;
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+.pipeline-node-result {
+  border-color: var(--glass-border-active);
+  background: rgba(249, 115, 22, 0.06);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.pipeline-score {
   font-family: var(--font-mono);
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 800;
   color: var(--accent);
-  margin: 0 auto 20px;
+  line-height: 1;
+  margin-bottom: 8px;
+  text-shadow: 0 0 24px rgba(249, 115, 22, 0.5);
 }
 
-.step h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-
-.step p { font-size: 14px; }
-
-@media (min-width: 768px) {
-  .step:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    top: 56px;
-    right: -12px;
-    width: 24px;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent), rgba(249, 115, 22, 0.2));
-    border-radius: 2px;
+@media (max-width: 768px) {
+  .pipeline {
+    flex-direction: column;
+    gap: 0;
   }
-  /* Arrow tip */
-  .step:not(:last-child)::before {
-    content: '';
-    position: absolute;
-    top: 52px;
-    right: -14px;
-    width: 0;
-    height: 0;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
-    border-left: 7px solid rgba(249, 115, 22, 0.3);
-    z-index: 1;
+  .pipeline-arrow {
+    transform: rotate(90deg);
+    padding: 4px 0;
+  }
+  .pipeline-node {
+    min-width: 200px;
   }
 }
 
@@ -1694,6 +1703,86 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   margin-top: 24px;
   font-size: 13px;
   color: var(--text-tertiary);
+}
+
+/* ── Comparison table: dim competitors, highlight PropEdge ── */
+.compare-table tbody td.competitor-cell {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.compare-table:hover tbody td.competitor-cell {
+  opacity: 0.75;
+}
+
+.compare-table tbody .col-propedge-cell {
+  background: rgba(249, 115, 22, 0.08);
+  border-left: 1px solid var(--glass-border-active);
+  border-right: 1px solid var(--glass-border-active);
+  opacity: 1;
+  box-shadow: inset 2px 0 0 0 rgba(249, 115, 22, 0.4);
+}
+
+/* ── Hero pulse strip ── */
+.hero-pulse {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 28px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.hero-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--success);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hero-pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--success);
+  opacity: 0.4;
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.4; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* ── Pricing Pro card animated border ── */
+.pricing-card-pro {
+  position: relative;
+}
+
+.pricing-card-pro::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 17px;
+  padding: 1px;
+  background: linear-gradient(135deg, var(--accent), rgba(249, 115, 22, 0.2), var(--accent));
+  background-size: 300% 300%;
+  animation: border-glow 4s ease-in-out infinite;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes border-glow {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 /* ──────────── FAQ ──────────── */
@@ -2270,6 +2359,10 @@ footer {
           </div>
         </div>
         <p class="fade-in delay-2">No odds. No jargon. Just simple confidence scores powered by 8 AI agents. Open the app, see the top picks for Pick6, Underdog, PrizePicks, or FanDuel — and know exactly why each one is strong.</p>
+        <div class="hero-pulse fade-in delay-2">
+          <span class="hero-pulse-dot"></span>
+          <span class="hero-pulse-text" id="hero-pulse-text">Analyzing games now</span>
+        </div>
         <div class="hero-buttons fade-in delay-3">
           <a href="#pricing" class="store-badge" aria-label="Download on the App Store">
             <svg viewBox="0 0 120 40" width="150" height="50" xmlns="http://www.w3.org/2000/svg">
@@ -2540,22 +2633,30 @@ footer {
 <section class="how-it-works">
   <div class="container">
     <p class="label section-label fade-in">How It Works</p>
-    <h2 class="section-title fade-in">Three Steps to Smarter Picks</h2>
-    <div class="steps">
-      <div class="card step fade-in">
-        <div class="step-number">1</div>
-        <h3>Open</h3>
-        <p>See today's highest-confidence props ranked by our engine. Sorted by confidence — the best picks are always at the top.</p>
+    <h2 class="section-title fade-in">From Raw Data to a Confidence Score in Seconds</h2>
+    <div class="pipeline">
+      <div class="pipeline-node fade-in">
+        <div class="pipeline-icon"><i data-lucide="database" width="28" height="28"></i></div>
+        <div class="pipeline-label">Live Data</div>
+        <div class="pipeline-sub">Odds, injuries, stats, lineups</div>
       </div>
-      <div class="card step fade-in" style="transition-delay:0.15s">
-        <div class="step-number">2</div>
-        <h3>Tap</h3>
-        <p>Tap any prop to see the full breakdown — which agents agree, what's driving the score, and how confident the engine is.</p>
+      <div class="pipeline-arrow fade-in delay-1"><svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10 L30 10 M25 4 L32 10 L25 16" stroke="#F97316" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+      <div class="pipeline-node fade-in delay-1">
+        <div class="pipeline-icon"><i data-lucide="brain" width="28" height="28"></i></div>
+        <div class="pipeline-label">8 AI Agents</div>
+        <div class="pipeline-sub">Each scores the prop independently</div>
       </div>
-      <div class="card step fade-in" style="transition-delay:0.3s">
-        <div class="step-number">3</div>
-        <h3>Play</h3>
-        <p>Take your picks to Pick6, Underdog, PrizePicks, or FanDuel. Track your record and let the engine learn what works for you.</p>
+      <div class="pipeline-arrow fade-in delay-2"><svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10 L30 10 M25 4 L32 10 L25 16" stroke="#F97316" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+      <div class="pipeline-node fade-in delay-2">
+        <div class="pipeline-icon"><i data-lucide="calculator" width="28" height="28"></i></div>
+        <div class="pipeline-label">Weighted Score</div>
+        <div class="pipeline-sub">Calibrated average with confidence</div>
+      </div>
+      <div class="pipeline-arrow fade-in delay-3"><svg width="40" height="20" viewBox="0 0 40 20"><path d="M0 10 L30 10 M25 4 L32 10 L25 16" stroke="#F97316" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+      <div class="pipeline-node pipeline-node-result fade-in delay-3">
+        <div class="pipeline-score">72</div>
+        <div class="pipeline-label">Your Pick</div>
+        <div class="pipeline-sub">One clear number. That's it.</div>
       </div>
     </div>
   </div>
@@ -2581,7 +2682,7 @@ footer {
         <a href="#" class="btn btn-secondary">Get Started</a>
       </div>
       <div class="card card-glow pricing-card pricing-card-pro fade-in" style="transition-delay:0.1s">
-        <div class="trial-banner">7 Days Free</div>
+        <div class="trial-banner">Most Popular — 7 Days Free</div>
         <p class="label" style="color:var(--accent);">Premium</p>
         <h3>PropEdge Pro</h3>
         <div class="pricing-price">
@@ -2630,56 +2731,56 @@ footer {
           <tr>
             <td>Simple confidence scores</td>
             <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-primary)">One clear number per pick</span></td>
-            <td><span class="compare-x">&#10005;</span><br><span style="font-size:11px;color:var(--text-primary)">Raw data only</span></td>
-            <td><span class="compare-partial">Market-based</span></td>
+            <td class="competitor-cell"><span class="compare-x">&#10005;</span><br><span style="font-size:11px;color:var(--text-primary)">Raw data only</span></td>
+            <td class="competitor-cell"><span class="compare-partial">Market-based</span></td>
           </tr>
           <tr>
             <td>Explains why a pick is strong</td>
             <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-primary)">Per-agent breakdown</span></td>
-            <td><span class="compare-x">&#10005;</span></td>
-            <td><span class="compare-x">&#10005;</span></td>
+            <td class="competitor-cell"><span class="compare-x">&#10005;</span></td>
+            <td class="competitor-cell"><span class="compare-x">&#10005;</span></td>
           </tr>
           <tr>
             <td>AI-built pick combos</td>
             <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-primary)">11+ daily, risk-graded</span></td>
-            <td><span class="compare-x">&#10005;</span></td>
-            <td><span class="compare-x">&#10005;</span></td>
+            <td class="competitor-cell"><span class="compare-x">&#10005;</span></td>
+            <td class="competitor-cell"><span class="compare-x">&#10005;</span></td>
           </tr>
           <tr>
             <td>Works with Pick6, Underdog, PrizePicks, FanDuel</td>
             <td class="col-propedge-cell"><span class="compare-check">&#10003;</span></td>
-            <td><span class="compare-check">&#10003;</span></td>
-            <td><span class="compare-check">&#10003;</span></td>
+            <td class="competitor-cell"><span class="compare-check">&#10003;</span></td>
+            <td class="competitor-cell"><span class="compare-check">&#10003;</span></td>
           </tr>
           <tr>
             <td>No betting jargon required</td>
             <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-primary)">Designed jargon-free</span></td>
-            <td><span class="compare-partial">Some terminology</span></td>
-            <td><span class="compare-x">&#10005;</span><br><span style="font-size:11px;color:var(--text-primary)">EV/vig heavy</span></td>
+            <td class="competitor-cell"><span class="compare-partial">Some terminology</span></td>
+            <td class="competitor-cell"><span class="compare-x">&#10005;</span><br><span style="font-size:11px;color:var(--text-primary)">EV/vig heavy</span></td>
           </tr>
           <tr>
             <td>Player prop hit rate data</td>
             <td class="col-propedge-cell"><span class="compare-check">&#10003;</span></td>
-            <td><span class="compare-check">&#10003;</span></td>
-            <td><span class="compare-check">&#10003;</span></td>
+            <td class="competitor-cell"><span class="compare-check">&#10003;</span></td>
+            <td class="competitor-cell"><span class="compare-check">&#10003;</span></td>
           </tr>
           <tr>
             <td>Injury cascade analysis</td>
             <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-primary)">2nd-order effects</span></td>
-            <td><span class="compare-x">&#10005;</span></td>
-            <td><span class="compare-x">&#10005;</span></td>
+            <td class="competitor-cell"><span class="compare-x">&#10005;</span></td>
+            <td class="competitor-cell"><span class="compare-x">&#10005;</span></td>
           </tr>
           <tr>
             <td>Self-learning model</td>
             <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-primary)">Weekly auto-calibration</span></td>
-            <td><span class="compare-x">&#10005;</span></td>
-            <td><span class="compare-x">&#10005;</span></td>
+            <td class="competitor-cell"><span class="compare-x">&#10005;</span></td>
+            <td class="competitor-cell"><span class="compare-x">&#10005;</span></td>
           </tr>
           <tr>
             <td>Free tier</td>
             <td class="col-propedge-cell"><span class="compare-check">&#10003;</span><br><span style="font-size:11px;color:var(--text-primary)">5 picks/day free</span></td>
-            <td><span class="compare-check">&#10003;</span></td>
-            <td><span class="compare-partial">7-day trial only</span></td>
+            <td class="competitor-cell"><span class="compare-check">&#10003;</span></td>
+            <td class="competitor-cell"><span class="compare-partial">7-day trial only</span></td>
           </tr>
         </tbody>
       </table>
@@ -3074,6 +3175,17 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
       }
       if (heroTotal) {
         heroTotal.textContent = label;
+      }
+
+      // Update pulse text with live activity
+      var pulseEl = document.getElementById('hero-pulse-text');
+      if (pulseEl && data.total) {
+        var phrases = [
+          data.total.toLocaleString() + ' props graded across 6 sports',
+          '6 leagues analyzed daily',
+          'Engine updated every game day'
+        ];
+        pulseEl.textContent = phrases[0];
       }
     })
     .catch(() => { /* fallback: hardcoded values remain */ });
