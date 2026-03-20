@@ -2562,4 +2562,10 @@
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://propellerpicks.com/blog/daily/2026-03-20.html</loc>
+    <lastmod>2026-03-20</lastmod>
+    <changefreq>never</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
