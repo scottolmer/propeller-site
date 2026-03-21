@@ -402,6 +402,16 @@ nav .container {
   z-index: 300;
 }
 
+/* Invisible bridge so hover does not break between trigger and dropdown */
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
+}
+
 /* Show on hover — desktop only */
 @media (min-width: 768px) {
   .nav-item:hover > .nav-dropdown {
