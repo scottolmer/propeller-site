@@ -743,6 +743,8 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   padding: 18px 22px;
   margin-top: 28px;
   max-width: 440px;
+  width: 100%;
+  text-align: left;
 }
 .hero-results-header {
   font-size: 11px;
@@ -752,6 +754,7 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   letter-spacing: 1.5px;
   margin-bottom: 12px;
   font-family: 'JetBrains Mono', monospace;
+  text-align: left;
 }
 .hero-results-list {
   display: flex;
@@ -764,12 +767,14 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   gap: 8px;
   font-size: 13px;
   line-height: 1;
+  text-align: left;
 }
 .hero-results-icon {
   width: 16px;
   flex-shrink: 0;
   font-weight: 700;
   font-size: 13px;
+  text-align: center;
 }
 .hero-results-icon.win { color: #10B981; }
 .hero-results-icon.loss { color: #EF4444; }
@@ -3398,9 +3403,9 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         var isWin = p.result === 'win';
         var icon = isWin ? '\u2713' : '\u2717';
         var cls = isWin ? 'win' : 'loss';
-        var dir = (p.direction || 'OVER').charAt(0) + (p.direction || 'OVER').slice(1).toLowerCase();
-        var stat = p.stat_type.replace(/_/g, ' ');
+        var dir = (p.direction || 'OVER') === 'OVER' ? 'O' : 'U';
         var line = p.line != null ? ' ' + p.line : '';
+        var stat = (p.stat_type || '').replace(/_/g, ' ').toLowerCase();
         html += '<div class="hero-results-row ' + cls + '">' +
           '<span class="hero-results-icon ' + cls + '">' + icon + '</span>' +
           '<span class="hero-results-player">' + p.player_name + ' ' + dir + line + ' ' + stat + '</span>' +
