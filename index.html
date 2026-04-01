@@ -920,7 +920,7 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
 
 .proof-pick {
   display: grid;
-  grid-template-columns: 28px 1fr auto 56px;
+  grid-template-columns: 28px 1fr auto auto;
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
@@ -992,13 +992,16 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   background: rgba(245, 158, 11, 0.1);
 }
 
-.proof-pick-conf {
+.proof-pick-actual {
   font-family: var(--font-mono);
   font-size: 13px;
   font-weight: 700;
-  color: var(--text-secondary);
   text-align: right;
+  white-space: nowrap;
 }
+
+.proof-pick-actual.win { color: #10B981; }
+.proof-pick-actual.loss { color: #EF4444; }
 
 .proof-footer {
   text-align: center;
@@ -1050,7 +1053,7 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
 
 @media (max-width: 480px) {
   .proof-pick {
-    grid-template-columns: 24px 1fr auto 44px;
+    grid-template-columns: 24px 1fr auto auto;
     gap: 8px;
     padding: 10px 12px;
   }
@@ -3405,18 +3408,18 @@ animateCounters();
       var isWin = p.result === 'win';
       var icon = SPORT_ICONS[p.sport] || '\u{1F3C6}';
       var dir = (p.direction || 'OVER').toUpperCase();
-      var conf = p.confidence || '--';
       var line = p.line != null ? parseFloat(p.line).toFixed(1) : '--';
+      var actual = p.actual != null ? parseFloat(p.actual).toFixed(1) : '--';
       var stat = (p.stat_type || '').replace(/_/g, ' ');
 
       html += '<div class="proof-pick">' +
         '<div class="proof-pick-icon ' + (isWin ? 'win' : 'loss') + '">' + (isWin ? '\u2713' : '\u2717') + '</div>' +
         '<div class="proof-pick-info">' +
           '<div class="proof-pick-player">' + icon + ' ' + (p.player_name || '') + '</div>' +
-          '<div class="proof-pick-prop">' + line + ' ' + stat + '</div>' +
+          '<div class="proof-pick-prop">' + dir + ' ' + line + ' ' + stat + '</div>' +
         '</div>' +
         '<span class="proof-pick-dir ' + dir.toLowerCase() + '">' + dir + '</span>' +
-        '<span class="proof-pick-conf">' + conf + '%</span>' +
+        '<span class="proof-pick-actual ' + (isWin ? 'win' : 'loss') + '">Actual: ' + actual + '</span>' +
       '</div>';
     }
     picksEl.innerHTML = html;
