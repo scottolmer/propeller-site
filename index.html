@@ -808,6 +808,18 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   .hero-results-row { font-size: 12px; }
 }
 
+.hero-subtitle {
+  font-size: 15px;
+  color: var(--text-tertiary);
+  margin-top: 12px;
+  margin-bottom: 0;
+  letter-spacing: 0.2px;
+}
+.hero-subtitle span {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
 .hero p {
   font-size: 18px;
   max-width: 520px;
@@ -2489,22 +2501,8 @@ footer {
     <div class="hero-content">
       <div class="hero-text">
         <h1 class="fade-in">Stop Guessing.<br><span>Start Winning.</span></h1>
-        <div class="hero-proof fade-in delay-1">
-          <div class="hero-proof-stat">
-            <span class="hero-proof-number" id="hero-winrate">59.8%</span>
-            <span class="hero-proof-label">Verified<br>Win Rate</span>
-          </div>
-          <span class="hero-proof-dot"></span>
-          <div class="hero-proof-stat">
-            <span class="hero-proof-number" id="hero-total">17,000+</span>
-            <span class="hero-proof-label">Props<br>Graded</span>
-          </div>
-        </div>
-        <p class="fade-in delay-2">No odds. No jargon. Just simple confidence scores powered by 8 AI agents. Open the app, see the top picks for Pick6, Underdog, PrizePicks, or FanDuel — and know exactly why each one is strong.</p>
-        <div class="hero-pulse fade-in delay-2">
-          <span class="hero-pulse-dot"></span>
-          <span class="hero-pulse-text" id="hero-pulse-text">Analyzing games now</span>
-        </div>
+        <p class="hero-subtitle fade-in delay-1" id="hero-subtitle"><span id="hero-winrate">59.8</span>% win rate across <span id="hero-total">17,000+</span> graded props</p>
+
         <!-- Live Results Proof Card -->
         <div class="hero-results-card fade-in delay-2" id="heroResultsCard" style="display:none">
           <div class="hero-results-header" id="heroResultsHeader">Today's Results</div>
@@ -2558,60 +2556,7 @@ footer {
   </div>
 </section>
 
-<!-- App Screenshots -->
-<section class="screenshots fade-in">
-  <div class="screenshots-window">
-    <div class="screenshots-track" id="carouselTrack">
-      <div class="screenshot-phone">
-        <div class="screenshot-frame"><img src="images/01.webp" alt="Propeller AI-ranked top player prop picks for NFL, NBA, MLB, NHL" loading="eager"></div>
-        <span class="screenshot-caption">Top Picks</span>
-      </div>
-      <div class="screenshot-phone">
-        <div class="screenshot-frame"><img src="images/02.webp" alt="Propeller AI confidence score breakdown for player props" loading="eager"></div>
-        <span class="screenshot-caption">Confidence Score</span>
-      </div>
-      <div class="screenshot-phone">
-        <div class="screenshot-frame"><img src="images/03.webp" alt="Propeller 8-agent AI analysis showing why a pick is strong" loading="eager"></div>
-        <span class="screenshot-caption">Agent Breakdown</span>
-      </div>
-      <div class="screenshot-phone">
-        <div class="screenshot-frame"><img src="images/04.webp" alt="Propeller AI-built pick combos for Pick6 Underdog and PrizePicks" loading="lazy"></div>
-        <span class="screenshot-caption">AI Parlays</span>
-      </div>
-      <div class="screenshot-phone">
-        <div class="screenshot-frame"><img src="images/05.webp" alt="Propeller best odds comparison across sportsbooks" loading="lazy"></div>
-        <span class="screenshot-caption">Best Odds</span>
-      </div>
-      <div class="screenshot-phone">
-        <div class="screenshot-frame"><img src="images/06.webp" alt="Propeller verified win rate performance dashboard" loading="lazy"></div>
-        <span class="screenshot-caption">Performance</span>
-      </div>
-      <div class="screenshot-phone">
-        <div class="screenshot-frame"><img src="images/07.webp" alt="Propeller edge finder showing highest-value player props" loading="lazy"></div>
-        <span class="screenshot-caption">Edge Finder</span>
-      </div>
-      <div class="screenshot-phone">
-        <div class="screenshot-frame"><img src="images/08.webp" alt="Propeller daily game schedule for NFL NBA MLB NHL EPL MLS" loading="lazy"></div>
-        <span class="screenshot-caption">Game Schedule</span>
-      </div>
-      <div class="screenshot-phone">
-        <div class="screenshot-frame"><img src="images/09.webp" alt="Propeller app settings and sport preferences" loading="lazy"></div>
-        <span class="screenshot-caption">Settings</span>
-      </div>
-    </div>
-  </div>
-  <div class="carousel-controls">
-    <button class="carousel-arrow" id="carouselPrev" aria-label="Previous" disabled>&#8249;</button>
-    <div class="carousel-dots" id="carouselDots">
-      <button class="carousel-dot active" data-index="0" aria-label="Page 1"></button>
-      <button class="carousel-dot" data-index="1" aria-label="Page 2"></button>
-      <button class="carousel-dot" data-index="2" aria-label="Page 3"></button>
-      <button class="carousel-dot" data-index="3" aria-label="Page 4"></button>
-      <button class="carousel-dot" data-index="4" aria-label="Page 5"></button>
-    </div>
-    <button class="carousel-arrow" id="carouselNext" aria-label="Next">&#8250;</button>
-  </div>
-</section>
+<!-- Screenshots carousel removed — replaced by live results proof card in hero -->
 
 <!-- App Demo Placeholder — drop in screen recording MP4/GIF later -->
 <section class="demo-section" id="demo" style="padding: 60px 0; text-align: center;">
@@ -3352,14 +3297,14 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         el.textContent = label;
       });
 
-      // Hero proof strip
+      // Hero subtitle — inline spans (no % suffix, it's in the surrounding text)
       const heroWin = document.getElementById('hero-winrate');
       const heroTotal = document.getElementById('hero-total');
       if (heroWin && data.win_rate) {
-        heroWin.textContent = data.win_rate.toFixed(1) + '%';
+        heroWin.textContent = data.win_rate.toFixed(1);
       }
       if (heroTotal) {
-        heroTotal.textContent = label;
+        heroTotal.textContent = data.total.toLocaleString() + '+';
       }
 
       // Update pulse text with live activity
@@ -3470,9 +3415,10 @@ function animateCounters() {
 }
 animateCounters();
 
-// Screenshots carousel — show 5, slide 1 at a time
+// Screenshots carousel — show 5, slide 1 at a time (removed from page, guarded)
 (function() {
   const track = document.getElementById('carouselTrack');
+  if (!track) return; // carousel removed from DOM
   const dots = document.querySelectorAll('.carousel-dot');
   const prev = document.getElementById('carouselPrev');
   const next = document.getElementById('carouselNext');
