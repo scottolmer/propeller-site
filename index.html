@@ -735,91 +735,6 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   }
 }
 
-/* Live Results Proof Card */
-.hero-results-card {
-  background: rgba(10, 226, 163, 0.04);
-  border: 1px solid rgba(10, 226, 163, 0.12);
-  border-radius: 16px;
-  padding: 18px 22px;
-  margin-top: 28px;
-  max-width: 440px;
-  width: 100%;
-  text-align: left;
-}
-.hero-results-header {
-  font-size: 11px;
-  font-weight: 700;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  margin-bottom: 12px;
-  font-family: 'JetBrains Mono', monospace;
-  text-align: left;
-}
-.hero-results-list {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-.hero-results-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  line-height: 1;
-  text-align: left;
-}
-.hero-results-icon {
-  width: 16px;
-  flex-shrink: 0;
-  font-weight: 700;
-  font-size: 13px;
-  text-align: center;
-}
-.hero-results-icon.win { color: #10B981; }
-.hero-results-icon.loss { color: #EF4444; }
-.hero-results-player {
-  flex: 1;
-  min-width: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.hero-results-row.win .hero-results-player { color: var(--text-secondary); }
-.hero-results-row.loss .hero-results-player { color: var(--text-tertiary); }
-.hero-results-conf {
-  color: var(--text-tertiary);
-  font-size: 12px;
-  flex-shrink: 0;
-  margin-left: auto;
-}
-.hero-results-footer {
-  text-align: center;
-  font-size: 11px;
-  color: var(--text-tertiary);
-  margin-top: 10px;
-  opacity: 0.7;
-}
-@media (max-width: 768px) {
-  .hero-results-card {
-    max-width: 100%;
-    padding: 14px 16px;
-  }
-  .hero-results-row { font-size: 12px; }
-}
-
-.hero-subtitle {
-  font-size: 15px;
-  color: var(--text-tertiary);
-  margin-top: 12px;
-  margin-bottom: 0;
-  letter-spacing: 0.2px;
-}
-.hero-subtitle span {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
 .hero p {
   font-size: 18px;
   max-width: 520px;
@@ -2501,15 +2416,22 @@ footer {
     <div class="hero-content">
       <div class="hero-text">
         <h1 class="fade-in">Stop Guessing.<br><span>Start Winning.</span></h1>
-        <p class="hero-subtitle fade-in delay-1" id="hero-subtitle"><span id="hero-winrate">59.8</span>% win rate across <span id="hero-total">17,000+</span> graded props</p>
-
-        <!-- Live Results Proof Card -->
-        <div class="hero-results-card fade-in delay-2" id="heroResultsCard" style="display:none">
-          <div class="hero-results-header" id="heroResultsHeader">Today's Results</div>
-          <div class="hero-results-list" id="heroResultsList"></div>
-          <div class="hero-results-footer" id="heroResultsFooter"></div>
+        <div class="hero-proof fade-in delay-1">
+          <div class="hero-proof-stat">
+            <span class="hero-proof-number" id="hero-winrate">59.8%</span>
+            <span class="hero-proof-label">Verified<br>Win Rate</span>
+          </div>
+          <span class="hero-proof-dot"></span>
+          <div class="hero-proof-stat">
+            <span class="hero-proof-number" id="hero-total">17,000+</span>
+            <span class="hero-proof-label">Props<br>Graded</span>
+          </div>
         </div>
-
+        <p class="fade-in delay-2">No odds. No jargon. Just simple confidence scores powered by 8 AI agents. Open the app, see the top picks for Pick6, Underdog, PrizePicks, or FanDuel — and know exactly why each one is strong.</p>
+        <div class="hero-pulse fade-in delay-2">
+          <span class="hero-pulse-dot"></span>
+          <span class="hero-pulse-text" id="hero-pulse-text">Analyzing games now</span>
+        </div>
         <div class="hero-buttons fade-in delay-3">
           <a href="#pricing" class="store-badge" aria-label="Download on the App Store">
             <svg viewBox="0 0 120 40" width="150" height="50" xmlns="http://www.w3.org/2000/svg">
@@ -2556,7 +2478,60 @@ footer {
   </div>
 </section>
 
-<!-- Screenshots carousel removed — replaced by live results proof card in hero -->
+<!-- App Screenshots -->
+<section class="screenshots fade-in">
+  <div class="screenshots-window">
+    <div class="screenshots-track" id="carouselTrack">
+      <div class="screenshot-phone">
+        <div class="screenshot-frame"><img src="images/01.webp" alt="Propeller AI-ranked top player prop picks for NFL, NBA, MLB, NHL" loading="eager"></div>
+        <span class="screenshot-caption">Top Picks</span>
+      </div>
+      <div class="screenshot-phone">
+        <div class="screenshot-frame"><img src="images/02.webp" alt="Propeller AI confidence score breakdown for player props" loading="eager"></div>
+        <span class="screenshot-caption">Confidence Score</span>
+      </div>
+      <div class="screenshot-phone">
+        <div class="screenshot-frame"><img src="images/03.webp" alt="Propeller 8-agent AI analysis showing why a pick is strong" loading="eager"></div>
+        <span class="screenshot-caption">Agent Breakdown</span>
+      </div>
+      <div class="screenshot-phone">
+        <div class="screenshot-frame"><img src="images/04.webp" alt="Propeller AI-built pick combos for Pick6 Underdog and PrizePicks" loading="lazy"></div>
+        <span class="screenshot-caption">AI Parlays</span>
+      </div>
+      <div class="screenshot-phone">
+        <div class="screenshot-frame"><img src="images/05.webp" alt="Propeller best odds comparison across sportsbooks" loading="lazy"></div>
+        <span class="screenshot-caption">Best Odds</span>
+      </div>
+      <div class="screenshot-phone">
+        <div class="screenshot-frame"><img src="images/06.webp" alt="Propeller verified win rate performance dashboard" loading="lazy"></div>
+        <span class="screenshot-caption">Performance</span>
+      </div>
+      <div class="screenshot-phone">
+        <div class="screenshot-frame"><img src="images/07.webp" alt="Propeller edge finder showing highest-value player props" loading="lazy"></div>
+        <span class="screenshot-caption">Edge Finder</span>
+      </div>
+      <div class="screenshot-phone">
+        <div class="screenshot-frame"><img src="images/08.webp" alt="Propeller daily game schedule for NFL NBA MLB NHL EPL MLS" loading="lazy"></div>
+        <span class="screenshot-caption">Game Schedule</span>
+      </div>
+      <div class="screenshot-phone">
+        <div class="screenshot-frame"><img src="images/09.webp" alt="Propeller app settings and sport preferences" loading="lazy"></div>
+        <span class="screenshot-caption">Settings</span>
+      </div>
+    </div>
+  </div>
+  <div class="carousel-controls">
+    <button class="carousel-arrow" id="carouselPrev" aria-label="Previous" disabled>&#8249;</button>
+    <div class="carousel-dots" id="carouselDots">
+      <button class="carousel-dot active" data-index="0" aria-label="Page 1"></button>
+      <button class="carousel-dot" data-index="1" aria-label="Page 2"></button>
+      <button class="carousel-dot" data-index="2" aria-label="Page 3"></button>
+      <button class="carousel-dot" data-index="3" aria-label="Page 4"></button>
+      <button class="carousel-dot" data-index="4" aria-label="Page 5"></button>
+    </div>
+    <button class="carousel-arrow" id="carouselNext" aria-label="Next">&#8250;</button>
+  </div>
+</section>
 
 <!-- App Demo Placeholder — drop in screen recording MP4/GIF later -->
 <section class="demo-section" id="demo" style="padding: 60px 0; text-align: center;">
@@ -3297,14 +3272,14 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
         el.textContent = label;
       });
 
-      // Hero subtitle — inline spans (no % suffix, it's in the surrounding text)
+      // Hero proof strip
       const heroWin = document.getElementById('hero-winrate');
       const heroTotal = document.getElementById('hero-total');
       if (heroWin && data.win_rate) {
-        heroWin.textContent = data.win_rate.toFixed(1);
+        heroWin.textContent = data.win_rate.toFixed(1) + '%';
       }
       if (heroTotal) {
-        heroTotal.textContent = data.total.toLocaleString() + '+';
+        heroTotal.textContent = label;
       }
 
       // Update pulse text with live activity
@@ -3319,57 +3294,6 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
       }
     })
     .catch(() => { /* fallback: hardcoded values remain */ });
-})();
-
-// Fetch live recent graded picks for hero proof card
-(function() {
-  fetch('https://web-production-3c1c4.up.railway.app/api/social/recent-graded')
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      if (!data || !data.picks || data.picks.length === 0) return;
-
-      var card = document.getElementById('heroResultsCard');
-      var header = document.getElementById('heroResultsHeader');
-      var list = document.getElementById('heroResultsList');
-      var footer = document.getElementById('heroResultsFooter');
-      if (!card || !list) return;
-
-      // Header: Today's Results · W-L (X%)
-      var rec = data.today_record;
-      if (rec && (rec.wins + rec.losses) > 0) {
-        header.textContent = "Today\u2019s Results \u00B7 " + rec.wins + "-" + rec.losses + " (" + rec.win_rate.toFixed(1) + "%)";
-      }
-
-      // Build pick rows (max 6 for space)
-      var picks = data.picks.slice(0, 6);
-      var html = '';
-      for (var i = 0; i < picks.length; i++) {
-        var p = picks[i];
-        var isWin = p.result === 'win';
-        var icon = isWin ? '\u2713' : '\u2717';
-        var cls = isWin ? 'win' : 'loss';
-        var dir = (p.direction || 'OVER') === 'OVER' ? 'O' : 'U';
-        var line = p.line != null ? ' ' + p.line : '';
-        var stat = (p.stat_type || '').replace(/_/g, ' ').toLowerCase();
-        html += '<div class="hero-results-row ' + cls + '">' +
-          '<span class="hero-results-icon ' + cls + '">' + icon + '</span>' +
-          '<span class="hero-results-player">' + p.player_name + ' ' + dir + line + ' ' + stat + '</span>' +
-          '<span class="hero-results-conf">' + p.confidence + '%</span>' +
-          '</div>';
-      }
-      list.innerHTML = html;
-
-      // Footer
-      if (data.total_today > picks.length) {
-        footer.textContent = 'Showing ' + picks.length + ' of ' + data.total_today + ' graded picks today';
-      } else if (data.total_today > 0) {
-        footer.textContent = data.total_today + ' picks graded today';
-      }
-
-      // Show the card
-      card.style.display = '';
-    })
-    .catch(function() { /* silently hide card on error */ });
 })();
 
 // Animated counter for stats bar
@@ -3415,10 +3339,9 @@ function animateCounters() {
 }
 animateCounters();
 
-// Screenshots carousel — show 5, slide 1 at a time (removed from page, guarded)
+// Screenshots carousel — show 5, slide 1 at a time
 (function() {
   const track = document.getElementById('carouselTrack');
-  if (!track) return; // carousel removed from DOM
   const dots = document.querySelectorAll('.carousel-dot');
   const prev = document.getElementById('carouselPrev');
   const next = document.getElementById('carouselNext');
