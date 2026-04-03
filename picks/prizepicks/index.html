@@ -1795,10 +1795,19 @@ footer {
         </div>
       </div>
 
-      <!-- Direct links -->
-      <div class="nav-item">
-        <a href="/analyzer/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Analyzer</a>
+      <!-- Tools dropdown -->
+      <div class="nav-item" id="navTools">
+        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navTools', event)">
+          Tools
+          <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+        </button>
+        <div class="nav-dropdown" role="menu">
+          <a href="/tools/prizepicks-payout-calculator/" role="menuitem">Payout Calculator</a>
+          <a href="/analyzer/" role="menuitem">Prop Analyzer</a>
+        </div>
       </div>
+
+      <!-- Direct links -->
       <div class="nav-item">
         <a href="/results/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Results</a>
       </div>
@@ -2240,6 +2249,7 @@ footer {
             <a href="/guides/pick6-strategy/">Pick6 Guide</a>
             <a href="/guides/nba-prop-betting/">NBA Betting Guide</a>
             <a href="/analyzer/">Prop Analyzer</a>
+            <a href="/tools/prizepicks-payout-calculator/">Payout Calculator</a>
           </div>
         </div>
 
