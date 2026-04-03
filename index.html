@@ -53,8 +53,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700;800&display=swap"></noscript>
 <!-- Structured Data -->
 <script type="application/ld+json">
 {
@@ -2674,19 +2674,19 @@ footer {
     <h2 class="platforms-label fade-in">Built for the platforms you bet on</h2>
     <div class="platforms-grid fade-in">
       <div class="platform-item">
-        <img src="images/draftkingslogo.jpeg" alt="Pick6 by DraftKings" class="platform-logo" loading="lazy">
+        <img src="images/draftkingslogo.jpeg" alt="Pick6 by DraftKings" class="platform-logo" loading="lazy" width="80" height="80">
         <span>Pick6</span>
       </div>
       <div class="platform-item">
-        <img src="images/underdoglogo.png" alt="Underdog Fantasy" class="platform-logo" loading="lazy">
+        <img src="images/underdoglogo.png" alt="Underdog Fantasy" class="platform-logo" loading="lazy" width="80" height="80">
         <span>Underdog</span>
       </div>
       <div class="platform-item">
-        <img src="images/prizepickslogo.png" alt="PrizePicks" class="platform-logo" loading="lazy">
+        <img src="images/prizepickslogo.png" alt="PrizePicks" class="platform-logo" loading="lazy" width="80" height="80">
         <span>PrizePicks</span>
       </div>
       <div class="platform-item">
-        <img src="images/fanduellogo.jpeg" alt="FanDuel" class="platform-logo" loading="lazy">
+        <img src="images/fanduellogo.jpeg" alt="FanDuel" class="platform-logo" loading="lazy" width="80" height="80">
         <span>FanDuel</span>
       </div>
     </div>
