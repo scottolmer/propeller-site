@@ -1671,8 +1671,18 @@ footer {
         <a href="/results/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Results</a>
       </div>
 
-      <div class="nav-item">
-        <a href="/tools/prizepicks-payout-calculator/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Tools</a>
+      <div class="nav-item" id="navTools">
+        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navTools', event)">
+          Tools
+          <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
+        </button>
+        <div class="nav-dropdown" role="menu">
+          <a href="/tools/prizepicks-payout-calculator/" role="menuitem">PrizePicks Calculator</a>
+          <a href="/tools/pick6-payout-calculator/" role="menuitem">Pick6 Calculator</a>
+          <a href="/tools/underdog-payout-calculator/" role="menuitem">Underdog Calculator</a>
+          <div class="nav-dropdown-separator"></div>
+          <a href="/analyzer/" role="menuitem">Prop Analyzer</a>
+        </div>
       </div>
 
     </div>
