@@ -191,7 +191,7 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
     <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
       <svg id="hamburgerIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
-    <a href="/#pricing" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Get Started</a>
+    <a href="https://app.propellerpicks.com/signup" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Start Free</a>
   </div>
 </nav>
 
@@ -209,62 +209,62 @@ nav .container{display:flex;align-items:center;justify-content:space-between;hei
   <p class="last-updated">Last updated: April 2, 2026</p>
 
   <div class="summary-box">
-    <p><strong>Summary:</strong> We collect minimal data, store everything locally on your device, and never sell your personal information to third parties.</p>
+    <p><strong>Summary:</strong> We collect the account, billing, and usage data needed to run the Propeller website, web app, and mobile companion app. We never sell your personal information.</p>
   </div>
 
   <h2>1. Information We Collect</h2>
-  <p>Propeller Picks ("the App") collects and processes the following types of information:</p>
+  <p>Propeller Picks ("Propeller," "we," or "our") collects and processes the following types of information:</p>
   <ul>
-    <li><strong>Locally Stored Data:</strong> Your saved parlays, bet history, sportsbook preferences, and tutorial progress are stored locally on your device using AsyncStorage. This data never leaves your device.</li>
-    <li><strong>API Requests:</strong> When you browse props, generate parlays, or request AI analysis, we send requests to our backend server containing only the necessary parameters (game date, player names, stat types). No personal identifiers are included.</li>
-    <li><strong>Device Information:</strong> We may collect basic device type and OS version for crash reporting and performance optimization.</li>
-    <li><strong>Subscription Data:</strong> If you subscribe to Propeller Pro, payment is processed by Apple via your Apple ID. We receive transaction receipts and subscription status through RevenueCat — we never see your payment details.</li>
-    <li><strong>Analytics:</strong> We use Firebase Analytics to collect anonymized usage data (screens viewed, features used) to improve the app experience. No personally identifiable information is collected.</li>
+    <li><strong>Account Data:</strong> When you create an account, we collect your email address, authentication credentials, and subscription status.</li>
+    <li><strong>Product Usage Data:</strong> When you browse props, save picks, or use the analyzer, we process the data required to provide those features, such as sport, game date, player, and stat selections.</li>
+    <li><strong>Device and Browser Information:</strong> We may collect browser type, device type, OS version, IP address, and crash or performance logs to keep the service reliable and secure.</li>
+    <li><strong>Subscription Data:</strong> Web subscriptions are processed securely through Stripe. If you subscribe through the iOS companion app, Apple processes that payment. We receive subscription status and transaction metadata, but not full card details.</li>
+    <li><strong>Analytics:</strong> We use analytics tools to understand site traffic, product usage, and conversion performance so we can improve the service.</li>
   </ul>
 
   <h2>2. How We Use Your Information</h2>
   <p>We use the information we collect to:</p>
   <ul>
-    <li>Provide AI-powered prop analysis and pick recommendations across NFL, NBA, NHL, MLB, Soccer, and UFC</li>
-    <li>Store your preferences, watchlist, and tracking history locally on your device</li>
-    <li>Improve the accuracy of our prediction models</li>
-    <li>Monitor and fix technical issues</li>
-    <li>Send push notifications you've opted into (e.g., watchlist alerts, line movement)</li>
+    <li>Provide AI-powered prop analysis and pick recommendations across supported sports</li>
+    <li>Operate your account, subscription, and saved preferences across the web app and companion app</li>
+    <li>Improve model quality, product performance, and conversion flows</li>
+    <li>Monitor, prevent, and investigate technical issues, abuse, and fraud</li>
+    <li>Send transactional emails or product notifications you opt into</li>
   </ul>
 
   <h2>3. Data Storage and Security</h2>
-  <p>Your personal data (saved bets, preferences, watchlist) is stored exclusively on your device using React Native AsyncStorage. We do not maintain user accounts or store personal data on our servers.</p>
-  <p>API communications between the App and our backend server are transmitted over HTTPS encryption. Our backend server processes requests statelessly — it does not store or log individual user requests.</p>
+  <p>We store account, subscription, and product data with secure cloud infrastructure providers so the website, web app, and companion app can function properly. Some local preferences may also be stored in your browser or device.</p>
+  <p>API communications between your device and our servers are transmitted over HTTPS. We use access controls, logging, and infrastructure safeguards designed to protect your information, but no system is completely risk-free.</p>
 
   <h2>4. Third-Party Services</h2>
-  <p>The App may interact with the following third-party services:</p>
+  <p>Propeller may interact with the following third-party services:</p>
   <ul>
-    <li><strong>Apple App Store:</strong> Subscription payments are processed by Apple. We receive transaction receipts and subscription status only — we never see your payment details.</li>
-    <li><strong>RevenueCat:</strong> Anonymized subscription management. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's privacy policy</a>.</li>
-    <li><strong>Firebase Analytics:</strong> Anonymized usage analytics to improve the app. See <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase privacy policy</a>.</li>
-    <li><strong>Expo / React Native:</strong> Framework for building and distributing the app.</li>
+    <li><strong>Stripe:</strong> Web subscription payments and billing portal management. See <a href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe's privacy policy</a>.</li>
+    <li><strong>Apple App Store:</strong> If you subscribe through the iOS companion app, Apple processes the payment under its own terms and policies.</li>
+    <li><strong>Google Analytics and PostHog:</strong> Usage and conversion analytics to improve the website and web app.</li>
+    <li><strong>Vercel and Railway:</strong> Hosting and application infrastructure providers for the web app and backend services.</li>
     <li><strong>Sports Data APIs:</strong> We aggregate publicly available odds and player statistics from licensed data providers.</li>
   </ul>
 
   <h2>5. Disclaimer</h2>
-  <p>The App provides informational sports analysis for entertainment purposes only. We do not facilitate, process, or handle any gambling transactions. All betting decisions are made solely by the user on third-party platforms. The App does not guarantee any outcomes. Past performance does not guarantee future results.</p>
+  <p>Propeller provides informational sports analysis for entertainment purposes only. We do not facilitate, process, or handle gambling transactions. All betting decisions are made solely by the user on third-party platforms. Propeller does not guarantee any outcomes. Past performance does not guarantee future results.</p>
 
   <h2>6. Children's Privacy</h2>
-  <p>The App is not intended for use by individuals under the age of 18. We do not knowingly collect data from minors.</p>
+  <p>Propeller is not intended for use by individuals under the age of 18. We do not knowingly collect data from minors.</p>
 
   <h2>7. Data Deletion</h2>
-  <p>You can delete your data at any time by:</p>
+  <p>You can request deletion of your account data at any time by contacting support@propellerpicks.com. You can also remove locally stored data by clearing your browser storage or uninstalling the companion app.</p>
   <ul>
-    <li>Using "Delete Account" in the App's settings to permanently remove your account and all server-side data</li>
-    <li>Clearing the App's data through your device settings to remove locally stored data</li>
-    <li>Uninstalling the App</li>
+    <li>Emailing support@propellerpicks.com from the address associated with your account</li>
+    <li>Clearing site data in your browser to remove local preferences stored on your device</li>
+    <li>Deleting the companion app from your device if you no longer want local mobile data stored</li>
   </ul>
 
   <h2>8. Changes to This Policy</h2>
-  <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date. Your continued use of the App after changes constitutes acceptance of the updated policy.</p>
+  <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date. Your continued use of Propeller after changes constitutes acceptance of the updated policy.</p>
 
   <h2>9. Contact Us</h2>
-  <p>If you have questions about this Privacy Policy, please contact us via the <a href="https://apps.apple.com/app/propeller-picks">App Store listing</a> or email us at support@propellerpicks.com.</p>
+  <p>If you have questions about this Privacy Policy, please email us at support@propellerpicks.com.</p>
 
 </main>
 
