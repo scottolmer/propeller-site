@@ -1852,82 +1852,115 @@ footer {
     <div class="sport-grid">
 
       <!-- NFL -->
-      <div class="card sport-card fade-in">
+      <div class="card sport-card fade-in" data-sport-key="nfl">
         <div class="sport-card-header">
           <div class="sport-name">NFL</div>
-          <span class="sport-badge sport-badge-active">Active</span>
+          <span class="sport-badge sport-badge-collecting" data-sport-field="badge">Syncing</span>
         </div>
-        <div class="sport-stats-row">
-          <div class="sport-stat">
-            <div class="sport-stat-value" style="color: var(--accent);">58%</div>
-            <div class="sport-stat-label">Win Rate</div>
+        <div data-sport-field="metrics">
+          <div class="sport-stats-row">
+            <div class="sport-stat">
+              <div class="sport-stat-value" data-sport-field="win-rate" style="color: var(--accent);">--</div>
+              <div class="sport-stat-label">Win Rate</div>
+            </div>
+            <div class="sport-stat">
+              <div class="sport-stat-value" data-sport-field="graded-legs" style="color: var(--text-secondary);">--</div>
+              <div class="sport-stat-label">Graded Legs</div>
+            </div>
           </div>
-          <div class="sport-stat">
-            <div class="sport-stat-value" style="color: var(--text-secondary);">3,400+</div>
-            <div class="sport-stat-label">Graded Legs</div>
+          <div class="win-rate-bar-wrap">
+            <div class="win-rate-bar-label">
+              <span>Accuracy</span>
+              <span data-sport-field="accuracy">--</span>
+            </div>
+            <div class="win-rate-bar-track">
+              <div class="win-rate-bar-fill bar-accent" data-sport-field="bar" data-bar-width="0" style="width:0%"></div>
+            </div>
           </div>
         </div>
-        <div class="win-rate-bar-wrap">
-          <div class="win-rate-bar-label">
-            <span>Accuracy</span>
-            <span>58%</span>
+        <div class="collecting-state" data-sport-field="empty-state" style="display:none;">
+          <div class="collecting-icon">
+            <i data-lucide="database" style="width:18px;height:18px;"></i>
           </div>
-          <div class="win-rate-bar-track">
-            <div class="win-rate-bar-fill bar-accent" data-bar-width="58" style="width:0%"></div>
+          <div class="collecting-text">
+            <strong style="color: var(--text-secondary); display:block; margin-bottom:4px;">Collecting Data</strong>
+            Grading predictions now. Win rate will be published once we have a statistically meaningful sample.
           </div>
         </div>
       </div>
 
       <!-- NBA -->
-      <div class="card sport-card fade-in delay-1">
+      <div class="card sport-card fade-in delay-1" data-sport-key="nba">
         <div class="sport-card-header">
           <div class="sport-name">NBA</div>
-          <span class="sport-badge sport-badge-active">Active</span>
+          <span class="sport-badge sport-badge-collecting" data-sport-field="badge">Syncing</span>
         </div>
-        <div class="sport-stats-row">
-          <div class="sport-stat">
-            <div class="sport-stat-value" style="color: var(--accent);">56%</div>
-            <div class="sport-stat-label">Win Rate</div>
+        <div data-sport-field="metrics">
+          <div class="sport-stats-row">
+            <div class="sport-stat">
+              <div class="sport-stat-value" data-sport-field="win-rate" style="color: var(--accent);">--</div>
+              <div class="sport-stat-label">Win Rate</div>
+            </div>
+            <div class="sport-stat">
+              <div class="sport-stat-value" data-sport-field="graded-legs" style="color: var(--text-secondary);">--</div>
+              <div class="sport-stat-label">Graded Legs</div>
+            </div>
           </div>
-          <div class="sport-stat">
-            <div class="sport-stat-value" style="color: var(--text-secondary);">1,500+</div>
-            <div class="sport-stat-label">Graded Legs</div>
+          <div class="win-rate-bar-wrap">
+            <div class="win-rate-bar-label">
+              <span>Accuracy</span>
+              <span data-sport-field="accuracy">--</span>
+            </div>
+            <div class="win-rate-bar-track">
+              <div class="win-rate-bar-fill bar-accent" data-sport-field="bar" data-bar-width="0" style="width:0%"></div>
+            </div>
           </div>
         </div>
-        <div class="win-rate-bar-wrap">
-          <div class="win-rate-bar-label">
-            <span>Accuracy</span>
-            <span>56%</span>
+        <div class="collecting-state" data-sport-field="empty-state" style="display:none;">
+          <div class="collecting-icon">
+            <i data-lucide="database" style="width:18px;height:18px;"></i>
           </div>
-          <div class="win-rate-bar-track">
-            <div class="win-rate-bar-fill bar-accent" data-bar-width="56" style="width:0%"></div>
+          <div class="collecting-text">
+            <strong style="color: var(--text-secondary); display:block; margin-bottom:4px;">Collecting Data</strong>
+            Grading predictions now. Win rate will be published once we have a statistically meaningful sample.
           </div>
         </div>
       </div>
 
       <!-- NHL -->
-      <div class="card sport-card fade-in delay-2">
+      <div class="card sport-card fade-in delay-2" data-sport-key="nhl">
         <div class="sport-card-header">
           <div class="sport-name">NHL</div>
-          <span class="sport-badge sport-badge-active">Active</span>
+          <span class="sport-badge sport-badge-collecting" data-sport-field="badge">Syncing</span>
         </div>
-        <div class="sport-stats-row">
-          <div class="sport-stat">
-            <div class="sport-stat-value" style="color: var(--accent);">59%</div>
-            <div class="sport-stat-label">Win Rate</div>
+        <div data-sport-field="metrics">
+          <div class="sport-stats-row">
+            <div class="sport-stat">
+              <div class="sport-stat-value" data-sport-field="win-rate" style="color: var(--accent);">--</div>
+              <div class="sport-stat-label">Win Rate</div>
+            </div>
+            <div class="sport-stat">
+              <div class="sport-stat-value" data-sport-field="graded-legs" style="color: var(--text-secondary);">--</div>
+              <div class="sport-stat-label">Graded Legs</div>
+            </div>
           </div>
-          <div class="sport-stat">
-            <div class="sport-stat-value" style="color: var(--text-secondary);">500+</div>
-            <div class="sport-stat-label">Graded Legs</div>
+          <div class="win-rate-bar-wrap">
+            <div class="win-rate-bar-label">
+              <span>Accuracy</span>
+              <span data-sport-field="accuracy">--</span>
+            </div>
+            <div class="win-rate-bar-track">
+              <div class="win-rate-bar-fill bar-accent" data-sport-field="bar" data-bar-width="0" style="width:0%"></div>
+            </div>
           </div>
         </div>
-        <div class="win-rate-bar-wrap">
-          <div class="win-rate-bar-label">
-            <span>Accuracy</span>
-            <span>59%</span>
+        <div class="collecting-state" data-sport-field="empty-state" style="display:none;">
+          <div class="collecting-icon">
+            <i data-lucide="database" style="width:18px;height:18px;"></i>
           </div>
-          <div class="win-rate-bar-track">
-            <div class="win-rate-bar-fill bar-accent" data-bar-width="57" style="width:0%"></div>
+          <div class="collecting-text">
+            <strong style="color: var(--text-secondary); display:block; margin-bottom:4px;">Collecting Data</strong>
+            Grading predictions now. Win rate will be published once we have a statistically meaningful sample.
           </div>
         </div>
       </div>
@@ -1937,66 +1970,109 @@ footer {
     <div class="sport-grid-bottom" style="margin-top:20px;">
 
       <!-- MLB -->
-      <div class="card sport-card fade-in">
+      <div class="card sport-card fade-in" data-sport-key="mlb">
         <div class="sport-card-header">
           <div class="sport-name">MLB</div>
-          <span class="sport-badge sport-badge-active">Active</span>
+          <span class="sport-badge sport-badge-collecting" data-sport-field="badge">Syncing</span>
         </div>
-        <div class="sport-stats-row">
-          <div class="sport-stat">
-            <div class="sport-stat-value" style="color: var(--accent);">56%</div>
-            <div class="sport-stat-label">Win Rate</div>
+        <div data-sport-field="metrics">
+          <div class="sport-stats-row">
+            <div class="sport-stat">
+              <div class="sport-stat-value" data-sport-field="win-rate" style="color: var(--accent);">--</div>
+              <div class="sport-stat-label">Win Rate</div>
+            </div>
+            <div class="sport-stat">
+              <div class="sport-stat-value" data-sport-field="graded-legs" style="color: var(--text-secondary);">--</div>
+              <div class="sport-stat-label">Graded Legs</div>
+            </div>
           </div>
-          <div class="sport-stat">
-            <div class="sport-stat-value" style="color: var(--text-secondary);">400+</div>
-            <div class="sport-stat-label">Graded Legs</div>
+          <div class="win-rate-bar-wrap">
+            <div class="win-rate-bar-label">
+              <span>Accuracy</span>
+              <span data-sport-field="accuracy">--</span>
+            </div>
+            <div class="win-rate-bar-track">
+              <div class="win-rate-bar-fill bar-accent" data-sport-field="bar" data-bar-width="0" style="width:0%"></div>
+            </div>
           </div>
         </div>
-        <div class="win-rate-bar-wrap">
-          <div class="win-rate-bar-label">
-            <span>Accuracy</span>
-            <span>56%</span>
+        <div class="collecting-state" data-sport-field="empty-state" style="display:none;">
+          <div class="collecting-icon">
+            <i data-lucide="database" style="width:18px;height:18px;"></i>
           </div>
-          <div class="win-rate-bar-track">
-            <div class="win-rate-bar-fill bar-accent" data-bar-width="56" style="width:0%"></div>
+          <div class="collecting-text">
+            <strong style="color: var(--text-secondary); display:block; margin-bottom:4px;">Collecting Data</strong>
+            Grading predictions now. Win rate will be published once we have a statistically meaningful sample.
           </div>
         </div>
       </div>
 
       <!-- EPL -->
-      <div class="card sport-card fade-in delay-1">
+      <div class="card sport-card fade-in delay-1" data-sport-key="epl">
         <div class="sport-card-header">
           <div class="sport-name">EPL</div>
-          <span class="sport-badge sport-badge-active">Active</span>
+          <span class="sport-badge sport-badge-collecting" data-sport-field="badge">Syncing</span>
         </div>
-        <div class="sport-stats-row">
-          <div class="sport-stat">
-            <div class="sport-stat-value" style="color: var(--accent);">55%</div>
-            <div class="sport-stat-label">Win Rate</div>
+        <div data-sport-field="metrics">
+          <div class="sport-stats-row">
+            <div class="sport-stat">
+              <div class="sport-stat-value" data-sport-field="win-rate" style="color: var(--accent);">--</div>
+              <div class="sport-stat-label">Win Rate</div>
+            </div>
+            <div class="sport-stat">
+              <div class="sport-stat-value" data-sport-field="graded-legs" style="color: var(--text-secondary);">--</div>
+              <div class="sport-stat-label">Graded Legs</div>
+            </div>
           </div>
-          <div class="sport-stat">
-            <div class="sport-stat-value" style="color: var(--text-secondary);">200+</div>
-            <div class="sport-stat-label">Graded Legs</div>
+          <div class="win-rate-bar-wrap">
+            <div class="win-rate-bar-label">
+              <span>Accuracy</span>
+              <span data-sport-field="accuracy">--</span>
+            </div>
+            <div class="win-rate-bar-track">
+              <div class="win-rate-bar-fill bar-accent" data-sport-field="bar" data-bar-width="0" style="width:0%"></div>
+            </div>
           </div>
         </div>
-        <div class="win-rate-bar-wrap">
-          <div class="win-rate-bar-label">
-            <span>Accuracy</span>
-            <span>55%</span>
+        <div class="collecting-state" data-sport-field="empty-state" style="display:none;">
+          <div class="collecting-icon">
+            <i data-lucide="database" style="width:18px;height:18px;"></i>
           </div>
-          <div class="win-rate-bar-track">
-            <div class="win-rate-bar-fill bar-accent" data-bar-width="55" style="width:0%"></div>
+          <div class="collecting-text">
+            <strong style="color: var(--text-secondary); display:block; margin-bottom:4px;">Collecting Data</strong>
+            Grading predictions now. Win rate will be published once we have a statistically meaningful sample.
           </div>
         </div>
       </div>
 
       <!-- MLS -->
-      <div class="card sport-card fade-in delay-2">
+      <div class="card sport-card fade-in delay-2" data-sport-key="mls">
         <div class="sport-card-header">
           <div class="sport-name">MLS</div>
-          <span class="sport-badge sport-badge-collecting">Building Data</span>
+          <span class="sport-badge sport-badge-collecting" data-sport-field="badge">Syncing</span>
         </div>
-        <div class="collecting-state">
+        <div data-sport-field="metrics">
+          <div class="sport-stats-row">
+            <div class="sport-stat">
+              <div class="sport-stat-value" data-sport-field="win-rate" style="color: var(--accent);">--</div>
+              <div class="sport-stat-label">Win Rate</div>
+            </div>
+            <div class="sport-stat">
+              <div class="sport-stat-value" data-sport-field="graded-legs" style="color: var(--text-secondary);">--</div>
+              <div class="sport-stat-label">Graded Legs</div>
+            </div>
+          </div>
+          <div class="win-rate-bar-wrap">
+            <div class="win-rate-bar-label">
+              <span>Accuracy</span>
+              <span data-sport-field="accuracy">--</span>
+            </div>
+            <div class="win-rate-bar-track">
+              <div class="win-rate-bar-fill bar-accent" data-sport-field="bar" data-bar-width="0" style="width:0%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="collecting-state" data-sport-field="empty-state" style="display:none;">
           <div class="collecting-icon">
             <i data-lucide="database" style="width:18px;height:18px;"></i>
           </div>
@@ -2625,6 +2701,10 @@ function formatWinRate(winRate) {
   return Number(winRate).toFixed(1) + '%';
 }
 
+function formatExactCount(total) {
+  return Number(total).toLocaleString();
+}
+
 function buildResultsTitle(label, winRateText) {
   return 'Propeller Results: ' + winRateText + ' Win Rate Across ' + label + ' Graded Props';
 }
@@ -2716,14 +2796,74 @@ function updateResultsPageMetrics(data) {
   }
 }
 
-// Fetch live graded count + win rate from API
+function updateSportBadge(badgeEl, isPublished) {
+  if (!badgeEl) return;
+  badgeEl.textContent = isPublished ? 'Active' : 'Building Data';
+  badgeEl.classList.remove('sport-badge-active', 'sport-badge-collecting');
+  badgeEl.classList.add(isPublished ? 'sport-badge-active' : 'sport-badge-collecting');
+}
+
+function updateResultsSportCards(sports) {
+  if (!Array.isArray(sports)) return;
+
+  const sportsByKey = {};
+  sports.forEach(sport => {
+    if (sport && sport.key) sportsByKey[sport.key] = sport;
+  });
+
+  document.querySelectorAll('[data-sport-key]').forEach(card => {
+    const sport = sportsByKey[card.dataset.sportKey];
+    if (!sport) return;
+
+    const badgeEl = card.querySelector('[data-sport-field="badge"]');
+    const metricsEl = card.querySelector('[data-sport-field="metrics"]');
+    const emptyStateEl = card.querySelector('[data-sport-field="empty-state"]');
+    const winRateEl = card.querySelector('[data-sport-field="win-rate"]');
+    const gradedLegsEl = card.querySelector('[data-sport-field="graded-legs"]');
+    const accuracyEl = card.querySelector('[data-sport-field="accuracy"]');
+    const barEl = card.querySelector('[data-sport-field="bar"]');
+
+    updateSportBadge(badgeEl, sport.published);
+
+    if (!sport.published) {
+      if (metricsEl) metricsEl.style.display = 'none';
+      if (emptyStateEl) emptyStateEl.style.display = 'flex';
+      return;
+    }
+
+    if (metricsEl) metricsEl.style.display = '';
+    if (emptyStateEl) emptyStateEl.style.display = 'none';
+    if (winRateEl) winRateEl.textContent = formatWinRate(sport.win_rate);
+    if (gradedLegsEl) gradedLegsEl.textContent = formatExactCount(sport.total);
+    if (accuracyEl) accuracyEl.textContent = formatWinRate(sport.win_rate);
+
+    if (barEl) {
+      const targetWidth = Math.max(0, Math.min(Number(sport.win_rate) || 0, 100));
+      barEl.dataset.barWidth = targetWidth.toString();
+      if (barEl.dataset.animated) {
+        barEl.style.width = targetWidth + '%';
+      }
+    }
+  });
+}
+
+// Fetch live overall + per-sport results summary from API
 (function() {
-  fetch('https://web-production-3c1c4.up.railway.app/api/social/graded-count')
+  fetch('https://web-production-3c1c4.up.railway.app/api/public/results-summary')
     .then(r => r.json())
     .then(data => {
-      updateResultsPageMetrics(data);
+      if (!data || !data.overall) return;
+      updateResultsPageMetrics(data.overall);
+      updateResultsSportCards(data.sports);
     })
-    .catch(() => { /* fallback: hardcoded values remain */ });
+    .catch(() => {
+      fetch('https://web-production-3c1c4.up.railway.app/api/social/graded-count')
+        .then(r => r.json())
+        .then(data => {
+          updateResultsPageMetrics(data);
+        })
+        .catch(() => { /* fallback: hardcoded values remain */ });
+    });
 })();
 
 </script>
