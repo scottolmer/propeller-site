@@ -2329,15 +2329,24 @@ lucide.createIcons();
   }
 
   const API_URL = `https://web-production-3c1c4.up.railway.app/api/social/picks/nhl?game_date=${dateStr}`;
+  const FALLBACK_URL = `https://web-production-3c1c4.up.railway.app/api/nhl/props/analyze?game_date=${dateStr}&min_confidence=55&limit=200`;
   const FREE_LIMIT = 5;
   const PREMIUM_BLUR = 3;
 
   try {
-    const res = await fetch(API_URL, { signal: AbortSignal.timeout(10000) });
-    if (!res.ok) throw new Error(`API ${res.status}`);
-    const data = await res.json();
+    async function fetchJson(url) {
+      const res = await fetch(url, { signal: AbortSignal.timeout(10000) });
+      if (!res.ok) throw new Error(`API ${res.status}`);
+      return res.json();
+    }
 
-    const picks = Array.isArray(data) ? data : (data.props || data.picks || data.results || []);
+    let data = await fetchJson(API_URL);
+    let picks = Array.isArray(data) ? data : (data.props || data.picks || data.results || []);
+
+    if (!picks || picks.length === 0) {
+      data = await fetchJson(FALLBACK_URL);
+      picks = Array.isArray(data) ? data : (data.props || data.picks || data.results || []);
+    }
 
     if (!picks || picks.length === 0) {
       renderEmpty();
