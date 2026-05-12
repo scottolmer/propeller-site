@@ -12,16 +12,16 @@
   gtag('config', 'G-2Z7JMN1JTL');
 </script>
 
-<title>PrizePicks Payout Calculator [2026] | Propeller</title>
-<meta name="description" content="Calculate PrizePicks payouts instantly. Power Play and Flex Play multipliers for 2-6 picks. See expected profit at any entry amount. Free tool.">
+<title>PrizePicks Payout Calculator 2026 | Power & Flex</title>
+<meta name="description" content="Free PrizePicks payout calculator for 2026. Calculate Power Play and Flex Play payouts for 2-6 picks, including 3/4 and 4/5 results.">
 <meta name="keywords" content="prizepicks payout calculator, prizepicks multiplier, prizepicks payout chart, how much does prizepicks pay, prizepicks flex play payout, prizepicks power play payout 2026">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://propellerpicks.com/tools/prizepicks-payout-calculator/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://propellerpicks.com/tools/prizepicks-payout-calculator/">
-<meta property="og:title" content="PrizePicks Payout Calculator [2026] | Propeller">
-<meta property="og:description" content="Calculate PrizePicks payouts instantly. Power Play & Flex Play multipliers for 2-6 picks. Free tool.">
+<meta property="og:title" content="PrizePicks Payout Calculator 2026 | Power & Flex">
+<meta property="og:description" content="Free PrizePicks payout calculator for 2026. Calculate Power Play and Flex Play payouts for 2-6 picks, including 3/4 and 4/5 results.">
 <meta property="og:image" content="https://propellerpicks.com/images/og-image.png">
 <meta property="og:image:width" content="3000">
 <meta property="og:image:height" content="1000">
@@ -29,8 +29,8 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@propellerpicks">
-<meta name="twitter:title" content="PrizePicks Payout Calculator [2026] | Propeller">
-<meta name="twitter:description" content="Calculate PrizePicks payouts instantly. Power Play & Flex Play multipliers for 2-6 picks. Free tool.">
+<meta name="twitter:title" content="PrizePicks Payout Calculator 2026 | Power & Flex">
+<meta name="twitter:description" content="Free PrizePicks payout calculator for 2026. Calculate Power Play and Flex Play payouts for 2-6 picks, including 3/4 and 4/5 results.">
 <meta name="twitter:image" content="https://propellerpicks.com/images/og-image.png">
 
 <meta name="theme-color" content="#F97316">
@@ -239,7 +239,7 @@ footer a:hover { color: var(--text-2); }
   <section class="hero">
     <div class="hero-badge">Free Tool · Updated 2026</div>
     <h1>PrizePicks Payout <span class="accent">Calculator</span></h1>
-    <p>See exactly what you'll win. Power Play and Flex Play payouts for 2–6 picks with win probability estimates.</p>
+    <p>See exactly what a PrizePicks entry returns. Power Play and Flex Play payouts for 2–6 picks, including partial Flex results like 3/4 and 4/5.</p>
   </section>
 
   <!-- Calculator -->
@@ -295,7 +295,9 @@ footer a:hover { color: var(--text-2); }
   <!-- Payout Chart -->
   <section class="content-section">
     <h2>PrizePicks Payout Chart 2026</h2>
-    <p>Every payout multiplier for Power Play and Flex Play entries, updated for 2026.</p>
+    <p>Every standard payout multiplier for Power Play and Flex Play entries, updated for 2026.</p>
+
+    <p><strong style="color:var(--text-1)">Quick answers:</strong> PrizePicks allows up to 6 picks in a Power Play or Flex Play. A 4-pick Power Play pays 10x if all four picks hit. A 4-pick Flex pays 6x for 4/4 and 1.5x for 3/4.</p>
 
     <h3 style="font-size:18px;margin:24px 0 8px;color:var(--accent);">Power Play Payouts</h3>
     <table class="payout-table">
@@ -338,8 +340,8 @@ footer a:hover { color: var(--text-2); }
   <!-- Win Probability -->
   <section class="content-section">
     <h2>Win Probability &amp; Expected Value</h2>
-    <p>Your expected payout depends on your per-pick win rate. At 50% (coin flip), a 4-pick Power Play has a 6.25% chance of hitting. At 65% (Propeller's verified rate), that jumps to 17.9% — nearly 3x more likely.</p>
-    <p>This calculator uses combinatorial probability to estimate your chance of hitting each payout tier based on your win rate per leg. The higher your edge per pick, the more profitable these entries become over time.</p>
+    <p>Your expected payout depends on your per-pick hit rate. At 50% (coin flip), a 4-pick Power Play has a 6.25% chance of hitting. At a hypothetical 65% per-pick hit rate, that jumps to 17.9% — nearly 3x more likely.</p>
+    <p>This calculator uses combinatorial probability to estimate your chance of hitting each payout tier based on your assumed hit rate per leg. The higher your edge per pick, the more profitable these entries become over time.</p>
   </section>
 
   <!-- FAQ -->
@@ -384,7 +386,7 @@ footer a:hover { color: var(--text-2); }
   <!-- CTA -->
   <div class="cta-box">
     <h2>Get AI-Scored Picks for Your Entries</h2>
-    <p>Propeller's 8 AI agents analyze every prop with a 65% verified win rate. See which picks to lock in.</p>
+    <p>Propeller's AI agents analyze matchup, injury, market, and trend signals so you can build entries around clearer edges.</p>
     <a href="/picks/prizepicks/" class="cta-btn">
       See Today's PrizePicks Picks
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -457,7 +459,7 @@ function calculate() {
   const tiers = type === 'power' ? POWER[n] : FLEX[n];
   if (!tiers) return;
 
-  const winRate = 0.65; // Propeller's verified rate
+  const winRate = 0.65; // Hypothetical example hit rate.
   const grid = document.getElementById('resultGrid');
   const flexDiv = document.getElementById('flexBreakdown');
   const probDiv = document.getElementById('probBar');
@@ -533,7 +535,7 @@ function calculate() {
 
     probDiv.innerHTML = `
       <div class="prob-label"><span>Expected value per $${amount} entry (Flex)</span><span style="color:${ev > 0 ? 'var(--win)' : 'var(--loss)'};font-weight:700;font-family:var(--mono)">${ev >= 0 ? '+' : ''}$${ev.toFixed(2)}</span></div>
-      <div class="prob-label" style="margin-top:4px;"><span style="font-size:12px;color:var(--text-3)">Based on 65% win rate per pick (Propeller verified)</span></div>
+      <div class="prob-label" style="margin-top:4px;"><span style="font-size:12px;color:var(--text-3)">Based on a hypothetical 65% hit rate per pick</span></div>
     `;
   }
 
