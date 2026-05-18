@@ -64,7 +64,7 @@
   "url": "https://propellerpicks.com/",
   "applicationCategory": "SportsApplication",
   "operatingSystem": "iOS",
-  "installUrl": "https://apps.apple.com/app/propeller-picks",
+  "installUrl": "https://apps.apple.com/app/propeller-picks/id6760788202",
   "description": "AI-powered pick'em recommendation engine for Pick6, Underdog, PrizePicks, and FanDuel. 8 specialized agents analyze NFL, NBA, MLB, NHL, EPL, MLS, and PGA player props and deliver simple confidence scores — no betting jargon required.",
   "offers": [
     {
@@ -130,7 +130,7 @@
       "name": "What does the free tier include?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Free users get 5 fully-analyzed props per day, 1 AI-generated parlay, and basic odds comparison. No credit card required to create a free web account."
+        "text": "Free users get 5 fully-analyzed props per day, 1 AI-generated parlay, and basic odds comparison in the iOS app."
       }
     },
     {
@@ -138,7 +138,7 @@
       "name": "Can I cancel my subscription anytime?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Absolutely. Premium starts with a 7-day free trial, and you can cancel anytime from your billing settings. If you subscribe through the iOS companion app, you can also manage it in Apple subscriptions."
+        "text": "Absolutely. Premium starts with a 7-day free trial, and if you subscribe through the iOS app, you can manage or cancel it in Apple subscriptions."
       }
     },
     {
@@ -173,7 +173,7 @@
   },
   "sameAs": [
     "https://x.com/propellerpicks",
-    "https://apps.apple.com/app/propeller-picks/id6739498963"
+    "https://apps.apple.com/app/propeller-picks/id6760788202"
   ],
   "description": "AI-powered sports analysis platform using 8 specialized agents per sport to analyze player props across NFL, NBA, NHL, MLB, EPL, MLS, and PGA. 65.8% verified win rate across 91,000+ graded predictions.",
   "foundingDate": "2025",
@@ -544,6 +544,17 @@ nav .container {
 
 nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
 
+nav .store-badge {
+  flex-shrink: 0;
+  opacity: 1;
+}
+
+nav .store-badge img {
+  display: block;
+  width: 142px;
+  height: auto;
+}
+
 /* ── Mobile nav ── */
 @media (max-width: 767px) {
   .nav-links {
@@ -603,8 +614,9 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
 
   .hamburger { display: flex; align-items: center; }
 
-  /* Hide Get Started button text on very small — keep as icon-only or hide */
-  nav .btn { display: none; }
+  /* Hide the conversion badge on small screens; sticky CTA takes over. */
+  nav .btn,
+  nav .store-badge { display: none; }
 }
 
 /* ──────────── HERO ──────────── */
@@ -1080,20 +1092,24 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   .hero-text h1,
   .hero-copy h1 {
     font-size: clamp(38px, 11vw, 54px);
-    letter-spacing: -2px;
+    letter-spacing: 0;
+    max-width: 9ch;
   }
 
   .hero-subhead {
     font-size: 16px;
+    max-width: 30ch;
   }
 
   .hero-buttons {
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
   }
 
   .hero-buttons .btn {
     justify-content: center;
+    width: 100%;
+    max-width: 330px;
   }
 
   .hero-proof-wrap {
@@ -1159,6 +1175,12 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
 .store-badge:hover {
   transform: translateY(-2px);
   opacity: 1;
+}
+
+.store-badge img {
+  display: block;
+  width: 169px;
+  height: auto;
 }
 
 .store-badge-wrap {
@@ -3098,7 +3120,9 @@ footer {
       <svg id="hamburgerIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
 
-    <a href="https://app.propellerpicks.com/signup" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Start Free</a>
+    <a href="https://apps.apple.com/app/propeller-picks/id6760788202" target="_blank" rel="noopener" class="store-badge" aria-label="Download Propeller Picks on the App Store">
+      <img src="/images/app-store-badge.svg" alt="Download on the App Store" width="142" height="42">
+    </a>
   </div>
 </nav>
 
@@ -3108,17 +3132,19 @@ footer {
     <div class="hero-content">
       <div class="hero-shell">
         <div class="hero-copy hero-text">
-          <p class="hero-kicker fade-in">Web App for AI Player Prop Picks</p>
+          <p class="hero-kicker fade-in">iOS App for AI Player Prop Picks</p>
           <h1 class="fade-in delay-1">Find today&apos;s best player props <span class="hero-accent">in under 30 seconds.</span></h1>
-          <p class="hero-subhead fade-in delay-2">Propeller scores NFL, NBA, NHL, MLB, EPL, MLS, and PGA props with 8 AI agents, then surfaces the strongest plays for PrizePicks, Pick6, Underdog, and FanDuel in one web app.</p>
+          <p class="hero-subhead fade-in delay-2">Propeller scores NFL, NBA, NHL, MLB, EPL, MLS, and PGA props with 8 AI agents, then surfaces the strongest plays for PrizePicks, Pick6, Underdog, and FanDuel in the iOS app.</p>
           <div class="hero-buttons fade-in delay-3">
-            <a href="https://app.propellerpicks.com/signup" class="btn btn-primary">Open the Web App</a>
+            <a href="https://apps.apple.com/app/propeller-picks/id6760788202" target="_blank" rel="noopener" class="store-badge" aria-label="Download Propeller Picks on the App Store">
+              <img src="/images/app-store-badge.svg" alt="Download on the App Store" width="169" height="50">
+            </a>
             <a href="/picks/" class="btn btn-secondary">See Today&apos;s Picks</a>
           </div>
           <div class="hero-trust fade-in delay-3">
             <div class="hero-trust-pill"><i data-lucide="sparkles"></i> Free tier available</div>
             <div class="hero-trust-pill"><i data-lucide="badge-dollar-sign"></i> 7-day premium trial</div>
-            <div class="hero-trust-pill"><i data-lucide="smartphone"></i> Web app + iOS companion</div>
+            <div class="hero-trust-pill"><i data-lucide="smartphone"></i> Built for iPhone</div>
           </div>
         </div>
 
@@ -3402,7 +3428,7 @@ footer {
         <div class="pathway-tagline">Fastest path</div>
         <p class="pathway-kicker">I want picks today</p>
         <h3>Open the live boards.</h3>
-        <p>Jump into the pages that update daily by sport and platform, then move into the web app when you want the full board and full prop detail.</p>
+        <p>Jump into the pages that update daily by sport and platform, then download the iOS app when you want the full board and full prop detail.</p>
         <div class="pathway-links">
           <span>NBA</span>
           <span>NFL</span>
@@ -3537,13 +3563,15 @@ footer {
           <li><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>1 AI parlay per day</li>
           <li><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Basic odds comparison</li>
         </ul>
-        <a href="https://app.propellerpicks.com/signup" class="btn btn-secondary">Create Free Account</a>
+        <a href="https://apps.apple.com/app/propeller-picks/id6760788202" target="_blank" rel="noopener" class="store-badge" aria-label="Download Propeller Picks on the App Store">
+          <img src="/images/app-store-badge.svg" alt="Download on the App Store" width="169" height="50">
+        </a>
       </div>
       <div class="card card-glow pricing-card pricing-card-pro fade-in" style="transition-delay:0.1s">
         <div class="trial-banner">Most Popular — 7 Days Free</div>
         <p class="label" style="color:var(--accent);">Premium</p>
         <h3>Propeller Pro</h3>
-        <p class="pricing-description">Full web access, advanced tools, and the free iOS companion app for tracking picks on the go.</p>
+        <p class="pricing-description">Full iOS app access with advanced tools, daily prop boards, alerts, and performance tracking on the go.</p>
         <div class="pricing-price">
           <span class="amount">$9.99</span><span class="period"> /mo</span>
         </div>
@@ -3553,7 +3581,9 @@ footer {
           <li><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Best odds comparison with deep-links</li>
           <li><span class="check"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Personal performance dashboard</li>
         </ul>
-        <a href="https://app.propellerpicks.com/signup" class="btn btn-primary">Start Your Free 7-Day Trial</a>
+        <a href="https://apps.apple.com/app/propeller-picks/id6760788202" target="_blank" rel="noopener" class="store-badge" aria-label="Download Propeller Picks on the App Store">
+          <img src="/images/app-store-badge.svg" alt="Download on the App Store" width="169" height="50">
+        </a>
         <p class="trial-note">No charge for 7 days · Cancel anytime · No tricks</p>
       </div>
     </div>
@@ -3679,14 +3709,14 @@ footer {
           What does the free tier include?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-answer"><p>Free users get 5 fully-analyzed props per day, 1 AI-generated parlay, and basic odds comparison. No credit card required to create a free web account.</p></div>
+        <div class="faq-answer"><p>Free users get 5 fully-analyzed props per day, 1 AI-generated parlay, and basic odds comparison in the iOS app.</p></div>
       </div>
       <div class="faq-item fade-in" style="transition-delay:0.2s">
         <button class="faq-question" onclick="this.parentElement.classList.toggle('open');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'">
           Can I cancel my subscription anytime?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-answer"><p>Absolutely. Premium starts with a 7-day free trial, and you can cancel anytime from your billing settings. If you subscribe through the iOS companion app, you can also manage it in Apple subscriptions.</p></div>
+        <div class="faq-answer"><p>Absolutely. Premium starts with a 7-day free trial, and if you subscribe through the iOS app, you can manage or cancel it in Apple subscriptions.</p></div>
       </div>
       <div class="faq-item fade-in" style="transition-delay:0.25s">
         <button class="faq-question" onclick="this.parentElement.classList.toggle('open');const a=this.nextElementSibling;a.style.maxHeight=a.style.maxHeight?null:a.scrollHeight+'px'">
@@ -3712,8 +3742,10 @@ footer {
     <h2 class="fade-in">Stop guessing.<br><span>Start winning.</span></h2>
     <p class="fade-in">Join pick'em players using AI confidence scores to make smarter picks on Pick6, Underdog, PrizePicks, and FanDuel.</p>
     <div class="hero-buttons fade-in" style="transition-delay:0.1s">
-      <a href="https://app.propellerpicks.com/signup" class="btn btn-primary">Create Free Account</a>
-      <a href="https://app.propellerpicks.com/login" class="btn btn-secondary">Open the App</a>
+      <a href="https://apps.apple.com/app/propeller-picks/id6760788202" target="_blank" rel="noopener" class="store-badge" aria-label="Download Propeller Picks on the App Store">
+        <img src="/images/app-store-badge.svg" alt="Download on the App Store" width="169" height="50">
+      </a>
+      <a href="https://app.propellerpicks.com/login" class="btn btn-secondary">Web Login</a>
     </div>
   </div>
 </section>
@@ -3870,9 +3902,9 @@ footer {
 <div class="sticky-cta" id="stickyCta">
   <div class="sticky-cta-text">
     <span class="sticky-cta-title">Propeller</span>
-    <span class="sticky-cta-sub">Web App · Free Tier</span>
+    <span class="sticky-cta-sub">iOS App · Free Tier</span>
   </div>
-  <a href="https://app.propellerpicks.com/signup" class="btn btn-primary">Start Free</a>
+  <a href="https://apps.apple.com/app/propeller-picks/id6760788202" target="_blank" rel="noopener" class="btn btn-primary">Download</a>
 </div>
 
 <script>
