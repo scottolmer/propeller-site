@@ -857,8 +857,10 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
   vertical-align: middle;
 }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/legacy-seo-nav.css">
 </head>
-<body>
+<body class="legacy-redesign-page">
 
 <div class="grain-overlay" aria-hidden="true"></div>
 <div class="bg-orbs" aria-hidden="true">
@@ -868,54 +870,21 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
 </div>
 
 <!-- Nav -->
-<nav>
-  <div class="container">
-    <a href="/" class="logo"><div class="logo-icon"></div>Propeller</a>
-    <div class="nav-links" id="navLinks">
-      <div class="nav-item" id="navPicks">
-        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navPicks', event)">Picks <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg></button>
-        <div class="nav-dropdown" role="menu">
-          <a href="/picks/nba/" role="menuitem">NBA Picks Today</a><a href="/picks/nhl/" role="menuitem">NHL Picks Today</a><a href="/picks/mlb/" role="menuitem">MLB Picks Today</a><a href="/picks/nfl/" role="menuitem">NFL Picks Today</a><a href="/picks/soccer/" role="menuitem">Soccer Picks Today</a>
-          <div class="nav-dropdown-separator"></div>
-          <a href="/picks/prizepicks/" role="menuitem">PrizePicks Picks</a><a href="/picks/pick6/" role="menuitem">Pick6 Picks</a><a href="/picks/underdog/" role="menuitem">Underdog Picks</a>
-        </div>
-      </div>
-      <div class="nav-item" id="navGuides">
-        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navGuides', event)">Guides <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg></button>
-        <div class="nav-dropdown" role="menu">
-          <a href="/guides/prizepicks-strategy/" role="menuitem">PrizePicks Strategy</a><a href="/guides/pick6-strategy/" role="menuitem">Pick6 Strategy</a><a href="/guides/nba-prop-betting/" role="menuitem">NBA Prop Betting</a>
-          <a href="/guides/underdog-strategy/" role="menuitem">Underdog Strategy</a>
-          <a href="/guides/how-to-analyze-player-props/" role="menuitem">How to Analyze Props</a>
-          <div class="nav-dropdown-separator"></div>
-          <a href="/how-it-works/" role="menuitem">How It Works</a>
-        </div>
-      </div>
-      <div class="nav-item" id="navCompare">
-        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navCompare', event)">Compare <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg></button>
-        <div class="nav-dropdown" role="menu">
-          <a href="/compare/propeller-vs-bettingpros/" role="menuitem">Propeller vs BettingPros</a><a href="/compare/propeller-vs-oddsjam/" role="menuitem">Propeller vs OddsJam</a><a href="/compare/pick6-vs-prizepicks/" role="menuitem">Pick6 vs PrizePicks</a>
-        </div>
-      </div>
-      
-      <div class="nav-item"><a href="/results/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Results</a></div>
-      <div class="nav-item" id="navTools">
-        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navTools', event)">
-          Tools
-          <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
-        </button>
-        <div class="nav-dropdown" role="menu">
-          <a href="/tools/prizepicks-payout-calculator/" role="menuitem">PrizePicks Calculator</a>
-          <a href="/tools/pick6-payout-calculator/" role="menuitem">Pick6 Calculator</a>
-          <a href="/tools/underdog-payout-calculator/" role="menuitem">Underdog Calculator</a>
-          <div class="nav-dropdown-separator"></div>
-          <a href="/analyzer/" role="menuitem">Prop Analyzer</a>
-        </div>
-      </div>
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="brand" aria-label="Propeller Picks">
+      <span class="brand-mark"><span></span><span></span><span></span></span>
+      <span>Propeller<small>Picks</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="/picks/">Picks</a>
+      <a href="/results/">Results</a>
+      <a href="/track-record/">Track Record</a>
+      <a href="/how-it-works/">Method</a>
+      <a href="/tools/">Tools</a>
+      <a href="https://app.propellerpicks.com/app" rel="noopener">Web App</a>
+      <a class="cta" href="https://app.propellerpicks.com/signup" rel="noopener">Get Free Lifetime Access</a>
     </div>
-    <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
-      <svg id="hamburgerIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-    </button>
-    <a href="https://apps.apple.com/app/propeller-picks/id6760788202" target="_blank" rel="noopener" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Download App</a>
   </div>
 </nav>
 
