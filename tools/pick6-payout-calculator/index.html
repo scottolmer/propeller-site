@@ -71,10 +71,12 @@ select,input[type="number"]{background:var(--surface-2);border:1px solid var(--b
 .cta-box{text-align:center;padding:48px 24px;background:var(--surface);border:1px solid var(--border);border-radius:20px;margin:48px 0}.cta-box h2{margin-bottom:12px}.cta-box p{max-width:480px;margin:0 auto 24px}.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:linear-gradient(135deg,#F97316,#EA580C);color:#000;font-weight:800;font-size:16px;border-radius:12px;transition:transform .2s,box-shadow .2s}.cta-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px var(--accent-glow);opacity:1}
 footer{border-top:1px solid var(--border);padding:32px 0}footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}footer a,footer span{font-size:13px;color:var(--text-3)}footer a:hover{color:var(--text-2)}
 </style>
+<link rel="stylesheet" href="/assets/css/home-redesign.css">
+<link rel="stylesheet" href="/assets/css/tools-redesign.css">
 </head>
-<body>
+<body class="tool-calculator-page">
 
-<nav><div class="container"><a href="/" class="logo"><div class="logo-icon"></div> Propeller</a><a href="/picks/pick6/" class="nav-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Pick6 Picks</a></div></nav>
+<nav class="nav"><div class="nav-inner"><a href="/" class="brand" aria-label="Propeller Picks"><span class="brand-mark"><span></span><span></span><span></span></span><span>Propeller<small>Picks</small></span></a><div class="nav-links"><a href="/picks/">Picks</a><a href="/results/">Results</a><a href="/track-record/">Track Record</a><a href="/how-it-works/">Method</a><a href="/tools/">Tools</a><a href="https://app.propellerpicks.com/app" rel="noopener">Web App</a><a class="cta" href="https://app.propellerpicks.com/signup" rel="noopener">Get Free Lifetime Access</a></div></div></nav>
 
 <div class="container">
   <section class="hero">
@@ -108,6 +110,17 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
       <button class="pill active" onclick="setAmt(20)">$20</button>
       <button class="pill" onclick="setAmt(50)">$50</button>
       <button class="pill" onclick="setAmt(100)">$100</button>
+    </div>
+
+    <div class="hit-rate-control">
+      <div>
+        <label class="form-label" for="hitRate">Example Hit Rate</label>
+        <p class="hit-rate-copy">Used only for probability examples. This is not Propeller's live record and does not predict any single entry.</p>
+      </div>
+      <div class="hit-rate-input">
+        <input type="number" id="hitRate" value="55" min="1" max="99" step="1" oninput="refreshIfVisible()">
+        <span>% per pick</span>
+      </div>
     </div>
 
     <button class="calc-btn" onclick="calculate()">Calculate Payout</button>
@@ -159,7 +172,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
   </section>
 
   <section class="content-section">
-    <h2>Win Probability at Different Win Rates</h2>
+    <h2>Win Probability at Different Hit Rates</h2>
     <p>Pick6 is all-or-nothing — every pick must hit. Your chance of winning depends entirely on your per-pick accuracy:</p>
     <table class="payout-table">
       <thead><tr><th>Picks</th><th>At 50%</th><th>At 55%</th><th>At 60%</th><th>At 65%</th></tr></thead>
@@ -171,7 +184,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
         <tr><td>6</td><td>1.6%</td><td>2.8%</td><td>4.7%</td><td>7.5%</td></tr>
       </tbody>
     </table>
-    <p>At Propeller's 65% verified per-pick win rate, a 4-pick entry hits ~18% of the time. At 10x payout, that's a <strong style="color:var(--win)">+79% expected ROI</strong>.</p>
+    <p>Use the calculator's hit-rate field to test your own assumptions. A higher per-pick hit rate improves sweep probability quickly, but no historical record guarantees any single entry.</p>
   </section>
 
   <section class="content-section">
@@ -184,7 +197,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
 
   <div class="cta-box">
     <h2>Get AI-Scored Picks for Pick6</h2>
-    <p>Propeller's 8 AI agents analyze every prop with a 65% verified win rate. See which picks to lock in today.</p>
+    <p>Propeller ranks props by directional confidence and shows the reasoning behind each pick. Use the live board before building a Pick6 card.</p>
     <a href="/picks/pick6/" class="cta-btn">See Today's Pick6 Picks <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
 </div>
@@ -202,13 +215,30 @@ function setAmt(v) {
   event.target.classList.add('active');
 }
 
+function getHitRate() {
+  const input = document.getElementById('hitRate');
+  const raw = Number(input?.value || 55);
+  const clamped = Math.max(1, Math.min(99, raw));
+  if (input && Number(input.value) !== clamped) input.value = clamped;
+  return clamped / 100;
+}
+
+function hitRateLabel() {
+  return `${(getHitRate() * 100).toFixed(0)}%`;
+}
+
+function refreshIfVisible() {
+  if (document.getElementById('results')?.classList.contains('show')) calculate();
+}
+
 function calculate() {
   const n = parseInt(document.getElementById('numPicks').value);
   amount = parseInt(document.getElementById('entryAmount').value) || 20;
   const mult = PAYOUTS[n];
   const payout = amount * mult;
   const profit = payout - amount;
-  const winRate = 0.65;
+  const winRate = getHitRate();
+  const winRateText = hitRateLabel();
   const prob = Math.pow(winRate, n);
   const ev = (payout * prob) - (amount * (1 - prob));
 
@@ -216,10 +246,10 @@ function calculate() {
     <div class="result-cell"><div class="result-label">Multiplier</div><div class="result-value orange">${mult}x</div></div>
     <div class="result-cell"><div class="result-label">Payout</div><div class="result-value green">$${payout.toLocaleString()}</div><div class="result-sub">on $${amount} entry</div></div>
     <div class="result-cell"><div class="result-label">Profit</div><div class="result-value green">+$${profit.toLocaleString()}</div></div>
-    <div class="result-cell"><div class="result-label">Win Chance</div><div class="result-value">${(prob*100).toFixed(1)}%</div><div class="result-sub">at 65% per pick</div></div>
+    <div class="result-cell"><div class="result-label">Win Chance</div><div class="result-value">${(prob*100).toFixed(1)}%</div><div class="result-sub">at ${winRateText} per pick</div></div>
   `;
   document.getElementById('probBar').innerHTML = `
-    <div class="prob-label"><span>Win probability at 65% per pick</span><span style="color:var(--text-1);font-weight:700">${(prob*100).toFixed(1)}%</span></div>
+    <div class="prob-label"><span>Win probability at ${winRateText} per pick</span><span style="color:var(--text-1);font-weight:700">${(prob*100).toFixed(1)}%</span></div>
     <div class="prob-track"><div class="prob-fill" style="width:${prob*100}%;background:${ev>0?'var(--win)':'var(--loss)'}"></div></div>
     <div class="prob-label"><span>Expected value per $${amount} entry</span><span style="color:${ev>0?'var(--win)':'var(--loss)'};font-weight:700;font-family:var(--mono)">${ev>=0?'+':''}$${ev.toFixed(2)}</span></div>
   `;
@@ -230,7 +260,7 @@ function calculate() {
 function copyResults() {
   const n = document.getElementById('numPicks').value;
   const mult = PAYOUTS[n];
-  let text = `DraftKings Pick6 · ${n} picks · $${amount} entry\nPayout: $${(amount*mult).toLocaleString()} (${mult}x)\nWin chance: ${(Math.pow(0.65,n)*100).toFixed(1)}% at 65%/pick\n\nCalculated at propellerpicks.com/tools/pick6-payout-calculator/`;
+  let text = `DraftKings Pick6 · ${n} picks · $${amount} entry\nPayout: $${(amount*mult).toLocaleString()} (${mult}x)\nWin chance: ${(Math.pow(getHitRate(),n)*100).toFixed(1)}% at ${hitRateLabel()}/pick\n\nCalculated at propellerpicks.com/tools/pick6-payout-calculator/`;
   navigator.clipboard.writeText(text).then(()=>{const b=document.querySelector('.copy-btn');b.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--win)" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Copied!';setTimeout(()=>{b.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy Results'},2000)});
 }
 

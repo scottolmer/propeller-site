@@ -66,10 +66,12 @@ select,input[type="number"]{background:var(--surface-2);border:1px solid var(--b
 .cta-box{text-align:center;padding:48px 24px;background:var(--surface);border:1px solid var(--border);border-radius:20px;margin:48px 0}.cta-box h2{margin-bottom:12px}.cta-box p{max-width:480px;margin:0 auto 24px}.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:linear-gradient(135deg,#F97316,#EA580C);color:#000;font-weight:800;font-size:16px;border-radius:12px;transition:transform .2s,box-shadow .2s}.cta-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px var(--accent-glow);opacity:1}
 footer{border-top:1px solid var(--border);padding:32px 0}footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}footer a,footer span{font-size:13px;color:var(--text-3)}footer a:hover{color:var(--text-2)}
 </style>
+<link rel="stylesheet" href="/assets/css/home-redesign.css">
+<link rel="stylesheet" href="/assets/css/tools-redesign.css">
 </head>
-<body>
+<body class="tool-calculator-page">
 
-<nav><div class="container"><a href="/" class="logo"><div class="logo-icon"></div> Propeller</a><a href="/picks/underdog/" class="nav-back"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>Underdog Picks</a></div></nav>
+<nav class="nav"><div class="nav-inner"><a href="/" class="brand" aria-label="Propeller Picks"><span class="brand-mark"><span></span><span></span><span></span></span><span>Propeller<small>Picks</small></span></a><div class="nav-links"><a href="/picks/">Picks</a><a href="/results/">Results</a><a href="/track-record/">Track Record</a><a href="/how-it-works/">Method</a><a href="/tools/">Tools</a><a href="https://app.propellerpicks.com/app" rel="noopener">Web App</a><a class="cta" href="https://app.propellerpicks.com/signup" rel="noopener">Get Free Lifetime Access</a></div></div></nav>
 
 <div class="container">
   <section class="hero">
@@ -109,6 +111,17 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
       <button class="pill" onclick="setAmt(50)">$50</button>
       <button class="pill" onclick="setAmt(100)">$100</button>
       <div style="display:flex;align-items:center;gap:4px"><span style="color:var(--text-3);font-size:18px;font-weight:700">$</span><input type="number" id="customAmt" placeholder="Custom" min="1" max="1000" style="width:100px" oninput="setCustom()"></div>
+    </div>
+
+    <div class="hit-rate-control">
+      <div>
+        <label class="form-label" for="hitRate">Example Hit Rate</label>
+        <p class="hit-rate-copy">Used only for probability examples. This is not Propeller's live record and does not predict any single entry.</p>
+      </div>
+      <div class="hit-rate-input">
+        <input type="number" id="hitRate" value="55" min="1" max="99" step="1" oninput="refreshIfVisible()">
+        <span>% per pick</span>
+      </div>
     </div>
 
     <button class="calc-btn" onclick="calculate()">Calculate Payout</button>
@@ -177,7 +190,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
     <h2>Standard vs Flex: When to Use Each</h2>
     <p><strong style="color:var(--text-1)">Standard</strong> is all-or-nothing with higher multipliers. Use it when you have high-confidence picks and want maximum payout. Best for 2–4 pick entries where your hit rate supports the math.</p>
     <p><strong style="color:var(--text-1)">Flex</strong> provides a safety net — you can still profit missing 1–2 picks. The tradeoff is lower max multipliers (e.g., 10x vs 20x on 5-picks). Use Flex for 5+ pick entries where the probability of a perfect sweep drops significantly.</p>
-    <p>At a hypothetical 65% per-pick hit rate, a 4-pick Standard entry has a 17.9% hit rate. A 4-pick Flex gives you an 87.4% chance of hitting at least 3/4. The expected value math often favors Standard at fewer picks and Flex at more picks.</p>
+    <p>Use the calculator's hit-rate field to test your own assumptions. Standard rewards perfect cards with higher multipliers, while Flex gives you a safety net when the chance of a perfect sweep drops.</p>
   </section>
 
   <section class="content-section">
@@ -212,6 +225,10 @@ let amount=20;
 function setAmt(v){amount=v;document.getElementById('customAmt').value='';document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));event.target.classList.add('active')}
 function setCustom(){const v=parseInt(document.getElementById('customAmt').value);if(v>0){amount=v;document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'))}}
 
+function getHitRate(){const input=document.getElementById('hitRate');const raw=Number(input?.value||55);const clamped=Math.max(1,Math.min(99,raw));if(input&&Number(input.value)!==clamped)input.value=clamped;return clamped/100}
+function hitRateLabel(){return `${(getHitRate()*100).toFixed(0)}%`}
+function refreshIfVisible(){if(document.getElementById('results')?.classList.contains('show'))calculate()}
+
 function updateUI(){
   const type=document.getElementById('entryType').value;
   const picks=document.getElementById('numPicks');
@@ -229,7 +246,8 @@ function calculate(){
   const grid=document.getElementById('resultGrid');
   const flexDiv=document.getElementById('flexBreakdown');
   const evDiv=document.getElementById('evBar');
-  const wr=0.65;
+  const wr=getHitRate();
+  const wrText=hitRateLabel();
 
   if(type==='standard'){
     const mult=STD[n];const payout=amount*mult;const profit=payout-amount;
@@ -238,7 +256,7 @@ function calculate(){
       <div class="result-cell"><div class="result-label">Multiplier</div><div class="result-value orange">${mult}x</div></div>
       <div class="result-cell"><div class="result-label">Payout</div><div class="result-value green">$${payout.toLocaleString()}</div><div class="result-sub">on $${amount} entry</div></div>
       <div class="result-cell"><div class="result-label">Profit</div><div class="result-value green">+$${profit.toLocaleString()}</div></div>
-      <div class="result-cell"><div class="result-label">Win Chance</div><div class="result-value">${(prob*100).toFixed(1)}%</div><div class="result-sub">at 65% per pick</div></div>`;
+      <div class="result-cell"><div class="result-label">Win Chance</div><div class="result-value">${(prob*100).toFixed(1)}%</div><div class="result-sub">at ${wrText} per pick</div></div>`;
     flexDiv.innerHTML='';
     evDiv.innerHTML=`<div class="prob-label"><span>Expected value per $${amount} entry</span><span style="color:${ev>0?'var(--win)':'var(--loss)'};font-weight:700;font-family:var(--mono)">${ev>=0?'+':''}$${ev.toFixed(2)}</span></div>`;
   } else {
@@ -252,7 +270,7 @@ function calculate(){
     flexDiv.innerHTML=`<div class="flex-row"><div class="flex-cell header">Result</div><div class="flex-cell header">Multiplier</div><div class="flex-cell header">Profit</div>${rows}</div>`;
     let ev=-amount;
     for(let k=0;k<=n;k++){const prob=binomProb(n,k,wr);const tier=tiers.find(t=>t.need===k);if(tier)ev+=prob*amount*tier.mult}
-    evDiv.innerHTML=`<div class="prob-label" style="margin-top:16px"><span>Expected value per $${amount} Flex entry</span><span style="color:${ev>0?'var(--win)':'var(--loss)'};font-weight:700;font-family:var(--mono)">${ev>=0?'+':''}$${ev.toFixed(2)}</span></div><div class="prob-label" style="margin-top:4px"><span style="font-size:12px;color:var(--text-3)">Based on a hypothetical 65% hit rate per pick</span></div>`;
+    evDiv.innerHTML=`<div class="prob-label" style="margin-top:16px"><span>Expected value per $${amount} Flex entry</span><span style="color:${ev>0?'var(--win)':'var(--loss)'};font-weight:700;font-family:var(--mono)">${ev>=0?'+':''}$${ev.toFixed(2)}</span></div><div class="prob-label" style="margin-top:4px"><span style="font-size:12px;color:var(--text-3)">Based on your selected ${wrText} hit rate per pick</span></div>`;
   }
   document.getElementById('results').classList.add('show');
   gtag('event','calculator_used',{platform:'underdog',entry_type:type,num_picks:n,amount:amount});
@@ -261,7 +279,7 @@ function calculate(){
 function copyResults(){
   const type=document.getElementById('entryType').value;const n=document.getElementById('numPicks').value;
   let text=`Underdog ${type==='standard'?'Standard':'Flex'} · ${n} picks · $${amount} entry\n`;
-  if(type==='standard'){text+=`Payout: $${(amount*STD[n]).toLocaleString()} (${STD[n]}x)\nWin chance: ${(Math.pow(0.65,n)*100).toFixed(1)}% at 65%/pick\n`}
+  if(type==='standard'){text+=`Payout: $${(amount*STD[n]).toLocaleString()} (${STD[n]}x)\nWin chance: ${(Math.pow(getHitRate(),n)*100).toFixed(1)}% at ${hitRateLabel()}/pick\n`}
   else{FLEX[n].forEach(t=>{text+=`${t.need}/${n}: $${(amount*t.mult).toFixed(0)} (${t.mult}x)\n`})}
   text+=`\nCalculated at propellerpicks.com/tools/underdog-payout-calculator/`;
   navigator.clipboard.writeText(text).then(()=>{const b=document.querySelector('.copy-btn');b.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--win)" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Copied!';setTimeout(()=>{b.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy Results'},2000)});
