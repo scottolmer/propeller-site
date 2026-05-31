@@ -1712,6 +1712,29 @@ footer {
 @media (max-width: 640px) {
   .cta-card { padding: 36px 24px; }
   .sort-controls { display: none; }
+  .bg-orb {
+    width: 320px;
+    height: 320px;
+    filter: blur(90px);
+  }
+  .bg-orb-1 { left: 35%; }
+  .bg-orb-2 { right: -20%; }
+  .bg-orb-3 { left: 25%; }
+  .search-card { padding: 4px; }
+  .search-inner {
+    gap: 10px;
+    padding: 14px 16px;
+  }
+  .search-input {
+    min-width: 0;
+    font-size: 17px;
+  }
+  .responsible-gambling {
+    max-width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 14px;
+  }
 }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -1733,7 +1756,7 @@ footer {
       <span>Propeller<small>Picks</small></span>
     </a>
     <div class="nav-links">
-      <a href="/picks/">Picks</a>
+      <a href="/analyzer/">Analyzer</a>
       <a href="/results/">Results</a>
       <a href="/track-record/">Track Record</a>
       <a href="/how-it-works/">Method</a>
@@ -2003,14 +2026,14 @@ footer {
   <div class="container">
     <div class="fade-in" style="background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0)), rgba(14,17,23,0.92); border:1px solid var(--glass-border); border-radius:24px; padding:28px; box-shadow:0 22px 48px rgba(0,0,0,0.28);">
       <p class="label section-label" style="text-align:left;margin-bottom:10px;">Next Step</p>
-      <h2 class="section-title" style="text-align:left;margin-bottom:12px;">The analyzer is a tool. <span>These pages frame it correctly.</span></h2>
-      <p style="max-width:760px;color:var(--text-secondary);font-size:16px;line-height:1.7;margin-bottom:24px;">Tool traffic should be routed into live picks, the methodology page, and the results ledger so the analyzer sits inside the core SEO surface instead of floating on its own.</p>
+      <h2 class="section-title" style="text-align:left;margin-bottom:12px;">The analyzer is a tool. <span>The full product goes deeper.</span></h2>
+      <p style="max-width:760px;color:var(--text-secondary);font-size:16px;line-height:1.7;margin-bottom:24px;">Use the free analyzer for a quick read, then move into the web app, methodology, and public results pages for the fuller Propeller experience.</p>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;">
-        <a href="/picks/" class="fade-in" style="display:block;padding:22px;border-radius:18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);text-decoration:none;color:inherit;">
+        <a href="https://app.propellerpicks.com/app" rel="noopener" class="fade-in" style="display:block;padding:22px;border-radius:18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);text-decoration:none;color:inherit;">
           <p style="margin-bottom:8px;color:var(--text-tertiary);font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Use it today</p>
-          <h3 style="font-family:var(--font-display);font-size:24px;color:var(--text-primary);margin-bottom:10px;">Browse live picks</h3>
-          <p style="color:var(--text-secondary);margin-bottom:14px;">Move from the tool into the daily sport and platform hubs where the strongest live props are already sorted.</p>
-          <span style="display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-family:var(--font-display);font-size:14px;">Open picks hub <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></span>
+          <h3 style="font-family:var(--font-display);font-size:24px;color:var(--text-primary);margin-bottom:10px;">Open the web app</h3>
+          <p style="color:var(--text-secondary);margin-bottom:14px;">Move from a single free lookup into the full desktop board with filters, drawers, watchlists, and saved picks.</p>
+          <span style="display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-family:var(--font-display);font-size:14px;">Launch web app <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></span>
         </a>
         <a href="/how-it-works/" class="fade-in delay-1" style="display:block;padding:22px;border-radius:18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);text-decoration:none;color:inherit;">
           <p style="margin-bottom:8px;color:var(--text-tertiary);font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Understand the score</p>
@@ -2136,19 +2159,12 @@ footer {
   <div class="container">
     <p class="label section-label fade-in" style="text-align:center; margin-bottom:24px;">Explore Propeller</p>
     <div class="links-grid fade-in">
-      <a href="/picks/nba/" class="link-card">
-        <div style="width:36px;height:36px;background:rgba(245,132,38,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#F58426;" aria-hidden="true">
-          <i data-lucide="trending-up" style="width:18px;height:18px;"></i>
-        </div>
-        <span class="link-card-label">NBA Picks Today</span>
-        <span class="link-card-sub">Daily AI analysis</span>
-      </a>
-      <a href="/picks/prizepicks/" class="link-card">
+      <a href="/tools/" class="link-card">
         <div style="width:36px;height:36px;background:rgba(249,115,22,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--accent);" aria-hidden="true">
-          <i data-lucide="layers" style="width:18px;height:18px;"></i>
+          <i data-lucide="wrench" style="width:18px;height:18px;"></i>
         </div>
-        <span class="link-card-label">PrizePicks Strategy</span>
-        <span class="link-card-sub">Pick 2–6 optimized</span>
+        <span class="link-card-label">Free DFS Tools</span>
+        <span class="link-card-sub">Calculators and analyzer</span>
       </a>
       <a href="/results/" class="link-card">
         <div style="width:36px;height:36px;background:rgba(16,185,129,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--success);" aria-hidden="true">
@@ -2157,6 +2173,13 @@ footer {
         <span class="link-card-label">Verified Results</span>
         <span class="link-card-sub">Full track record</span>
       </a>
+      <a href="/track-record/" class="link-card">
+        <div style="width:36px;height:36px;background:rgba(16,185,129,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--success);" aria-hidden="true">
+          <i data-lucide="clipboard-check" style="width:18px;height:18px;"></i>
+        </div>
+        <span class="link-card-label">Track Record</span>
+        <span class="link-card-sub">Buckets and grading</span>
+      </a>
       <a href="/how-it-works/" class="link-card">
         <div style="width:36px;height:36px;background:rgba(59,130,246,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#60A5FA;" aria-hidden="true">
           <i data-lucide="cpu" style="width:18px;height:18px;"></i>
@@ -2164,12 +2187,12 @@ footer {
         <span class="link-card-label">How It Works</span>
         <span class="link-card-sub">Full methodology</span>
       </a>
-      <a href="/blog/" class="link-card">
+      <a href="/compare/pick6-vs-prizepicks/" class="link-card">
         <div style="width:36px;height:36px;background:rgba(245,158,11,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--gold);" aria-hidden="true">
-          <i data-lucide="file-text" style="width:18px;height:18px;"></i>
+          <i data-lucide="scale" style="width:18px;height:18px;"></i>
         </div>
-        <span class="link-card-label">Blog &amp; Guides</span>
-        <span class="link-card-sub">Strategy &amp; education</span>
+        <span class="link-card-label">Pick6 vs PrizePicks</span>
+        <span class="link-card-sub">Platform comparison</span>
       </a>
     </div>
   </div>
@@ -2189,43 +2212,35 @@ footer {
           <p class="footer-tagline">AI-powered prop analysis for Pick6, Underdog, PrizePicks &amp; FanDuel.</p>
         </div>
 
-        <!-- Daily Picks column -->
+        <!-- Product column -->
         <div class="footer-col">
-          <p class="footer-col-header">Daily Picks</p>
+          <p class="footer-col-header">Product</p>
           <div class="footer-col-links">
-            <a href="/picks/nba/">NBA Picks Today</a>
-            <a href="/picks/nhl/">NHL Picks Today</a>
-            <a href="/picks/mlb/">MLB Picks Today</a>
-            <a href="/picks/nfl/">NFL Picks Today</a>
-            <a href="/picks/soccer/">Soccer Picks Today</a>
-          </div>
-        </div>
-
-        <!-- Platforms column -->
-        <div class="footer-col">
-          <p class="footer-col-header">Platforms</p>
-          <div class="footer-col-links">
-            <a href="/picks/prizepicks/">PrizePicks Picks</a>
-            <a href="/picks/pick6/">Pick6 Picks</a>
-            <a href="/picks/underdog/">Underdog Picks</a>
-          </div>
-          <p class="footer-col-header" style="margin-top: 20px;">Compare</p>
-          <div class="footer-col-links">
-            <a href="/compare/propeller-vs-bettingpros/">vs BettingPros</a>
-            <a href="/compare/propeller-vs-oddsjam/">vs OddsJam</a>
-            <a href="/compare/pick6-vs-prizepicks/">Pick6 vs PrizePicks</a>
-          </div>
-        </div>
-
-        <!-- Learn column -->
-        <div class="footer-col">
-          <p class="footer-col-header">Learn</p>
-          <div class="footer-col-links">
-            <a href="/how-it-works/">How It Works</a>
-            <a href="/guides/prizepicks-strategy/">PrizePicks Guide</a>
-            <a href="/guides/pick6-strategy/">Pick6 Guide</a>
-            <a href="/guides/nba-prop-betting/">NBA Betting Guide</a>
+            <a href="https://app.propellerpicks.com/signup" rel="noopener">Get Free Lifetime Access</a>
+            <a href="https://app.propellerpicks.com/app" rel="noopener">Web App</a>
             <a href="/analyzer/">Prop Analyzer</a>
+            <a href="/tools/">Free DFS Tools</a>
+          </div>
+        </div>
+
+        <!-- Proof column -->
+        <div class="footer-col">
+          <p class="footer-col-header">Proof</p>
+          <div class="footer-col-links">
+            <a href="/results/">Results</a>
+            <a href="/track-record/">Track Record</a>
+            <a href="/how-it-works/">Method</a>
+          </div>
+        </div>
+
+        <!-- Calculators column -->
+        <div class="footer-col">
+          <p class="footer-col-header">Calculators</p>
+          <div class="footer-col-links">
+            <a href="/tools/prizepicks-payout-calculator/">PrizePicks Calculator</a>
+            <a href="/tools/pick6-payout-calculator/">Pick6 Calculator</a>
+            <a href="/tools/underdog-payout-calculator/">Underdog Calculator</a>
+            <a href="/compare/pick6-vs-prizepicks/">Pick6 vs PrizePicks</a>
           </div>
         </div>
 
@@ -2233,8 +2248,6 @@ footer {
         <div class="footer-col">
           <p class="footer-col-header">Company</p>
           <div class="footer-col-links">
-            <a href="/results/">Results</a>
-            <a href="/blog/">Blog</a>
             <a href="https://x.com/propellerpicks" target="_blank" rel="noopener" aria-label="Follow Propeller on X">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;opacity:0.7;"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
               Twitter / X
