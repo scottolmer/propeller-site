@@ -23,7 +23,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://propellerpicks.com/guides/how-to-analyze-player-props/">
 <meta property="og:title" content="How to Analyze Player Props — Step-by-Step Framework (2026)">
-<meta property="og:description" content="The exact prop analysis framework behind 57%+ win rate across 49,000+ graded picks. Step-by-step guide to researching player props and finding value.">
+<meta property="og:description" content="A practical prop analysis framework for researching player props, comparing lines, and using confidence signals responsibly.">
 <meta property="og:image" content="https://propellerpicks.com/images/og-image.png">
 <meta property="og:image:width" content="3000">
 <meta property="og:image:height" content="1000">
@@ -34,7 +34,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@propellerpicks">
 <meta name="twitter:creator" content="@propellerpicks">
-<meta name="twitter:title" content="How to Analyze Player Props — 57%+ Win Rate Framework">
+<meta name="twitter:title" content="How to Analyze Player Props — Research Framework">
 <meta name="twitter:description" content="Step-by-step player prop analysis framework. Research props, find value, compare lines, use AI scores.">
 <meta name="twitter:image" content="https://propellerpicks.com/images/og-image.png">
 
@@ -70,7 +70,7 @@
     "@type": "Organization",
     "name": "Propeller",
     "url": "https://propellerpicks.com/about/",
-    "description": "AI-powered sports analysis platform using 8 specialized agents per sport. 57%+ verified win rate across 49,000+ graded player prop predictions."
+    "description": "AI-powered sports analysis platform using 8 specialized agents per sport. transparent results tracking across 49,000+ graded player prop predictions."
   },
   "publisher": {
     "@type": "Organization",
@@ -131,7 +131,7 @@
   "@type": "FAQPage",
   "mainEntity": [
     {"@type":"Question","name":"How do you analyze a player prop?","acceptedAnswer":{"@type":"Answer","text":"Analyze a player prop by evaluating 6 key signals: volume (minutes/usage), matchup quality (DvP), injury status (direct + cascade effects), game environment (pace/total), recent form (last 8-10 games weighted), and market pricing (no-vig probability across books)."}},
-    {"@type":"Question","name":"What is the best tool for analyzing player props?","acceptedAnswer":{"@type":"Answer","text":"Propeller's Prop Analyzer runs 8 AI agents on every prop across 6 sports, producing a confidence score. 57%+ verified win rate across 49,000+ graded predictions. Free at propellerpicks.com/analyzer."}},
+    {"@type":"Question","name":"What is the best tool for analyzing player props?","acceptedAnswer":{"@type":"Answer","text":"Propeller's Prop Analyzer runs 8 AI agents on every prop across 6 sports, producing a confidence score. transparent results tracking across 49,000+ graded predictions. Free at propellerpicks.com/analyzer."}},
     {"@type":"Question","name":"How do you find value in player props?","acceptedAnswer":{"@type":"Answer","text":"Value exists when true probability exceeds implied odds probability. Find it through high-variance stat types, UNDER bias (60.3% vs 51.6%), injury cascade timing, and cross-book no-vig disagreement."}},
     {"@type":"Question","name":"What is no-vig analysis?","acceptedAnswer":{"@type":"Answer","text":"No-vig analysis strips the bookmaker's margin from odds to reveal true implied probability. Comparing across books reveals market disagreement — which is where exploitable value lives."}},
     {"@type":"Question","name":"Which player prop stat types are most profitable?","acceptedAnswer":{"@type":"Answer","text":"High-variance stat types: NBA blocks 69.9%, three-pointers 63.2%, steals 61.9% — vs points at 55.7%. Less liquid markets = more mispricing = more edge."}}
@@ -1244,76 +1244,19 @@ footer {
     </a>
 
     <div class="nav-links" id="navLinks">
-      <div class="nav-item" id="navPicks">
-        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navPicks', event)">
-          Picks
-          <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
-        </button>
-        <div class="nav-dropdown" role="menu">
-          <a href="/picks/nba/" role="menuitem">NBA Picks Today</a>
-          <a href="/picks/nhl/" role="menuitem">NHL Picks Today</a>
-          <a href="/picks/mlb/" role="menuitem">MLB Picks Today</a>
-          <a href="/picks/nfl/" role="menuitem">NFL Picks Today</a>
-          <a href="/picks/soccer/" role="menuitem">Soccer Picks Today</a>
-          <div class="nav-dropdown-separator"></div>
-          <a href="/picks/prizepicks/" role="menuitem">PrizePicks Picks</a>
-          <a href="/picks/pick6/" role="menuitem">Pick6 Picks</a>
-          <a href="/picks/underdog/" role="menuitem">Underdog Picks</a>
-        </div>
-      </div>
-
-      <div class="nav-item" id="navGuides">
-        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navGuides', event)">
-          Guides
-          <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
-        </button>
-        <div class="nav-dropdown" role="menu">
-          <a href="/guides/prizepicks-strategy/" role="menuitem">PrizePicks Strategy</a>
-          <a href="/guides/pick6-strategy/" role="menuitem">Pick6 Strategy</a>
-          <a href="/guides/underdog-strategy/" role="menuitem">Underdog Strategy</a>
-          <a href="/guides/nba-prop-betting/" role="menuitem">NBA Prop Betting</a>
-          <a href="/guides/how-to-analyze-player-props/" role="menuitem">How to Analyze Props</a>
-          <div class="nav-dropdown-separator"></div>
-          <a href="/how-it-works/" role="menuitem">How It Works</a>
-        </div>
-      </div>
-
-      <div class="nav-item" id="navCompare">
-        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navCompare', event)">
-          Compare
-          <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
-        </button>
-        <div class="nav-dropdown" role="menu">
-          <a href="/compare/propeller-vs-bettingpros/" role="menuitem">Propeller vs BettingPros</a>
-          <a href="/compare/propeller-vs-oddsjam/" role="menuitem">Propeller vs OddsJam</a>
-          <a href="/compare/pick6-vs-prizepicks/" role="menuitem">Pick6 vs PrizePicks</a>
-        </div>
-      </div>
-
-      <div class="nav-item">
-        <a href="/results/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Results</a>
-      </div>
-
-      <div class="nav-item" id="navTools">
-        <button class="nav-item-link" aria-haspopup="true" aria-expanded="false" onclick="toggleNavDropdown('navTools', event)">
-          Tools
-          <svg class="nav-chevron" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 4 6 8 10 4"/></svg>
-        </button>
-        <div class="nav-dropdown" role="menu">
-          <a href="/tools/prizepicks-payout-calculator/" role="menuitem">PrizePicks Calculator</a>
-          <a href="/tools/pick6-payout-calculator/" role="menuitem">Pick6 Calculator</a>
-          <a href="/tools/underdog-payout-calculator/" role="menuitem">Underdog Calculator</a>
-          <div class="nav-dropdown-separator"></div>
-          <a href="/analyzer/" role="menuitem">Prop Analyzer</a>
-        </div>
-      </div>
+      <div class="nav-item"><a href="/analyzer/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Analyzer</a></div>
+      <div class="nav-item"><a href="/results/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Results</a></div>
+      <div class="nav-item"><a href="/track-record/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Track Record</a></div>
+      <div class="nav-item"><a href="/how-it-works/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Method</a></div>
+      <div class="nav-item"><a href="/tools/" class="nav-item-link" onclick="closeAllNavDropdowns(); closeMobileMenu();">Tools</a></div>
+      <div class="nav-item"><a href="https://app.propellerpicks.com/app" class="nav-item-link" rel="noopener" onclick="closeAllNavDropdowns(); closeMobileMenu();">Web App</a></div>
     </div>
 
     <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
       <svg id="hamburgerIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
     </button>
 
-    <a href="https://app.propellerpicks.com/signup" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Start Free</a>
+    <a href="https://app.propellerpicks.com/signup" rel="noopener" class="btn btn-primary" style="padding:10px 20px;font-size:14px;">Get Free Lifetime Access</a>
   </div>
 </nav>
 
@@ -1329,7 +1272,7 @@ footer {
         <span>How to Analyze Props</span>
       </nav>
       <h1 class="fade-in delay-1">How to Analyze<br><span>Player Props</span></h1>
-      <p class="hero-sub fade-in delay-2">The step-by-step framework behind 49,000+ graded predictions at 57%+ win rate. Learn how to research any player prop, evaluate the key signals, compare lines, and make data-driven decisions across NBA, NFL, NHL, MLB, and Soccer.</p>
+      <p class="hero-sub fade-in delay-2">A step-by-step framework for researching any player prop, evaluating key signals, comparing lines, and making data-driven decisions across NBA, NFL, NHL, MLB, and Soccer.</p>
       <div class="hero-buttons fade-in delay-3">
         <a href="/analyzer/" class="btn btn-primary">
           <i data-lucide="search" style="width:18px;height:18px;"></i>
@@ -1540,7 +1483,7 @@ footer {
       </div>
       <div class="faq-item fade-in">
         <h3>What is the best tool for analyzing player props?</h3>
-        <p>Propeller's Prop Analyzer runs 8 specialized AI agents on every available prop across 6 sports, producing a single confidence score. The agents evaluate matchup, injury, pace, usage, no-vig, hit rate, minutes, and rest factors. 57%+ verified win rate across 49,000+ graded predictions. Available free at propellerpicks.com/analyzer.</p>
+        <p>Propeller's Prop Analyzer runs 8 specialized AI agents on every available prop across 6 sports, producing a single confidence score. The agents evaluate matchup, injury, pace, usage, no-vig, hit rate, minutes, and rest factors. transparent results tracking across 49,000+ graded predictions. Available free at propellerpicks.com/analyzer.</p>
       </div>
       <div class="faq-item fade-in">
         <h3>How do you find value in player props?</h3>
