@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>NBA Player Props Today, June 10 — AI Picks &amp; Odds | Propeller</title>
+<!-- MOCKUP A: Freshness-first daily picks template.
+     Title + H1 carry today's date (regenerated daily by the pipeline).
+     Above the fold: updated timestamp, today's top props, yesterday's graded proof. -->
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#06080D;--surface:#0E1117;--border:rgba(255,255,255,0.07);--text:#F1F5F9;--muted:#94A3B8;--dim:#64748B;--accent:#F97316;--green:#22C55E;--red:#EF4444}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--muted);line-height:1.6;-webkit-font-smoothing:antialiased}
+.mono{font-family:'JetBrains Mono',ui-monospace,monospace}
+a{color:inherit;text-decoration:none}
+.c{max-width:1120px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(6,8,13,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+nav .c{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:17px;color:var(--text)}
+.logo i{width:22px;height:22px;background:var(--accent);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.nl{display:flex;gap:4px;font-size:13px;font-weight:500}
+.nl a{padding:8px 12px;border-radius:8px}
+.nl a:hover,.nl a.on{color:var(--text);background:rgba(255,255,255,0.05)}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#000;font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:10px}
+.crumb{font-size:12px;color:var(--dim);padding:18px 0 0}
+.crumb a:hover{color:var(--text)}
+header.hero{padding:18px 0 28px}
+.fresh{display:inline-flex;align-items:center;gap:8px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.25);color:var(--green);font-size:12px;font-weight:600;padding:5px 12px;border-radius:99px;margin-bottom:14px}
+.fresh .dot{width:7px;height:7px;border-radius:50%;background:var(--green);animation:p 2s infinite}
+@keyframes p{50%{opacity:.4}}
+h1{font-size:clamp(26px,4vw,40px);font-weight:800;color:var(--text);letter-spacing:-0.02em;line-height:1.15}
+h1 .date{color:var(--accent)}
+.sub{margin-top:10px;font-size:15.5px;max-width:640px}
+.statrow{display:flex;gap:28px;margin-top:20px;flex-wrap:wrap}
+.stat .v{font-size:22px;font-weight:800;color:var(--text)}
+.stat .l{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim)}
+.stat .v.g{color:var(--green)}
+main{padding-bottom:60px}
+h2{font-size:20px;font-weight:700;color:var(--text);margin:36px 0 6px}
+.h2sub{font-size:13.5px;color:var(--dim);margin-bottom:14px}
+.board{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;color:var(--dim);text-align:left;padding:12px 14px;border-bottom:1px solid var(--border);font-weight:600}
+td{padding:12px 14px;border-bottom:1px solid rgba(255,255,255,0.04);color:var(--muted)}
+tr:last-child td{border-bottom:0}
+td .pl{font-weight:600;color:var(--text)}
+td .tm{font-size:11px;color:var(--dim)}
+.lean{font-weight:700;font-size:12px;padding:3px 9px;border-radius:6px}
+.lean.o{background:rgba(34,197,94,0.1);color:var(--green)}
+.lean.u{background:rgba(239,68,68,0.1);color:var(--red)}
+.conf{font-weight:700;color:var(--text)}
+.bar{height:4px;width:64px;background:rgba(255,255,255,0.08);border-radius:4px;margin-top:5px}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:4px}
+.res{font-weight:800;font-size:12px;width:22px;height:22px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center}
+.res.w{background:rgba(34,197,94,0.15);color:var(--green)}
+.res.l{background:rgba(239,68,68,0.12);color:var(--red)}
+.split{display:grid;grid-template-columns:1.6fr 1fr;gap:20px;align-items:start}
+.proof{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px}
+.proof h3{color:var(--text);font-size:14px;margin-bottom:2px}
+.proof .rec{font-size:24px;font-weight:800;color:var(--green);margin:8px 0 2px}
+.proof .note{font-size:12px;color:var(--dim)}
+.proof ul{list-style:none;margin-top:12px;font-size:12.5px}
+.proof li{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-top:1px solid rgba(255,255,255,0.05)}
+.cta-band{margin-top:36px;background:linear-gradient(135deg,rgba(249,115,22,0.12),rgba(249,115,22,0.03));border:1px solid rgba(249,115,22,0.3);border-radius:16px;padding:26px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.cta-band b{color:var(--text);font-size:17px;display:block}
+.cta-band span{font-size:13.5px}
+.hub{margin-top:40px}
+.hub-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}
+.hub a{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 14px;font-size:13px;font-weight:500;color:var(--muted)}
+.hub a:hover{color:var(--text);border-color:rgba(249,115,22,0.4)}
+footer{border-top:1px solid var(--border);margin-top:50px;padding:36px 0;font-size:12.5px}
+.fcols{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;margin-bottom:26px}
+.fcols h4{color:var(--text);font-size:12px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:10px}
+.fcols a{display:block;padding:3px 0;color:var(--dim)}
+.fcols a:hover{color:var(--text)}
+.legal{color:var(--dim);font-size:11.5px;border-top:1px solid var(--border);padding-top:18px}
+@media(max-width:860px){.split{grid-template-columns:1fr}.hub-grid{grid-template-columns:repeat(2,1fr)}.fcols{grid-template-columns:repeat(2,1fr)}.nl{display:none}}
+</style>
+</head>
+<body>
+<nav><div class="c">
+  <a class="logo" href="/"><i></i>Propeller</a>
+  <div class="nl">
+    <a class="on" href="/picks/">Picks</a><a href="/results/">Results</a><a href="/guides/">Guides</a><a href="/tools/">Tools</a><a href="/analyzer/">Analyzer</a><a href="/how-it-works/">Method</a>
+  </div>
+  <a class="btn" href="https://app.propellerpicks.com/signup">Get Free Lifetime Access</a>
+</div></nav>
+
+<div class="c crumb"><a href="/">Home</a> / <a href="/picks/">Picks</a> / NBA</div>
+
+<header class="hero"><div class="c">
+  <div class="fresh"><span class="dot"></span> Updated today, 9:42 AM ET &middot; 114 props analyzed</div>
+  <h1>NBA Player Props Today <span class="date">— Wednesday, June 10</span></h1>
+  <p class="sub">Every NBA prop on today's slate, scored by 8 AI agents for matchup, usage, pace, injuries, and line value. Graded publicly every night — see <a href="/results/" style="color:var(--accent)">the full verified record</a>.</p>
+  <div class="statrow mono">
+    <div class="stat"><div class="v">114</div><div class="l">Props Today</div></div>
+    <div class="stat"><div class="v g">61.4%</div><div class="l">NBA Win Rate (May)</div></div>
+    <div class="stat"><div class="v">8,649</div><div class="l">NBA Props Graded</div></div>
+    <div class="stat"><div class="v">12</div><div class="l">High Confidence</div></div>
+  </div>
+</div></header>
+
+<main class="c">
+  <h2>Today's Highest-Confidence NBA Props</h2>
+  <p class="h2sub">Top 5 of 114 — full board, filters, and live odds in the <a href="https://app.propellerpicks.com/signup" style="color:var(--accent)">web app</a>.</p>
+  <div class="board"><table>
+    <thead><tr><th>Player</th><th>Prop</th><th>Line</th><th>Lean</th><th>Confidence</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td><span class="pl">Jalen Brunson</span><br><span class="tm">NYK vs IND</span></td><td>Points</td><td class="mono">31.5</td><td><span class="lean o">OVER</span></td><td><span class="conf mono">78</span><div class="bar"><i style="width:78%"></i></div></td><td>Pace up, PG matchup ranks 28th</td></tr>
+      <tr><td><span class="pl">Tyrese Haliburton</span><br><span class="tm">IND @ NYK</span></td><td>Assists</td><td class="mono">9.5</td><td><span class="lean o">OVER</span></td><td><span class="conf mono">74</span><div class="bar"><i style="width:74%"></i></div></td><td>Usage spike with Nembhard out</td></tr>
+      <tr><td><span class="pl">OG Anunoby</span><br><span class="tm">NYK vs IND</span></td><td>Threes</td><td class="mono">2.5</td><td><span class="lean u">UNDER</span></td><td><span class="conf mono">71</span><div class="bar"><i style="width:71%"></i></div></td><td>3PA down 22% over last 10</td></tr>
+      <tr><td><span class="pl">Pascal Siakam</span><br><span class="tm">IND @ NYK</span></td><td>Pts+Reb</td><td class="mono">33.5</td><td><span class="lean o">OVER</span></td><td><span class="conf mono">69</span><div class="bar"><i style="width:69%"></i></div></td><td>Line 1.5 below market consensus</td></tr>
+      <tr><td><span class="pl">Josh Hart</span><br><span class="tm">NYK vs IND</span></td><td>Rebounds</td><td class="mono">8.5</td><td><span class="lean o">OVER</span></td><td><span class="conf mono">68</span><div class="bar"><i style="width:68%"></i></div></td><td>IND 26th in DREB% last 15</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="split" style="margin-top:36px">
+    <div>
+      <h2 style="margin-top:0">How to Use These Picks on PrizePicks, Underdog &amp; Pick6</h2>
+      <p style="font-size:14px">Confidence is a directional score, not a guarantee. Most members pair 2–3 props in the 70+ range, check the <a href="/tools/prizepicks-payout-calculator/" style="color:var(--accent)">payout calculator</a> for the right entry structure, and verify lines in the app before lock. Platform-specific boards: <a href="/picks/prizepicks/" style="color:var(--accent)">PrizePicks</a>, <a href="/picks/underdog/" style="color:var(--accent)">Underdog</a>, <a href="/picks/pick6/" style="color:var(--accent)">Pick6</a>.</p>
+    </div>
+    <aside class="proof">
+      <h3>Yesterday's NBA Grades</h3>
+      <div class="rec mono">4–1</div>
+      <div class="note">Tue, June 9 &middot; graded vs official box scores</div>
+      <ul class="mono">
+        <li>Brunson O 30.5 Pts <span class="res w">W</span></li>
+        <li>Haliburton O 8.5 Ast <span class="res w">W</span></li>
+        <li>Towns O 11.5 Reb <span class="res w">W</span></li>
+        <li>Nesmith O 1.5 3PM <span class="res l">L</span></li>
+        <li>Hart O 7.5 Reb <span class="res w">W</span></li>
+      </ul>
+      <a href="/results/" style="display:block;margin-top:12px;font-size:12.5px;color:var(--accent);font-weight:600">Full verified record →</a>
+    </aside>
+  </div>
+
+  <div class="cta-band">
+    <div><b>See all 114 props with live odds and filters</b><span>Free lifetime access for the first 500 members. No card required.</span></div>
+    <a class="btn" href="https://app.propellerpicks.com/signup">Open the Web App</a>
+  </div>
+
+  <div class="hub">
+    <h2 style="margin-top:0">More Prop Research</h2>
+    <div class="hub-grid">
+      <a href="/guides/nba-prop-betting/">NBA Prop Strategy Guide</a>
+      <a href="/analyzer/">Player Prop Analyzer</a>
+      <a href="/tools/prizepicks-payout-calculator/">PrizePicks Calculator</a>
+      <a href="/blog/monthly/nba-results-2026-05.html">NBA May Results: 61.4%</a>
+      <a href="/picks/nhl/">NHL Props Today</a>
+      <a href="/picks/mlb/">MLB Props Today</a>
+      <a href="/tools/underdog-payout-calculator/">Underdog Calculator</a>
+      <a href="/how-it-works/">How the 8 Agents Work</a>
+    </div>
+  </div>
+</main>
+
+<footer><div class="c">
+  <div class="fcols">
+    <div><h4>Daily Picks</h4><a href="/picks/nba/">NBA</a><a href="/picks/nfl/">NFL</a><a href="/picks/nhl/">NHL</a><a href="/picks/mlb/">MLB</a><a href="/picks/soccer/">Soccer</a></div>
+    <div><h4>Platforms</h4><a href="/picks/prizepicks/">PrizePicks Picks</a><a href="/picks/underdog/">Underdog Picks</a><a href="/picks/pick6/">Pick6 Picks</a><a href="/compare/pick6-vs-prizepicks/">Pick6 vs PrizePicks</a></div>
+    <div><h4>Free Tools</h4><a href="/tools/prizepicks-payout-calculator/">PrizePicks Calculator</a><a href="/tools/underdog-payout-calculator/">Underdog Calculator</a><a href="/tools/pick6-payout-calculator/">Pick6 Calculator</a><a href="/analyzer/">Prop Analyzer</a></div>
+    <div><h4>Guides</h4><a href="/guides/prizepicks-strategy/">PrizePicks Strategy</a><a href="/guides/underdog-strategy/">Underdog Strategy</a><a href="/guides/nba-prop-betting/">NBA Prop Betting</a><a href="/guides/how-to-analyze-player-props/">Analyzing Props</a></div>
+    <div><h4>Proof</h4><a href="/results/">Verified Results</a><a href="/track-record/">Track Record</a><a href="/how-it-works/">Methodology</a><a href="/blog/">Results Blog</a></div>
+  </div>
+  <div class="legal">Propeller is a research and analysis tool. We do not accept wagers or operate as a sportsbook. All analysis is for informational purposes only and does not constitute gambling advice. Must be 21+. If gambling is a problem, call 1-800-GAMBLER.</div>
+</div></footer>
+</body>
+</html>
