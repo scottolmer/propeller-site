@@ -16,7 +16,7 @@
 <title>NBA Player Props Today | Picks, Projections &amp; Analysis</title>
 <meta name="description" content="Browse NBA player props today with projections, injury context, pace, usage, matchup analysis, confidence scores, and current prop picks.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<link rel="canonical" href="https://propellerpicks.com/nba/">
+<link rel="canonical" href="https://propellerpicks.com/picks/nba/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -1815,7 +1815,7 @@ footer {
   animateOrbs();
 
   // Lucide icons
-  lucide.createIcons();
+  if (window.lucide) { lucide.createIcons(); }
 
 // ── Nav dropdown / mobile menu logic ──
 const NAV_DROPDOWN_IDS = ['navPicks', 'navGuides', 'navCompare'];

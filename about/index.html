@@ -1568,7 +1568,7 @@ footer {
 
 <script>
 // Initialize Lucide icons
-lucide.createIcons();
+if (window.lucide) { lucide.createIcons(); }
 
 // ── Nav dropdown / mobile menu logic ──
 const NAV_DROPDOWN_IDS = ['navPicks', 'navGuides', 'navCompare'];

@@ -16,7 +16,7 @@
 <title>NHL Prop Picks &amp; Player Prop Predictions | Propeller</title>
 <meta name="description" content="AI-powered NHL prop picks with 6 specialized agents. Special teams, line combinations, and no-vig analysis. transparent results tracking. Free to start.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<link rel="canonical" href="https://propellerpicks.com/nhl/">
+<link rel="canonical" href="https://propellerpicks.com/picks/nhl/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -1759,7 +1759,7 @@ footer {
   animateOrbs();
 
   // Lucide icons
-  lucide.createIcons();
+  if (window.lucide) { lucide.createIcons(); }
 
 // ── Nav dropdown / mobile menu logic ──
 const NAV_DROPDOWN_IDS = ['navPicks', 'navGuides', 'navCompare'];

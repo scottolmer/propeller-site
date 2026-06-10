@@ -1204,7 +1204,7 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
   }
   animateOrbs();
 
-  lucide.createIcons();
+  if (window.lucide) { lucide.createIcons(); }
 </script>
 </body>
 </html>

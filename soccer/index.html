@@ -16,7 +16,7 @@
 <title>Soccer Prop Picks: EPL &amp; MLS Player Props | Propeller</title>
 <meta name="description" content="AI-powered soccer prop picks with 7 specialized agents. EPL &amp; MLS coverage, lineup confirmation, no-vig analysis. transparent results tracking. Free to start.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<link rel="canonical" href="https://propellerpicks.com/soccer/">
+<link rel="canonical" href="https://propellerpicks.com/picks/soccer/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -1791,7 +1791,7 @@ footer {
   animateOrbs();
 
   // Lucide icons
-  lucide.createIcons();
+  if (window.lucide) { lucide.createIcons(); }
 
 // ── Nav dropdown / mobile menu logic ──
 const NAV_DROPDOWN_IDS = ['navPicks', 'navGuides', 'navCompare'];

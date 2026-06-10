@@ -1,0 +1,51 @@
+name: SEO maintenance
+
+# Runs the SEO maintenance scripts (see scripts/README.md) after every push
+# to master — i.e. right after the daily content pipeline lands — plus a
+# scheduled backstop so the /picks/ date stamps roll over even on days with
+# no pushes. Pushes made by this workflow use GITHUB_TOKEN, which does not
+# re-trigger push workflows, so it cannot loop.
+
+on:
+  push:
+    branches: [master]
+  schedule:
+    - cron: "30 10 * * *" # daily 06:30 ET (05:30 EST)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seo-maintenance
+  cancel-in-progress: false
+
+jobs:
+  maintain:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0 # full history: sitemap lastmod comes from git log
+
+      - name: Run maintenance scripts
+        run: |
+          python3 scripts/update_picks_freshness.py
+          python3 scripts/apply_analyzer_indexing.py
+          python3 scripts/inject_popular_players.py
+          python3 scripts/generate_sitemap.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "seo-maintenance"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: SEO maintenance (picks freshness, analyzer indexing, sitemap)"
+          # The content pipeline may push while we run; rebase then push.
+          git pull --rebase origin master
+          git push origin master
