@@ -14,7 +14,7 @@
 </script>
 
 <title>PrizePicks Power Play Rules 2026 | Max Picks & Flex</title>
-<meta name="description" content="PrizePicks Power Play rules for 2026: max picks, Power vs Flex, payout multipliers, 3/4 and 4/5 Flex results, entry rules, and strategy.">
+<meta name="description" content="PrizePicks Power Play rules for 2026: max 6 picks, Power vs Flex payouts (3x–25x), 3/4 and 4/5 Flex results, and strategy. Includes a free payout calculator and full 2026 charts.">
 <meta name="keywords" content="prizepicks strategy, how to win on prizepicks, prizepicks tips, prizepicks strategy guide, prizepicks flex play strategy, best prizepicks strategy 2026">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://propellerpicks.com/guides/prizepicks-strategy/">
@@ -23,7 +23,7 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://propellerpicks.com/guides/prizepicks-strategy/">
 <meta property="og:title" content="PrizePicks Power Play Rules 2026 | Max Picks & Flex">
-<meta property="og:description" content="PrizePicks Power Play rules for 2026: max picks, Power vs Flex, payout multipliers, 3/4 and 4/5 Flex results, entry rules, and strategy.">
+<meta property="og:description" content="PrizePicks Power Play rules for 2026: max 6 picks, Power vs Flex payouts (3x–25x), 3/4 and 4/5 Flex results, and strategy. Includes a free payout calculator and full 2026 charts.">
 <meta property="og:image" content="https://propellerpicks.com/images/og-image.png">
 <meta property="og:image:width" content="3000">
 <meta property="og:image:height" content="1000">
@@ -35,7 +35,7 @@
 <meta name="twitter:site" content="@propellerpicks">
 <meta name="twitter:creator" content="@propellerpicks">
 <meta name="twitter:title" content="PrizePicks Power Play Rules 2026 | Max Picks & Flex">
-<meta name="twitter:description" content="PrizePicks Power Play rules for 2026: max picks, Power vs Flex, payout multipliers, 3/4 and 4/5 Flex results, entry rules, and strategy.">
+<meta name="twitter:description" content="PrizePicks Power Play rules for 2026: max 6 picks, Power vs Flex payouts (3x–25x), 3/4 and 4/5 Flex results, and strategy. Includes a free payout calculator and full 2026 charts.">
 <meta name="twitter:image" content="https://propellerpicks.com/images/og-image.png">
 
 <!-- Additional SEO -->
@@ -1170,6 +1170,10 @@ footer {
   margin-left: 4px;
   vertical-align: middle;
 }
+
+.payout-strip{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:18px 0 4px;padding:12px 16px;background:rgba(249,115,22,0.07);border:1px solid rgba(249,115,22,0.3);border-radius:10px;font-size:13.5px}
+.payout-strip .ps-label{font-weight:700;color:#F97316;text-transform:uppercase;font-size:11px;letter-spacing:.08em;white-space:nowrap}
+.payout-strip .ps-items{font-family:'JetBrains Mono',monospace;color:#F1F5F9;font-size:12.5px;line-height:1.7}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/legacy-seo-nav.css">
@@ -1208,20 +1212,24 @@ footer {
       <nav class="breadcrumb fade-in" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span class="breadcrumb-sep" aria-hidden="true">/</span>
-        <a href="/prizepicks/">PrizePicks</a>
+        <a href="/guides/prizepicks-strategy/">PrizePicks</a>
         <span class="breadcrumb-sep" aria-hidden="true">/</span>
         <span>Strategy Guide</span>
       </nav>
 	      <h1 class="fade-in delay-1">PrizePicks Power Play Rules:<br><span>Max Picks, Flex &amp; Payouts</span> 2026</h1>
 	      <p class="hero-sub fade-in delay-2">The quick answer: PrizePicks Power Play and Flex Play entries can include up to 6 picks. Power Play requires every pick to hit, while Flex Play lowers the perfect-card payout in exchange for partial-payout protection.</p>
+      <div class="payout-strip fade-in delay-2" aria-label="PrizePicks Power Play payout multipliers">
+        <span class="ps-label">Power Play Payouts</span>
+        <span class="ps-items">2 picks &rarr; 3x &middot; 3 &rarr; 6x &middot; 4 &rarr; 10x &middot; 5 &rarr; 20x &middot; 6 &rarr; 25x &middot; every pick must hit</span>
+      </div>
       <div class="hero-buttons fade-in delay-3">
         <a href="/picks/prizepicks/" class="btn btn-primary">
           <i data-lucide="zap" style="width:18px;height:18px;"></i>
           Today's PrizePicks Props
         </a>
-        <a href="/analyzer/" class="btn btn-secondary">
-          <i data-lucide="search" style="width:18px;height:18px;"></i>
-          Analyze a Prop
+        <a href="/tools/prizepicks-payout-calculator/" class="btn btn-secondary">
+          <i data-lucide="calculator" style="width:18px;height:18px;"></i>
+          Payout Calculator
         </a>
       </div>
     </div>
@@ -1449,7 +1457,7 @@ footer {
             <li><a href="/guides/pick6-strategy/">DraftKings Pick6 Strategy</a></li>
             <li><a href="/guides/underdog-strategy/">Underdog Fantasy Strategy</a></li>
             <li><a href="/guides/how-to-analyze-player-props/">How to Analyze Player Props</a></li>
-            <li><a href="/prizepicks/">PrizePicks Props Hub</a></li>
+            <li><a href="/guides/prizepicks-strategy/">PrizePicks Props Hub</a></li>
             <li><a href="/analyzer/">Prop Analyzer</a></li>
             <li><a href="/results/">Verified Results</a></li>
             <li><a href="/how-it-works/">How Propeller Works</a></li>
@@ -1619,7 +1627,7 @@ footer {
 </footer>
 
 <script>
-lucide.createIcons();
+if (window.lucide) { lucide.createIcons(); }
 (function() {
   const els = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {

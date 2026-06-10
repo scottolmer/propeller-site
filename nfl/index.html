@@ -16,7 +16,7 @@
 <title>NFL Prop Picks &amp; Player Prop Predictions | Propeller</title>
 <meta name="description" content="AI-powered NFL prop picks with 8 specialized agents. transparent results tracking. Matchup DVOA, sharp line movement, injury cascades. Free to start.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-<link rel="canonical" href="https://propellerpicks.com/nfl/">
+<link rel="canonical" href="https://propellerpicks.com/picks/nfl/">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -1767,7 +1767,7 @@ footer {
   animateOrbs();
 
   // Lucide icons
-  lucide.createIcons();
+  if (window.lucide) { lucide.createIcons(); }
 
 // ── Nav dropdown / mobile menu logic ──
 const NAV_DROPDOWN_IDS = ['navPicks', 'navGuides', 'navCompare'];

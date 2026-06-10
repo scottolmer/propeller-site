@@ -1123,8 +1123,8 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
       <div class="internal-links" style="margin-top: 16px;">
         <a href="/picks/prizepicks/">PrizePicks Picks</a>
         <a href="/picks/pick6/">Pick6 Picks</a>
-        <a href="/prizepicks/">PrizePicks Strategy Guide</a>
-        <a href="/pick6/">Pick6 Strategy Guide</a>
+        <a href="/guides/prizepicks-strategy/">PrizePicks Strategy Guide</a>
+        <a href="/guides/pick6-strategy/">Pick6 Strategy Guide</a>
         <a href="/results/">Verified Results</a>
       </div>
     </div>
@@ -1317,7 +1317,7 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
   }
   animateOrbs();
 
-  lucide.createIcons();
+  if (window.lucide) { lucide.createIcons(); }
 </script>
 </body>
 </html>
