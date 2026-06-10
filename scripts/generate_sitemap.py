@@ -15,6 +15,7 @@ Run daily after content updates:
 """
 import datetime
 import pathlib
+from zoneinfo import ZoneInfo
 import re
 import subprocess
 
@@ -46,7 +47,7 @@ def page_url(rel: pathlib.Path) -> str:
 
 
 def main() -> None:
-    today = datetime.date.today().isoformat()
+    today = datetime.datetime.now(ZoneInfo("America/New_York")).date().isoformat()
     dirty = dirty_files()
     entries = []
 

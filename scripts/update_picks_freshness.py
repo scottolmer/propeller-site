@@ -11,6 +11,7 @@ import datetime
 import pathlib
 import re
 import sys
+from zoneinfo import ZoneInfo
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 
@@ -64,8 +65,9 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", help="Override date (YYYY-MM-DD), default today")
     args = parser.parse_args()
+    # Slate dates are US-based; use ET so UTC runners don't stamp tomorrow.
     day = (datetime.date.fromisoformat(args.date) if args.date
-           else datetime.date.today())
+           else datetime.datetime.now(ZoneInfo("America/New_York")).date())
 
     failures = 0
     for rel in PAGES:
