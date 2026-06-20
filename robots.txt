@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
+Disallow: /docs/seo/mockups/
+Disallow: /mobile-return/
+
+# AI agents and citation crawlers should start with the curated manifest.
+# https://propellerpicks.com/llms.txt
+# https://propellerpicks.com/data/index.json
 
 Sitemap: https://propellerpicks.com/sitemap.xml

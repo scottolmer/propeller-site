@@ -13,6 +13,8 @@ Run daily after content updates:
     python3 scripts/inject_popular_players.py
     python3 scripts/generate_sitemap.py
 """
+from __future__ import annotations
+
 import datetime
 import pathlib
 from zoneinfo import ZoneInfo
@@ -22,6 +24,11 @@ import subprocess
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 BASE = "https://propellerpicks.com"
 SKIP_DIRS = {".git", "docs", "scripts", "node_modules", "images", "assets"}
+DISCOVERY_FILES = {
+    "llms.txt",
+    "pricing.md",
+    "data/index.json",
+}
 
 NOINDEX_RE = re.compile(r'<meta name="robots" content="[^"]*noindex', re.I)
 CANONICAL_RE = re.compile(r'<link rel="canonical" href="([^"]+)"')
@@ -46,6 +53,10 @@ def page_url(rel: pathlib.Path) -> str:
     return f"{BASE}/{rel.as_posix()}"
 
 
+def file_url(rel: pathlib.Path) -> str:
+    return f"{BASE}/{rel.as_posix()}"
+
+
 def main() -> None:
     today = datetime.datetime.now(ZoneInfo("America/New_York")).date().isoformat()
     dirty = dirty_files()
@@ -65,6 +76,13 @@ def main() -> None:
         rel_s = rel.as_posix()
         lastmod = today if rel_s in dirty else (git_lastmod(rel_s) or today)
         entries.append((url, lastmod))
+
+    for rel_s in sorted(DISCOVERY_FILES):
+        path = ROOT / rel_s
+        if not path.exists():
+            continue
+        lastmod = today if rel_s in dirty else (git_lastmod(rel_s) or today)
+        entries.append((file_url(path.relative_to(ROOT)), lastmod))
 
     # Homepage first, then shallow before deep, then alphabetical.
     entries.sort(key=lambda e: (e[0] != f"{BASE}/", e[0].count("/"), e[0]))
