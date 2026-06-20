@@ -1,0 +1,82 @@
+{
+  "name": "Propeller Picks Public Data Catalog",
+  "description": "Canonical public, machine-readable Propeller Picks sources for AI agents, search crawlers, and citation systems.",
+  "generated_at": "2026-06-20T00:00:00Z",
+  "canonical_site": "https://propellerpicks.com/",
+  "llms_txt": "https://propellerpicks.com/llms.txt",
+  "pricing": "https://propellerpicks.com/pricing.md",
+  "public_api_base": "https://web-production-3c1c4.up.railway.app",
+  "curated_agent_index": "https://web-production-3c1c4.up.railway.app/api/public/agent/v1/index",
+  "curated_openapi": "https://web-production-3c1c4.up.railway.app/api/public/agent/v1/openapi.json",
+  "record_snapshot": {
+    "source": "https://web-production-3c1c4.up.railway.app/api/public/results-summary",
+    "total": 256478,
+    "wins": 174389,
+    "losses": 82086,
+    "pushes": 3,
+    "win_rate": 68.0,
+    "win_rate_note": "Pushes are excluded from win rate."
+  },
+  "safe_public_feeds": [
+    {
+      "id": "results-summary",
+      "url": "https://web-production-3c1c4.up.railway.app/api/public/results-summary",
+      "method": "GET",
+      "description": "Aggregate public verified record by sport."
+    },
+    {
+      "id": "results-ledger",
+      "url": "https://web-production-3c1c4.up.railway.app/api/public/results",
+      "method": "GET",
+      "description": "Paginated public graded prediction ledger.",
+      "query_params": ["sport", "days", "min_confidence", "stat_type", "result", "limit", "offset"]
+    },
+    {
+      "id": "confidence-buckets",
+      "url": "https://web-production-3c1c4.up.railway.app/api/public/results-confidence-buckets",
+      "method": "GET",
+      "description": "Historical performance grouped by directional confidence.",
+      "confidence_definition": "confidence = ABS(predicted_score - 50) + 50"
+    },
+    {
+      "id": "results-timeseries",
+      "url": "https://web-production-3c1c4.up.railway.app/api/public/results/timeseries",
+      "method": "GET",
+      "description": "Daily public win/loss/push aggregates and rolling win rate."
+    },
+    {
+      "id": "daily-picks-preview",
+      "url_template": "https://web-production-3c1c4.up.railway.app/api/social/picks/{sport}",
+      "method": "GET",
+      "supported_sports": ["nba", "nfl", "nhl", "mlb", "soccer", "pga"],
+      "description": "Limited public current-pick preview for website daily picks pages."
+    }
+  ],
+  "public_use_policy": {
+    "allowed": [
+      "product facts",
+      "legal and responsible-gaming disclaimers",
+      "aggregate public performance",
+      "graded public ledger rows",
+      "limited daily preview picks",
+      "calculator and methodology pages"
+    ],
+    "not_public_sources": [
+      "/api/*/props/top",
+      "/api/*/props/analyze",
+      "/api/weights/*",
+      "/api/admin/*",
+      "/admin/*",
+      "user account data",
+      "subscription data",
+      "model weights",
+      "full odds inventory",
+      "agent breakdowns"
+    ]
+  },
+  "legal": {
+    "not_a_sportsbook": true,
+    "accepts_wagers": false,
+    "summary": "Propeller Picks is for sports prop research and analysis only. Past performance does not guarantee future results."
+  }
+}

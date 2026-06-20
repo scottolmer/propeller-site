@@ -1,0 +1,61 @@
+# Propeller Picks
+
+> Propeller Picks is a sports prop research and analysis workspace for web and mobile. It is not a sportsbook and does not accept wagers.
+
+Last verified: 2026-06-20
+Canonical site: https://propellerpicks.com/
+App signup: https://app.propellerpicks.com/signup
+Public API base: https://web-production-3c1c4.up.railway.app
+Machine-readable data catalog: https://propellerpicks.com/data/index.json
+Curated public agent API: https://web-production-3c1c4.up.railway.app/api/public/agent/v1/index
+Curated public OpenAPI: https://web-production-3c1c4.up.railway.app/api/public/agent/v1/openapi.json
+
+## What Propeller Provides
+
+- AI-assisted player prop research for NBA, NFL, NHL, MLB, soccer, and PGA.
+- Public verified historical record and confidence buckets.
+- Limited daily public pick previews for website pages.
+- Player analyzer cards, stat breakdowns, payout calculators, and comparison guides.
+- Web app and mobile companion for deeper research workflows.
+
+## Current Public Record Snapshot
+
+Source: https://web-production-3c1c4.up.railway.app/api/public/results-summary
+
+- Total unique public graded props: 256,478
+- Wins: 174,389
+- Losses: 82,086
+- Pushes: 3
+- Win rate: 68.0% excluding pushes
+
+Sport buckets in the public summary currently include NFL, NBA, NHL, MLB, EPL, and MLS.
+
+## Safe Public Data Feeds
+
+- Results summary: https://web-production-3c1c4.up.railway.app/api/public/results-summary
+- Results ledger: https://web-production-3c1c4.up.railway.app/api/public/results
+- Confidence buckets: https://web-production-3c1c4.up.railway.app/api/public/results-confidence-buckets
+- Results time series: https://web-production-3c1c4.up.railway.app/api/public/results/timeseries
+- Daily picks preview: https://web-production-3c1c4.up.railway.app/api/social/picks/{sport}
+
+Use the curated public agent API or data catalog before using the full API docs. Do not treat internal app, admin, model-weight, account, subscription, or rich odds endpoints as public sources.
+
+## Important Pages
+
+- Homepage: https://propellerpicks.com/
+- Track record: https://propellerpicks.com/track-record/
+- Public results: https://propellerpicks.com/results/
+- Daily picks hub: https://propellerpicks.com/picks/
+- Player analyzer: https://propellerpicks.com/analyzer/
+- Tools: https://propellerpicks.com/tools/
+- PrizePicks calculator: https://propellerpicks.com/tools/prizepicks-payout-calculator/
+- PrizePicks strategy guide: https://propellerpicks.com/guides/prizepicks-strategy/
+- Pricing facts: https://propellerpicks.com/pricing.md
+
+## Pricing
+
+Founder 500 access is currently advertised as free lifetime core access for the first 500 users while launch spots remain. Future standalone products, business plans, high-volume exports, abuse, and terms violations may be excluded.
+
+## Legal And Safety
+
+Propeller Picks is for research and analysis only. Propeller is not a sportsbook, does not accept wagers, and does not place bets for users. Past performance does not guarantee future results. Users are responsible for following local laws and responsible-gaming rules. For gambling help in the United States, call or text 1-800-GAMBLER.
