@@ -128,6 +128,32 @@
 
     .nav-links a:hover { color: var(--text); }
 
+    .nav-menu-button {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .05);
+      color: var(--text);
+      cursor: pointer;
+    }
+
+    .nav-menu-button:hover,
+    .nav-menu-button[aria-expanded="true"] {
+      border-color: rgba(249, 115, 22, .42);
+      background: rgba(249, 115, 22, .12);
+      color: var(--brand-2);
+    }
+
+    .nav-menu-button svg {
+      display: block;
+      width: 22px;
+      height: 22px;
+    }
+
     .cta {
       display: inline-flex;
       align-items: center;
@@ -928,8 +954,51 @@
 
     @media (max-width: 760px) {
       html, body, .shell { max-width: 100%; overflow-x: hidden; }
-      .nav-inner { width: min(100% - 24px, 1440px); }
-      .nav-links { display: none; }
+      .nav { overflow: visible; }
+      .nav-inner {
+        position: relative;
+        width: min(100% - 24px, 1440px);
+        height: 64px;
+      }
+      .brand { min-width: 0; }
+      .nav-menu-button {
+        display: inline-flex;
+        flex: 0 0 auto;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        max-height: calc(100vh - 88px);
+        overflow-y: auto;
+        padding: 12px;
+        border: 1px solid rgba(255, 255, 255, .12);
+        border-radius: 16px;
+        background: rgba(5, 7, 10, .98);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, .46);
+        color: var(--text);
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-links a {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 12px;
+        border-radius: 10px;
+      }
+      .nav-links a:hover,
+      .nav-links a[aria-current="page"] {
+        background: rgba(255, 255, 255, .06);
+      }
+      .nav-links .cta {
+        width: 100%;
+        margin-top: 4px;
+      }
       .hero { padding-top: 100px; }
       .hero-grid, .container {
         width: calc(100vw - 24px);
