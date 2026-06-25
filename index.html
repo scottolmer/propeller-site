@@ -142,7 +142,10 @@
           <span class="brand-mark"><span></span><span></span><span></span></span>
           <span>Propeller<small>Picks</small></span>
         </a>
-        <div class="nav-links">
+        <button class="nav-menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNavLinks">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+        </button>
+        <div class="nav-links" id="siteNavLinks">
           <a href="/picks/">Picks</a>
           <a href="/results/">Results</a>
           <a href="/track-record/">Track Record</a>
@@ -426,5 +429,6 @@
     </footer>
   </div>
   <script src="/assets/js/live-record.js" defer></script>
+  <script src="/assets/js/mobile-nav.js" defer></script>
 </body>
 </html>
