@@ -153,4 +153,26 @@ body.legacy-redesign-page {
   .legacy-redesign-page .nav-links {
     display: none;
   }
+
+  .legacy-redesign-page .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 2px;
+  }
+
+  .legacy-redesign-page .nav-links.open a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .legacy-redesign-page .nav-links.open .cta {
+    justify-content: center;
+    margin-top: 4px;
+  }
 }

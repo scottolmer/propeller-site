@@ -1738,7 +1738,7 @@ footer {
 }
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/legacy-seo-nav.css">
+<link rel="stylesheet" href="/assets/css/legacy-seo-nav.css?v=20260624-nav3">
 </head>
 <body class="legacy-redesign-page">
 
@@ -1755,7 +1755,10 @@ footer {
       <span class="brand-mark"><span></span><span></span><span></span></span>
       <span>Propeller<small>Picks</small></span>
     </a>
-    <div class="nav-links">
+    <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
+      <svg id="hamburgerIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="nav-links" id="navLinks">
       <a href="/picks/">Picks</a>
       <a href="/results/">Results</a>
       <a href="/track-record/">Track Record</a>

@@ -952,6 +952,53 @@
       .proof-grid, .steps { grid-template-columns: 1fr 1fr; }
     }
 
+    @media (min-width: 761px) and (max-width: 980px) {
+      .nav { overflow: visible; }
+      .nav-inner {
+        position: relative;
+        width: min(100% - 24px, 1440px);
+        height: 64px;
+      }
+      .nav-menu-button {
+        display: inline-flex;
+        flex: 0 0 auto;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+        max-height: calc(100vh - 88px);
+        overflow-y: auto;
+        padding: 12px;
+        border: 1px solid rgba(255, 255, 255, .12);
+        border-radius: 16px;
+        background: rgba(5, 7, 10, .98);
+        box-shadow: 0 24px 70px rgba(0, 0, 0, .46);
+        color: var(--text);
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-links a {
+        display: flex;
+        align-items: center;
+        min-height: 44px;
+        padding: 0 12px;
+        border-radius: 10px;
+      }
+      .nav-links a:hover,
+      .nav-links a[aria-current="page"] {
+        background: rgba(255, 255, 255, .06);
+      }
+      .nav-links .cta {
+        width: 100%;
+        margin-top: 4px;
+      }
+    }
+
     @media (max-width: 760px) {
       html, body, .shell { max-width: 100%; overflow-x: hidden; }
       .nav { overflow: visible; }
