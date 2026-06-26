@@ -1,7 +1,7 @@
 {
   "name": "Propeller Picks Public Data Catalog",
   "description": "Canonical public, machine-readable Propeller Picks sources for AI agents, search crawlers, and citation systems.",
-  "generated_at": "2026-06-20T00:00:00Z",
+  "generated_at": "2026-06-26T21:37:13Z",
   "canonical_site": "https://propellerpicks.com/",
   "llms_txt": "https://propellerpicks.com/llms.txt",
   "pricing": "https://propellerpicks.com/pricing.md",
@@ -10,11 +10,12 @@
   "curated_openapi": "https://web-production-3c1c4.up.railway.app/api/public/agent/v1/openapi.json",
   "record_snapshot": {
     "source": "https://web-production-3c1c4.up.railway.app/api/public/results-summary",
-    "total": 256478,
-    "wins": 174389,
-    "losses": 82086,
-    "pushes": 3,
-    "win_rate": 68.0,
+    "total": 2046997,
+    "wins": 1375177,
+    "losses": 671793,
+    "pushes": 27,
+    "win_rate": 67.2,
+    "scope": "Raw graded prop rows across NFL, NBA, NHL, MLB, EPL, MLS, and PGA.",
     "win_rate_note": "Pushes are excluded from win rate."
   },
   "safe_public_feeds": [
