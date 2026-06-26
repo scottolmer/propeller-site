@@ -58,7 +58,7 @@
       </div>
       <div>
         <h3>${sport.label || titleCase(sport.key)}</h3>
-        <div class="sport-progress" aria-label="${sport.label || sport.key} win rate">
+        <div class="sport-progress" aria-label="${sport.label || sport.key} graded outcome rate">
           <span style="--fill: ${fill}%"></span>
         </div>
       </div>
@@ -84,7 +84,7 @@
     const pushes = Number(overall.pushes || 0);
 
     setText("[data-results-total]", formatShort(total));
-    setText("[data-results-win-rate]", formatPercent(overall.win_rate));
+    setText("[data-results-wins]", formatNumber.format(wins));
     setText("[data-results-outcome]", `${formatNumber.format(wins)}-${formatNumber.format(losses)}-${formatNumber.format(pushes)}`);
     setText("[data-results-sports]", String(sports.length || "--"));
     setText("[data-results-updated]", "Live from graded results API");

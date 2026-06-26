@@ -42,8 +42,8 @@
 <meta name="author" content="Propeller">
 <meta name="application-name" content="Propeller">
 <meta name="apple-mobile-web-app-title" content="Propeller">
-<meta name="theme-color" content="#0AE2A3">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#f7f9fc">
+<meta name="color-scheme" content="light">
 
 <!-- Favicon -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><g transform='translate(50,50)'><rect x='-5' y='-38' width='10' height='32' rx='5' fill='%23F97316' transform='rotate(0)'/><rect x='-5' y='-38' width='10' height='32' rx='5' fill='%23F97316' transform='rotate(120)'/><rect x='-5' y='-38' width='10' height='32' rx='5' fill='%23F97316' transform='rotate(240)'/><circle cx='0' cy='0' r='8' fill='%23F97316'/></g></svg>">
@@ -132,7 +132,7 @@
   "mainEntity": [
     {"@type":"Question","name":"How do you analyze a player prop?","acceptedAnswer":{"@type":"Answer","text":"Analyze a player prop by evaluating 6 key signals: volume (minutes/usage), matchup quality (DvP), injury status (direct + cascade effects), game environment (pace/total), recent form (last 8-10 games weighted), and market pricing (no-vig probability across books)."}},
     {"@type":"Question","name":"What is the best tool for analyzing player props?","acceptedAnswer":{"@type":"Answer","text":"Propeller's Prop Analyzer runs 8 AI agents on every prop across 6 sports, producing a confidence score. transparent results tracking across 49,000+ graded predictions. Free at propellerpicks.com/analyzer."}},
-    {"@type":"Question","name":"How do you find value in player props?","acceptedAnswer":{"@type":"Answer","text":"Value exists when true probability exceeds implied odds probability. Find it through high-variance stat types, UNDER bias (60.3% vs 51.6%), injury cascade timing, and cross-book no-vig disagreement."}},
+    {"@type":"Question","name":"How do you find value in player props?","acceptedAnswer":{"@type":"Answer","text":"Value exists when true probability exceeds implied odds probability. Find it through high-variance stat types, direction bias, injury cascade timing, and cross-book no-vig disagreement."}},
     {"@type":"Question","name":"What is no-vig analysis?","acceptedAnswer":{"@type":"Answer","text":"No-vig analysis strips the bookmaker's margin from odds to reveal true implied probability. Comparing across books reveals market disagreement — which is where exploitable value lives."}},
     {"@type":"Question","name":"Which player prop stat types are most profitable?","acceptedAnswer":{"@type":"Answer","text":"High-variance stat types: NBA blocks 69.9%, three-pointers 63.2%, steals 61.9% — vs points at 55.7%. Less liquid markets = more mispricing = more edge."}}
   ]
@@ -1226,6 +1226,7 @@ footer {
   vertical-align: middle;
 }
 </style>
+  <link rel="stylesheet" href="/assets/css/site-white-overrides.css?v=20260625-white-site">
 </head>
 <body>
 <div class="bg-orbs" aria-hidden="true">
@@ -1338,7 +1339,7 @@ footer {
 
         <!-- GUIDE-TWEET-EMBED -->
         <figure style="margin:32px 0;text-align:center;">
-          <img src="/images/tweets/how-to-analyze-player-props-2026-06-22.png" alt="NBA blocks props hit at 69.5% across 5,035 graded picks this season. Books consistently misprice high-variance defensive stats — and the data shows it's one of the most exploitable edges on the board." loading="lazy" width="1200" height="630" style="max-width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
+          <img src="/images/tweets/how-to-analyze-player-props-2026-06-22.png" alt="Propeller analyzes high-variance defensive stats, market movement, and historical context before surfacing confidence scores" loading="lazy" width="1200" height="630" style="max-width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
           <figcaption style="font-size:13px;color:var(--text-tertiary);margin-top:10px;">
             From our <a href="https://x.com/propellerpicks/status/2069065626514047428" target="_blank" rel="noopener">@propellerpicks</a> feed — June 22, 2026
           </figcaption>
@@ -1400,7 +1401,7 @@ footer {
         <p>Sportsbooks and platforms price high-volume markets (points, PRA) efficiently. They struggle with high-variance stats. Our 2025-2026 NBA data: blocks 69.9%, threes 63.2%, steals 61.9% — vs. points at 55.7%. The less liquid the market, the more room for mispricing.</p>
 
         <h3>Direction Bias</h3>
-        <p>UNDER picks hit at 60.3% across our NBA predictions vs. OVER at 51.6%. Books set lines slightly above true median because the public loves overs. This structural bias is persistent and exploitable.</p>
+        <p>Direction bias matters. Public pick patterns often lean toward overs, so Propeller checks whether the posted line is above a realistic median projection before surfacing a confidence score.</p>
 
         <h3>Injury Cascade Windows</h3>
         <p>The 30-90 minute window after a key player is ruled out — before all teammate lines fully reprice — is the single most actionable edge in prop betting. Book algorithms reprice the star's props immediately but often lag on the 2nd and 3rd cascade beneficiaries.</p>
@@ -1487,7 +1488,7 @@ footer {
       </div>
       <div class="faq-item fade-in">
         <h3>How do you find value in player props?</h3>
-        <p>Value exists when true probability exceeds implied probability from the odds. Find it through: high-variance stat types that books misprice (blocks, threes, steals), UNDER bias (60.3% vs 51.6%), injury cascade timing windows, and cross-book no-vig disagreement. The less efficiently priced the market, the more room for edge.</p>
+        <p>Value exists when true probability exceeds implied probability from the odds. Find it through: high-variance stat types that books misprice (blocks, threes, steals), direction bias, injury cascade timing windows, and cross-book no-vig disagreement. The less efficiently priced the market, the more room for edge.</p>
       </div>
       <div class="faq-item fade-in">
         <h3>What is no-vig analysis?</h3>
@@ -1701,5 +1702,6 @@ document.querySelectorAll('.nav-item > .nav-item-link[href]').forEach(function(l
   });
 });
 </script>
+  <script src="/assets/js/site-nav.js?v=20260625-nav-unify" defer></script>
 </body>
 </html>

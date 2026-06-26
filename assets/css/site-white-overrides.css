@@ -1,0 +1,461 @@
+/* White iOS-aligned redesign layer for legacy/core marketing pages. */
+:root {
+  --bg: #edf2f7 !important;
+  --page: #edf2f7 !important;
+  --app: #f7f9fc !important;
+  --surface: #ffffff !important;
+  --surface-1: #ffffff !important;
+  --surface-2: #f8fafc !important;
+  --surface-3: #eef2f7 !important;
+  --card: #ffffff !important;
+  --glass: rgba(255, 255, 255, 0.78) !important;
+  --panel: rgba(255, 255, 255, 0.84) !important;
+  --panel-2: #ffffff !important;
+  --border: rgba(15, 23, 42, 0.10) !important;
+  --glass-border: rgba(15, 23, 42, 0.10) !important;
+  --line: rgba(15, 23, 42, 0.10) !important;
+  --line-strong: rgba(15, 23, 42, 0.18) !important;
+  --accent: #ff6b4a !important;
+  --brand: #ff6b4a !important;
+  --brand-2: #fb923c !important;
+  --accent-muted: rgba(255, 107, 74, 0.12) !important;
+  --brand-glow: rgba(255, 107, 74, 0.14) !important;
+  --text: #111827 !important;
+  --text-1: #111827 !important;
+  --text-2: #475467 !important;
+  --text-3: #667085 !important;
+  --text-primary: #111827 !important;
+  --text-secondary: #475467 !important;
+  --text-tertiary: #667085 !important;
+  --muted: #667085 !important;
+  --faint: #98a2b3 !important;
+  --green: #16a34a !important;
+  --success: #16a34a !important;
+  --win: #16a34a !important;
+  --danger: #dc2626 !important;
+  --loss: #dc2626 !important;
+  --warning: #d97706 !important;
+  --shadow-card: 0 14px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+html {
+  background: #edf2f7 !important;
+}
+
+body {
+  color: #111827 !important;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(255, 107, 74, 0.12), transparent 30rem),
+    radial-gradient(circle at 88% 22%, rgba(37, 99, 235, 0.08), transparent 28rem),
+    linear-gradient(180deg, #fbfcfe 0%, #edf2f7 100%) !important;
+}
+
+body.tools-page,
+.shell,
+.results-shell,
+.method-shell,
+.track-shell,
+.tools-page .shell,
+.tool-calculator-page,
+.tool-calculator-page .shell,
+.guide-page,
+.sport-page,
+.compare-page {
+  color: #111827 !important;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(255, 107, 74, 0.12), transparent 30rem),
+    radial-gradient(circle at 88% 18%, rgba(37, 99, 235, 0.08), transparent 28rem),
+    linear-gradient(180deg, #fbfcfe 0%, #edf2f7 100%) !important;
+}
+
+.bg-orbs,
+.grain-overlay,
+.grain,
+.hero-bg {
+  display: none !important;
+}
+
+.fade-in,
+.fade-in.visible,
+.reveal,
+.reveal.visible,
+.animate-in,
+.delay-1,
+.delay-2,
+.delay-3,
+.delay-4 {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+nav,
+.nav {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08) !important;
+  background: rgba(247, 249, 252, 0.88) !important;
+  backdrop-filter: blur(20px) !important;
+}
+
+.brand,
+.logo,
+.footer-brand-logo {
+  color: #111827 !important;
+}
+
+.brand-mark {
+  filter: none !important;
+}
+
+.brand-mark span {
+  background: #ff6b4a !important;
+}
+
+.brand small {
+  color: #ff6b4a !important;
+}
+
+.logo-icon,
+.propeller-logo .logo-icon {
+  filter: none !important;
+}
+
+.nav-links,
+.nav-item-link,
+.nav-dropdown a,
+.footer-col-links a,
+.site-footer-grid a {
+  color: #475467 !important;
+}
+
+.nav-links a:hover,
+.nav-item-link:hover,
+.nav-item:hover > .nav-item-link,
+.nav-item.open > .nav-item-link,
+.nav-dropdown a:hover,
+.footer-col-links a:hover,
+.site-footer-grid a:hover {
+  color: #111827 !important;
+  background: rgba(255, 107, 74, 0.10) !important;
+}
+
+.nav-dropdown,
+.nav-links.is-open {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border-color: rgba(15, 23, 42, 0.10) !important;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+.hamburger,
+.nav-menu-button {
+  color: #111827 !important;
+  border-color: rgba(15, 23, 42, 0.10) !important;
+  background: rgba(255, 255, 255, 0.80) !important;
+}
+
+.cta,
+.cta-btn,
+.calc-btn,
+button.primary,
+a.primary,
+.btn-primary {
+  color: #ffffff !important;
+  border-color: rgba(255, 107, 74, 0.34) !important;
+  background: #ff6b4a !important;
+  box-shadow: 0 12px 28px rgba(255, 107, 74, 0.22) !important;
+}
+
+.ghost,
+.secondary,
+.pill,
+.selector,
+.search,
+input,
+select,
+textarea {
+  color: #111827 !important;
+  border-color: rgba(15, 23, 42, 0.10) !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+}
+
+.pill.active,
+.selector.active {
+  color: #fff !important;
+  background: #ff6b4a !important;
+  border-color: #ff6b4a !important;
+}
+
+.hero,
+.results-hero,
+.results-band,
+.method-hero,
+.method-band,
+.track-process,
+.tools-hero,
+.tools-grid,
+.tools-support,
+.tools-seo,
+.tool-calculator-page .hero,
+.page-hero,
+.sport-hero,
+.guide-hero {
+  background: transparent !important;
+}
+
+.hero::before,
+.results-hero::before,
+.method-hero::before,
+.tools-hero::before,
+.tool-calculator-page .hero::before {
+  background: rgba(15, 23, 42, 0.08) !important;
+}
+
+.kicker,
+.hero-badge,
+.tools-kicker,
+.hub-kicker {
+  color: #ea580c !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+.section-title,
+.section-head h2,
+.results-copy h1,
+.method-hero h1,
+.tools-hero h1,
+.tool-calculator-page .hero h1,
+.record-total,
+.stat-value,
+.brand-name {
+  color: #111827 !important;
+}
+
+p,
+li,
+.lede,
+.hero-copy p,
+.section-subtitle,
+.results-lede,
+.terminal-note,
+.fine-print,
+.footer-tagline,
+.site-footer-brand p,
+.footer-copy,
+.footer-disclaimer,
+.site-footer-legal {
+  color: #475467 !important;
+}
+
+.card,
+.proof-card,
+.feature-card,
+.sport-card,
+.platform-card,
+.guide-card,
+.tool-card,
+.tool-card-modern,
+.tools-deep-link,
+.pathways-shell,
+.pathway-card,
+.workflow-card,
+.next-step-card,
+.tools-secondary-card,
+.tools-proof-row,
+.hub-card,
+.hub-link,
+.record-card,
+.record-ledger-card,
+.confidence-card,
+.confidence-snapshot,
+.ledger-panel,
+.founder-proof,
+.rule-card,
+.confidence-grid article,
+.rules-grid article,
+.meaning-grid article,
+.track-timeline article,
+.bucket-card,
+.method-equation,
+.method-panel,
+.method-proof-grid article,
+.agent-grid article,
+.tool-card,
+.tools-proof-panel,
+.calc-card,
+.result-cell,
+.faq-card,
+.faq-q,
+.faq-a,
+.cta-box,
+.payout-table,
+.stat-table,
+.content-card,
+.article-card,
+.comparison-card,
+.table-card,
+.model-card,
+.player-card,
+.search-panel,
+.analyzer-card,
+.side,
+.main-board,
+.drawer,
+.metric,
+.metric-card,
+.book,
+.recommendation,
+.record-metric,
+.record-row,
+.step,
+.founder-card,
+.dock-panel,
+.soft-card,
+.site-footer {
+  color: #111827 !important;
+  border-color: rgba(15, 23, 42, 0.10) !important;
+  background: rgba(255, 255, 255, 0.82) !important;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+.tool-calculator-page .calc-card,
+.tool-calculator-page .content-section,
+.tool-calculator-page .cta-box,
+.tool-calculator-page .faq-section,
+.tool-calculator-page .chart-section,
+.tool-calculator-page .info-section {
+  color: #111827 !important;
+  border-color: rgba(15, 23, 42, 0.10) !important;
+  background: rgba(255, 255, 255, 0.86) !important;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08) !important;
+}
+
+.tools-proof-row strong,
+.tools-proof-row span,
+.tools-deep-link,
+.tools-deep-link strong,
+.tools-deep-link span,
+.pathways-shell,
+.pathways-shell h2,
+.pathways-shell h3,
+.pathways-shell p,
+.pathways-shell span,
+.pathway-card,
+.pathway-card h3,
+.pathway-card p,
+.workflow-card,
+.workflow-card h2,
+.workflow-card h3,
+.workflow-card p,
+.method-panel,
+.method-panel h2,
+.method-panel p,
+.agent-grid article,
+.agent-grid strong,
+.agent-grid p,
+.tool-calculator-page .content-section h2,
+.tool-calculator-page .content-section h3,
+.tool-calculator-page .content-section p {
+  color: inherit !important;
+}
+
+.card:hover,
+.hub-card:hover,
+.hub-link:hover,
+.guide-card:hover,
+.tool-card:hover,
+.tool-card-modern:hover,
+.tools-deep-link:hover,
+.sport-card:hover,
+.platform-card:hover {
+  border-color: rgba(255, 107, 74, 0.28) !important;
+  background: #ffffff !important;
+}
+
+table,
+.table,
+.prop-table,
+.payout-table,
+.stat-table {
+  color: #111827 !important;
+  border-color: rgba(15, 23, 42, 0.10) !important;
+  background: #ffffff !important;
+}
+
+th,
+.row.header,
+.payout-table th,
+.stat-table th,
+.flex-cell.header {
+  color: #667085 !important;
+  background: #f8fafc !important;
+  border-color: rgba(15, 23, 42, 0.10) !important;
+}
+
+td,
+.row,
+.flex-cell {
+  color: #111827 !important;
+  background: #ffffff !important;
+  border-color: rgba(15, 23, 42, 0.10) !important;
+}
+
+.row.highlight,
+.highlight,
+.active-card,
+.selected {
+  background: linear-gradient(90deg, rgba(255, 107, 74, 0.12), rgba(255, 255, 255, 0.9)) !important;
+  border-color: rgba(255, 107, 74, 0.28) !important;
+}
+
+.sub,
+.muted,
+.record-updated,
+.record-label,
+.record-total-label,
+.confidence-label,
+.stat-label,
+.footer-col-header {
+  color: #667085 !important;
+}
+
+.green,
+.win,
+.positive,
+.tag-low {
+  color: #16a34a !important;
+}
+
+.orange,
+.accent,
+.go,
+.badge,
+.tag-med {
+  color: #ea580c !important;
+}
+
+.danger,
+.loss,
+.tag-high {
+  color: #dc2626 !important;
+}
+
+footer,
+.footer,
+.site-footer {
+  border-top-color: rgba(15, 23, 42, 0.10) !important;
+  background: rgba(255, 255, 255, 0.62) !important;
+}
+
+.footer-bottom,
+.site-footer-legal {
+  border-top-color: rgba(15, 23, 42, 0.10) !important;
+}
+
+@media (max-width: 760px) {
+  .nav-links {
+    background: rgba(255, 255, 255, 0.96) !important;
+    border-color: rgba(15, 23, 42, 0.10) !important;
+  }
+}

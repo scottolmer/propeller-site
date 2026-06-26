@@ -44,7 +44,7 @@
     const pushes = Number(overall.pushes || 0);
 
     setText("[data-track-total]", formatShort(total));
-    setText("[data-track-win-rate]", formatPercent(overall.win_rate));
+    setText("[data-track-wins]", formatNumber.format(wins));
     setText("[data-track-outcome]", `${formatNumber.format(wins)}-${formatNumber.format(losses)}-${formatNumber.format(pushes)}`);
     setText("[data-track-updated]", "Live from graded results API");
   }
