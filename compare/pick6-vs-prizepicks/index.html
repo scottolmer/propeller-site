@@ -104,6 +104,47 @@
   ]
 }
 </script>
+<!-- Structured Data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the difference between Pick6 and PrizePicks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pick6 and PrizePicks both use over/under player props, but their entry structures differ. Pick6 uses a DraftKings-backed pick'em format with progressive payouts, while PrizePicks offers Power Play and Flex Play entries with fixed multipliers and partial-payout options on Flex entries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Propeller support both Pick6 and PrizePicks?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Propeller supports Pick6 and PrizePicks research because both platforms are built around over/under player prop decisions. Propeller's confidence score, player context, and public results workflow can help users evaluate props before they make their own platform decisions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the maximum standard PrizePicks Power Play payout?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The maximum standard PrizePicks Power Play multiplier shown in Propeller's current payout calculator is 37.5x on a 6-pick entry when all six picks hit. PrizePicks can change payouts for promotions, special projections, or specific combinations, so users should confirm the final payout in the app."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Pick6 or PrizePicks better for Propeller users?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Neither platform is universally better. Propeller users should compare the posted line, payout structure, available stat type, and entry rules on each platform. A more favorable line on the same player and stat can matter more than the platform brand."
+      }
+    }
+  ]
+}
+</script>
 
 <script src="https://unpkg.com/lucide@0.344.0"></script>
 <style>
@@ -725,6 +766,35 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   margin: 0 auto 36px;
 }
 
+/* ---- FAQ ---- */
+.faq-list {
+  display: grid;
+  gap: 16px;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  padding: 26px 28px;
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  background: rgba(14, 17, 23, 0.72);
+}
+
+.faq-q {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.faq-a {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-size: 15px;
+}
+
 .cta-actions {
   display: flex;
   flex-direction: column;
@@ -960,7 +1030,7 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
           <tr>
             <td>Payout structure</td>
             <td class="col-a">Progressive (2x–25x)</td>
-            <td class="col-b">Fixed multipliers</td>
+            <td class="col-b">Power Play and Flex multipliers</td>
           </tr>
           <tr>
             <td>Sports</td>
@@ -1059,7 +1129,7 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
           </div>
           <div class="platform-detail">
             <span class="detail-label">Power Play</span>
-            <span>All picks must hit for full payout</span>
+            <span>All picks must hit for full payout; current standard 6-pick Power Play chart reaches 37.5x</span>
           </div>
           <div class="platform-detail">
             <span class="detail-label">Flex Play</span>
@@ -1168,6 +1238,46 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="section" id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <p class="label section-label fade-in">Common Questions</p>
+    <h2 class="section-title fade-in" id="faq-heading">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item fade-in">
+        <p class="faq-q">What is the difference between Pick6 and PrizePicks?</p>
+        <p class="faq-a">
+          Pick6 and PrizePicks both use over/under player props, but their entry structures differ. Pick6 uses a DraftKings-backed pick'em format with progressive payouts, while PrizePicks offers Power Play and Flex Play entries with fixed multipliers and partial-payout options on Flex entries.
+        </p>
+      </div>
+
+      <div class="faq-item fade-in delay-1">
+        <p class="faq-q">Does Propeller support both Pick6 and PrizePicks?</p>
+        <p class="faq-a">
+          Yes. Propeller supports Pick6 and PrizePicks research because both platforms are built around over/under player prop decisions. Propeller's confidence score, player context, and public results workflow can help users evaluate props before they make their own platform decisions.
+        </p>
+      </div>
+
+      <div class="faq-item fade-in delay-2">
+        <p class="faq-q">What is the maximum standard PrizePicks Power Play payout?</p>
+        <p class="faq-a">
+          The maximum standard PrizePicks Power Play multiplier shown in Propeller's current payout calculator is 37.5x on a 6-pick entry when all six picks hit. PrizePicks can change payouts for promotions, special projections, or specific combinations, so users should confirm the final payout in the app.
+        </p>
+      </div>
+
+      <div class="faq-item fade-in delay-3">
+        <p class="faq-q">Is Pick6 or PrizePicks better for Propeller users?</p>
+        <p class="faq-a">
+          Neither platform is universally better. Propeller users should compare the posted line, payout structure, available stat type, and entry rules on each platform. A more favorable line on the same player and stat can matter more than the platform brand.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- Final CTA -->
 <section class="final-cta" id="get-started" aria-labelledby="cta-heading">
   <div class="container">
@@ -1208,6 +1318,7 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
             <a href="https://app.propellerpicks.com/app" rel="noopener">Web App</a>
             <a href="/analyzer/">Prop Analyzer</a>
             <a href="/tools/">Free DFS Tools</a>
+            <a href="/help/">Help Center</a>
           </div>
         </div>
 

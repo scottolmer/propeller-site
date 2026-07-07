@@ -28,6 +28,7 @@ DISCOVERY_FILES = {
     "llms.txt",
     "pricing.md",
     "data/index.json",
+    "data/aeo-target-questions.json",
 }
 
 NOINDEX_RE = re.compile(r'<meta name="robots" content="[^"]*noindex', re.I)

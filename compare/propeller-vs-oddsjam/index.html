@@ -104,6 +104,39 @@
   ]
 }
 </script>
+<!-- Structured Data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is Propeller better than OddsJam for pick'em props?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Propeller and OddsJam are built for different workflows. Propeller is better suited for pick'em player props because it scores over/under decisions with AI confidence and per-agent reasoning. OddsJam is better suited for traditional sportsbook bettors who need positive-EV odds scanning across multiple books."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the main difference between Propeller and OddsJam?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The main difference is that Propeller analyzes whether a player is likely to go over or under a prop line, while OddsJam looks for sportsbook prices that are out of line with the broader market. Propeller is a prop research workflow; OddsJam is an odds-market workflow."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Propeller have free access?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Propeller currently advertises Founder 500 free lifetime core access for the first 500 users while launch spots remain. Future standalone products, business plans, high-volume exports, abuse, and terms violations may be excluded."
+      }
+    }
+  ]
+}
+</script>
 
 <script src="https://unpkg.com/lucide@0.344.0"></script>
 <style>
@@ -696,6 +729,35 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   margin: 0 auto 36px;
 }
 
+/* ---- FAQ ---- */
+.faq-list {
+  display: grid;
+  gap: 16px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  padding: 26px 28px;
+  border: 1px solid var(--glass-border);
+  border-radius: 16px;
+  background: rgba(14, 17, 23, 0.72);
+}
+
+.faq-q {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.faq-a {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-size: 15px;
+}
+
 .cta-actions {
   display: flex;
   flex-direction: column;
@@ -941,17 +1003,17 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
           </tr>
           <tr>
             <td>Free tier</td>
-            <td class="col-propedge"><span class="check-yes"><i data-lucide="check-circle" style="width:16px;height:16px;"></i> 5 picks/day</span></td>
+            <td class="col-propedge"><span class="check-yes"><i data-lucide="check-circle" style="width:16px;height:16px;"></i> Founder 500 launch offer</span></td>
             <td class="col-other">Very limited</td>
           </tr>
           <tr>
             <td>Price</td>
-            <td class="col-propedge">$9.99/mo<span class="winner-badge">LOWER COST</span></td>
+            <td class="col-propedge">Free core access while spots remain<span class="winner-badge">LAUNCH OFFER</span></td>
             <td class="col-other">$39–$99/mo</td>
           </tr>
           <tr>
             <td>Sports</td>
-            <td class="col-propedge">7 sports</td>
+            <td class="col-propedge">NFL, NBA, MLB, NHL, Soccer, PGA</td>
             <td class="col-other">10+ sports</td>
           </tr>
           <tr>
@@ -974,7 +1036,7 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
     <div class="explainer-grid">
 
       <div class="card explainer-card fade-in">
-        <span class="explainer-label explainer-label-propedge">PROPEDGE</span>
+        <span class="explainer-label explainer-label-propedge">PROPELLER</span>
         <h3>Built for Pick'em</h3>
         <p>
           Propeller is designed from the ground up for OVER/UNDER player prop contests on platforms like Pick6, PrizePicks, and Underdog Fantasy. The fundamental question it answers is: does this player hit this line? That is a different problem than finding inefficiencies in sportsbook odds markets.
@@ -986,8 +1048,8 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
           <li>Purpose-built for pick'em platforms (Pick6, PrizePicks, Underdog)</li>
           <li>8 AI agents, each analyzing a distinct signal source</li>
           <li>Per-agent breakdown with every pick — you see the reasoning</li>
-          <li>transparent results tracking across 17,000+ graded props</li>
-          <li>5 free picks per day, no credit card required</li>
+          <li>Public results ledger with live API totals</li>
+          <li>Founder 500 free lifetime core access while launch spots remain</li>
         </ul>
       </div>
 
@@ -1039,13 +1101,46 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
       </div>
 
       <div class="card stat-card fade-in delay-2">
-        <span class="stat-card-value">6K+</span>
-        <span class="stat-card-label">Graded prop legs &mdash; no cherry-picking</span>
+        <span class="stat-card-value">2M+</span>
+        <span class="stat-card-label">Public graded prop rows in the live ledger</span>
       </div>
 
       <div class="card stat-card fade-in delay-3">
-        <span class="stat-card-value">$9.99</span>
-        <span class="stat-card-label">Per month &mdash; less than half of OddsJam Pro</span>
+        <span class="stat-card-value">Founder 500</span>
+        <span class="stat-card-label">Free core access while launch spots remain</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq" aria-labelledby="faq-heading">
+  <div class="container">
+    <p class="label section-label fade-in">Common Questions</p>
+    <h2 class="section-title fade-in" id="faq-heading">Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item fade-in">
+        <p class="faq-q">Is Propeller better than OddsJam for pick'em props?</p>
+        <p class="faq-a">
+          Propeller and OddsJam are built for different workflows. Propeller is better suited for pick'em player props because it scores over/under decisions with AI confidence and per-agent reasoning. OddsJam is better suited for traditional sportsbook bettors who need positive-EV odds scanning across multiple books.
+        </p>
+      </div>
+
+      <div class="faq-item fade-in delay-1">
+        <p class="faq-q">What is the main difference between Propeller and OddsJam?</p>
+        <p class="faq-a">
+          The main difference is that Propeller analyzes whether a player is likely to go over or under a prop line, while OddsJam looks for sportsbook prices that are out of line with the broader market. Propeller is a prop research workflow; OddsJam is an odds-market workflow.
+        </p>
+      </div>
+
+      <div class="faq-item fade-in delay-2">
+        <p class="faq-q">Does Propeller have free access?</p>
+        <p class="faq-a">
+          Yes. Propeller currently advertises Founder 500 free lifetime core access for the first 500 users while launch spots remain. Future standalone products, business plans, high-volume exports, abuse, and terms violations may be excluded.
+        </p>
       </div>
 
     </div>
@@ -1061,7 +1156,7 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
         The <span>AI Prop Analyzer</span><br>Built for Pick'em
       </h2>
       <p>
-        5 fully analyzed props per day on the free tier. See the per-agent breakdown behind every confidence score before you enter.
+        Founder 500 free lifetime core access while launch spots remain. See the per-agent breakdown behind every confidence score before you enter.
       </p>
       <div class="cta-actions">
         <a href="https://app.propellerpicks.com/signup" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:18px; padding:16px 36px;">
@@ -1069,7 +1164,7 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
           Get Free Access
         </a>
         <a href="https://app.propellerpicks.com/signup" class="btn btn-secondary" aria-label="Get free Propeller Picks access">Get Free Access</a>
-        <p style="font-size:14px; color:var(--text-tertiary); margin:0;">Free tier includes 5 analyzed props per day. No credit card required.</p>
+        <p style="font-size:14px; color:var(--text-tertiary); margin:0;">Founder 500 core access is free while launch spots remain.</p>
       </div>
     </div>
   </div>
@@ -1090,6 +1185,7 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
             <a href="https://app.propellerpicks.com/app" rel="noopener">Web App</a>
             <a href="/analyzer/">Prop Analyzer</a>
             <a href="/tools/">Free DFS Tools</a>
+            <a href="/help/">Help Center</a>
           </div>
         </div>
 
