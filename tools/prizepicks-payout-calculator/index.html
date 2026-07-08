@@ -667,7 +667,8 @@ function calculate() {
   }
 
   document.getElementById('results').classList.add('show');
-  gtag('event', 'calculator_used', { entry_type: type, num_picks: n, amount: amount });
+  gtag('event', 'calculator_used', { platform: 'prizepicks', entry_type: type, num_picks: n, amount: amount });
+  window.ppPaidSearchEvents?.trackCalculatorResult({ entry_type: type, num_picks: n, amount: amount });
 }
 
 function copyResults() {
@@ -682,6 +683,7 @@ function copyResults() {
     tiers.forEach(t => { text += `${t.need}/${n}: $${(amount * t.mult).toFixed(0)} (${t.mult}x)\n`; });
   }
   text += `\nCalculated at propellerpicks.com/tools/prizepicks-payout-calculator/`;
+  window.ppPaidSearchEvents?.trackCopy({ entry_type: type, num_picks: Number(n), amount: amount });
   navigator.clipboard.writeText(text).then(() => {
     const btn = document.querySelector('.copy-btn');
     btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--win)" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Copied!';
@@ -698,6 +700,7 @@ function toggleFaq(el) {
 updateUI();
 </script>
 <script src="/assets/js/mobile-nav.js?v=20260624-nav3" defer></script>
+<script src="/assets/js/paid-search-events.js?v=20260708" defer></script>
   <script src="/assets/js/site-nav.js?v=20260625-nav-unify" defer></script>
   <script src="/assets/js/analytics-events.js?v=20260708" defer></script>
 </body>

@@ -310,18 +310,21 @@ function calculate() {
   `;
   document.getElementById('results').classList.add('show');
   gtag('event','calculator_used',{platform:'pick6',num_picks:n,amount:amount});
+  window.ppPaidSearchEvents?.trackCalculatorResult({num_picks:n,amount:amount});
 }
 
 function copyResults() {
   const n = document.getElementById('numPicks').value;
   const mult = PAYOUTS[n];
   let text = `DraftKings Pick6 · ${n} picks · $${amount} entry\nPayout: $${(amount*mult).toLocaleString()} (${mult}x)\nWin chance: ${(Math.pow(getHitRate(),n)*100).toFixed(1)}% at ${hitRateLabel()}/pick\n\nCalculated at propellerpicks.com/tools/pick6-payout-calculator/`;
+  window.ppPaidSearchEvents?.trackCopy({num_picks:Number(n),amount:amount});
   navigator.clipboard.writeText(text).then(()=>{const b=document.querySelector('.copy-btn');b.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--win)" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Copied!';setTimeout(()=>{b.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy Results'},2000)});
 }
 
 function toggleFaq(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('open')}
 </script>
 <script src="/assets/js/mobile-nav.js?v=20260624-nav3" defer></script>
+<script src="/assets/js/paid-search-events.js?v=20260708" defer></script>
   <script src="/assets/js/site-nav.js?v=20260625-nav-unify" defer></script>
   <script src="/assets/js/analytics-events.js?v=20260708" defer></script>
 </body>
