@@ -17,6 +17,19 @@
     return item.match.test(path);
   }
 
+  function loadSignupAttribution() {
+    if (window.ppSignupAttribution) {
+      window.ppSignupAttribution.init();
+      return;
+    }
+    if (document.getElementById("pp-signup-attribution-script")) return;
+    var script = document.createElement("script");
+    script.id = "pp-signup-attribution-script";
+    script.src = "/assets/js/signup-attribution.js?v=20260712";
+    script.defer = true;
+    document.head.appendChild(script);
+  }
+
   function linkMarkup(item, path) {
     var rel = item.external ? ' rel="noopener"' : "";
     var current = isCurrent(item, path) ? ' aria-current="page"' : "";
@@ -112,6 +125,7 @@
     nav.removeAttribute("aria-label");
     nav.innerHTML = navMarkup(window.location.pathname);
     initToggle(nav);
+    loadSignupAttribution();
   }
 
   if (document.readyState === "loading") {
