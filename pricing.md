@@ -1,6 +1,6 @@
 # Propeller Picks Pricing
 
-Last verified: 2026-06-20
+Last verified: 2026-07-07
 Canonical signup: https://app.propellerpicks.com/signup
 
 ## Current Public Offer

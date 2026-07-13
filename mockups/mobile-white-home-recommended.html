@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <title>Recommended Concept - Operator Homepage + App Companion</title>
+  <link rel="stylesheet" href="./mobile-white-home.css">
+  <style>
+    .companion-band {
+      padding: 24px 0 86px;
+    }
+
+    .companion-frame {
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(440px, 1.12fr);
+      gap: 38px;
+      align-items: center;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at 82% 20%, rgba(255, 107, 74, 0.10), transparent 24rem),
+        rgba(255, 255, 255, 0.74);
+      box-shadow: var(--shadow);
+    }
+
+    .companion-copy h2 {
+      margin: 0;
+      font: 950 clamp(34px, 4.5vw, 58px)/0.98 var(--display);
+      letter-spacing: -0.045em;
+    }
+
+    .companion-copy p {
+      margin: 16px 0 0;
+      color: var(--sub);
+      font-size: 18px;
+      line-height: 1.5;
+      font-weight: 650;
+    }
+
+    .companion-points {
+      display: grid;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .companion-points span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 850;
+    }
+
+    .companion-points span::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px var(--accent-soft);
+    }
+
+    .companion-visual {
+      position: relative;
+      min-height: 520px;
+    }
+
+    .companion-visual .web-board {
+      transform: translateY(18px);
+    }
+
+    .companion-visual .phone {
+      right: -10px;
+      bottom: 0;
+    }
+
+    @media (max-width: 980px) {
+      .recommended-hero .visual-stage {
+        order: 2;
+      }
+
+      .recommended-hero .hero-copy {
+        order: 1;
+      }
+
+      .companion-frame {
+        grid-template-columns: 1fr;
+        padding: 20px;
+      }
+
+      .companion-visual {
+        min-height: 560px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .companion-band {
+        padding-top: 0;
+      }
+
+      .companion-frame {
+        border-radius: 24px;
+      }
+
+      .companion-visual {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body class="operator">
+  <div class="site-shell">
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="#"><span class="mark"></span>Propeller</a>
+        <div class="nav-links">
+          <a href="#">Today</a>
+          <a href="#">Props</a>
+          <a href="#">Combos</a>
+          <a href="#">Tracker</a>
+          <a class="cta" href="#">Start Free</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid recommended-hero">
+          <div class="visual-stage">
+            <div class="web-board">
+              <div class="web-toolbar">
+                <span class="chip active">NBA</span>
+                <span class="chip">Today</span>
+                <span class="chip">Main Slate</span>
+                <span class="search">Search the board <span class="muted">⌘K</span></span>
+              </div>
+              <div class="operator-dock">
+                <section class="dock-panel large">
+                  <h3>Slate Control</h3>
+                  <div class="metric-grid">
+                    <div class="metric-card"><small>Researchable props</small><strong>184</strong></div>
+                    <div class="metric-card"><small>High confidence</small><strong class="green">18</strong></div>
+                    <div class="metric-card"><small>New line moves</small><strong class="gold">12</strong></div>
+                  </div>
+                  <div class="prop-table">
+                    <div class="prop-row head"><span>Player</span><span>Market</span><span>Line</span><span>Conf</span><span>Status</span></div>
+                    <div class="prop-row featured"><span>Donovan Mitchell</span><span>Threes</span><span class="num">2.5</span><span class="num green">68</span><span>Tracked</span></div>
+                    <div class="prop-row"><span>Paul Reed</span><span>Threes</span><span class="num">0.5</span><span class="num green">63</span><span>Combo fit</span></div>
+                    <div class="prop-row"><span>Caris LeVert</span><span>Threes</span><span class="num">0.5</span><span class="num green">63</span><span>Watch</span></div>
+                  </div>
+                </section>
+                <section class="dock-panel">
+                  <h3>Digest</h3>
+                  <div class="mini-row"><span>Top picks matching preferences</span><strong>3</strong></div>
+                  <div class="mini-row"><span>Line moves to review</span><strong>5</strong></div>
+                  <div class="mini-row"><span>Injury flags today</span><strong>4</strong></div>
+                </section>
+                <section class="dock-panel">
+                  <h3>Matchups</h3>
+                  <div class="map-grid">
+                    <span class="map-cell hot">A</span><span class="map-cell hot">B+</span><span class="map-cell">B</span><span class="map-cell">C</span>
+                    <span class="map-cell">G</span><span class="map-cell hot">C</span><span class="map-cell">F</span><span class="map-cell">P</span>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-copy">
+            <p class="kicker">Recommended direction · White product system</p>
+            <h1>Turn today’s slate into a short list.</h1>
+            <p class="hero-lede">Lead with the product workflow: open the slate, spot the strongest props, inspect the context, and track what matters. It feels like the redesigned iOS app, but still sells the power of the desktop board.</p>
+            <div class="actions">
+              <a class="cta" href="#">Start Free</a>
+              <a class="ghost" href="#">Explore the Board</a>
+            </div>
+            <div class="proof-strip">
+              <div class="proof-pill"><small>Analyzed</small><strong>1M+</strong><span>Props processed and graded across supported sports.</span></div>
+              <div class="proof-pill"><small>Workflow</small><strong>4 steps</strong><span>Discover, inspect, build, track.</span></div>
+              <div class="proof-pill"><small>Access</small><strong>Free</strong><span>Desktop and mobile during launch.</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="companion-band">
+        <div class="container companion-frame">
+          <div class="companion-copy">
+            <p class="kicker">Desktop depth · Mobile habit</p>
+            <h2>Start big. Check fast. Track daily.</h2>
+            <p>The homepage should make the desktop app feel powerful and the mobile app feel essential, not secondary. This section borrows Concept A’s companion framing after Concept C has already established the product.</p>
+            <div class="companion-points">
+              <span>Desktop keeps the wide board, filters, books, and prop detail drawer.</span>
+              <span>Mobile keeps the daily digest, saved picks, alerts, and quick prop checks.</span>
+              <span>The same orange/white design system ties both surfaces together.</span>
+            </div>
+          </div>
+
+          <div class="companion-visual">
+            <div class="web-board">
+              <div class="web-toolbar">
+                <span class="chip active">Props</span>
+                <span class="chip">Best lines</span>
+                <span class="search">Luka Doncic points <span class="muted">/</span></span>
+              </div>
+              <div class="board-shell">
+                <aside class="side-nav">
+                  <span class="active">Today</span>
+                  <span>Props</span>
+                  <span>Combos</span>
+                  <span>Tracker</span>
+                  <span>Research</span>
+                </aside>
+                <section class="board-main">
+                  <div class="board-title">
+                    <h2>Prop Detail</h2>
+                    <span>DAL @ OKC</span>
+                  </div>
+                  <div class="metric-grid">
+                    <div class="metric-card"><small>Recommendation</small><strong class="green">Over</strong></div>
+                    <div class="metric-card"><small>Confidence</small><strong class="orange">76</strong></div>
+                    <div class="metric-card"><small>Edge</small><strong class="green">+7.1%</strong></div>
+                  </div>
+                  <div class="prop-table">
+                    <div class="prop-row head"><span>Book</span><span>Odds</span><span>Line</span><span>Prob</span><span>Edge</span></div>
+                    <div class="prop-row featured"><span>DraftKings</span><span class="num">-108</span><span class="num">31.5</span><span class="num">51.9%</span><span class="num green">+7.1%</span></div>
+                    <div class="prop-row"><span>FanDuel</span><span class="num">-106</span><span class="num">31.5</span><span class="num">51.5%</span><span class="num green">+6.7%</span></div>
+                  </div>
+                </section>
+              </div>
+            </div>
+
+            <aside class="phone" aria-label="iOS white app companion preview">
+              <div class="phone-screen">
+                <div class="phone-status"><span>9:41</span><span>LTE</span></div>
+                <div class="phone-rail">
+                  <span class="sport-dot">NFL</span><span class="sport-dot active">NBA</span><span class="sport-dot">MLB</span><span class="sport-dot">NHL</span><span class="sport-dot">PGA</span>
+                </div>
+                <div class="phone-content">
+                  <div class="phone-title"><h3>Daily Digest</h3><span>12 updates</span></div>
+                  <div class="phone-card">
+                    <small>Best pick</small>
+                    <strong>Donovan Mitchell</strong>
+                    <p>Solid lean toward over 2.5 threes.</p>
+                    <span class="score-badge">68</span>
+                  </div>
+                  <div class="phone-card">
+                    <small>Biggest move</small>
+                    <strong>Points line dropped</strong>
+                    <p>Books expect less scoring volume today.</p>
+                  </div>
+                  <div class="phone-card">
+                    <small>Tracker</small>
+                    <strong>Saved prop updated</strong>
+                    <p>Line movement alert added to your watchlist.</p>
+                  </div>
+                </div>
+                <div class="phone-tabbar"><span class="phone-tab active">Home</span><span class="phone-tab">Picks</span><span class="phone-tab">Track</span><span class="phone-tab">More</span></div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <div class="section-head">
+            <h2>Why this is the strongest production path.</h2>
+            <p>It makes the website feel white, native, and modern without hiding what makes Propeller valuable: an actual research workflow with high-density prop data.</p>
+          </div>
+          <div class="card-grid">
+            <article class="soft-card"><span class="tag">Marketing</span><h3>Clear promise.</h3><p>The headline tells users exactly what they get: a faster path from full slate to actionable short list.</p></article>
+            <article class="soft-card"><span class="tag">Product</span><h3>True preview.</h3><p>The homepage previews the redesigned web app instead of relying on abstract claims or generic app imagery.</p></article>
+            <article class="soft-card"><span class="tag">Mobile</span><h3>iOS aligned.</h3><p>The second section gives mobile enough presence to feel first-class without making the hero phone-only.</p></article>
+          </div>
+          <div class="final-cta">
+            <h2>Open Propeller free today.</h2>
+            <p>Research props on desktop, keep your daily checks on mobile, and track the picks you care about from one account.</p>
+            <a class="cta" href="#">Start Free</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <div class="concept-label">Recommended · C hero + A companion</div>
+  <script src="/assets/js/analytics-events.js?v=20260708" defer></script>
+</body>
+</html>

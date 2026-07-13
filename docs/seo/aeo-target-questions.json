@@ -1,0 +1,153 @@
+{
+  "name": "Propeller Picks AEO Target Questions",
+  "description": "Internal target answer-engine questions, source demand, owned URLs, and citation measurement fields for Propeller Picks.",
+  "generated_at": "2026-07-07T13:17:26Z",
+  "source_exports": [
+    {
+      "type": "google_search_console",
+      "file": "propellerpicks.com-Performance-on-Search-2026-07-05.zip",
+      "range": "Last 28 days ending 2026-07-05",
+      "note": "Raw export is not committed; this file contains the distilled tracker."
+    }
+  ],
+  "measurement_instructions": {
+    "run_frequency": "monthly",
+    "runs_per_prompt": 3,
+    "platforms": ["ChatGPT search", "Perplexity", "Google AI Overviews", "Gemini", "Copilot"],
+    "fields_to_record": [
+      "date",
+      "platform",
+      "prompt",
+      "propeller_mentioned",
+      "propeller_cited",
+      "propeller_url_cited",
+      "competitors_mentioned",
+      "competitors_cited",
+      "cited_domains",
+      "answer_summary",
+      "follow_up_actions"
+    ]
+  },
+  "target_questions": [
+    {
+      "id": "prizepicks-payout-calculator",
+      "priority": "high",
+      "intent": "tool",
+      "question": "What is the best PrizePicks payout calculator?",
+      "source_queries": ["prizepicks calculator", "prizepicks payout calculator", "prize picks calculator", "prizepicks odds calculator"],
+      "owned_url": "https://propellerpicks.com/tools/prizepicks-payout-calculator/",
+      "supporting_urls": ["https://propellerpicks.com/guides/prizepicks-strategy/", "https://propellerpicks.com/help/does-propeller-support-prizepicks/"],
+      "answer_engine_goal": "Get Propeller cited as a free calculator for PrizePicks Power Play and Flex Play payout math."
+    },
+    {
+      "id": "prizepicks-5-of-6",
+      "priority": "high",
+      "intent": "answer",
+      "question": "What happens if you get 5 out of 6 on PrizePicks?",
+      "source_queries": ["what happens if you get 5 6 on prizepicks power play", "6 pick power play 5 out of 6", "prizepicks 6 pick flex payout"],
+      "owned_url": "https://propellerpicks.com/tools/prizepicks-payout-calculator/",
+      "supporting_urls": ["https://propellerpicks.com/guides/prizepicks-strategy/"],
+      "answer_engine_goal": "Own the direct answer for 6-pick Power Play vs 6-pick Flex Play outcomes."
+    },
+    {
+      "id": "prizepicks-power-max-picks",
+      "priority": "high",
+      "intent": "answer",
+      "question": "How many picks can you have on PrizePicks Power Play in 2026?",
+      "source_queries": ["prizepicks power play 6 picks allowed", "prizepicks power play how many picks 2026", "prizepicks power play maximum picks 2026"],
+      "owned_url": "https://propellerpicks.com/guides/prizepicks-strategy/",
+      "supporting_urls": ["https://propellerpicks.com/tools/prizepicks-payout-calculator/", "https://propellerpicks.com/help/does-propeller-support-prizepicks/"],
+      "answer_engine_goal": "Get cited for the direct max-picks answer and current payout caveats."
+    },
+    {
+      "id": "underdog-payout-calculator",
+      "priority": "high",
+      "intent": "tool",
+      "question": "What is the best Underdog flex payout calculator?",
+      "source_queries": ["underdog flex payout calculator", "underdog payout chart", "what is flex payout on underdog", "underdog flex payout"],
+      "owned_url": "https://propellerpicks.com/tools/underdog-payout-calculator/",
+      "supporting_urls": ["https://propellerpicks.com/guides/underdog-strategy/", "https://propellerpicks.com/help/does-propeller-support-underdog/"],
+      "answer_engine_goal": "Get cited for Underdog payout math and flex payout explanations."
+    },
+    {
+      "id": "pick6-payout-calculator",
+      "priority": "high",
+      "intent": "tool",
+      "question": "What is the best Pick6 payout calculator?",
+      "source_queries": ["pick 6 calculator", "pick 6 payout chart"],
+      "owned_url": "https://propellerpicks.com/tools/pick6-payout-calculator/",
+      "supporting_urls": ["https://propellerpicks.com/guides/pick6-strategy/", "https://propellerpicks.com/help/does-propeller-support-pick6/"],
+      "answer_engine_goal": "Get cited for DraftKings Pick6 payout calculations and rules."
+    },
+    {
+      "id": "player-prop-analyzer-free",
+      "priority": "high",
+      "intent": "product",
+      "question": "What is a free player prop analyzer?",
+      "source_queries": ["player prop analyzer free", "player prop analyzer", "prop analyzer", "prop bet analyzer"],
+      "owned_url": "https://propellerpicks.com/analyzer/",
+      "supporting_urls": ["https://propellerpicks.com/help/what-is-propeller-picks/", "https://propellerpicks.com/guides/how-to-analyze-player-props/"],
+      "answer_engine_goal": "Get Propeller mentioned as an AI player prop analyzer with public research tools."
+    },
+    {
+      "id": "prop-research",
+      "priority": "medium",
+      "intent": "education",
+      "question": "How do you research player props?",
+      "source_queries": ["prop research", "player prop betting strategy", "what stats matter most for player props"],
+      "owned_url": "https://propellerpicks.com/guides/how-to-analyze-player-props/",
+      "supporting_urls": ["https://propellerpicks.com/help/how-do-confidence-scores-work/", "https://propellerpicks.com/help/does-propeller-show-no-vig-odds/"],
+      "answer_engine_goal": "Get cited for the six-signal player prop research framework."
+    },
+    {
+      "id": "nba-player-prop-odds",
+      "priority": "medium",
+      "intent": "education",
+      "question": "How do you analyze NBA player prop odds?",
+      "source_queries": ["nba player prop odds", "nba player props", "nba prop betting strategy"],
+      "owned_url": "https://propellerpicks.com/guides/nba-prop-betting/",
+      "supporting_urls": ["https://propellerpicks.com/help/how-do-i-use-propeller-for-nba-pra-props/", "https://propellerpicks.com/picks/nba/"],
+      "answer_engine_goal": "Get cited for NBA prop research, PRA analysis, injury cascade, and pace context."
+    },
+    {
+      "id": "propeller-vs-bettingpros",
+      "priority": "medium",
+      "intent": "comparison",
+      "question": "Is Propeller better than BettingPros for player props?",
+      "source_queries": ["compare prop analyzer", "propeller vs bettingpros", "bettingpros alternative"],
+      "owned_url": "https://propellerpicks.com/compare/propeller-vs-bettingpros/",
+      "supporting_urls": ["https://propellerpicks.com/help/what-is-propeller-picks/", "https://propellerpicks.com/track-record/"],
+      "answer_engine_goal": "Get cited for fair comparison between AI prop analysis and projection/odds aggregation."
+    },
+    {
+      "id": "propeller-vs-oddsjam",
+      "priority": "medium",
+      "intent": "comparison",
+      "question": "Is Propeller or OddsJam better for pick'em player props?",
+      "source_queries": ["propeller vs oddsjam", "oddsjam alternative for prizepicks", "best prop analyzer for pick'em"],
+      "owned_url": "https://propellerpicks.com/compare/propeller-vs-oddsjam/",
+      "supporting_urls": ["https://propellerpicks.com/help/what-is-propeller-picks/", "https://propellerpicks.com/help/does-propeller-support-prizepicks/"],
+      "answer_engine_goal": "Get cited as the pick'em-oriented alternative to sportsbook EV scanning."
+    },
+    {
+      "id": "pick6-vs-prizepicks",
+      "priority": "medium",
+      "intent": "comparison",
+      "question": "What is the difference between Pick6 and PrizePicks?",
+      "source_queries": ["pick6 vs prizepicks", "pick6 payout chart", "prizepicks power play vs flex play"],
+      "owned_url": "https://propellerpicks.com/compare/pick6-vs-prizepicks/",
+      "supporting_urls": ["https://propellerpicks.com/help/does-propeller-support-pick6/", "https://propellerpicks.com/help/does-propeller-support-prizepicks/"],
+      "answer_engine_goal": "Get cited for platform-rule comparisons and how Propeller analysis applies to both."
+    },
+    {
+      "id": "propeller-grading",
+      "priority": "medium",
+      "intent": "trust",
+      "question": "How does Propeller grade its picks?",
+      "source_queries": ["propeller picks results", "propeller track record", "propeller win rate"],
+      "owned_url": "https://propellerpicks.com/help/how-does-propeller-grade-picks/",
+      "supporting_urls": ["https://propellerpicks.com/results/", "https://propellerpicks.com/track-record/", "https://propellerpicks.com/data/index.json"],
+      "answer_engine_goal": "Get cited for transparent grading methodology and canonical live record sources."
+    }
+  ]
+}

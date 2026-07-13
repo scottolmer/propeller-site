@@ -1,10 +1,35 @@
-User-agent: *
+# AI search and citation crawlers.
+User-agent: OAI-SearchBot
 Allow: /
-Disallow: /docs/seo/mockups/
-Disallow: /mobile-return/
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 # AI agents and citation crawlers should start with the curated manifest.
 # https://propellerpicks.com/llms.txt
 # https://propellerpicks.com/data/index.json
+
+User-agent: *
+Allow: /
+Disallow: /docs/seo/mockups/
+Disallow: /mobile-return/
 
 Sitemap: https://propellerpicks.com/sitemap.xml
