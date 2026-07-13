@@ -64,7 +64,7 @@ def schema() -> str:
                 "description": DESCRIPTION,
                 "isPartOf": {"@id": "https://propellerpicks.com/#website"},
                 "about": {"@id": "https://propellerpicks.com/#software"},
-                "dateModified": "2026-07-12",
+                "dateModified": "2026-07-13",
             },
             {
                 "@type": "SoftwareApplication",
@@ -161,7 +161,7 @@ def head() -> str:
   </script>
   <link rel="preload" href="/assets/fonts/familjen-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260712">
+  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260713">
 </head>"""
 
 
@@ -265,6 +265,187 @@ CSS_ADDITIONS = r"""
   .home-faq__grid { grid-template-columns: 1fr; gap: 44px; }
   .record-update { align-items: flex-start; flex-direction: column; gap: 8px; }
 }
+
+/* Mobile polish: readable evidence, compact rhythm, and connectors that stay out of the copy. */
+body.pp-home .pp-brand { min-height: 44px; }
+
+body.pp-home .pp-site-nav__menu {
+  width: 44px;
+  height: 44px;
+}
+
+body.pp-home .pp-site-nav__links > .pp-site-nav__cta { min-height: 44px; }
+
+body.pp-home .pp-site-nav__menu svg line {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 180ms ease, opacity 180ms ease;
+}
+
+body.pp-home .pp-site-nav__menu[aria-expanded="true"] svg line:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+body.pp-home .pp-site-nav__menu[aria-expanded="true"] svg line:nth-child(2) {
+  opacity: 0;
+}
+
+body.pp-home .pp-site-nav__menu[aria-expanded="true"] svg line:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+body.pp-home .hero-actions .button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1080px) {
+  .pipeline-map { margin-top: 48px; }
+
+  .pipeline-arrow {
+    min-height: 48px;
+    transform: none;
+  }
+
+  .pipeline-arrow::before {
+    inset: 0 auto 0 50%;
+    width: 1px;
+    height: auto;
+  }
+
+  .pipeline-arrow span {
+    padding: 4px 0;
+    transform: rotate(90deg);
+  }
+
+  .input-cell span {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .pipeline-stage p {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 15px;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 820px) {
+  .pipeline,
+  .product,
+  .record,
+  .home-faq,
+  .final-cta {
+    padding: 64px 0;
+  }
+
+  .pipeline-map { margin-top: 40px; }
+  .product-intro { gap: 40px; }
+  .record-grid { gap: 36px; }
+  .home-faq__grid { gap: 32px; }
+
+  .risk-note {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .app-hero-note {
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .proof-item small {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .proof-item span {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .benefit p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .record-head,
+  .record-primary small,
+  .record-stat small {
+    font-size: 11px;
+    line-height: 1.35;
+  }
+
+  .record-primary span {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .record-update {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .record-source-links {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .record-source-links a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 4px;
+    font-size: 13px;
+  }
+
+  .home-faq__item p {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+}
+
+@media (max-width: 340px) {
+  .hero { padding: 42px 0 36px; }
+  .hero h1 { font-size: 50px; line-height: 0.88; }
+  .eyebrow { margin-bottom: 18px; }
+  .hero-lede { margin-top: 20px; line-height: 1.5; }
+  .hero-actions { margin-top: 22px; gap: 10px; }
+  .risk-note { margin-top: 12px; }
+}
+
+@media (max-width: 570px) {
+  body.pp-home .pp-site-footer__grid { gap: 30px; }
+
+  body.pp-home .pp-site-footer__copy { font-size: 15px; }
+
+  body.pp-home .pp-site-footer__column {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 16px;
+  }
+
+  body.pp-home .pp-site-footer__column h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 6px;
+    font-size: 11px;
+  }
+
+  body.pp-home .pp-site-footer__column a {
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  body.pp-home .pp-site-footer__legal {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+}
 """
 
 
@@ -273,14 +454,14 @@ def main() -> None:
     style = re.search(r"<style>(.*?)</style>", source, flags=re.DOTALL)
     if not style:
         raise SystemExit("Mockup style block not found")
-    CSS_OUTPUT.write_text(style.group(1).strip() + CSS_ADDITIONS + "\n", encoding="utf-8")
+    CSS_OUTPUT.write_text(style.group(1).strip() + CSS_ADDITIONS.rstrip() + "\n", encoding="utf-8")
 
     html = re.sub(r"<head>.*?</head>", head(), source, count=1, flags=re.DOTALL)
     html = html.replace("<body>", '<body class="pp-site-system pp-home">', 1)
     html = html.replace("../images/", "/images/").replace("../assets/", "/assets/")
     html = html.replace(
         '<img src="/images/web-app-dashboard-live.png" width="1462" height="797"',
-        '<img src="/images/web-app-dashboard-live.png" srcset="/images/web-app-dashboard-live-640.avif 640w, /images/web-app-dashboard-live-1024.avif 1024w, /images/web-app-dashboard-live.png 1462w" sizes="(max-width: 1080px) calc(100vw - 32px), 56vw" width="1462" height="797" fetchpriority="high" decoding="async"',
+        '<img src="/images/web-app-dashboard-live.png" srcset="/images/web-app-dashboard-live-640.avif 640w, /images/web-app-dashboard-live-768.avif 768w, /images/web-app-dashboard-live-1024.avif 1024w, /images/web-app-dashboard-live.png 1462w" sizes="(max-width: 1080px) calc(100vw - 32px), 56vw" width="1462" height="797" fetchpriority="high" decoding="async"',
     )
     html = html.replace(
         '<img src="/images/web-app-andrew-abbott-prop-detail.png" width="1462" height="797"',
@@ -293,7 +474,7 @@ def main() -> None:
     html = html.replace("Public graded record", "Documented historical archive")
     html = html.replace(
         '<div class="proof-item proof-live"><small>Verified record</small><strong>● Live</strong><span data-record-updated>Snapshot · Jul 7, 2026 · live API in production</span></div>',
-        '<div class="proof-item proof-live"><small>Historical archive</small><strong>● Dated</strong><span data-record-updated>Static snapshot; live refresh enabled</span></div>',
+        '<div class="proof-item proof-live"><small>Historical archive</small><strong>● Dated</strong><span data-record-updated>Static API snapshot · July 13, 2026; live refresh enabled</span></div>',
     )
     html = html.replace(
         '<div class="proof-item"><small>Graded props</small><strong data-record-total>2M+</strong><span data-record-total-detail>2,099,988 total props</span></div>',
@@ -309,11 +490,11 @@ def main() -> None:
     )
     html = html.replace(
         '<div class="record-copy scroll-reveal"><p class="section-kicker">03 / Proof before the pitch</p><h2>Trust the record, not the promise.</h2><p>Every published model output is logged before the result is known, graded against the final stat, and rolled into a public record you can inspect.</p><a class="button" href="/results/">Inspect every graded result →</a></div>',
-        '<div class="record-copy scroll-reveal"><p class="section-kicker">03 / Evidence before the pitch</p><h2>Read the unit before the number.</h2><p>The public archive separates raw graded analysis rows from entries retained after the API’s current collapse rules. It also discloses repeats, retrospective data, and why the archive is not a forward-tested ROI claim.</p><a class="button" href="/results/">Read the archive and definitions →</a></div>',
+        '<div class="record-copy scroll-reveal"><p class="section-kicker">03 / Evidence before the pitch</p><h2>Read the unit before the number.</h2><p>The archive separates raw analysis rows from collapsed ledger entries. Because it includes repeated snapshots and retrospective data, it is not a forward-tested ROI record.</p><a class="button" href="/results/">Read the archive and definitions →</a></div>',
     )
     html = re.sub(
         r'<div class="record-board scroll-reveal">.*?<div class="record-update" data-record-updated>Snapshot · Jul 7, 2026 · live API in production</div></div>',
-        '<div class="record-board scroll-reveal"><div class="record-head"><span>Public historical archive</span><span>● API connected</span></div><div class="record-main"><div class="record-primary"><small>Collapsed ledger entries</small><strong data-record-total-secondary>284K</strong><span>Entries retained under the current public API rules.</span></div><div class="record-stats"><div class="record-stat"><small>Raw database rows</small><strong data-record-raw-total-secondary>2.12M</strong></div><div class="record-stat"><small>Evidence status</small><strong>Research archive</strong></div></div></div><div class="record-update"><span data-record-updated>Static snapshot; live refresh enabled</span><span class="record-source-links"><a href="/results/">Source data</a><a href="/how-it-works/">Methodology</a></span></div></div>',
+        '<div class="record-board scroll-reveal"><div class="record-head"><span>Public historical archive</span><span>Dated snapshot</span></div><div class="record-main"><div class="record-primary"><small>Collapsed ledger entries</small><strong data-record-total-secondary>284K</strong><span>Entries after the current collapse rules.</span></div><div class="record-stats"><div class="record-stat"><small>Raw database rows</small><strong data-record-raw-total-secondary>2.12M</strong></div><div class="record-stat"><small>Claim status</small><strong>No ROI claim</strong></div></div></div><div class="record-update"><span data-record-updated>Static API snapshot · July 13, 2026; live refresh enabled</span><span class="record-source-links"><a href="/results/">Source data</a><a href="/how-it-works/">Methodology</a></span></div></div>',
         html,
         count=1,
         flags=re.DOTALL,
