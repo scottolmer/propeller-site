@@ -1,0 +1,134 @@
+/*
+ * Transitional legacy-page compatibility layer.
+ * !important is intentionally confined here so existing inline generated styles
+ * can adopt the approved paper/ink system without rewriting indexed page bodies.
+ */
+body.pp-site-system:not(.pp-home) {
+  color: var(--pp-text) !important;
+  background-color: var(--pp-paper) !important;
+  font-family: var(--pp-body) !important;
+}
+
+body.pp-site-system:not(.pp-home) main,
+body.pp-site-system:not(.pp-home) article,
+body.pp-site-system:not(.pp-home) .page,
+body.pp-site-system:not(.pp-home) .shell,
+body.pp-site-system:not(.pp-home) .content,
+body.pp-site-system:not(.pp-home) .wrap {
+  color: var(--pp-text) !important;
+}
+
+body.pp-site-system:not(.pp-home) main :where(h1, h2, h3, h4, h5, h6),
+body.pp-site-system:not(.pp-home) article :where(h1, h2, h3, h4, h5, h6) {
+  color: var(--pp-ink) !important;
+  font-family: var(--pp-display) !important;
+}
+
+body.pp-site-system:not(.pp-home) main :where(p, li, dd),
+body.pp-site-system:not(.pp-home) article :where(p, li, dd) {
+  color: var(--pp-sub) !important;
+}
+
+body.pp-site-system:not(.pp-home) main :where(a),
+body.pp-site-system:not(.pp-home) article :where(a) {
+  color: var(--pp-orange-dark) !important;
+}
+
+body.pp-site-system:not(.pp-home) main :where(.card, .panel, .metric, .stat, .stat-card, .result-card, .tool-card, .blog-card, .faq-item, .faq-card),
+body.pp-site-system:not(.pp-home) article :where(.card, .panel, .metric, .stat, .stat-card, .result-card, .tool-card, .blog-card, .faq-item, .faq-card) {
+  border-color: var(--pp-line) !important;
+  border-radius: var(--pp-radius-card) !important;
+  background: var(--pp-paper-light) !important;
+  color: var(--pp-text) !important;
+  box-shadow: none !important;
+}
+
+body.pp-site-system:not(.pp-home) main :where(table),
+body.pp-site-system:not(.pp-home) article :where(table) {
+  border-color: var(--pp-line) !important;
+  background: rgba(250, 248, 243, 0.8) !important;
+  color: var(--pp-text) !important;
+  font-family: var(--pp-body) !important;
+}
+
+body.pp-site-system:not(.pp-home) main :where(th),
+body.pp-site-system:not(.pp-home) article :where(th) {
+  border-color: var(--pp-line) !important;
+  background: rgba(16, 19, 17, 0.045) !important;
+  color: var(--pp-muted) !important;
+  font-family: var(--pp-mono) !important;
+}
+
+body.pp-site-system:not(.pp-home) main :where(td),
+body.pp-site-system:not(.pp-home) article :where(td) {
+  border-color: rgba(16, 19, 17, 0.09) !important;
+  color: var(--pp-sub) !important;
+}
+
+body.pp-site-system:not(.pp-home) main :where(input, select, textarea),
+body.pp-site-system:not(.pp-home) article :where(input, select, textarea) {
+  border-color: var(--pp-line) !important;
+  background: #fff !important;
+  color: var(--pp-ink) !important;
+}
+
+body.pp-site-system:not(.pp-home) main :where(.btn, .button, .btn-primary, .cta),
+body.pp-site-system:not(.pp-home) article :where(.btn, .button, .btn-primary, .cta) {
+  border: 1px solid var(--pp-ink) !important;
+  border-radius: var(--pp-radius) !important;
+  background: var(--pp-ink) !important;
+  color: #fff !important;
+  box-shadow: 4px 4px 0 var(--pp-orange) !important;
+  font-family: var(--pp-body) !important;
+}
+
+body.pp-site-system:not(.pp-home) main :where(.num, .mono, [class*="stat-val"], [class*="metric-value"]),
+body.pp-site-system:not(.pp-home) article :where(.num, .mono, [class*="stat-val"], [class*="metric-value"]) {
+  font-family: var(--pp-mono) !important;
+}
+
+body.pp-site-system:not(.pp-home) :where(.breadcrumb, [aria-label="Breadcrumb"]) {
+  color: var(--pp-muted) !important;
+  font-family: var(--pp-mono) !important;
+}
+
+body.pp-site-system:not(.pp-home) :where(.breadcrumb, [aria-label="Breadcrumb"]) a {
+  color: var(--pp-sub) !important;
+}
+
+body.pp-site-system.pp-family-player :where(h1, h2, h3),
+body.pp-site-system.pp-family-blog :where(h1, h2, h3),
+body.pp-site-system.pp-family-generated :where(h1, h2, h3) {
+  color: var(--pp-ink) !important;
+  font-family: var(--pp-display) !important;
+}
+
+body.pp-site-system.pp-family-player :where(.dt, .info),
+body.pp-site-system.pp-family-blog :where(.post-meta, .article-meta, .blog-card-date) {
+  color: var(--pp-muted) !important;
+}
+
+body.pp-site-system:not(.pp-home) main [style*="font-family:'Inter"],
+body.pp-site-system:not(.pp-home) main [style*="font-family: 'Inter"],
+body.pp-site-system:not(.pp-home) main [style*="font-family:'Satoshi"] {
+  font-family: var(--pp-body) !important;
+}
+
+body.pp-site-system:not(.pp-home) main [style*="JetBrains Mono"] {
+  font-family: var(--pp-mono) !important;
+}
+
+body.pp-site-system:not(.pp-home) main [style*="color:#F1F5F9"],
+body.pp-site-system:not(.pp-home) main [style*="color: #F1F5F9"] {
+  color: var(--pp-ink) !important;
+}
+
+body.pp-site-system:not(.pp-home) main [style*="color:#94A3B8"],
+body.pp-site-system:not(.pp-home) main [style*="color: #94A3B8"] {
+  color: var(--pp-sub) !important;
+}
+
+body.pp-site-system:not(.pp-home) main [style*="color:#475569"],
+body.pp-site-system:not(.pp-home) main [style*="color: #475569"] {
+  color: var(--pp-muted) !important;
+}

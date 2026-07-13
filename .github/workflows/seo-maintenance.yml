@@ -34,7 +34,28 @@ jobs:
           python3 scripts/update_picks_freshness.py
           python3 scripts/apply_analyzer_indexing.py
           python3 scripts/inject_popular_players.py
+          python3 scripts/apply_site_shell.py --include-home
+          python3 scripts/normalize_entity_metadata.py
+          python3 scripts/normalize_analyzer_archive_language.py
+          python3 scripts/normalize_coverage_claims.py
+          python3 scripts/normalize_access_language.py
+          python3 scripts/set_archive_indexing.py
+          python3 scripts/sync_faq_schema.py
+          python3 scripts/refresh_performance_snapshot.py
           python3 scripts/generate_sitemap.py
+
+      - name: Verify generated site contracts
+        run: |
+          python3 scripts/check_site_consistency.py
+          python3 scripts/apply_site_shell.py --check --include-home
+          python3 scripts/normalize_entity_metadata.py --check
+          python3 scripts/normalize_analyzer_archive_language.py --check
+          python3 scripts/normalize_coverage_claims.py --check
+          python3 scripts/normalize_access_language.py --check
+          python3 scripts/set_archive_indexing.py --check
+          python3 scripts/sync_faq_schema.py --check
+          python3 scripts/check_schema_parity.py
+          python3 scripts/generate_sitemap.py --check
 
       - name: Commit and push if changed
         run: |
@@ -45,7 +66,7 @@ jobs:
           git config user.name "seo-maintenance"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
-          git commit -m "chore: SEO maintenance (picks freshness, analyzer indexing, sitemap)"
+          git commit -m "chore: refresh content, archive evidence, and sitemap"
           # The content pipeline may push while we run; rebase then push.
           git pull --rebase origin master
           git push origin master

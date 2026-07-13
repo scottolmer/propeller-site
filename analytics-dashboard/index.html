@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Propeller Analytics Dashboard</title>
+  <meta name="color-scheme" content="light">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23111827'/%3E%3Cg transform='translate(50 52)' fill='%23ff6b4a'%3E%3Crect x='-5' y='-42' width='10' height='38' rx='5'/%3E%3Crect x='-5' y='-42' width='10' height='38' rx='5' transform='rotate(120)'/%3E%3Crect x='-5' y='-42' width='10' height='38' rx='5' transform='rotate(240)'/%3E%3Ccircle r='8'/%3E%3C/g%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+  <div class="dashboard-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Propeller Picks home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Propeller <small>Analytics</small></span>
+      </a>
+      <div class="topbar-actions">
+        <div class="snapshot-meta" id="snapshotMeta">Loading snapshot</div>
+        <div class="period-toggle" role="tablist" aria-label="Date range">
+          <button type="button" data-period="7">7D</button>
+          <button type="button" data-period="28" class="active">28D</button>
+          <button type="button" data-period="90">90D</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero-band">
+        <div>
+          <p class="kicker">GA4 + Search Console</p>
+          <h1>Site demand, traffic quality, and search opportunity in one local view.</h1>
+        </div>
+        <div class="source-strip" id="sourceStrip"></div>
+      </section>
+
+      <section class="metric-grid" id="metricGrid" aria-label="Analytics summary"></section>
+
+      <section class="workbench">
+        <div class="trend-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Daily Movement</p>
+              <h2>Traffic and search trend</h2>
+            </div>
+            <div class="legend">
+              <span class="dot users"></span>Users
+              <span class="dot sessions"></span>Sessions
+              <span class="dot impressions"></span>Impressions
+            </div>
+          </div>
+          <div id="trendChart" class="trend-chart"></div>
+        </div>
+
+        <aside class="watch-panel">
+          <div class="panel-head compact">
+            <div>
+              <p class="eyebrow">Now</p>
+              <h2>Live signals</h2>
+            </div>
+          </div>
+          <div id="liveSignals"></div>
+        </aside>
+      </section>
+
+      <nav class="view-tabs" aria-label="Dashboard sections">
+        <button type="button" data-view="overview" class="active">Overview</button>
+        <button type="button" data-view="search">Search</button>
+        <button type="button" data-view="content">Content</button>
+        <button type="button" data-view="audience">Audience</button>
+        <button type="button" data-view="events">Events</button>
+        <button type="button" data-view="indexing">Indexing</button>
+      </nav>
+
+      <section class="view-panel active" data-panel="overview">
+        <div class="surface ai-referral-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">AEO Signal</p>
+              <h2>AI answer referrals</h2>
+            </div>
+          </div>
+          <div id="aiReferrers"></div>
+        </div>
+        <div class="section-grid two">
+          <div class="surface">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Acquisition</p>
+                <h2>Channel mix</h2>
+              </div>
+            </div>
+            <div id="channelMix"></div>
+          </div>
+          <div class="surface">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Referrers</p>
+                <h2>Source and medium</h2>
+              </div>
+            </div>
+            <div id="sourceMedium"></div>
+          </div>
+        </div>
+        <div class="surface">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Entrances</p>
+              <h2>Landing pages</h2>
+            </div>
+          </div>
+          <div id="landingPages"></div>
+        </div>
+      </section>
+
+      <section class="view-panel" data-panel="search">
+        <div class="section-grid two">
+          <div class="surface">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Queries</p>
+                <h2>Top search demand</h2>
+              </div>
+            </div>
+            <div id="topQueries"></div>
+          </div>
+          <div class="surface">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">SERP</p>
+                <h2>Quick wins</h2>
+              </div>
+            </div>
+            <div id="quickWins"></div>
+          </div>
+        </div>
+        <div class="section-grid two">
+          <div class="surface">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">CTR</p>
+                <h2>High impression, low click-through</h2>
+              </div>
+            </div>
+            <div id="lowCtr"></div>
+          </div>
+          <div class="surface">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Questions</p>
+                <h2>Searchers asking directly</h2>
+              </div>
+            </div>
+            <div id="questionQueries"></div>
+          </div>
+        </div>
+        <div class="section-grid three">
+          <div class="surface">
+            <div class="panel-head compact"><div><p class="eyebrow">GSC Geo</p><h2>Search countries</h2></div></div>
+            <div id="gscCountries"></div>
+          </div>
+          <div class="surface">
+            <div class="panel-head compact"><div><p class="eyebrow">GSC Device</p><h2>Search devices</h2></div></div>
+            <div id="gscDevices"></div>
+          </div>
+          <div class="surface">
+            <div class="panel-head compact"><div><p class="eyebrow">SERP Features</p><h2>Search appearance</h2></div></div>
+            <div id="searchAppearance"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view-panel" data-panel="content">
+        <div class="surface">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Pages</p>
+              <h2>GA behavior plus GSC demand</h2>
+            </div>
+          </div>
+          <div id="contentMatrix"></div>
+        </div>
+        <div class="surface">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Decay</p>
+              <h2>Pages losing search momentum</h2>
+            </div>
+          </div>
+          <div id="contentDecay"></div>
+        </div>
+      </section>
+
+      <section class="view-panel" data-panel="audience">
+        <div class="section-grid three">
+          <div class="surface">
+            <div class="panel-head compact"><div><p class="eyebrow">Devices</p><h2>Device split</h2></div></div>
+            <div id="devices"></div>
+          </div>
+          <div class="surface">
+            <div class="panel-head compact"><div><p class="eyebrow">Geo</p><h2>Countries</h2></div></div>
+            <div id="countries"></div>
+          </div>
+          <div class="surface">
+            <div class="panel-head compact"><div><p class="eyebrow">Cities</p><h2>Local clusters</h2></div></div>
+            <div id="cities"></div>
+          </div>
+        </div>
+        <div class="section-grid three">
+          <div class="surface">
+            <div class="panel-head compact"><div><p class="eyebrow">Browser</p><h2>Browsers</h2></div></div>
+            <div id="browsers"></div>
+          </div>
+          <div class="surface">
+            <div class="panel-head compact"><div><p class="eyebrow">OS</p><h2>Operating systems</h2></div></div>
+            <div id="operatingSystems"></div>
+          </div>
+          <div class="surface">
+            <div class="panel-head compact"><div><p class="eyebrow">Users</p><h2>New vs returning</h2></div></div>
+            <div id="newReturning"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view-panel" data-panel="events">
+        <div class="section-grid two">
+          <div class="surface">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Events</p>
+                <h2>GA4 event volume</h2>
+              </div>
+            </div>
+            <div id="eventsTable"></div>
+          </div>
+          <div class="surface">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Realtime</p>
+                <h2>Active pages</h2>
+              </div>
+            </div>
+            <div id="realtimePages"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="view-panel" data-panel="indexing">
+        <div class="section-grid two">
+          <div class="surface">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Sitemap</p>
+                <h2>Submitted files</h2>
+              </div>
+            </div>
+            <div id="sitemaps"></div>
+          </div>
+          <div class="surface">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Search Types</p>
+                <h2>GSC surfaces</h2>
+              </div>
+            </div>
+            <div id="searchTypes"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./dashboard.js" defer></script>
+</body>
+</html>

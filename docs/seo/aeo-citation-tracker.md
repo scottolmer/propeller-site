@@ -1,13 +1,15 @@
 # AEO Citation Tracker
 
-Last updated: 2026-07-07
+Last updated: 2026-07-13
 
-This file defines the recurring answer-engine visibility workflow for Propeller Picks. The public target-question set lives at `/data/aeo-target-questions.json`.
+This file defines the recurring answer-engine visibility workflow for Propeller Picks. The internal target-question set lives at `docs/seo/aeo-target-questions.json` and is intentionally not published as a discovery asset.
+
+The initial 12-question × 5-platform × 3-run matrix is stored in `docs/seo/aeo-baseline-2026-07-13.csv`. Its 180 observations are intentionally marked `pending_manual_platform_run`; no answer-engine mention or citation has been fabricated. Complete the rows in authenticated, fresh sessions after the revised site is deployed and crawlable.
 
 ## Monthly Workflow
 
 1. Export the last 28 days of Google Search Console queries and pages.
-2. Update `/data/aeo-target-questions.json` when new high-impression question patterns appear.
+2. Update `docs/seo/aeo-target-questions.json` when new high-impression question patterns appear.
 3. For each target question, run three fresh checks in ChatGPT search, Perplexity, Google AI Overviews, Gemini, and Copilot.
 4. Record whether Propeller is mentioned, whether a Propeller URL is cited, which competitors are mentioned, and which domains are cited.
 5. Prioritize changes in this order: cited-source gap, stale owned-page facts, missing FAQ/schema, missing third-party citation opportunity.

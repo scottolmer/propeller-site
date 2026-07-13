@@ -10,7 +10,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-    gtag('set', 'linker', { domains: ['propellerpicks.com', 'app.propellerpicks.com'] });
   gtag('config', 'G-NLXM4C2G7D');
 </script>
 
@@ -28,7 +27,7 @@
 <meta property="og:image" content="https://propellerpicks.com/images/og-image.png">
 <meta property="og:image:width" content="3000">
 <meta property="og:image:height" content="1000">
-<meta property="og:site_name" content="Propeller">
+<meta property="og:site_name" content="Propeller Picks">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
@@ -40,21 +39,17 @@
 <meta name="twitter:image" content="https://propellerpicks.com/images/og-image.png">
 
 <!-- Additional SEO -->
-<meta name="author" content="Propeller">
-<meta name="application-name" content="Propeller">
+<meta name="author" content="Propeller Picks">
+<meta name="application-name" content="Propeller Picks">
 <meta name="theme-color" content="#f7f9fc">
 <meta name="color-scheme" content="light">
 
 <!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><g transform='translate(50,50)'><rect x='-5' y='-38' width='10' height='32' rx='5' fill='%23F97316' transform='rotate(0)'/><rect x='-5' y='-38' width='10' height='32' rx='5' fill='%23F97316' transform='rotate(120)'/><rect x='-5' y='-38' width='10' height='32' rx='5' fill='%23F97316' transform='rotate(240)'/><circle cx='0' cy='0' r='8' fill='%23F97316'/></g></svg>">
-<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%230f0f1a'/><g transform='translate(90,90)'><rect x='-9' y='-68' width='18' height='58' rx='9' fill='%23F97316' transform='rotate(0)'/><rect x='-9' y='-68' width='18' height='58' rx='9' fill='%23F97316' transform='rotate(120)'/><rect x='-9' y='-68' width='18' height='58' rx='9' fill='%23F97316' transform='rotate(240)'/><circle cx='0' cy='0' r='14' fill='%23F97316'/></g></svg>">
 
 <!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://api.fontshare.com" crossorigin>
-<link rel="preload" href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@700,800,900&display=swap"></noscript>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700;800&display=swap"></noscript>
+
+
+
 
 <!-- Structured Data: WebPage -->
 <script type="application/ld+json">
@@ -66,14 +61,14 @@
   "description": "Use the free player prop analyzer to search any player and review AI confidence, matchup context, and odds across NBA, NFL, MLB, and NHL props.",
   "publisher": {
     "@type": "Organization",
-    "name": "Propeller",
+    "name": "Propeller Picks",
     "url": "https://propellerpicks.com",
     "logo": "https://propellerpicks.com/images/og-image.png"
   },
   "inLanguage": "en-US",
   "isPartOf": {
     "@type": "WebSite",
-    "name": "Propeller",
+    "name": "Propeller Picks",
     "url": "https://propellerpicks.com"
   },
   "dateModified": "2026-03-13"
@@ -111,7 +106,7 @@
       "name": "What is a player prop analyzer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A player prop analyzer is a tool that evaluates player proposition bets by processing statistical signals, injury data, matchup information, and market odds to generate a confidence score for each prop. Rather than relying on raw averages or gut feel, an analyzer synthesizes multiple data sources into a single directional signal — telling you whether a player is likely to go OVER or UNDER their line, and how confident the analysis is in that direction."
+        "text": "A player prop analyzer is a tool that evaluates player proposition bets by processing multiple signals — statistical history, injury data, matchup information, and market odds — to generate a confidence score for each prop. Rather than relying on raw averages or gut feel, an analyzer synthesizes these sources into a single directional signal, telling you whether a player is likely to go OVER or UNDER their line and how confident the system is in that direction."
       }
     },
     {
@@ -119,7 +114,7 @@
       "name": "How does the Propeller prop analyzer work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller runs 8 specialized AI agents on every player prop. Each agent analyzes a different signal: the Injury agent models direct and cascading teammate effects when players are ruled out; the Matchup agent measures Defense vs Position differentials; the Pace agent projects statistical volume from team pace and the Vegas total; the Usage agent incorporates tracking data like touches and drives; the Minutes agent detects role changes and blowout risk; the NoVig agent strips sportsbook margin to find true implied probability; the HitRate agent applies recency-weighted trend analysis; and the Rest agent monitors schedule fatigue. All agents contribute weighted scores that combine via calibrated weighted average into a final confidence percentage."
+        "text": "Propeller runs 8 specialized AI agents on each listed player prop. The Injury agent models direct and cascading teammate effects when players are ruled out. The Matchup agent measures Defense vs Position differentials. The Pace agent projects statistical volume from team pace and the Vegas total. The Usage agent incorporates tracking data like touches and drives. The Minutes agent detects role changes and blowout risk. The NoVig agent strips sportsbook margin to find true implied probability. The HitRate agent applies recency-weighted trend analysis. All agents contribute weighted scores that combine via weighted combination into a final model confidence score — the number you see in the analyzer above."
       }
     },
     {
@@ -127,7 +122,7 @@
       "name": "Is the prop analyzer free to use?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. The Propeller prop analyzer on this page is completely free to use. Search any player name and see today's AI confidence scores at no cost. The Propeller mobile app extends this with full agent-by-agent breakdowns, the rationale behind each score, AI-built parlay suggestions, and real-time push notifications when key signals change near game time."
+        "text": "Yes. The Propeller prop analyzer on this page is completely free. Search any player name and see today's AI confidence scores at no cost. The Propeller mobile app extends this with full agent-by-agent breakdowns, the rationale behind each score, AI-built parlay suggestions, and real-time push notifications when key signals change near game time. The free app tier includes 5 analyzed props per day — no credit card required."
       }
     },
     {
@@ -135,7 +130,7 @@
       "name": "What sports does the analyzer cover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The Propeller prop analyzer covers NBA, NHL, MLB, NFL, and Soccer (EPL and MLS). Each sport has its own specialized agent suite: NBA uses 8 agents including Injury, Pace, Usage, Minutes, NoVig, Matchup, HitRate, and Rest; NHL uses 6 agents including NoVig, SpecialTeams, Injury, HitRate, LineCombo, and Matchup; MLB uses 8 agents including PitchingMatchup, Injury, Ballpark, NoVig, Platoon, Usage, HitRate, and Weather; NFL uses 8 agents including Matchup, DVOA, LineMovement, Injury, NoVig, EnhancedTrends, AdvancedStats, and Volume; Soccer uses 7 agents including Lineup, NoVig, HitRate, Matchup, Form, HomeAway, and LeaguePosition."
+        "text": "The Propeller prop analyzer covers NBA, NHL, MLB, NFL, and Soccer (EPL and MLS). Switch between sports using the tabs above the search bar. Each sport has its own specialized agent suite tuned to that sport's data — NBA uses 8 agents including Injury, Pace, Usage, Minutes, NoVig, Matchup, HitRate, and Rest; NHL uses 6 agents with NoVig and SpecialTeams as the dominant signals; MLB uses 8 agents led by PitchingMatchup and Injury; NFL uses 8 agents with Matchup and DVOA as top signals; Soccer uses 7 agents including Lineup confirmation and Form analysis. The analyzer fetches today's picks for whichever sport tab you select."
       }
     },
     {
@@ -143,7 +138,7 @@
       "name": "How should I interpret Propeller confidence scores?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller confidence scores show model conviction for the recommended side of a prop after the agent suite evaluates matchup, usage, injuries, market context, recent trends, and other sport-specific signals. Confidence is a research signal, not a guarantee. The public results and track record pages show how graded picks are logged and evaluated over time."
+        "text": "Propeller confidence scores show model conviction for the recommended side of a prop after the agent suite evaluates matchup, usage, injuries, market context, recent trends, and other sport-specific signals. Confidence is a research signal, not a guarantee. You can review how graded picks are logged and evaluated on the results page and track record page ."
       }
     }
   ]
@@ -1738,11 +1733,19 @@ footer {
   }
 }
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/legacy-seo-nav.css?v=20260624-nav3">
   <link rel="stylesheet" href="/assets/css/site-white-overrides.css?v=20260625-white-site">
+  <!-- PP_SITE_HEAD_START -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#f2efe8">
+  <link rel="stylesheet" href="/assets/css/site-system.css?v=20260712">
+  <link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">
+  <!-- PP_SITE_HEAD_END -->
 </head>
-<body class="legacy-redesign-page">
+<body class="legacy-redesign-page pp-site-system pp-family-core">
 
 <div class="grain-overlay" aria-hidden="true"></div>
 <div class="bg-orbs" aria-hidden="true">
@@ -1751,28 +1754,30 @@ footer {
   <div class="bg-orb bg-orb-3"></div>
 </div>
 
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="/" class="brand" aria-label="Propeller Picks">
-      <span class="brand-mark"><span></span><span></span><span></span></span>
-      <span>Propeller<small>Picks</small></span>
+<!-- PP_SITE_NAV_START -->
+<nav class="pp-site-nav" aria-label="Primary navigation">
+  <div class="pp-site-nav__inner">
+    <a class="pp-brand" href="https://propellerpicks.com/" aria-label="Propeller Picks home">
+      <span class="pp-brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Propeller</span>
     </a>
-    <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle menu" aria-expanded="false">
-      <svg id="hamburgerIcon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="pp-site-nav__menu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="ppSiteNavLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
     </button>
-    <div class="nav-links" id="navLinks">
-      <a href="/picks/">Picks</a>
-      <a href="/results/">Results</a>
-      <a href="/track-record/">Track Record</a>
-      <a href="/how-it-works/">Method</a>
-      <a href="/guides/">Guides</a>
-      <a href="/tools/">Tools</a>
-      <a href="/analyzer/" aria-current="page">Analyzer</a>
-      <a href="https://app.propellerpicks.com/app" rel="noopener">Web App</a>
-      <a class="cta" href="https://app.propellerpicks.com/signup" rel="noopener">Get Free Lifetime Access</a>
+    <div class="pp-site-nav__links" id="ppSiteNavLinks">
+      <a href="https://propellerpicks.com/picks/" data-section="picks">Picks</a>
+      <a href="https://propellerpicks.com/results/" data-section="results">Results</a>
+      <a href="https://propellerpicks.com/track-record/" data-section="track-record">Track Record</a>
+      <a href="https://propellerpicks.com/how-it-works/" data-section="how-it-works">Method</a>
+      <a href="https://propellerpicks.com/guides/" data-section="guides">Guides</a>
+      <a href="https://propellerpicks.com/tools/" data-section="tools">Tools</a>
+      <a href="https://propellerpicks.com/analyzer/" data-section="analyzer">Analyzer</a>
+      <a href="https://app.propellerpicks.com/app" rel="noopener noreferrer">Web App</a>
+      <a class="pp-site-nav__cta" href="https://app.propellerpicks.com/signup" rel="noopener noreferrer">Get Free Lifetime Access</a>
     </div>
   </div>
 </nav>
+<!-- PP_SITE_NAV_END -->
 
 <!-- Hero -->
 <section class="hero">
@@ -1799,8 +1804,8 @@ footer {
 
       <div class="hero-stat-row fade-in" style="transition-delay:0.45s;">
         <div class="hero-stat">
-          <span class="hero-stat-value">1M+</span>
-          <span class="hero-stat-label">Props Analyzed</span>
+          <span class="hero-stat-value">6</span>
+          <span class="hero-stat-label">Sports Supported</span>
         </div>
         <div class="hero-stat-divider" aria-hidden="true"></div>
         <div class="hero-stat">
@@ -1941,7 +1946,7 @@ footer {
     <p class="label section-label fade-in">Behind the Numbers</p>
     <h2 class="section-title fade-in" id="how-heading">How the AI Prop Analyzer Works</h2>
     <p class="section-subtitle fade-in">
-      Eight specialized agents run simultaneously on every player prop. Each contributes a weighted signal that combines into a single confidence score &mdash; telling you the direction and how strongly the data supports it.
+      Eight specialized agents run simultaneously on each listed player prop. Each contributes a weighted signal that combines into a single confidence score &mdash; telling you the direction and how strongly the data supports it.
     </p>
 
     <div class="agents-grid">
@@ -2014,13 +2019,13 @@ footer {
         </div>
         <p class="agent-name">Ensemble Scoring</p>
         <div class="weight-badge">COMBINED OUTPUT</div>
-        <p>All agents contribute weighted scores via calibrated weighted average. Agents returning no signal are skipped entirely &mdash; a neutral reading never dilutes a strong directional signal.</p>
+        <p>All agents contribute weighted scores via weighted combination. Agents returning no signal are skipped entirely &mdash; a neutral reading never dilutes a strong directional signal.</p>
       </div>
     </div>
 
     <div class="how-body-text fade-in">
       <p>
-        Each score above 50 signals OVER; below 50 signals UNDER. The <strong style="color:var(--text-primary);">confidence percentage</strong> represents how strongly all agents agree on the direction &mdash; scaled so 50% is neutral and 100% is maximum conviction. Regression correction dampens overconfidence on small-sample statistics. Read the
+        Each score above 50 signals OVER; below 50 signals UNDER. The <strong style="color:var(--text-primary);">model confidence score</strong> represents how strongly all agents agree on the direction &mdash; scaled so 50 is neutral and 100 is maximum model conviction. Regression correction dampens overconfidence on small-sample statistics. Read the
         <a href="/how-it-works/" style="color:var(--accent); text-decoration:none;">full methodology</a>
         for complete agent weight tables by sport.
       </p>
@@ -2083,7 +2088,7 @@ footer {
             <g transform="translate(10,6) scale(0.7)" fill="#fff"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.81-1.31.05-2.3-1.32-3.14-2.53C4.25 16 2.94 11.03 4.7 7.62c.87-1.68 2.42-2.75 4.12-2.78 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83"/><path d="M15.35 3.53c.67-.82 1.13-1.96 1-3.1-1 .04-2.2.66-2.91 1.5-.63.73-1.19 1.91-1.04 3.03 1.11.09 2.24-.56 2.95-1.43"/></g>
           </svg>
         </a>
-        <p style="font-size:13px; color:var(--text-tertiary); margin:0;">Free tier includes 5 analyzed props per day. No credit card required.</p>
+        <p style="font-size:13px; color:var(--text-tertiary); margin:0;">Current access and availability are shown at signup.</p>
       </div>
     </div>
   </div>
@@ -2116,7 +2121,7 @@ footer {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Propeller runs 8 specialized AI agents on every player prop. The Injury agent models direct and cascading teammate effects when players are ruled out. The Matchup agent measures Defense vs Position differentials. The Pace agent projects statistical volume from team pace and the Vegas total. The Usage agent incorporates tracking data like touches and drives. The Minutes agent detects role changes and blowout risk. The NoVig agent strips sportsbook margin to find true implied probability. The HitRate agent applies recency-weighted trend analysis. All agents contribute weighted scores that combine via calibrated weighted average into a final confidence percentage &mdash; the number you see in the analyzer above.
+            Propeller runs 8 specialized AI agents on each listed player prop. The Injury agent models direct and cascading teammate effects when players are ruled out. The Matchup agent measures Defense vs Position differentials. The Pace agent projects statistical volume from team pace and the Vegas total. The Usage agent incorporates tracking data like touches and drives. The Minutes agent detects role changes and blowout risk. The NoVig agent strips sportsbook margin to find true implied probability. The HitRate agent applies recency-weighted trend analysis. All agents contribute weighted scores that combine via weighted combination into a final model confidence score &mdash; the number you see in the analyzer above.
           </div>
         </div>
       </div>
@@ -2253,116 +2258,45 @@ footer {
 </section>
 <!-- popular-players:end -->
 
-<footer>
-  <div class="footer-top">
-    <div class="container">
-      <div class="footer-grid">
-
-        <!-- Brand column -->
-        <div class="footer-brand">
-          <a href="/" class="footer-brand-logo">
-            <div class="logo-icon"></div>
-            Propeller
-          </a>
-          <p class="footer-tagline">AI-powered prop analysis for Pick6, Underdog, PrizePicks &amp; FanDuel.</p>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col-header">Daily Picks</p>
-          <div class="footer-col-links">
-            <a href="/picks/nba/">NBA Props</a>
-            <a href="/picks/nfl/">NFL Props</a>
-            <a href="/picks/nhl/">NHL Props</a>
-            <a href="/picks/mlb/">MLB Props</a>
-            <a href="/picks/soccer/">Soccer Props</a>
-            <a href="/picks/">All Picks</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col-header">Platforms</p>
-          <div class="footer-col-links">
-            <a href="/picks/prizepicks/">PrizePicks Picks</a>
-            <a href="/picks/underdog/">Underdog Picks</a>
-            <a href="/picks/pick6/">Pick6 Picks</a>
-            <a href="/compare/pick6-vs-prizepicks/">Pick6 vs PrizePicks</a>
-            <a href="/compare/">Compare Tools</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col-header">Free Tools</p>
-          <div class="footer-col-links">
-            <a href="/tools/prizepicks-payout-calculator/">PrizePicks Calculator</a>
-            <a href="/tools/underdog-payout-calculator/">Underdog Calculator</a>
-            <a href="/tools/pick6-payout-calculator/">Pick6 Calculator</a>
-            <a href="/analyzer/">Prop Analyzer</a>
-            <a href="/tools/">All Tools</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col-header">Guides</p>
-          <div class="footer-col-links">
-            <a href="/guides/prizepicks-strategy/">PrizePicks Strategy</a>
-            <a href="/guides/underdog-strategy/">Underdog Strategy</a>
-            <a href="/guides/pick6-strategy/">Pick6 Strategy</a>
-            <a href="/guides/nba-prop-betting/">NBA Prop Strategy</a>
-            <a href="/guides/">All Guides</a>
-          </div>
-        </div>
-        <div class="footer-col">
-          <p class="footer-col-header">Proof</p>
-          <div class="footer-col-links">
-            <a href="/results/">Verified Results</a>
-            <a href="/track-record/">Track Record</a>
-            <a href="/how-it-works/">Methodology</a>
-            <a href="/blog/">Results Blog</a>
-            <a href="/about/">About</a>
-          </div>
-        </div>
-
+<!-- PP_SITE_FOOTER_START -->
+<footer class="pp-site-footer">
+  <div class="pp-site-footer__inner">
+    <div class="pp-site-footer__grid">
+      <div class="pp-site-footer__brand">
+        <a class="pp-brand" href="https://propellerpicks.com/" aria-label="Propeller Picks home">
+          <span class="pp-brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Propeller</span>
+        </a>
+        <p class="pp-site-footer__copy">AI-powered player prop research with inspectable signals, practical tools, and a documented historical archive.</p>
+      </div>
+      <div class="pp-site-footer__column">
+        <h2>Research</h2>
+        <a href="https://propellerpicks.com/picks/">Picks</a>
+        <a href="https://propellerpicks.com/analyzer/">Analyzer</a>
+        <a href="https://propellerpicks.com/tools/">Tools</a>
+        <a href="https://propellerpicks.com/guides/">Guides</a>
+      </div>
+      <div class="pp-site-footer__column">
+        <h2>Proof</h2>
+        <a href="https://propellerpicks.com/results/">Results</a>
+        <a href="https://propellerpicks.com/track-record/">Track Record</a>
+        <a href="https://propellerpicks.com/how-it-works/">Method</a>
+        <a href="https://propellerpicks.com/help/">Help</a>
+        <a href="https://propellerpicks.com/blog/">Blog</a>
+      </div>
+      <div class="pp-site-footer__column">
+        <h2>Company</h2>
+        <a href="https://propellerpicks.com/about/">About</a>
+        <a href="https://propellerpicks.com/editorial-policy/">Editorial Policy</a>
+        <a href="https://propellerpicks.com/privacy/">Privacy</a>
+        <a href="https://propellerpicks.com/terms/">Terms</a>
+        <a href="https://x.com/propellerpicks" target="_blank" rel="noopener noreferrer">Twitter / X</a>
       </div>
     </div>
-  </div>
-
-  <div class="footer-bottom">
-    <div class="container">
-      <div class="footer-bottom-row">
-        <p class="footer-copy">&copy; 2026 Propeller. All rights reserved. &middot; <a href="/privacy/">Privacy</a> &middot; <a href="/terms/">Terms</a> &middot; <a href="https://x.com/propellerpicks" target="_blank" rel="noopener">Twitter / X</a></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Legal Disclaimer Section -->
-  <div class="container">
-    <div class="legal-disclaimer">
-      <p class="legal-disclaimer-heading">Legal Disclaimer</p>
-
-      <p class="legal-disclaimer-text">
-        <strong>For entertainment and informational purposes only.</strong>
-        Propeller is a sports analytics and information service. Propeller is not a sportsbook, does not accept or place wagers, does not set betting lines, does not escrow funds, and does not pay out on any bets. The analysis, confidence scores, and pick recommendations provided through this service do not constitute betting advice or any recommendation on whether or how to engage in sports betting activities.
-      </p>
-
-      <p class="legal-disclaimer-text">
-        <strong>No guarantee of profit.</strong>
-        Past performance of the Propeller analysis engine does not guarantee future results. Sports outcomes are inherently unpredictable. The win rates and performance metrics displayed represent historical analytical results and should not be interpreted as a promise of future performance. Any sports betting activity is inherently risky and undertaken at your own risk.
-      </p>
-
-      <p class="legal-disclaimer-text">
-        <strong>Know your local laws.</strong>
-        Sports betting is not legal in all states or jurisdictions. It is your sole responsibility to understand and comply with all applicable laws in your location regarding sports betting. Propeller does not provide legal advice regarding the legality of sports betting where you live. You must be 21+ to use this service. <span class="age-badge">21+</span>
-      </p>
-
-      <p class="legal-disclaimer-caps">
-        The service is provided "as-is." Propeller disclaims all warranties, express or implied, including warranties of accuracy, non-infringement, merchantability, and fitness for a particular purpose. Data is sourced from third parties and may contain errors or delays. Under no circumstances will Propeller be liable for any damages arising from your use of the service, including any loss from sports betting activity.
-      </p>
-
-      <div style="margin-top: 16px;">
-        <span class="responsible-gambling">
-          <i data-lucide="heart" style="width:14px;height:14px;"></i>
-          If you or someone you know has a gambling problem, call <strong>1-800-GAMBLER</strong> or visit <a href="https://www.ncpgambling.org" target="_blank" rel="noopener">ncpgambling.org</a>
-        </span>
-      </div>
-    </div>
+    <p class="pp-site-footer__legal">Propeller is a research and analysis tool. We do not accept wagers or operate as a sportsbook. All analysis is for informational purposes only and does not constitute gambling advice. Must be 21+. If gambling is a problem, call <a href="tel:18004262537">1-800-GAMBLER</a>. Past performance does not guarantee future results.<br>© 2026 Propeller Picks.</p>
   </div>
 </footer>
+<!-- PP_SITE_FOOTER_END -->
 
 <script>
 // ============================================================
@@ -2959,7 +2893,6 @@ document.addEventListener('DOMContentLoaded', () => {
   loadSport('nba');
 });
 </script>
-  <script src="/assets/js/site-nav.js?v=20260625-nav-unify" defer></script>
-  <script src="/assets/js/analytics-events.js?v=20260708" defer></script>
+  <script src="/assets/js/site-nav.js?v=20260712" defer></script>
 </body>
 </html>

@@ -2,37 +2,33 @@
 
 > Propeller Picks is a sports prop research and analysis workspace for web and mobile. It is not a sportsbook and does not accept wagers.
 
-Last verified: 2026-07-07
+Last verified: 2026-07-13
 Canonical site: https://propellerpicks.com/
 App signup: https://app.propellerpicks.com/signup
 Public API base: https://web-production-3c1c4.up.railway.app
 Machine-readable data catalog: https://propellerpicks.com/data/index.json
-AEO target questions: https://propellerpicks.com/data/aeo-target-questions.json
 Curated public agent API: https://web-production-3c1c4.up.railway.app/api/public/agent/v1/index
 Curated public OpenAPI: https://web-production-3c1c4.up.railway.app/api/public/agent/v1/openapi.json
 
 ## What Propeller Provides
 
 - AI-assisted player prop research for NBA, NFL, NHL, MLB, soccer, and PGA.
-- Public verified historical record and confidence buckets.
+- Documented historical archive with raw-row and collapsed-ledger definitions.
 - Limited daily public pick previews for website pages.
 - Player analyzer cards, stat breakdowns, payout calculators, and comparison guides.
 - Web app and mobile companion for deeper research workflows.
 
-## Current Public Record Snapshot
+## Current Historical Data Snapshot
 
-Source: https://web-production-3c1c4.up.railway.app/api/public/results-summary
-Snapshot fetched for this manifest: 2026-07-07T13:17:26Z
+Source snapshot generated: July 13, 2026
+Canonical explanation: https://propellerpicks.com/results/
 
-Use the source API above for current totals before quoting any performance claim. The snapshot below is included for context only and can change as new props are graded.
+- Historical database: 2,116,581 raw graded analysis rows.
+- Current public-ledger collapse: 284,005 prop-result entries.
+- Raw-to-ledger ratio: 7.45x.
+- Sports represented: NFL, NBA, NHL, MLB, soccer, and PGA.
 
-- Total public graded prop rows: 2,099,988
-- Wins: 1,412,431
-- Losses: 687,527
-- Pushes: 30
-- Win rate: 67.3% excluding pushes
-
-Sport buckets in the public summary currently include NFL, NBA, NHL, MLB, EPL, MLS, and PGA.
+These historical records include repeated analysis snapshots and legacy retrospective data. They are research records, not a uniquely published forward-test, ROI, profit, or future-performance claim. Use the canonical report before quoting any aggregate figure.
 
 ## Safe Public Data Feeds
 

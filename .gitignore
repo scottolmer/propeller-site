@@ -5,3 +5,9 @@ node_modules/
 *.log
 .vscode/
 .idea/
+__pycache__/
+*.pyc
+analytics-dashboard/data/*.json
+# Local visual QA captures; keep reusable mockup HTML/CSS in Git.
+/mockups/*.png
+/mockups/**/*.png

@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Propeller Picks Results - Current Verified Record</title>
-  <meta name="description" content="Review Propeller Picks' live verified record, recent graded props, sport breakdowns, and transparent grading rules.">
+  <title>Propeller Picks Historical Results Archive</title>
+  <meta name="description" content="Read Propeller Picks' dated historical results archive, its two counting units, source APIs, grading rules, and important data limitations.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://propellerpicks.com/results/">
-  <meta property="og:title" content="Propeller Picks Results - Current Verified Record">
-  <meta property="og:description" content="A live public results ledger for Propeller Picks: analyzed props, graded outcomes, sport breakdowns, and recent results.">
+  <meta property="og:title" content="Propeller Picks Historical Results Archive">
+  <meta property="og:description" content="A dated historical archive with raw analysis rows, collapsed ledger entries, source APIs, definitions, and limitations.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://propellerpicks.com/results/">
   <meta property="og:image" content="https://propellerpicks.com/images/og-image.png">
@@ -16,30 +16,34 @@
   <meta property="og:image:height" content="1000">
   <meta property="og:site_name" content="Propeller Picks">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Propeller Picks Results - Current Verified Record">
-  <meta name="twitter:description" content="Live verified model results, recent graded props, and clear grading rules.">
+  <meta name="twitter:title" content="Propeller Picks Historical Results Archive">
+  <meta name="twitter:description" content="Historical prop research data with explicit units, source APIs, grading rules, and limitations.">
   <meta name="twitter:image" content="https://propellerpicks.com/images/og-image.png">
   <meta name="twitter:site" content="@propellerpicks">
   <meta name="twitter:creator" content="@propellerpicks">
   <meta name="theme-color" content="#f7f9fc">
   <meta name="color-scheme" content="light">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%2305070a'/%3E%3Cg transform='translate(50 52)' fill='%23f97316'%3E%3Crect x='-5' y='-42' width='10' height='38' rx='5'/%3E%3Crect x='-5' y='-42' width='10' height='38' rx='5' transform='rotate(120)'/%3E%3Crect x='-5' y='-42' width='10' height='38' rx='5' transform='rotate(240)'/%3E%3Ccircle r='8'/%3E%3C/g%3E%3C/svg%3E">
-  <link rel="apple-touch-icon" href="/images/og-image.png">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NLXM4C2G7D"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLXM4C2G7D"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('set', 'linker', { domains: ['propellerpicks.com', 'app.propellerpicks.com'] });
     gtag('config', 'G-NLXM4C2G7D');
   </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Propeller Picks Results - Current Verified Record",
+    "name": "Propeller Picks Historical Results Archive",
     "url": "https://propellerpicks.com/results/",
-    "description": "Live verified record, recent graded props, sport-by-sport model results, and grading rules for Propeller Picks.",
+    "description": "A dated historical archive with raw analysis rows, collapsed ledger entries, source APIs, grading rules, and limitations.",
+    "dateModified": "2026-07-13",
+    "author": {
+      "@type": "Person",
+      "name": "Scott Olmer",
+      "url": "https://propellerpicks.com/about/"
+    },
     "isPartOf": {
       "@type": "WebSite",
       "name": "Propeller Picks",
@@ -88,55 +92,66 @@
       },
       {
         "@type": "Question",
-        "name": "Does the verified record guarantee future results?",
+        "name": "Does the historical archive guarantee future results?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "No. The record is historical performance reporting. Past performance does not guarantee future results."
+          "text": "No. The archive includes repeated analysis snapshots and legacy retrospective data. It is research context, not a forward-tested ROI record, and past performance does not guarantee future results."
         }
       }
     ]
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Mono:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/home-redesign.css?v=20260624-nav3">
+
+
+<link rel="stylesheet" href="/assets/css/home-redesign.css?v=20260624-nav3">
   <link rel="stylesheet" href="/assets/css/results-redesign.css">
   <link rel="stylesheet" href="/assets/css/site-white-overrides.css?v=20260625-white-site">
+  <!-- PP_SITE_HEAD_START -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#f2efe8">
+  <link rel="stylesheet" href="/assets/css/site-system.css?v=20260712">
+  <link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">
+  <!-- PP_SITE_HEAD_END -->
 </head>
-<body>
+<body class="pp-site-system pp-family-core">
   <div class="grain"></div>
   <div class="shell results-shell">
-    <nav class="nav">
-      <div class="nav-inner">
-        <a href="/" class="brand propeller-logo" aria-label="Propeller Picks">
-          <div class="logo-icon"></div>
-          Propeller
-        </a>
-        <button class="nav-menu-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNavLinks">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
-        </button>
-        <div class="nav-links" id="siteNavLinks">
-          <a href="/picks/">Picks</a>
-          <a href="/results/" aria-current="page">Results</a>
-          <a href="/track-record/">Track Record</a>
-          <a href="/how-it-works/">Method</a>
-          <a href="/guides/">Guides</a>
-          <a href="/tools/">Tools</a>
-          <a href="/analyzer/">Analyzer</a>
-          <a href="https://app.propellerpicks.com/app" rel="noopener">Web App</a>
-          <a class="cta" href="https://app.propellerpicks.com/signup" rel="noopener">Get Free Lifetime Access</a>
-        </div>
-      </div>
-    </nav>
+    <!-- PP_SITE_NAV_START -->
+<nav class="pp-site-nav" aria-label="Primary navigation">
+  <div class="pp-site-nav__inner">
+    <a class="pp-brand" href="https://propellerpicks.com/" aria-label="Propeller Picks home">
+      <span class="pp-brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Propeller</span>
+    </a>
+    <button class="pp-site-nav__menu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="ppSiteNavLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+    </button>
+    <div class="pp-site-nav__links" id="ppSiteNavLinks">
+      <a href="https://propellerpicks.com/picks/" data-section="picks">Picks</a>
+      <a href="https://propellerpicks.com/results/" data-section="results">Results</a>
+      <a href="https://propellerpicks.com/track-record/" data-section="track-record">Track Record</a>
+      <a href="https://propellerpicks.com/how-it-works/" data-section="how-it-works">Method</a>
+      <a href="https://propellerpicks.com/guides/" data-section="guides">Guides</a>
+      <a href="https://propellerpicks.com/tools/" data-section="tools">Tools</a>
+      <a href="https://propellerpicks.com/analyzer/" data-section="analyzer">Analyzer</a>
+      <a href="https://app.propellerpicks.com/app" rel="noopener noreferrer">Web App</a>
+      <a class="pp-site-nav__cta" href="https://app.propellerpicks.com/signup" rel="noopener noreferrer">Get Free Lifetime Access</a>
+    </div>
+  </div>
+</nav>
+<!-- PP_SITE_NAV_END -->
 
     <main>
       <section class="results-hero">
         <div class="results-container results-hero-grid">
           <div class="results-copy">
-            <p class="kicker">Live verified record</p>
-            <h1>Proof before the pitch.</h1>
-            <p class="results-lede">Every model result has a trail: analyzed, logged, graded against actual outcomes, and rolled into a public prop results record you can inspect before you ever open the app.</p>
+            <p class="kicker">Historical analysis archive</p>
+            <h1>Read the unit before the rate.</h1>
+            <p class="results-lede">This archive separates raw graded analysis rows from entries retained under the current public API collapse rules. It includes repeated snapshots and legacy retrospective data, so it is not a uniquely published forward-test or ROI record.</p>
+            <p class="terminal-note">By <a href="/about/">Scott Olmer, Founder</a> · Reviewed July 13, 2026</p>
             <div class="hero-actions">
               <a class="cta" href="https://app.propellerpicks.com/signup" rel="noopener">Get Free Lifetime Access</a>
               <a class="ghost" href="/how-it-works/">See Method</a>
@@ -144,29 +159,29 @@
             <p class="terminal-note">Past performance does not guarantee future results. Pushes are tracked separately from wins and losses.</p>
           </div>
 
-          <aside class="record-ledger-card" aria-label="Current verified record">
+          <aside class="record-ledger-card" aria-label="Historical archive summary">
             <div class="record-top">
               <div>
-                <div class="record-label">Current Verified Record</div>
-                <div class="record-updated" data-results-updated>Loading live record...</div>
+                <div class="record-label">Collapsed Public Ledger</div>
+                <div class="record-updated" data-results-updated>Static API snapshot · July 13, 2026; live refresh enabled</div>
               </div>
               <span class="api-pill">API</span>
             </div>
-            <div class="record-total" data-results-total>Loading</div>
-            <div class="record-total-label">analyzed and graded props</div>
+            <div class="record-total" data-results-total>284K</div>
+            <div class="record-total-label">entries under current API collapse rules</div>
             <div class="record-divider"></div>
             <div class="ledger-stats">
               <div>
                 <small>Wins tracked</small>
-                <strong data-results-wins>--</strong>
+                <strong data-results-wins>194,101</strong>
               </div>
               <div>
                 <small>W-L-P</small>
-                <strong data-results-outcome>--</strong>
+                <strong data-results-outcome>194,101-89,897-7</strong>
               </div>
               <div>
                 <small>Sports tracked</small>
-                <strong data-results-sports>--</strong>
+                <strong data-results-sports>6 sports / 7 buckets</strong>
               </div>
             </div>
           </aside>
@@ -176,14 +191,48 @@
       <section class="results-band">
         <div class="results-container">
           <div class="section-head">
-            <h2>Sport-by-sport record.</h2>
-            <p>See the full graded sample by sport, including total props, wins, losses, and pushes.</p>
+            <h2>Raw rows by sport.</h2>
+            <p>These sport totals count raw historical analysis rows. Repeated books, lines, snapshots, runs, and retrospective records may be represented.</p>
           </div>
-          <div class="sport-grid" data-sport-grid>
-            <div class="skeleton-card"></div>
-            <div class="skeleton-card"></div>
-            <div class="skeleton-card"></div>
-          </div>
+          <!-- PP_SPORT_SNAPSHOT_START -->
+        <div class="sport-grid" data-sport-grid>
+          <article class="sport-card">
+            <div class="sport-card-top"><div class="sport-badge">MLB</div><div class="win-rate">67.4%</div></div>
+            <div><h3>MLB</h3><div class="sport-progress" aria-label="MLB raw historical outcome rate"><span style="--fill: 67.4%"></span></div></div>
+            <div class="sport-meta"><span>1,965,727 raw rows</span><span>1,324,136W / 641,561L</span></div>
+          </article>
+          <article class="sport-card">
+            <div class="sport-card-top"><div class="sport-badge">NHL</div><div class="win-rate">62.3%</div></div>
+            <div><h3>NHL</h3><div class="sport-progress" aria-label="NHL raw historical outcome rate"><span style="--fill: 62.3%"></span></div></div>
+            <div class="sport-meta"><span>68,054 raw rows</span><span>42,429W / 25,625L</span></div>
+          </article>
+          <article class="sport-card">
+            <div class="sport-card-top"><div class="sport-badge">NBA</div><div class="win-rate">58.9%</div></div>
+            <div><h3>NBA</h3><div class="sport-progress" aria-label="NBA raw historical outcome rate"><span style="--fill: 58.9%"></span></div></div>
+            <div class="sport-meta"><span>43,295 raw rows</span><span>25,488W / 17,807L</span></div>
+          </article>
+          <article class="sport-card">
+            <div class="sport-card-top"><div class="sport-badge">MLS</div><div class="win-rate">85.0%</div></div>
+            <div><h3>MLS</h3><div class="sport-progress" aria-label="MLS raw historical outcome rate"><span style="--fill: 85.0%"></span></div></div>
+            <div class="sport-meta"><span>20,827 raw rows</span><span>17,703W / 3,124L</span></div>
+          </article>
+          <article class="sport-card">
+            <div class="sport-card-top"><div class="sport-badge">EPL</div><div class="win-rate">83.0%</div></div>
+            <div><h3>EPL</h3><div class="sport-progress" aria-label="EPL raw historical outcome rate"><span style="--fill: 83.0%"></span></div></div>
+            <div class="sport-meta"><span>12,113 raw rows</span><span>10,053W / 2,060L</span></div>
+          </article>
+          <article class="sport-card">
+            <div class="sport-card-top"><div class="sport-badge">PGA</div><div class="win-rate">63.0%</div></div>
+            <div><h3>PGA</h3><div class="sport-progress" aria-label="PGA raw historical outcome rate"><span style="--fill: 63.0%"></span></div></div>
+            <div class="sport-meta"><span>5,136 raw rows</span><span>3,238W / 1,898L</span></div>
+          </article>
+          <article class="sport-card">
+            <div class="sport-card-top"><div class="sport-badge">NFL</div><div class="win-rate">59.8%</div></div>
+            <div><h3>NFL</h3><div class="sport-progress" aria-label="NFL raw historical outcome rate"><span style="--fill: 59.8%"></span></div></div>
+            <div class="sport-meta"><span>1,429 raw rows</span><span>854W / 575L</span></div>
+          </article>
+        </div>
+<!-- PP_SPORT_SNAPSHOT_END -->
         </div>
       </section>
 
@@ -192,15 +241,29 @@
           <div class="section-head">
             <p class="kicker">Confidence ranges</p>
             <h2>Signal strength, reconciled.</h2>
-            <p>Confidence is directional: a strong UNDER and a strong OVER are both high-confidence model calls. These ranges reconcile back to the same public record above.</p>
+            <p>Confidence is directional: a strong UNDER and a strong OVER are both high-confidence model signals. These descriptive ranges reconcile to the raw historical database, not the collapsed ledger.</p>
           </div>
+          <!-- PP_CONFIDENCE_SNAPSHOT_START -->
           <div class="confidence-strip" data-confidence-strip>
-            <div class="skeleton-card"></div>
-            <div class="skeleton-card"></div>
-            <div class="skeleton-card"></div>
+            <article class="confidence-card">
+              <div><h3>High Confidence</h3><span>75+</span></div>
+              <strong>88.2%</strong>
+              <p>120K raw rows · 88.6% UNDER · 67.7% OVER</p>
+            </article>
+            <article class="confidence-card">
+              <div><h3>Medium Confidence</h3><span>65-74</span></div>
+              <strong>78.9%</strong>
+              <p>604K raw rows · 79.3% UNDER · 56.3% OVER</p>
+            </article>
+            <article class="confidence-card">
+              <div><h3>Slight Confidence</h3><span>55-64</span></div>
+              <strong>63.7%</strong>
+              <p>940K raw rows · 65.6% UNDER · 54.8% OVER</p>
+            </article>
           </div>
+<!-- PP_CONFIDENCE_SNAPSHOT_END -->
           <div class="confidence-footer">
-            <span data-confidence-note>Loading lifetime confidence ranges...</span>
+            <span data-confidence-note>2,116,581 raw historical rows; descriptive outcome rates, not ROI.</span>
             <a href="/track-record/">How confidence is calculated</a>
           </div>
         </div>
@@ -209,12 +272,12 @@
       <section class="results-band">
         <div class="results-container ledger-section">
           <div class="section-head">
-            <h2>Recent graded props.</h2>
-            <p>Recent props after final scores are applied, including line, confidence, actual result, and book.</p>
+            <h2>Recent ledger sample.</h2>
+            <p>A sample of rows retained after the current API collapse rules, including line, signal score, actual result, and book. This feed does not prove pre-event publication.</p>
           </div>
           <div class="ledger-toolbar">
-            <span data-ledger-summary>Loading recent graded results...</span>
-            <span>Minimum confidence: <strong>55</strong></span>
+            <span data-ledger-summary>Sample from 284,005 entries under the current public-ledger collapse rules</span>
+            <span>Historical archive · <strong>not ROI</strong></span>
           </div>
           <div class="ledger-table-wrap">
             <table class="ledger-table">
@@ -231,11 +294,120 @@
                   <th>Book</th>
                 </tr>
               </thead>
+              <!-- PP_LEDGER_SNAPSHOT_START -->
               <tbody data-ledger-body>
                 <tr>
-                  <td colspan="9">Loading ledger...</td>
+                  <td class="num">2026-07-12</td>
+                  <td><span class="sport-code">mlb</span></td>
+                  <td class="player-cell">Petey Halpin</td>
+                  <td>Home Runs UNDER</td>
+                  <td class="num">0.5</td>
+                  <td class="num">79.4%</td>
+                  <td class="num">0.0</td>
+                  <td><span class="result-pill result-win">WIN</span></td>
+                  <td>Betr</td>
+                </tr>
+                <tr>
+                  <td class="num">2026-07-12</td>
+                  <td><span class="sport-code">mlb</span></td>
+                  <td class="player-cell">Ozzie Albies</td>
+                  <td>Stolen Bases UNDER</td>
+                  <td class="num">0.5</td>
+                  <td class="num">79.1%</td>
+                  <td class="num">0.0</td>
+                  <td><span class="result-pill result-win">WIN</span></td>
+                  <td>Draftkings Pick6</td>
+                </tr>
+                <tr>
+                  <td class="num">2026-07-12</td>
+                  <td><span class="sport-code">mlb</span></td>
+                  <td class="player-cell">Josh Bell</td>
+                  <td>Stolen Bases UNDER</td>
+                  <td class="num">0.5</td>
+                  <td class="num">79.1%</td>
+                  <td class="num">0.0</td>
+                  <td><span class="result-pill result-win">WIN</span></td>
+                  <td>Draftkings Pick6</td>
+                </tr>
+                <tr>
+                  <td class="num">2026-07-12</td>
+                  <td><span class="sport-code">mlb</span></td>
+                  <td class="player-cell">Brandon Valenzuela</td>
+                  <td>Stolen Bases UNDER</td>
+                  <td class="num">0.5</td>
+                  <td class="num">79.1%</td>
+                  <td class="num">0.0</td>
+                  <td><span class="result-pill result-win">WIN</span></td>
+                  <td>Draftkings Pick6</td>
+                </tr>
+                <tr>
+                  <td class="num">2026-07-12</td>
+                  <td><span class="sport-code">mlb</span></td>
+                  <td class="player-cell">Eduardo Valencia</td>
+                  <td>Rbis UNDER</td>
+                  <td class="num">0.5</td>
+                  <td class="num">79.0%</td>
+                  <td class="num">0.0</td>
+                  <td><span class="result-pill result-win">WIN</span></td>
+                  <td>Underdog</td>
+                </tr>
+                <tr>
+                  <td class="num">2026-07-12</td>
+                  <td><span class="sport-code">mlb</span></td>
+                  <td class="player-cell">Henry Bolte</td>
+                  <td>Doubles UNDER</td>
+                  <td class="num">0.5</td>
+                  <td class="num">78.9%</td>
+                  <td class="num">0.0</td>
+                  <td><span class="result-pill result-win">WIN</span></td>
+                  <td>Betr</td>
+                </tr>
+                <tr>
+                  <td class="num">2026-07-12</td>
+                  <td><span class="sport-code">mlb</span></td>
+                  <td class="player-cell">Spencer Steer</td>
+                  <td>Stolen Bases UNDER</td>
+                  <td class="num">0.5</td>
+                  <td class="num">78.8%</td>
+                  <td class="num">0.0</td>
+                  <td><span class="result-pill result-win">WIN</span></td>
+                  <td>Draftkings Pick6</td>
+                </tr>
+                <tr>
+                  <td class="num">2026-07-12</td>
+                  <td><span class="sport-code">mlb</span></td>
+                  <td class="player-cell">Sal Stewart</td>
+                  <td>Stolen Bases UNDER</td>
+                  <td class="num">0.5</td>
+                  <td class="num">78.8%</td>
+                  <td class="num">0.0</td>
+                  <td><span class="result-pill result-win">WIN</span></td>
+                  <td>Draftkings Pick6</td>
+                </tr>
+                <tr>
+                  <td class="num">2026-07-12</td>
+                  <td><span class="sport-code">mlb</span></td>
+                  <td class="player-cell">Chase Meidroth</td>
+                  <td>Stolen Bases UNDER</td>
+                  <td class="num">0.5</td>
+                  <td class="num">78.8%</td>
+                  <td class="num">0.0</td>
+                  <td><span class="result-pill result-win">WIN</span></td>
+                  <td>Draftkings Pick6</td>
+                </tr>
+                <tr>
+                  <td class="num">2026-07-12</td>
+                  <td><span class="sport-code">mlb</span></td>
+                  <td class="player-cell">Rece Hinds</td>
+                  <td>Stolen Bases UNDER</td>
+                  <td class="num">0.5</td>
+                  <td class="num">78.8%</td>
+                  <td class="num">0.0</td>
+                  <td><span class="result-pill result-win">WIN</span></td>
+                  <td>Underdog</td>
                 </tr>
               </tbody>
+<!-- PP_LEDGER_SNAPSHOT_END -->
             </table>
           </div>
         </div>
@@ -245,14 +417,14 @@
         <div class="results-container proof-layout">
           <div class="proof-copy">
             <p class="kicker">How grading works</p>
-            <h2>No mystery math in the public record.</h2>
-            <p>Propeller grades after games finish, compares the predicted side to the final stat value, keeps pushes separate, and reports the record without treating pushes as wins.</p>
+            <h2>The grading rule is simple; the archive needs context.</h2>
+            <p>Rows are graded after games finish by comparing the stored side and line with the final stat. Pushes remain separate. Publication time, model version, evaluation mode, and consistent price data are not available on every historical row.</p>
           </div>
           <div class="rules-grid">
             <div class="rule-card">
               <span>01</span>
-              <h3>Prediction logged</h3>
-              <p>The model records player, market, line, direction, confidence, sport, date, and book before the result is known.</p>
+              <h3>Analysis row stored</h3>
+              <p>The historical feed exposes player, market, line, direction, signal score, sport, game date, and book. It does not establish pre-event publication for every row.</p>
             </div>
             <div class="rule-card">
               <span>02</span>
@@ -264,6 +436,21 @@
               <h3>Record updated</h3>
               <p>Wins, losses, pushes, totals, and sport splits refresh from the public results API.</p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="results-band">
+        <div class="results-container proof-layout">
+          <div class="proof-copy">
+            <p class="kicker">Limitations and definitions</p>
+            <h2>What you should know before quoting this archive.</h2>
+            <p>The historical database and collapsed ledger are research records. Neither is a clean cohort of uniquely published recommendations. See <a href="/help/how-does-propeller-grade-picks/">how grading works</a> and the <a href="/editorial-policy/">editorial and corrections policy</a>.</p>
+          </div>
+          <div class="rules-grid">
+            <div class="rule-card"><span>01</span><h3>Two different units</h3><p>The summary and confidence endpoints count raw graded analysis rows. The public ledger applies a collapse key and therefore reports a smaller total.</p></div>
+            <div class="rule-card"><span>02</span><h3>Historical data is mixed</h3><p>Repeated snapshots and legacy retrospective analysis are included. The current feed does not label every row as forward-tested or backtested.</p></div>
+            <div class="rule-card"><span>03</span><h3>No ROI claim</h3><p>Price and payout are not consistently present, so the descriptive outcome rate cannot support a defensible profit or return-on-investment claim.</p></div>
           </div>
         </div>
       </section>
@@ -286,70 +473,55 @@
             <p>Results are graded against final box score values after games complete. Pushes are tracked separately from wins and losses.</p>
           </div>
           <div class="faq-card">
-            <h3>Does the verified record guarantee future results?</h3>
-            <p>No. The record is historical performance reporting. Past performance does not guarantee future results.</p>
+            <h3>Does the historical archive guarantee future results?</h3>
+            <p>No. The archive includes repeated analysis snapshots and legacy retrospective data. It is research context, not a forward-tested ROI record, and past performance does not guarantee future results.</p>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer site-footer">
-      <div class="container">
-        <div class="site-footer-grid">
-          <div class="site-footer-brand">
-            <p class="brand-name">Propeller Picks</p>
-            <p>Prop research on desktop and mobile. 1M+ props analyzed and graded with a public verified record.</p>
-            <p class="live-line">Live verified record · updated daily</p>
-          </div>
-          <div>
-            <h4>Daily Picks</h4>
-            <a href="/picks/nba/">NBA Props</a>
-            <a href="/picks/nfl/">NFL Props</a>
-            <a href="/picks/nhl/">NHL Props</a>
-            <a href="/picks/mlb/">MLB Props</a>
-            <a href="/picks/soccer/">Soccer Props</a>
-            <a href="/picks/">All Picks</a>
-          </div>
-          <div>
-            <h4>Platforms</h4>
-            <a href="/picks/prizepicks/">PrizePicks Picks</a>
-            <a href="/picks/underdog/">Underdog Picks</a>
-            <a href="/picks/pick6/">Pick6 Picks</a>
-            <a href="/compare/pick6-vs-prizepicks/">Pick6 vs PrizePicks</a>
-            <a href="/compare/">Compare Tools</a>
-          </div>
-          <div>
-            <h4>Free Tools</h4>
-            <a href="/tools/prizepicks-payout-calculator/">PrizePicks Calculator</a>
-            <a href="/tools/underdog-payout-calculator/">Underdog Calculator</a>
-            <a href="/tools/pick6-payout-calculator/">Pick6 Calculator</a>
-            <a href="/analyzer/">Prop Analyzer</a>
-            <a href="/tools/">All Tools</a>
-          </div>
-          <div>
-            <h4>Guides</h4>
-            <a href="/guides/prizepicks-strategy/">PrizePicks Strategy</a>
-            <a href="/guides/underdog-strategy/">Underdog Strategy</a>
-            <a href="/guides/pick6-strategy/">Pick6 Strategy</a>
-            <a href="/guides/nba-prop-betting/">NBA Prop Strategy</a>
-            <a href="/guides/">All Guides</a>
-          </div>
-          <div>
-            <h4>Proof</h4>
-            <a href="/results/">Verified Results</a>
-            <a href="/track-record/">Track Record</a>
-            <a href="/how-it-works/">Methodology</a>
-            <a href="/blog/">Results Blog</a>
-            <a href="/about/">About</a>
-          </div>
-        </div>
-        <div class="site-footer-legal">Propeller is a research and analysis tool. We do not accept wagers or operate as a sportsbook. All analysis is for informational purposes only and does not constitute gambling advice. Must be 21+. If gambling is a problem, call 1-800-GAMBLER.<br>© 2026 Propeller Picks · <a href="/privacy/">Privacy</a> · <a href="/terms/">Terms</a></div>
+    <!-- PP_SITE_FOOTER_START -->
+<footer class="pp-site-footer">
+  <div class="pp-site-footer__inner">
+    <div class="pp-site-footer__grid">
+      <div class="pp-site-footer__brand">
+        <a class="pp-brand" href="https://propellerpicks.com/" aria-label="Propeller Picks home">
+          <span class="pp-brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Propeller</span>
+        </a>
+        <p class="pp-site-footer__copy">AI-powered player prop research with inspectable signals, practical tools, and a documented historical archive.</p>
       </div>
-    </footer>
+      <div class="pp-site-footer__column">
+        <h2>Research</h2>
+        <a href="https://propellerpicks.com/picks/">Picks</a>
+        <a href="https://propellerpicks.com/analyzer/">Analyzer</a>
+        <a href="https://propellerpicks.com/tools/">Tools</a>
+        <a href="https://propellerpicks.com/guides/">Guides</a>
+      </div>
+      <div class="pp-site-footer__column">
+        <h2>Proof</h2>
+        <a href="https://propellerpicks.com/results/">Results</a>
+        <a href="https://propellerpicks.com/track-record/">Track Record</a>
+        <a href="https://propellerpicks.com/how-it-works/">Method</a>
+        <a href="https://propellerpicks.com/help/">Help</a>
+        <a href="https://propellerpicks.com/blog/">Blog</a>
+      </div>
+      <div class="pp-site-footer__column">
+        <h2>Company</h2>
+        <a href="https://propellerpicks.com/about/">About</a>
+        <a href="https://propellerpicks.com/editorial-policy/">Editorial Policy</a>
+        <a href="https://propellerpicks.com/privacy/">Privacy</a>
+        <a href="https://propellerpicks.com/terms/">Terms</a>
+        <a href="https://x.com/propellerpicks" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+      </div>
+    </div>
+    <p class="pp-site-footer__legal">Propeller is a research and analysis tool. We do not accept wagers or operate as a sportsbook. All analysis is for informational purposes only and does not constitute gambling advice. Must be 21+. If gambling is a problem, call <a href="tel:18004262537">1-800-GAMBLER</a>. Past performance does not guarantee future results.<br>© 2026 Propeller Picks.</p>
+  </div>
+</footer>
+<!-- PP_SITE_FOOTER_END -->
   </div>
   <script src="/assets/js/mobile-nav.js?v=20260624-nav3" defer></script>
   <script src="/assets/js/results-ledger.js" defer></script>
-  <script src="/assets/js/site-nav.js?v=20260625-nav-unify" defer></script>
-  <script src="/assets/js/analytics-events.js?v=20260708" defer></script>
+  <script src="/assets/js/site-nav.js?v=20260712" defer></script>
 </body>
 </html>

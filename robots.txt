@@ -1,4 +1,7 @@
 # AI search and citation crawlers.
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
@@ -23,7 +26,6 @@ Allow: /
 # AI agents and citation crawlers should start with the curated manifest.
 # https://propellerpicks.com/llms.txt
 # https://propellerpicks.com/data/index.json
-# https://propellerpicks.com/data/aeo-target-questions.json
 
 User-agent: *
 Allow: /

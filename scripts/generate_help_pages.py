@@ -6,9 +6,14 @@ import html
 import json
 from pathlib import Path
 
+try:
+    from scripts.apply_site_shell import migrate_html
+except ModuleNotFoundError:
+    from apply_site_shell import migrate_html
+
 ROOT = Path(__file__).resolve().parent.parent
 BASE_URL = "https://propellerpicks.com"
-UPDATED = "2026-07-07"
+UPDATED = "2026-07-13"
 
 
 PAGES = [
@@ -17,14 +22,14 @@ PAGES = [
         "title": "What Is Propeller Picks?",
         "description": "Propeller Picks is an AI player prop research workspace for Pick6, PrizePicks, Underdog, and sportsbook prop analysis.",
         "h1": "What is Propeller Picks?",
-        "summary": "Propeller Picks is an AI-assisted player prop research workspace for web and mobile. It scores over/under player props with specialized analysis agents, publishes a public results ledger, and helps users compare prop context before they make their own decisions. Propeller is not a sportsbook and does not accept wagers.",
+        "summary": "Propeller Picks is an AI-assisted player prop research workspace for web and mobile. It scores over/under player props with sport-specific analysis, publishes a documented historical results archive, and helps users compare prop context before making their own decisions. Propeller is not a sportsbook and does not accept wagers.",
         "sections": [
             ("What Propeller Helps With", "Propeller helps users research player props by combining matchup context, injury and role changes, historical hit rates, market probability, recent form, and confidence scoring in one workflow."),
             ("Who It Is For", "Propeller is built for people evaluating pick'em entries and player props on platforms such as Pick6, PrizePicks, Underdog Fantasy, and FanDuel. It is also useful for users who want a faster way to compare prop context before making their own decisions."),
             ("What Propeller Is Not", "Propeller is not a sportsbook, does not set lines, does not place wagers, and does not pay out entries. It is a research and analytics product."),
         ],
         "faqs": [
-            ("What is Propeller Picks?", "Propeller Picks is an AI player prop research workspace for web and mobile. It analyzes over/under props with specialized agents, confidence scores, public results tracking, and player-context pages."),
+            ("What is Propeller Picks?", "Propeller Picks is an AI player prop research workspace for web and mobile. It analyzes over/under props with sport-specific signals, directional scores, a documented historical archive, and player-context pages."),
             ("Does Propeller Picks place bets for users?", "No. Propeller Picks does not place bets, accept wagers, or pay out entries. Users are responsible for their own decisions and local laws."),
             ("What platforms does Propeller help analyze?", "Propeller is built around player prop analysis for Pick6, PrizePicks, Underdog Fantasy, FanDuel, and related over/under prop workflows."),
         ],
@@ -53,16 +58,16 @@ PAGES = [
         "title": "How Does Propeller Grade Picks?",
         "description": "How Propeller grades public prop results, tracks wins/losses/pushes, and keeps a transparent results ledger.",
         "h1": "How does Propeller grade picks?",
-        "summary": "Propeller grades public prop outcomes as wins, losses, or pushes after results are available. The public results ledger and summary API are the canonical sources for current totals, sport-level records, and confidence-bucket performance.",
+        "summary": "Propeller grades historical prop outcomes as wins, losses, or pushes after results are available. The Results page defines the archive's two counting units, links the source APIs, and explains why legacy rows are not a uniquely published forward-test or ROI record.",
         "sections": [
             ("Grading Outcomes", "A graded prop is marked as a win when the analyzed side beats the listed line, a loss when it does not, and a push when the result lands exactly on the line or is otherwise graded neutral."),
-            ("Canonical Record Source", "The public results summary API is the current machine-readable source for record totals, and the results page is the human-readable ledger."),
-            ("Why Totals Change", "Totals change as new props are published, settled, corrected, or excluded from public display. For current claims, use the live results pages instead of copying stale numbers."),
+            ("Canonical Archive Source", "The Results page is the canonical explanation. It separates raw graded analysis rows from entries retained after the current public API collapse rules and links each machine-readable source."),
+            ("Why Totals Change", "Totals change as historical rows are added, graded, corrected, or collapsed under current API rules. Always quote the unit and snapshot date, and do not treat either total as a forward-tested ROI record."),
         ],
         "faqs": [
-            ("How does Propeller grade picks?", "Propeller grades public prop outcomes as wins, losses, or pushes after final results are available. The public results page and API are the canonical sources for current totals."),
-            ("Where can I verify Propeller results?", "You can verify results on the public results page at /results/ and the track-record page at /track-record/. Machine-readable summaries are linked from /data/index.json."),
-            ("Do past Propeller results guarantee future performance?", "No. Past performance does not guarantee future results. Propeller publishes historical results for transparency, not as a promise of future outcomes."),
+            ("How does Propeller grade picks?", "Propeller grades historical prop outcomes as wins, losses, or pushes after final results are available. The Results page explains the units, sources, and limitations of that archive."),
+            ("Where can I inspect Propeller results?", "Use /results/ for the canonical archive explanation and /track-record/ for grading methodology. Machine-readable sources are linked from /data/index.json."),
+            ("Do past Propeller results guarantee future performance?", "No. The historical archive includes repeated analysis snapshots and legacy retrospective data. It is research context, not a forward-tested ROI claim, and past performance does not guarantee future results."),
         ],
         "related": ["/results/", "/track-record/", "/data/index.json", "/llms.txt"],
     },
@@ -271,6 +276,7 @@ def page_schema(page: dict) -> tuple[dict, dict, dict]:
         "inLanguage": "en-US",
         "isPartOf": {"@type": "WebSite", "name": "Propeller Picks", "url": BASE_URL},
         "publisher": {"@type": "Organization", "name": "Propeller Picks", "url": BASE_URL},
+        "author": {"@type": "Person", "name": "Scott Olmer", "url": f"{BASE_URL}/about/"},
     }
     breadcrumb = {
         "@context": "https://schema.org",
@@ -298,46 +304,39 @@ def page_schema(page: dict) -> tuple[dict, dict, dict]:
 
 BASE_CSS = """
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #06080D; color: #D1D9E0; line-height: 1.6; }
+body { margin: 0; color: var(--pp-text, #141815); background: var(--pp-paper, #f2efe8); font-family: var(--pp-body, sans-serif); line-height: 1.65; }
 a { color: inherit; }
-.page { min-height: 100vh; background: linear-gradient(180deg, #070A10 0%, #06080D 42%, #080B12 100%); }
-.container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
-.nav { position: sticky; top: 0; z-index: 10; background: rgba(6,8,13,.90); backdrop-filter: blur(18px); border-bottom: 1px solid rgba(255,255,255,.07); }
-.nav-inner { height: 64px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #F1F5F9; font-weight: 800; letter-spacing: 0; }
-.brand-mark { width: 28px; height: 28px; border-radius: 8px; background: #F97316; box-shadow: 0 0 28px rgba(249,115,22,.25); }
-.nav-links { display: flex; align-items: center; gap: 18px; color: #94A3B8; font-size: 14px; }
-.nav-links a { text-decoration: none; }
-.nav-links a:hover { color: #F1F5F9; }
-.hero { padding: 72px 0 36px; }
-.crumbs { display: flex; gap: 8px; flex-wrap: wrap; color: #94A3B8; font-size: 13px; margin-bottom: 18px; }
-.crumbs a { color: #94A3B8; text-decoration: none; }
-h1, h2, h3 { color: #F1F5F9; line-height: 1.12; letter-spacing: 0; }
-h1 { font-size: 56px; margin: 0 0 18px; max-width: 860px; }
-h2 { font-size: 32px; margin: 0 0 20px; }
-h3 { font-size: 20px; margin: 0 0 10px; }
-.summary { font-size: 19px; max-width: 830px; color: #E2E8F0; }
-.updated { color: #94A3B8; font-size: 13px; margin-top: 16px; }
-.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin: 24px 0 0; }
-.card { display: block; padding: 20px; border: 1px solid rgba(255,255,255,.08); border-radius: 8px; background: rgba(14,17,23,.78); text-decoration: none; transition: border-color .18s, transform .18s; }
-.card:hover { border-color: rgba(249,115,22,.35); transform: translateY(-2px); }
-.card strong { color: #F1F5F9; display: block; margin-bottom: 8px; }
-.card span { color: #94A3B8; font-size: 14px; }
-.section { padding: 38px 0; border-top: 1px solid rgba(255,255,255,.06); }
-.answer-box { padding: 24px; border: 1px solid rgba(249,115,22,.24); background: rgba(249,115,22,.08); border-radius: 8px; margin-top: 24px; }
-.answer-box p { margin: 0; color: #F8FAFC; }
-.content-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 32px; align-items: start; }
-.section-card { padding: 24px; border: 1px solid rgba(255,255,255,.08); border-radius: 8px; background: rgba(14,17,23,.72); margin-bottom: 16px; }
-.section-card p { margin: 0; }
+.page { min-height: 100vh; }
+.container { width: min(1100px, calc(100% - 48px)); margin: 0 auto; }
+.hero { padding: 88px 0 52px; border-bottom: 1px solid var(--pp-line, rgba(16,19,17,.15)); background: var(--pp-paper-light, #faf8f3); }
+.crumbs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; color: var(--pp-muted, #626a64); font: 500 12px/1.5 var(--pp-mono, monospace); text-transform: uppercase; }
+.crumbs a { color: var(--pp-orange-dark, #dd3d16); text-decoration: none; }
+h1, h2, h3 { margin-top: 0; color: var(--pp-ink, #101311); font-family: var(--pp-display, sans-serif); line-height: 1.05; }
+h1 { max-width: 900px; margin-bottom: 20px; font-size: clamp(44px, 7vw, 76px); letter-spacing: -.045em; }
+h2 { margin-bottom: 18px; font-size: clamp(28px, 4vw, 40px); letter-spacing: -.025em; }
+h3 { margin-bottom: 10px; font-size: 21px; }
+.summary { max-width: 850px; color: var(--pp-sub, #59615b); font-size: 19px; }
+.updated { margin-top: 16px; color: var(--pp-muted, #626a64); font: 500 12px/1.5 var(--pp-mono, monospace); }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+.card, .section-card, .faq-item, .related a { border: 1px solid var(--pp-line, rgba(16,19,17,.15)); border-radius: 4px; background: #fff; }
+.card { display: block; padding: 22px; text-decoration: none; box-shadow: 4px 4px 0 var(--pp-orange-wash, #ffe1d6); transition: transform .18s; }
+.card:hover { transform: translate(-2px, -2px); }
+.card strong { display: block; margin-bottom: 8px; color: var(--pp-ink, #101311); }
+.card span, .section-card p, .faq-item p { color: var(--pp-sub, #59615b); }
+.section { padding: 48px 0; border-top: 1px solid var(--pp-line, rgba(16,19,17,.15)); }
+.answer-box { margin-top: 28px; padding: 24px; border-left: 5px solid var(--pp-orange, #ff6038); background: var(--pp-orange-wash, #ffe1d6); }
+.answer-box p { margin: 0; color: var(--pp-ink, #101311); }
+.content-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 36px; align-items: start; padding-top: 52px; }
+.section-card, .faq-item { margin-bottom: 16px; padding: 24px; }
+.section-card p, .faq-item p { margin: 0; }
 .faq-list { display: grid; gap: 14px; }
-.faq-item { padding: 22px; border: 1px solid rgba(255,255,255,.08); border-radius: 8px; background: rgba(14,17,23,.72); }
-.faq-item p { margin: 0; }
 .related { position: sticky; top: 88px; display: grid; gap: 10px; }
-.related a { display: block; padding: 13px 14px; border: 1px solid rgba(255,255,255,.08); border-radius: 8px; color: #F1F5F9; background: rgba(255,255,255,.03); text-decoration: none; font-size: 14px; }
-.cta { margin: 40px 0 64px; padding: 26px; border: 1px solid rgba(249,115,22,.25); border-radius: 8px; background: rgba(249,115,22,.08); display: flex; justify-content: space-between; gap: 18px; align-items: center; }
-.button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 12px 18px; border-radius: 8px; background: #F97316; color: #0B0D12; text-decoration: none; font-weight: 800; white-space: nowrap; }
-footer { border-top: 1px solid rgba(255,255,255,.07); color: #94A3B8; padding: 28px 0; font-size: 13px; }
-@media (max-width: 820px) { .nav-links { display: none; } h1 { font-size: 38px; } h2 { font-size: 26px; } .grid, .content-grid { grid-template-columns: 1fr; } .related { position: static; } .cta { flex-direction: column; align-items: flex-start; } }
+.related a { display: block; padding: 13px 14px; color: var(--pp-ink, #101311); text-decoration: none; font-size: 14px; }
+.related a:hover { border-color: var(--pp-orange, #ff6038); }
+.cta { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin: 48px 0 72px; padding: 28px; border: 1px solid var(--pp-ink, #101311); background: var(--pp-ink, #101311); color: #fff; }
+.cta h2 { color: #fff; }
+.button { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; padding: 12px 18px; border-radius: 3px; background: var(--pp-orange, #ff6038); color: var(--pp-ink, #101311); text-decoration: none; font-weight: 800; white-space: nowrap; }
+@media (max-width: 820px) { .container { width: min(100% - 32px, 1100px); } .hero { padding: 64px 0 40px; } .grid, .content-grid { grid-template-columns: 1fr; } .related { position: static; } .cta { align-items: flex-start; flex-direction: column; } }
 """
 
 
@@ -387,8 +386,8 @@ def render_page(page: dict) -> str:
 <meta name="twitter:title" content="{esc(page['title'])}">
 <meta name="twitter:description" content="{esc(page['description'])}">
 <meta name="twitter:image" content="{BASE_URL}/images/og-image.png">
-<meta name="author" content="Propeller">
-<meta name="theme-color" content="#06080D">
+<meta name="author" content="Scott Olmer">
+<meta name="theme-color" content="#f2efe8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -527,7 +526,7 @@ def render_hub() -> str:
 <meta name="twitter:title" content="Propeller Picks Help Center">
 <meta name="twitter:description" content="Answer-first help articles about Propeller Picks, supported platforms, sports, grading, confidence scores, and prop research workflows.">
 <meta name="twitter:image" content="{BASE_URL}/images/og-image.png">
-<meta name="theme-color" content="#06080D">
+<meta name="theme-color" content="#f2efe8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -595,11 +594,13 @@ def render_hub() -> str:
 def main() -> None:
     help_dir = ROOT / "help"
     help_dir.mkdir(exist_ok=True)
-    (help_dir / "index.html").write_text(render_hub(), encoding="utf-8")
+    hub_path = help_dir / "index.html"
+    hub_path.write_text(migrate_html(render_hub(), hub_path, False), encoding="utf-8")
     for page in PAGES:
         out_dir = help_dir / page["slug"]
         out_dir.mkdir(parents=True, exist_ok=True)
-        (out_dir / "index.html").write_text(render_page(page), encoding="utf-8")
+        page_path = out_dir / "index.html"
+        page_path.write_text(migrate_html(render_page(page), page_path, False), encoding="utf-8")
     print(f"Generated {len(PAGES) + 1} help pages")
 
 
