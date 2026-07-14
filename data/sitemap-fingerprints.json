@@ -41,12 +41,12 @@
       "source": "compare/propeller-vs-oddsjam/index.html"
     },
     "https://propellerpicks.com/data/index.json": {
-      "fingerprint": "2579a671c68022e0f5101ab5ac6681f779aa597dcc498389533d8d68629b0fdf",
+      "fingerprint": "245f837c1d238d8df1fa8e11f84dbe639c0f6467816495cd6a58ca4c6dc9a39d",
       "lastmod": "2026-07-14",
       "source": "data/index.json"
     },
     "https://propellerpicks.com/data/performance-snapshot.json": {
-      "fingerprint": "bb4cf8a41e2014b50572d7162b880f73add527d6089bc8de0cdfba6d6eeed675",
+      "fingerprint": "de812b16252cbce98071185d36339e3e5768f817ad959dcadbb7c8922a46ccbe",
       "lastmod": "2026-07-14",
       "source": "data/performance-snapshot.json"
     },
