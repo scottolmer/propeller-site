@@ -76,14 +76,14 @@ PAGES = [
         "title": "What Sports Does Propeller Support?",
         "description": "Current Propeller sports coverage for player prop analysis, public results, and daily pick previews.",
         "h1": "What sports does Propeller support?",
-        "summary": "Propeller supports player prop research across NFL, NBA, MLB, NHL, soccer, and PGA workflows on the public site. The public results API currently reports separate buckets for NFL, NBA, NHL, MLB, EPL, MLS, and PGA.",
+        "summary": "Propeller supports player prop research across NFL, NBA, MLB, NHL, and soccer workflows on the public site. Soccer is represented in public data through EPL and MLS buckets.",
         "sections": [
-            ("Current Public Sports", "The public site includes pages and data for NFL, NBA, MLB, NHL, soccer, and PGA. Soccer is represented in public data through EPL and MLS buckets."),
+            ("Current Public Sports", "The public site includes pages and data for NFL, NBA, MLB, NHL, and soccer. Soccer is represented in public data through EPL and MLS buckets."),
             ("Platform Coverage", "Coverage can vary by platform because Pick6, PrizePicks, Underdog, and sportsbooks may offer different sports, stat types, and slates."),
             ("Where To Check", "Use the picks hub, analyzer, and public data catalog to confirm current sport coverage before relying on any specific slate."),
         ],
         "faqs": [
-            ("What sports does Propeller support?", "Propeller supports public player prop research for NFL, NBA, MLB, NHL, soccer, and PGA workflows. Public result buckets currently include NFL, NBA, NHL, MLB, EPL, MLS, and PGA."),
+            ("What sports does Propeller support?", "Propeller supports public player prop research for NFL, NBA, MLB, NHL, and soccer workflows. Public result buckets currently include NFL, NBA, NHL, MLB, EPL, and MLS."),
             ("Does Propeller support soccer props?", "Yes. Propeller includes soccer coverage, with public result buckets for EPL and MLS where available."),
             ("Does sport coverage change?", "Yes. Sport and stat coverage can vary by season, platform, data availability, and public publishing rules."),
         ],

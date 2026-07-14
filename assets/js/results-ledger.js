@@ -32,7 +32,9 @@
 
   async function hydrateSummary() {
     const payload = await fetchJson(SUMMARY_ENDPOINT);
-    const sports = Array.isArray(payload.sports) ? payload.sports.filter((sport) => sport.published) : [];
+    const sports = Array.isArray(payload.sports)
+      ? payload.sports.filter((sport) => sport.published && String(sport.key || "").toLowerCase() !== "pga")
+      : [];
     const grid = document.querySelector("[data-sport-grid]");
     if (grid && sports.length) {
       grid.textContent = "";
@@ -73,7 +75,9 @@
     setText("[data-results-outcome]", `${formatNumber.format(Number(payload.wins || 0))}-${formatNumber.format(Number(payload.losses || 0))}-${formatNumber.format(Number(payload.pushes || 0))}`);
     setText("[data-results-updated]", "Live totals · historical archive");
     setText("[data-ledger-summary]", `Sample from ${formatNumber.format(total)} entries under the current public-ledger collapse rules`);
-    const rows = Array.isArray(payload.results) ? payload.results.slice(0, 10) : [];
+    const rows = Array.isArray(payload.results)
+      ? payload.results.filter((item) => String(item.sport || "").toLowerCase() !== "pga").slice(0, 10)
+      : [];
     const body = document.querySelector("[data-ledger-body]");
     if (body && rows.length) {
       body.textContent = "";

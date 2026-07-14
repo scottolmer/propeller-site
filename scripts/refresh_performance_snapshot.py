@@ -34,6 +34,7 @@ LIMITATIONS = [
     "The deduplicated ledger uses the current API collapse key; it is not a log of uniquely published recommendations.",
     "The public historical feed does not identify every row as forward-tested or backtested and does not expose a public model version.",
     "The historical outcome rate is descriptive only. It is not an ROI, profit, or future-performance claim because price and payout are not consistently available in the public feed.",
+    "Aggregate source totals can include retired sport records that are no longer displayed as current coverage.",
 ]
 
 
@@ -64,7 +65,11 @@ def build_snapshot(raw: dict, ledger: dict, buckets: dict) -> dict:
     validate_record("raw summary", overall)
     validate_record("deduplicated ledger", ledger)
 
-    sports = [sport for sport in raw.get("sports", []) if sport.get("published")]
+    sports = [
+        sport
+        for sport in raw.get("sports", [])
+        if sport.get("published") and str(sport.get("key", "")).lower() != "pga"
+    ]
     for sport in sports:
         validate_record(f"sport {sport.get('key', 'unknown')}", sport)
 
@@ -112,7 +117,7 @@ def build_snapshot(raw: dict, ledger: dict, buckets: dict) -> dict:
             "source": LEDGER_URL,
         },
         "coverage": {
-            "sports": ["NFL", "NBA", "NHL", "MLB", "soccer", "PGA"],
+            "sports": ["NFL", "NBA", "NHL", "MLB", "soccer"],
             "reported_buckets": [sport.get("label") for sport in sports],
             "top_raw_bucket": top_sport.get("label"),
             "top_raw_bucket_share": round(int(top_sport.get("total", 0)) / raw_total * 100, 1)
@@ -257,7 +262,10 @@ def render_html(snapshot: dict) -> None:
     archive = snapshot["historical_database"]
     generated = human_date(snapshot["generated_at"])
     update_text = f"Static API snapshot · {generated}; live refresh enabled"
-    sports_text = f"6 sports / {len(snapshot['coverage']['reported_buckets'])} buckets"
+    sports_text = (
+        f"{len(snapshot['coverage']['sports'])} sports / "
+        f"{len(snapshot['coverage']['reported_buckets'])} buckets"
+    )
 
     home_path = ROOT / "index.html"
     home = home_path.read_text(encoding="utf-8")
@@ -315,7 +323,7 @@ Canonical explanation: https://propellerpicks.com/results/
 - Historical database: {format_number(archive['total'])} raw graded analysis rows.
 - Current public-ledger collapse: {format_number(ledger['total'])} prop-result entries.
 - Raw-to-ledger ratio: {ledger['raw_to_ledger_ratio']}x.
-- Sports represented: NFL, NBA, NHL, MLB, soccer, and PGA.
+- Current sports represented: NFL, NBA, NHL, MLB, and soccer.
 
 These historical records include repeated analysis snapshots and legacy retrospective data. They are research records, not a uniquely published forward-test, ROI, profit, or future-performance claim. Use the canonical report before quoting any aggregate figure.
 """
