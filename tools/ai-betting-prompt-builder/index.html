@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free AI Sports Betting Prompt Builder | Propeller</title><meta name="description" content="Build a structured sports betting research prompt for ChatGPT or another AI assistant, with current-data checks, counterarguments, and missing-data disclosure."><meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"><meta name="author" content="Scott Olmer"><link rel="canonical" href="https://propellerpicks.com/tools/ai-betting-prompt-builder/">
+<meta property="og:type" content="website"><meta property="og:title" content="Free AI Sports Betting Prompt Builder | Propeller"><meta property="og:description" content="Build a structured sports betting research prompt for ChatGPT or another AI assistant, with current-data checks, counterarguments, and missing-data disclosure."><meta property="og:url" content="https://propellerpicks.com/tools/ai-betting-prompt-builder/"><meta property="og:image" content="https://propellerpicks.com/images/og-image.png"><meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="/assets/css/ai-research.css?v=20260714">
+  <!-- PP_SITE_HEAD_START -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#f2efe8">
+  <link rel="stylesheet" href="/assets/css/site-system.css?v=20260712">
+  <link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">
+  <!-- PP_SITE_HEAD_END -->
+</head>
+<body class="pp-site-system pp-ai-page pp-family-core"><a class="air-skip" href="#main">Skip to content</a><!-- PP_SITE_NAV_START -->
+<nav class="pp-site-nav" aria-label="Primary navigation">
+  <div class="pp-site-nav__inner">
+    <a class="pp-brand" href="https://propellerpicks.com/" aria-label="Propeller Picks home">
+      <span class="pp-brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Propeller</span>
+    </a>
+    <button class="pp-site-nav__menu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="ppSiteNavLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+    </button>
+    <div class="pp-site-nav__links" id="ppSiteNavLinks">
+      <a href="https://propellerpicks.com/picks/" data-section="picks">Picks</a>
+      <a href="https://propellerpicks.com/results/" data-section="results">Results</a>
+      <a href="https://propellerpicks.com/track-record/" data-section="track-record">Track Record</a>
+      <a href="https://propellerpicks.com/how-it-works/" data-section="how-it-works">Method</a>
+      <a href="https://propellerpicks.com/guides/" data-section="guides">Guides</a>
+      <a href="https://propellerpicks.com/tools/" data-section="tools">Tools</a>
+      <a href="https://propellerpicks.com/analyzer/" data-section="analyzer">Analyzer</a>
+      <a href="https://app.propellerpicks.com/app" rel="noopener noreferrer">Web App</a>
+      <a class="pp-site-nav__cta" href="https://app.propellerpicks.com/signup" rel="noopener noreferrer">Get Free Lifetime Access</a>
+    </div>
+  </div>
+</nav>
+<!-- PP_SITE_NAV_END --><main id="main"><section class="air-hero"><div class="air-wrap"><p class="air-kicker">Free research utility</p><h1>Build a better sports betting <em>AI prompt.</em></h1><p class="air-deck">Turn a player prop or game-market question into a skeptical research brief for ChatGPT, Claude, Gemini, or another general AI assistant. The output asks for current sources, counterarguments, and a no-action conclusion when evidence is weak.</p><div class="air-meta"><span class="air-byline">By Scott Olmer · Checked July 14, 2026</span><span>Runs in your browser</span><span>No account required</span><span>Does not generate picks or stakes</span></div></div></section>
+<section class="air-section"><div class="air-wrap"><div class="air-head"><p class="air-label">Prompt inputs</p><h2>Make the research question specific.</h2></div><form id="promptBuilder" class="air-form" novalidate><div class="air-field"><label for="sport">Sport *</label><select id="sport" required><option value="">Choose a sport</option><option>MLB</option><option>NBA</option><option>NFL</option><option>NHL</option><option>Soccer</option><option>Other</option></select></div><div class="air-field"><label for="market">Market *</label><input id="market" required placeholder="e.g. hits, rebounds, passing yards"></div><div class="air-field"><label for="subject">Player or event *</label><input id="subject" required placeholder="e.g. Aaron Judge"></div><div class="air-field"><label for="line">Line *</label><input id="line" required placeholder="e.g. 1.5 hits"></div><div class="air-field"><label for="source">Source or platform</label><input id="source" placeholder="e.g. DraftKings Pick6"></div><div class="air-field"><label for="goal">Research goal</label><select id="goal"><option>Evaluate both sides</option><option>Stress-test an initial lean</option><option>Identify missing information</option><option>Compare market prices</option></select></div><div class="air-field air-field--full"><label for="context">Optional context</label><textarea id="context" placeholder="Injury news, alternate line, matchup note, or specific question"></textarea></div><div class="air-field air-field--full"><button class="air-button" type="submit">Generate research prompt</button><p id="promptStatus" class="air-status" role="status"></p></div></form></div></section>
+<section class="air-section air-section--ink"><div class="air-wrap"><div class="air-head"><p class="air-label">Generated prompt</p><h2>Structured to resist confident guessing.</h2></div><div id="promptOutput" class="air-output" tabindex="0">Complete the required fields to generate a research prompt.</div><div class="air-actions"><button id="copyPrompt" class="air-button" type="button" disabled>Copy prompt</button><a class="air-button air-button--secondary" style="color:white;border-color:white" href="/guides/how-ai-sports-betting-works/">Understand AI limits</a></div></div></section>
+<section class="air-section"><div class="air-wrap"><div class="air-head"><p class="air-label">Use safely</p><h2>A prompt cannot make stale data current.</h2></div><div class="air-prose"><p>Verify every line, injury, lineup, and source timestamp yourself. General AI assistants may invent facts or cite low-quality sources. If the required current evidence is unavailable, the correct output is “no action.”</p></div><ul class="air-changelog"><li>July 14, 2026 — Initial prompt builder published.</li></ul></div></section></main><!-- PP_SITE_FOOTER_START -->
+<footer class="pp-site-footer">
+  <div class="pp-site-footer__inner">
+    <div class="pp-site-footer__grid">
+      <div class="pp-site-footer__brand">
+        <a class="pp-brand" href="https://propellerpicks.com/" aria-label="Propeller Picks home">
+          <span class="pp-brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Propeller</span>
+        </a>
+        <p class="pp-site-footer__copy">AI-powered player prop research with inspectable signals, practical tools, and a documented historical archive.</p>
+      </div>
+      <div class="pp-site-footer__column">
+        <h2>Research</h2>
+        <a href="https://propellerpicks.com/picks/">Picks</a>
+        <a href="https://propellerpicks.com/analyzer/">Analyzer</a>
+        <a href="https://propellerpicks.com/tools/">Tools</a>
+        <a href="https://propellerpicks.com/guides/">Guides</a>
+      </div>
+      <div class="pp-site-footer__column">
+        <h2>Proof</h2>
+        <a href="https://propellerpicks.com/results/">Results</a>
+        <a href="https://propellerpicks.com/track-record/">Track Record</a>
+        <a href="https://propellerpicks.com/how-it-works/">Method</a>
+        <a href="https://propellerpicks.com/help/">Help</a>
+        <a href="https://propellerpicks.com/blog/">Blog</a>
+      </div>
+      <div class="pp-site-footer__column">
+        <h2>Company</h2>
+        <a href="https://propellerpicks.com/about/">About</a>
+        <a href="https://propellerpicks.com/editorial-policy/">Editorial Policy</a>
+        <a href="https://propellerpicks.com/privacy/">Privacy</a>
+        <a href="https://propellerpicks.com/terms/">Terms</a>
+        <a href="https://x.com/propellerpicks" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+      </div>
+    </div>
+    <p class="pp-site-footer__legal">Propeller is a research and analysis tool. We do not accept wagers or operate as a sportsbook. All analysis is for informational purposes only and does not constitute gambling advice. Must be 21+. If gambling is a problem, call <a href="tel:18004262537">1-800-GAMBLER</a>. Past performance does not guarantee future results.<br>© 2026 Propeller Picks.</p>
+  </div>
+</footer>
+<!-- PP_SITE_FOOTER_END -->
+<script src="/assets/js/ai-prompt-builder.js?v=20260714" defer></script>
+  <script src="/assets/js/site-nav.js?v=20260712" defer></script>
+</body></html>

@@ -4,7 +4,9 @@ These keep the SEO-critical state of the site fresh. The daily content
 pipeline should run them in this order after it regenerates pages:
 
 ```bash
+python3 scripts/update_prospective_record.py # append current preview rows, settle exact matches
 python3 scripts/update_picks_freshness.py     # date-stamp the /picks/ "today" pages
+python3 scripts/refresh_player_cards.py       # replace stale player modules with current/empty states
 python3 scripts/apply_analyzer_indexing.py    # re-select top analyzer players to index
 python3 scripts/inject_popular_players.py     # refresh player link sections
 python3 scripts/apply_site_shell.py --include-home
@@ -22,6 +24,11 @@ All scripts are idempotent and safe to run repeatedly.
 - **update_picks_freshness.py** — stamps today's date into title/H1/og/JSON-LD
   `dateModified` and the hero date label of every `/picks/*` page. The pages
   are indexed for "… today" queries; Google demotes them when they look stale.
+- **update_prospective_record.py** — appends deterministic public-preview captures
+  to the forward ledger and settles only exact, unambiguous public-result matches.
+  It does not claim event-start ordering because the source API lacks event time.
+- **refresh_player_cards.py** — replaces legacy player-page “today” blocks with
+  a current dated card or an honest unavailable state before indexing runs.
 - **apply_analyzer_indexing.py** — flips `noindex` → `index` on the top 50
   analyzer player pages per sport (minimum 100 graded picks), reverts pages
   that drop out, and writes the list to `scripts/analyzer_indexed.txt`.
@@ -67,5 +74,7 @@ python3 scripts/normalize_access_language.py --check
 python3 scripts/set_archive_indexing.py --check
 python3 scripts/sync_faq_schema.py --check
 python3 scripts/check_schema_parity.py
+python3 scripts/check_ai_search_assets.py
+python3 -m unittest scripts/test_ai_search_assets.py
 python3 scripts/generate_sitemap.py --check
 ```

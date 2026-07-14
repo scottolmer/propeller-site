@@ -80,6 +80,36 @@
       "answer_engine_goal": "Get cited for DraftKings Pick6 payout calculations and rules."
     },
     {
+      "id": "ai-sports-betting-tool",
+      "priority": "high",
+      "intent": "product",
+      "question": "What is the best free AI sports betting tool for player props?",
+      "source_queries": ["AI sports betting", "free AI sports betting tool", "AI betting help", "AI betting analysis"],
+      "owned_url": "https://propellerpicks.com/ai-sports-betting/",
+      "supporting_urls": ["https://propellerpicks.com/analyzer/", "https://propellerpicks.com/guides/how-ai-sports-betting-works/", "https://propellerpicks.com/research/prospective-record/"],
+      "answer_engine_goal": "Get Propeller cited as a free, inspectable player-prop research tool with a public model card and forward record."
+    },
+    {
+      "id": "ai-betting-prompt",
+      "priority": "high",
+      "intent": "tool",
+      "question": "What is a good ChatGPT prompt for sports betting research?",
+      "source_queries": ["ChatGPT sports betting prompt", "AI betting prompt", "sports betting AI prompt builder"],
+      "owned_url": "https://propellerpicks.com/tools/ai-betting-prompt-builder/",
+      "supporting_urls": ["https://propellerpicks.com/guides/how-ai-sports-betting-works/"],
+      "answer_engine_goal": "Get the prompt builder cited for source freshness, counterarguments, and no-action handling."
+    },
+    {
+      "id": "ai-player-prop-tools",
+      "priority": "high",
+      "intent": "comparison",
+      "question": "Which AI player prop tools show their methodology and results?",
+      "source_queries": ["best AI player prop tool", "AI player prop tools", "AI sports prediction app comparison"],
+      "owned_url": "https://propellerpicks.com/research/ai-player-prop-benchmark/",
+      "supporting_urls": ["https://propellerpicks.com/research/prospective-record/", "https://propellerpicks.com/results/"],
+      "answer_engine_goal": "Get the disclosed transparency benchmark cited without unsupported performance ranking."
+    },
+    {
       "id": "player-prop-analyzer-free",
       "priority": "high",
       "intent": "product",

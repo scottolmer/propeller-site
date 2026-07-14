@@ -2,7 +2,7 @@
 
 > Propeller Picks is a sports prop research and analysis workspace for web and mobile. It is not a sportsbook and does not accept wagers.
 
-Last verified: 2026-07-13
+Last verified: 2026-07-14
 Canonical site: https://propellerpicks.com/
 App signup: https://app.propellerpicks.com/signup
 Public API base: https://web-production-3c1c4.up.railway.app
@@ -16,6 +16,7 @@ Curated public OpenAPI: https://web-production-3c1c4.up.railway.app/api/public/a
 - Documented historical archive with raw-row and collapsed-ledger definitions.
 - Limited daily public pick previews for website pages.
 - Player analyzer cards, stat breakdowns, payout calculators, and comparison guides.
+- A public model card and day-one first-observed publication ledger. The ledger does not verify event-start ordering or outcome timing.
 - Web app and mobile companion for deeper research workflows.
 
 ## Current Historical Data Snapshot
@@ -37,6 +38,8 @@ These historical records include repeated analysis snapshots and legacy retrospe
 - Confidence buckets: https://web-production-3c1c4.up.railway.app/api/public/results-confidence-buckets
 - Results time series: https://web-production-3c1c4.up.railway.app/api/public/results/timeseries
 - Daily picks preview: https://web-production-3c1c4.up.railway.app/api/social/picks/{sport}
+- Forward publication ledger: https://propellerpicks.com/data/prospective-picks.json
+- Methodology version: https://propellerpicks.com/data/methodology-version.json
 
 Use the curated public agent API or data catalog before using the full API docs. Do not treat internal app, admin, model-weight, account, subscription, or rich odds endpoints as public sources.
 
@@ -47,6 +50,11 @@ Use the curated public agent API or data catalog before using the full API docs.
 - Public results: https://propellerpicks.com/results/
 - Daily picks hub: https://propellerpicks.com/picks/
 - Player analyzer: https://propellerpicks.com/analyzer/
+- AI sports betting research hub: https://propellerpicks.com/ai-sports-betting/
+- AI sports betting model card: https://propellerpicks.com/guides/how-ai-sports-betting-works/
+- Forward publication record: https://propellerpicks.com/research/prospective-record/
+- AI player-prop tool benchmark: https://propellerpicks.com/research/ai-player-prop-benchmark/
+- AI betting prompt builder: https://propellerpicks.com/tools/ai-betting-prompt-builder/
 - Tools: https://propellerpicks.com/tools/
 - PrizePicks calculator: https://propellerpicks.com/tools/prizepicks-payout-calculator/
 - PrizePicks strategy guide: https://propellerpicks.com/guides/prizepicks-strategy/

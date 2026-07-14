@@ -13,8 +13,8 @@
   gtag('config', 'G-NLXM4C2G7D');
 </script>
 
-<title>Free Prop Bet Analyzer — Check Any Player Prop | NBA, NFL, MLB, NHL</title>
-<meta name="description" content="Use the free player prop analyzer to check NBA, NFL, MLB, and NHL props by player. Search any player and review AI confidence, matchup context, and odds.">
+<title>Free AI Player Prop Analyzer | MLB, NBA, NFL, NHL & Soccer</title>
+<meta name="description" content="Use the free AI player prop analyzer to search current MLB, NBA, NFL, NHL, and soccer props. Review directional model conviction, market lines, and documented limits.">
 <meta name="keywords" content="AI prop analyzer, player prop analyzer, AI player prop predictions, prop confidence score, free prop analyzer, prop analysis tool, prop picker tool, AI prop picks, player prop tool">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://propellerpicks.com/analyzer/">
@@ -1795,11 +1795,11 @@ footer {
       </div>
 
       <h1 class="fade-in delay-1">
-        Player <span>Prop Analyzer</span>
+        Free AI <span>Player Prop Analyzer</span>
       </h1>
 
       <p class="hero-subtitle fade-in delay-2">
-        Search any player. See AI confidence scores for today's props &mdash; powered by 8 specialized agents.
+        Search current player props by sport and line. Confidence shows directional model conviction, not a guaranteed outcome or calibrated probability.
       </p>
 
       <div class="hero-stat-row fade-in" style="transition-delay:0.45s;">
@@ -2047,7 +2047,7 @@ footer {
           <p style="color:var(--text-secondary);margin-bottom:14px;">Move from a single free lookup into the full desktop board with filters, drawers, watchlists, and saved picks.</p>
           <span style="display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-family:var(--font-display);font-size:14px;">Launch web app <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></span>
         </a>
-        <a href="/how-it-works/" class="fade-in delay-1" style="display:block;padding:22px;border-radius:18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);text-decoration:none;color:inherit;">
+        <a href="/guides/how-ai-sports-betting-works/" class="fade-in delay-1" style="display:block;padding:22px;border-radius:18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);text-decoration:none;color:inherit;">
           <p style="margin-bottom:8px;color:var(--text-tertiary);font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Understand the score</p>
           <h3 style="font-family:var(--font-display);font-size:24px;color:var(--text-primary);margin-bottom:10px;">Read the methodology</h3>
           <p style="color:var(--text-secondary);margin-bottom:14px;">Keep the model explanation close to the tool so users can interpret the analyzer&apos;s output in context.</p>
@@ -2058,6 +2058,12 @@ footer {
           <h3 style="font-family:var(--font-display);font-size:24px;color:var(--text-primary);margin-bottom:10px;">Check the results</h3>
           <p style="color:var(--text-secondary);margin-bottom:14px;">Keep the public record close to the analyzer so the tool is anchored by proof instead of just interface polish.</p>
           <span style="display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-family:var(--font-display);font-size:14px;">Review results <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></span>
+        </a>
+        <a href="/research/prospective-record/" class="fade-in delay-2" style="display:block;padding:22px;border-radius:18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);text-decoration:none;color:inherit;">
+          <p style="margin-bottom:8px;color:var(--text-tertiary);font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Follow it forward</p>
+          <h3 style="font-family:var(--font-display);font-size:24px;color:var(--text-primary);margin-bottom:10px;">Inspect the publication record</h3>
+          <p style="color:var(--text-secondary);margin-bottom:14px;">See the day-one forward ledger, immutable capture fields, settlement status, and precise event-time limitation.</p>
+          <span style="display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-family:var(--font-display);font-size:14px;">Open forward record <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></span>
         </a>
       </div>
     </div>
@@ -2509,8 +2515,17 @@ function renderPicks(picks) {
 
   // Hide results until user searches
   if (!searchQuery) {
-    grid.innerHTML = '';
-    grid.style.display = 'none';
+    const hasCurrent = allPicks.length > 0;
+    grid.innerHTML = `
+      <div class="results-empty">
+        <div class="results-empty-icon" style="background:${sportCfg.muted}; color:${sportCfg.color};" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>${hasCurrent ? `${allPicks.length} current ${sportCfg.label} props available` : `No current ${sportCfg.label} props available`}</h3>
+        <p>${hasCurrent ? 'Start typing a player name to inspect the current public slate.' : 'The current public feed returned no rows or could not be reached. No older slate is being shown as current.'}</p>
+      </div>
+    `;
+    grid.style.display = 'grid';
     controls.style.display = 'none';
     meta.innerHTML = allPicks.length > 0
       ? `<span style="color:var(--text-tertiary)">${allPicks.length} ${sportCfg.label} props available today — start typing to search</span>`
