@@ -73,6 +73,27 @@
   ],
   "answer_engine_pages": [
     {
+      "id": "ai-sports-betting-hub",
+      "url": "https://propellerpicks.com/ai-sports-betting/",
+      "description": "Canonical category hub for free AI sports betting and player-prop research."
+    },
+    {
+      "id": "ai-model-card",
+      "url": "https://propellerpicks.com/guides/how-ai-sports-betting-works/",
+      "description": "Public model card defining inputs, confidence, limitations, and versions."
+    },
+    {
+      "id": "forward-publication-record",
+      "url": "https://propellerpicks.com/research/prospective-record/",
+      "data_url": "https://propellerpicks.com/data/prospective-picks.json",
+      "description": "Day-one forward capture ledger with immutable publication fields; event-start ordering is not verified."
+    },
+    {
+      "id": "ai-tool-benchmark",
+      "url": "https://propellerpicks.com/research/ai-player-prop-benchmark/",
+      "description": "Disclosed editorial comparison of AI player-prop research tools."
+    },
+    {
       "id": "help-center",
       "url": "https://propellerpicks.com/help/",
       "description": "Answer-first product, scoring, platform, and results support pages."
@@ -106,5 +127,7 @@
     "summary": "Propeller Picks is for sports prop research and analysis only. Past performance does not guarantee future results."
   },
   "performance_snapshot": "https://propellerpicks.com/data/performance-snapshot.json",
+  "prospective_publication_record": "https://propellerpicks.com/data/prospective-picks.json",
+  "methodology_version": "https://propellerpicks.com/data/methodology-version.json",
   "canonical_performance_report": "https://propellerpicks.com/results/"
 }
