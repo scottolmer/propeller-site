@@ -66,8 +66,7 @@
         "nfl",
         "nhl",
         "mlb",
-        "soccer",
-        "pga"
+        "soccer"
       ],
       "description": "Limited public current-pick preview for website daily picks pages."
     }

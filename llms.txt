@@ -12,7 +12,7 @@ Curated public OpenAPI: https://web-production-3c1c4.up.railway.app/api/public/a
 
 ## What Propeller Provides
 
-- AI-assisted player prop research for NBA, NFL, NHL, MLB, soccer, and PGA.
+- AI-assisted player prop research for NBA, NFL, NHL, MLB, and soccer.
 - Documented historical archive with raw-row and collapsed-ledger definitions.
 - Limited daily public pick previews for website pages.
 - Player analyzer cards, stat breakdowns, payout calculators, and comparison guides.
@@ -26,7 +26,7 @@ Canonical explanation: https://propellerpicks.com/results/
 - Historical database: 2,116,581 raw graded analysis rows.
 - Current public-ledger collapse: 284,005 prop-result entries.
 - Raw-to-ledger ratio: 7.45x.
-- Sports represented: NFL, NBA, NHL, MLB, soccer, and PGA.
+- Current sports represented: NFL, NBA, NHL, MLB, and soccer.
 
 These historical records include repeated analysis snapshots and legacy retrospective data. They are research records, not a uniquely published forward-test, ROI, profit, or future-performance claim. Use the canonical report before quoting any aggregate figure.
 

@@ -30,8 +30,7 @@
       "NBA",
       "NHL",
       "MLB",
-      "soccer",
-      "PGA"
+      "soccer"
     ],
     "reported_buckets": [
       "NFL",
@@ -39,8 +38,7 @@
       "NHL",
       "MLB",
       "EPL",
-      "MLS",
-      "PGA"
+      "MLS"
     ],
     "top_raw_bucket": "MLB",
     "top_raw_bucket_share": 92.9
@@ -104,16 +102,6 @@
       "losses": 3124,
       "pushes": 0,
       "win_rate": 85.0,
-      "published": true
-    },
-    {
-      "key": "pga",
-      "label": "PGA",
-      "total": 5136,
-      "wins": 3238,
-      "losses": 1898,
-      "pushes": 0,
-      "win_rate": 63.0,
       "published": true
     }
   ],
@@ -522,7 +510,8 @@
     "Historical analysis rows can include repeated books, lines, snapshots, model runs, and legacy retrospective data.",
     "The deduplicated ledger uses the current API collapse key; it is not a log of uniquely published recommendations.",
     "The public historical feed does not identify every row as forward-tested or backtested and does not expose a public model version.",
-    "The historical outcome rate is descriptive only. It is not an ROI, profit, or future-performance claim because price and payout are not consistently available in the public feed."
+    "The historical outcome rate is descriptive only. It is not an ROI, profit, or future-performance claim because price and payout are not consistently available in the public feed.",
+    "Aggregate source totals can include retired sport records that are no longer displayed as current coverage."
   ],
   "source_endpoints": {
     "raw_summary": "https://web-production-3c1c4.up.railway.app/api/public/results-summary",

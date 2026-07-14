@@ -9,7 +9,7 @@ Propeller Picks is an AI-assisted player-prop research workspace for web and mob
 ## What Is Verifiable Today
 
 - Product: web, iOS, and Android player-prop research workflows.
-- Sports represented: NFL, NBA, NHL, MLB, soccer, and PGA.
+- Current sports represented: NFL, NBA, NHL, MLB, and soccer.
 - Public evidence: a dated historical database snapshot and a smaller ledger produced by current API collapse rules.
 - Data limitation: the historical archive includes repeated analysis snapshots and legacy retrospective data.
 - Claim limitation: the archive is not a uniquely published forward-test, ROI, profit, or future-performance claim.
