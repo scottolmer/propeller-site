@@ -113,6 +113,8 @@
     }
   }
 
-  hydrateRecord();
-  hydrateForwardRoi();
+  // Hydrate the fast forward ledger before the slower historical archive.
+  // Railway serializes these requests during cold or busy periods, and the
+  // historical query must never block the primary ROI proof point.
+  hydrateForwardRoi().finally(hydrateRecord);
 })();
