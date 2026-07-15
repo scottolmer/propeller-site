@@ -12,7 +12,7 @@ PAGES = {
     "ai-sports-betting/index.html": ("Free AI Sports Betting Tool", "/ai-sports-betting/"),
     "guides/how-ai-sports-betting-works/index.html": ("How AI Sports Betting Analysis Works", "/guides/how-ai-sports-betting-works/"),
     "research/ai-player-prop-benchmark/index.html": ("AI Player Prop Tools Compared", "/research/ai-player-prop-benchmark/"),
-    "research/prospective-record/index.html": ("Forward Publication Record", "/research/prospective-record/"),
+    "research/prospective-record/index.html": ("Forward ROI Record", "/research/prospective-record/"),
     "tools/ai-betting-prompt-builder/index.html": ("AI Sports Betting Prompt Builder", "/tools/ai-betting-prompt-builder/"),
 }
 PICKS = [ROOT / "picks" / "index.html", *sorted((ROOT / "picks").glob("*/index.html"))]

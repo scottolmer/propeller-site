@@ -64,7 +64,7 @@ def schema() -> str:
                 "description": DESCRIPTION,
                 "isPartOf": {"@id": "https://propellerpicks.com/#website"},
                 "about": {"@id": "https://propellerpicks.com/#software"},
-                "dateModified": "2026-07-13",
+                "dateModified": "2026-07-15",
             },
             {
                 "@type": "SoftwareApplication",
@@ -161,7 +161,7 @@ def head() -> str:
   </script>
   <link rel="preload" href="/assets/fonts/familjen-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260713">
+  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260715">
 </head>"""
 
 
@@ -208,6 +208,17 @@ CSS_ADDITIONS = r"""
 .record-source-links { display: inline-flex; flex-wrap: wrap; gap: 12px; }
 .record-source-links a { color: var(--orange-dark); font-weight: 600; text-decoration: none; }
 .record-source-links a:hover { text-decoration: underline; }
+
+.record-copy .record-method-link { margin-top: 18px; font-size: 14px; }
+.record-method-link a { color: var(--orange-dark); font-weight: 600; text-decoration: none; }
+.record-method-link a:hover { text-decoration: underline; }
+
+[data-forward-roi],
+[data-forward-priced-settled],
+[data-forward-net-units] { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+[data-roi-tone="positive"] { color: var(--green); }
+[data-roi-tone="negative"] { color: #b4382d; }
+[data-roi-tone="neutral"] { color: var(--ink); }
 
 .home-faq {
   padding: 112px 0;
@@ -460,6 +471,14 @@ def main() -> None:
     html = html.replace("<body>", '<body class="pp-site-system pp-home">', 1)
     html = html.replace("../images/", "/images/").replace("../assets/", "/assets/")
     html = html.replace(
+        '<script src="/assets/js/live-record.js"></script>',
+        '<script src="/assets/js/live-record.js?v=20260715"></script>',
+    )
+    html = html.replace(
+        '<a class="button secondary" href="/results/">Review the public record</a>',
+        '<a class="button secondary" href="/ai-sports-betting/">Explore the AI research hub</a>',
+    )
+    html = html.replace(
         '<img src="/images/web-app-dashboard-live.png" width="1462" height="797"',
         '<img src="/images/web-app-dashboard-live.png" srcset="/images/web-app-dashboard-live-640.avif 640w, /images/web-app-dashboard-live-768.avif 768w, /images/web-app-dashboard-live-1024.avif 1024w, /images/web-app-dashboard-live.png 1462w" sizes="(max-width: 1080px) calc(100vw - 32px), 56vw" width="1462" height="797" fetchpriority="high" decoding="async"',
     )
@@ -474,15 +493,15 @@ def main() -> None:
     html = html.replace("Public graded record", "Documented historical archive")
     html = html.replace(
         '<div class="proof-item proof-live"><small>Verified record</small><strong>● Live</strong><span data-record-updated>Snapshot · Jul 7, 2026 · live API in production</span></div>',
-        '<div class="proof-item proof-live"><small>Historical archive</small><strong>● Dated</strong><span data-record-updated>Static API snapshot · July 13, 2026; live refresh enabled</span></div>',
+        '<div class="proof-item proof-live"><small>Historical archive</small><strong>● Dated</strong><span data-record-updated>Static API snapshot · July 15, 2026; live refresh enabled</span></div>',
     )
     html = html.replace(
         '<div class="proof-item"><small>Graded props</small><strong data-record-total>2M+</strong><span data-record-total-detail>2,099,988 total props</span></div>',
-        '<div class="proof-item"><small>Collapsed ledger</small><strong data-record-total>284K</strong><span data-record-total-detail>284,005 ledger entries</span></div>',
+        '<div class="proof-item"><small>Collapsed ledger</small><strong data-record-total>283K</strong><span data-record-total-detail>283,187 ledger entries</span></div>',
     )
     html = html.replace(
         '<div class="proof-item"><small>Recorded outcomes</small><strong data-record-outcome>1.41M W · 687.5K L · 30 P</strong><span>Pushes tracked separately</span></div>',
-        '<div class="proof-item"><small>Historical database</small><strong data-record-raw-total>2.12M</strong><span>Raw graded analysis rows</span></div>',
+        '<div class="proof-item"><small>Historical database</small><strong data-record-raw-total>2.11M</strong><span>Raw graded analysis rows</span></div>',
     )
     html = html.replace(
         '<div class="proof-item"><small>Historical win rate</small><strong data-record-win-rate>67.3%</strong><span>Past performance is not predictive</span></div>',
@@ -490,11 +509,11 @@ def main() -> None:
     )
     html = html.replace(
         '<div class="record-copy scroll-reveal"><p class="section-kicker">03 / Proof before the pitch</p><h2>Trust the record, not the promise.</h2><p>Every published model output is logged before the result is known, graded against the final stat, and rolled into a public record you can inspect.</p><a class="button" href="/results/">Inspect every graded result →</a></div>',
-        '<div class="record-copy scroll-reveal"><p class="section-kicker">03 / Evidence before the pitch</p><h2>Read the unit before the number.</h2><p>The archive separates raw analysis rows from collapsed ledger entries. Because it includes repeated snapshots and retrospective data, it is not a forward-tested ROI record.</p><a class="button" href="/results/">Read the archive and definitions →</a></div>',
+        '<div class="record-copy scroll-reveal"><p class="section-kicker">03 / Evidence before the pitch</p><h2>Every featured pick. One honest unit.</h2><p>ROI starts with a clean forward record—not the historical archive. Each eligible top pick is frozen before its event, graded afterward, and measured as a flat one-unit result at the exact captured price.</p><a class="button" href="/research/prospective-record/">Audit the forward record →</a><p class="record-method-link"><a href="/how-it-works/">Read the grading and ROI methodology →</a></p></div>',
     )
     html = re.sub(
         r'<div class="record-board scroll-reveal">.*?<div class="record-update" data-record-updated>Snapshot · Jul 7, 2026 · live API in production</div></div>',
-        '<div class="record-board scroll-reveal"><div class="record-head"><span>Public historical archive</span><span>Dated snapshot</span></div><div class="record-main"><div class="record-primary"><small>Collapsed ledger entries</small><strong data-record-total-secondary>284K</strong><span>Entries after the current collapse rules.</span></div><div class="record-stats"><div class="record-stat"><small>Raw database rows</small><strong data-record-raw-total-secondary>2.12M</strong></div><div class="record-stat"><small>Claim status</small><strong>No ROI claim</strong></div></div></div><div class="record-update"><span data-record-updated>Static API snapshot · July 13, 2026; live refresh enabled</span><span class="record-source-links"><a href="/results/">Source data</a><a href="/how-it-works/">Methodology</a></span></div></div>',
+        '<div class="record-board scroll-reveal"><div class="record-head"><span>Forward ROI ledger</span><span>Live from day one</span></div><div class="record-main"><div class="record-primary"><small>Flat-stake ROI</small><strong data-forward-roi data-roi-tone="neutral">—</strong><span data-forward-roi-detail>Waiting for the first settled pick with a captured price.</span></div><div class="record-stats"><div class="record-stat"><small>Priced settled picks</small><strong data-forward-priced-settled>0</strong></div><div class="record-stat"><small>Net result</small><strong data-forward-net-units data-roi-tone="neutral">0.00u</strong></div></div></div><div class="record-update"><span data-forward-roi-updated>Forward ledger initializes with the next eligible public pick.</span><span class="record-source-links"><a href="/research/prospective-record/">Public ledger</a><a href="/how-it-works/">Methodology</a></span></div></div>',
         html,
         count=1,
         flags=re.DOTALL,
