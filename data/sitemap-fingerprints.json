@@ -1,7 +1,7 @@
 {
   "entries": {
     "https://propellerpicks.com/": {
-      "fingerprint": "94e903225d5bf2cd18731b036d6fa1ed0143acdf396381ca7f242ef5790c08a9",
+      "fingerprint": "8e3390c208a905e697992b07fe5a3ee9add9bb2e32829e0f37b660944bc4bba2",
       "lastmod": "2026-07-15",
       "source": "index.html"
     },
@@ -46,7 +46,7 @@
       "source": "compare/propeller-vs-oddsjam/index.html"
     },
     "https://propellerpicks.com/data/index.json": {
-      "fingerprint": "db746f9b895c808860287ba062dfc1e44dfecef576412c0501c64c7ceea340fc",
+      "fingerprint": "1a5af16d27c43456f8861a3205c919858159a6572db16537ddc80a6ced2ec359",
       "lastmod": "2026-07-15",
       "source": "data/index.json"
     },
@@ -56,12 +56,12 @@
       "source": "data/methodology-version.json"
     },
     "https://propellerpicks.com/data/performance-snapshot.json": {
-      "fingerprint": "e471a0b10ca98a9ebc20e2ce6cd7fcd4224628929c4bb45d1cfcd81cff7f1fd9",
+      "fingerprint": "04e74b300b20e40288adb2154c5ae40692f7c0e3297c87b18ccd8208e21c497e",
       "lastmod": "2026-07-15",
       "source": "data/performance-snapshot.json"
     },
     "https://propellerpicks.com/data/prospective-picks.json": {
-      "fingerprint": "2d08e4dfc1458dc7de3b0140ca935b71b3cb434d1ac1c8f801193824e9ee5054",
+      "fingerprint": "cbab1d1f7957b035915f5a00c2b944c87766b8eeb901eb17af6c92c1ddb7c4ff",
       "lastmod": "2026-07-15",
       "source": "data/prospective-picks.json"
     },
@@ -166,8 +166,8 @@
       "source": "help/what-sports-does-propeller-support/index.html"
     },
     "https://propellerpicks.com/how-it-works/": {
-      "fingerprint": "96becb27d9dfe588c40deae7372646d8fdeddda7fe97a29ddbc326c0c4bdde5e",
-      "lastmod": "2026-07-13",
+      "fingerprint": "9fdf1fa5cc5b2fa7c0ed148f8e48c12e553fc8272cbeddb76c52057fa163e673",
+      "lastmod": "2026-07-15",
       "source": "how-it-works/index.html"
     },
     "https://propellerpicks.com/llms.txt": {
@@ -236,8 +236,8 @@
       "source": "research/ai-player-prop-benchmark/index.html"
     },
     "https://propellerpicks.com/research/prospective-record/": {
-      "fingerprint": "9d8cf3f7162294ce812632b9829a43ad41eba706d0f509febef1e68667c09e51",
-      "lastmod": "2026-07-14",
+      "fingerprint": "a71457af5b15ee5c3ba340e4e98f29feb0b73ef300adaac685f61d5130c127f3",
+      "lastmod": "2026-07-15",
       "source": "research/prospective-record/index.html"
     },
     "https://propellerpicks.com/results/": {
