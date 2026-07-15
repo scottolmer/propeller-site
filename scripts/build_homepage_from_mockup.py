@@ -493,7 +493,7 @@ def main() -> None:
     html = html.replace("Public graded record", "Documented historical archive")
     html = html.replace(
         '<div class="proof-item proof-live"><small>Verified record</small><strong>● Live</strong><span data-record-updated>Snapshot · Jul 7, 2026 · live API in production</span></div>',
-        '<div class="proof-item proof-live"><small>Historical archive</small><strong>● Dated</strong><span data-record-updated>Static API snapshot · July 14, 2026; live refresh enabled</span></div>',
+        '<div class="proof-item proof-live"><small>Historical archive</small><strong>● Dated</strong><span data-record-updated>Static API snapshot · July 15, 2026; live refresh enabled</span></div>',
     )
     html = html.replace(
         '<div class="proof-item"><small>Graded props</small><strong data-record-total>2M+</strong><span data-record-total-detail>2,099,988 total props</span></div>',
