@@ -472,7 +472,7 @@ def main() -> None:
     html = html.replace("../images/", "/images/").replace("../assets/", "/assets/")
     html = html.replace(
         '<script src="/assets/js/live-record.js"></script>',
-        '<script src="/assets/js/live-record.js?v=20260715"></script>',
+        '<script src="/assets/js/live-record.js?v=20260715-2"></script>',
     )
     html = html.replace(
         '<a class="button secondary" href="/results/">Review the public record</a>',

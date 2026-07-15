@@ -351,7 +351,7 @@
     const revealObserver = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("visible"); revealObserver.unobserve(entry.target); } }), { threshold: .12 });
     document.querySelectorAll(".scroll-reveal").forEach((node) => revealObserver.observe(node));
   </script>
-  <script src="/assets/js/live-record.js?v=20260715"></script>
+  <script src="/assets/js/live-record.js?v=20260715-2"></script>
   <script>
     const mirrorRecordField = (attribute) => {
       const fields = [...document.querySelectorAll(`[${attribute}]`)];
