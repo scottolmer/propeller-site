@@ -272,10 +272,8 @@ def render_html(snapshot: dict) -> None:
     for attr, value in (
         ("data-record-updated", update_text),
         ("data-record-total", format_short(ledger["total"])),
-        ("data-record-total-secondary", format_short(ledger["total"])),
         ("data-record-total-detail", f"{format_number(ledger['total'])} ledger entries"),
         ("data-record-raw-total", format_short(archive["total"])),
-        ("data-record-raw-total-secondary", format_short(archive["total"])),
     ):
         home = replace_text(home, attr, value)
     home_path.write_text(home, encoding="utf-8")

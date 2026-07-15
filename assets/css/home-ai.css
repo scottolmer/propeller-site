@@ -295,6 +295,17 @@
 .record-source-links a { color: var(--orange-dark); font-weight: 600; text-decoration: none; }
 .record-source-links a:hover { text-decoration: underline; }
 
+.record-copy .record-method-link { margin-top: 18px; font-size: 14px; }
+.record-method-link a { color: var(--orange-dark); font-weight: 600; text-decoration: none; }
+.record-method-link a:hover { text-decoration: underline; }
+
+[data-forward-roi],
+[data-forward-priced-settled],
+[data-forward-net-units] { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+[data-roi-tone="positive"] { color: var(--green); }
+[data-roi-tone="negative"] { color: #b4382d; }
+[data-roi-tone="neutral"] { color: var(--ink); }
+
 .home-faq {
   padding: 112px 0;
   border-top: 1px solid var(--line);
