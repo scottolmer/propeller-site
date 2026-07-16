@@ -26,24 +26,39 @@
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
-      "fingerprint": "cd53ae3e7c60bf053e82bb836e1e6b303eb8f307e4ccf75491b95656ac08ada4",
-      "lastmod": "2026-07-13",
+      "fingerprint": "d6b05a47208b99ac2547e298bdd765d60c0db47524630994043900375dde8555",
+      "lastmod": "2026-07-15",
       "source": "compare/index.html"
     },
+    "https://propellerpicks.com/compare/outlier/": {
+      "fingerprint": "b9434fde1a34ff7c3f72eccd9ff3286d4d1daec13551923f29cf4678ab91e825",
+      "lastmod": "2026-07-15",
+      "source": "compare/outlier/index.html"
+    },
     "https://propellerpicks.com/compare/pick6-vs-prizepicks/": {
-      "fingerprint": "9056bb62bcc05ea169fd9cc22be4544f57df0a48d5e9d3055c1b5c35708994b0",
-      "lastmod": "2026-07-13",
+      "fingerprint": "d13b89c41aa6e70b5f604f8cf23f466ec7ad88f813894fa681b4f996656131f9",
+      "lastmod": "2026-07-15",
       "source": "compare/pick6-vs-prizepicks/index.html"
     },
+    "https://propellerpicks.com/compare/playerprops-ai/": {
+      "fingerprint": "9696a2e74a56a14ed2b69a2455df4ef6ec9cb0f8263ce396e204c973a970c93a",
+      "lastmod": "2026-07-15",
+      "source": "compare/playerprops-ai/index.html"
+    },
     "https://propellerpicks.com/compare/propeller-vs-bettingpros/": {
-      "fingerprint": "768d419e5951db8888176f9655c2fbbd32fbeaa5c6b5e4d3dd664154f35687b3",
-      "lastmod": "2026-07-14",
+      "fingerprint": "510f7f66cc0240a6ea8958e06a08d6403910821e6f2c73e311a247383ab75e91",
+      "lastmod": "2026-07-15",
       "source": "compare/propeller-vs-bettingpros/index.html"
     },
     "https://propellerpicks.com/compare/propeller-vs-oddsjam/": {
-      "fingerprint": "72f9f9a68d79bcd51b0dd317a0b109b9db15b82a97c5d2abce9e7a61ad94db5c",
-      "lastmod": "2026-07-14",
+      "fingerprint": "7ae85954e35357404c6d3e9d5d462a8f06b62223d36a119036c9253d8d0530d7",
+      "lastmod": "2026-07-15",
       "source": "compare/propeller-vs-oddsjam/index.html"
+    },
+    "https://propellerpicks.com/compare/rithmm/": {
+      "fingerprint": "c4d983c0eb0c2b099deda4e13d61fb7308bb2c757954a3472d8741763af0e744",
+      "lastmod": "2026-07-15",
+      "source": "compare/rithmm/index.html"
     },
     "https://propellerpicks.com/data/index.json": {
       "fingerprint": "46c82804df6e454583fef47f9a7189b57718208600182845ce0191160a02ba0d",
@@ -171,8 +186,8 @@
       "source": "how-it-works/index.html"
     },
     "https://propellerpicks.com/llms.txt": {
-      "fingerprint": "076040499f6b0e5dc431ac9548dee308b9ac4eaa5f53e0d0e0e1ef1d501ef925",
-      "lastmod": "2026-07-14",
+      "fingerprint": "fb8cf7b3589d475354014d97d8c8cbc718c6c4f49f52a8635cdf4c8cdfe14b2c",
+      "lastmod": "2026-07-15",
       "source": "llms.txt"
     },
     "https://propellerpicks.com/picks/": {
@@ -231,8 +246,8 @@
       "source": "privacy/index.html"
     },
     "https://propellerpicks.com/research/ai-player-prop-benchmark/": {
-      "fingerprint": "7ae4c6d243c13121ec193f8493c8185410887bd38b0e3e457437e492f92811e8",
-      "lastmod": "2026-07-14",
+      "fingerprint": "850387034697d87957dbf2250a53633bbe8506300cc471de7a9e6f135989a00f",
+      "lastmod": "2026-07-15",
       "source": "research/ai-player-prop-benchmark/index.html"
     },
     "https://propellerpicks.com/research/prospective-record/": {
