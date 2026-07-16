@@ -11,6 +11,7 @@ python3 scripts/apply_analyzer_indexing.py    # re-select top analyzer players t
 python3 scripts/inject_popular_players.py     # refresh player link sections
 python3 scripts/generate_help_pages.py        # rebuild answer-first help pages
 python3 scripts/generate_comparison_pages.py  # rebuild reviewed comparison pages
+python3 scripts/generate_sport_answer_modules.py # rebuild sport-specific answer modules
 python3 scripts/apply_site_shell.py --include-home
 python3 scripts/normalize_entity_metadata.py  # keep one formal entity name
 python3 scripts/normalize_alias_metadata.py   # align alias metadata to canonicals
@@ -68,6 +69,11 @@ All scripts are idempotent and safe to run repeatedly.
   comparison details from `data/comparison-pages.json` and keeps the generated
   cards, ItemList schema on `/compare/`, and comparison links in `llms.txt`
   synchronized with the same source data.
+- **generate_sport_answer_modules.py** — adds concise, sport-specific analyzer
+  answers to evidence-qualified existing `/picks/{sport}/` canonicals. It reads
+  `data/sport-answer-modules.json`, never creates a new URL, preserves the
+  shared `/analyzer/` product-intent owner, and includes an honest no-slate
+  state for offseason or unavailable boards.
 - **generate_sitemap.py** — includes every indexable self-canonical page and
   preserves `lastmod` when the page-specific semantic fingerprint is unchanged.
   Shared shell changes do not falsely refresh the entire site. Use `--check`
@@ -93,7 +99,9 @@ python3 scripts/check_ai_search_assets.py
 python3 scripts/test_platform_intent_ownership.py
 python3 scripts/generate_help_pages.py --check
 python3 scripts/generate_comparison_pages.py --check
+python3 scripts/generate_sport_answer_modules.py --check
 python3 -m unittest scripts/test_ai_search_assets.py
 python3 -m unittest scripts/test_schema_contracts.py
+python3 -m unittest scripts/test_sport_answer_modules.py
 python3 scripts/generate_sitemap.py --check
 ```
