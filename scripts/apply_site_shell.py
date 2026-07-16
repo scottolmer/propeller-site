@@ -14,6 +14,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED_PARTS = {"mockups", "analytics-dashboard", ".git"}
+STATIC_REDIRECT_RE = re.compile(
+    r'<meta\s+http-equiv=["\']refresh["\']\s+content=["\']0;\s*url=/[^"\']+["\']',
+    re.IGNORECASE,
+)
 
 HEAD_BLOCK = """  <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -100,6 +104,9 @@ def production_files(include_home: bool) -> list[Path]:
         if any(part in EXCLUDED_PARTS for part in path.relative_to(ROOT).parts):
             continue
         if not include_home and path == ROOT / "index.html":
+            continue
+        html = path.read_text(encoding="utf-8")
+        if '<meta name="robots" content="noindex,follow">' in html and STATIC_REDIRECT_RE.search(html):
             continue
         files.append(path)
     return sorted(files)

@@ -1,0 +1,27 @@
+{
+  "version": "2026-07-15",
+  "shared_analyzer": "/analyzer/",
+  "platforms": [
+    {
+      "name": "PrizePicks",
+      "current_research": "/picks/prizepicks/",
+      "payout_calculator": "/tools/prizepicks-payout-calculator/",
+      "strategy_guide": "/guides/prizepicks-strategy/",
+      "legacy_alias": "/prizepicks/"
+    },
+    {
+      "name": "Underdog",
+      "current_research": "/picks/underdog/",
+      "payout_calculator": "/tools/underdog-payout-calculator/",
+      "strategy_guide": "/guides/underdog-strategy/",
+      "legacy_alias": "/underdog/"
+    },
+    {
+      "name": "DraftKings Pick6",
+      "current_research": "/picks/pick6/",
+      "payout_calculator": "/tools/pick6-payout-calculator/",
+      "strategy_guide": "/guides/pick6-strategy/",
+      "legacy_alias": "/pick6/"
+    }
+  ]
+}

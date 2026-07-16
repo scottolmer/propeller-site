@@ -58,6 +58,7 @@ jobs:
           python3 scripts/sync_faq_schema.py --check
           python3 scripts/check_schema_parity.py
           python3 scripts/check_ai_search_assets.py
+          python3 scripts/test_platform_intent_ownership.py
           python3 -m unittest scripts/test_ai_search_assets.py
           python3 scripts/generate_sitemap.py --check
 
