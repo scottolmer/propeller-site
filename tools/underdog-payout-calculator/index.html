@@ -51,50 +51,50 @@
     },
     {
       "@type": "Question",
-      "name": "How does Underdog payout work?",
+      "name": "How do Underdog Standard payouts work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Underdog payouts depend on entry size, Standard vs Flex mode, and the final payout shown before you submit. Standard entries require every pick to hit. Flex entries can pay reduced amounts when one or more picks miss."
+        "text": "A Standard entry requires every active pick to be correct. Current base payouts range from 3.5x for two picks to 120x for eight picks, before selection multipliers, correlated projections, promotions, or other entry-specific adjustments."
       }
     },
     {
       "@type": "Question",
-      "name": "How much do Underdog picks pay out?",
+      "name": "How do Underdog Flex payouts work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Underdog payouts depend on entry size and whether you choose Standard or Flex. The 2026 chart shown here ranges from 3.5x for a 2-pick Standard entry to 120x for an 8-pick Standard entry."
+        "text": "Flex entries can return a reduced amount when some picks lose. Base sweep payouts range from 3.25x for three picks to 80x for eight picks, while the lower payout depends on the number of correct picks and the multiplier shown on the entry."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the Underdog Flex payout?",
+      "name": "What happens after one or two losses on an Underdog Flex entry?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Underdog Flex lets you win even if some picks miss. Displayed Flex amounts can be up-to payouts, and modifiers or entry terms may change the final amount, so confirm the payout on the final entry screen."
+        "text": "A three- through eight-pick Flex entry has a listed base return after one loss. Six- through eight-pick Flex entries also have a listed base return after two losses. These are up-to amounts, so the actual result depends on the entry's selections and displayed multiplier."
       }
     },
     {
       "@type": "Question",
-      "name": "When does Underdog Fantasy payout?",
+      "name": "What happens after a tie, DNP, or void on Underdog?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Underdog contest winnings generally become available after the entry is graded. Withdrawable balance can depend on bonus, promotion, program credit, or playthrough terms, so check your account balance details after grading."
+        "text": "A tied projection or qualifying DNP is generally voided. If at least two eligible picks from different teams remain, an otherwise winning entry pays for the remaining active pick count; if the entry becomes invalid, Underdog refunds it. A qualifying Rescue is separate, conditional, and applied at Underdog's discretion."
       }
     },
     {
       "@type": "Question",
-      "name": "What is the maximum Underdog payout?",
+      "name": "What is the difference between Underdog's 120x base payout and maximum multiplier?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The maximum multiplier on Underdog is 120x on an 8-pick Standard entry. With a $50 entry, that's a $6,000 payout."
+        "text": "The 120x multiplier is the current base payout for an eight-pick Standard entry. Underdog separately states that selection modifiers can raise a Standard or Flex entry as high as a 5,000x maximum multiplier."
       }
     },
     {
       "@type": "Question",
-      "name": "Is Underdog Standard or Flex better?",
+      "name": "Why can the final Underdog payout differ from this calculator?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Standard pays more but requires every pick to hit. Flex provides a safety net — you can still profit missing 1-2 picks. Flex is better for bankroll management, Standard for max upside."
+        "text": "Alternative projections, selection multipliers, correlated picks, promotions, contest format, voids, and Flex results can change a payout. This calculator uses published base tables; the amount displayed by Underdog on the final entry screen controls."
       }
     }
   ]
@@ -104,7 +104,7 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#06080D;--surface:#0D1117;--surface-2:#161B22;--surface-3:#1C2333;--border:rgba(255,255,255,0.06);--border-accent:rgba(249,115,22,0.25);--text-1:#F1F5F9;--text-2:#94A3B8;--text-3:#64748B;--accent:#F97316;--accent-glow:rgba(249,115,22,0.3);--win:#10B981;--loss:#EF4444;--font:'Satoshi','Inter',-apple-system,BlinkMacSystemFont,sans-serif;--mono:'JetBrains Mono','SF Mono',monospace}
-html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text-2);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}.container{max-width:900px;margin:0 auto;padding:0 24px}a{color:var(--accent);text-decoration:none}a:hover{opacity:.85}h1,h2,h3{color:var(--text-1);font-weight:800}
+html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text-2);font-family:var(--font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}body.tool-calculator-page .hero{min-height:auto}.container{max-width:900px;margin:0 auto;padding:0 24px}a{color:var(--accent);text-decoration:none}a:hover{opacity:.85}h1,h2,h3{color:var(--text-1);font-weight:800}
 nav{position:sticky;top:0;z-index:100;background:rgba(6,8,13,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}nav .container{display:flex;align-items:center;justify-content:space-between;height:60px}.logo{display:flex;align-items:center;gap:10px;color:var(--text-1);font-weight:800;font-size:18px;text-decoration:none}.logo-icon{width:26px;height:26px;background:linear-gradient(135deg,#F97316,#EA580C);clip-path:polygon(50% 0%,100% 50%,50% 100%,0% 50%)}.nav-back{color:var(--text-3);font-size:14px;display:flex;align-items:center;gap:6px}.nav-back:hover{color:var(--text-2)}
 .hero{padding:80px 0 40px;text-align:center}.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;background:var(--surface-2);border:1px solid var(--border-accent);border-radius:100px;font-size:12px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.08em;margin-bottom:24px}.hero h1{font-size:clamp(28px,5vw,44px);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}.hero h1 .accent{color:var(--accent)}.hero p{font-size:18px;color:var(--text-2);max-width:560px;margin:0 auto}
 .calc-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:clamp(24px,4vw,40px);margin-bottom:48px;position:relative;overflow:hidden}.calc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),#EA580C)}
@@ -117,9 +117,11 @@ select,input[type="number"]{background:var(--surface-2);border:1px solid var(--b
 .flex-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);border-radius:12px;overflow:hidden;margin-top:8px}.flex-cell{background:var(--surface-2);padding:14px;text-align:center}.flex-cell.header{background:var(--surface-3);font-size:11px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.08em}.flex-cell .val{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--text-1)}.flex-cell .val.green{color:var(--win)}.flex-cell .val.orange{color:var(--accent)}.flex-cell .sub{font-size:12px;color:var(--text-3);margin-top:4px}
 .prob-bar{margin-top:20px}.prob-label{display:flex;justify-content:space-between;font-size:13px}
 .copy-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;background:var(--surface-2);border:1px solid var(--border);border-radius:10px;color:var(--text-2);font-size:14px;font-weight:600;cursor:pointer;transition:all .2s}.copy-btn:hover{border-color:var(--accent);color:var(--text-1)}
+.result-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:16px}.result-link{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border:1px solid var(--border);border-radius:10px;background:var(--surface-2);color:var(--text-1);font-size:14px;font-weight:700}.result-link.primary{border-color:var(--border-accent);color:var(--accent)}
 .content-section{margin-bottom:64px}.content-section h2{font-size:clamp(22px,3.5vw,30px);letter-spacing:-.02em;margin-bottom:16px}.content-section p{font-size:16px;line-height:1.8;color:var(--text-2);margin-bottom:16px;max-width:700px}
+.answer-block{background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--accent);border-radius:16px;padding:clamp(22px,4vw,34px);margin-bottom:48px}.answer-block h2{font-size:clamp(21px,3vw,28px);margin-bottom:12px}.answer-block p{max-width:none;margin-bottom:14px}.answer-block ul{padding-left:20px;margin:0 0 16px}.answer-block li{margin:8px 0}.source-note{font-size:14px;color:var(--text-3);padding-top:14px;border-top:1px solid var(--border)}
 .payout-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;margin:24px 0}.payout-table th{background:var(--surface-3);padding:14px 20px;font-size:12px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.08em;text-align:left}.payout-table td{padding:14px 20px;border-top:1px solid var(--border);font-size:15px}.payout-table td:first-child{font-weight:600;color:var(--text-1)}.payout-table .multiplier{font-family:var(--mono);font-weight:700;color:var(--accent)}
-.faq-item{border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden}.faq-q{padding:20px 24px;background:var(--surface);font-weight:700;color:var(--text-1);cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:16px}.faq-q:hover{background:var(--surface-2)}.faq-q svg{width:18px;height:18px;transition:transform .2s;flex-shrink:0}.faq-q.open svg{transform:rotate(180deg)}.faq-a{padding:0 24px;max-height:0;overflow:hidden;transition:all .3s ease}.faq-a.open{padding:0 24px 20px;max-height:300px}.faq-a p{font-size:15px;line-height:1.7}
+.faq-item{border:1px solid var(--border);border-radius:14px;margin-bottom:12px;overflow:hidden}.faq-q{width:100%;padding:20px 24px;background:var(--surface);border:0;font-family:var(--font);font-weight:700;color:var(--text-1);cursor:pointer;display:flex;justify-content:space-between;align-items:center;text-align:left;font-size:16px}.faq-q:hover{background:var(--surface-2)}.faq-q:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}.faq-q svg{width:18px;height:18px;transition:transform .2s;flex-shrink:0}.faq-q.open svg{transform:rotate(180deg)}.faq-a{padding:0 24px;max-height:0;overflow:hidden;transition:all .3s ease}.faq-a.open{padding:0 24px 20px;max-height:380px}.faq-a p{font-size:15px;line-height:1.7}
 .cta-box{text-align:center;padding:48px 24px;background:var(--surface);border:1px solid var(--border);border-radius:20px;margin:48px 0}.cta-box h2{margin-bottom:12px}.cta-box p{max-width:480px;margin:0 auto 24px}.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:linear-gradient(135deg,#F97316,#EA580C);color:#000;font-weight:800;font-size:16px;border-radius:12px;transition:transform .2s,box-shadow .2s}.cta-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px var(--accent-glow);opacity:1}
 footer{border-top:1px solid var(--border);padding:32px 0}footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}footer a,footer span{font-size:13px;color:var(--text-3)}footer a:hover{color:var(--text-2)}
 </style>
@@ -167,20 +169,20 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
   <section class="hero">
     <div class="hero-badge">Free Tool · Underdog Fantasy · 2026</div>
     <h1>Underdog Standard &amp; Flex <span class="accent">Payout Calculator</span></h1>
-    <p>Calculate how much Underdog pays for Standard and Flex entries from 2-8 picks, including 7-pick and 8-pick cards, partial Flex results, and estimated hit probability.</p>
+    <p>Estimate Underdog Standard and Flex base payouts for 2-8 picks, then test a visitor-supplied hit-rate scenario without treating it as a prediction.</p>
   </section>
 
   <div class="calc-card">
     <div class="form-row">
       <div class="form-group">
-        <label class="form-label">Entry Type</label>
+        <label class="form-label" for="entryType">Entry Type</label>
         <select id="entryType" onchange="updateUI()">
           <option value="standard">Standard (All-or-Nothing)</option>
           <option value="flex">Flex (Partial Payouts)</option>
         </select>
       </div>
       <div class="form-group">
-        <label class="form-label">Number of Picks</label>
+        <label class="form-label" for="numPicks">Number of Picks</label>
         <select id="numPicks">
           <option value="2">2 Picks</option>
           <option value="3">3 Picks</option>
@@ -195,18 +197,18 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
 
     <label class="form-label">Entry Amount</label>
     <div class="amount-pills">
-      <button class="pill" onclick="setAmt(5)">$5</button>
-      <button class="pill" onclick="setAmt(10)">$10</button>
-      <button class="pill active" onclick="setAmt(20)">$20</button>
-      <button class="pill" onclick="setAmt(50)">$50</button>
-      <button class="pill" onclick="setAmt(100)">$100</button>
-      <div style="display:flex;align-items:center;gap:4px"><span style="color:var(--text-3);font-size:18px;font-weight:700">$</span><input type="number" id="customAmt" placeholder="Custom" min="1" max="1000" style="width:100px" oninput="setCustom()"></div>
+      <button class="pill" type="button" onclick="setAmt(5, this)">$5</button>
+      <button class="pill" type="button" onclick="setAmt(10, this)">$10</button>
+      <button class="pill active" type="button" onclick="setAmt(20, this)">$20</button>
+      <button class="pill" type="button" onclick="setAmt(50, this)">$50</button>
+      <button class="pill" type="button" onclick="setAmt(100, this)">$100</button>
+      <div style="display:flex;align-items:center;gap:4px"><span style="color:var(--text-3);font-size:18px;font-weight:700" aria-hidden="true">$</span><input type="number" id="customAmt" aria-label="Custom entry amount" placeholder="Custom" min="1" max="1000" style="width:100px" oninput="setCustom()"></div>
     </div>
 
     <div class="hit-rate-control">
       <div>
-        <label class="form-label" for="hitRate">Example Hit Rate</label>
-        <p class="hit-rate-copy">Used only for probability examples. This is not Propeller's live record and does not predict any single entry.</p>
+        <label class="form-label" for="hitRate">Your Scenario Hit Rate</label>
+        <p class="hit-rate-copy">Supplied by you for scenario estimates only. Propeller does not predict or validate this hit rate.</p>
       </div>
       <div class="hit-rate-input">
         <input type="number" id="hitRate" value="55" min="1" max="99" step="1" oninput="refreshIfVisible()">
@@ -214,21 +216,35 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
       </div>
     </div>
 
-    <button class="calc-btn" onclick="calculate()">Calculate Payout</button>
+    <button class="calc-btn" type="button" onclick="calculate()">Calculate Payout</button>
 
-    <div class="results" id="results">
+    <div class="results" id="results" aria-live="polite">
       <div class="result-grid" id="resultGrid"></div>
       <div id="flexBreakdown"></div>
       <div id="evBar"></div>
-      <div style="margin-top:16px;text-align:center"><button class="copy-btn" onclick="copyResults()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy Results</button></div>
+      <p class="result-sub" style="margin-top:16px;text-align:center">Base-table estimate only. Confirm the final multiplier and grading in Underdog.</p>
+      <div class="result-actions" aria-label="Next research steps"><a class="result-link primary" href="/picks/underdog/">Research Underdog picks</a><a class="result-link" href="/analyzer/">Free AI player prop analyzer</a></div>
+      <div style="margin-top:16px;text-align:center"><button class="copy-btn" type="button" onclick="copyResults()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy Results</button></div>
     </div>
   </div>
+
+  <section class="answer-block" aria-labelledby="calculator-answer-heading">
+    <h2 id="calculator-answer-heading">How this Underdog payout calculator works</h2>
+    <p>This free calculator applies Underdog's published base Standard and Flex payout tables to your entry amount. It can estimate a base payout and a visitor-supplied hit-rate scenario, but it cannot reproduce every entry-specific modifier or determine how Underdog will grade a live entry.</p>
+    <ul>
+      <li><strong>Base payouts:</strong> Standard entries currently range from 3.5x for two picks to 120x for eight picks. Flex sweep payouts range from 3.25x for three picks to 80x for eight picks, with smaller listed returns after eligible losses.</li>
+      <li><strong>Ties, DNPs, and voids:</strong> a tied projection or qualifying DNP is generally voided. A still-valid entry pays based on its remaining active picks; an entry made invalid by a void is refunded.</li>
+      <li><strong>Rescue:</strong> an eligible Higher selection may qualify when a player participates in the first half but does not return in the second. Rescue depends on entry, sport, projection, and promotion rules and remains at Underdog's discretion.</li>
+      <li><strong>Limits:</strong> selection multipliers, correlations, promotions, contest type, voids, and state-specific formats can change the final amount. Underdog lists a 5,000x maximum multiplier for Standard and Flex entries, separate from the 120x eight-pick Standard base payout.</li>
+    </ul>
+    <p><strong>Always use the payout and grading shown by Underdog on the final entry screen.</strong> Propeller is an independent research tool. It is not affiliated with, endorsed by, or operated by Underdog.</p>
+    <p class="source-note"><strong>Verified July 2026 from first-party sources:</strong> <a href="https://help.underdogsports.com/en/articles/13780101-pick-em-standard-flex-entry-payouts" rel="nofollow noopener noreferrer">Standard and Flex payouts</a>, <a href="https://help.underdogsports.com/en/articles/10982402-what-happens-in-the-event-of-a-tie-voided-selection" rel="nofollow noopener noreferrer">ties and voids</a>, <a href="https://help.underdogsports.com/en/articles/8970218-pick-em-rescues" rel="nofollow noopener noreferrer">Rescue rules</a>, and <a href="https://help.underdogsports.com/en/articles/10847198-maximum-payout-multiplier" rel="nofollow noopener noreferrer">maximum multiplier</a>.</p>
+  </section>
 
   <!-- Payout Charts -->
   <section class="content-section">
     <h2 id="payout-chart">Underdog Payout Chart 2026</h2>
-    <p>Underdog offers the widest pick range (2–8) and the highest max multiplier (120x) among major pick'em platforms.</p>
-    <p><strong style="color:var(--text-1)">Quick answers:</strong> Underdog Standard payouts range from 3.5x for 2 picks to 120x for 8 picks. A 4-pick Standard entry pays 10x if all four picks hit. A 4-pick Flex pays 6x for 4/4 and 1.5x for 3/4.</p>
+    <p><strong style="color:var(--text-1)">Quick answers:</strong> Underdog's published base Standard payouts range from 3.5x for 2 picks to 120x for 8 picks. A 4-pick Standard entry has a 10x base payout if all four active picks are correct. A 4-pick Flex has a 6x base payout for 4/4 and an up-to 1.5x return for 3/4.</p>
 
     <h3 style="font-size:18px;margin:24px 0 8px;color:var(--accent)">Standard Payouts (All-or-Nothing)</h3>
     <table class="payout-table">
@@ -260,44 +276,32 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
   </section>
 
   <section class="content-section">
-    <h2>Underdog vs PrizePicks vs Pick6</h2>
-    <p>How does Underdog stack up against the other major platforms? Here's a Standard mode comparison:</p>
-    <table class="payout-table">
-      <thead><tr><th>Picks</th><th>Underdog</th><th>Pick6</th><th>PrizePicks</th></tr></thead>
-      <tbody>
-        <tr><td>2</td><td class="multiplier">3.5x</td><td>3x</td><td>3x</td></tr>
-        <tr><td>3</td><td class="multiplier">6.5x</td><td>5x</td><td>6x</td></tr>
-        <tr><td>4</td><td>10x</td><td>10x</td><td>10x</td></tr>
-        <tr><td>5</td><td>20x</td><td>20x</td><td>20x</td></tr>
-        <tr><td>6</td><td>35x</td><td class="multiplier">40x</td><td>37.5x</td></tr>
-        <tr><td>7</td><td class="multiplier">65x</td><td>—</td><td>—</td></tr>
-        <tr><td>8</td><td class="multiplier">120x</td><td>—</td><td>—</td></tr>
-      </tbody>
-    </table>
-    <p>Underdog wins at 2–3 picks (3.5x/6.5x vs 3x/6x) and is the only platform offering 7–8 pick entries (65x–120x). Pick6 leads at 6 picks (40x), just ahead of PrizePicks Power Play at 37.5x. Calculate exact payouts: <a href="/tools/pick6-payout-calculator/">Pick6 calculator</a> · <a href="/tools/prizepicks-payout-calculator/">PrizePicks calculator</a></p>
+    <h2>Why the displayed Underdog payout can change</h2>
+    <p>The tables above use 1.0x selections and Underdog's published base multipliers. Alternative projections, correlated projections, promotions, and contest formats can change the combined payout shown in the entry builder.</p>
+    <p>For Flex entries, lower-result amounts are up-to estimates. Which selection loses matters because its modifier no longer contributes to the payout. Treat this calculator as a base-table reference and confirm the actual multiplier in Underdog before submitting an entry.</p>
   </section>
 
   <section class="content-section">
-    <h2>Standard vs Flex: When to Use Each</h2>
-    <p><strong style="color:var(--text-1)">Standard</strong> is all-or-nothing with higher multipliers. Use it when you have high-confidence picks and want maximum payout. Best for 2–4 pick entries where your hit rate supports the math.</p>
-    <p><strong style="color:var(--text-1)">Flex</strong> provides a safety net — you can still profit missing 1–2 picks. The tradeoff is lower max multipliers (e.g., 10x vs 20x on 5-picks). Use Flex for 5+ pick entries where the probability of a perfect sweep drops significantly.</p>
-    <p>Use the calculator's hit-rate field to test your own assumptions. Standard rewards perfect cards with higher multipliers, while Flex gives you a safety net when the chance of a perfect sweep drops.</p>
+    <h2>Standard vs Flex: How the formats differ</h2>
+    <p><strong style="color:var(--text-1)">Standard</strong> requires every active pick to be correct and uses the higher base sweep multiplier for a given pick count.</p>
+    <p><strong style="color:var(--text-1)">Flex</strong> uses a lower base sweep multiplier but can return a listed amount after one loss, or after two losses on six- through eight-pick entries. The actual return can depend on which selections lose and the modifiers attached to them.</p>
+    <p>Use the hit-rate field only to test your own scenario. It is not a Propeller forecast, a probability for a specific entry, or a recommendation of one format over another.</p>
   </section>
 
   <section class="content-section">
     <h2>Frequently Asked Questions</h2>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How much does Underdog pay for a 4-pick Standard entry?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="faq-a"><p>A 4-pick Standard entry on Underdog pays 10x your entry. A $10 entry returns $100 if all 4 picks hit.</p></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How does Underdog payout work?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="faq-a"><p>Underdog payouts depend on entry size, Standard vs Flex mode, and the final payout shown before you submit. Standard entries require every pick to hit. Flex entries can pay reduced amounts when one or more picks miss.</p></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">How much do Underdog picks pay out?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="faq-a"><p>Underdog payouts depend on entry size and whether you choose Standard or Flex. The 2026 chart shown here ranges from 3.5x for a 2-pick Standard entry to 120x for an 8-pick Standard entry.</p></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is the Underdog Flex payout?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="faq-a"><p>Underdog Flex lets you win even if some picks miss. Displayed Flex amounts can be up-to payouts, and modifiers or entry terms may change the final amount, so confirm the payout on the final entry screen.</p></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">When does Underdog Fantasy payout?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="faq-a"><p>Underdog contest winnings generally become available after the entry is graded. Withdrawable balance can depend on bonus, promotion, program credit, or playthrough terms, so check your account balance details after grading.</p></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">What is the maximum Underdog payout?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="faq-a"><p>The maximum multiplier on Underdog is 120x on an 8-pick Standard entry. With a $50 entry, that's a $6,000 payout.</p></div></div>
-    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)">Is Underdog Standard or Flex better?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg></div><div class="faq-a"><p>Standard pays more but requires every pick to hit. Flex provides a safety net — you can still profit missing 1-2 picks. Flex is better for bankroll management, Standard for max upside.</p></div></div>
+    <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">How much does Underdog pay for a 4-pick Standard entry?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>A 4-pick Standard entry on Underdog pays 10x your entry. A $10 entry returns $100 if all 4 picks hit.</p></div></div>
+    <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">How do Underdog Standard payouts work?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>A Standard entry requires every active pick to be correct. Current base payouts range from 3.5x for two picks to 120x for eight picks, before selection multipliers, correlated projections, promotions, or other entry-specific adjustments.</p></div></div>
+    <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">How do Underdog Flex payouts work?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>Flex entries can return a reduced amount when some picks lose. Base sweep payouts range from 3.25x for three picks to 80x for eight picks, while the lower payout depends on the number of correct picks and the multiplier shown on the entry.</p></div></div>
+    <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">What happens after one or two losses on an Underdog Flex entry?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>A three- through eight-pick Flex entry has a listed base return after one loss. Six- through eight-pick Flex entries also have a listed base return after two losses. These are up-to amounts, so the actual result depends on the entry's selections and displayed multiplier.</p></div></div>
+    <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">What happens after a tie, DNP, or void on Underdog?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>A tied projection or qualifying DNP is generally voided. If at least two eligible picks from different teams remain, an otherwise winning entry pays for the remaining active pick count; if the entry becomes invalid, Underdog refunds it. A qualifying Rescue is separate, conditional, and applied at Underdog's discretion.</p></div></div>
+    <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">What is the difference between Underdog's 120x base payout and maximum multiplier?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>The 120x multiplier is the current base payout for an eight-pick Standard entry. Underdog separately states that selection modifiers can raise a Standard or Flex entry as high as a 5,000x maximum multiplier.</p></div></div>
+    <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">Why can the final Underdog payout differ from this calculator?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>Alternative projections, selection multipliers, correlated picks, promotions, contest format, voids, and Flex results can change a payout. This calculator uses published base tables; the amount displayed by Underdog on the final entry screen controls.</p></div></div>
   </section>
 
   <div class="cta-box">
     <h2>Get AI-Scored Picks for Underdog</h2>
-    <p>Propeller's AI agents analyze matchup, injury, market, and trend signals so you can build Underdog entries around clearer edges.</p>
+    <p>Review current player prop research in plain language before comparing it with the line shown in Underdog.</p>
     <a href="/picks/underdog/" class="cta-btn">See Today's Underdog Picks <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
 </div>
@@ -354,8 +358,8 @@ const FLEX={
 };
 let amount=20;
 
-function setAmt(v){amount=v;document.getElementById('customAmt').value='';document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));event.target.classList.add('active')}
-function setCustom(){const v=parseInt(document.getElementById('customAmt').value);if(v>0){amount=v;document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'))}}
+function setAmt(v,button){amount=v;document.getElementById('customAmt').value='';document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));button?.classList.add('active')}
+function setCustom(){const input=document.getElementById('customAmt');const raw=Number(input.value);if(!Number.isFinite(raw)||raw<=0){amount=20;input.value='';document.querySelectorAll('.pill').forEach(p=>p.classList.toggle('active',p.textContent.trim()==='$20'));refreshIfVisible();return}amount=Math.min(1000,raw);if(raw>1000)input.value=1000;document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));refreshIfVisible()}
 
 function getHitRate(){const input=document.getElementById('hitRate');const raw=Number(input?.value||55);const clamped=Math.max(1,Math.min(99,raw));if(input&&Number(input.value)!==clamped)input.value=clamped;return clamped/100}
 function hitRateLabel(){return `${(getHitRate()*100).toFixed(0)}%`}
@@ -383,26 +387,26 @@ function calculate(){
 
   if(type==='standard'){
     const mult=STD[n];const payout=amount*mult;const profit=payout-amount;
-    const prob=Math.pow(wr,n);const ev=(payout*prob)-(amount*(1-prob));
+    const prob=Math.pow(wr,n);const ev=(payout*prob)-amount;
     grid.innerHTML=`
       <div class="result-cell"><div class="result-label">Multiplier</div><div class="result-value orange">${mult}x</div></div>
       <div class="result-cell"><div class="result-label">Payout</div><div class="result-value green">$${payout.toLocaleString()}</div><div class="result-sub">on $${amount} entry</div></div>
       <div class="result-cell"><div class="result-label">Profit</div><div class="result-value green">+$${profit.toLocaleString()}</div></div>
-      <div class="result-cell"><div class="result-label">Win Chance</div><div class="result-value">${(prob*100).toFixed(1)}%</div><div class="result-sub">at ${wrText} per pick</div></div>`;
+      <div class="result-cell"><div class="result-label">Scenario Sweep Probability</div><div class="result-value">${(prob*100).toFixed(1)}%</div><div class="result-sub">using your ${wrText} per-pick assumption</div></div>`;
     flexDiv.innerHTML='';
-    evDiv.innerHTML=`<div class="prob-label"><span>Expected value per $${amount} entry</span><span style="color:${ev>0?'var(--win)':'var(--loss)'};font-weight:700;font-family:var(--mono)">${ev>=0?'+':''}$${ev.toFixed(2)}</span></div>`;
+    evDiv.innerHTML=`<div class="prob-label"><span>Scenario expected return per $${amount} entry</span><span style="color:${ev>0?'var(--win)':'var(--loss)'};font-weight:700;font-family:var(--mono)">${ev>=0?'+':''}$${ev.toFixed(2)}</span></div><div class="prob-label" style="margin-top:4px"><span style="font-size:12px;color:var(--text-3)">Based only on your ${wrText} per-pick assumption; not a Propeller prediction</span></div>`;
   } else {
     const tiers=FLEX[n];if(!tiers)return;
     const topMult=tiers[0].mult;
-    grid.innerHTML=`<div class="result-cell"><div class="result-label">Max Payout</div><div class="result-value green">$${(amount*topMult).toLocaleString()}</div><div class="result-sub">${n}/${n} correct · ${topMult}x</div></div>`;
+    grid.innerHTML=`<div class="result-cell"><div class="result-label">Base Sweep Payout</div><div class="result-value green">$${(amount*topMult).toLocaleString()}</div><div class="result-sub">${n}/${n} correct · ${topMult}x base</div></div>`;
     let rows=tiers.map(t=>{
       const prob=binomProb(n,t.need,wr);const payout=amount*t.mult;const pl=payout-amount;
-      return `<div class="flex-cell"><div class="val">${t.need}/${n}</div><div class="sub">${(prob*100).toFixed(1)}% chance</div></div><div class="flex-cell"><div class="val orange">${t.mult}x</div></div><div class="flex-cell"><div class="val ${pl>=0?'green':''}">${pl>=0?'+':''}$${pl.toFixed(0)}</div><div class="sub">$${payout.toFixed(0)} payout</div></div>`;
+      return `<div class="flex-cell"><div class="val">${t.need}/${n}</div><div class="sub">${(prob*100).toFixed(1)}% scenario probability</div></div><div class="flex-cell"><div class="val orange">${t.mult}x</div></div><div class="flex-cell"><div class="val ${pl>=0?'green':''}">${pl>=0?'+':''}$${pl.toFixed(0)}</div><div class="sub">$${payout.toFixed(0)} base payout</div></div>`;
     }).join('');
     flexDiv.innerHTML=`<div class="flex-row"><div class="flex-cell header">Result</div><div class="flex-cell header">Multiplier</div><div class="flex-cell header">Profit</div>${rows}</div>`;
     let ev=-amount;
     for(let k=0;k<=n;k++){const prob=binomProb(n,k,wr);const tier=tiers.find(t=>t.need===k);if(tier)ev+=prob*amount*tier.mult}
-    evDiv.innerHTML=`<div class="prob-label" style="margin-top:16px"><span>Expected value per $${amount} Flex entry</span><span style="color:${ev>0?'var(--win)':'var(--loss)'};font-weight:700;font-family:var(--mono)">${ev>=0?'+':''}$${ev.toFixed(2)}</span></div><div class="prob-label" style="margin-top:4px"><span style="font-size:12px;color:var(--text-3)">Based on your selected ${wrText} hit rate per pick</span></div>`;
+    evDiv.innerHTML=`<div class="prob-label" style="margin-top:16px"><span>Scenario expected return per $${amount} Flex entry</span><span style="color:${ev>0?'var(--win)':'var(--loss)'};font-weight:700;font-family:var(--mono)">${ev>=0?'+':''}$${ev.toFixed(2)}</span></div><div class="prob-label" style="margin-top:4px"><span style="font-size:12px;color:var(--text-3)">Based only on your ${wrText} per-pick assumption; not a Propeller prediction</span></div>`;
   }
   document.getElementById('results').classList.add('show');
   gtag('event','calculator_used',{platform:'underdog',entry_type:type,num_picks:n,amount:amount});
@@ -412,13 +416,13 @@ function calculate(){
 function copyResults(){
   const type=document.getElementById('entryType').value;const n=document.getElementById('numPicks').value;
   let text=`Underdog ${type==='standard'?'Standard':'Flex'} · ${n} picks · $${amount} entry\n`;
-  if(type==='standard'){text+=`Payout: $${(amount*STD[n]).toLocaleString()} (${STD[n]}x)\nWin chance: ${(Math.pow(getHitRate(),n)*100).toFixed(1)}% at ${hitRateLabel()}/pick\n`}
+  if(type==='standard'){text+=`Base payout: $${(amount*STD[n]).toLocaleString()} (${STD[n]}x)\nScenario sweep probability: ${(Math.pow(getHitRate(),n)*100).toFixed(1)}% using your ${hitRateLabel()}/pick assumption\n`}
   else{FLEX[n].forEach(t=>{text+=`${t.need}/${n}: $${(amount*t.mult).toFixed(0)} (${t.mult}x)\n`})}
   text+=`\nCalculated at propellerpicks.com/tools/underdog-payout-calculator/`;
   window.ppPaidSearchEvents?.trackCopy({entry_type:type,num_picks:Number(n),amount:amount});
   navigator.clipboard.writeText(text).then(()=>{const b=document.querySelector('.copy-btn');b.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--win)" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Copied!';setTimeout(()=>{b.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy Results'},2000)});
 }
-function toggleFaq(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('open')}
+function toggleFaq(el){const open=el.classList.toggle('open');el.nextElementSibling.classList.toggle('open',open);el.setAttribute('aria-expanded',String(open))}
 updateUI();
 </script>
 <script src="/assets/js/mobile-nav.js?v=20260624-nav3" defer></script>
