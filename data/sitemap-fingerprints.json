@@ -101,8 +101,8 @@
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
-      "fingerprint": "d6b05a47208b99ac2547e298bdd765d60c0db47524630994043900375dde8555",
-      "lastmod": "2026-07-15",
+      "fingerprint": "786e2633d382ae68fed765239464bdcdd03058cbcd480b5a8df84e0c4a07134e",
+      "lastmod": "2026-07-16",
       "source": "compare/index.html"
     },
     "https://propellerpicks.com/compare/outlier/": {
@@ -129,6 +129,16 @@
       "fingerprint": "41181be8b32d08fe1e398f67985f0b8f08f475cd9c5002af38508ff2937c4074",
       "lastmod": "2026-07-15",
       "source": "compare/propeller-vs-oddsjam/index.html"
+    },
+    "https://propellerpicks.com/compare/props-cash/": {
+      "fingerprint": "55189a66d6c0b0c7a85f51ea6d924697c6d81c8cffd728d224190df833a2c7d2",
+      "lastmod": "2026-07-16",
+      "source": "compare/props-cash/index.html"
+    },
+    "https://propellerpicks.com/compare/props-optimizer/": {
+      "fingerprint": "5204bf752dd5b85ef95725568e2d860fe014d55c5298ca23897f8f52d4caf468",
+      "lastmod": "2026-07-16",
+      "source": "compare/props-optimizer/index.html"
     },
     "https://propellerpicks.com/compare/rithmm/": {
       "fingerprint": "0bdc952e82ce87121055e1399808c2647a0e4e1becf8d71179aa8ee88664269b",
@@ -266,8 +276,8 @@
       "source": "how-it-works/index.html"
     },
     "https://propellerpicks.com/llms.txt": {
-      "fingerprint": "84e6c302caeb0ed9243560b028b5dd0b42d0d0f07166a23d3f0b470b3bd5df33",
-      "lastmod": "2026-07-15",
+      "fingerprint": "340eeb7208649717b4c86415f106007a85a03540aec3407eb4822d352c06c271",
+      "lastmod": "2026-07-16",
       "source": "llms.txt"
     },
     "https://propellerpicks.com/picks/": {
