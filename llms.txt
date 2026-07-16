@@ -2,7 +2,7 @@
 
 > Propeller Picks is a sports prop research and analysis workspace for web and mobile. It is not a sportsbook and does not accept wagers.
 
-Last verified: 2026-07-14
+Last verified: 2026-07-15
 Canonical site: https://propellerpicks.com/
 App signup: https://app.propellerpicks.com/signup
 Public API base: https://web-production-3c1c4.up.railway.app
@@ -59,8 +59,16 @@ Use the curated public agent API or data catalog before using the full API docs.
 - Propeller vs PlayerProps.ai: https://propellerpicks.com/compare/playerprops-ai/
 - AI betting prompt builder: https://propellerpicks.com/tools/ai-betting-prompt-builder/
 - Tools: https://propellerpicks.com/tools/
-- PrizePicks calculator: https://propellerpicks.com/tools/prizepicks-payout-calculator/
-- PrizePicks strategy guide: https://propellerpicks.com/guides/prizepicks-strategy/
+- PrizePicks current research board: https://propellerpicks.com/picks/prizepicks/
+- Underdog current research board: https://propellerpicks.com/picks/underdog/
+- DraftKings Pick6 current research board: https://propellerpicks.com/picks/pick6/
+- PrizePicks payout calculator: https://propellerpicks.com/tools/prizepicks-payout-calculator/
+- Underdog payout calculator: https://propellerpicks.com/tools/underdog-payout-calculator/
+- DraftKings Pick6 payout calculator: https://propellerpicks.com/tools/pick6-payout-calculator/
+- PrizePicks entry strategy guide: https://propellerpicks.com/guides/prizepicks-strategy/
+- Underdog entry strategy guide: https://propellerpicks.com/guides/underdog-strategy/
+- DraftKings Pick6 entry strategy guide: https://propellerpicks.com/guides/pick6-strategy/
+- DraftKings Pick6 vs PrizePicks comparison: https://propellerpicks.com/compare/pick6-vs-prizepicks/
 - Help center: https://propellerpicks.com/help/
 - Pricing facts: https://propellerpicks.com/pricing.md
 

@@ -26,6 +26,12 @@ FORBIDDEN = (
     'rel="icon" type="image/svg+xml" href="data:',
     "<path d='M16 2L28 16L16 30L4 16Z'",
 )
+REDIRECT_RE = re.compile(
+    r'<meta\s+http-equiv="refresh"\s+content="0;\s*url=(/[^";]+)"', re.I
+)
+CANONICAL_RE = re.compile(
+    r'<link\s+rel="canonical"\s+href="https://propellerpicks\.com(/[^"#?]+)"', re.I
+)
 
 
 def files() -> list[Path]:
@@ -42,6 +48,17 @@ def main() -> None:
     for path in html_files:
         html = path.read_text(encoding="utf-8")
         rel = path.relative_to(ROOT)
+        redirect = REDIRECT_RE.search(html)
+        if redirect and '<meta name="robots" content="noindex,follow">' in html:
+            canonical = CANONICAL_RE.search(html)
+            target = redirect.group(1)
+            if not canonical or canonical.group(1) != target:
+                errors.append(f"{rel}: redirect target and canonical must match")
+            if f"window.location.replace('{target}')" not in html:
+                errors.append(f"{rel}: redirect page must include a location.replace fallback")
+            if f'href="{target}"' not in html:
+                errors.append(f"{rel}: redirect page must include a visible fallback link")
+            continue
         for required in REQUIRED:
             if required not in html:
                 errors.append(f"{rel}: missing {required}")

@@ -1388,6 +1388,7 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
 /* ---- CATEGORY OWNERSHIP / WORKED EXAMPLE ---- */
 .category-section {
   padding: 8px 0 88px;
+  scroll-margin-top: 76px;
 }
 
 .research-brief {
@@ -1453,14 +1454,33 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
 .platform-chip {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  padding: 9px 13px;
-  border: 1px solid rgba(255, 255, 255, .09);
+  min-height: 44px;
+  padding: 10px 15px;
+  border: 1px solid rgba(249, 115, 22, .38);
   border-radius: 999px;
-  background: rgba(255, 255, 255, .035);
+  background: rgba(249, 115, 22, .08);
   color: var(--text-primary);
+  text-decoration: none;
   font-size: 13px;
   font-weight: 700;
+  transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+a.platform-chip:hover,
+a.platform-chip:focus-visible {
+  border-color: var(--accent);
+  background: rgba(249, 115, 22, .16);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, .12);
+  outline: 2px solid transparent;
+  transform: translateY(-1px);
+}
+
+span.platform-chip {
+  border-color: var(--glass-border);
+  background: transparent;
+  color: var(--text-tertiary);
 }
 
 .platform-chip::before {
@@ -2245,9 +2265,9 @@ footer {
         <p class="brief-answer">A player prop analyzer compares a specific player-stat line with relevant sport data and returns a directional research signal. Propeller keeps the output simple: the player, stat, line, over-or-under lean, confidence context, and documented limitations. It does not submit an entry or tell you an outcome is certain.</p>
         <p class="platform-label">Designed for player-line research on</p>
         <div class="platform-row" aria-label="Supported DFS and pick'em research workflows">
-          <span class="platform-chip">PrizePicks</span>
-          <span class="platform-chip">Underdog</span>
-          <span class="platform-chip">DraftKings Pick6</span>
+          <a class="platform-chip" href="/picks/prizepicks/">PrizePicks current research</a>
+          <a class="platform-chip" href="/picks/underdog/">Underdog current research</a>
+          <a class="platform-chip" href="/picks/pick6/">DraftKings Pick6 current research</a>
           <span class="platform-chip">Similar pick'em lines</span>
         </div>
         <p class="brief-note">Platform names describe the research workflow. Propeller is independent and is not affiliated with, endorsed by, or connected to these platforms.</p>
@@ -2497,8 +2517,8 @@ footer {
         <div style="width:36px;height:36px;background:rgba(249,115,22,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--accent);" aria-hidden="true">
           <i data-lucide="wrench" style="width:18px;height:18px;"></i>
         </div>
-        <span class="link-card-label">Free DFS Tools</span>
-        <span class="link-card-sub">Calculators and analyzer</span>
+        <span class="link-card-label">Payout Calculators &amp; Prompt Builder</span>
+        <span class="link-card-sub">Entry math and research prompts</span>
       </a>
       <a href="/results/" class="link-card">
         <div style="width:36px;height:36px;background:rgba(16,185,129,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--success);" aria-hidden="true">
@@ -2507,12 +2527,12 @@ footer {
         <span class="link-card-label">Verified Results</span>
         <span class="link-card-sub">Full track record</span>
       </a>
-      <a href="/track-record/" class="link-card">
+      <a href="/picks/" class="link-card">
         <div style="width:36px;height:36px;background:rgba(16,185,129,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;color:var(--success);" aria-hidden="true">
           <i data-lucide="clipboard-check" style="width:18px;height:18px;"></i>
         </div>
-        <span class="link-card-label">Track Record</span>
-        <span class="link-card-sub">Buckets and grading</span>
+        <span class="link-card-label">Today's Player Prop Picks</span>
+        <span class="link-card-sub">Current research boards</span>
       </a>
       <a href="/how-it-works/" class="link-card">
         <div style="width:36px;height:36px;background:rgba(59,130,246,0.12);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#60A5FA;" aria-hidden="true">
