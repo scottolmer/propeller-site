@@ -61,7 +61,7 @@
       "source": "compare/rithmm/index.html"
     },
     "https://propellerpicks.com/data/index.json": {
-      "fingerprint": "822adcc72b28151a32bab5329eeaa7d3655c198b8cef58370e86d5c91357e890",
+      "fingerprint": "59d6b54b41ba5301d531dc5a46e8029b6065773655f13e21429589c199fc0c1f",
       "lastmod": "2026-07-15",
       "source": "data/index.json"
     },
@@ -71,12 +71,12 @@
       "source": "data/methodology-version.json"
     },
     "https://propellerpicks.com/data/performance-snapshot.json": {
-      "fingerprint": "d558444e8a465ef6bc6f443d7693c77164966194434c9e3750cbd8c6990c13f8",
+      "fingerprint": "218a6589513bb90c325fbb82e0cc5ef388ff19c703796f8743c20369590e1531",
       "lastmod": "2026-07-15",
       "source": "data/performance-snapshot.json"
     },
     "https://propellerpicks.com/data/prospective-picks.json": {
-      "fingerprint": "5da4b44b3843179e9f8b41e39dcb6cca5fd062f24d8de5d0b0ebae437939deb1",
+      "fingerprint": "91d0f93a0359096e4feb97b2479c0d4053a5fba57da7fd3e48528d5d2d078c8f",
       "lastmod": "2026-07-15",
       "source": "data/prospective-picks.json"
     },
