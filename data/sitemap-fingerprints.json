@@ -1,7 +1,7 @@
 {
   "entries": {
     "https://propellerpicks.com/": {
-      "fingerprint": "8e3390c208a905e697992b07fe5a3ee9add9bb2e32829e0f37b660944bc4bba2",
+      "fingerprint": "201db29d14462be4a57c4cbc040b24aa104b6be47cf7f8e94ae7c88da89096d8",
       "lastmod": "2026-07-15",
       "source": "index.html"
     },
@@ -61,7 +61,7 @@
       "source": "compare/rithmm/index.html"
     },
     "https://propellerpicks.com/data/index.json": {
-      "fingerprint": "46c82804df6e454583fef47f9a7189b57718208600182845ce0191160a02ba0d",
+      "fingerprint": "8412ce15a8c52eb890d4d9eeb4503b7fa55f360b0deea8e19ad0c09351f0b903",
       "lastmod": "2026-07-15",
       "source": "data/index.json"
     },
@@ -71,12 +71,12 @@
       "source": "data/methodology-version.json"
     },
     "https://propellerpicks.com/data/performance-snapshot.json": {
-      "fingerprint": "29f03b87e3b88d81736c387d401f9ebf7b7f716e4cdc4c0b38a2da670d3522c4",
+      "fingerprint": "11f24493101ef3cdb3fdad277eac71b434a602bce16a9112dafcc838f4e8bb39",
       "lastmod": "2026-07-15",
       "source": "data/performance-snapshot.json"
     },
     "https://propellerpicks.com/data/prospective-picks.json": {
-      "fingerprint": "350a5072dc3b657360b3b880684730070445f0b048a48eaa1fced65a8fa91239",
+      "fingerprint": "df4fc919c3e9e00e1e97c2357d079196ae12bab4949fb15a351610fa617ea8f6",
       "lastmod": "2026-07-15",
       "source": "data/prospective-picks.json"
     },
@@ -256,7 +256,7 @@
       "source": "research/prospective-record/index.html"
     },
     "https://propellerpicks.com/results/": {
-      "fingerprint": "cf17b1d382ebd8528bdd74ed6c57706211d5a288c95d60145f726d160343ae0a",
+      "fingerprint": "edc9868c76b0ceed5c23387c8747404465845876dff84f93efe00a4a6b4317a3",
       "lastmod": "2026-07-15",
       "source": "results/index.html"
     },
@@ -291,7 +291,7 @@
       "source": "tools/underdog-payout-calculator/index.html"
     },
     "https://propellerpicks.com/track-record/": {
-      "fingerprint": "5c5ec2261a0f2d76bd4eee0ae99df3c9c94147f9f9c66ef45cada4d93d2e4117",
+      "fingerprint": "7e5c5beee7eea95928a5728264ebd3b6f64b9b22b1d76ac79a29d8ea2fad9d6c",
       "lastmod": "2026-07-15",
       "source": "track-record/index.html"
     }
