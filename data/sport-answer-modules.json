@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0",
+  "last_reviewed": "2026-07-16",
+  "pages": [
+    {
+      "sport": "MLB",
+      "slug": "mlb",
+      "report_cluster": "MLB research",
+      "priority": "P1",
+      "status": "Target now",
+      "canonical_target": "/picks/mlb/",
+      "gsc_evidence": {
+        "date_range": "2026-06-16 to 2026-07-13",
+        "clicks": 2,
+        "impressions": 547,
+        "ctr_percent": 0.37,
+        "average_position": 8.2
+      },
+      "freshness_owner": "The daily picks pipeline requests the current public MLB preview and preserves an honest empty state when no slate is available.",
+      "empty_state": "No current MLB slate may be available on days without scheduled games or when public data is unavailable.",
+      "insertion_anchor": "<!-- How Our AI Analyzes MLB Props -->",
+      "eyebrow": "MLB analyzer explained",
+      "heading": "How to analyze MLB player props today",
+      "direct_answer": "To analyze an MLB player prop, start with the current listed line, then check the probable pitcher, batting-order opportunity, park and platoon fit, weather, injuries, recent role, and market context. Propeller combines only the sport-specific signals available for that prop and shows which More/Over or Less/Under direction they support.",
+      "cards": [
+        {
+          "title": "Check the baseball context",
+          "body": "Available inputs can include pitcher matchup, batting-order opportunity, park and platoon fit, weather, injuries, recent form, and market context. Missing or neutral signals are skipped."
+        },
+        {
+          "title": "Read direction before score",
+          "body": "A 50-100 directional model-confidence score shows how strongly the available signals support the displayed More/Over or Less/Under direction. It is not a calibrated win probability or guarantee."
+        },
+        {
+          "title": "Recheck the live line",
+          "body": "MLB lineups, probable pitchers, weather, and platform lines can change before first pitch. Confirm the player, stat, line, and timestamp before using any analysis."
+        }
+      ],
+      "availability_note": "When an MLB slate is available, this page requests the current public preview. On days without games or usable data, it should show an empty state instead of relabeling older analysis as today.",
+      "cta_label": "Open the free MLB player prop analyzer"
+    },
+    {
+      "sport": "NFL",
+      "slug": "nfl",
+      "report_cluster": "NFL research",
+      "priority": "P1",
+      "status": "Target now",
+      "canonical_target": "/picks/nfl/",
+      "gsc_evidence": {
+        "date_range": "2026-06-16 to 2026-07-13",
+        "clicks": 0,
+        "impressions": 25,
+        "ctr_percent": 0.0,
+        "average_position": 13.3
+      },
+      "freshness_owner": "The NFL page owns current sport research and must preserve an honest offseason or no-slate state until current public props are available.",
+      "empty_state": "No current NFL slate may be available during the offseason, preseason ramp, or on days without listed games.",
+      "insertion_anchor": "<!-- Why NFL Props Are Different -->",
+      "eyebrow": "NFL analyzer explained",
+      "heading": "How to analyze NFL player props",
+      "direct_answer": "To analyze an NFL player prop, start with the current listed line and verify that a slate is available. Then review expected role and volume, position matchup, injuries, game environment, recent form, and market movement. Propeller combines only the available NFL signals and shows which More/Over or Less/Under direction they support.",
+      "cards": [
+        {
+          "title": "Check role and matchup",
+          "body": "Available inputs can include expected role and volume, position matchup, injury cascades, game environment, recent form, line movement, and market context. Missing or neutral signals are skipped."
+        },
+        {
+          "title": "Read direction before score",
+          "body": "A 50-100 directional model-confidence score shows how strongly the available signals support the displayed More/Over or Less/Under direction. It is not a calibrated win probability or guarantee."
+        },
+        {
+          "title": "Confirm the weekly slate",
+          "body": "NFL roles and lines can change with practice reports, injuries, weather, and inactive lists. Confirm the player, stat, line, and timestamp before using any analysis."
+        }
+      ],
+      "availability_note": "During the offseason, preseason ramp, or days without a current NFL slate, no current props may be available. This page should show an empty state rather than relabeling older analysis as today.",
+      "cta_label": "Open the free NFL player prop analyzer"
+    }
+  ]
+}
