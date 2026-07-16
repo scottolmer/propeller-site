@@ -112,7 +112,7 @@
       "name": "What are the best PrizePicks picks today?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller generates today's best PrizePicks picks by running sport-specific analysis signals across every available NBA, MLB, and NHL player prop on the current slate. The top picks per sport are sorted by confidence score — a measure of how strongly all agents agree on the direction. Props with a confidence score above 60 represent the highest-edge entries for your PrizePicks lineup today. All picks update daily each morning based on the latest injury reports, lineup confirmations, and current odds across major sportsbooks. The live picks at the top of this page reflect the current day's slate automatically."
+        "text": "The board shows Propeller's current public player-prop research when a usable slate is available. Each row includes a player, stat, displayed line, More/Over or Less/Under direction, and a 50–100 directional model-confidence score. The score shows how strongly the available signals support that direction; it is not a win probability or guarantee. Confirm the current PrizePicks projection and player status before making your own decision. If no current research is available, the page shows an empty state rather than presenting an older row as today."
       }
     },
     {
@@ -120,7 +120,7 @@
       "name": "How does Propeller help with PrizePicks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "PrizePicks is a pure OVER/UNDER player prop platform — you pick a direction, and Propeller's confidence scores map directly to that format. Every pick shows a clear OVER or UNDER direction, a line, and a model confidence score. High-confidence picks above 60% make ideal anchor legs in your PrizePicks entry. The AI parlay builder inside the Propeller app surfaces optimized multi-sport combos that combine high-confidence props across NBA, MLB, and NHL that are not statistically correlated with each other — which is exactly how experienced PrizePicks players build higher-ceiling entries with independent expected value per leg."
+        "text": "Propeller is an independent AI-assisted research workspace designed for DFS and pick'em platforms. For PrizePicks Player Picks, compare Propeller's More/Over or Less/Under direction and confidence context with the current PrizePicks More or Less projection. Propeller does not accept wagers, submit Lineups, guarantee outcomes, or replace the need to verify the current player, stat, projection, and timestamp in PrizePicks."
       }
     },
     {
@@ -1735,6 +1735,9 @@ footer {
     .prose-inner a { color: var(--accent); border-bottom: 1px solid rgba(249,115,22,.35); padding-bottom: 1px; text-decoration: none; transition: color .2s; }
     .prose-inner a:hover { color: var(--text-primary); }
   </style>
+<!-- PP_PLATFORM_ANSWER_HEAD_START -->
+<link rel="stylesheet" href="/assets/css/sport-answer-modules.css?v=20260716b">
+<!-- PP_PLATFORM_ANSWER_HEAD_END -->
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
@@ -1925,38 +1928,39 @@ footer {
   </div>
 </section>
 
-<!-- Today Intent Answer Block -->
-<section class="section" aria-labelledby="today-prizepicks-heading" style="padding-top:0;">
-  <div class="container">
-    <div style="padding:28px 32px;border:1px solid var(--glass-border);border-radius:16px;background:rgba(255,255,255,0.02);">
-      <p class="label" style="margin-bottom:10px;">Quick Answer</p>
-      <h2 id="today-prizepicks-heading" class="section-title" style="text-align:left;margin-bottom:14px;">How to use today's PrizePicks cheat sheet</h2>
-      <p style="font-size:16px;line-height:1.8;color:var(--text-secondary);max-width:820px;">Start with the highest-confidence props above, confirm each player is active, then build around independent legs instead of stacking several props from the same player or game. OVER maps directly to More on PrizePicks, UNDER maps to Less, and the confidence score shows how strongly the agents agree on that direction.</p>
-      <p style="font-size:15px;line-height:1.8;color:var(--text-tertiary);max-width:820px;margin-top:12px;">Before submitting a card, check the <a href="/tools/prizepicks-payout-calculator/" style="color:var(--accent);text-decoration:none;">PrizePicks payout calculator</a> and the <a href="/guides/prizepicks-strategy/" style="color:var(--accent);text-decoration:none;">Power Play vs Flex strategy guide</a> so the entry size matches the risk you are taking.</p>
+<!-- PP_PLATFORM_ANSWER_START -->
+<section class="pp-sport-answer pp-platform-answer pp-platform-answer--prizepicks" id="platform-research-answer" aria-labelledby="platform-research-answer-heading">
+  <div class="container pp-sport-answer__inner">
+    <p class="pp-sport-answer__eyebrow">PrizePicks cheat sheet explained</p>
+    <h2 class="pp-sport-answer__heading" id="platform-research-answer-heading">What powers today&#x27;s free PrizePicks cheat sheet?</h2>
+    <p class="pp-sport-answer__direct">Today&#x27;s free PrizePicks cheat sheet is Propeller&#x27;s current player-prop research, not a PrizePicks-native feed. It combines the sport-specific signals available for each listed player, stat, and line, then shows a More/Over or Less/Under direction with confidence context. Always compare that row with the current PrizePicks Player Picks projection.</p>
+    <div class="pp-sport-answer__grid">
+      <article class="pp-sport-answer__card">
+        <span class="pp-sport-answer__index">01</span>
+        <h3>How are injuries reflected?</h3>
+        <p>Available injury, lineup, role, matchup, recent-form, and market context can contribute when relevant to the sport and prop. Missing or neutral signals are skipped, so late news should still be checked before using the research.</p>
+      </article>
+      <article class="pp-sport-answer__card">
+        <span class="pp-sport-answer__index">02</span>
+        <h3>Which stats matter most?</h3>
+        <p>The useful inputs vary by sport, player, and stat type. Propeller does not apply one fixed signal list or weight set to every projection; the visible analysis should explain the context available for that prop.</p>
+      </article>
+      <article class="pp-sport-answer__card">
+        <span class="pp-sport-answer__index">03</span>
+        <h3>How should confidence be read?</h3>
+        <p>The 50-100 directional model-confidence score shows how strongly the available signals support the displayed More/Over or Less/Under direction. It is not a calibrated win probability or a guarantee.</p>
+      </article>
     </div>
+    <p class="pp-sport-answer__availability"><strong>Freshness</strong><span>This page requests Propeller&#x27;s current public preview. If no current player-prop research is available, it should show an honest empty state instead of relabeling an older row as today.</span></p>
+    <p class="pp-sport-answer__availability"><strong>Platform check</strong><span>For PrizePicks Player Picks, compare Propeller&#x27;s displayed direction with the current PrizePicks More or Less projection. Confirm the player, stat, projection, and timestamp before submitting your own Lineup. Terminology checked <time datetime="2026-07-16">July 16, 2026</time> against <a href="https://www.prizepicks.com/help-center/player-picks">PrizePicks Player Picks help</a>.</span></p>
+    <div class="pp-sport-answer__actions">
+      <a class="pp-sport-answer__cta" href="#picks">View current research <span aria-hidden="true">&rarr;</span></a>
+      <span class="pp-sport-answer__links"><a href="/tools/prizepicks-payout-calculator/">Payout calculator</a><a href="/guides/prizepicks-strategy/">Strategy guide</a><a href="/analyzer/">Player prop analyzer</a></span>
+    </div>
+    <p class="pp-sport-answer__disclosure">Propeller is an independent AI-assisted player-prop research workspace designed for DFS and pick'em platforms. It does not accept wagers, place wagers, submit entries, or guarantee outcomes, and it is not affiliated with PrizePicks.</p>
   </div>
 </section>
-
-<!-- Current research board guidance -->
-<section class="prose-section" id="how-it-works" aria-labelledby="prose-heading">
-  <div class="container">
-    <div class="prose-inner fade-in">
-      <p class="label" style="margin-bottom:12px;">Current Research Board</p>
-      <h2 id="prose-heading">How to Read Today's <span>PrizePicks Research</span></h2>
-      <p>
-        This page is the canonical home for current PrizePicks-oriented research. It requests the available public slate and presents each player, stat, line, directional model signal, and confidence context. OVER maps to More and UNDER maps to Less; confidence describes model conviction, not win probability.
-      </p>
-      <h3>Verify the Current Line</h3>
-      <p>
-        Treat every row as time-sensitive research. Confirm the player is active and compare the displayed line with the current line in PrizePicks before making your own decision. When the current feed is empty or unavailable, this page shows that state instead of presenting an older slate as today.
-      </p>
-      <h3>Choose the Right Intent Owner</h3>
-      <p>
-        For evergreen entry construction and format guidance, read the <a href="/guides/prizepicks-strategy/">PrizePicks strategy guide</a>. For Power and Flex payout math, use the <a href="/tools/prizepicks-payout-calculator/">PrizePicks payout calculator</a>. To inspect one player line without platform framing, use the <a href="/analyzer/">free AI player prop analyzer</a>.
-      </p>
-    </div>
-  </div>
-</section>
+<!-- PP_PLATFORM_ANSWER_END -->
 
 <!-- Why Propeller for PrizePicks -->
 <section class="section how-section" id="why" aria-labelledby="why-heading">
@@ -1975,7 +1979,7 @@ footer {
         </div>
         <h3>Multi-Sport Coverage</h3>
         <p>
-          NBA, MLB, and NHL picks on a single page. Compare confidence scores across sports to build the strongest possible PrizePicks lineup without juggling three separate tools. When one sport has a thin slate, anchor with a stronger market from another.
+          The public preview can surface available NBA, MLB, and NHL player-prop research in one place. Compare the player, stat, line, directional signal, and confidence context across the currently available rows, then verify each projection in PrizePicks.
         </p>
       </div>
 
@@ -1985,7 +1989,7 @@ footer {
         </div>
         <h3>Injury Cascade Detection</h3>
         <p>
-          PrizePicks lines are set before injury reports finalize. Propeller's Injury agent re-checks reports multiple times per day and models the full cascade of volume redistribution across rosters. Late-breaking OUT designations that shift a prop's true probability are captured before the line adjusts.
+          Injury and lineup context can change a player's expected role and volume. Propeller includes available injury-related signals when relevant, while the user remains responsible for confirming late news, player status, and the current PrizePicks projection.
         </p>
       </div>
 
@@ -1993,9 +1997,9 @@ footer {
         <div class="why-card-icon" aria-hidden="true">
           <i data-lucide="git-merge" style="width:24px;height:24px;"></i>
         </div>
-        <h3>AI-Built Combos</h3>
+        <h3>Plain-Language Research</h3>
         <p>
-          The Propeller app's parlay builder identifies high-confidence picks across sports that are statistically independent of each other. Building a PrizePicks entry where each leg adds uncorrelated expected value is the foundation of long-term profitability on the platform.
+          Propeller explains listed player props with a clear direction, confidence context, and supporting signals instead of requiring confusing betting jargon. It was designed to support research for DFS and pick'em platforms without accepting wagers or submitting Lineups.
         </p>
       </div>
 
@@ -2012,7 +2016,7 @@ footer {
       </div>
       <h2 id="cheatsheet-heading">Get Your Free <span>PrizePicks Cheat Sheet</span></h2>
       <p>
-        Launch Propeller to browse the currently available picks, use the AI combo builder, review injury alerts, and see the confidence-score breakdown for each listed prop. Current access and availability are shown in the app.
+        Launch Propeller to browse currently available player-prop research, review injury and role context, and inspect the confidence breakdown for each listed prop. Current access and availability are shown in the app.
       </p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
         <a href="https://app.propellerpicks.com/signup" class="btn btn-primary">
@@ -2069,7 +2073,7 @@ footer {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Propeller generates today's best PrizePicks picks by running sport-specific analysis signals across every available NBA, MLB, and NHL player prop on the current slate. The top picks per sport are sorted by confidence score &mdash; a measure of how strongly all agents agree on the direction. Props with a confidence score above 60 represent the highest-edge entries for your PrizePicks lineup today. All picks update daily each morning based on the latest injury reports, lineup confirmations, and current odds across major sportsbooks. The live picks at the top of this page reflect the current day's slate automatically.
+            The board shows Propeller's current public player-prop research when a usable slate is available. Each row includes a player, stat, displayed line, More/Over or Less/Under direction, and a 50&ndash;100 directional model-confidence score. The score shows how strongly the available signals support that direction; it is not a win probability or guarantee. Confirm the current PrizePicks projection and player status before making your own decision. If no current research is available, the page shows an empty state rather than presenting an older row as today.
           </div>
         </div>
       </div>
@@ -2081,7 +2085,7 @@ footer {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            PrizePicks is a pure OVER/UNDER player prop platform &mdash; you pick a direction, and Propeller's confidence scores map directly to that format. Every pick shows a clear OVER or UNDER direction, a line, and a model confidence score. High-confidence picks above 60% make ideal anchor legs in your PrizePicks entry. The AI parlay builder inside the Propeller app surfaces optimized multi-sport combos that combine high-confidence props across NBA, MLB, and NHL that are not statistically correlated with each other &mdash; which is exactly how experienced PrizePicks players build higher-ceiling entries with independent expected value per leg.
+            Propeller is an independent AI-assisted research workspace designed for DFS and pick'em platforms. For PrizePicks Player Picks, compare Propeller's More/Over or Less/Under direction and confidence context with the current PrizePicks More or Less projection. Propeller does not accept wagers, submit Lineups, guarantee outcomes, or replace the need to verify the current player, stat, projection, and timestamp in PrizePicks.
           </div>
         </div>
       </div>

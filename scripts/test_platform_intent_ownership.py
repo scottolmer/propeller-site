@@ -55,6 +55,48 @@ def main() -> None:
         assert 'id="strategy"' not in current
         assert "what is the best" not in current.lower()
 
+        assert current.count("<!-- PP_PLATFORM_ANSWER_HEAD_START -->") == 1
+        assert current.count("<!-- PP_PLATFORM_ANSWER_HEAD_END -->") == 1
+        assert current.count("<!-- PP_PLATFORM_ANSWER_START -->") == 1
+        assert current.count("<!-- PP_PLATFORM_ANSWER_END -->") == 1
+        assert current.count('id="platform-research-answer"') == 1
+        module = current.split("<!-- PP_PLATFORM_ANSWER_START -->", 1)[1].split(
+            "<!-- PP_PLATFORM_ANSWER_END -->", 1
+        )[0]
+        answer = platform["answer_module"]
+        assert html.escape(answer["heading"], quote=True) in module
+        assert html.escape(answer["direct_answer"], quote=True) in module
+        assert f'href="{platform["payout_calculator"]}"' in module
+        assert f'href="{platform["strategy_guide"]}"' in module
+        assert 'href="/analyzer/"' in module
+        assert 'href="#picks"' in module
+        assert platform["official_source"]["url"] in module
+        assert "not a calibrated win probability or a guarantee" in module
+        assert "does not accept wagers, place wagers, submit entries" in module
+        assert "not affiliated" in module
+        assert "FAQPage" not in module
+        assert "faq-item" not in module
+
+        evidence = platform["gsc_evidence"]
+        assert evidence["date_range"] == "2026-06-16 to 2026-07-13"
+        assert evidence["impressions"] > 0
+        assert platform["official_source"]["checked"] == "2026-07-16"
+        assert platform["official_source"]["url"].startswith("https://")
+        if evidence["impressions"] <= 1:
+            assert evidence["primary_cluster"] is None
+            assert platform["answer_module"].get("compact") is True
+
+        faq = current.split("<!-- FAQ -->", 1)[1].split("<!-- Final CTA -->", 1)[0].lower()
+        for unsafe in (
+            "all agents agree",
+            "highest-edge",
+            "above 60%",
+            "pure over/under",
+            "optimized multi-sport combos",
+            "supports entries from 2 picks up to 6 picks",
+        ):
+            assert unsafe not in faq, f"unsafe FAQ claim remains on {platform['current_research']}: {unsafe}"
+
         assert len(title(calculator)) <= 60, title(calculator)
         assert "payout calculator" in title(calculator).lower(), title(calculator)
 

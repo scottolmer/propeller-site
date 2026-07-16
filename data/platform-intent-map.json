@@ -1,27 +1,128 @@
 {
-  "version": "2026-07-15",
+  "version": "2026-07-16",
   "shared_analyzer": "/analyzer/",
   "platforms": [
     {
       "name": "PrizePicks",
+      "slug": "prizepicks",
       "current_research": "/picks/prizepicks/",
       "payout_calculator": "/tools/prizepicks-payout-calculator/",
       "strategy_guide": "/guides/prizepicks-strategy/",
-      "legacy_alias": "/prizepicks/"
+      "legacy_alias": "/prizepicks/",
+      "insertion_anchor": "<!-- Why Propeller for PrizePicks -->",
+      "official_source": {
+        "label": "PrizePicks Player Picks help",
+        "url": "https://www.prizepicks.com/help-center/player-picks",
+        "checked": "2026-07-16"
+      },
+      "gsc_evidence": {
+        "date_range": "2026-06-16 to 2026-07-13",
+        "clicks": 16,
+        "impressions": 395,
+        "ctr_percent": 4.05,
+        "average_position": 7.7,
+        "primary_cluster": "PrizePicks cheat sheet today"
+      },
+      "answer_module": {
+        "eyebrow": "PrizePicks cheat sheet explained",
+        "heading": "What powers today's free PrizePicks cheat sheet?",
+        "direct_answer": "Today's free PrizePicks cheat sheet is Propeller's current player-prop research, not a PrizePicks-native feed. It combines the sport-specific signals available for each listed player, stat, and line, then shows a More/Over or Less/Under direction with confidence context. Always compare that row with the current PrizePicks Player Picks projection.",
+        "cards": [
+          {
+            "title": "How are injuries reflected?",
+            "body": "Available injury, lineup, role, matchup, recent-form, and market context can contribute when relevant to the sport and prop. Missing or neutral signals are skipped, so late news should still be checked before using the research."
+          },
+          {
+            "title": "Which stats matter most?",
+            "body": "The useful inputs vary by sport, player, and stat type. Propeller does not apply one fixed signal list or weight set to every projection; the visible analysis should explain the context available for that prop."
+          },
+          {
+            "title": "How should confidence be read?",
+            "body": "The 50-100 directional model-confidence score shows how strongly the available signals support the displayed More/Over or Less/Under direction. It is not a calibrated win probability or a guarantee."
+          }
+        ],
+        "availability_note": "This page requests Propeller's current public preview. If no current player-prop research is available, it should show an honest empty state instead of relabeling an older row as today.",
+        "platform_note": "For PrizePicks Player Picks, compare Propeller's displayed direction with the current PrizePicks More or Less projection. Confirm the player, stat, projection, and timestamp before submitting your own Lineup."
+      }
     },
     {
-      "name": "Underdog",
+      "name": "Underdog Fantasy",
+      "slug": "underdog",
       "current_research": "/picks/underdog/",
       "payout_calculator": "/tools/underdog-payout-calculator/",
       "strategy_guide": "/guides/underdog-strategy/",
-      "legacy_alias": "/underdog/"
+      "legacy_alias": "/underdog/",
+      "insertion_anchor": "<!-- How Propeller Powers Your Underdog Entries -->",
+      "official_source": {
+        "label": "Underdog Fantasy Pick'em",
+        "url": "https://www.underdogsports.com/games/pickem",
+        "checked": "2026-07-16"
+      },
+      "gsc_evidence": {
+        "date_range": "2026-06-16 to 2026-07-13",
+        "clicks": 9,
+        "impressions": 1320,
+        "ctr_percent": 0.68,
+        "average_position": 11.3,
+        "primary_cluster": "Underdog picks today"
+      },
+      "answer_module": {
+        "eyebrow": "Underdog research explained",
+        "heading": "What does today's Underdog research board show?",
+        "direct_answer": "Today's Underdog research board is Propeller's current player-prop research, not an Underdog-native feed. It shows the listed player, stat, line, More/Over or Less/Under direction, and confidence context from the sport-specific signals available for that prop. Compare every row with the current Underdog Fantasy Pick'em Higher or Lower projection.",
+        "cards": [
+          {
+            "title": "How are Higher and Lower researched?",
+            "body": "Propeller evaluates the available role, matchup, injury, recent-form, and market context for the listed prop. Its Over direction maps to Higher and its Under direction maps to Lower for Underdog Pick'em research."
+          },
+          {
+            "title": "What should you verify?",
+            "body": "Confirm the player is active and recheck the current stat, line, and timestamp in Underdog before making your own decision. Player roles, news, and platform projections can change after Propeller's analysis."
+          },
+          {
+            "title": "How should confidence be read?",
+            "body": "The 50-100 directional model-confidence score shows how strongly the available signals support the displayed More/Over or Less/Under direction. It is not a calibrated win probability or a guarantee."
+          }
+        ],
+        "availability_note": "This page requests Propeller's current public preview. If no current player-prop research is available, it should show an honest empty state instead of relabeling older research as today.",
+        "platform_note": "This research applies to player-stat Underdog Pick'em entries, not Underdog Prediction Picks. Confirm current platform terms and make your own entry decision."
+      }
     },
     {
       "name": "DraftKings Pick6",
+      "slug": "pick6",
       "current_research": "/picks/pick6/",
       "payout_calculator": "/tools/pick6-payout-calculator/",
       "strategy_guide": "/guides/pick6-strategy/",
-      "legacy_alias": "/pick6/"
+      "legacy_alias": "/pick6/",
+      "insertion_anchor": "<!-- How Propeller Powers Your Pick6 Entries -->",
+      "official_source": {
+        "label": "DraftKings Pick6 how to play",
+        "url": "https://pick6.draftkings.com/how-to-play-pick6",
+        "checked": "2026-07-16"
+      },
+      "gsc_evidence": {
+        "date_range": "2026-06-16 to 2026-07-13",
+        "clicks": 0,
+        "impressions": 1,
+        "ctr_percent": 0.0,
+        "average_position": 14.0,
+        "primary_cluster": null
+      },
+      "answer_module": {
+        "compact": true,
+        "eyebrow": "DraftKings Pick6 research explained",
+        "heading": "How to use today's DraftKings Pick6 research",
+        "direct_answer": "Today's DraftKings Pick6 page presents Propeller's current player-prop research, not a Pick6-native feed. Start with the listed player, stat, and line, then read the More/Over or Less/Under direction and confidence context from the available sport-specific signals. Compare every row with the current Pick6 More or Less stat projection.",
+        "cards": [
+          {
+            "title": "What should you verify?",
+            "body": "Confirm the player is active and recheck the current stat, line, timestamp, regional requirements, and contest terms in Pick6. The 50-100 directional model-confidence score shows support from available signals; it is not a calibrated win probability or a guarantee."
+          }
+        ],
+        "availability_note": "This page requests Propeller's current public preview. If no current player-prop research is available, it should show an honest empty state instead of presenting older research as today.",
+        "platform_note": "DraftKings Pick6 entry requirements and contest terms can vary by region and contest. Confirm them in Pick6 before submitting your own entry."
+      }
     }
   ]
 }

@@ -112,7 +112,7 @@
       "name": "What are the best Underdog Fantasy picks today?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller surfaces today's best Underdog Fantasy picks by running sport-specific analysis signals across NBA, MLB, and NHL player props. The live picks at the top of this page are sorted by confidence score — a measure of how strongly all agents agree on a direction. Props with confidence above 60% represent the strongest Higher/Lower calls for your Underdog entry. OVER maps to Higher, UNDER maps to Lower. All picks update daily each morning based on the latest injury reports, lineup news, and current book odds."
+        "text": "The board shows Propeller's current public player-prop research when a usable slate is available. Each row includes a player, stat, displayed line, More/Over or Less/Under direction, and a 50–100 directional model-confidence score. For Underdog Pick'em research, Over maps to Higher and Under maps to Lower. The score is not a win probability or guarantee. Confirm the current Underdog projection and player status before making your own decision; an unavailable slate produces an honest empty state."
       }
     },
     {
@@ -120,7 +120,7 @@
       "name": "How does Propeller help with Underdog Fantasy?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Underdog Fantasy uses a higher/lower format on player props — which maps directly to Propeller's OVER/UNDER directional calls. Each listed prop includes a direction and a model confidence score. Propeller's injury agent evaluates teammate effects as one input, but users should confirm late news and the final line in Underdog before submitting an entry."
+        "text": "Propeller is an independent AI-assisted research workspace designed for DFS and pick'em platforms. For Underdog Fantasy Pick'em, compare Propeller's displayed More/Over or Less/Under direction with the current Underdog Higher or Lower projection. Available injury and role context can contribute when relevant, but users should still confirm late news, the current line, and the entry terms in Underdog. This research does not apply to the separate Underdog Prediction Picks product."
       }
     },
     {
@@ -144,7 +144,7 @@
       "name": "What sports does Underdog Fantasy cover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Underdog Fantasy covers NBA, MLB, NHL, NFL, college football, college basketball, MMA, and more depending on the season. Propeller currently provides daily analyzed picks for NBA, MLB, and NHL — the three sports with the highest prop volume and deepest historical data for AI analysis. NFL picks are also available during the season via the NFL picks page . As additional sports are added to Propeller coverage they will appear in the multi-sport picks feed on this page."
+        "text": "Underdog's available sports and projections can vary by season, location, and current slate, so confirm availability in Underdog. Propeller's signed-in research workspace covers NFL, NBA, MLB, NHL, soccer, and PGA when supported props are available. The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer. Use the player prop analyzer or the sport-specific picks pages to check what is currently available."
       }
     }
   ]
@@ -1684,6 +1684,9 @@ footer {
 }
 </style>
   <link rel="stylesheet" href="/assets/css/site-white-overrides.css?v=20260625-white-site">
+<!-- PP_PLATFORM_ANSWER_HEAD_START -->
+<link rel="stylesheet" href="/assets/css/sport-answer-modules.css?v=20260716b">
+<!-- PP_PLATFORM_ANSWER_HEAD_END -->
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
@@ -1856,17 +1859,39 @@ footer {
   </div>
 </section>
 
-<!-- Today Intent Answer Block -->
-<section class="section" aria-labelledby="today-underdog-heading" style="padding-top:0;">
-  <div class="container">
-    <div style="padding:28px 32px;border:1px solid var(--glass-border);border-radius:16px;background:rgba(255,255,255,0.02);">
-      <p class="label" style="margin-bottom:10px;">Quick Answer</p>
-      <h2 id="today-underdog-heading" class="section-title" style="text-align:left;margin-bottom:14px;">How to use today's Underdog picks</h2>
-      <p style="font-size:16px;line-height:1.8;color:var(--text-secondary);max-width:820px;">Start with the highest-confidence props above, then confirm the player's role, injury status, and game start time before building your entry. Propeller OVER maps to Higher on Underdog, UNDER maps to Lower, and the confidence score shows how strongly the agents agree on that direction.</p>
-      <p style="font-size:15px;line-height:1.8;color:var(--text-tertiary);max-width:820px;margin-top:12px;">For payout math, use the <a href="/tools/underdog-payout-calculator/" style="color:var(--accent);text-decoration:none;">Underdog flex payout calculator</a>. For entry structure, read the <a href="/guides/underdog-strategy/" style="color:var(--accent);text-decoration:none;">Underdog Fantasy strategy guide</a> before taking a large card.</p>
+<!-- PP_PLATFORM_ANSWER_START -->
+<section class="pp-sport-answer pp-platform-answer pp-platform-answer--underdog" id="platform-research-answer" aria-labelledby="platform-research-answer-heading">
+  <div class="container pp-sport-answer__inner">
+    <p class="pp-sport-answer__eyebrow">Underdog research explained</p>
+    <h2 class="pp-sport-answer__heading" id="platform-research-answer-heading">What does today&#x27;s Underdog research board show?</h2>
+    <p class="pp-sport-answer__direct">Today&#x27;s Underdog research board is Propeller&#x27;s current player-prop research, not an Underdog-native feed. It shows the listed player, stat, line, More/Over or Less/Under direction, and confidence context from the sport-specific signals available for that prop. Compare every row with the current Underdog Fantasy Pick&#x27;em Higher or Lower projection.</p>
+    <div class="pp-sport-answer__grid">
+      <article class="pp-sport-answer__card">
+        <span class="pp-sport-answer__index">01</span>
+        <h3>How are Higher and Lower researched?</h3>
+        <p>Propeller evaluates the available role, matchup, injury, recent-form, and market context for the listed prop. Its Over direction maps to Higher and its Under direction maps to Lower for Underdog Pick&#x27;em research.</p>
+      </article>
+      <article class="pp-sport-answer__card">
+        <span class="pp-sport-answer__index">02</span>
+        <h3>What should you verify?</h3>
+        <p>Confirm the player is active and recheck the current stat, line, and timestamp in Underdog before making your own decision. Player roles, news, and platform projections can change after Propeller&#x27;s analysis.</p>
+      </article>
+      <article class="pp-sport-answer__card">
+        <span class="pp-sport-answer__index">03</span>
+        <h3>How should confidence be read?</h3>
+        <p>The 50-100 directional model-confidence score shows how strongly the available signals support the displayed More/Over or Less/Under direction. It is not a calibrated win probability or a guarantee.</p>
+      </article>
     </div>
+    <p class="pp-sport-answer__availability"><strong>Freshness</strong><span>This page requests Propeller&#x27;s current public preview. If no current player-prop research is available, it should show an honest empty state instead of relabeling older research as today.</span></p>
+    <p class="pp-sport-answer__availability"><strong>Platform check</strong><span>This research applies to player-stat Underdog Pick&#x27;em entries, not Underdog Prediction Picks. Confirm current platform terms and make your own entry decision. Terminology checked <time datetime="2026-07-16">July 16, 2026</time> against <a href="https://www.underdogsports.com/games/pickem">Underdog Fantasy Pick&#x27;em</a>.</span></p>
+    <div class="pp-sport-answer__actions">
+      <a class="pp-sport-answer__cta" href="#picks">View current research <span aria-hidden="true">&rarr;</span></a>
+      <span class="pp-sport-answer__links"><a href="/tools/underdog-payout-calculator/">Payout calculator</a><a href="/guides/underdog-strategy/">Strategy guide</a><a href="/analyzer/">Player prop analyzer</a></span>
+    </div>
+    <p class="pp-sport-answer__disclosure">Propeller is an independent AI-assisted player-prop research workspace designed for DFS and pick'em platforms. It does not accept wagers, place wagers, submit entries, or guarantee outcomes, and it is not affiliated with Underdog Fantasy.</p>
   </div>
 </section>
+<!-- PP_PLATFORM_ANSWER_END -->
 
 <!-- How Propeller Powers Your Underdog Entries -->
 <section class="section agents-section" id="how-it-works" aria-labelledby="how-heading">
@@ -1905,10 +1930,10 @@ footer {
         <div class="agent-body">
           <div class="agent-header">
             <h3 class="agent-name">Injury Cascade Detection</h3>
-            <span class="weight-badge weight-badge-high">HIGHEST WEIGHT</span>
+            <span class="weight-badge weight-badge-high">AVAILABLE SIGNAL</span>
           </div>
           <p>
-            Injury cascade detection is especially critical for Underdog Fantasy because teammate effects shift value dramatically when a key player is out. When a star is ruled OUT or IR, Propeller's Injury agent models exactly how usage redistributes across the roster &mdash; identifying which supporting players absorb minutes, shots, and touches before Underdog adjusts their lines. These cascade props are often the strongest <strong>Underdog picks today</strong> because the platform's lines lag behind injury-adjusted reality.
+            Injury and lineup changes can affect a player's expected role, minutes, shots, or touches. Propeller includes available injury and role signals when relevant, while users should still confirm late news, player status, and the current Underdog projection before making their own decision.
           </p>
         </div>
       </div>
@@ -1919,11 +1944,11 @@ footer {
         </div>
         <div class="agent-body">
           <div class="agent-header">
-            <h3 class="agent-name">No-Vig Probability Analysis</h3>
+            <h3 class="agent-name">Market Context Comparison</h3>
             <span class="weight-badge weight-badge-high">MULTI-BOOK</span>
           </div>
           <p>
-            Underdog sets its own lines independently from traditional sportsbooks. The NoVig agent compares Underdog's implied probability against the true no-vig consensus across multiple sportsbooks. When Underdog's line diverges significantly from cross-book consensus, that gap represents actionable edge. This is how Propeller identifies which <strong>Underdog Fantasy best picks</strong> have genuine market value versus which are accurately priced.
+            Available market context can help show whether a listed player-prop line differs from broader pricing. It is one input among the sport-specific signals available for a prop, not a promise of true probability, guaranteed value, or a winning outcome.
           </p>
         </div>
       </div>
@@ -1977,33 +2002,10 @@ footer {
     <!-- Inline content links for SEO -->
     <div style="margin-top:40px; padding:28px 32px; border-radius:14px; background:rgba(255,255,255,0.02); border:1px solid var(--glass-border); text-align:center;" class="fade-in">
       <p style="font-size:15px; line-height:1.8; max-width:680px; margin:0 auto;">
-        Propeller covers all <strong style="color:var(--text-primary);">Underdog-eligible prop types</strong>: points, rebounds, assists, strikeouts, hits, total bases, goals, shots on goal, and more. Explore sport-specific picks: <a href="/picks/nba/">NBA picks</a>, <a href="/picks/mlb/">MLB picks</a>, <a href="/picks/nhl/">NHL picks</a>. Compare to <a href="/picks/pick6/">DraftKings Pick6 picks</a>, read the full <a href="/guides/underdog-strategy/">Underdog strategy guide</a>, and track the track record on the <a href="/results/">results page</a>.
+        Propeller can research listed points, rebounds, assists, strikeouts, hits, total bases, goals, shots-on-goal props, and other supported stat types when public data is available. Explore sport-specific picks: <a href="/picks/nba/">NBA picks</a>, <a href="/picks/mlb/">MLB picks</a>, <a href="/picks/nhl/">NHL picks</a>. Compare to <a href="/picks/pick6/">DraftKings Pick6 picks</a>, read the full <a href="/guides/underdog-strategy/">Underdog strategy guide</a>, and inspect the <a href="/results/">results page</a>.
       </p>
     </div>
 
-  </div>
-</section>
-
-<!-- Current research board guidance -->
-<section class="content-section" id="research-board" aria-labelledby="research-board-heading">
-  <div class="container">
-    <div class="content-prose fade-in">
-      <h2 id="research-board-heading">How to Read Today's <span>Underdog Research Board</span></h2>
-
-      <p>
-        This page is the canonical home for current Underdog Higher/Lower research. It requests the available public slate and presents each player, stat, line, directional model signal, and confidence context. OVER maps to Higher and UNDER maps to Lower; confidence describes model conviction, not win probability.
-      </p>
-
-      <h3>Verify the Current Line</h3>
-      <p>
-        Player availability, roles, and platform lines can change after analysis. Confirm the player is active and compare the displayed line with the current Underdog line before making your own decision. When the current feed is empty or unavailable, this page shows that state instead of relabeling older research as today.
-      </p>
-
-      <h3>Choose the Right Intent Owner</h3>
-      <p>
-        For evergreen entry construction, correlation, and format guidance, read the <a href="/guides/underdog-strategy/">Underdog Fantasy strategy guide</a>. For Standard and Flex payout math, use the <a href="/tools/underdog-payout-calculator/">Underdog payout calculator</a>. To inspect one player line without platform framing, use the <a href="/analyzer/">free AI player prop analyzer</a>.
-      </p>
-    </div>
   </div>
 </section>
 
@@ -2073,7 +2075,7 @@ footer {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Propeller surfaces today's best Underdog Fantasy picks by running sport-specific analysis signals across NBA, MLB, and NHL player props. The live picks at the top of this page are sorted by confidence score &mdash; a measure of how strongly all agents agree on a direction. Props with confidence above 60% represent the strongest Higher/Lower calls for your Underdog entry. OVER maps to Higher, UNDER maps to Lower. All picks update daily each morning based on the latest injury reports, lineup news, and current book odds.
+            The board shows Propeller's current public player-prop research when a usable slate is available. Each row includes a player, stat, displayed line, More/Over or Less/Under direction, and a 50&ndash;100 directional model-confidence score. For Underdog Pick'em research, Over maps to Higher and Under maps to Lower. The score is not a win probability or guarantee. Confirm the current Underdog projection and player status before making your own decision; an unavailable slate produces an honest empty state.
           </div>
         </div>
       </div>
@@ -2085,7 +2087,7 @@ footer {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Underdog Fantasy uses a higher/lower format on player props &mdash; which maps directly to Propeller's OVER/UNDER directional calls. Each listed prop includes a direction and a model confidence score. Propeller's injury agent evaluates teammate effects as one input, but users should confirm late news and the final line in Underdog before submitting an entry.
+            Propeller is an independent AI-assisted research workspace designed for DFS and pick'em platforms. For Underdog Fantasy Pick'em, compare Propeller's displayed More/Over or Less/Under direction with the current Underdog Higher or Lower projection. Available injury and role context can contribute when relevant, but users should still confirm late news, the current line, and the entry terms in Underdog. This research does not apply to the separate Underdog Prediction Picks product.
           </div>
         </div>
       </div>
@@ -2121,7 +2123,7 @@ footer {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Underdog Fantasy covers NBA, MLB, NHL, NFL, college football, college basketball, MMA, and more depending on the season. Propeller currently provides daily analyzed picks for NBA, MLB, and NHL &mdash; the three sports with the highest prop volume and deepest historical data for AI analysis. NFL picks are also available during the season via the <a href="/picks/nfl/" style="color:var(--accent); text-decoration:none;">NFL picks page</a>. As additional sports are added to Propeller coverage they will appear in the multi-sport picks feed on this page.
+            Underdog's available sports and projections can vary by season, location, and current slate, so confirm availability in Underdog. Propeller's signed-in research workspace covers NFL, NBA, MLB, NHL, soccer, and PGA when supported props are available. The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer. Use the <a href="/analyzer/" style="color:var(--accent); text-decoration:none;">player prop analyzer</a> or the sport-specific picks pages to check what is currently available.
           </div>
         </div>
       </div>
