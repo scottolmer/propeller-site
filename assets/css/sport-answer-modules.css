@@ -9,6 +9,10 @@
     rgba(250, 248, 243, 0.76);
 }
 
+.picks-section {
+  scroll-margin-top: 92px;
+}
+
 .pp-sport-answer::before {
   content: "";
   position: absolute;
@@ -52,6 +56,11 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 14px;
   margin-top: 40px;
+}
+
+.pp-platform-answer--compact .pp-sport-answer__grid {
+  max-width: 850px;
+  grid-template-columns: 1fr;
 }
 
 .pp-sport-answer__card {
@@ -102,6 +111,11 @@
   font-size: 12px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+.pp-sport-answer__availability a {
+  color: var(--pp-orange-dark) !important;
+  font-weight: 600;
 }
 
 .pp-sport-answer__actions {

@@ -112,7 +112,7 @@
       "name": "What are the best Pick6 picks today?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller surfaces today's best Pick6 picks by running sport-specific analysis signals across NBA, MLB, and NHL player props simultaneously. The live picks at the top of this page are sorted by confidence score — a measure of how strongly all agents agree on a direction. Props with confidence above 60% represent the strongest legs for your DraftKings Pick6 entry. All picks update daily each morning based on the latest injury reports, lineup news, and current book odds."
+        "text": "The board shows Propeller's current public player-prop research when a usable slate is available. Each row includes a player, stat, displayed line, More/Over or Less/Under direction, and a 50–100 directional model-confidence score. The score shows how strongly the available signals support that direction; it is not a win probability or guarantee. Confirm the current Pick6 projection and player status before making your own decision. If no current research is available, the page shows an honest empty state."
       }
     },
     {
@@ -120,7 +120,7 @@
       "name": "How does Propeller help with DraftKings Pick6?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller displays an OVER or UNDER direction plus a 50 to 100 model-confidence score. Higher values show stronger support for the displayed side; they are not win probabilities or guarantees. The combination builder can organize 2–6 selected legs with risk context, but users should confirm every current platform line and make their own entry decisions."
+        "text": "Propeller is an independent AI-assisted research workspace designed for DFS and pick'em platforms. It displays a More/Over or Less/Under direction plus a 50–100 directional model-confidence score for available player props. Compare that research with the current Pick6 More or Less projection, then confirm the player, stat, line, regional requirements, and contest terms in Pick6. Propeller does not accept wagers or submit entries."
       }
     },
     {
@@ -136,7 +136,7 @@
       "name": "How should I interpret Propeller Pick6 confidence scores?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller confidence scores show model conviction for the recommended side of a prop after the agent suite evaluates matchup, usage, injuries, market context, recent trends, and other sport-specific signals. Confidence is a research signal, not a guarantee. You can review how graded picks are logged and evaluated on the results page and track record page ."
+        "text": "A 50–100 directional model-confidence score shows how strongly the available sport-specific signals support the displayed More/Over or Less/Under direction. Signal availability and weights vary by sport and prop, and missing or neutral signals are skipped. The score is not a calibrated win probability or guarantee. You can review how graded analysis is logged on the results page and track record page ."
       }
     },
     {
@@ -144,7 +144,7 @@
       "name": "How many picks do I need for Pick6?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "DraftKings Pick6 supports entries from 2 picks up to 6 picks. Smaller entries carry less variance and higher individual leg hit probability, while 6-pick entries offer higher multipliers in exchange for more legs needing to hit. Propeller recommends building your entry around the 3 to 4 highest-confidence props of the day and adding a 5th or 6th only when additional high-confidence legs are available across NBA, MLB, or NHL. Quality of each leg matters more than maximizing pick count. The Pick6 strategy guide covers optimal entry size by risk tolerance in detail."
+        "text": "DraftKings currently says Pick6 entries use two or more players, with three or more required in some regions. Entry requirements and contest terms can vary by region and contest, so confirm the current requirements inside Pick6 before submitting your own entry. For evergreen format context, use the Pick6 strategy guide ; for payout estimates, use the Pick6 payout calculator ."
       }
     }
   ]
@@ -1747,6 +1747,9 @@ footer {
 }
 </style>
   <link rel="stylesheet" href="/assets/css/site-white-overrides.css?v=20260625-white-site">
+<!-- PP_PLATFORM_ANSWER_HEAD_START -->
+<link rel="stylesheet" href="/assets/css/sport-answer-modules.css?v=20260716b">
+<!-- PP_PLATFORM_ANSWER_HEAD_END -->
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
@@ -1919,13 +1922,37 @@ footer {
   </div>
 </section>
 
+<!-- PP_PLATFORM_ANSWER_START -->
+<section class="pp-sport-answer pp-platform-answer pp-platform-answer--pick6 pp-platform-answer--compact" id="platform-research-answer" aria-labelledby="platform-research-answer-heading">
+  <div class="container pp-sport-answer__inner">
+    <p class="pp-sport-answer__eyebrow">DraftKings Pick6 research explained</p>
+    <h2 class="pp-sport-answer__heading" id="platform-research-answer-heading">How to use today&#x27;s DraftKings Pick6 research</h2>
+    <p class="pp-sport-answer__direct">Today&#x27;s DraftKings Pick6 page presents Propeller&#x27;s current player-prop research, not a Pick6-native feed. Start with the listed player, stat, and line, then read the More/Over or Less/Under direction and confidence context from the available sport-specific signals. Compare every row with the current Pick6 More or Less stat projection.</p>
+    <div class="pp-sport-answer__grid">
+      <article class="pp-sport-answer__card">
+        <span class="pp-sport-answer__index">01</span>
+        <h3>What should you verify?</h3>
+        <p>Confirm the player is active and recheck the current stat, line, timestamp, regional requirements, and contest terms in Pick6. The 50-100 directional model-confidence score shows support from available signals; it is not a calibrated win probability or a guarantee.</p>
+      </article>
+    </div>
+    <p class="pp-sport-answer__availability"><strong>Freshness</strong><span>This page requests Propeller&#x27;s current public preview. If no current player-prop research is available, it should show an honest empty state instead of presenting older research as today.</span></p>
+    <p class="pp-sport-answer__availability"><strong>Platform check</strong><span>DraftKings Pick6 entry requirements and contest terms can vary by region and contest. Confirm them in Pick6 before submitting your own entry. Terminology checked <time datetime="2026-07-16">July 16, 2026</time> against <a href="https://pick6.draftkings.com/how-to-play-pick6">DraftKings Pick6 how to play</a>.</span></p>
+    <div class="pp-sport-answer__actions">
+      <a class="pp-sport-answer__cta" href="#picks">View current research <span aria-hidden="true">&rarr;</span></a>
+      <span class="pp-sport-answer__links"><a href="/tools/pick6-payout-calculator/">Payout calculator</a><a href="/guides/pick6-strategy/">Strategy guide</a><a href="/analyzer/">Player prop analyzer</a></span>
+    </div>
+    <p class="pp-sport-answer__disclosure">Propeller is an independent AI-assisted player-prop research workspace designed for DFS and pick'em platforms. It does not accept wagers, place wagers, submit entries, or guarantee outcomes, and it is not affiliated with DraftKings Pick6.</p>
+  </div>
+</section>
+<!-- PP_PLATFORM_ANSWER_END -->
+
 <!-- How Propeller Powers Your Pick6 Entries -->
 <section class="section how-section" id="how-it-works" aria-labelledby="how-heading">
   <div class="container">
     <p class="label section-label fade-in">How It Works</p>
     <h2 class="section-title fade-in" id="how-heading">How Propeller Powers Your Pick6 Entries</h2>
     <p class="section-subtitle fade-in">
-      DraftKings Pick6 uses 2 to 6 player prop picks to build an entry. Propeller confidence scores are built to map directly to Pick6 decision-making &mdash; giving you a data-driven edge on every leg you add.
+      DraftKings Pick6 currently uses More or Less choices on listed player-stat projections, with entry requirements that can vary by region and contest. Propeller adds plain-language directional research and confidence context without submitting entries or promising an edge.
     </p>
 
     <!-- Featured: Confidence Score System -->
@@ -1955,11 +1982,11 @@ footer {
         </div>
         <div class="how-body">
           <div class="how-header">
-            <h3 class="how-name">AI Parlay Builder</h3>
+            <h3 class="how-name">Selection Review</h3>
             <span class="step-badge">IN APP</span>
           </div>
           <p>
-            The Propeller parlay builder inside the app surfaces optimized Pick6 combos with risk grading. Instead of manually selecting 2 to 6 legs, the builder identifies combinations with the highest combined confidence while flagging correlated picks from the same game. You can filter by sport, risk level, and minimum confidence to generate a <strong>Pick6 cheat sheet</strong> built around your bankroll strategy.
+            Propeller can organize selected player props with confidence and risk context, but it does not automatically submit an entry or guarantee an optimal combination. Users should inspect each player, stat, line, and relationship between selections before making their own decision.
           </p>
         </div>
       </div>
@@ -1971,10 +1998,10 @@ footer {
         <div class="how-body">
           <div class="how-header">
             <h3 class="how-name">Injury Cascade Detection</h3>
-            <span class="step-badge">HIGHEST WEIGHT</span>
+            <span class="step-badge">AVAILABLE SIGNAL</span>
           </div>
           <p>
-            Lines that have not yet adjusted to a key player being out represent the highest-value Pick6 legs on any slate. Propeller's Injury agent re-checks reports multiple times per day. When a star is ruled out, the system traces how usage redistributes across teammates &mdash; identifying which supporting players get a volume boost before the books fully adjust. These injury-cascade props are often the strongest <strong>DraftKings Pick6 picks today</strong>.
+            Injury and lineup changes can affect a player's expected role and volume. Propeller includes available injury-related signals when relevant, while users should confirm late news, player status, and the current Pick6 projection before making their own decision.
           </p>
         </div>
       </div>
@@ -1990,11 +2017,11 @@ footer {
         </div>
         <div class="how-body">
           <div class="how-header">
-            <h3 class="how-name">No-Vig Market Analysis</h3>
+            <h3 class="how-name">Market Context Comparison</h3>
             <span class="step-badge">MULTI-BOOK</span>
           </div>
           <p>
-            The NoVig agent strips the sportsbook margin from both sides of every prop to reveal the true implied probability. Cross-book disagreement &mdash; where one book prices a line significantly out of consensus &mdash; is flagged as a standalone edge indicator. These market inefficiencies are exactly what a strong <strong>Pick6 strategy</strong> needs to find consistent value over time rather than chasing popular names.
+            Available market context can help show where a listed player-prop line differs from broader pricing. It is one input among the sport-specific signals available for a prop, not a true win probability, standalone edge, or promise of consistent value.
           </p>
         </div>
       </div>
@@ -2009,7 +2036,7 @@ footer {
             <span class="step-badge">NBA + MLB + NHL</span>
           </div>
           <p>
-            Pick6 slates frequently span multiple sports. Propeller runs dedicated agent stacks for NBA, MLB, and NHL &mdash; each sport with its own calibrated weights, sport-specific signals (pace for basketball, pitching matchup for baseball, special teams for hockey), and injury cascade models. The live picks above pull from all three simultaneously so you can build a full 6-pick entry without switching between separate tools.
+            The public preview can surface available NBA, MLB, and NHL player-prop research in one place. Signal availability and weights vary by sport and prop, and the page shows an honest empty state when no current research is available.
           </p>
         </div>
       </div>
@@ -2019,33 +2046,10 @@ footer {
     <!-- Inline content links for SEO -->
     <div style="margin-top:40px; padding:28px 32px; border-radius:14px; background:rgba(255,255,255,0.02); border:1px solid var(--glass-border); text-align:center;" class="fade-in">
       <p style="font-size:15px; line-height:1.8; max-width:680px; margin:0 auto;">
-        Propeller covers <strong style="color:var(--text-primary);">all major prop types</strong> available on Pick6 slates: points, rebounds, assists, strikeouts, hits, goals, shots on goal, and more. Explore sport-specific picks: <a href="/picks/nba/">NBA picks</a>, <a href="/picks/mlb/">MLB picks</a>, <a href="/picks/nhl/">NHL picks</a>. Read the full <a href="/guides/pick6-strategy/">Pick6 strategy guide</a>, compare to <a href="/guides/underdog-strategy/">Underdog Fantasy</a>, and track performance on the <a href="/results/">results page</a>.
+        Propeller can research listed points, rebounds, assists, strikeouts, hits, goals, shots-on-goal props, and other supported stat types when public data is available. Explore sport-specific picks: <a href="/picks/nba/">NBA picks</a>, <a href="/picks/mlb/">MLB picks</a>, <a href="/picks/nhl/">NHL picks</a>. Read the full <a href="/guides/pick6-strategy/">Pick6 strategy guide</a>, compare to <a href="/guides/underdog-strategy/">Underdog Fantasy</a>, and inspect the <a href="/results/">results page</a>.
       </p>
     </div>
 
-  </div>
-</section>
-
-<!-- Current research board guidance -->
-<section class="content-section" id="research-board" aria-labelledby="research-board-heading">
-  <div class="container">
-    <div class="content-prose fade-in">
-      <h2 id="research-board-heading">How to Read Today's <span>Pick6 Research Board</span></h2>
-
-      <p>
-        This page is the canonical home for current DraftKings Pick6-oriented research. It requests the available public slate and presents each player, stat, line, directional model signal, and confidence context. Propeller uses OVER and UNDER labels; compare them with the current Pick6 Higher or Lower line before making your own decision.
-      </p>
-
-      <h3>Verify the Current Slate</h3>
-      <p>
-        Player availability, roles, and platform lines can change after analysis. Confirm the player is active and compare the displayed line with the current Pick6 line. Confidence describes model conviction, not win probability. When the current feed is empty or unavailable, this page shows that state instead of presenting older research as today.
-      </p>
-
-      <h3>Choose the Right Intent Owner</h3>
-      <p>
-        For evergreen entry construction and correlation guidance, read the <a href="/guides/pick6-strategy/">DraftKings Pick6 strategy guide</a>. For minimum-guarantee payout estimates, use the <a href="/tools/pick6-payout-calculator/">Pick6 payout calculator</a>. To inspect one player line without platform framing, use the <a href="/analyzer/">free AI player prop analyzer</a>.
-      </p>
-    </div>
   </div>
 </section>
 
@@ -2058,7 +2062,7 @@ footer {
       </div>
       <h2 id="app-cta-heading">Build Your <span>Pick6 Entry</span> in Seconds</h2>
       <p>
-        Across supported sports and active slates, sport-specific analysis signals score listed player props &mdash; confidence scores you can act on in under 30 seconds.
+        Across supported sports and active slates, sport-specific analysis signals add direction and confidence context to listed player props for your own review.
       </p>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
         <a href="https://app.propellerpicks.com/signup" class="btn btn-primary">
@@ -2115,7 +2119,7 @@ footer {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Propeller surfaces today's best Pick6 picks by running sport-specific analysis signals across NBA, MLB, and NHL player props simultaneously. The live picks at the top of this page are sorted by confidence score &mdash; a measure of how strongly all agents agree on a direction. Props with confidence above 60% represent the strongest legs for your DraftKings Pick6 entry. All picks update daily each morning based on the latest injury reports, lineup news, and current book odds.
+            The board shows Propeller's current public player-prop research when a usable slate is available. Each row includes a player, stat, displayed line, More/Over or Less/Under direction, and a 50&ndash;100 directional model-confidence score. The score shows how strongly the available signals support that direction; it is not a win probability or guarantee. Confirm the current Pick6 projection and player status before making your own decision. If no current research is available, the page shows an honest empty state.
           </div>
         </div>
       </div>
@@ -2127,7 +2131,7 @@ footer {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Propeller displays an OVER or UNDER direction plus a 50 to 100 model-confidence score. Higher values show stronger support for the displayed side; they are not win probabilities or guarantees. The combination builder can organize 2&ndash;6 selected legs with risk context, but users should confirm every current platform line and make their own entry decisions.
+            Propeller is an independent AI-assisted research workspace designed for DFS and pick'em platforms. It displays a More/Over or Less/Under direction plus a 50&ndash;100 directional model-confidence score for available player props. Compare that research with the current Pick6 More or Less projection, then confirm the player, stat, line, regional requirements, and contest terms in Pick6. Propeller does not accept wagers or submit entries.
           </div>
         </div>
       </div>
@@ -2151,7 +2155,7 @@ footer {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Propeller confidence scores show model conviction for the recommended side of a prop after the agent suite evaluates matchup, usage, injuries, market context, recent trends, and other sport-specific signals. Confidence is a research signal, not a guarantee. You can review how graded picks are logged and evaluated on the <a href="/results/" style="color:var(--accent); text-decoration:none;">results page</a> and <a href="/track-record/" style="color:var(--accent); text-decoration:none;">track record page</a>.
+            A 50&ndash;100 directional model-confidence score shows how strongly the available sport-specific signals support the displayed More/Over or Less/Under direction. Signal availability and weights vary by sport and prop, and missing or neutral signals are skipped. The score is not a calibrated win probability or guarantee. You can review how graded analysis is logged on the <a href="/results/" style="color:var(--accent); text-decoration:none;">results page</a> and <a href="/track-record/" style="color:var(--accent); text-decoration:none;">track record page</a>.
           </div>
         </div>
       </div>
@@ -2163,7 +2167,7 @@ footer {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            DraftKings Pick6 supports entries from 2 picks up to 6 picks. Smaller entries carry less variance and higher individual leg hit probability, while 6-pick entries offer higher multipliers in exchange for more legs needing to hit. Propeller recommends building your entry around the 3 to 4 highest-confidence props of the day and adding a 5th or 6th only when additional high-confidence legs are available across NBA, MLB, or NHL. Quality of each leg matters more than maximizing pick count. The <a href="/guides/pick6-strategy/" style="color:var(--accent); text-decoration:none;">Pick6 strategy guide</a> covers optimal entry size by risk tolerance in detail.
+            DraftKings currently says Pick6 entries use two or more players, with three or more required in some regions. Entry requirements and contest terms can vary by region and contest, so confirm the current requirements inside Pick6 before submitting your own entry. For evergreen format context, use the <a href="/guides/pick6-strategy/" style="color:var(--accent); text-decoration:none;">Pick6 strategy guide</a>; for payout estimates, use the <a href="/tools/pick6-payout-calculator/" style="color:var(--accent); text-decoration:none;">Pick6 payout calculator</a>.
           </div>
         </div>
       </div>
@@ -2181,7 +2185,7 @@ footer {
         Get <span>AI-Powered Pick6</span><br>Picks Today
       </h2>
       <p>
-        Across supported sports and active slates, sport-specific analysis signals score listed player props &mdash; confidence scores you can act on in under 30 seconds. Free to start.
+        Across supported sports and active slates, sport-specific analysis signals add direction and confidence context to listed player props for your own review. Free to start.
       </p>
       <div class="cta-actions">
         <a href="https://app.propellerpicks.com/signup" class="btn btn-primary" style="font-size:18px; padding:16px 36px;">

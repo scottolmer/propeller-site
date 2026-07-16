@@ -39,6 +39,7 @@ jobs:
           python3 scripts/generate_help_pages.py
           python3 scripts/generate_comparison_pages.py
           python3 scripts/generate_sport_answer_modules.py
+          python3 scripts/generate_platform_answer_modules.py
           python3 scripts/apply_site_shell.py --include-home
           python3 scripts/normalize_entity_metadata.py
           python3 scripts/normalize_alias_metadata.py
@@ -69,6 +70,7 @@ jobs:
           python3 scripts/generate_help_pages.py --check
           python3 scripts/generate_comparison_pages.py --check
           python3 scripts/generate_sport_answer_modules.py --check
+          python3 scripts/generate_platform_answer_modules.py --check
           python3 -m unittest scripts/test_ai_search_assets.py
           python3 -m unittest scripts/test_schema_contracts.py
           python3 -m unittest scripts/test_sport_answer_modules.py
