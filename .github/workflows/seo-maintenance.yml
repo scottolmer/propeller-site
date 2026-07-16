@@ -43,6 +43,7 @@ jobs:
           python3 scripts/apply_site_shell.py --include-home
           python3 scripts/normalize_entity_metadata.py
           python3 scripts/normalize_alias_metadata.py
+          python3 scripts/normalize_platform_intent_links.py
           python3 scripts/normalize_analyzer_archive_language.py
           python3 scripts/normalize_coverage_claims.py
           python3 scripts/normalize_access_language.py
@@ -57,6 +58,7 @@ jobs:
           python3 scripts/apply_site_shell.py --check --include-home
           python3 scripts/normalize_entity_metadata.py --check
           python3 scripts/normalize_alias_metadata.py --check
+          python3 scripts/normalize_platform_intent_links.py --check
           python3 scripts/normalize_analyzer_archive_language.py --check
           python3 scripts/normalize_coverage_claims.py --check
           python3 scripts/normalize_access_language.py --check
@@ -74,6 +76,8 @@ jobs:
           python3 -m unittest scripts/test_ai_search_assets.py
           python3 -m unittest scripts/test_schema_contracts.py
           python3 -m unittest scripts/test_sport_answer_modules.py
+          python3 -m unittest scripts/test_normalize_coverage_claims.py
+          python3 -m unittest scripts/test_normalize_platform_intent_links.py
           python3 scripts/generate_sitemap.py --check
 
       - name: Commit and push if changed

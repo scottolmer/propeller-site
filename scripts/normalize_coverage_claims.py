@@ -12,8 +12,6 @@ ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED = {".git", "analytics-dashboard", "docs", "mockups", "node_modules"}
 
 REPLACEMENTS = {
-    ". powered by sport-specific analysis signals": ". Powered by sport-specific analysis signals",
-    ". sport-specific analysis signals": ". Sport-specific analysis signals",
     "AI-powered sports analysis platform using sport-specific analysis signals per sport":
         "AI-assisted player-prop research workspace using sport-specific analysis signals",
     "every available player prop": "the player props currently available",
@@ -118,6 +116,11 @@ REGEX_REPLACEMENTS = (
     (r">sport-specific analysis signals", ">Sport-specific analysis signals"),
 )
 
+SENTENCE_CASE_REPLACEMENTS = {
+    ". powered by sport-specific analysis signals": ". Powered by sport-specific analysis signals",
+    ". sport-specific analysis signals": ". Sport-specific analysis signals",
+}
+
 FORBIDDEN = (
     "every available player prop",
     "every available prop line",
@@ -144,6 +147,10 @@ def normalize(text: str) -> str:
         text = text.replace(old, new)
     for pattern, replacement in REGEX_REPLACEMENTS:
         text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
+    # Regex replacements can introduce lowercase text after a sentence boundary.
+    # Apply sentence casing last so a second normalization pass is a no-op.
+    for old, new in SENTENCE_CASE_REPLACEMENTS.items():
+        text = text.replace(old, new)
     return text
 
 
