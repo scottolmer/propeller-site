@@ -114,7 +114,7 @@
       "name": "What are the best NHL prop picks today?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Today's best NHL prop picks are identified by Propeller's 6-agent AI system and displayed in the live picks section above, ranked by confidence score and updated daily before puck drop. The system scores the player props currently available using no-vig probability analysis, special teams efficiency, injury impact, recent hit rate trends, line combination data, and defensive matchup differentials. A public sample may be shown on this page. Current full-slate availability and access details are shown in the app."
+        "text": "Today's best NHL prop picks are identified by Propeller's sport-specific analysis system and displayed in the live picks section above, ranked by confidence score and updated daily before puck drop. The system scores the player props currently available using no-vig probability analysis, special teams efficiency, injury impact, recent hit rate trends, line combination data, and defensive matchup differentials. A public sample may be shown on this page. Current full-slate availability and access details are shown in the app."
       }
     },
     {
@@ -122,7 +122,7 @@
       "name": "How does Propeller analyze NHL player props?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller uses 6 specialized AI agents to analyze listed NHL player props. The NoVig agent (weight 4.0) strips the sportsbook margin from both sides of a line to find true implied probability and detects cross-book disagreement as an independent edge signal. The SpecialTeams agent (weight 3.5) evaluates power play efficiency and penalty kill rate for both teams. The Injury agent (weight 3.0) models direct and cascading lineup effects when players are ruled out. The HitRate agent (weight 3.0) applies recency-weighted trend and consistency scoring. The LineCombo agent (weight 1.0) evaluates unit-level offensive production. The Matchup agent (weight 0.5) assesses position-specific defensive assignments. All six scores are combined via a weighted combination into a single confidence score."
+        "text": "Propeller uses sport-specific analysis signals to evaluate listed NHL player props. Available inputs can include no-vig market context, special teams, injuries and lineup changes, recent form, line combinations, matchup, goalie, and rest context. Signals without usable evidence are skipped, and the remaining signals combine through sport-specific weights before the displayed direction and confidence value are published."
       }
     },
     {
@@ -1633,7 +1633,7 @@ footer {
       <a href="https://propellerpicks.com/tools/" data-section="tools">Tools</a>
       <a href="https://propellerpicks.com/analyzer/" data-section="analyzer">Analyzer</a>
       <a href="https://app.propellerpicks.com/app" rel="noopener noreferrer">Web App</a>
-      <a class="pp-site-nav__cta" href="https://app.propellerpicks.com/signup" rel="noopener noreferrer">Get Free Lifetime Access</a>
+      <a class="pp-site-nav__cta" href="https://app.propellerpicks.com/signup" rel="noopener noreferrer">Get Free Access</a>
     </div>
   </div>
 </nav>
@@ -1663,7 +1663,7 @@ footer {
       </h1>
 
       <p class="fade-in delay-2">
-        Six specialized AI agents score listed NHL player props before puck drop — special teams efficiency, line combinations, no-vig true probability, and injury-adjusted lineups. Get data-driven confidence scores on today's slate.
+        Sport-specific analysis signals score listed NHL player props using available special-teams, line-combination, no-vig market, and injury context.
       </p>
 
       <div class="hero-buttons fade-in delay-3">
@@ -1683,8 +1683,8 @@ footer {
         </div>
         <div class="hero-stat-divider" aria-hidden="true"></div>
         <div class="hero-stat">
-          <span class="hero-stat-value">6</span>
-          <span class="hero-stat-label">NHL Agents</span>
+          <span class="hero-stat-value">Multi</span>
+          <span class="hero-stat-label">Sport-Specific Signals</span>
         </div>
         <div class="hero-stat-divider" aria-hidden="true"></div>
         <div class="hero-stat">
@@ -1860,7 +1860,7 @@ footer {
           <span class="weight-badge">COMBINED</span>
         </div>
         <p style="font-size:14px; line-height:1.7;">
-          All six agents produce individual confidence scores that are combined via a weighted combination. Agents that return no signal for a given prop are skipped entirely — a neutral reading never dilutes a strong directional signal. Signal amplification of 1.4x sharpens separation between high-confidence and low-confidence props. Score capping ensures no result registers outside a defensible range before the final pick is published.
+          Available analysis signals are combined with sport-specific weights. Signals without a usable result are skipped, and sport-specific adjustments keep the directional score within a defensible range before publication.
         </p>
       </div>
     </div>
@@ -1882,8 +1882,8 @@ footer {
       </div>
 
       <div class="card stat-card fade-in delay-1">
-        <span class="stat-card-value">6</span>
-        <span class="stat-card-label">Specialized NHL analysis agents</span>
+        <span class="stat-card-value">Multi</span>
+        <span class="stat-card-label">Sport-Specific Signals</span>
       </div>
 
       <div class="card stat-card fade-in delay-2">
@@ -1914,7 +1914,7 @@ footer {
           <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
         <p class="faq-answer">
-          Today's best NHL prop picks are identified by Propeller's 6-agent AI system and displayed in the live picks section above, ranked by confidence score and updated daily before puck drop. The system scores the player props currently available using no-vig probability analysis, special teams efficiency, injury impact, recent hit rate trends, line combination data, and defensive matchup differentials. A public sample may be shown on this page. Current full-slate availability and access details are shown in the app.
+          Today's best NHL prop picks are identified by Propeller's sport-specific analysis system and displayed in the live picks section above, ranked by confidence score and updated daily before puck drop. The system scores the player props currently available using no-vig probability analysis, special teams efficiency, injury impact, recent hit rate trends, line combination data, and defensive matchup differentials. A public sample may be shown on this page. Current full-slate availability and access details are shown in the app.
         </p>
       </details>
 
@@ -1924,7 +1924,7 @@ footer {
           <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
         <p class="faq-answer">
-          Propeller uses 6 specialized AI agents to analyze listed NHL player props. The NoVig agent (weight 4.0) strips the sportsbook margin from both sides of a line to find true implied probability and detects cross-book disagreement as an independent edge signal. The SpecialTeams agent (weight 3.5) evaluates power play efficiency and penalty kill rate for both teams. The Injury agent (weight 3.0) models direct and cascading lineup effects when players are ruled out. The HitRate agent (weight 3.0) applies recency-weighted trend and consistency scoring. The LineCombo agent (weight 1.0) evaluates unit-level offensive production. The Matchup agent (weight 0.5) assesses position-specific defensive assignments. All six scores are combined via a weighted combination into a single confidence score.
+          Propeller uses sport-specific analysis signals to evaluate listed NHL player props. Available inputs can include no-vig market context, special teams, injuries and lineup changes, recent form, line combinations, matchup, goalie, and rest context. Signals without usable evidence are skipped, and the remaining signals combine through sport-specific weights before the displayed direction and confidence value are published.
         </p>
       </details>
 
@@ -2005,7 +2005,7 @@ footer {
         Get <span>AI-Powered NHL</span><br>Prop Picks Today
       </h2>
       <p>
-        On active NHL slates, six agents score listed player props before puck drop — confidence scores you can act on in under 30 seconds.
+        On active NHL slates, sport-specific analysis signals score listed player props before puck drop — confidence scores you can act on in under 30 seconds.
       </p>
       <div class="cta-actions">
         <a href="https://app.propellerpicks.com/signup" class="btn btn-primary" style="font-size:18px; padding:16px 36px;">

@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Generate static help pages used for answer-engine coverage."""
 from __future__ import annotations
+import argparse
 
 import html
 import json
@@ -13,25 +14,25 @@ except ModuleNotFoundError:
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE_URL = "https://propellerpicks.com"
-UPDATED = "2026-07-13"
+UPDATED = "2026-07-15"
 
 
 PAGES = [
     {
         "slug": "what-is-propeller-picks",
         "title": "What Is Propeller Picks?",
-        "description": "Propeller Picks is an AI player prop research workspace for Pick6, PrizePicks, Underdog, and sportsbook prop analysis.",
+        "description": "Propeller Picks is an AI-assisted player-prop research workspace designed for DFS and pick'em platforms.",
         "h1": "What is Propeller Picks?",
-        "summary": "Propeller Picks is an AI-assisted player prop research workspace for web and mobile. It scores over/under player props with sport-specific analysis, publishes a documented historical results archive, and helps users compare prop context before making their own decisions. Propeller is not a sportsbook and does not accept wagers.",
+        "summary": "Propeller Picks is an AI-assisted player-prop research workspace for web and mobile. It uses sport-specific analysis signals, publishes a documented historical results archive, and helps users compare prop context before making their own decisions. Propeller is not a sportsbook and does not accept or place wagers.",
         "sections": [
             ("What Propeller Helps With", "Propeller helps users research player props by combining matchup context, injury and role changes, historical hit rates, market probability, recent form, and confidence scoring in one workflow."),
-            ("Who It Is For", "Propeller is built for people evaluating pick'em entries and player props on platforms such as Pick6, PrizePicks, Underdog Fantasy, and FanDuel. It is also useful for users who want a faster way to compare prop context before making their own decisions."),
-            ("What Propeller Is Not", "Propeller is not a sportsbook, does not set lines, does not place wagers, and does not pay out entries. It is a research and analytics product."),
+            ("Who It Is For", "Propeller was designed for people researching player lines used on PrizePicks, Underdog Fantasy, and DraftKings Pick6. Sportsbook lines such as FanDuel may appear only as market context."),
+            ("What Propeller Is Not", "Propeller is not a sportsbook, does not set lines, does not submit entries or place wagers, and does not pay out entries. It is independent and is not affiliated with the platforms it references."),
         ],
         "faqs": [
             ("What is Propeller Picks?", "Propeller Picks is an AI player prop research workspace for web and mobile. It analyzes over/under props with sport-specific signals, directional scores, a documented historical archive, and player-context pages."),
             ("Does Propeller Picks place bets for users?", "No. Propeller Picks does not place bets, accept wagers, or pay out entries. Users are responsible for their own decisions and local laws."),
-            ("What platforms does Propeller help analyze?", "Propeller is built around player prop analysis for Pick6, PrizePicks, Underdog Fantasy, FanDuel, and related over/under prop workflows."),
+            ("What platforms was Propeller designed for?", "Propeller was designed for DFS and pick'em research used with PrizePicks, Underdog Fantasy, and DraftKings Pick6. Sportsbook lines such as FanDuel may appear only as market context. Propeller does not submit entries and is not affiliated with those platforms."),
         ],
         "related": ["/analyzer/", "/how-it-works/", "/results/", "/track-record/"],
     },
@@ -76,14 +77,15 @@ PAGES = [
         "title": "What Sports Does Propeller Support?",
         "description": "Current Propeller sports coverage for player prop analysis, public results, and daily pick previews.",
         "h1": "What sports does Propeller support?",
-        "summary": "Propeller supports player prop research across NFL, NBA, MLB, NHL, and soccer workflows on the public site. Soccer is represented in public data through EPL and MLS buckets.",
+        "summary": "Propeller's signed-in product supports NFL, NBA, MLB, NHL, soccer, and PGA. The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer. Soccer is represented in public results through EPL and MLS buckets.",
         "sections": [
-            ("Current Public Sports", "The public site includes pages and data for NFL, NBA, MLB, NHL, and soccer. Soccer is represented in public data through EPL and MLS buckets."),
+            ("Signed-In Product Sports", "The signed-in product supports NFL, NBA, MLB, NHL, soccer, and PGA. Availability varies by season, slate, and data."),
+            ("Free Public Analyzer Sports", "The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer. Soccer is represented in public results through EPL and MLS buckets."),
             ("Platform Coverage", "Coverage can vary by platform because Pick6, PrizePicks, Underdog, and sportsbooks may offer different sports, stat types, and slates."),
             ("Where To Check", "Use the picks hub, analyzer, and public data catalog to confirm current sport coverage before relying on any specific slate."),
         ],
         "faqs": [
-            ("What sports does Propeller support?", "Propeller supports public player prop research for NFL, NBA, MLB, NHL, and soccer workflows. Public result buckets currently include NFL, NBA, NHL, MLB, EPL, and MLS."),
+            ("What sports does Propeller support?", "The signed-in product supports NFL, NBA, MLB, NHL, soccer, and PGA. The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer. Public result buckets include NFL, NBA, NHL, MLB, EPL, and MLS."),
             ("Does Propeller support soccer props?", "Yes. Propeller includes soccer coverage, with public result buckets for EPL and MLS where available."),
             ("Does sport coverage change?", "Yes. Sport and stat coverage can vary by season, platform, data availability, and public publishing rules."),
         ],
@@ -146,16 +148,16 @@ PAGES = [
     {
         "slug": "how-do-confidence-scores-work",
         "title": "How Do Propeller Confidence Scores Work?",
-        "description": "What Propeller confidence scores mean, how to read over/under direction, and why near-50 scores are neutral.",
+        "description": "What Propeller's 50–100 directional confidence score means and why it is not a win probability.",
         "h1": "How do Propeller confidence scores work?",
-        "summary": "Propeller confidence scores summarize the model's directional read on a player prop. Scores above 50 lean toward the over, scores below 50 lean toward the under, and scores near 50 are closer to neutral. Stronger scores should still be checked against line, platform, and slate context.",
+        "summary": "Propeller displays a More/Over or Less/Under direction plus a 50–100 model-confidence score. Higher values show stronger support for the displayed side. The score is not a calibrated win probability or guarantee.",
         "sections": [
-            ("How To Read The Score", "A higher score means the analysis leans toward the over. A lower score means it leans toward the under. A near-50 score means the model does not see a strong directional edge."),
+            ("How To Read The Score", "Read the displayed direction first, then the 50–100 confidence value. A value near 50 is closer to neutral; a higher value means stronger support for that displayed side."),
             ("What Goes Into A Score", "Signals can include matchup quality, role and minutes, injury cascade effects, game environment, recent form, hit-rate context, and market probability."),
             ("How To Use Scores Responsibly", "Confidence is not certainty. Use scores as one input alongside current line, payout format, injury news, and your own risk rules."),
         ],
         "faqs": [
-            ("How do Propeller confidence scores work?", "Propeller confidence scores summarize whether the analysis leans over or under on a player prop. Higher scores lean over, lower scores lean under, and near-50 scores are closer to neutral."),
+            ("How do Propeller confidence scores work?", "Propeller displays a direction plus a 50–100 confidence score. Higher values show stronger support for the displayed More/Over or Less/Under side; they are not win probabilities."),
             ("Is a high Propeller score guaranteed to win?", "No. A high score indicates stronger model confidence, not certainty. Sports outcomes are inherently uncertain."),
             ("What signals affect Propeller confidence?", "Signals can include matchup, role, injuries, game environment, recent form, historical hit rates, market probability, and platform line context."),
         ],
@@ -591,18 +593,29 @@ def render_hub() -> str:
 """
 
 
-def main() -> None:
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--check", action="store_true", help="Fail if generated pages are out of date")
+    args = parser.parse_args()
     help_dir = ROOT / "help"
     help_dir.mkdir(exist_ok=True)
+    changed: list[Path] = []
     hub_path = help_dir / "index.html"
-    hub_path.write_text(migrate_html(render_hub(), hub_path, False), encoding="utf-8")
+    outputs = [(hub_path, migrate_html(render_hub(), hub_path, False))]
     for page in PAGES:
         out_dir = help_dir / page["slug"]
         out_dir.mkdir(parents=True, exist_ok=True)
         page_path = out_dir / "index.html"
-        page_path.write_text(migrate_html(render_page(page), page_path, False), encoding="utf-8")
-    print(f"Generated {len(PAGES) + 1} help pages")
+        outputs.append((page_path, migrate_html(render_page(page), page_path, False)))
+    for path, output in outputs:
+        current = path.read_text(encoding="utf-8") if path.exists() else None
+        if current != output:
+            changed.append(path)
+            if not args.check:
+                path.write_text(output, encoding="utf-8")
+    print(f"help_pages={len(outputs)} changed={len(changed)}")
+    return 1 if args.check and changed else 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

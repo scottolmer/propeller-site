@@ -112,7 +112,7 @@
       "name": "What are the best NBA prop picks today?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller generates today's best NBA prop picks by running 8 specialized AI agents across the player props currently available on the slate. The top picks are sorted by confidence score — a measure of how strongly all agents agree on a direction. Props with a confidence score above 60 represent the highest-edge opportunities on today's NBA card. All picks update daily each morning based on the latest injury reports, lineup news, and current book odds. The live picks at the top of this page reflect the current day's slate automatically."
+        "text": "Propeller generates today's best NBA prop picks by running sport-specific analysis signals across the player props currently available on the slate. The top picks are sorted by confidence score — a measure of how strongly all agents agree on a direction. Props with a confidence score above 60 represent the highest-edge opportunities on today's NBA card. All picks update daily each morning based on the latest injury reports, lineup news, and current book odds. The live picks at the top of this page reflect the current day's slate automatically."
       }
     },
     {
@@ -120,7 +120,7 @@
       "name": "How does Propeller analyze NBA player props?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller uses 8 specialized agents to analyze listed NBA player props: an Injury agent (weight 4.0) that models direct impact and cascading teammate effects when players are ruled out, a Pace agent (2.0) that adjusts expected volume for game tempo using team pace ratings and the Vegas total, a Usage agent (2.0) that incorporates BallDontLie tracking data including touches and drives, a Minutes agent (2.0) that detects trajectory and role changes, a NoVig agent (2.0) that strips the sportsbook margin to find true implied probability, a Matchup agent (1.5) for Defense vs Position analysis, a HitRate agent (1.5) for recency-weighted trend analysis, and a Rest agent (0.8) for schedule fatigue monitoring. All agents combine via a weighted combination into a final confidence score, with regression correction applied to prevent overconfidence on noisy stats."
+        "text": "Propeller uses sport-specific analysis signals to evaluate listed NBA player props. Available inputs can include injuries and role changes, pace, usage, minutes, no-vig market context, matchup, recent form, rest, and shooting context. Signals without usable evidence are skipped, and the remaining signals combine through sport-specific weights before the displayed direction and confidence value are published."
       }
     },
     {
@@ -1647,7 +1647,7 @@ footer {
       <a href="https://propellerpicks.com/tools/" data-section="tools">Tools</a>
       <a href="https://propellerpicks.com/analyzer/" data-section="analyzer">Analyzer</a>
       <a href="https://app.propellerpicks.com/app" rel="noopener noreferrer">Web App</a>
-      <a class="pp-site-nav__cta" href="https://app.propellerpicks.com/signup" rel="noopener noreferrer">Get Free Lifetime Access</a>
+      <a class="pp-site-nav__cta" href="https://app.propellerpicks.com/signup" rel="noopener noreferrer">Get Free Access</a>
     </div>
   </div>
 </nav>
@@ -1675,7 +1675,7 @@ footer {
       </h1>
 
       <p class="hero-subtitle fade-in delay-2">
-        AI-analyzed player props updated daily &mdash; powered by 8 specialized agents covering injury cascades, pace, usage tracking, and no-vig market analysis.
+        AI-analyzed player props updated daily &mdash; powered by sport-specific analysis signals covering injury cascades, pace, usage tracking, and no-vig market analysis.
       </p>
 
       <div class="hero-stat-row fade-in" style="transition-delay:0.45s;">
@@ -1685,8 +1685,8 @@ footer {
         </div>
         <div class="hero-stat-divider" aria-hidden="true"></div>
         <div class="hero-stat">
-          <span class="hero-stat-value">8</span>
-          <span class="hero-stat-label">NBA Agents</span>
+          <span class="hero-stat-value">Multi</span>
+          <span class="hero-stat-label">Sport-Specific Signals</span>
         </div>
         <div class="hero-stat-divider" aria-hidden="true"></div>
         <div class="hero-stat">
@@ -1767,7 +1767,7 @@ footer {
     <p class="label section-label fade-in">The Engine Behind the Picks</p>
     <h2 class="section-title fade-in" id="agents-heading">How Propeller Analyzes NBA Player Props</h2>
     <p class="section-subtitle fade-in">
-      Eight specialized AI agents run in parallel on every NBA prop, each contributing a weighted signal. The result is a single confidence score that tells you how strong the edge is and which direction to take it &mdash; faster than any manual research process.
+      Available sport-specific signals evaluate listed NBA props in parallel and combine through sport-specific weights. The displayed direction receives a 50&ndash;100 model-confidence score; it is not a win probability or guarantee.
     </p>
 
     <!-- Injury: featured card spanning full width -->
@@ -1909,7 +1909,7 @@ footer {
           <span class="weight-badge">COMBINED</span>
         </div>
         <p>
-          All eight agents contribute weighted scores that combine via weighted combination into a final model confidence score. Agents that return no signal for a given prop are skipped entirely &mdash; a neutral reading never dilutes a strong directional signal. Regression correction dampens overconfidence on noisy or small-sample statistics. See our <a href="/how-it-works/" style="color:var(--accent); text-decoration:none;">full methodology</a>.
+          Available analysis signals combine through sport-specific weights. Signals without a usable result are skipped, and regression correction dampens overconfidence on noisy or small-sample statistics. See our <a href="/how-it-works/" style="color:var(--accent); text-decoration:none;">full methodology</a>.
         </p>
       </div>
 
@@ -1961,8 +1961,8 @@ footer {
         <span class="stat-card-label">NBA slate updates with injury context</span>
       </div>
       <div class="card stat-card fade-in delay-1">
-        <span class="stat-card-value">8</span>
-        <span class="stat-card-label">Specialized NBA analysis agents</span>
+        <span class="stat-card-value">Multi</span>
+        <span class="stat-card-label">Sport-Specific Signals</span>
       </div>
       <div class="card stat-card fade-in delay-2">
         <span class="stat-card-value">No-Vig</span>
@@ -1991,7 +1991,7 @@ footer {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Propeller generates today's best NBA prop picks by running 8 specialized AI agents across the player props currently available on the slate. The top picks are sorted by confidence score &mdash; a measure of how strongly all agents agree on a direction. Props with a confidence score above 60 represent the highest-edge opportunities on today's NBA card. All picks update daily each morning based on the latest injury reports, lineup news, and current book odds. The live picks at the top of this page reflect the current day's slate automatically.
+            Propeller generates today's best NBA prop picks by running sport-specific analysis signals across the player props currently available on the slate. The top picks are sorted by confidence score &mdash; a measure of how strongly all agents agree on a direction. Props with a confidence score above 60 represent the highest-edge opportunities on today's NBA card. All picks update daily each morning based on the latest injury reports, lineup news, and current book odds. The live picks at the top of this page reflect the current day's slate automatically.
           </div>
         </div>
       </div>
@@ -2003,7 +2003,7 @@ footer {
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            Propeller uses 8 specialized agents to analyze listed NBA player props: an Injury agent (weight 4.0) that models direct impact and cascading teammate effects when players are ruled out, a Pace agent (2.0) that adjusts expected volume for game tempo using team pace ratings and the Vegas total, a Usage agent (2.0) that incorporates BallDontLie tracking data including touches and drives, a Minutes agent (2.0) that detects trajectory and role changes, a NoVig agent (2.0) that strips the sportsbook margin to find true implied probability, a Matchup agent (1.5) for Defense vs Position analysis, a HitRate agent (1.5) for recency-weighted trend analysis, and a Rest agent (0.8) for schedule fatigue monitoring. All agents combine via a weighted combination into a final confidence score, with regression correction applied to prevent overconfidence on noisy stats.
+            Propeller uses sport-specific analysis signals to evaluate listed NBA player props. Available inputs can include injuries and role changes, pace, usage, minutes, no-vig market context, matchup, recent form, rest, and shooting context. Signals without usable evidence are skipped, and the remaining signals combine through sport-specific weights before the displayed direction and confidence value are published.
           </div>
         </div>
       </div>
@@ -2078,7 +2078,7 @@ footer {
         Get <span>AI-Powered NBA</span><br>Prop Picks Today
       </h2>
       <p>
-        On active NBA slates, eight agents score listed player props before tip-off &mdash; confidence scores you can act on in under 30 seconds. Free to start.
+        On active NBA slates, sport-specific analysis signals score listed player props before tip-off &mdash; confidence scores you can act on in under 30 seconds. Free to start.
       </p>
       <div class="cta-actions">
         <a href="https://app.propellerpicks.com/signup" class="btn btn-primary" style="font-size:18px; padding:16px 36px;">

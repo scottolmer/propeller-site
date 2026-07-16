@@ -33,6 +33,7 @@ DISCOVERY_FILES = {
     "data/performance-snapshot.json",
     "data/prospective-picks.json",
     "data/methodology-version.json",
+    "data/product-facts.json",
 }
 NOINDEX_RE = re.compile(r'<meta\s+name=["\']robots["\'][^>]*content=["\'][^"\']*noindex', re.I)
 CANONICAL_RE = re.compile(r'<link\s+rel=["\']canonical["\']\s+href=["\']([^"\']+)', re.I)

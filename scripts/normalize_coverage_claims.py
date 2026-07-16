@@ -4,12 +4,18 @@
 from __future__ import annotations
 
 import argparse
+import re
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+EXCLUDED = {".git", "analytics-dashboard", "docs", "mockups", "node_modules"}
 
 REPLACEMENTS = {
+    ". powered by sport-specific analysis signals": ". Powered by sport-specific analysis signals",
+    ". sport-specific analysis signals": ". Sport-specific analysis signals",
+    "AI-powered sports analysis platform using sport-specific analysis signals per sport":
+        "AI-assisted player-prop research workspace using sport-specific analysis signals",
     "every available player prop": "the player props currently available",
     "Every available player prop": "The player props currently available",
     "every available prop line": "the prop lines currently available",
@@ -44,19 +50,19 @@ REPLACEMENTS = {
     "Every game on today's schedule, every player prop, every confidence score":
         "Available games, listed player props, and their confidence scores",
     "Every MLB game day. Every prop type. Eight agents scoring every batter and pitcher":
-        "On active MLB slates, eight agents score listed batter and pitcher props",
+        "On active MLB slates, sport-specific analysis signals score listed batter and pitcher props",
     "Every NBA game night. Every prop type. Eight agents scoring every player":
-        "On active NBA slates, eight agents score listed player props",
+        "On active NBA slates, sport-specific analysis signals score listed player props",
     "Every NHL game night. Every prop type. Six agents scoring every player":
-        "On active NHL slates, six agents score listed player props",
+        "On active NHL slates, sport-specific analysis signals score listed player props",
     "Every NFL Sunday. Every prop type. Eight agents scoring every player":
-        "On active NFL slates, eight agents score listed player props",
+        "On active NFL slates, sport-specific analysis signals score listed player props",
     "Every EPL and MLS matchday. Every prop type. Seven agents scoring every confirmed starter":
-        "On active EPL and MLS slates, seven agents score listed props for confirmed starters",
+        "On active EPL and MLS slates, sport-specific analysis signals score listed props for confirmed starters",
     "Every sport. Every game day. Eight agents scoring every player prop":
-        "Across supported sports and active slates, eight agents score listed player props",
+        "Across supported sports and active slates, sport-specific analysis signals score listed player props",
     "Every sport. Every prop type. Eight agents scoring every player every game day":
-        "Across supported sports and active slates, eight agents score listed player props",
+        "Across supported sports and active slates, sport-specific analysis signals score listed player props",
     "every prop with confidence ratings": "listed props with confidence ratings",
     "score every prop with confidence percentages": "score listed props with confidence scores",
     "score every prop with confidence ratings": "score listed props with confidence ratings",
@@ -81,11 +87,36 @@ REPLACEMENTS = {
         "50 is neutral and 100 is maximum model conviction",
     "currently available across all sports": "currently available across supported sports",
     "Every sport. Every game day. Eight agents scoring listed player props":
-        "Across supported sports and active slates, eight agents score listed player props",
+        "Across supported sports and active slates, sport-specific analysis signals score listed player props",
     "Confidence percentages, not gut feelings": "Model confidence scores, not gut feelings",
     "The agents are weighted by their historical predictive accuracy on NBA props specifically — not a generic model, but a backtested, sport-specific calibration.":
         "The agents use sport-specific weights rather than a single generic configuration. The resulting score is a directional model signal, not a calibrated win probability.",
 }
+
+REGEX_REPLACEMENTS = (
+    (
+        r'(class=["\'][^"\']*(?:hero-stat-value|stat-card-value|stat-number)[^"\']*["\'][^>]*>\s*)'
+        r'(?:6[-–]8|6|7|8|9|10|six|seven|eight|nine|ten)'
+        r'(\s*</[^>]+>\s*<[^>]+class=["\'][^"\']*(?:hero-stat-label|stat-card-label|stat-label)[^"\']*["\'][^>]*>\s*)'
+        r'[^<]{0,80}\bagents?\b',
+        r'\1Multi\2Sport-Specific Signals',
+    ),
+    (r"\bAI-analyzed with (?:6|7|8|six|seven|eight) agents(?: per sport)?\b", "AI-analyzed with sport-specific signals"),
+    (r"\bpowered by (?:Propeller(?:'s)? )?(?:6|7|8|six|seven|eight)[- ]agent AI system\b", "powered by Propeller's sport-specific analysis system"),
+    (r"\bpowered by (?:6|7|8|six|seven|eight) (?:AI )?agents\b", "powered by sport-specific analysis signals"),
+    (r"\bat least 4 of 8 agents in agreement\b", "multiple analysis signals in agreement"),
+    (r"\bhow strongly all 8 agents agree\b", "how strongly the available analysis signals align"),
+    (r"\bthe output of all eight agents\b", "the combined output of the available analysis signals"),
+    (r"\ball (?:6|7|8|six|seven|eight) (?:AI )?agents\b", "the available analysis signals"),
+    (r"\b(?:6[-–]8|6|7|8|six|seven|eight) specialized AI agents\b", "sport-specific analysis signals"),
+    (r"\b(?:6[-–]8|6|7|8|six|seven|eight) specialized agents\b", "sport-specific analysis signals"),
+    (r"\b(?:6|7|8|six|seven|eight)[- ]agent (?:AI )?system\b", "sport-specific analysis system"),
+    (r"\b(?:6|7|8|six|seven|eight)[- ]agent ensemble\b", "sport-specific analysis pipeline"),
+    (r"\b(?:6|7|8|six|seven|eight)[- ]agent analysis\b", "sport-specific analysis"),
+    (r"\b(?:6|7|8|six|seven|eight) (?:AI )?agents(?: per sport)?\b", "sport-specific analysis signals"),
+    (r"\b(?:6|7|8|six|seven|eight) (?:independent|analytical|active) (?:AI )?agents\b", "sport-specific analysis signals"),
+    (r">sport-specific analysis signals", ">Sport-specific analysis signals"),
+)
 
 FORBIDDEN = (
     "every available player prop",
@@ -104,13 +135,15 @@ def iter_html() -> list[Path]:
     return [
         path
         for path in ROOT.rglob("*.html")
-        if not any(part in {".git", "node_modules"} for part in path.parts)
+        if not any(part in EXCLUDED for part in path.relative_to(ROOT).parts)
     ]
 
 
 def normalize(text: str) -> str:
     for old, new in REPLACEMENTS.items():
         text = text.replace(old, new)
+    for pattern, replacement in REGEX_REPLACEMENTS:
+        text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
     return text
 
 

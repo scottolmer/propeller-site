@@ -261,6 +261,7 @@ def render_html(snapshot: dict) -> None:
     ledger = snapshot["deduplicated_public_ledger"]
     archive = snapshot["historical_database"]
     generated = human_date(snapshot["generated_at"])
+    generated_iso = str(snapshot["generated_at"])[:10]
     update_text = f"Static API snapshot · {generated}; live refresh enabled"
     sports_text = (
         f"{len(snapshot['coverage']['sports'])} sports / "
@@ -280,6 +281,12 @@ def render_html(snapshot: dict) -> None:
 
     results_path = ROOT / "results" / "index.html"
     results = results_path.read_text(encoding="utf-8")
+    results = re.sub(
+        r'("dateModified"\s*:\s*")[0-9]{4}-[0-9]{2}-[0-9]{2}("\s*,)',
+        rf'\g<1>{generated_iso}\g<2>',
+        results,
+        count=1,
+    )
     for attr, value in (
         ("data-results-updated", update_text),
         ("data-results-total", format_short(ledger["total"])),
@@ -297,6 +304,12 @@ def render_html(snapshot: dict) -> None:
 
     track_path = ROOT / "track-record" / "index.html"
     track = track_path.read_text(encoding="utf-8")
+    track = re.sub(
+        r'("dateModified"\s*:\s*")[0-9]{4}-[0-9]{2}-[0-9]{2}("\s*,)',
+        rf'\g<1>{generated_iso}\g<2>',
+        track,
+        count=1,
+    )
     for attr, value in (
         ("data-track-updated", update_text),
         ("data-track-total", format_short(ledger["total"])),

@@ -112,7 +112,7 @@
       "name": "What are the best soccer prop picks today?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller surfaces the highest-confidence EPL and MLS prop picks each day by running 7 AI agents across the prop lines currently available. The top picks are ranked by confidence score — a model signal on a 50 to 100 scale derived from the weighted average of all agents. The Lineup agent (weight 3.5) is the most critical: a player not confirmed in the starting XI carries near-zero value regardless of other signals. Confirmed starters with favorable matchups and recent form are where the strongest edges typically emerge. Free picks are visible on this page, with full access available in the Propeller app."
+        "text": "Propeller evaluates currently listed EPL and MLS player props with available sport-specific signals such as lineup status, matchup, recent form, home/away context, league position, and no-vig market context. Signals without usable evidence are skipped. The displayed direction receives a 50 to 100 model-confidence score that is not a win probability or guarantee."
       }
     },
     {
@@ -120,7 +120,7 @@
       "name": "How does Propeller analyze soccer player props?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller uses 7 specialized AI agents to evaluate each soccer prop. The Lineup agent (weight 3.5) is the dominant signal — it confirms starter status, checks position-prop fit, and detects bench or not-in-squad designations. NoVig (weight 3.0) strips the sportsbook margin to reveal true implied probability and applies vig-discounted math for milestone props. HitRate (weight 2.0) uses a recency-weighted 15-game window. Matchup (weight 2.0) evaluates opponent defensive stats vs. league average with stat reliability factors. Form (weight 1.5) tracks team PPG and goals deltas. HomeAway (weight 1.5) applies home/away splits with a minimum of 3 games. LeaguePosition (weight 1.0) uses standings-based PPG and goal differential gaps."
+        "text": "Propeller uses sport-specific analysis signals to evaluate each soccer prop. The Lineup agent (weight 3.5) is the dominant signal — it confirms starter status, checks position-prop fit, and detects bench or not-in-squad designations. NoVig (weight 3.0) strips the sportsbook margin to reveal true implied probability and applies vig-discounted math for milestone props. HitRate (weight 2.0) uses a recency-weighted 15-game window. Matchup (weight 2.0) evaluates opponent defensive stats vs. league average with stat reliability factors. Form (weight 1.5) tracks team PPG and goals deltas. HomeAway (weight 1.5) applies home/away splits with a minimum of 3 games. LeaguePosition (weight 1.0) uses standings-based PPG and goal differential gaps."
       }
     },
     {
@@ -128,7 +128,7 @@
       "name": "What EPL and MLS props does Propeller cover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller covers both the English Premier League and Major League Soccer with the same 7-agent system. Supported prop types include shots on target, total shots, goals (anytime), assists, passes completed, goalkeeper saves, dribbles completed, and tackles won. The system uses a single unified database with a league column — the same analysis engine handles EPL and MLS with league-appropriate calibration. Coverage is expandable to additional leagues as data pipelines are added."
+        "text": "Propeller covers both the English Premier League and Major League Soccer with the same sport-specific analysis system. Supported prop types include shots on target, total shots, goals (anytime), assists, passes completed, goalkeeper saves, dribbles completed, and tackles won. The system uses a single unified database with a league column — the same analysis engine handles EPL and MLS with league-appropriate calibration. Coverage is expandable to additional leagues as data pipelines are added."
       }
     },
     {
@@ -1535,7 +1535,7 @@ footer {
       <a href="https://propellerpicks.com/tools/" data-section="tools">Tools</a>
       <a href="https://propellerpicks.com/analyzer/" data-section="analyzer">Analyzer</a>
       <a href="https://app.propellerpicks.com/app" rel="noopener noreferrer">Web App</a>
-      <a class="pp-site-nav__cta" href="https://app.propellerpicks.com/signup" rel="noopener noreferrer">Get Free Lifetime Access</a>
+      <a class="pp-site-nav__cta" href="https://app.propellerpicks.com/signup" rel="noopener noreferrer">Get Free Access</a>
     </div>
   </div>
 </nav>
@@ -1559,7 +1559,7 @@ footer {
       </h1>
 
       <p class="fade-in delay-2">
-        Seven specialized agents score every EPL and MLS player prop — from confirmed lineup status to opponent defensive stats to recency-weighted form analysis. Confidence scores before every kickoff.
+        Sport-specific analysis signals score listed EPL and MLS player props using available lineup, opponent, and recent-form context.
       </p>
 
       <div class="hero-buttons fade-in delay-3">
@@ -1579,8 +1579,8 @@ footer {
         </div>
         <div class="hero-stat-divider" aria-hidden="true"></div>
         <div class="hero-stat">
-          <span class="hero-stat-value">7</span>
-          <span class="hero-stat-label">Soccer Agents</span>
+          <span class="hero-stat-value">Multi</span>
+          <span class="hero-stat-label">Sport-Specific Signals</span>
         </div>
         <div class="hero-stat-divider" aria-hidden="true"></div>
         <div class="hero-stat">
@@ -1834,7 +1834,7 @@ footer {
           <span class="weight-badge">COMBINED</span>
         </div>
         <p>
-          All seven agents produce individual confidence scores combined via a weighted combination. Soccer applies a neutral dampening factor of 0.3 — higher than other sports — to account for the sport's inherent variance. Signal amplification of 1.15x is applied, and final confidence scores are capped between 20 and 80 to prevent overconfidence in a sport where single-match outcomes diverge from expectation at higher rates.
+          Available analysis signals are combined with sport-specific weights. Soccer-specific dampening and score limits account for single-match variance before the displayed 50&ndash;100 directional confidence score is published.
         </p>
       </div>
 
@@ -1932,8 +1932,8 @@ footer {
       </div>
 
       <div class="card stat-card fade-in delay-1">
-        <span class="stat-card-value">7</span>
-        <span class="stat-card-label">Specialized soccer analysis agents</span>
+        <span class="stat-card-value">Multi</span>
+        <span class="stat-card-label">Sport-Specific Signals</span>
       </div>
 
       <div class="card stat-card fade-in delay-2">
@@ -1964,7 +1964,7 @@ footer {
           <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-answer">
-          Propeller surfaces the highest-confidence EPL and MLS prop picks each day by running 7 AI agents across the prop lines currently available. The top picks are ranked by confidence score — a model signal on a 50 to 100 scale derived from the weighted average of all agents. The Lineup agent (weight 3.5) is the most critical: a player not confirmed in the starting XI carries near-zero value regardless of other signals. Confirmed starters with favorable matchups and recent form are where the strongest edges typically emerge. Free picks are visible on this page, with full access available in the Propeller app.
+          Propeller evaluates currently listed EPL and MLS player props with available sport-specific signals such as lineup status, matchup, recent form, home/away context, league position, and no-vig market context. Signals without usable evidence are skipped. The displayed direction receives a 50 to 100 model-confidence score that is not a win probability or guarantee.
         </div>
       </div>
 
@@ -1974,7 +1974,7 @@ footer {
           <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-answer">
-          Propeller uses 7 specialized AI agents to evaluate each soccer prop. The Lineup agent (weight 3.5) is the dominant signal &mdash; it confirms starter status, checks position-prop fit, and detects bench or not-in-squad designations. NoVig (weight 3.0) strips the sportsbook margin to reveal true implied probability and applies vig-discounted math for milestone props. HitRate (weight 2.0) uses a recency-weighted 15-game window. Matchup (weight 2.0) evaluates opponent defensive stats vs. league average with stat reliability factors. Form (weight 1.5) tracks team PPG and goals deltas. HomeAway (weight 1.5) applies home/away splits with a minimum of 3 games. LeaguePosition (weight 1.0) uses standings-based PPG and goal differential gaps.
+          Propeller uses sport-specific analysis signals to evaluate each soccer prop. The Lineup agent (weight 3.5) is the dominant signal &mdash; it confirms starter status, checks position-prop fit, and detects bench or not-in-squad designations. NoVig (weight 3.0) strips the sportsbook margin to reveal true implied probability and applies vig-discounted math for milestone props. HitRate (weight 2.0) uses a recency-weighted 15-game window. Matchup (weight 2.0) evaluates opponent defensive stats vs. league average with stat reliability factors. Form (weight 1.5) tracks team PPG and goals deltas. HomeAway (weight 1.5) applies home/away splits with a minimum of 3 games. LeaguePosition (weight 1.0) uses standings-based PPG and goal differential gaps.
         </div>
       </div>
 
@@ -1984,7 +1984,7 @@ footer {
           <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-answer">
-          Propeller covers both the English Premier League and Major League Soccer with the same 7-agent system. Supported prop types include shots on target, total shots, goals (anytime), assists, passes completed, goalkeeper saves, dribbles completed, and tackles won. The system uses a single unified database with a league column &mdash; the same analysis engine handles EPL and MLS with league-appropriate calibration. Coverage is expandable to additional leagues as data pipelines are added.
+          Propeller covers both the English Premier League and Major League Soccer with the same sport-specific analysis system. Supported prop types include shots on target, total shots, goals (anytime), assists, passes completed, goalkeeper saves, dribbles completed, and tackles won. The system uses a single unified database with a league column &mdash; the same analysis engine handles EPL and MLS with league-appropriate calibration. Coverage is expandable to additional leagues as data pipelines are added.
         </div>
       </div>
 
@@ -2021,7 +2021,7 @@ footer {
         Get <span>AI-Powered Soccer</span><br>Prop Picks Today
       </h2>
       <p>
-        On active EPL and MLS slates, seven agents score listed props for confirmed starters before kickoff — confidence scores you can act on in under 30 seconds.
+        On active EPL and MLS slates, sport-specific analysis signals score listed props for confirmed starters before kickoff — confidence scores you can act on in under 30 seconds.
       </p>
       <div class="cta-actions">
         <a href="https://app.propellerpicks.com/signup" class="btn btn-primary" style="font-size:18px; padding:16px 36px;">

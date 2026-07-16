@@ -2,13 +2,21 @@
   "schema_version": "1.0",
   "current_version": "2026.07",
   "effective_date": "2026-07-14",
-  "confidence_definition": "Directional model conviction, not calibrated win probability.",
-  "sports": [
-    "mlb",
+  "confidence_definition": "A 50-100 directional model-confidence score showing how strongly the available signals support the displayed More/Over or Less/Under direction. It is not a calibrated win probability or guarantee.",
+  "public_analyzer_sports": [
     "nba",
-    "nfl",
     "nhl",
+    "mlb",
+    "nfl",
     "soccer"
+  ],
+  "signed_in_product_sports": [
+    "nfl",
+    "nba",
+    "mlb",
+    "nhl",
+    "soccer",
+    "pga"
   ],
   "versions": [
     {
