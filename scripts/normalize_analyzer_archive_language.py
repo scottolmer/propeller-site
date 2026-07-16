@@ -40,6 +40,14 @@ def normalize(source: str) -> str:
         "Win rates reflect graded picks against actual outcomes.",
         "Historical rates summarize graded analysis rows; repeated snapshots and retrospective data may be included, so they are not a forward-tested ROI claim.",
     )
+    if 'content="noindex,follow"' in source and 'data-current-props="true"' not in source:
+        source = source.replace("Prop Analysis Today", "Historical Prop Analysis")
+        source = source.replace("Props Today | Propeller", "Historical Prop Analysis | Propeller Picks")
+        source = source.replace(" props today.", " historical prop records.")
+        source = source.replace(
+            "Updated daily.",
+            "Historical records may include repeated snapshots or retrospective data.",
+        )
     return source
 
 

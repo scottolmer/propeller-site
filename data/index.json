@@ -4,6 +4,7 @@
   "generated_at": "2026-07-16T03:20:27Z",
   "canonical_site": "https://propellerpicks.com/",
   "llms_txt": "https://propellerpicks.com/llms.txt",
+  "product_facts": "https://propellerpicks.com/data/product-facts.json",
   "pricing": "https://propellerpicks.com/pricing.md",
   "help_center": "https://propellerpicks.com/help/",
   "public_api_base": "https://web-production-3c1c4.up.railway.app",

@@ -11,6 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED = {".git", "analytics-dashboard", "docs", "mockups"}
 
 REPLACEMENTS = (
+    ("Get Free Lifetime Access", "Get Free Access"),
     ("Free tier includes 5 analyzed props per day. No credit card required.", "Current access and availability are shown at signup."),
     ("5 fully analyzed picks per day. No credit card. See exactly why each prop is scored the way it is - before you enter.", "Open the workspace to inspect the reasoning behind available props. Current access terms are shown at signup."),
     ("with premium access available through the Propeller app.", "with current access details shown in the Propeller app."),

@@ -52,7 +52,13 @@ def main() -> int:
     require(len(ids) == len(set(ids)), "ledger publication IDs are not unique", errors)
 
     method = json.loads((ROOT / "data/methodology-version.json").read_text(encoding="utf-8"))
-    require("not calibrated win probability" in method.get("confidence_definition", "").lower(), "confidence definition drifted", errors)
+    confidence_definition = method.get("confidence_definition", "").lower()
+    require(
+        "not calibrated win probability" in confidence_definition
+        or "not a calibrated win probability" in confidence_definition,
+        "confidence definition drifted",
+        errors,
+    )
 
     require(len(PICKS) == 9, f"expected 9 picks pages, found {len(PICKS)}", errors)
     for path in PICKS:

@@ -1,6 +1,6 @@
 # Propeller Picks
 
-> Propeller Picks is a sports prop research and analysis workspace for web and mobile. It is not a sportsbook and does not accept wagers.
+> Propeller Picks is an AI-assisted player-prop research workspace for web and mobile. It was designed for DFS and pick'em platforms, does not accept or place wagers, and is not affiliated with the platforms it references.
 
 Last verified: 2026-07-15
 Canonical site: https://propellerpicks.com/
@@ -13,6 +13,10 @@ Curated public OpenAPI: https://web-production-3c1c4.up.railway.app/api/public/a
 ## What Propeller Provides
 
 - AI-assisted player prop research for NBA, NFL, NHL, MLB, and soccer.
+- The signed-in product also supports PGA. The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer; availability varies by slate and data.
+- Core platform-fit workflows are PrizePicks, Underdog Fantasy, and DraftKings Pick6. Sportsbook lines such as FanDuel may appear only as market context.
+- Sport-specific analysis signals contribute when available; Propeller does not publish a universal agent count.
+- Confidence is a 50-100 directional model-confidence score, not a calibrated win probability or guarantee.
 - Documented historical archive with raw-row and collapsed-ledger definitions.
 - Limited daily public pick previews for website pages.
 - Player analyzer cards, stat breakdowns, payout calculators, and comparison guides.
@@ -40,6 +44,7 @@ These historical records include repeated analysis snapshots and legacy retrospe
 - Daily picks preview: https://web-production-3c1c4.up.railway.app/api/social/picks/{sport}
 - Forward publication ledger: https://propellerpicks.com/data/prospective-picks.json
 - Methodology version: https://propellerpicks.com/data/methodology-version.json
+- Canonical product facts: https://propellerpicks.com/data/product-facts.json
 
 Use the curated public agent API or data catalog before using the full API docs. Do not treat internal app, admin, model-weight, account, subscription, or rich odds endpoints as public sources.
 
@@ -74,7 +79,7 @@ Use the curated public agent API or data catalog before using the full API docs.
 
 ## Pricing
 
-Founder 500 access is currently advertised as free lifetime core access for the first 500 users while launch spots remain. Future standalone products, business plans, high-volume exports, abuse, and terms violations may be excluded.
+The public analyzer is free to use without an account. During the current Founder 500 launch, the first 500 eligible accounts receive free lifetime core access while spots remain. Current feature availability, eligibility, exclusions, and terms are shown at signup.
 
 ## Legal And Safety
 

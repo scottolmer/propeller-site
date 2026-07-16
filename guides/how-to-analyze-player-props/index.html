@@ -66,7 +66,7 @@
     "@type": "Organization",
     "name": "Propeller Picks",
     "url": "https://propellerpicks.com/about/",
-    "description": "AI-powered sports analysis platform using 8 specialized agents per sport with transparent public results tracking."
+    "description": "AI-assisted player-prop research workspace using sport-specific analysis signals with transparent public results tracking."
   },
   "publisher": {
     "@type": "Organization",
@@ -163,7 +163,7 @@
       "name": "What is the best tool for analyzing player props?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller's Prop Analyzer runs 8 specialized AI agents across 5 sports, producing a single confidence score. The agents evaluate matchup, injury, pace, usage, no-vig, hit rate, minutes, and rest factors. Current performance context should be checked in the public results ledger ."
+        "text": "Propeller's Prop Analyzer runs sport-specific analysis signals across 5 sports, producing a single confidence score. The agents evaluate matchup, injury, pace, usage, no-vig, hit rate, minutes, and rest factors. Current performance context should be checked in the public results ledger ."
       }
     },
     {
@@ -1320,7 +1320,7 @@ footer {
       <a href="https://propellerpicks.com/tools/" data-section="tools">Tools</a>
       <a href="https://propellerpicks.com/analyzer/" data-section="analyzer">Analyzer</a>
       <a href="https://app.propellerpicks.com/app" rel="noopener noreferrer">Web App</a>
-      <a class="pp-site-nav__cta" href="https://app.propellerpicks.com/signup" rel="noopener noreferrer">Get Free Lifetime Access</a>
+      <a class="pp-site-nav__cta" href="https://app.propellerpicks.com/signup" rel="noopener noreferrer">Get Free Access</a>
     </div>
   </div>
 </nav>
@@ -1363,7 +1363,7 @@ footer {
 
         <h2 id="what-are-props">What Are Player Props and Why Analyze Them?</h2>
         <p><strong>Player props are over/under bets on individual player statistics in a single game — points, rebounds, assists, strikeouts, shots on goal, and dozens of other measurable categories across every major sport.</strong> Unlike team bets or point spreads, props isolate one player's performance, making them analyzable with specific, quantifiable inputs.</p>
-        <p>Props are available across <strong>NBA, NFL, NHL, MLB, Soccer, and UFC</strong> on platforms like <a href="/guides/prizepicks-strategy/">PrizePicks</a>, <a href="/guides/pick6-strategy/">DraftKings Pick6</a>, <a href="/guides/underdog-strategy/">Underdog Fantasy</a>, FanDuel, DraftKings Sportsbook, and others. The analysis framework in this guide applies to all of them.</p>
+        <p>Propeller's signed-in product supports <strong>NFL, NBA, MLB, NHL, soccer, and PGA</strong>. The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer. Propeller was designed for research used with <a href="/guides/prizepicks-strategy/">PrizePicks</a>, <a href="/guides/underdog-strategy/">Underdog Fantasy</a>, and <a href="/guides/pick6-strategy/">DraftKings Pick6</a>; sportsbook lines such as FanDuel may appear only as market context.</p>
         <p>Why are props analyzable? Because each prop is driven by measurable inputs: how many minutes will the player play? What's their usage rate? Who are they playing against? Is anyone injured? What's the game pace? These inputs are quantifiable, and when you evaluate them systematically instead of relying on intuition, you find edges the market hasn't fully priced.</p>
 
         <h2 id="six-signals">What Are the 6 Key Signals for Analyzing Any Player Prop?</h2>
@@ -1475,7 +1475,7 @@ footer {
         <p>When FanDuel and DraftKings disagree by 5-8% on the no-vig probability of the same prop, the market hasn't reached consensus. At least one book is offering value. No-vig analysis identifies which one.</p>
 
         <h2 id="ai-tools">How Does AI Prop Analysis Work?</h2>
-        <p><strong>Propeller's AI runs 8 specialized agents on the player props currently available across 5 sports, producing a single confidence score from 20 to 80.</strong> Each agent evaluates one dimension of the prop independently, then the outputs are combined using backtested weights specific to each sport.</p>
+        <p><strong>Propeller uses sport-specific analysis signals on the player props currently available in the free public analyzer, producing a 50&ndash;100 directional model-confidence score for the displayed More/Over or Less/Under side.</strong> Only available signals contribute. The score is not a calibrated win probability or guarantee.</p>
         <p>The agents include Injury (cascade modeling), Matchup (DvP differential), No-Vig (cross-book probability), Pace (game environment), Usage (volume signals), Minutes (trajectory and blowout risk), Hit Rate (recency-weighted trends), and Rest (fatigue impact).</p>
         <p>The output is designed for research: higher scores lean more strongly toward the over, lower scores lean toward the under, and scores near 50 are closer to neutral. Try it on any current player line with the <a href="/analyzer/">free AI player prop analyzer</a> or see today's available slate at <a href="/picks/nba/">NBA Picks</a>.</p>
 
@@ -1511,7 +1511,7 @@ footer {
         </div>
 
         <div class="sidebar-cta">
-          <p>Run any player prop through 8 AI agents and get a confidence score in seconds.</p>
+          <p>Run any player prop through sport-specific analysis signals and get a confidence score in seconds.</p>
           <a href="/analyzer/" class="btn btn-primary">
             <i data-lucide="search" style="width:16px;height:16px;"></i>
             Prop Analyzer
@@ -1565,7 +1565,7 @@ footer {
 
       <div class="faq-item fade-in">
         <h3>What is the best tool for analyzing player props?</h3>
-        <p>Propeller's Prop Analyzer runs 8 specialized AI agents across 5 sports, producing a single confidence score. The agents evaluate matchup, injury, pace, usage, no-vig, hit rate, minutes, and rest factors. Current performance context should be checked in the public <a href="/results/">results ledger</a>.</p>
+        <p>Propeller's Prop Analyzer runs sport-specific analysis signals across 5 sports, producing a single confidence score. The agents evaluate matchup, injury, pace, usage, no-vig, hit rate, minutes, and rest factors. Current performance context should be checked in the public <a href="/results/">results ledger</a>.</p>
       </div>
       <div class="faq-item fade-in">
         <h3>How do you find value in player props?</h3>
@@ -1588,7 +1588,7 @@ footer {
 <section class="final-cta">
   <div class="container">
     <p class="label section-label fade-in">Start Analyzing</p>
-    <h2 class="fade-in">Run Any <span>Player Prop</span> Through 8 AI Agents</h2>
+    <h2 class="fade-in">Run Any <span>Player Prop</span> Through sport-specific analysis signals</h2>
     <p class="fade-in delay-1">Get the full agent-by-agent breakdown — matchup quality, injury status, pace context, and a single confidence score — in seconds.</p>
     <div class="hero-buttons fade-in delay-2">
       <a href="/analyzer/" class="btn btn-primary">

@@ -33,29 +33,34 @@ class FAQParser(HTMLParser):
         self.item_depth: int | None = None
         self.question_depth: int | None = None
         self.answer_depth: int | None = None
+        self.ignored_depth: int | None = None
         self.question: list[str] = []
         self.answer: list[str] = []
         self.items: list[tuple[str, str]] = []
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         self.depth += 1
+        if dict(attrs).get("aria-hidden") == "true" and self.ignored_depth is None:
+            self.ignored_depth = self.depth
         css = classes(attrs)
-        if "faq-item" in css and self.item_depth is None:
+        if css.intersection({"faq-item", "home-faq__item", "faq-card"}) and self.item_depth is None:
             self.item_depth = self.depth
             self.question, self.answer = [], []
             return
         if self.item_depth is None:
             return
         if self.question_depth is None and not self.question and (
-            tag == "h3" or "faq-question" in css or "faq-question-text" in css or "faq-q" in css
+            tag in {"h3", "summary"} or "faq-question" in css or "faq-question-text" in css or "faq-q" in css
         ):
             self.question_depth = self.depth
-        if self.answer_depth is None and not self.answer and (
+        elif self.answer_depth is None and not self.answer and (
             "faq-answer" in css or "faq-answer-inner" in css or "faq-a" in css or tag == "p"
         ):
             self.answer_depth = self.depth
 
     def handle_endtag(self, tag: str) -> None:
+        if self.ignored_depth == self.depth:
+            self.ignored_depth = None
         if self.question_depth == self.depth:
             self.question_depth = None
         if self.answer_depth == self.depth:
@@ -68,6 +73,8 @@ class FAQParser(HTMLParser):
         self.depth = max(0, self.depth - 1)
 
     def handle_data(self, data: str) -> None:
+        if self.ignored_depth is not None:
+            return
         if self.question_depth is not None:
             self.question.append(data)
         if self.answer_depth is not None:

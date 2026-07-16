@@ -9,8 +9,11 @@ python3 scripts/update_picks_freshness.py     # date-stamp the /picks/ "today" p
 python3 scripts/refresh_player_cards.py       # replace stale player modules with current/empty states
 python3 scripts/apply_analyzer_indexing.py    # re-select top analyzer players to index
 python3 scripts/inject_popular_players.py     # refresh player link sections
+python3 scripts/generate_help_pages.py        # rebuild answer-first help pages
+python3 scripts/generate_comparison_pages.py  # rebuild reviewed comparison pages
 python3 scripts/apply_site_shell.py --include-home
 python3 scripts/normalize_entity_metadata.py  # keep one formal entity name
+python3 scripts/normalize_alias_metadata.py   # align alias metadata to canonicals
 python3 scripts/normalize_analyzer_archive_language.py
 python3 scripts/normalize_access_language.py
 python3 scripts/set_archive_indexing.py       # noindex legacy performance reports
@@ -40,6 +43,8 @@ All scripts are idempotent and safe to run repeatedly.
   navigation, footer, Help link, and Editorial Policy link to generated pages.
 - **normalize_entity_metadata.py** — normalizes formal Organization, WebSite,
   publisher, author, application, and Open Graph names to `Propeller Picks`.
+- **normalize_alias_metadata.py** — keeps the five legacy sport-page Open Graph,
+  WebPage, and breadcrumb URLs aligned with their `/picks/{sport}/` canonicals.
 - **normalize_analyzer_archive_language.py** — labels player-page rates as
   historical outcome summaries over graded analysis rows and adds the same
   repeat/retrospective-data limitation used by the canonical Results page.
@@ -48,6 +53,9 @@ All scripts are idempotent and safe to run repeatedly.
   calibrated win-probability claim.
 - **normalize_access_language.py** — removes stale hard-coded free/premium
   limits from generated pages and defers current availability to signup.
+- **check_product_fact_consistency.py** — verifies the canonical product fact
+  ledger against public sports, access, confidence, platform, and agent-count
+  claims across visible and machine-readable surfaces.
 - **set_archive_indexing.py** — keeps legacy monthly performance reports and
   design mockups `noindex` until the prospective publication ledger has enough
   settled data for defensible reporting.
@@ -68,14 +76,20 @@ Verification:
 python3 scripts/check_site_consistency.py
 python3 scripts/apply_site_shell.py --check --include-home
 python3 scripts/normalize_entity_metadata.py --check
+python3 scripts/normalize_alias_metadata.py --check
 python3 scripts/normalize_analyzer_archive_language.py --check
 python3 scripts/normalize_coverage_claims.py --check
 python3 scripts/normalize_access_language.py --check
 python3 scripts/set_archive_indexing.py --check
 python3 scripts/sync_faq_schema.py --check
 python3 scripts/check_schema_parity.py
+python3 scripts/check_structured_data_contracts.py
+python3 scripts/check_product_fact_consistency.py
 python3 scripts/check_ai_search_assets.py
 python3 scripts/test_platform_intent_ownership.py
+python3 scripts/generate_help_pages.py --check
+python3 scripts/generate_comparison_pages.py --check
 python3 -m unittest scripts/test_ai_search_assets.py
+python3 -m unittest scripts/test_schema_contracts.py
 python3 scripts/generate_sitemap.py --check
 ```

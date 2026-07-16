@@ -6,8 +6,9 @@ from __future__ import annotations
 import json
 import re
 import sys
-from html.parser import HTMLParser
 from pathlib import Path
+
+from sync_faq_schema import FAQParser
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,25 +21,6 @@ JSON_LD_RE = re.compile(
 
 def normalize(value: object) -> str:
     return " ".join(str(value or "").split())
-
-
-class VisibleTextParser(HTMLParser):
-    def __init__(self) -> None:
-        super().__init__(convert_charrefs=True)
-        self.hidden_depth = 0
-        self.parts: list[str] = []
-
-    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        if tag.lower() in {"script", "style", "noscript", "template"}:
-            self.hidden_depth += 1
-
-    def handle_endtag(self, tag: str) -> None:
-        if tag.lower() in {"script", "style", "noscript", "template"} and self.hidden_depth:
-            self.hidden_depth -= 1
-
-    def handle_data(self, data: str) -> None:
-        if not self.hidden_depth:
-            self.parts.append(data)
 
 
 def walk(value: object):
@@ -73,10 +55,11 @@ def main() -> None:
         blocks = JSON_LD_RE.findall(source)
         if not blocks:
             continue
-        parser = VisibleTextParser()
+        parser = FAQParser()
         parser.feed(source)
-        visible = normalize(" ".join(parser.parts))
+        visible_entries = parser.items
         page_has_faq = False
+        schema_entries: list[tuple[str, str]] = []
         for index, block in enumerate(blocks, 1):
             try:
                 document = json.loads(block)
@@ -86,12 +69,14 @@ def main() -> None:
             for question, answer in faq_entries(document):
                 page_has_faq = True
                 checked_entries += 1
-                if not question or question not in visible:
-                    errors.append(f"{path.relative_to(ROOT)} missing visible FAQ question: {question!r}")
-                if not answer or answer not in visible:
-                    errors.append(f"{path.relative_to(ROOT)} FAQ answer differs from visible copy: {question!r}")
+                schema_entries.append((question, answer))
         if page_has_faq:
             checked_pages += 1
+            if schema_entries != visible_entries:
+                errors.append(
+                    f"{path.relative_to(ROOT)} FAQ schema pairs differ from visible FAQ pairs: "
+                    f"schema={len(schema_entries)} visible={len(visible_entries)}"
+                )
 
     print(f"faq_pages={checked_pages} faq_entries={checked_entries} errors={len(errors)}")
     if errors:

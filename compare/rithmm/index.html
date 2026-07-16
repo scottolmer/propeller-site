@@ -62,8 +62,7 @@
     }
   ]
 }</script>
-  <script type="application/ld+json">
-{
+  <script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
@@ -72,7 +71,7 @@
       "name": "Is Propeller or Rithmm better for DFS platforms?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Is Propeller or Rithmm better for DFS platforms?"
+        "text": "Propeller is the more focused choice for users researching player props for DFS and pick'em platforms because that workflow shaped the product and its language. Rithmm supports player props and prediction markets, but it also serves broader sportsbook and game-market research."
       }
     },
     {
@@ -80,7 +79,7 @@
       "name": "Does Propeller use betting jargon?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Does Propeller use betting jargon?"
+        "text": "Propeller does not require confusing betting jargon in its core workflow. The product explains player-prop evidence and directional confidence in plain language. Technical methodology remains available for users who want it."
       }
     },
     {
@@ -88,12 +87,11 @@
       "name": "Can I build my own model in Propeller?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Can I build my own model in Propeller?"
+        "text": "No. Propeller provides its own sport-specific research methodology and inspectable evidence. Rithmm is the stronger choice if building, copying, or customizing predictive models is a requirement."
       }
     }
   ]
-}
-</script>
+}</script>
   <script src="https://unpkg.com/lucide@0.344.0"></script>
   <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -846,7 +844,10 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
   margin-left: 4px;
   vertical-align: middle;
 }
-</style>
+
+  .compare-scroll-hint { display:none; margin:0 0 12px; color:var(--text-tertiary); font:600 12px/1.4 var(--font-mono); letter-spacing:.04em; text-align:right; text-transform:uppercase; }
+  @media (max-width:639px) { .compare-scroll-hint { display:block; } }
+  </style>
   <link rel="stylesheet" href="../../assets/css/site-white-overrides.css?v=20260625-white-site">
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -880,7 +881,7 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
       <a href="https://propellerpicks.com/tools/" data-section="tools">Tools</a>
       <a href="https://propellerpicks.com/analyzer/" data-section="analyzer">Analyzer</a>
       <a href="https://app.propellerpicks.com/app" rel="noopener noreferrer">Web App</a>
-      <a class="pp-site-nav__cta" href="https://app.propellerpicks.com/signup" rel="noopener noreferrer">Get Free Lifetime Access</a>
+      <a class="pp-site-nav__cta" href="https://app.propellerpicks.com/signup" rel="noopener noreferrer">Get Free Access</a>
     </div>
   </div>
 </nav>
@@ -896,6 +897,7 @@ footer { padding: 0; border-top: 1px solid var(--glass-border); }
   <section class="section compare-section" id="comparison" aria-labelledby="compare-heading"><div class="container">
     <p class="label section-label fade-in">Feature Breakdown · Checked July 15, 2026</p>
     <h2 class="section-title fade-in" id="compare-heading">Propeller vs <span>Rithmm</span></h2>
+    <p class="compare-scroll-hint">Swipe to compare →</p>
     <div class="compare-table-wrap fade-in"><table class="compare-table" aria-label="Propeller vs Rithmm feature comparison"><thead><tr><th>Feature</th><th class="col-propedge">Propeller</th><th>Rithmm</th></tr></thead><tbody><tr>
           <td>Core job</td>
           <td class="col-propedge">Player-prop research for DFS and pick&#x27;em decisions.</td>
@@ -1003,7 +1005,6 @@ if (window.lucide) window.lucide.createIcons();
 const comparisonObserver = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add('visible'); comparisonObserver.unobserve(entry.target); } }), { threshold: .12 });
 document.querySelectorAll('.fade-in').forEach((element) => comparisonObserver.observe(element));
 </script>
-<script src="../../assets/js/site-nav.js?v=20260712" defer></script>
   <script src="/assets/js/site-nav.js?v=20260712" defer></script>
 </body>
 </html>

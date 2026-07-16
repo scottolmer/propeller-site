@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "last_verified": "2026-07-15",
+  "formal_name": "Propeller Picks",
+  "product_type": "AI-assisted player-prop research workspace for web and mobile",
+  "canonical_description": "Propeller Picks is an AI-assisted player-prop research workspace for web and mobile. It was designed for DFS and pick'em platforms, does not accept or place wagers, and is not affiliated with the platforms it references.",
+  "accepts_wagers": false,
+  "places_wagers": false,
+  "sportsbook": false,
+  "signed_in_product_sports": [
+    "nfl",
+    "nba",
+    "mlb",
+    "nhl",
+    "soccer",
+    "pga"
+  ],
+  "public_analyzer_sports": [
+    "nba",
+    "nhl",
+    "mlb",
+    "nfl",
+    "soccer"
+  ],
+  "public_result_buckets": [
+    "nfl",
+    "nba",
+    "nhl",
+    "mlb",
+    "epl",
+    "mls"
+  ],
+  "analysis_system": {
+    "canonical_label": "sport-specific analysis signals",
+    "count_claim_policy": "Do not publish a universal agent count. Signal availability and active weights vary by sport, prop, model version, and production calibration.",
+    "availability_note": "Only available signals contribute to a listed prop's directional score. A missing or neutral signal is not treated as an independent vote."
+  },
+  "confidence": {
+    "display_range": "50-100",
+    "canonical_definition": "A 50-100 directional model-confidence score showing how strongly the available signals support the displayed More/Over or Less/Under direction.",
+    "not_a": [
+      "calibrated win probability",
+      "guarantee"
+    ]
+  },
+  "core_dfs_pickem_workflows": [
+    "PrizePicks",
+    "Underdog Fantasy",
+    "DraftKings Pick6"
+  ],
+  "sportsbook_market_context_examples": [
+    "FanDuel"
+  ],
+  "platform_relationship": "Propeller is independent, does not submit entries, and is not affiliated with the platforms it references.",
+  "access": {
+    "global_cta": "Get Free Access",
+    "public_analyzer": "Free to use without an account.",
+    "founder_500_offer": "During the current Founder 500 launch, the first 500 eligible accounts receive free lifetime core access while spots remain.",
+    "availability_note": "Current feature availability, eligibility, exclusions, and terms are shown at signup.",
+    "pricing_url": "https://propellerpicks.com/pricing.md",
+    "signup_url": "https://app.propellerpicks.com/signup"
+  }
+}

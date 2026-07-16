@@ -14,7 +14,7 @@ import json
 import re
 from pathlib import Path
 
-from apply_site_shell import FOOTER, NAV
+from apply_site_shell import FOOTER, NAV, migrate_html
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -136,7 +136,10 @@ def render(page: dict[str, object], checked_date: str) -> str:
   <script type="application/ld+json">{json_script(breadcrumb_schema)}</script>
   <script type="application/ld+json">{json_script(faq_schema)}</script>
   <script src="https://unpkg.com/lucide@0.344.0"></script>
-  <style>{style}</style>
+  <style>{style}
+  .compare-scroll-hint {{ display:none; margin:0 0 12px; color:var(--text-tertiary); font:600 12px/1.4 var(--font-mono); letter-spacing:.04em; text-align:right; text-transform:uppercase; }}
+  @media (max-width:639px) {{ .compare-scroll-hint {{ display:block; }} }}
+  </style>
   <link rel="stylesheet" href="../../assets/css/site-white-overrides.css?v=20260625-white-site">
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
@@ -163,6 +166,7 @@ def render(page: dict[str, object], checked_date: str) -> str:
   <section class="section compare-section" id="comparison" aria-labelledby="compare-heading"><div class="container">
     <p class="label section-label fade-in">Feature Breakdown · Checked {esc(checked_date)}</p>
     <h2 class="section-title fade-in" id="compare-heading">Propeller vs <span>{esc(competitor)}</span></h2>
+    <p class="compare-scroll-hint">Swipe to compare →</p>
     <div class="compare-table-wrap fade-in"><table class="compare-table" aria-label="Propeller vs {esc(competitor)} feature comparison"><thead><tr><th>Feature</th><th class="col-propedge">Propeller</th><th>{esc(competitor)}</th></tr></thead><tbody>{rows}</tbody></table></div>
   </div></section>
 
@@ -191,7 +195,6 @@ if (window.lucide) window.lucide.createIcons();
 const comparisonObserver = new IntersectionObserver((entries) => entries.forEach((entry) => {{ if (entry.isIntersecting) {{ entry.target.classList.add('visible'); comparisonObserver.unobserve(entry.target); }} }}), {{ threshold: .12 }});
 document.querySelectorAll('.fade-in').forEach((element) => comparisonObserver.observe(element));
 </script>
-<script src="../../assets/js/site-nav.js?v=20260712" defer></script>
 </body>
 </html>
 '''
@@ -212,7 +215,7 @@ def main() -> int:
         if len(page["rows"]) < 8 or len(page["sources"]) < 4 or len(page["faqs"]) < 3:
             raise ValueError(f"{slug}: comparison quality gate failed")
         target = ROOT / "compare" / slug / "index.html"
-        output = render(page, payload["checked_date"])
+        output = migrate_html(render(page, payload["checked_date"]), target, False)
         current = target.read_text(encoding="utf-8") if target.exists() else None
         if current != output:
             changed.append(target)

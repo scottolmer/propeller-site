@@ -1,11 +1,11 @@
 # Propeller Picks Pricing
 
-Last verified: 2026-07-07
+Last verified: 2026-07-15
 Canonical signup: https://app.propellerpicks.com/signup
 
 ## Current Public Offer
 
-Founder 500 access is currently advertised as free lifetime core access for the first 500 users while launch spots remain.
+During the current Founder 500 launch, the first 500 eligible accounts receive free lifetime core access while spots remain. Current feature availability, eligibility, exclusions, and terms are shown at signup.
 
 Included core access:
 
