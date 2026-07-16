@@ -64,6 +64,10 @@ All scripts are idempotent and safe to run repeatedly.
 - **refresh_performance_snapshot.py** — reconciles raw historical rows with the
   collapsed public ledger, writes a dated JSON snapshot, and renders static HTML
   fallbacks for the homepage, Results, and Track Record pages.
+- **generate_comparison_pages.py** — rebuilds the editorially reviewed
+  comparison details from `data/comparison-pages.json` and keeps the generated
+  cards, ItemList schema on `/compare/`, and comparison links in `llms.txt`
+  synchronized with the same source data.
 - **generate_sitemap.py** — includes every indexable self-canonical page and
   preserves `lastmod` when the page-specific semantic fingerprint is unchanged.
   Shared shell changes do not falsely refresh the entire site. Use `--check`

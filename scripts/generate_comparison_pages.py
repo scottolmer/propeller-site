@@ -20,6 +20,14 @@ from apply_site_shell import FOOTER, NAV, migrate_html
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data" / "comparison-pages.json"
 REFERENCE = ROOT / "compare" / "propeller-vs-oddsjam" / "index.html"
+HUB = ROOT / "compare" / "index.html"
+LLMS = ROOT / "llms.txt"
+HUB_ITEMLIST_START = "<!-- PP_GENERATED_COMPARISON_ITEMLIST_START -->"
+HUB_ITEMLIST_END = "<!-- PP_GENERATED_COMPARISON_ITEMLIST_END -->"
+HUB_CARDS_START = "<!-- PP_GENERATED_COMPARISON_CARDS_START -->"
+HUB_CARDS_END = "<!-- PP_GENERATED_COMPARISON_CARDS_END -->"
+LLMS_START = "# PP_GENERATED_COMPARISON_LINKS_START"
+LLMS_END = "# PP_GENERATED_COMPARISON_LINKS_END"
 
 
 def esc(value: object) -> str:
@@ -74,8 +82,8 @@ def render(page: dict[str, object], checked_date: str) -> str:
         "name": page["title"],
         "url": canonical,
         "description": page["description"],
-        "datePublished": "2026-07-15",
-        "dateModified": "2026-07-15",
+        "datePublished": page.get("date_published", "2026-07-15"),
+        "dateModified": page.get("date_modified", "2026-07-15"),
         "author": {"@type": "Person", "name": "Scott Olmer"},
         "publisher": {
             "@type": "Organization",
@@ -138,6 +146,7 @@ def render(page: dict[str, object], checked_date: str) -> str:
   <script src="https://unpkg.com/lucide@0.344.0"></script>
   <style>{style}
   .compare-scroll-hint {{ display:none; margin:0 0 12px; color:var(--text-tertiary); font:600 12px/1.4 var(--font-mono); letter-spacing:.04em; text-align:right; text-transform:uppercase; }}
+  .faq-item .faq-q, .faq-item .faq-a {{ background:transparent !important; border-color:transparent !important; box-shadow:none !important; }}
   @media (max-width:639px) {{ .compare-scroll-hint {{ display:block; }} }}
   </style>
   <link rel="stylesheet" href="../../assets/css/site-white-overrides.css?v=20260625-white-site">
@@ -200,28 +209,101 @@ document.querySelectorAll('.fade-in').forEach((element) => comparisonObserver.ob
 '''
 
 
+def replace_managed_block(source: str, start: str, end: str, body: str, path: Path) -> str:
+    pattern = re.compile(rf"{re.escape(start)}.*?{re.escape(end)}", re.DOTALL)
+    if not pattern.search(source):
+        raise ValueError(f"managed comparison block missing in {path}: {start}")
+    replacement = f"{start}\n{body.rstrip()}\n{end}"
+    return pattern.sub(lambda _: replacement, source, count=1)
+
+
+def render_hub_itemlist(pages: list[dict[str, object]]) -> str:
+    legacy = [
+        ("Propeller vs BettingPros", "https://propellerpicks.com/compare/propeller-vs-bettingpros/"),
+        ("Propeller vs OddsJam", "https://propellerpicks.com/compare/propeller-vs-oddsjam/"),
+        ("Pick6 vs PrizePicks", "https://propellerpicks.com/compare/pick6-vs-prizepicks/"),
+    ]
+    generated = [
+        (f'Propeller vs {page["competitor"]}', f'https://propellerpicks.com/compare/{page["slug"]}/')
+        for page in pages
+    ]
+    # Match the visible hub order: generated comparison cards first, then the
+    # three legacy cards that remain immediately below the managed block.
+    items = [*generated, *legacy]
+    payload = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Prop Betting Tool Comparisons",
+        "itemListElement": [
+            {"@type": "ListItem", "position": position, "name": name, "url": url}
+            for position, (name, url) in enumerate(items, 1)
+        ],
+    }
+    return f'<script type="application/ld+json">\n{json_script(payload)}\n</script>'
+
+
+def render_hub_cards(pages: list[dict[str, object]]) -> str:
+    cards = []
+    for index, page in enumerate(pages):
+        delay = "" if index % 3 == 0 else f" delay-{index % 3}"
+        competitor = esc(page["competitor"])
+        slug = esc(page["slug"])
+        cards.append(
+            f'''      <a href="/compare/{slug}/" class="compare-card fade-in{delay}" aria-label="Read comparison: Propeller vs {competitor}">
+        <span class="compare-card-vs">vs</span>
+        <h3>Propeller vs {competitor}</h3>
+        <p>{esc(page["hub_summary"])}</p>
+        <span class="compare-card-link">Compare <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+      </a>'''
+        )
+    return "\n\n".join(cards)
+
+
+def render_llms_links(pages: list[dict[str, object]]) -> str:
+    return "\n".join(
+        f'- Propeller vs {page["competitor"]}: https://propellerpicks.com/compare/{page["slug"]}/'
+        for page in pages
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true", help="Fail if generated pages are out of date")
     args = parser.parse_args()
     payload = json.loads(DATA.read_text(encoding="utf-8"))
+    pages = list(payload["pages"])
     slugs: set[str] = set()
     changed: list[Path] = []
-    for page in payload["pages"]:
+    for page in pages:
         slug = str(page["slug"])
         if slug in slugs:
             raise ValueError(f"duplicate comparison slug: {slug}")
         slugs.add(slug)
-        if len(page["rows"]) < 8 or len(page["sources"]) < 4 or len(page["faqs"]) < 3:
+        if not page.get("hub_summary") or len(page["rows"]) < 8 or len(page["sources"]) < 4 or len(page["faqs"]) < 3:
             raise ValueError(f"{slug}: comparison quality gate failed")
         target = ROOT / "compare" / slug / "index.html"
-        output = migrate_html(render(page, payload["checked_date"]), target, False)
+        output = migrate_html(render(page, str(page.get("checked_date", payload["checked_date"]))), target, False)
         current = target.read_text(encoding="utf-8") if target.exists() else None
         if current != output:
             changed.append(target)
             if not args.check:
                 target.parent.mkdir(parents=True, exist_ok=True)
                 target.write_text(output, encoding="utf-8")
+
+    hub_source = HUB.read_text(encoding="utf-8")
+    hub_output = replace_managed_block(hub_source, HUB_ITEMLIST_START, HUB_ITEMLIST_END, render_hub_itemlist(pages), HUB)
+    hub_output = replace_managed_block(hub_output, HUB_CARDS_START, HUB_CARDS_END, render_hub_cards(pages), HUB)
+    if hub_source != hub_output:
+        changed.append(HUB)
+        if not args.check:
+            HUB.write_text(hub_output, encoding="utf-8")
+
+    llms_source = LLMS.read_text(encoding="utf-8")
+    llms_output = replace_managed_block(llms_source, LLMS_START, LLMS_END, render_llms_links(pages), LLMS)
+    if llms_source != llms_output:
+        changed.append(LLMS)
+        if not args.check:
+            LLMS.write_text(llms_output, encoding="utf-8")
     print(f"comparisons={len(slugs)} changed={len(changed)}")
     for path in changed:
         print(path.relative_to(ROOT))
