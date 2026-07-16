@@ -1,0 +1,121 @@
+{
+  "checked_date": "July 15, 2026",
+  "pages": [
+    {
+      "slug": "rithmm",
+      "competitor": "Rithmm",
+      "title": "Propeller vs Rithmm: AI Player Prop Tools Compared (2026)",
+      "description": "Compare Propeller and Rithmm for AI player-prop research, DFS platform fit, plain-language analysis, models, pricing, and line comparison.",
+      "headline": "Propeller vs Rithmm",
+      "accent": "DFS clarity meets custom modeling.",
+      "deck": "Propeller is the simpler DFS-first research workspace. Rithmm is the broader predictive-model platform for users who want game markets, custom models, sportsbook prices, and tracked plays.",
+      "verdict": "Choose Propeller when you want a free, plain-language player-prop workflow designed around DFS and pick'em platforms. Choose Rithmm when custom models, game predictions, sportsbook line comparison, and play tracking matter more than a focused DFS experience.",
+      "verdict_note": "No universal winner. These products solve overlapping but different research jobs.",
+      "competitor_best": "Custom predictive models, game and player-prop analysis, line shopping, and tracked-play workflows.",
+      "competitor_summary": "Rithmm presents win chance, edge, model reasoning, sportsbook prices, and multiple ways to build or copy predictive models. Its official site says the experience is intended to make those concepts accessible to everyday bettors.",
+      "propeller_summary": "Propeller was designed to be used with DFS and pick'em platforms. Its core experience uses direct player-prop language and does not require users to understand betting concepts such as expected value, devig, sharp books, or arbitrage.",
+      "jargon_callout": "Propeller does not use confusing betting jargon in its core workflow. Users can research a listed player prop and read the directional evidence without first learning sportsbook pricing terminology.",
+      "rows": [
+        {"label":"Core job","propeller":"Player-prop research for DFS and pick'em decisions.","competitor":"Predictive models for player props, spreads, totals, and moneylines."},
+        {"label":"Plain-language experience","propeller":"Propeller does not use confusing betting jargon in its core workflow. No EV, devig, sharp-book, or arbitrage vocabulary is required.","competitor":"Explains model reasoning in plain language, while still using win chance, edge, price, and sportsbook concepts.","propeller_tag":"DFS-first"},
+        {"label":"DFS / pick'em fit","propeller":"Propeller was designed to be used with DFS and pick'em platforms such as PrizePicks, Underdog, and DraftKings Pick6.","competitor":"Supports player props and prediction markets, but its product also centers sportsbook lines and one-tap sportsbook paths.","propeller_tag":"Best fit"},
+        {"label":"Analysis style","propeller":"Sport-specific signals, directional confidence context, methodology, and documented limits.","competitor":"AI predictions, win probabilities, model edge, Smart Signals, and model reasoning."},
+        {"label":"Model control","propeller":"Curated Propeller methodology; users inspect the evidence rather than build model weights.","competitor":"Build a model, copy a leaderboard model, or ask Rithmm AI to create one.","competitor_tag":"Rithmm strength"},
+        {"label":"Line comparison","propeller":"Shows available market context where supported; not a sportsbook line-shopping product.","competitor":"Compares prices across supported sportsbooks and prediction markets and links users to where they play.","competitor_tag":"Rithmm strength"},
+        {"label":"Access and price","propeller":"Free access is available; current terms are shown at signup.","competitor":"Seven-day free trial. Official page showed Core at $19.99/month billed annually and Premium at $83.33/month billed annually when checked."},
+        {"label":"Wager placement","propeller":"No wagers, entries, or sportsbook execution. Research only.","competitor":"Does not take wagers, but provides one-tap paths to supported sportsbooks or trading platforms."}
+      ],
+      "propeller_wins": ["A focused DFS and pick'em player-prop workflow", "Plain language without required betting jargon", "Useful free research before a paid commitment", "No sportsbook execution or wagering flow", "Transparent limitations and evidence links"],
+      "competitor_wins": ["Custom and copyable predictive models", "Broader game-market coverage", "Sportsbook and prediction-market line comparison", "Tracked-play organization", "Model leaderboards and advanced premium controls"],
+      "sources": [
+        {"label":"Rithmm official product and pricing page", "url":"https://www.rithmm.com/"},
+        {"label":"Propeller AI research hub", "url":"/ai-sports-betting/"},
+        {"label":"Propeller model card", "url":"/guides/how-ai-sports-betting-works/"},
+        {"label":"Propeller public results definitions", "url":"/results/"}
+      ],
+      "faqs": [
+        {"q":"Is Propeller or Rithmm better for DFS platforms?", "a":"Propeller is the more focused choice for users researching player props for DFS and pick'em platforms because that workflow shaped the product and its language. Rithmm supports player props and prediction markets, but it also serves broader sportsbook and game-market research."},
+        {"q":"Does Propeller use betting jargon?", "a":"Propeller does not require confusing betting jargon in its core workflow. The product explains player-prop evidence and directional confidence in plain language. Technical methodology remains available for users who want it."},
+        {"q":"Can I build my own model in Propeller?", "a":"No. Propeller provides its own sport-specific research methodology and inspectable evidence. Rithmm is the stronger choice if building, copying, or customizing predictive models is a requirement."}
+      ]
+    },
+    {
+      "slug": "outlier",
+      "competitor": "Outlier",
+      "title": "Propeller vs Outlier: Player Prop Research Compared (2026)",
+      "description": "Compare Propeller and Outlier for DFS player props, plain-language research, trends, injuries, odds movement, EV tools, pricing, and workflow fit.",
+      "headline": "Propeller vs Outlier",
+      "accent": "Focused DFS research or a market-data cockpit?",
+      "deck": "Propeller keeps the player-prop decision simple and DFS-first. Outlier offers a deeper market-intelligence workspace with trends, injuries, odds movement, alerts, EV indicators, arbitrage, and sportsbook execution paths.",
+      "verdict": "Choose Propeller for a simpler, free player-prop research workflow designed for DFS and pick'em platforms. Choose Outlier when you want a paid, data-dense command center for odds movement, injury research, sportsbook comparison, alerts, EV, arbitrage, and middling.",
+      "verdict_note": "Outlier offers more market tooling. Propeller removes more complexity.",
+      "competitor_best": "Deep trends, injuries, odds movement, alerts, sportsbook comparison, and advanced market tools.",
+      "competitor_summary": "Outlier combines thousands of props and games with data visuals, injury reports, odds tracking, alerts, Positive EV features, sharp-book odds, arbitrage, and middling at higher tiers. Its official site also says it compares prices across sportsbooks and DFS apps.",
+      "propeller_summary": "Propeller is intentionally narrower. It was designed to help users research player lines on DFS and pick'em platforms without requiring a sportsbook vocabulary or turning the experience into a trading terminal.",
+      "jargon_callout": "Propeller does not make users decode terms such as DVIG, no-vig, EV thresholds, sharp-book odds, middling, or arbitrage to use the core product. The advanced concepts are educational context—not the interface's starting point.",
+      "rows": [
+        {"label":"Core job","propeller":"Player-prop research for DFS and pick'em decisions.","competitor":"Broad prop, game, odds, trend, injury, alert, and market-value research."},
+        {"label":"Plain-language experience","propeller":"Propeller does not use confusing betting jargon in its core workflow.","competitor":"Strong visuals and education, with advanced tiers using EV, DVIG/no-vig, sharp-book, arbitrage, and middling terminology.","propeller_tag":"Simpler"},
+        {"label":"DFS / pick'em fit","propeller":"Propeller was designed to be used with DFS and pick'em platforms; it has no sportsbook execution flow.","competitor":"Compares odds across sportsbooks and DFS apps, but also emphasizes sportsbook research and two-click execution.","propeller_tag":"DFS-first"},
+        {"label":"Research depth","propeller":"Sport-specific signals, confidence context, methodology, and evidence.","competitor":"Trends, splits, injuries, matchup data, public sentiment, odds movement, filters, and notifications.","competitor_tag":"Outlier strength"},
+        {"label":"Advanced market tools","propeller":"Does not offer arbitrage, middling, sharp-book feeds, or stake calculations.","competitor":"Premium+ and Pro add EV indicators, sharp-book odds, boost tools, arbitrage, and middling.","competitor_tag":"Outlier strength"},
+        {"label":"Line comparison","propeller":"Market context where supported; no broad odds-shopping promise.","competitor":"Odds comparisons, line movement charts, and price comparison across sportsbooks and DFS apps."},
+        {"label":"Access and price","propeller":"Free access is available; current terms are shown at signup.","competitor":"Seven-day free trial. Official pages showed Premium $19.99/month, Premium+ $29.99/month, and Pro $79.99/month when checked."},
+        {"label":"Wager placement","propeller":"Research only; does not accept wagers or send users through a sportsbook execution flow.","competitor":"Does not take wagers, but advertises two-click placement through supported sportsbooks."}
+      ],
+      "propeller_wins": ["Plain-language DFS and pick'em research", "A lighter, less intimidating workflow", "Free usefulness before signup commitment", "No sportsbook execution path", "Transparent model limitations"],
+      "competitor_wins": ["Deeper trend and injury exploration", "Odds movement and alerts", "Sportsbook and DFS price comparison", "Positive EV, sharp-book, arbitrage, and middling tools", "Advanced filtering and market breadth"],
+      "sources": [
+        {"label":"Outlier official product and plan page", "url":"https://outlier.bet/"},
+        {"label":"Outlier official plan guide", "url":"https://help.outlier.bet/en/articles/12556823-choosing-the-right-outlier-plan-for-your-betting-style"},
+        {"label":"Outlier official getting-started collection", "url":"https://help.outlier.bet/en/collections/5711642-getting-started-with-outlier"},
+        {"label":"Propeller AI research hub", "url":"/ai-sports-betting/"},
+        {"label":"Propeller model card", "url":"/guides/how-ai-sports-betting-works/"}
+      ],
+      "faqs": [
+        {"q":"Is Propeller or Outlier better for PrizePicks and Underdog research?", "a":"Propeller is the simpler DFS-first choice for direct player-prop research. Outlier can also compare DFS-app lines and provides much deeper market, trend, injury, odds-movement, and alert tooling for users who want a broader paid workspace."},
+        {"q":"Why does Propeller avoid betting jargon?", "a":"Propeller was designed for people using DFS and pick'em platforms, where the immediate question is usually how to research a listed player line. The core workflow therefore uses plain language instead of requiring EV, devig, sharp-book, arbitrage, or middling terminology."},
+        {"q":"Does Propeller replace Outlier Pro?", "a":"No. Propeller does not offer Outlier Pro features such as arbitrage feeds, middling tools, sharp-book odds, or advanced EV filters. It is a more focused player-prop research product."}
+      ]
+    },
+    {
+      "slug": "playerprops-ai",
+      "competitor": "PlayerProps.ai",
+      "title": "Propeller vs PlayerProps.ai: AI Prop Tools Compared (2026)",
+      "description": "Compare Propeller and PlayerProps.ai for DFS player props, PrizePicks workflows, plain-language analysis, projections, pricing, free access, and evidence.",
+      "headline": "Propeller vs PlayerProps.ai",
+      "accent": "Transparent DFS research or a prediction suite?",
+      "deck": "Both products address AI-assisted player-prop research. Propeller emphasizes a free, plain-language DFS workflow and documented limits. PlayerProps.ai combines a prop predictor, PrizePicks optimizer, game predictors, historical data, and a paid community.",
+      "verdict": "Choose Propeller when you want free, plain-language DFS and pick'em research with visible methodology and limitations. Choose PlayerProps.ai when a PrizePicks optimizer, game-market predictors, historical data, and a large Discord community justify a paid subscription.",
+      "verdict_note": "Closest category overlap of the pilot; compare workflow and evidence, not marketing superlatives.",
+      "competitor_best": "AI prop projections, PrizePicks optimization, game predictors, historical data, and community access.",
+      "competitor_summary": "PlayerProps.ai shows projected direction, probability, sportsbook line and odds, model accuracy, implied probability, projection difference, recent hit rates, and line movement. Paid plans include its PrizePicks optimizer, game-market predictors, historical data, education, and Discord.",
+      "propeller_summary": "Propeller was designed around researching player lines for DFS and pick'em platforms. It avoids making sportsbook terminology the price of entry and links confidence language to a public methodology and explicit limitations.",
+      "jargon_callout": "Propeller does not use confusing betting jargon in its core experience. A new user can research a player prop without interpreting implied odds, probability edges, model-accuracy badges, or sportsbook pricing first.",
+      "rows": [
+        {"label":"Core job","propeller":"Inspect player-prop evidence for DFS and pick'em decisions.","competitor":"Predict player props and game markets, optimize PrizePicks entries, and provide historical data."},
+        {"label":"Plain-language experience","propeller":"Propeller does not use confusing betting jargon in its core workflow.","competitor":"Beginner education is available, while result cards display odds, implied probability, projection difference, and accuracy labels.","propeller_tag":"Simpler"},
+        {"label":"DFS / pick'em fit","propeller":"Propeller was designed to be used with DFS and pick'em platforms including PrizePicks, Underdog, and DraftKings Pick6.","competitor":"Includes a dedicated PrizePicks optimizer and player-prop predictor alongside sportsbook and game-market tools.","competitor_tag":"PrizePicks optimizer"},
+        {"label":"Free usefulness","propeller":"Free access is available and core research pages remain publicly inspectable.","competitor":"Limited free tool previews; full unrestricted access requires a Week Pass or subscription.","propeller_tag":"Propeller strength"},
+        {"label":"Prediction display","propeller":"Directional confidence context with a stated distinction from calibrated win probability.","competitor":"Projected side, probability, line, odds, accuracy rating, implied probability, and projection difference."},
+        {"label":"Optimizer","propeller":"No entry optimizer; Propeller should not be described as one.","competitor":"PrizePicks Optimizer is included with paid access.","competitor_tag":"PlayerProps.ai strength"},
+        {"label":"Access and price","propeller":"Free access is available; current terms are shown at signup.","competitor":"Limited free previews. Official pricing showed $20 Week Pass, $59/month, or $499/year when checked."},
+        {"label":"Community","propeller":"Product, research pages, methodology, and public evidence; no paid Discord is promised.","competitor":"Paid plans include access to its premium Discord community.","competitor_tag":"PlayerProps.ai strength"}
+      ],
+      "propeller_wins": ["Plain-language DFS and pick'em workflow", "Free usefulness and public methodology", "No optimizer claim or sportsbook-execution framing", "Explicit confidence limitations", "Inspectable owned evidence pages"],
+      "competitor_wins": ["Dedicated PrizePicks optimizer", "Moneyline, spread, and total predictors", "Historical player and team data", "Probability, odds, and line-movement views", "Premium Discord community"],
+      "sources": [
+        {"label":"PlayerProps.ai official predictor guide", "url":"https://playerprops.ai/predictor"},
+        {"label":"PlayerProps.ai official pricing page", "url":"https://playerprops.ai/pricing"},
+        {"label":"Propeller AI research hub", "url":"/ai-sports-betting/"},
+        {"label":"Propeller model card", "url":"/guides/how-ai-sports-betting-works/"},
+        {"label":"Propeller public results definitions", "url":"/results/"}
+      ],
+      "faqs": [
+        {"q":"Is Propeller an alternative to PlayerProps.ai?", "a":"Yes for AI-assisted player-prop research, but the products are not identical. Propeller emphasizes a free, plain-language DFS workflow and transparent limitations. PlayerProps.ai includes a paid PrizePicks optimizer, broader game predictors, historical data, and Discord access."},
+        {"q":"Does Propeller have a PrizePicks optimizer?", "a":"No. Propeller supports PrizePicks research, but it should not be described as an entry optimizer. PlayerProps.ai is the stronger fit when a dedicated PrizePicks optimizer is required."},
+        {"q":"Which tool is easier for someone who does not know betting jargon?", "a":"Propeller is designed to be usable without confusing betting jargon. Its core workflow focuses on the player, line, directional evidence, and limitations rather than requiring users to interpret sportsbook odds vocabulary first."}
+      ]
+    }
+  ]
+}
