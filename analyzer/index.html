@@ -10,8 +10,10 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('set', 'linker', { domains: ['propellerpicks.com', 'app.propellerpicks.com'] });
   gtag('config', 'G-NLXM4C2G7D');
 </script>
+<script src="/assets/js/analyzer-events.js?v=20260715" defer></script>
 
 <title>Free AI Player Prop Analyzer | Propeller</title>
 <meta name="description" content="Search current MLB, NBA, NFL, NHL, and soccer props with Propeller's free AI player prop analyzer. Review the line, directional confidence, and limits.">
@@ -2869,6 +2871,12 @@ function renderPicks(picks) {
 
   const sorted = sortPicks(picks);
   grid.innerHTML = sorted.map((p, i) => buildPickCard(p, i >= 5)).join('');
+
+  window.ppAnalyzerEvents?.trackCompletion({
+    sport: activeSport,
+    resultCount: picks.length,
+    queryLength: searchQuery.length
+  });
 
   // Animate confidence bars in after paint
   requestAnimationFrame(() => {
