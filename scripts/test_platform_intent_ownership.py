@@ -71,6 +71,11 @@ def main() -> None:
         assert 'href="/analyzer/"' in module
         assert 'href="#picks"' in module
         assert platform["official_source"]["url"] in module
+        assert "Propeller Picks" in module
+        assert 'aria-label="Propeller Picks evidence and permanent URL"' in module
+        for item in platform["evidence_links"]:
+            assert f'href="{item["url"]}"' in module
+        assert f'https://propellerpicks.com{platform["current_research"]}' in module
         assert "not a calibrated win probability or a guarantee" in module
         assert "does not accept wagers, place wagers, submit entries" in module
         assert "not affiliated" in module

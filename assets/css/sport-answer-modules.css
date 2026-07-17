@@ -118,6 +118,35 @@
   font-weight: 600;
 }
 
+.pp-sport-answer__evidence {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  max-width: 940px;
+  margin-top: 16px;
+  color: var(--pp-sub);
+  font: 500 13px/1.55 var(--pp-body);
+}
+
+.pp-sport-answer__evidence strong {
+  flex: 0 0 auto;
+  color: var(--pp-ink);
+  font: 600 12px/1.55 var(--pp-mono);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.pp-sport-answer__evidence span {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 16px;
+}
+
+.pp-sport-answer__evidence a {
+  color: var(--pp-orange-dark) !important;
+  font-weight: 600;
+}
+
 .pp-sport-answer__actions {
   display: flex;
   flex-wrap: wrap;
@@ -200,6 +229,15 @@
   }
 
   .pp-sport-answer__availability strong {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .pp-sport-answer__evidence {
+    display: block;
+  }
+
+  .pp-sport-answer__evidence strong {
     display: block;
     margin-bottom: 8px;
   }

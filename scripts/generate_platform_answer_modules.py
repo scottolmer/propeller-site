@@ -46,6 +46,10 @@ def render_module(platform: dict[str, object]) -> str:
         for index, card in enumerate(module["cards"], 1)
     )
     source = platform["official_source"]
+    evidence_links = "".join(
+        f'<a href="{esc(item["url"])}">{esc(item["label"])}</a>'
+        for item in platform["evidence_links"]
+    )
     return f'''{BODY_START}
 <section class="pp-sport-answer pp-platform-answer pp-platform-answer--{esc(platform["slug"])}{compact_class}" id="platform-research-answer" aria-labelledby="platform-research-answer-heading">
   <div class="container pp-sport-answer__inner">
@@ -57,11 +61,12 @@ def render_module(platform: dict[str, object]) -> str:
     </div>
     <p class="pp-sport-answer__availability"><strong>Freshness</strong><span>{esc(module["availability_note"])}</span></p>
     <p class="pp-sport-answer__availability"><strong>Platform check</strong><span>{esc(module["platform_note"])} Terminology checked <time datetime="{esc(source["checked"])}">July 16, 2026</time> against <a href="{esc(source["url"])}">{esc(source["label"])}</a>.</span></p>
+    <div class="pp-sport-answer__evidence" aria-label="Propeller Picks evidence and permanent URL"><strong>Evidence</strong><span>{evidence_links}</span></div>
     <div class="pp-sport-answer__actions">
       <a class="pp-sport-answer__cta" href="#picks">View current research <span aria-hidden="true">&rarr;</span></a>
       <span class="pp-sport-answer__links"><a href="{esc(platform["payout_calculator"])}">Payout calculator</a><a href="{esc(platform["strategy_guide"])}">Strategy guide</a><a href="/analyzer/">Player prop analyzer</a></span>
     </div>
-    <p class="pp-sport-answer__disclosure">Propeller is an independent AI-assisted player-prop research workspace designed for DFS and pick'em platforms. It does not accept wagers, place wagers, submit entries, or guarantee outcomes, and it is not affiliated with {esc(platform["name"])}.</p>
+    <p class="pp-sport-answer__disclosure">Propeller Picks is an independent AI-assisted player-prop research workspace designed for DFS and pick'em platforms. It does not accept wagers, place wagers, submit entries, or guarantee outcomes, and it is not affiliated with {esc(platform["name"])}.</p>
   </div>
 </section>
 {BODY_END}'''

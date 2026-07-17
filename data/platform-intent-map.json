@@ -15,6 +15,12 @@
         "url": "https://www.prizepicks.com/help-center/player-picks",
         "checked": "2026-07-16"
       },
+      "evidence_links": [
+        {"label": "How Propeller Picks analyzes props", "url": "/guides/how-ai-sports-betting-works/"},
+        {"label": "Public results and limitations", "url": "/results/"},
+        {"label": "Forward publication record", "url": "/research/prospective-record/"},
+        {"label": "Permanent PrizePicks research URL", "url": "https://propellerpicks.com/picks/prizepicks/"}
+      ],
       "gsc_evidence": {
         "date_range": "2026-06-16 to 2026-07-13",
         "clicks": 16,
@@ -26,7 +32,7 @@
       "answer_module": {
         "eyebrow": "PrizePicks cheat sheet explained",
         "heading": "What powers today's free PrizePicks cheat sheet?",
-        "direct_answer": "Today's free PrizePicks cheat sheet is Propeller's current player-prop research, not a PrizePicks-native feed. It combines the sport-specific signals available for each listed player, stat, and line, then shows a More/Over or Less/Under direction with confidence context. Always compare that row with the current PrizePicks Player Picks projection.",
+        "direct_answer": "Today's free PrizePicks cheat sheet is Propeller Picks' current player-prop research, not a PrizePicks-native feed. It combines the sport-specific signals available for each listed player, stat, and line, then shows a More/Over or Less/Under direction with confidence context. Always compare that row with the current PrizePicks Player Picks projection.",
         "cards": [
           {
             "title": "How are injuries reflected?",
@@ -58,6 +64,12 @@
         "url": "https://www.underdogsports.com/games/pickem",
         "checked": "2026-07-16"
       },
+      "evidence_links": [
+        {"label": "How Propeller Picks analyzes props", "url": "/guides/how-ai-sports-betting-works/"},
+        {"label": "Public results and limitations", "url": "/results/"},
+        {"label": "Forward publication record", "url": "/research/prospective-record/"},
+        {"label": "Permanent Underdog research URL", "url": "https://propellerpicks.com/picks/underdog/"}
+      ],
       "gsc_evidence": {
         "date_range": "2026-06-16 to 2026-07-13",
         "clicks": 9,
@@ -69,7 +81,7 @@
       "answer_module": {
         "eyebrow": "Underdog research explained",
         "heading": "What does today's Underdog research board show?",
-        "direct_answer": "Today's Underdog research board is Propeller's current player-prop research, not an Underdog-native feed. It shows the listed player, stat, line, More/Over or Less/Under direction, and confidence context from the sport-specific signals available for that prop. Compare every row with the current Underdog Fantasy Pick'em Higher or Lower projection.",
+        "direct_answer": "Today's Underdog research board is Propeller Picks' current player-prop research, not an Underdog-native feed. It shows the listed player, stat, line, More/Over or Less/Under direction, and confidence context from the sport-specific signals available for that prop. Compare every row with the current Underdog Fantasy Pick'em Higher or Lower projection.",
         "cards": [
           {
             "title": "How are Higher and Lower researched?",
@@ -101,6 +113,12 @@
         "url": "https://pick6.draftkings.com/how-to-play-pick6",
         "checked": "2026-07-16"
       },
+      "evidence_links": [
+        {"label": "How Propeller Picks analyzes props", "url": "/guides/how-ai-sports-betting-works/"},
+        {"label": "Public results and limitations", "url": "/results/"},
+        {"label": "Forward publication record", "url": "/research/prospective-record/"},
+        {"label": "Permanent Pick6 research URL", "url": "https://propellerpicks.com/picks/pick6/"}
+      ],
       "gsc_evidence": {
         "date_range": "2026-06-16 to 2026-07-13",
         "clicks": 0,
@@ -113,7 +131,7 @@
         "compact": true,
         "eyebrow": "DraftKings Pick6 research explained",
         "heading": "How to use today's DraftKings Pick6 research",
-        "direct_answer": "Today's DraftKings Pick6 page presents Propeller's current player-prop research, not a Pick6-native feed. Start with the listed player, stat, and line, then read the More/Over or Less/Under direction and confidence context from the available sport-specific signals. Compare every row with the current Pick6 More or Less stat projection.",
+        "direct_answer": "Today's DraftKings Pick6 page presents Propeller Picks' current player-prop research, not a Pick6-native feed. Start with the listed player, stat, and line, then read the More/Over or Less/Under direction and confidence context from the available sport-specific signals. Compare every row with the current Pick6 More or Less stat projection.",
         "cards": [
           {
             "title": "What should you verify?",

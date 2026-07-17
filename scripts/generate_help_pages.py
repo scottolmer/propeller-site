@@ -59,7 +59,15 @@ PAGES = [
         "title": "How Does Propeller Grade Picks?",
         "description": "How Propeller grades public prop results, tracks wins/losses/pushes, and keeps a transparent results ledger.",
         "h1": "How does Propeller grade picks?",
-        "summary": "Propeller grades historical prop outcomes as wins, losses, or pushes after results are available. The Results page defines the archive's two counting units, links the source APIs, and explains why legacy rows are not a uniquely published forward-test or ROI record.",
+        "summary": "Propeller Picks grades historical prop outcomes as wins, losses, or pushes after results are available. The Results page defines the archive's two counting units, links the source APIs, and explains why legacy rows are not a uniquely published forward-test or ROI record.",
+        "updated": "2026-07-16",
+        "evidence_links": [
+            ("Results archive and limitations", "/results/"),
+            ("Grading methodology", "/track-record/"),
+            ("Public data catalog", "/data/index.json"),
+            ("Forward publication record", "/research/prospective-record/"),
+            ("Permanent grading URL", "https://propellerpicks.com/help/how-does-propeller-grade-picks/"),
+        ],
         "sections": [
             ("Grading Outcomes", "A graded prop is marked as a win when the analyzed side beats the listed line, a loss when it does not, and a push when the result lands exactly on the line or is otherwise graded neutral."),
             ("Canonical Archive Source", "The Results page is the canonical explanation. It separates raw graded analysis rows from entries retained after the current public API collapse rules and links each machine-readable source."),
@@ -274,7 +282,7 @@ def page_schema(page: dict) -> tuple[dict, dict, dict]:
         "name": page["title"],
         "url": url,
         "description": page["description"],
-        "dateModified": UPDATED,
+        "dateModified": page.get("updated", UPDATED),
         "inLanguage": "en-US",
         "isPartOf": {"@type": "WebSite", "name": "Propeller Picks", "url": BASE_URL},
         "publisher": {"@type": "Organization", "name": "Propeller Picks", "url": BASE_URL},
@@ -360,6 +368,14 @@ def render_page(page: dict) -> str:
         for question, answer in page["faqs"]
     )
     related = render_related(page["related"])
+    updated = page.get("updated", UPDATED)
+    evidence = ""
+    if page.get("evidence_links"):
+        links = "\n          ".join(
+            f'<a href="{esc(path)}" style="color:var(--pp-orange-dark,#dd3d16);font-weight:700">{esc(label)}</a>'
+            for label, path in page["evidence_links"]
+        )
+        evidence = f'''\n        <div class="evidence-links" aria-label="Evidence and permanent URL" style="display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:16px;color:var(--pp-muted,#626a64);font-size:13px"><strong style="color:var(--pp-ink,#101311)">Evidence:</strong>\n          {links}\n        </div>'''
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -425,8 +441,8 @@ def render_page(page: dict) -> str:
         <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/help/">Help</a><span>/</span><span>{esc(page['title'])}</span></div>
         <h1>{esc(page['h1'])}</h1>
         <p class="summary">{esc(page['summary'])}</p>
-        <p class="updated">Last updated: {UPDATED}</p>
-        <div class="answer-box"><p><strong>Direct answer:</strong> {esc(page['summary'])}</p></div>
+        <p class="updated">Last updated: {updated}</p>
+        <div class="answer-box"><p><strong>Direct answer:</strong> {esc(page['summary'])}</p></div>{evidence}
       </div>
     </header>
 

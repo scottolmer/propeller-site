@@ -700,6 +700,21 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   line-height: 1.72;
 }
 
+.hero-evidence {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 18px;
+  max-width: 900px;
+  margin: 0 auto 28px;
+  color: var(--text-tertiary);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.hero-evidence strong { color: var(--text-secondary); }
+.hero-evidence a { color: var(--accent); font-weight: 600; }
+
 .live-badge {
   display: inline-flex;
   align-items: center;
@@ -2114,8 +2129,17 @@ footer {
       </h1>
 
       <p class="hero-subtitle fade-in delay-2">
-        Propeller is a free AI player prop analyzer built for DFS and pick'em research. Choose a sport, search current player lines, and read the model's over-or-under direction with confidence context. No account or betting jargon is required, and Propeller never places entries or wagers.
+        Propeller Picks is a free AI player prop analyzer built for DFS and pick'em research. Choose a sport, search current player lines, and read the model's over-or-under direction with confidence context. No account or betting jargon is required, and Propeller Picks never places entries or wagers.
       </p>
+
+      <div class="hero-evidence fade-in delay-2" aria-label="Propeller Picks analyzer evidence and permanent URL">
+        <strong>Evidence:</strong>
+        <a href="/guides/how-ai-sports-betting-works/">How analysis works</a>
+        <a href="/data/methodology-version.json">Current methodology version</a>
+        <a href="/results/">Public results and limitations</a>
+        <a href="/research/prospective-record/">Forward publication record</a>
+        <a href="https://propellerpicks.com/analyzer/">Permanent analyzer URL</a>
+      </div>
 
       <div class="hero-stat-row fade-in" style="transition-delay:0.45s;">
         <div class="hero-stat">
