@@ -225,6 +225,32 @@ PAGES = [
         ],
         "related": ["/picks/", "/results/", "/track-record/", "/data/index.json"],
     },
+    {
+        "slug": "how-do-propeller-fantasy-projections-work",
+        "title": "How Do Propeller Fantasy Projections Work?",
+        "description": "How Propeller creates MLB hitter fantasy projections with floor, point estimate, and ceiling under DraftKings MLB scoring.",
+        "h1": "How do Propeller fantasy projections work?",
+        "updated": "2026-07-17",
+        "summary": "Propeller creates MLB hitter fantasy projections by converting available current market components to DraftKings MLB fantasy points and using recent form for scoring components without current market coverage. Each eligible hitter receives a floor, point estimate, and ceiling. The range describes uncertainty and is not a guarantee.",
+        "evidence_links": [
+            ("Fantasy projection methodology", "/fantasy/methodology/"),
+            ("Current MLB projection board", "/fantasy/mlb/"),
+            ("Machine-readable fantasy facts", "/data/fantasy-product-facts.json"),
+            ("Permanent help URL", "https://propellerpicks.com/help/how-do-propeller-fantasy-projections-work/"),
+        ],
+        "sections": [
+            ("What The Three Numbers Mean", "The point projection is the central estimate. The floor and ceiling are widened P20/P80-style range estimates based on recent outcome variation; they are downside and upside scenarios, not hard limits."),
+            ("Current Public Scope", "The public launch covers MLB hitters using DraftKings MLB fantasy scoring. It does not currently publish pitchers or fantasy projections for other sports."),
+            ("How Freshness Is Shown", "The MLB board displays the source update time. Data no more than 60 minutes old is labelled current; older rows are labelled latest available, and missing data is labelled unavailable."),
+            ("What The Feature Does Not Do", "Propeller does not optimize lineups, import salaries, manage exposure, submit contest entries, or guarantee outcomes. It is an independent research tool."),
+        ],
+        "faqs": [
+            ("How do Propeller fantasy projections work?", "Propeller combines available current hitter-stat market components with recent form for uncovered scoring events, converts the result to DraftKings MLB fantasy points, and surrounds the central estimate with a lower and upper range."),
+            ("What do floor and ceiling mean in fantasy projections?", "They are lower and upper scenarios around the central estimate. Actual results can finish below the floor or above the ceiling."),
+            ("Which players and sports are covered?", "The current public fantasy projection feature covers MLB hitters only. Pitchers and other sports are not part of the public launch."),
+        ],
+        "related": ["/fantasy/", "/fantasy/mlb/", "/fantasy/methodology/", "/analyzer/"],
+    },
 ]
 
 

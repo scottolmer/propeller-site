@@ -48,6 +48,13 @@
     "Underdog Fantasy",
     "DraftKings Pick6"
   ],
+  "fantasy_projections": {
+    "status": "live",
+    "public_scope": "MLB hitters only",
+    "scoring_label": "DraftKings MLB",
+    "outputs": ["floor", "point projection", "ceiling"],
+    "canonical_facts": "https://propellerpicks.com/data/fantasy-product-facts.json"
+  },
   "sportsbook_market_context_examples": [
     "FanDuel"
   ],
