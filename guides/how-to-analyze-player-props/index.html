@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLXM4C2G7D"></script>
+<script src="/assets/js/analytics-loader.js?v=20260716"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -61,13 +61,19 @@
   "url": "https://propellerpicks.com/guides/how-to-analyze-player-props/",
   "description": "A step-by-step guide to analyzing player props with matchup context, injury news, line shopping, no-vig math, and confidence scoring.",
   "datePublished": "2026-01-15",
-  "dateModified": "2026-07-06",
+  "dateModified": "2026-07-16",
   "author": {
     "@type": "Organization",
     "name": "Propeller Picks",
     "url": "https://propellerpicks.com/about/",
     "description": "AI-assisted player-prop research workspace using sport-specific analysis signals with transparent public results tracking."
   },
+  "reviewedBy": {
+    "@type": "Person",
+    "name": "Scott Olmer",
+    "url": "https://propellerpicks.com/about/"
+  },
+
   "publisher": {
     "@type": "Organization",
     "name": "Propeller Picks",
@@ -131,7 +137,7 @@
       "name": "How do you analyze a player prop?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Analyze a player prop by evaluating 6 key signals: volume (minutes/usage), matchup quality (DvP), injury status (direct + cascade effects), game environment (pace/total), recent form (last 8-10 games weighted), and market pricing (no-vig probability across books). Check all 6 systematically before every pick."
+        "text": "Analyze a player prop by evaluating 6 key signals: volume (minutes/usage), matchup quality (DvP), injury status (direct + cascade effects), game environment (pace/total), recent form (last 8-10 games weighted), and market pricing (no-vig market estimate across books). Check all 6 systematically before every pick."
       }
     },
     {
@@ -155,7 +161,7 @@
       "name": "How do you calculate expected value for player props?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Expected value compares your estimated win probability against the payout implied by the odds. A prop has positive EV when your true probability estimate is higher than the break-even probability after accounting for vig. If your estimate is 56% and the no-vig market says 52%, the bet may have value if your inputs are sound."
+        "text": "Expected value compares an independently supported probability estimate with the break-even probability implied by the payout. A positive estimate does not establish the true probability or guarantee that a wager has value."
       }
     },
     {
@@ -171,7 +177,7 @@
       "name": "How do you find value in player props?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Value exists when true probability exceeds implied probability from the odds. Find it through: high-variance stat types that books misprice (blocks, threes, steals), direction bias, injury cascade timing windows, and cross-book no-vig disagreement. The less efficiently priced the market, the more room for edge."
+        "text": "Potential value can exist when a well-supported probability estimate exceeds the market-implied break-even probability. High-variance stat types, role changes, and cross-book disagreement are research inputs, not proof of an edge."
       }
     },
     {
@@ -179,7 +185,7 @@
       "name": "What is no-vig analysis?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No-vig analysis strips the bookmaker's built-in margin from published odds to reveal true implied probability. A line at -115/-115 looks balanced but contains ~4.5% margin. Removing it shows the book's actual probability assessment. Comparing no-vig across multiple books reveals when the market disagrees — that disagreement is exploitable."
+        "text": "No-vig analysis converts each side's odds to raw implied probability and normalizes the pair so the probabilities sum to 100%. The result is a market-implied estimate without the overround, not the true probability. Cross-book differences indicate uncertainty to investigate, not a guaranteed opportunity."
       }
     },
     {
@@ -195,7 +201,7 @@
 </script>
 
 
-<script src="https://unpkg.com/lucide@0.344.0"></script>
+<script src="/assets/js/lucide-subset.js?v=20260716" defer></script>
 
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -1282,6 +1288,7 @@ footer {
 }
 </style>
   <link rel="stylesheet" href="/assets/css/site-white-overrides.css?v=20260625-white-site">
+  <style id="pp-critical-hero">.hero .fade-in{opacity:1;transform:none;transition:none}</style>
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
@@ -1364,10 +1371,10 @@ footer {
         <h2 id="what-are-props">What Are Player Props and Why Analyze Them?</h2>
         <p><strong>Player props are over/under bets on individual player statistics in a single game — points, rebounds, assists, strikeouts, shots on goal, and dozens of other measurable categories across every major sport.</strong> Unlike team bets or point spreads, props isolate one player's performance, making them analyzable with specific, quantifiable inputs.</p>
         <p>Propeller's signed-in product supports <strong>NFL, NBA, MLB, NHL, soccer, and PGA</strong>. The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer. Propeller was designed for research used with <a href="/guides/prizepicks-strategy/">PrizePicks</a>, <a href="/guides/underdog-strategy/">Underdog Fantasy</a>, and <a href="/guides/pick6-strategy/">DraftKings Pick6</a>; sportsbook lines such as FanDuel may appear only as market context.</p>
-        <p>Why are props analyzable? Because each prop is driven by measurable inputs: how many minutes will the player play? What's their usage rate? Who are they playing against? Is anyone injured? What's the game pace? These inputs are quantifiable, and when you evaluate them systematically instead of relying on intuition, you find edges the market hasn't fully priced.</p>
+        <p>Why are props analyzable? Because each prop is influenced by measurable inputs: expected minutes, usage, matchup, injuries, and game environment. Evaluating those inputs systematically creates a more inspectable research process, but it does not establish that a posted line is mispriced.</p>
 
         <h2 id="six-signals">What Are the 6 Key Signals for Analyzing Any Player Prop?</h2>
-        <p><strong>Every player prop across every sport is driven by six core signals: volume (minutes/usage), matchup quality, injury status, game environment (pace/total), recent form, and market pricing (no-vig probability).</strong> Analyzing all six systematically is what separates profitable prop analysis from guessing.</p>
+        <p><strong>Six useful player-prop research inputs are volume (minutes/usage), matchup quality, injury status, game environment (pace/total), recent form, and market pricing (no-vig market estimate).</strong> Reviewing them together makes the reasoning more complete and easier to audit.</p>
 
         <div class="factor-grid">
           <div class="factor-card fade-in">
@@ -1383,7 +1390,7 @@ footer {
           <div class="factor-card fade-in">
             <div class="factor-icon"><i data-lucide="activity" style="width:20px;height:20px;"></i></div>
             <h3>3. Injury Status</h3>
-            <p>The most underpriced signal. When a star is ruled out, their usage redistributes to teammates. These cascade effects create 30-90 minute windows where lines haven't fully adjusted. Monitor <a href="https://www.espn.com/nba/injuries" target="_blank" rel="noopener">injury reports</a> actively.</p>
+            <p>Injuries can materially change expected roles and playing time. When a star is ruled out, usage may redistribute to teammates, while posted lines can also update quickly. Monitor <a href="https://www.espn.com/nba/injuries" target="_blank" rel="noopener">injury reports</a> and re-check the current line.</p>
           </div>
           <div class="factor-card fade-in delay-1">
             <div class="factor-icon"><i data-lucide="zap" style="width:20px;height:20px;"></i></div>
@@ -1398,20 +1405,10 @@ footer {
           <div class="factor-card fade-in delay-1">
             <div class="factor-icon"><i data-lucide="bar-chart-2" style="width:20px;height:20px;"></i></div>
             <h3>6. Market Pricing (No-Vig)</h3>
-            <p>Strip the vig from published odds across multiple books to find true implied probability. When books disagree by 5-8% on the same prop, the market hasn't converged — that gap is where exploitable value lives.</p>
+            <p>Convert both sides of a market to implied probability, then normalize them to remove the overround. Differences across books show that prices are not identical; they do not by themselves prove value.</p>
           </div>
         </div>
-
-        <!-- GUIDE-TWEET-EMBED -->
-        <figure style="margin:32px 0;text-align:center;">
-          <img src="/images/tweets/how-to-analyze-player-props-2026-07-06.png" alt="Example Propeller post about why high-variance defensive stats require different prop analysis than high-volume markets." loading="lazy" width="1200" height="630" style="max-width:100%;height:auto;border-radius:12px;border:1px solid rgba(255,255,255,0.06);">
-          <figcaption style="font-size:13px;color:var(--text-tertiary);margin-top:10px;">
-            From our <a href="https://x.com/propellerpicks/status/2074139022423724086" target="_blank" rel="noopener">@propellerpicks</a> feed — July 06, 2026
-          </figcaption>
-        </figure>
-        <!-- /GUIDE-TWEET-EMBED -->
-
-        <h2 id="step-by-step">How Do You Analyze a Player Prop Step by Step?</h2>
+<h2 id="step-by-step">How Do You Analyze a Player Prop Step by Step?</h2>
         <p><strong>Follow this 6-step checklist for every prop you consider. The process takes 2-3 minutes per prop and ensures you don't miss the signal that matters most.</strong></p>
 
         <div class="walkthrough fade-in">
@@ -1433,7 +1430,7 @@ footer {
             <div class="step-num">03</div>
             <div class="step-body">
               <h3>Check injury reports (30-60 min before game)</h3>
-              <p>Is anyone on either team ruled out? A teammate absence cascades usage toward remaining players. An opponent absence can change the defensive matchup entirely. This is the highest-edge window in prop analysis.</p>
+              <p>Is anyone on either team ruled out? A teammate absence can shift usage toward remaining players, and an opponent absence can change the matchup. Re-check both the role assumptions and the current line after news.</p>
             </div>
           </div>
           <div class="step-card">
@@ -1454,25 +1451,25 @@ footer {
             <div class="step-num">06</div>
             <div class="step-body">
               <h3>Compare no-vig prices across books</h3>
-              <p>Strip the vig from at least 2-3 sportsbooks. If one has the over at -120 and another at -105, they disagree on fair value. That disagreement = market uncertainty = potential edge.</p>
+              <p>Normalize prices from multiple books. If one lists the over at -120 and another at -105, the prices differ. Treat that as market uncertainty to investigate, not automatic evidence of an edge.</p>
             </div>
           </div>
         </div>
 
         <h2 id="finding-value">How Do You Find Value in Player Props?</h2>
-        <p><strong>Value exists when the true probability of a prop hitting is higher than the implied probability from the odds.</strong> The easiest way to find it is to compare your projected probability against the no-vig market probability, then ask whether the game context supports that difference.</p>
+        <p><strong>Potential value requires a defensible probability estimate above the market-implied break-even probability.</strong> A model estimate is uncertain and should be compared with the normalized market estimate and current game context; neither number is the true probability.</p>
 
         <h3>High-Variance Stat Types</h3>
-        <p>Sportsbooks and platforms usually price high-volume markets like points and PRA more efficiently because those markets attract more attention and data. Volatile stat types such as blocks, steals, threes, saves, shots, or secondary assists can still be mispriced when role, matchup, and volume context support the direction. Use the current <a href="/results/">results ledger</a> and your own tracking rather than relying on a fixed historical stat-type claim.</p>
+        <p>Sportsbooks and platforms usually price high-volume markets like points and PRA more efficiently because those markets attract more attention and data. Volatile stat types such as blocks, steals, threes, saves, shots, or secondary assists require wider uncertainty ranges even when role, matchup, and volume context support a direction. Use the current <a href="/results/">results ledger</a> and your own tracking rather than relying on a fixed historical stat-type claim.</p>
 
         <h3>Direction Bias</h3>
         <p>Direction bias matters. Public pick patterns often lean toward overs, so Propeller checks whether the posted line is above a realistic median projection before surfacing a confidence score.</p>
 
         <h3>Injury Cascade Windows</h3>
-        <p>The 30-90 minute window after a key player is ruled out — before all teammate lines fully reprice — is the single most actionable edge in prop betting. Book algorithms reprice the star's props immediately but often lag on the 2nd and 3rd cascade beneficiaries.</p>
+        <p>The period after a key player is ruled out is an important time to re-check teammate roles and posted lines. Markets may update quickly or unevenly, so confirm the current information instead of assuming a stale price.</p>
 
         <h3>Cross-Book Disagreement</h3>
-        <p>When FanDuel and DraftKings disagree by 5-8% on the no-vig probability of the same prop, the market hasn't reached consensus. At least one book is offering value. No-vig analysis identifies which one.</p>
+        <p>When books publish meaningfully different normalized probabilities for the same prop, the market has not reached one price. The difference identifies a research question; it does not establish that either book is offering value.</p>
 
         <h2 id="ai-tools">How Does AI Prop Analysis Work?</h2>
         <p><strong>Propeller uses sport-specific analysis signals on the player props currently available in the free public analyzer, producing a 50&ndash;100 directional model-confidence score for the displayed More/Over or Less/Under side.</strong> Only available signals contribute. The score is not a calibrated win probability or guarantee.</p>
@@ -1482,15 +1479,16 @@ footer {
         <h2 id="common-mistakes">What Are the Most Common Prop Analysis Mistakes?</h2>
         <ul>
           <li><strong>Relying on season averages without context.</strong> A player's average is a starting point. Minutes, matchup, pace, and injuries can shift expected output 20-30% in either direction for any game.</li>
-          <li><strong>Ignoring the timing of injury news.</strong> If you analyze props in the morning but don't recheck injuries 60 minutes before tip, you're missing the highest-edge window.</li>
-          <li><strong>Betting only "easy" stat types.</strong> Points and PRA feel comfortable because they're familiar. But they're also the most efficiently priced. The edge is in the stat types that feel less intuitive.</li>
+          <li><strong>Ignoring the timing of injury news.</strong> Morning research can become stale, so re-check injuries, roles, and the current line before an event.</li>
+          <li><strong>Betting only "easy" stat types.</strong> Points and PRA feel comfortable because they're familiar. Familiarity does not make them easier, and less-intuitive stat types are not automatically advantageous; document the evidence and uncertainty for either group.</li>
           <li><strong>Not tracking results.</strong> You can't improve what you don't measure. Log every pick, track your win rate by stat type and direction, and adjust your process based on data.</li>
-          <li><strong>Confusing high volume with good process.</strong> Betting 20 props per night isn't a strategy — it's noise. Selective volume at high confidence consistently outperforms high-volume betting at low conviction.</li>
+          <li><strong>Confusing high volume with good process.</strong> More selections do not make a research process stronger. Define the inputs, uncertainty, and tracking method before evaluating outcomes.</li>
         </ul>
 
         <div class="highlight-box" style="margin-top: 40px;">
           <div class="highlight-box-label">About This Guide</div>
-          <p>Written by the Propeller team. Updated July 6, 2026 with GSC-informed FAQ coverage for prop research, odds comparison, expected value, and stat selection. Current performance context lives in the public results ledger.</p>
+          <p>Reviewed by <a href="/about/">Scott Olmer, founder of Propeller Picks</a>. Substantively reviewed July 16, 2026 for probability language, no-vig math, sources, and limitations. See the <a href="/editorial-policy/">editorial and corrections policy</a>; current performance context lives in the public results ledger.</p>
+          <p data-editorial-sources="true"><strong>Sources and method:</strong> <a href="https://www.basketball-reference.com/about/glossary.html#usg" target="_blank" rel="noopener">Basketball Reference usage glossary</a>, <a href="https://www.espn.com/nba/injuries" target="_blank" rel="noopener">ESPN injury reports</a>, <a href="https://www.fantasypros.com/nba/defense-vs-position.php" target="_blank" rel="noopener">FantasyPros DvP</a>, the <a href="/results/">public results ledger</a>, and <a href="/how-it-works/">Propeller methodology</a> (<a href="/data/methodology-version.json">version 2026.07</a>, effective July 14, 2026).</p>
         </div>
 
       </article>
@@ -1545,7 +1543,7 @@ footer {
     <div class="faq-list">
       <div class="faq-item fade-in">
         <h3>How do you analyze a player prop?</h3>
-        <p>Analyze a player prop by evaluating 6 key signals: volume (minutes/usage), matchup quality (DvP), injury status (direct + cascade effects), game environment (pace/total), recent form (last 8-10 games weighted), and market pricing (no-vig probability across books). Check all 6 systematically before every pick.</p>
+        <p>Analyze a player prop by evaluating 6 key signals: volume (minutes/usage), matchup quality (DvP), injury status (direct + cascade effects), game environment (pace/total), recent form (last 8-10 games weighted), and market pricing (no-vig market estimate across books). Check all 6 systematically before every pick.</p>
       </div>
 
       <div class="faq-item fade-in">
@@ -1560,7 +1558,7 @@ footer {
 
       <div class="faq-item fade-in">
         <h3>How do you calculate expected value for player props?</h3>
-        <p>Expected value compares your estimated win probability against the payout implied by the odds. A prop has positive EV when your true probability estimate is higher than the break-even probability after accounting for vig. If your estimate is 56% and the no-vig market says 52%, the bet may have value if your inputs are sound.</p>
+        <p>Expected value compares an independently supported probability estimate with the break-even probability implied by the payout. A positive estimate does not establish the true probability or guarantee that a wager has value.</p>
       </div>
 
       <div class="faq-item fade-in">
@@ -1569,11 +1567,11 @@ footer {
       </div>
       <div class="faq-item fade-in">
         <h3>How do you find value in player props?</h3>
-        <p>Value exists when true probability exceeds implied probability from the odds. Find it through: high-variance stat types that books misprice (blocks, threes, steals), direction bias, injury cascade timing windows, and cross-book no-vig disagreement. The less efficiently priced the market, the more room for edge.</p>
+        <p>Potential value can exist when a well-supported probability estimate exceeds the market-implied break-even probability. High-variance stat types, role changes, and cross-book disagreement are research inputs, not proof of an edge.</p>
       </div>
       <div class="faq-item fade-in">
         <h3>What is no-vig analysis?</h3>
-        <p>No-vig analysis strips the bookmaker's built-in margin from published odds to reveal true implied probability. A line at -115/-115 looks balanced but contains ~4.5% margin. Removing it shows the book's actual probability assessment. Comparing no-vig across multiple books reveals when the market disagrees — that disagreement is exploitable.</p>
+        <p>No-vig analysis converts each side's odds to raw implied probability and normalizes the pair so the probabilities sum to 100%. The result is a market-implied estimate without the overround, not the true probability. Cross-book differences indicate uncertainty to investigate, not a guaranteed opportunity.</p>
       </div>
       <div class="faq-item fade-in">
         <h3>What stats matter most for player props?</h3>

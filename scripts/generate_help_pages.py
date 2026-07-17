@@ -188,7 +188,7 @@ PAGES = [
         "h1": "Does Propeller show no-vig odds?",
         "summary": "Propeller uses no-vig market probability as one of several player prop analysis signals where data is available. No-vig analysis removes the bookmaker margin from odds to estimate a cleaner implied probability, then compares that market signal with matchup, role, injury, and form context.",
         "sections": [
-            ("What No-Vig Means", "No-vig probability removes the sportsbook margin from both sides of a market to estimate the market's cleaner view of the true probability."),
+            ("What No-Vig Means", "No-vig probability normalizes both sides of a market after removing the sportsbook margin. It is a market-implied estimate, not the true probability of an outcome."),
             ("How Propeller Uses It", "No-vig analysis can help identify when a platform line or price disagrees with broader market expectations, but it is only one signal inside the larger confidence score."),
             ("Why It Is Not Enough Alone", "Market probability can be useful, but player prop decisions also depend on minutes, usage, matchup, injury news, and payout structure."),
         ],
@@ -365,7 +365,7 @@ def render_page(page: dict) -> str:
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLXM4C2G7D"></script>
+<script src="/assets/js/analytics-loader.js?v=20260716"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){{dataLayer.push(arguments);}}
@@ -505,7 +505,7 @@ def render_hub() -> str:
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLXM4C2G7D"></script>
+<script src="/assets/js/analytics-loader.js?v=20260716"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){{dataLayer.push(arguments);}}

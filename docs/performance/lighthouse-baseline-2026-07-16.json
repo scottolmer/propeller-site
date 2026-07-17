@@ -1,0 +1,25 @@
+{
+  "auditDate": "2026-07-16",
+  "tool": "Lighthouse 13.4.0",
+  "method": "two sequential cold runs per page and profile against production; simulated mobile and desktop preset",
+  "fieldDataAvailable": false,
+  "fieldDataNote": "PageSpeed Insights and CrUX requests returned quota HTTP 429; these are lab results, not field Core Web Vitals.",
+  "rows": [
+    {"profile":"mobile","page":"home","scores":[87,87],"fcpMs":[934,974],"lcpMs":[4014,4029],"tbtMs":[28,52],"cls":[0,0]},
+    {"profile":"mobile","page":"analyzer","scores":[76,77],"fcpMs":[3584,3535],"lcpMs":[4496,4441],"tbtMs":[36,0],"cls":[0,0]},
+    {"profile":"mobile","page":"calculator","scores":[87,87],"fcpMs":[1436,1362],"lcpMs":[3480,3440],"tbtMs":[7,0],"cls":[0.121,0.121]},
+    {"profile":"mobile","page":"guide","scores":[79,79],"fcpMs":[3314,3337],"lcpMs":[4244,4241],"tbtMs":[32,2],"cls":[0,0]},
+    {"profile":"mobile","page":"picks","scores":[77,76],"fcpMs":[3448,3465],"lcpMs":[4515,4534],"tbtMs":[8,21],"cls":[0,0]},
+    {"profile":"desktop","page":"home","scores":[100,99],"fcpMs":[259,261],"lcpMs":[348,995],"tbtMs":[0,0],"cls":[0,0]},
+    {"profile":"desktop","page":"analyzer","scores":[93,94],"fcpMs":[800,772],"lcpMs":[1087,1051],"tbtMs":[0,0],"cls":[0.122,0.122]},
+    {"profile":"desktop","page":"calculator","scores":[96,96],"fcpMs":[365,348],"lcpMs":[365,639],"tbtMs":[0,0],"cls":[0.125,0.121]},
+    {"profile":"desktop","page":"guide","scores":[99,99],"fcpMs":[781,778],"lcpMs":[781,778],"tbtMs":[0,0],"cls":[0.011,0.011]},
+    {"profile":"desktop","page":"picks","scores":[96,95],"fcpMs":[748,744],"lcpMs":[748,1045],"tbtMs":[0,0],"cls":[0.101,0.099]}
+  ],
+  "controlledAnalyzerExperiments": [
+    {"condition":"baseline","scores":[76,77]},
+    {"condition":"block Google Analytics","scores":[90,91],"lcpMs":[3128,3122]},
+    {"condition":"block Lucide CDN","scores":[81,81],"lcpMs":[4382,4401]},
+    {"condition":"block both third parties","scores":[97,96],"lcpMs":[2113,2140]}
+  ]
+}

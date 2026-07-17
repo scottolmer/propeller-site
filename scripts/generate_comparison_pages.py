@@ -143,13 +143,14 @@ def render(page: dict[str, object], checked_date: str) -> str:
   <script type="application/ld+json">{json_script(web_schema)}</script>
   <script type="application/ld+json">{json_script(breadcrumb_schema)}</script>
   <script type="application/ld+json">{json_script(faq_schema)}</script>
-  <script src="https://unpkg.com/lucide@0.344.0"></script>
+  <script src="/assets/js/lucide-subset.js?v=20260716" defer></script>
   <style>{style}
   .compare-scroll-hint {{ display:none; margin:0 0 12px; color:var(--text-tertiary); font:600 12px/1.4 var(--font-mono); letter-spacing:.04em; text-align:right; text-transform:uppercase; }}
   .faq-item .faq-q, .faq-item .faq-a {{ background:transparent !important; border-color:transparent !important; box-shadow:none !important; }}
   @media (max-width:639px) {{ .compare-scroll-hint {{ display:block; }} }}
   </style>
   <link rel="stylesheet" href="../../assets/css/site-white-overrides.css?v=20260625-white-site">
+  <style id="pp-critical-hero">.hero .fade-in{{opacity:1;transform:none;transition:none}}</style>
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="../../favicon.ico">

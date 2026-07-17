@@ -47,7 +47,7 @@ def chip_block(sport: str, slugs, heading: str) -> str:
 <section aria-label="{heading}" style="padding:36px 0;border-top:1px solid rgba(255,255,255,0.06);">
   <div class="container" style="max-width:1120px;margin:0 auto;padding:0 24px;">
     <h2 style="font-size:18px;font-weight:700;color:#F1F5F9;margin:0 0 4px;">{heading}</h2>
-    <p style="font-size:13px;color:#64748B;margin:0 0 16px;">AI confidence, graded history, and stat-type win rates — free for every player.</p>
+    <p style="font-size:13px;color:#64748B;margin:0 0 16px;">AI confidence and historical outcome summaries for evidence-qualified player pages.</p>
     <div>
 {links}
     </div>
@@ -60,14 +60,23 @@ def inject(path: pathlib.Path, block: str) -> str:
     html = path.read_text()
     if MARK_START in html:
         html = re.sub(re.escape(MARK_START) + r".*?" + re.escape(MARK_END),
-                      block, html, flags=re.S)
+                      "", html, flags=re.S)
         status = "replaced"
     else:
-        idx = html.rfind("<footer")
-        if idx == -1:
-            return "no <footer>, skipped"
-        html = html[:idx] + block + "\n\n" + html[idx:]
         status = "inserted"
+    footer_marker = "<!-- PP_SITE_FOOTER_START -->"
+    idx = html.rfind(footer_marker)
+    if idx == -1:
+        idx = html.rfind("<footer")
+    if idx == -1:
+        return "no <footer>, skipped"
+    html = html[:idx].rstrip() + "\n" + block + "\n" + html[idx:]
+    html = re.sub(
+        r"<!-- PP_SITE_FOOTER_START -->\s*<footer",
+        "<!-- PP_SITE_FOOTER_START -->\n<footer",
+        html,
+        count=1,
+    )
     path.write_text(html)
     return status
 
@@ -101,15 +110,21 @@ def main() -> None:
   </div>
 </section>
 {MARK_END}"""
+    if not hub_parts:
+        hub_block = f"{MARK_START}\n{MARK_END}"
     print("analyzer/index.html:", inject(ROOT / "analyzer/index.html", hub_block))
 
     # Sport picks pages: top 8 for that sport.
-    for sport, slugs in by_sport.items():
+    for sport in SPORT_LABEL:
+        slugs = by_sport.get(sport, [])
         page = ROOT / "picks" / sport / "index.html"
-        if not page.exists() or not slugs:
+        if not page.exists():
             continue
-        block = chip_block(sport, slugs[:8],
-                           f"Popular {SPORT_LABEL[sport]} Player Analysis")
+        block = (
+            chip_block(sport, slugs[:8], f"Popular {SPORT_LABEL[sport]} Player Analysis")
+            if slugs
+            else f"{MARK_START}\n{MARK_END}"
+        )
         print(f"picks/{sport}/index.html:", inject(page, block))
 
 

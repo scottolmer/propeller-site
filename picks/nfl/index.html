@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLXM4C2G7D"></script>
+<script src="/assets/js/analytics-loader.js?v=20260716"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -150,7 +150,7 @@
 }
 </script>
 
-<script src="https://unpkg.com/lucide@0.344.0"></script>
+<script src="/assets/js/lucide-subset.js?v=20260716" defer></script>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -1528,6 +1528,7 @@ footer {
 <!-- PP_SPORT_ANSWER_HEAD_START -->
 <link rel="stylesheet" href="/assets/css/sport-answer-modules.css?v=20260716">
 <!-- PP_SPORT_ANSWER_HEAD_END -->
+  <style id="pp-critical-hero">.hero .fade-in{opacity:1;transform:none;transition:none}</style>
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
@@ -1738,9 +1739,9 @@ footer {
         <div class="why-icon" aria-hidden="true">
           <i data-lucide="sliders" style="width:20px;height:20px;"></i>
         </div>
-        <h3>No-Vig True Probability</h3>
+        <h3>No-Vig Market Estimate</h3>
         <p>
-          Every sportsbook bakes a margin into prop lines — typically 8 to 10 percent on player props. This margin obscures what the book actually believes about the outcome. Propeller strips the vig from both sides of the line using bilateral no-vig mathematics, revealing the book's true implied probability. Cross-book disagreement — when prices diverge significantly between books — is flagged as a standalone edge indicator.
+          Every sportsbook bakes a margin into prop lines — typically 8 to 10 percent on player props. This margin obscures what the book actually believes about the outcome. Propeller strips the vig from both sides of the line using bilateral no-vig mathematics, revealing the book's normalized market-implied probability estimate. Cross-book disagreement — when prices diverge significantly between books — is flagged as a standalone edge indicator.
         </p>
       </div>
 
@@ -1831,11 +1832,11 @@ footer {
         </div>
         <div class="agent-body">
           <div class="agent-header">
-            <h3 class="agent-name">No-Vig Probability</h3>
+            <h3 class="agent-name">No-Vig Market Estimate</h3>
             <span class="weight-badge weight-badge-high">WEIGHT 1.2</span>
           </div>
           <p>
-            Bilateral no-vig analysis removes the sportsbook margin from both sides of every prop line to reveal the true implied probability each book assigns to the outcome. Juice direction — which side is carrying the heavier vig — signals where the book expects or has observed action. Cross-book disagreement is flagged separately: when DraftKings and FanDuel price the same prop meaningfully differently, that divergence itself becomes an edge signal worth factoring into the final confidence score.
+            Bilateral no-vig analysis removes the sportsbook margin from both sides of every prop line to reveal the normalized market-implied probability estimate each book assigns to the outcome. Juice direction — which side is carrying the heavier vig — signals where the book expects or has observed action. Cross-book disagreement is flagged separately: when DraftKings and FanDuel price the same prop meaningfully differently, that divergence itself becomes an edge signal worth factoring into the final confidence score.
           </p>
         </div>
       </div>
@@ -2080,7 +2081,7 @@ footer {
         Get <span>AI-Powered NFL</span><br>Prop Picks Today
       </h2>
       <p>
-        On active NFL slates, sport-specific analysis signals score listed player props before kickoff — confidence scores you can act on in under 30 seconds.
+        On active NFL slates, sport-specific analysis signals score listed player props before kickoff — confidence context you can inspect in under 30 seconds.
       </p>
       <div class="cta-actions">
         <a href="https://app.propellerpicks.com/signup" class="btn btn-primary" style="font-size:18px; padding:16px 36px;">
@@ -2110,6 +2111,8 @@ footer {
     <a href="/research/prospective-record/" style="padding:18px;border:1px solid rgba(255,255,255,.12);color:#f1f5f9;text-decoration:none"><strong>Forward record</strong><br><span style="color:#94a3b8">Inspect day-one captures →</span></a>
   </div>
 </section>
+<!-- popular-players:start -->
+<!-- popular-players:end -->
 <!-- PP_SITE_FOOTER_START -->
 <footer class="pp-site-footer">
   <div class="pp-site-footer__inner">

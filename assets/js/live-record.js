@@ -113,8 +113,24 @@
     }
   }
 
-  // Hydrate the fast forward ledger before the slower historical archive.
-  // Railway serializes these requests during cold or busy periods, and the
-  // historical query must never block the primary ROI proof point.
-  hydrateForwardRoi().finally(hydrateRecord);
+  // The page ships a dated static snapshot, so live enrichment must not
+  // compete with the critical render. Hydrate after load, when the browser is
+  // idle, while preserving the forward-ledger-first request order.
+  function startHydration() {
+    hydrateForwardRoi().finally(hydrateRecord);
+  }
+
+  function scheduleHydration() {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(startHydration, { timeout: 2500 });
+    } else {
+      window.setTimeout(startHydration, 1000);
+    }
+  }
+
+  if (document.readyState === 'complete') {
+    scheduleHydration();
+  } else {
+    window.addEventListener('load', scheduleHydration, { once: true });
+  }
 })();
