@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLXM4C2G7D"></script>
+<script src="/assets/js/analytics-loader.js?v=20260716"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -120,7 +120,7 @@
       "name": "How does Propeller analyze soccer player props?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller uses sport-specific analysis signals to evaluate each soccer prop. The Lineup agent (weight 3.5) is the dominant signal — it confirms starter status, checks position-prop fit, and detects bench or not-in-squad designations. NoVig (weight 3.0) strips the sportsbook margin to reveal true implied probability and applies vig-discounted math for milestone props. HitRate (weight 2.0) uses a recency-weighted 15-game window. Matchup (weight 2.0) evaluates opponent defensive stats vs. league average with stat reliability factors. Form (weight 1.5) tracks team PPG and goals deltas. HomeAway (weight 1.5) applies home/away splits with a minimum of 3 games. LeaguePosition (weight 1.0) uses standings-based PPG and goal differential gaps."
+        "text": "Propeller uses sport-specific analysis signals to evaluate each soccer prop. The Lineup agent (weight 3.5) is the dominant signal — it confirms starter status, checks position-prop fit, and detects bench or not-in-squad designations. NoVig (weight 3.0) strips the sportsbook margin to reveal normalized market-implied probability estimate and applies vig-discounted math for milestone props. HitRate (weight 2.0) uses a recency-weighted 15-game window. Matchup (weight 2.0) evaluates opponent defensive stats vs. league average with stat reliability factors. Form (weight 1.5) tracks team PPG and goals deltas. HomeAway (weight 1.5) applies home/away splits with a minimum of 3 games. LeaguePosition (weight 1.0) uses standings-based PPG and goal differential gaps."
       }
     },
     {
@@ -136,7 +136,7 @@
       "name": "How accurate are Propeller soccer picks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller's soccer system emphasizes lineup confirmation, role fit, matchup context, form, home-away splits, and no-vig probability. Confidence scores are capped to prevent overconfidence in a sport with high variance. Soccer analysis is conducted for both EPL and MLS, and past performance does not guarantee future results."
+        "text": "Propeller's soccer system emphasizes lineup confirmation, role fit, matchup context, form, home-away splits, and no-vig market estimate. Confidence scores are capped to prevent overconfidence in a sport with high variance. Soccer analysis is conducted for both EPL and MLS, and past performance does not guarantee future results."
       }
     },
     {
@@ -151,7 +151,7 @@
 }
 </script>
 
-<script src="https://unpkg.com/lucide@0.344.0"></script>
+<script src="/assets/js/lucide-subset.js?v=20260716" defer></script>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -1496,6 +1496,7 @@ footer {
 }
 </style>
   <link rel="stylesheet" href="/assets/css/site-white-overrides.css?v=20260625-white-site">
+  <style id="pp-critical-hero">.hero .fade-in{opacity:1;transform:none;transition:none}</style>
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
@@ -1722,11 +1723,11 @@ footer {
         </div>
         <div class="agent-body">
           <div class="agent-header">
-            <h3 class="agent-name">No-Vig Probability</h3>
+            <h3 class="agent-name">No-Vig Market Estimate</h3>
             <span class="weight-badge weight-badge-high">WEIGHT 3.0</span>
           </div>
           <p>
-            Bilateral no-vig analysis for over/under props strips the sportsbook margin from both sides to reveal the true implied probability the book assigns to each outcome. For milestone props such as goals and assists — which are often priced as yes/no markets — Propeller applies a vig-discounted implied probability approach rather than bilateral math, since these markets have no natural two-sided structure. Cross-book price divergence on the same prop is flagged as a standalone edge indicator.
+            Bilateral no-vig analysis for over/under props strips the sportsbook margin from both sides to reveal the normalized market-implied probability estimate the book assigns to each outcome. For milestone props such as goals and assists — which are often priced as yes/no markets — Propeller applies a vig-discounted implied probability approach rather than bilateral math, since these markets have no natural two-sided structure. Cross-book price divergence on the same prop is flagged as a standalone edge indicator.
           </p>
         </div>
       </div>
@@ -1974,7 +1975,7 @@ footer {
           <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-answer">
-          Propeller uses sport-specific analysis signals to evaluate each soccer prop. The Lineup agent (weight 3.5) is the dominant signal &mdash; it confirms starter status, checks position-prop fit, and detects bench or not-in-squad designations. NoVig (weight 3.0) strips the sportsbook margin to reveal true implied probability and applies vig-discounted math for milestone props. HitRate (weight 2.0) uses a recency-weighted 15-game window. Matchup (weight 2.0) evaluates opponent defensive stats vs. league average with stat reliability factors. Form (weight 1.5) tracks team PPG and goals deltas. HomeAway (weight 1.5) applies home/away splits with a minimum of 3 games. LeaguePosition (weight 1.0) uses standings-based PPG and goal differential gaps.
+          Propeller uses sport-specific analysis signals to evaluate each soccer prop. The Lineup agent (weight 3.5) is the dominant signal &mdash; it confirms starter status, checks position-prop fit, and detects bench or not-in-squad designations. NoVig (weight 3.0) strips the sportsbook margin to reveal normalized market-implied probability estimate and applies vig-discounted math for milestone props. HitRate (weight 2.0) uses a recency-weighted 15-game window. Matchup (weight 2.0) evaluates opponent defensive stats vs. league average with stat reliability factors. Form (weight 1.5) tracks team PPG and goals deltas. HomeAway (weight 1.5) applies home/away splits with a minimum of 3 games. LeaguePosition (weight 1.0) uses standings-based PPG and goal differential gaps.
         </div>
       </div>
 
@@ -1994,7 +1995,7 @@ footer {
           <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
         <div class="faq-answer">
-          Propeller's soccer system emphasizes lineup confirmation, role fit, matchup context, form, home-away splits, and no-vig probability. Confidence scores are capped to prevent overconfidence in a sport with high variance. Soccer analysis is conducted for both EPL and MLS, and past performance does not guarantee future results.
+          Propeller's soccer system emphasizes lineup confirmation, role fit, matchup context, form, home-away splits, and no-vig market estimate. Confidence scores are capped to prevent overconfidence in a sport with high variance. Soccer analysis is conducted for both EPL and MLS, and past performance does not guarantee future results.
         </div>
       </div>
 
@@ -2021,7 +2022,7 @@ footer {
         Get <span>AI-Powered Soccer</span><br>Prop Picks Today
       </h2>
       <p>
-        On active EPL and MLS slates, sport-specific analysis signals score listed props for confirmed starters before kickoff — confidence scores you can act on in under 30 seconds.
+        On active EPL and MLS slates, sport-specific analysis signals score listed props for confirmed starters before kickoff — confidence context you can inspect in under 30 seconds.
       </p>
       <div class="cta-actions">
         <a href="https://app.propellerpicks.com/signup" class="btn btn-primary" style="font-size:18px; padding:16px 36px;">
@@ -2051,6 +2052,8 @@ footer {
     <a href="/research/prospective-record/" style="padding:18px;border:1px solid rgba(255,255,255,.12);color:#f1f5f9;text-decoration:none"><strong>Forward record</strong><br><span style="color:#94a3b8">Inspect day-one captures →</span></a>
   </div>
 </section>
+<!-- popular-players:start -->
+<!-- popular-players:end -->
 <!-- PP_SITE_FOOTER_START -->
 <footer class="pp-site-footer">
   <div class="pp-site-footer__inner">

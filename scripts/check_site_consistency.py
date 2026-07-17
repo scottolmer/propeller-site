@@ -8,7 +8,14 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED_PARTS = {"mockups", "analytics-dashboard", ".git"}
+EXCLUDED_PARTS = {
+    "mockups",
+    "analytics-dashboard",
+    "docs",
+    "content",
+    "node_modules",
+    ".git",
+}
 REQUIRED = (
     '/assets/css/site-system.css',
     '/favicon.svg',

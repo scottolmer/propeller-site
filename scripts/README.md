@@ -53,6 +53,8 @@ All scripts are idempotent and safe to run repeatedly.
 - **normalize_coverage_claims.py** — limits coverage wording to listed or
   currently available props and keeps confidence language distinct from a
   calibrated win-probability claim.
+- **normalize_strategy_claims.py** — removes audited certainty, profitability,
+  stale payout, and unsupported advantage claims from platform strategy guides.
 - **normalize_access_language.py** — removes stale hard-coded free/premium
   limits from generated pages and defers current availability to signup.
 - **check_product_fact_consistency.py** — verifies the canonical product fact
@@ -85,6 +87,16 @@ All scripts are idempotent and safe to run repeatedly.
   Shared shell changes do not falsely refresh the entire site. Use `--check`
   in CI; use `--reseed` only when intentionally rebuilding the manifest against
   `HEAD`. Never hand-edit `sitemap.xml` or the fingerprint manifest.
+- **optimize_lighthouse_delivery.py** — replaces blocking third-party analytics
+  and icon delivery with local/deferred loaders and makes hero copy visible
+  without waiting for the animation observer. Analytics calls queue immediately;
+  the remote library loads on interaction or after page load when the browser is
+  idle.
+- **build_lucide_subset.py** — maintains the licensed local icon set, including
+  icons selected dynamically at runtime.
+- **check_editorial_sources.py** — checks the curated primary-source URLs used
+  by reviewed strategy guides and fails on unreachable, 404, 410, or server-error
+  sources while reporting access-restricted responses separately.
 
 Verification:
 
@@ -95,6 +107,7 @@ python3 scripts/normalize_entity_metadata.py --check
 python3 scripts/normalize_alias_metadata.py --check
 python3 scripts/normalize_analyzer_archive_language.py --check
 python3 scripts/normalize_coverage_claims.py --check
+python3 scripts/normalize_strategy_claims.py --check
 python3 scripts/normalize_access_language.py --check
 python3 scripts/set_archive_indexing.py --check
 python3 scripts/sync_faq_schema.py --check
@@ -103,6 +116,9 @@ python3 scripts/check_structured_data_contracts.py
 python3 scripts/check_product_fact_consistency.py
 python3 scripts/check_ai_search_assets.py
 python3 scripts/test_platform_intent_ownership.py
+python3 scripts/build_lucide_subset.py --check
+python3 scripts/check_editorial_sources.py
+python3 scripts/optimize_lighthouse_delivery.py --check
 python3 scripts/generate_help_pages.py --check
 python3 scripts/generate_comparison_pages.py --check
 python3 scripts/generate_sport_answer_modules.py --check
@@ -110,5 +126,7 @@ python3 scripts/generate_platform_answer_modules.py --check
 python3 -m unittest scripts/test_ai_search_assets.py
 python3 -m unittest scripts/test_schema_contracts.py
 python3 -m unittest scripts/test_sport_answer_modules.py
+python3 -m unittest scripts/test_seo_audit_remediation.py
+python3 -m unittest scripts/test_lighthouse_delivery.py
 python3 scripts/generate_sitemap.py --check
 ```

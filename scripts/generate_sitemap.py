@@ -26,15 +26,6 @@ BASE = "https://propellerpicks.com"
 SITEMAP = ROOT / "sitemap.xml"
 MANIFEST = ROOT / "data" / "sitemap-fingerprints.json"
 SKIP_DIRS = {".git", "analytics-dashboard", "assets", "docs", "images", "mockups", "node_modules", "scripts"}
-DISCOVERY_FILES = {
-    "llms.txt",
-    "pricing.md",
-    "data/index.json",
-    "data/performance-snapshot.json",
-    "data/prospective-picks.json",
-    "data/methodology-version.json",
-    "data/product-facts.json",
-}
 NOINDEX_RE = re.compile(r'<meta\s+name=["\']robots["\'][^>]*content=["\'][^"\']*noindex', re.I)
 CANONICAL_RE = re.compile(r'<link\s+rel=["\']canonical["\']\s+href=["\']([^"\']+)', re.I)
 
@@ -135,10 +126,6 @@ def current_entries() -> list[tuple[str, str, pathlib.Path, bool]]:
         if canonical and canonical.group(1).rstrip("/") != url.rstrip("/"):
             continue
         entries.append((url, rel.as_posix(), path, True))
-    for rel_s in sorted(DISCOVERY_FILES):
-        path = ROOT / rel_s
-        if path.exists():
-            entries.append((f"{BASE}/{rel_s}", rel_s, path, False))
     return entries
 
 

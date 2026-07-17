@@ -1,0 +1,18 @@
+{
+  "auditDate": "2026-07-16",
+  "environment": "local clean worktree before deployment",
+  "tool": "Lighthouse 13.4.0",
+  "method": "median of three sequential cold runs per page and profile",
+  "rows": [
+    {"profile":"mobile","page":"home","performance":98,"fcpMs":1505,"lcpMs":2259,"tbtMs":13,"cls":0,"accessibility":100,"bestPractices":100,"seo":100},
+    {"profile":"mobile","page":"analyzer","performance":93,"fcpMs":2404,"lcpMs":2704,"tbtMs":17,"cls":0,"accessibility":95,"bestPractices":100,"seo":100},
+    {"profile":"mobile","page":"calculator","performance":95,"fcpMs":2255,"lcpMs":2407,"tbtMs":26,"cls":0,"accessibility":94,"bestPractices":100,"seo":100},
+    {"profile":"mobile","page":"guide","performance":96,"fcpMs":2104,"lcpMs":2404,"tbtMs":33,"cls":0,"accessibility":94,"bestPractices":100,"seo":100},
+    {"profile":"mobile","page":"picks","performance":95,"fcpMs":2255,"lcpMs":2555,"tbtMs":16,"cls":0,"accessibility":94,"bestPractices":100,"seo":100},
+    {"profile":"desktop","page":"home","performance":100,"fcpMs":325,"lcpMs":529,"tbtMs":0,"cls":0,"accessibility":100,"bestPractices":100,"seo":100},
+    {"profile":"desktop","page":"analyzer","performance":100,"fcpMs":563,"lcpMs":563,"tbtMs":0,"cls":0,"accessibility":95,"bestPractices":100,"seo":100},
+    {"profile":"desktop","page":"calculator","performance":100,"fcpMs":526,"lcpMs":568,"tbtMs":0,"cls":0,"accessibility":94,"bestPractices":100,"seo":100},
+    {"profile":"desktop","page":"guide","performance":100,"fcpMs":484,"lcpMs":524,"tbtMs":0,"cls":0,"accessibility":93,"bestPractices":100,"seo":100},
+    {"profile":"desktop","page":"picks","performance":100,"fcpMs":483,"lcpMs":523,"tbtMs":0,"cls":0,"accessibility":94,"bestPractices":100,"seo":100}
+  ]
+}

@@ -13,7 +13,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-EXCLUDED_PARTS = {"mockups", "analytics-dashboard", ".git"}
+EXCLUDED_PARTS = {"mockups", "analytics-dashboard", "content", "docs", "node_modules", ".git"}
 STATIC_REDIRECT_RE = re.compile(
     r'<meta\s+http-equiv=["\']refresh["\']\s+content=["\']0;\s*url=/[^"\']+["\']',
     re.IGNORECASE,

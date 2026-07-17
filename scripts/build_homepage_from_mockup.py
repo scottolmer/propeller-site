@@ -149,7 +149,7 @@ def head() -> str:
   <meta name="twitter:site" content="@propellerpicks">
   <meta name="twitter:creator" content="@propellerpicks">
   <meta name="color-scheme" content="light">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NLXM4C2G7D"></script>
+  <script src="/assets/js/analytics-loader.js?v=20260716"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){{dataLayer.push(arguments);}}

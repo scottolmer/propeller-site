@@ -3,7 +3,7 @@
   src: url("/assets/fonts/familjen-grotesk-latin.woff2") format("woff2");
   font-style: normal;
   font-weight: 500 700;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   src: url("/assets/fonts/ibm-plex-sans-latin.woff2") format("woff2");
   font-style: normal;
   font-weight: 400 600;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   src: url("/assets/fonts/ibm-plex-mono-500-latin.woff2") format("woff2");
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   src: url("/assets/fonts/ibm-plex-mono-600-latin.woff2") format("woff2");
   font-style: normal;
   font-weight: 600;
-  font-display: swap;
+  font-display: optional;
 }
 
 :root {

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLXM4C2G7D"></script>
+<script src="/assets/js/analytics-loader.js?v=20260716"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -114,7 +114,7 @@
       "name": "What are the best NHL prop picks today?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Today's best NHL prop picks are identified by Propeller's sport-specific analysis system and displayed in the live picks section above, ranked by confidence score and updated daily before puck drop. The system scores the player props currently available using no-vig probability analysis, special teams efficiency, injury impact, recent hit rate trends, line combination data, and defensive matchup differentials. A public sample may be shown on this page. Current full-slate availability and access details are shown in the app."
+        "text": "Today's best NHL prop picks are identified by Propeller's sport-specific analysis system and displayed in the live picks section above, ranked by confidence score and updated daily before puck drop. The system scores the player props currently available using no-vig market estimate analysis, special teams efficiency, injury impact, recent hit rate trends, line combination data, and defensive matchup differentials. A public sample may be shown on this page. Current full-slate availability and access details are shown in the app."
       }
     },
     {
@@ -130,7 +130,7 @@
       "name": "What is a good NHL prop betting strategy?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A sound NHL prop betting strategy focuses on three pillars: special teams opportunities, no-vig line shopping, and confirmed lineups. Power play time on ice is one of the strongest predictors of scoring prop outcomes — players on a top PP unit face dramatically elevated shot and point opportunity. Stripping sportsbook vig to find the true implied probability, then comparing it to your model's estimate, surfaces genuine edges rather than bookmaker margins. Finally, waiting for confirmed line combinations before placing any NHL prop bet prevents the costly mistake of betting on a player whose ice time or linemates have shifted from morning skate to game time."
+        "text": "A sound NHL prop betting strategy focuses on three pillars: special teams opportunities, no-vig line shopping, and confirmed lineups. Power play time on ice is one of the strongest predictors of scoring prop outcomes — players on a top PP unit face dramatically elevated shot and point opportunity. Stripping sportsbook vig to find the normalized market-implied probability estimate, then comparing it to your model's estimate, surfaces differences between a model estimate and the normalized market estimate. Finally, waiting for confirmed line combinations before placing any NHL prop bet prevents the costly mistake of betting on a player whose ice time or linemates have shifted from morning skate to game time."
       }
     },
     {
@@ -138,7 +138,7 @@
       "name": "How accurate are Propeller NHL picks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller publishes graded outcomes on the results page so you can review the current performance record without relying on stale claims inside a static page. The NHL model prioritizes no-vig probability analysis and special teams efficiency. Past performance does not guarantee future results, and individual outcomes vary."
+        "text": "Propeller publishes graded outcomes on the results page so you can review the current performance record without relying on stale claims inside a static page. The NHL model prioritizes no-vig market estimate analysis and special teams efficiency. Past performance does not guarantee future results, and individual outcomes vary."
       }
     },
     {
@@ -153,7 +153,7 @@
 }
 </script>
 
-<script src="https://unpkg.com/lucide@0.344.0"></script>
+<script src="/assets/js/lucide-subset.js?v=20260716" defer></script>
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -1594,6 +1594,7 @@ footer {
 }
 </style>
   <link rel="stylesheet" href="/assets/css/site-white-overrides.css?v=20260625-white-site">
+  <style id="pp-critical-hero">.hero .fade-in{opacity:1;transform:none;transition:none}</style>
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
@@ -1751,7 +1752,7 @@ footer {
         </div>
         <div class="agent-body">
           <div class="agent-header">
-            <h3 class="agent-name">No-Vig Probability</h3>
+            <h3 class="agent-name">No-Vig Market Estimate</h3>
             <span class="weight-badge weight-badge-high">WEIGHT 4.0 &mdash; HIGHEST</span>
           </div>
           <p>
@@ -1888,7 +1889,7 @@ footer {
 
       <div class="card stat-card fade-in delay-2">
         <span class="stat-card-value">4.0</span>
-        <span class="stat-card-label">Highest agent weight &mdash; no-vig probability</span>
+        <span class="stat-card-label">Highest agent weight &mdash; no-vig market estimate</span>
       </div>
 
       <div class="card stat-card fade-in delay-3">
@@ -1914,7 +1915,7 @@ footer {
           <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
         <p class="faq-answer">
-          Today's best NHL prop picks are identified by Propeller's sport-specific analysis system and displayed in the live picks section above, ranked by confidence score and updated daily before puck drop. The system scores the player props currently available using no-vig probability analysis, special teams efficiency, injury impact, recent hit rate trends, line combination data, and defensive matchup differentials. A public sample may be shown on this page. Current full-slate availability and access details are shown in the app.
+          Today's best NHL prop picks are identified by Propeller's sport-specific analysis system and displayed in the live picks section above, ranked by confidence score and updated daily before puck drop. The system scores the player props currently available using no-vig market estimate analysis, special teams efficiency, injury impact, recent hit rate trends, line combination data, and defensive matchup differentials. A public sample may be shown on this page. Current full-slate availability and access details are shown in the app.
         </p>
       </details>
 
@@ -1934,7 +1935,7 @@ footer {
           <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
         <p class="faq-answer">
-          A sound NHL prop betting strategy focuses on three pillars: special teams opportunities, no-vig line shopping, and confirmed lineups. Power play time on ice is one of the strongest predictors of scoring prop outcomes — players on a top PP unit face dramatically elevated shot and point opportunity. Stripping sportsbook vig to find the true implied probability, then comparing it to your model's estimate, surfaces genuine edges rather than bookmaker margins. Finally, waiting for confirmed line combinations before placing any NHL prop bet prevents the costly mistake of betting on a player whose ice time or linemates have shifted from morning skate to game time.
+          A sound NHL prop betting strategy focuses on three pillars: special teams opportunities, no-vig line shopping, and confirmed lineups. Power play time on ice is one of the strongest predictors of scoring prop outcomes — players on a top PP unit face dramatically elevated shot and point opportunity. Stripping sportsbook vig to find the normalized market-implied probability estimate, then comparing it to your model's estimate, surfaces differences between a model estimate and the normalized market estimate. Finally, waiting for confirmed line combinations before placing any NHL prop bet prevents the costly mistake of betting on a player whose ice time or linemates have shifted from morning skate to game time.
         </p>
       </details>
 
@@ -1944,7 +1945,7 @@ footer {
           <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
         <p class="faq-answer">
-          Propeller publishes graded outcomes on the <a href="/results/" style="color:var(--accent); text-decoration:none;">results page</a> so you can review the current performance record without relying on stale claims inside a static page. The NHL model prioritizes no-vig probability analysis and special teams efficiency. Past performance does not guarantee future results, and individual outcomes vary.
+          Propeller publishes graded outcomes on the <a href="/results/" style="color:var(--accent); text-decoration:none;">results page</a> so you can review the current performance record without relying on stale claims inside a static page. The NHL model prioritizes no-vig market estimate analysis and special teams efficiency. Past performance does not guarantee future results, and individual outcomes vary.
         </p>
       </details>
 
@@ -2005,7 +2006,7 @@ footer {
         Get <span>AI-Powered NHL</span><br>Prop Picks Today
       </h2>
       <p>
-        On active NHL slates, sport-specific analysis signals score listed player props before puck drop — confidence scores you can act on in under 30 seconds.
+        On active NHL slates, sport-specific analysis signals score listed player props before puck drop — confidence context you can inspect in under 30 seconds.
       </p>
       <div class="cta-actions">
         <a href="https://app.propellerpicks.com/signup" class="btn btn-primary" style="font-size:18px; padding:16px 36px;">
@@ -2027,24 +2028,7 @@ footer {
 </section>
 
 <!-- Footer -->
-<!-- popular-players:start -->
-<section aria-label="Popular NHL Player Analysis" style="padding:36px 0;border-top:1px solid rgba(255,255,255,0.06);">
-  <div class="container" style="max-width:1120px;margin:0 auto;padding:0 24px;">
-    <h2 style="font-size:18px;font-weight:700;color:#F1F5F9;margin:0 0 4px;">Popular NHL Player Analysis</h2>
-    <p style="font-size:13px;color:#64748B;margin:0 0 16px;">AI confidence, graded history, and stat-type win rates — free for every player.</p>
-    <div>
-      <a href="/analyzer/nhl/cole-caufield/" style="display:inline-block;padding:8px 14px;margin:0 8px 8px 0;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:999px;font-size:13px;color:#94A3B8;text-decoration:none;">Cole Caufield</a>
-      <a href="/analyzer/nhl/juraj-slafkovsk/" style="display:inline-block;padding:8px 14px;margin:0 8px 8px 0;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:999px;font-size:13px;color:#94A3B8;text-decoration:none;">Juraj Slafkovský</a>
-      <a href="/analyzer/nhl/nick-suzuki/" style="display:inline-block;padding:8px 14px;margin:0 8px 8px 0;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:999px;font-size:13px;color:#94A3B8;text-decoration:none;">Nick Suzuki</a>
-      <a href="/analyzer/nhl/alex-tuch/" style="display:inline-block;padding:8px 14px;margin:0 8px 8px 0;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:999px;font-size:13px;color:#94A3B8;text-decoration:none;">Alex Tuch</a>
-      <a href="/analyzer/nhl/tage-thompson/" style="display:inline-block;padding:8px 14px;margin:0 8px 8px 0;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:999px;font-size:13px;color:#94A3B8;text-decoration:none;">Tage Thompson</a>
-      <a href="/analyzer/nhl/pavel-dorofeyev/" style="display:inline-block;padding:8px 14px;margin:0 8px 8px 0;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:999px;font-size:13px;color:#94A3B8;text-decoration:none;">Pavel Dorofeyev</a>
-      <a href="/analyzer/nhl/jack-eichel/" style="display:inline-block;padding:8px 14px;margin:0 8px 8px 0;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:999px;font-size:13px;color:#94A3B8;text-decoration:none;">Jack Eichel</a>
-      <a href="/analyzer/nhl/alex-newhook/" style="display:inline-block;padding:8px 14px;margin:0 8px 8px 0;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:999px;font-size:13px;color:#94A3B8;text-decoration:none;">Alex Newhook</a>
-    </div>
-  </div>
-</section>
-<!-- popular-players:end -->
+
 
 <section aria-label="AI player prop research links" style="padding:48px 24px;background:#0b0e13;color:#d1d9e0;border-top:1px solid rgba(255,255,255,.08)">
   <div style="max-width:1120px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px">
@@ -2054,6 +2038,8 @@ footer {
     <a href="/research/prospective-record/" style="padding:18px;border:1px solid rgba(255,255,255,.12);color:#f1f5f9;text-decoration:none"><strong>Forward record</strong><br><span style="color:#94a3b8">Inspect day-one captures →</span></a>
   </div>
 </section>
+<!-- popular-players:start -->
+<!-- popular-players:end -->
 <!-- PP_SITE_FOOTER_START -->
 <footer class="pp-site-footer">
   <div class="pp-site-footer__inner">
