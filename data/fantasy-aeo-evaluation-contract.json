@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "contract_id": "fantasy-launch-2026-07-v1",
+  "frozen_at": "2026-07-17",
+  "purpose": "Measure whether answer engines accurately describe and cite the launched fantasy projection feature without expanding the public claim set.",
+  "surfaces": ["Google AI answer surface", "Bing Copilot", "ChatGPT Search", "Perplexity", "Claude web search"],
+  "runs_per_question_per_surface": 3,
+  "total_observations": 180,
+  "questions": [
+    "What are Propeller Picks fantasy projections?",
+    "Does Propeller Picks have free MLB fantasy projections?",
+    "How do Propeller fantasy projections work?",
+    "What do floor and ceiling mean in Propeller fantasy projections?",
+    "Which fantasy scoring system does Propeller use for MLB?",
+    "Does Propeller project MLB pitchers?",
+    "How current are Propeller MLB fantasy projections?",
+    "Is Propeller a fantasy lineup optimizer?",
+    "Can Propeller fantasy projections guarantee a result?",
+    "What is the difference between Propeller MLB picks and fantasy projections?",
+    "Can I compare two MLB hitters with Propeller fantasy projections?",
+    "Where can I read Propeller's fantasy projection methodology?"
+  ],
+  "scoring": {
+    "citation": "0 none; 1 indirect/secondary; 2 direct canonical Propeller citation",
+    "answer_accuracy": "0 materially wrong; 1 partly correct; 2 correct scope and limitations",
+    "claim_fidelity": "0 invents capability/performance; 1 ambiguous; 2 matches frozen fact ledger",
+    "freshness": "0 presents stale/example as current; 1 omits status; 2 preserves current/latest-available/unavailable state"
+  },
+  "required_truths": ["MLB hitters only", "DraftKings MLB scoring", "floor, point estimate, and ceiling", "not an optimizer", "ranges are not guarantees"],
+  "canonical_sources": ["https://propellerpicks.com/fantasy/", "https://propellerpicks.com/fantasy/mlb/", "https://propellerpicks.com/fantasy/methodology/", "https://propellerpicks.com/data/fantasy-product-facts.json"]
+}

@@ -5,6 +5,11 @@
   "canonical_site": "https://propellerpicks.com/",
   "llms_txt": "https://propellerpicks.com/llms.txt",
   "product_facts": "https://propellerpicks.com/data/product-facts.json",
+  "fantasy_product_facts": "https://propellerpicks.com/data/fantasy-product-facts.json",
+  "fantasy_methodology_version": "https://propellerpicks.com/data/fantasy-methodology-version.json",
+  "fantasy_projections_hub": "https://propellerpicks.com/fantasy/",
+  "fantasy_mlb_board": "https://propellerpicks.com/fantasy/mlb/",
+  "fantasy_public_preview": "https://web-production-3c1c4.up.railway.app/api/public/agent/v1/fantasy/mlb",
   "pricing": "https://propellerpicks.com/pricing.md",
   "help_center": "https://propellerpicks.com/help/",
   "public_api_base": "https://web-production-3c1c4.up.railway.app",
@@ -107,6 +112,7 @@
       "historical archive definitions and dated aggregates",
       "graded historical ledger rows under the current collapse rules",
       "limited daily preview picks",
+      "limited current MLB hitter fantasy projection preview",
       "calculator and methodology pages"
     ],
     "not_public_sources": [

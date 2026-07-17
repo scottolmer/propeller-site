@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "method_version": "fantasy-mlb-hitter-v1",
+  "effective_date": "2026-07-17",
+  "status": "current",
+  "sport": "mlb",
+  "position_group": "Hitter",
+  "scoring_identity": "DraftKings MLB",
+  "central_projection_method": "market_components_plus_recent_form",
+  "range_method": "market_projection_plus_widened_recent_variance",
+  "range_low_label": "P20-style",
+  "range_high_label": "P80-style",
+  "minimum_recent_games": 5,
+  "range_widening_multiplier": 1.25,
+  "public_accuracy_claim": null,
+  "accuracy_claim_policy": "Publish accuracy or calibration only after a reproducible, time-ordered evaluation documents cohort, timing, exclusions, scoring source, and calculation.",
+  "canonical_methodology": "https://propellerpicks.com/fantasy/methodology/",
+  "limitations": ["Range estimates are not guaranteed bounds.", "Actual fantasy points can fall outside the published range.", "Market and recent-form inputs may not reflect late news or role changes.", "The method does not optimize lineups or use a user's roster, salary cap, or league rules."]
+}

@@ -72,7 +72,9 @@ jobs:
           python3 scripts/check_structured_data_contracts.py
           python3 scripts/check_product_fact_consistency.py
           python3 scripts/check_ai_search_assets.py
+          python3 scripts/check_fantasy_contracts.py
           python3 scripts/test_platform_intent_ownership.py
+          python3 scripts/test_fantasy_intent_ownership.py
           python3 scripts/build_lucide_subset.py --check
           python3 scripts/check_editorial_sources.py
           python3 scripts/optimize_lighthouse_delivery.py --check

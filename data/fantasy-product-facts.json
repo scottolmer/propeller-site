@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0",
+  "last_verified": "2026-07-17",
+  "feature_name": "Propeller Fantasy Projections",
+  "status": "live",
+  "public_scope": {
+    "sports": ["mlb"],
+    "position_groups": ["Hitter"],
+    "scoring_label": "DraftKings MLB",
+    "outputs": ["floor_points", "projected_points", "ceiling_points"],
+    "range_labels": {"low": "P20-style", "high": "P80-style"}
+  },
+  "method_summary": "Available current market components are converted to DraftKings MLB fantasy points, with recent form used for uncovered scoring components. Recent outcome variation supplies widened lower and upper distances around the central projection.",
+  "minimum_recent_games_for_range": 5,
+  "range_widening_multiplier": 1.25,
+  "freshness": {
+    "current_max_age_minutes": 60,
+    "states": ["current", "latest_available", "unavailable"],
+    "policy": "Never present example, missing, or older data as a current live projection."
+  },
+  "supported_workflows": ["daily fantasy research", "same-context player comparison", "sit/start research input"],
+  "not_supported": ["pitcher projections", "non-MLB fantasy projections", "lineup optimization", "salary optimization", "contest entry submission", "guaranteed outcomes", "calibrated win probability"],
+  "independence": "Propeller Picks is independent, does not submit fantasy entries, and is not affiliated with DraftKings or other platforms it references.",
+  "canonical_pages": {"hub": "https://propellerpicks.com/fantasy/", "mlb": "https://propellerpicks.com/fantasy/mlb/", "methodology": "https://propellerpicks.com/fantasy/methodology/"},
+  "public_preview": "https://web-production-3c1c4.up.railway.app/api/public/agent/v1/fantasy/mlb"
+}

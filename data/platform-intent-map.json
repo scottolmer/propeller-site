@@ -1,6 +1,19 @@
 {
   "version": "2026-07-16",
   "shared_analyzer": "/analyzer/",
+  "feature_intents": {
+    "fantasy": {
+      "category_owner": "/fantasy/",
+      "current_mlb_utility_owner": "/fantasy/mlb/",
+      "methodology_owner": "/fantasy/methodology/",
+      "support_owner": "/help/how-do-propeller-fantasy-projections-work/",
+      "separate_intents": {
+        "/picks/mlb/": "individual MLB player-prop line research",
+        "/analyzer/": "current player-prop lookup and directional analysis"
+      },
+      "launch_scope": "MLB hitter fantasy-point estimates and ranges under DraftKings MLB scoring"
+    }
+  },
   "platforms": [
     {
       "name": "PrizePicks",
