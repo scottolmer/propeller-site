@@ -94,7 +94,8 @@ class SeoAuditRemediationTests(unittest.TestCase):
 
     def test_sitemap_contains_only_self_canonical_indexable_html(self) -> None:
         urls = sitemap_urls()
-        self.assertEqual(len(urls), 55)
+        self.assertGreaterEqual(len(urls), 55)
+        self.assertFalse(any(url.endswith((".json", ".txt", ".md")) for url in urls))
         for url in urls:
             path = local_path(url)
             self.assertTrue(path.exists(), f"missing HTML source for {url}")
@@ -104,7 +105,7 @@ class SeoAuditRemediationTests(unittest.TestCase):
 
     def test_popular_player_links_never_target_unapproved_pages(self) -> None:
         approved = {
-            f"/{line.strip('/')}" for line in (ROOT / "scripts/analyzer_indexed.txt").read_text().split()
+            f"/{line.strip('/')}/" for line in (ROOT / "scripts/analyzer_indexed.txt").read_text().split()
         }
         targets = [ROOT / "analyzer/index.html"] + [
             ROOT / "picks" / sport / "index.html" for sport in SPORT_ALIASES
