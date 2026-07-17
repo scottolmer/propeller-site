@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-07-17T03:12:40.318Z",
+  "measurementDate": "2026-07-16",
+  "base": "https://propellerpicks.com",
+  "runsPerTemplateProfile": 3,
+  "lighthouseVersion": "13.4.0",
+  "note": "Median of three sequential cold production runs. These are lab measurements, not field Core Web Vitals.",
+  "medians": [
+    {"profile":"mobile","page":"home","performance":100,"accessibility":100,"bestPractices":100,"seo":100,"fcpMs":952,"lcpMs":1414,"speedIndexMs":2213,"tbtMs":17,"cls":0},
+    {"profile":"mobile","page":"analyzer","performance":100,"accessibility":95,"bestPractices":100,"seo":100,"fcpMs":1064,"lcpMs":1226,"speedIndexMs":1064,"tbtMs":13,"cls":0.002},
+    {"profile":"mobile","page":"calculator","performance":100,"accessibility":94,"bestPractices":100,"seo":100,"fcpMs":1061,"lcpMs":1061,"speedIndexMs":1061,"tbtMs":50,"cls":0},
+    {"profile":"mobile","page":"guide","performance":100,"accessibility":93,"bestPractices":100,"seo":100,"fcpMs":1074,"lcpMs":1151,"speedIndexMs":1074,"tbtMs":21,"cls":0},
+    {"profile":"mobile","page":"picks","performance":100,"accessibility":94,"bestPractices":100,"seo":100,"fcpMs":1512,"lcpMs":1512,"speedIndexMs":1512,"tbtMs":11,"cls":0},
+    {"profile":"desktop","page":"home","performance":100,"accessibility":100,"bestPractices":100,"seo":100,"fcpMs":251,"lcpMs":368,"speedIndexMs":311,"tbtMs":0,"cls":0},
+    {"profile":"desktop","page":"analyzer","performance":100,"accessibility":95,"bestPractices":100,"seo":100,"fcpMs":342,"lcpMs":345,"speedIndexMs":342,"tbtMs":0,"cls":0},
+    {"profile":"desktop","page":"calculator","performance":100,"accessibility":94,"bestPractices":100,"seo":100,"fcpMs":287,"lcpMs":327,"speedIndexMs":287,"tbtMs":0,"cls":0},
+    {"profile":"desktop","page":"guide","performance":100,"accessibility":93,"bestPractices":100,"seo":100,"fcpMs":298,"lcpMs":305,"speedIndexMs":298,"tbtMs":0,"cls":0},
+    {"profile":"desktop","page":"picks","performance":100,"accessibility":94,"bestPractices":100,"seo":100,"fcpMs":325,"lcpMs":325,"speedIndexMs":325,"tbtMs":0,"cls":0}
+  ],
+  "performanceRuns": {
+    "mobile": {"home":[100,100,100],"analyzer":[100,100,100],"calculator":[100,100,100],"guide":[99,100,100],"picks":[100,100,100]},
+    "desktop": {"home":[100,100,100],"analyzer":[100,100,100],"calculator":[100,100,100],"guide":[100,100,100],"picks":[100,100,100]}
+  }
+}
