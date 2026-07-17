@@ -1,7 +1,7 @@
 {
   "entries": {
     "https://propellerpicks.com/": {
-      "fingerprint": "91575abdc3f2e1a1eadfc2674ded1d71a49300e20e9936681e797cb4eca33659",
+      "fingerprint": "ffc1cc93290a8def9afbc6f46604071047d6afcd4cc842a6a57a077e935a910c",
       "lastmod": "2026-07-16",
       "source": "index.html"
     },
@@ -16,9 +16,14 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "d42daa4e0184a333915624baaa1cbc1fea2f176a0986088e14d32f4197fea416",
+      "fingerprint": "fd6c406b53d739d71be534ce0aef1e8f545d2d6b79190086032372e1d7a73cff",
       "lastmod": "2026-07-16",
       "source": "analyzer/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/christian-scott/": {
+      "fingerprint": "1099edc63dd54cd697e113d7804da97c99e03ed6bb4eaee4c65212bdecc35422",
+      "lastmod": "2026-07-16",
+      "source": "analyzer/mlb/christian-scott/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "de8b7e3def1082ab54fcbf93f5c2e2e7ada9de1f7435e3aada9878a1dfaf8d3e",
@@ -181,7 +186,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "3c6d4c790b51203f11beb38d5ef098ecedbdb0123d4cc4c05c7ee33459fe2000",
+      "fingerprint": "83f99e27755cfc1c225ae585858bd00e6d465a1d24ee3f0f8e6fc481af34bbfc",
       "lastmod": "2026-07-16",
       "source": "picks/mlb/index.html"
     },
@@ -236,8 +241,8 @@
       "source": "research/prospective-record/index.html"
     },
     "https://propellerpicks.com/results/": {
-      "fingerprint": "be2bc9070e10a31473e879831b392c2a8c2935c9ec60ba34f45f14718d896f18",
-      "lastmod": "2026-07-15",
+      "fingerprint": "ac820f428994a5fe5d91951014736f5f74fce9018aaa1dbfb26128c1a2686f58",
+      "lastmod": "2026-07-16",
       "source": "results/index.html"
     },
     "https://propellerpicks.com/terms/": {
@@ -271,8 +276,8 @@
       "source": "tools/underdog-payout-calculator/index.html"
     },
     "https://propellerpicks.com/track-record/": {
-      "fingerprint": "9ea1e9e3a3a31b74a148c4cbbabdab0a1756e6ec7c60f39e1427dcefb47be3de",
-      "lastmod": "2026-07-15",
+      "fingerprint": "958d2514d77da3b66e0d6fca031d347d9cdab939e5227d3d297b44a7f4fe667b",
+      "lastmod": "2026-07-16",
       "source": "track-record/index.html"
     }
   },
