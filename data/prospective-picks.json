@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-17T03:01:45Z",
+  "generated_at": "2026-07-17T03:15:30Z",
   "publication_definition": "First observed in the Propeller public picks preview. Event-start ordering and outcome timing are not verified because the public preview does not expose event start time.",
   "before_event_start_verified": false,
   "records": [
