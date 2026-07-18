@@ -16,63 +16,33 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "2f58a559902594ec144c5be3bf143936c04744054c290128ff8d451b9bcf5bb5",
+      "fingerprint": "cc268e0724db824ddb479698cbea21411f8f7e2c6ffa644ad5b59de2f2543870",
       "lastmod": "2026-07-18",
       "source": "analyzer/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/austin-hedges/": {
-      "fingerprint": "46e46eea02582b1267fa987807ccdeacd5596ed4358329c87d19b8d8131bcb25",
+      "fingerprint": "3c22b8954fa2ca148e502e46b84c020694c45fa193fd8494268352079ee45311",
       "lastmod": "2026-07-18",
       "source": "analyzer/mlb/austin-hedges/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/eli-white/": {
-      "fingerprint": "3573f981d6e148d5eac9436d4079f36c1bfb967856f7b3d6940933a9c5430f2a",
-      "lastmod": "2026-07-18",
-      "source": "analyzer/mlb/eli-white/index.html"
-    },
     "https://propellerpicks.com/analyzer/mlb/ildemaro-vargas/": {
-      "fingerprint": "8c17257f887c8d540b085fa3803f85830c47b9e1386eb4a1ea59ec3655de1a11",
+      "fingerprint": "02fd05c52cec0f1aa29d22495089e31ceff5899d31747a6ed4d5c787bc878f03",
       "lastmod": "2026-07-18",
       "source": "analyzer/mlb/ildemaro-vargas/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/joey-bart/": {
-      "fingerprint": "f83ed28ce9237eb316a89375043c890cb48772e1409dd711396b53b3897b2057",
+    "https://propellerpicks.com/analyzer/mlb/luis-garcia-jr/": {
+      "fingerprint": "cf9f65f9cf99550342ff10ea71f684f5e03ae977a365f25ed066707fc23104b2",
       "lastmod": "2026-07-18",
-      "source": "analyzer/mlb/joey-bart/index.html"
+      "source": "analyzer/mlb/luis-garcia-jr/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/jorge-mateo/": {
-      "fingerprint": "113def1debb405e0cef06ec9d6fdaf60be325dd5b353c131367e3b45887f169a",
+    "https://propellerpicks.com/analyzer/mlb/paul-goldschmidt/": {
+      "fingerprint": "ef9e62582c6e698bc3def57d92d15fef92a3ebb5ea581a86d859507ccb108aa3",
       "lastmod": "2026-07-18",
-      "source": "analyzer/mlb/jorge-mateo/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/jose-siri/": {
-      "fingerprint": "4bfc947b9bbc523ebe3dd410712d84552b98e92be64a122f709170201959cf2f",
-      "lastmod": "2026-07-18",
-      "source": "analyzer/mlb/jose-siri/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/kerry-carpenter/": {
-      "fingerprint": "b444d101efb477aeaeb948cc57f0878ba66c1d122f440566da7af5969cad99c4",
-      "lastmod": "2026-07-18",
-      "source": "analyzer/mlb/kerry-carpenter/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/rhys-hoskins/": {
-      "fingerprint": "4dfa0e98c4ad8c4f8b57e7c22ae8c10acf6b489a6e61eeb0c759a23dbab517cd",
-      "lastmod": "2026-07-18",
-      "source": "analyzer/mlb/rhys-hoskins/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/ryan-kreidler/": {
-      "fingerprint": "54232fe3ab4e132850f00a5c1b3543f185785fddff321ba3397e348e8dac324a",
-      "lastmod": "2026-07-18",
-      "source": "analyzer/mlb/ryan-kreidler/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/willson-contreras/": {
-      "fingerprint": "fd07672b939e1ebc3a20c9e69df111bc094c8e6ba736f8dbe4476f02f5450fbb",
-      "lastmod": "2026-07-18",
-      "source": "analyzer/mlb/willson-contreras/index.html"
+      "source": "analyzer/mlb/paul-goldschmidt/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "05a989cd4427f0be59f3157a2440f4a68fdd3772a01fa24fad3d830a3595e696",
-      "lastmod": "2026-07-17",
+      "fingerprint": "3997413b218815c59eb17b7ff14e981df531191849daa13a9d7d065f522e6d09",
+      "lastmod": "2026-07-18",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -251,7 +221,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "7b64f13ae79aa23d221d055a307b37bb40446cbf9fdc99bf5b1f78e952353c19",
+      "fingerprint": "28b5340a221b46cb574c451b6bdf60880ef18a4d14bb733ab8280680af18a421",
       "lastmod": "2026-07-18",
       "source": "picks/mlb/index.html"
     },
