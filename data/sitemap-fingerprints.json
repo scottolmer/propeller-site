@@ -1,8 +1,8 @@
 {
   "entries": {
     "https://propellerpicks.com/": {
-      "fingerprint": "3144e9a64f8ad906a951d1034d9078e077430883096eeed42e9f83407f54ccfa",
-      "lastmod": "2026-07-18",
+      "fingerprint": "0d81375a4f58d3a9c3d3b59eae1351782b7039a7b9332ff4bc44c11530f92589",
+      "lastmod": "2026-07-19",
       "source": "index.html"
     },
     "https://propellerpicks.com/about/": {
@@ -16,29 +16,84 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "cc268e0724db824ddb479698cbea21411f8f7e2c6ffa644ad5b59de2f2543870",
-      "lastmod": "2026-07-18",
+      "fingerprint": "d91e041f56970a4050fb4ef9d10641a37a2f1a0e24dca917d315f598c8136bc6",
+      "lastmod": "2026-07-19",
       "source": "analyzer/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/austin-hedges/": {
-      "fingerprint": "ff3efb9ab27e9cd6a5a1472e8e9ea4cd6b38a8a52b4d5b27de1f89d550f392f8",
-      "lastmod": "2026-07-18",
-      "source": "analyzer/mlb/austin-hedges/index.html"
+    "https://propellerpicks.com/analyzer/mlb/andre-pallante/": {
+      "fingerprint": "fc0b57b300f753dc2e07413995e2fc88456120208bb58107601ccecacdf14ff1",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/andre-pallante/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/andres-gimenez/": {
+      "fingerprint": "632c228dc8180102046f7a46179782887d622dc02de86cbb6b365bc9f2650ea0",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/andres-gimenez/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/austin-martin/": {
+      "fingerprint": "4de3b972b2c72c74ad70f99dcd710c090edebcb816b1fee146174990972c954f",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/austin-martin/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/cam-schlittler/": {
+      "fingerprint": "6c999fad43ddc457067f3cbbad22050179057f7f640a83d659ec099f92d642ac",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/cam-schlittler/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/christian-vazquez/": {
+      "fingerprint": "0ad3de22353aee94e1a06162d13eee21de102446ba40dbebedc1f586b8fa7547",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/christian-vazquez/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/colby-thomas/": {
+      "fingerprint": "2da9051a9af9aeef830a87f48ca6a61b2f1df1ea62b0ee16f1c3d36fea95eae0",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/colby-thomas/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/colt-keith/": {
+      "fingerprint": "3b08337b59e80fc4e3adb2f3cb52ddc37e49916dd4204bb6d1472f01abba8108",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/colt-keith/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/drew-romo/": {
+      "fingerprint": "b8afdf0aaabe236f25faf488f263fbaed995cc8e4eba39a0ba25c25d7f8391e2",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/drew-romo/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/eduardo-rodriguez/": {
+      "fingerprint": "f88a00508e9f0228b43c004cd5f8b5dc4bc3ba27c549ad95b2ba9fa3c2b6224f",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/eduardo-rodriguez/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/foster-griffin/": {
+      "fingerprint": "ae8e21c91d315ea4f7bed642c54dde6e26dec6f53fbc70205b3886c6f573c302",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/foster-griffin/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/freddy-fermin/": {
+      "fingerprint": "c12311efcd1f796d63b587005610f38816e36f04e3f082c4867822fc8a362edb",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/freddy-fermin/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/german-marquez/": {
+      "fingerprint": "9ad23d813c0c43e6bc27ade613ea541b0736906027de37b5049a0bb05c705327",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/german-marquez/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/hunter-feduccia/": {
+      "fingerprint": "cd598ccc914a4779c8f280a9328f5e928c3e8717fd2abe8bd84e175a497aaf00",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/hunter-feduccia/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/ildemaro-vargas/": {
-      "fingerprint": "13e947cb8be54e5ff018d447e89557638f1a33d00bc57f83f81087c1586fc520",
-      "lastmod": "2026-07-18",
+      "fingerprint": "7115adb45edb021596fdf05730b987189fda45d1d53474d327504afeb02448ee",
+      "lastmod": "2026-07-19",
       "source": "analyzer/mlb/ildemaro-vargas/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/luis-garcia-jr/": {
-      "fingerprint": "5619260b301aec0dc49e935794ff26205cff91161e9a09ed1aa192318f90a6b2",
-      "lastmod": "2026-07-18",
-      "source": "analyzer/mlb/luis-garcia-jr/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/paul-goldschmidt/": {
-      "fingerprint": "7f3be31c2102b8376bbd797c178aa84fde80dd3a6e8b4440088ad9fb970cdbbd",
-      "lastmod": "2026-07-18",
-      "source": "analyzer/mlb/paul-goldschmidt/index.html"
+    "https://propellerpicks.com/analyzer/mlb/luis-rengifo/": {
+      "fingerprint": "d85d74ed8d400673cf9bde65381b76fff368b86c1c28900dfb7b60f33606515a",
+      "lastmod": "2026-07-19",
+      "source": "analyzer/mlb/luis-rengifo/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "3997413b218815c59eb17b7ff14e981df531191849daa13a9d7d065f522e6d09",
@@ -216,48 +271,48 @@
       "source": "how-it-works/index.html"
     },
     "https://propellerpicks.com/picks/": {
-      "fingerprint": "701027916b4d913497c7d5b144da602e4cd6256713701da19ced9c91b083a3b4",
-      "lastmod": "2026-07-18",
+      "fingerprint": "5f88819859b0676440e51c054bf5e864a7b1c0d78314b221c7256de73bd725c1",
+      "lastmod": "2026-07-19",
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "28b5340a221b46cb574c451b6bdf60880ef18a4d14bb733ab8280680af18a421",
-      "lastmod": "2026-07-18",
+      "fingerprint": "1b18827f45973c35c3b2a83b6fc487e7c06a732a39617792f083e684bbd979e0",
+      "lastmod": "2026-07-19",
       "source": "picks/mlb/index.html"
     },
     "https://propellerpicks.com/picks/nba/": {
-      "fingerprint": "e0f41db6a66ade6c60c61227e001be4a6e96cae6c99bff778229823edc564526",
-      "lastmod": "2026-07-18",
+      "fingerprint": "e69bd02880e98981888e6181fa622c792c57c306658b0e4896b92975badcf164",
+      "lastmod": "2026-07-19",
       "source": "picks/nba/index.html"
     },
     "https://propellerpicks.com/picks/nfl/": {
-      "fingerprint": "3c08f9a26efbd4ba0c845722626c2640690b05c16d1972a02c98d2b58dcdeb10",
-      "lastmod": "2026-07-18",
+      "fingerprint": "0d9c131230b3d44d399742f1813d9d6541252200b1762b5112d9f8beef98ff34",
+      "lastmod": "2026-07-19",
       "source": "picks/nfl/index.html"
     },
     "https://propellerpicks.com/picks/nhl/": {
-      "fingerprint": "373a8e1fdc0a78e72093d88f888c0d477f89374a00d3167325fde84f58ab3ff9",
-      "lastmod": "2026-07-18",
+      "fingerprint": "edd73fc807fd22e3738fba263bfd6f1831ecc96cdaf542a5e873bcea6727a0e0",
+      "lastmod": "2026-07-19",
       "source": "picks/nhl/index.html"
     },
     "https://propellerpicks.com/picks/pick6/": {
-      "fingerprint": "47b41fcbb31f5c2fe91e5d2c71a196395fe0b1d50288f86bcd36eb910c6fc313",
-      "lastmod": "2026-07-18",
+      "fingerprint": "efe06f25930b49c2d1b9cc03f7bb4d85057dce334b103c26f34d203c7130d3c0",
+      "lastmod": "2026-07-19",
       "source": "picks/pick6/index.html"
     },
     "https://propellerpicks.com/picks/prizepicks/": {
-      "fingerprint": "a4dd31bf1527ee562f59d90607c63bceedb0c53dc0b8ce131fdf2695926ade20",
-      "lastmod": "2026-07-18",
+      "fingerprint": "d9005fa6c64b4dedf8e071dfb33bdf16c86208a374d2dbbddfe10c328b73250a",
+      "lastmod": "2026-07-19",
       "source": "picks/prizepicks/index.html"
     },
     "https://propellerpicks.com/picks/soccer/": {
-      "fingerprint": "9beb21dfc9ef5683880043e9f1b8afe258ac89e5d119fbe0186c14307916b883",
-      "lastmod": "2026-07-18",
+      "fingerprint": "180476f7c5d310b0cc4fc8c25f99a09f0d599e52a9e7a1ccbe7a4cc09accc47e",
+      "lastmod": "2026-07-19",
       "source": "picks/soccer/index.html"
     },
     "https://propellerpicks.com/picks/underdog/": {
-      "fingerprint": "69fccbe9bb163d13c71eaf1caa5cb2faa9f35bfe172feb2a42a481e047beac07",
-      "lastmod": "2026-07-18",
+      "fingerprint": "142ba7d020b5c6c0a3ba52d1cdae420613f5eab399bd416d060f6c36f89f3d6a",
+      "lastmod": "2026-07-19",
       "source": "picks/underdog/index.html"
     },
     "https://propellerpicks.com/privacy/": {
@@ -276,8 +331,8 @@
       "source": "research/prospective-record/index.html"
     },
     "https://propellerpicks.com/results/": {
-      "fingerprint": "2f69a161499ea4021511fbae5ea85c7fbecfde8ae286062499439da1b58f2570",
-      "lastmod": "2026-07-18",
+      "fingerprint": "b39821c7193f0c8f30217aef2a68d3aece7ef2fd3aaa5549ed0ea3e62f83ceec",
+      "lastmod": "2026-07-19",
       "source": "results/index.html"
     },
     "https://propellerpicks.com/terms/": {
@@ -311,8 +366,8 @@
       "source": "tools/underdog-payout-calculator/index.html"
     },
     "https://propellerpicks.com/track-record/": {
-      "fingerprint": "65f65f47ef75406a5b60f7f34585bafb48161d6fb394a42411d1214fd7e75f94",
-      "lastmod": "2026-07-18",
+      "fingerprint": "603650477b94de19b76c44a63e73d3a261f979bad9f6e2cf4b84a5167d7f8c34",
+      "lastmod": "2026-07-19",
       "source": "track-record/index.html"
     }
   },
