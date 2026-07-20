@@ -1,27 +1,27 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-07-19T15:03:40Z",
-  "latest_sample_game_date": "2026-07-18",
+  "generated_at": "2026-07-20T12:30:16Z",
+  "latest_sample_game_date": "2026-07-19",
   "canonical_report": "https://propellerpicks.com/results/",
   "historical_database": {
     "unit": "raw graded analysis rows",
-    "total": 2138681,
-    "wins": 1439920,
-    "losses": 698731,
-    "pushes": 30,
+    "total": 2162059,
+    "wins": 1455548,
+    "losses": 706479,
+    "pushes": 32,
     "historical_outcome_rate": 67.3,
     "rate_formula": "wins / (wins + losses); pushes excluded",
     "source": "https://web-production-3c1c4.up.railway.app/api/public/results-summary"
   },
   "deduplicated_public_ledger": {
     "unit": "prop-result entries after the current public API collapse rules",
-    "total": 286742,
-    "wins": 196087,
-    "losses": 90648,
-    "pushes": 7,
+    "total": 290258,
+    "wins": 198507,
+    "losses": 91743,
+    "pushes": 8,
     "historical_outcome_rate": 68.4,
     "rate_formula": "wins / (wins + losses); pushes excluded",
-    "raw_to_ledger_ratio": 7.46,
+    "raw_to_ledger_ratio": 7.45,
     "source": "https://web-production-3c1c4.up.railway.app/api/public/results?days=3650&min_confidence=0&limit=20&offset=0"
   },
   "coverage": {
@@ -41,7 +41,7 @@
       "MLS"
     ],
     "top_raw_bucket": "MLB",
-    "top_raw_bucket_share": 93.2
+    "top_raw_bucket_share": 93.3
   },
   "raw_sport_buckets": [
     {
@@ -77,10 +77,10 @@
     {
       "key": "mlb",
       "label": "MLB",
-      "total": 1992963,
-      "wins": 1343393,
-      "losses": 649540,
-      "pushes": 30,
+      "total": 2016341,
+      "wins": 1359021,
+      "losses": 657288,
+      "pushes": 32,
       "win_rate": 67.4,
       "published": true
     },
@@ -113,25 +113,25 @@
       "min": 75,
       "max": null,
       "all": {
-        "total": 121974,
-        "wins": 107922,
-        "losses": 14052,
+        "total": 124724,
+        "wins": 110314,
+        "losses": 14410,
         "pushes": 0,
-        "win_rate": 88.5
+        "win_rate": 88.4
       },
       "over": {
-        "total": 1490,
-        "wins": 837,
-        "losses": 653,
+        "total": 1516,
+        "wins": 851,
+        "losses": 665,
         "pushes": 0,
-        "win_rate": 56.2
+        "win_rate": 56.1
       },
       "under": {
-        "total": 120484,
-        "wins": 107085,
-        "losses": 13399,
+        "total": 123208,
+        "wins": 109463,
+        "losses": 13745,
         "pushes": 0,
-        "win_rate": 88.9
+        "win_rate": 88.8
       }
     },
     {
@@ -141,24 +141,24 @@
       "min": 65,
       "max": 74,
       "all": {
-        "total": 610773,
-        "wins": 481958,
-        "losses": 128810,
-        "pushes": 5,
+        "total": 617852,
+        "wins": 487341,
+        "losses": 130504,
+        "pushes": 7,
         "win_rate": 78.9
       },
       "over": {
-        "total": 10990,
-        "wins": 6207,
-        "losses": 4783,
+        "total": 11312,
+        "wins": 6449,
+        "losses": 4863,
         "pushes": 0,
-        "win_rate": 56.5
+        "win_rate": 57.0
       },
       "under": {
-        "total": 599783,
-        "wins": 475751,
-        "losses": 124027,
-        "pushes": 5,
+        "total": 606540,
+        "wins": 480892,
+        "losses": 125641,
+        "pushes": 7,
         "win_rate": 79.3
       }
     },
@@ -169,25 +169,25 @@
       "min": 55,
       "max": 64,
       "all": {
-        "total": 949444,
-        "wins": 604911,
-        "losses": 344528,
+        "total": 958541,
+        "wins": 610563,
+        "losses": 347973,
         "pushes": 5,
         "win_rate": 63.7
       },
       "over": {
-        "total": 172321,
-        "wins": 94645,
-        "losses": 77671,
+        "total": 174791,
+        "wins": 96147,
+        "losses": 78639,
         "pushes": 5,
-        "win_rate": 54.9
+        "win_rate": 55.0
       },
       "under": {
-        "total": 777123,
-        "wins": 510266,
-        "losses": 266857,
+        "total": 783750,
+        "wins": 514416,
+        "losses": 269334,
         "pushes": 0,
-        "win_rate": 65.7
+        "win_rate": 65.6
       }
     },
     {
@@ -197,47 +197,33 @@
       "min": null,
       "max": 54,
       "all": {
-        "total": 456490,
-        "wins": 245129,
-        "losses": 211341,
+        "total": 460942,
+        "wins": 247330,
+        "losses": 213592,
         "pushes": 20,
         "win_rate": 53.7
       },
       "over": {
-        "total": 194174,
-        "wins": 94694,
-        "losses": 99466,
+        "total": 196123,
+        "wins": 95722,
+        "losses": 100387,
         "pushes": 14,
         "win_rate": 48.8
       },
       "under": {
-        "total": 262316,
-        "wins": 150435,
-        "losses": 111875,
+        "total": 264819,
+        "wins": 151608,
+        "losses": 113205,
         "pushes": 6,
-        "win_rate": 57.4
+        "win_rate": 57.3
       }
     }
   ],
   "recent_ledger_sample": [
     {
-      "result_id": "pr_1185ec019c72a5152426",
+      "result_id": "pr_879ee44e68211f9cbdaa",
       "sport": "mlb",
-      "player_name": "Randy Dobnak",
-      "stat_type": "hits_allowed",
-      "line": 6.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "win",
-      "actual_value": 4.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
-    },
-    {
-      "result_id": "pr_7d19b4a1bbe8c73a4812",
-      "sport": "mlb",
-      "player_name": "Travis Bazzana",
+      "player_name": "Braden Montgomery",
       "stat_type": "rbis",
       "line": 1.5,
       "predicted_direction": "UNDER",
@@ -245,41 +231,41 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 1.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_9eafd20dedb78f24cd79",
+      "result_id": "pr_3c21cff2dfec0415852c",
       "sport": "mlb",
-      "player_name": "Pete Alonso",
-      "stat_type": "stolen_bases",
-      "line": 0.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "loss",
-      "actual_value": 1.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "draftkings_pick6"
-    },
-    {
-      "result_id": "pr_7f1b1ebcbe7c37c7cd98",
-      "sport": "mlb",
-      "player_name": "Jacob Gonzalez",
+      "player_name": "Brandon Marsh",
       "stat_type": "rbis",
-      "line": 1.5,
+      "line": 2.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 0.0,
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_1ded62bdc0fd21d1be81",
+      "sport": "mlb",
+      "player_name": "Blaze Jordan",
+      "stat_type": "rbis",
+      "line": 2.5,
       "predicted_direction": "UNDER",
       "predicted_score": 20.0,
       "confidence_pct": 80.0,
       "result": "loss",
-      "actual_value": 2.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
+      "actual_value": 3.0,
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_82d3f0048fe0154e4ef9",
+      "result_id": "pr_5180a3b4d8672f32a368",
       "sport": "mlb",
-      "player_name": "Rhys Hoskins",
+      "player_name": "Austin Martin",
       "stat_type": "rbis",
       "line": 1.5,
       "predicted_direction": "UNDER",
@@ -287,13 +273,97 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_2f657ebf39ced0d220a2",
+      "result_id": "pr_9e0528d13d6ebf246cc5",
       "sport": "mlb",
-      "player_name": "Ryan O'Hearn",
+      "player_name": "Bo Bichette",
+      "stat_type": "rbis",
+      "line": 2.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 0.0,
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_c9acc30550450f3a8be8",
+      "sport": "mlb",
+      "player_name": "Braden Shewmake",
+      "stat_type": "rbis",
+      "line": 1.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 0.0,
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_d97982819ac90bda0ef3",
+      "sport": "mlb",
+      "player_name": "Andrés Chaparro",
+      "stat_type": "rbis",
+      "line": 2.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 0.0,
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_10ba0ec805037b470004",
+      "sport": "mlb",
+      "player_name": "Andrés Giménez",
+      "stat_type": "total_bases",
+      "line": 4.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 0.0,
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_224dd68cae4a61d55237",
+      "sport": "mlb",
+      "player_name": "Andrew Benintendi",
+      "stat_type": "rbis",
+      "line": 2.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 1.0,
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_5c047b59336715f82788",
+      "sport": "mlb",
+      "player_name": "Alejandro Kirk",
+      "stat_type": "rbis",
+      "line": 1.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 0.0,
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_3a3a14e58ece50787069",
+      "sport": "mlb",
+      "player_name": "Andrés Chaparro",
       "stat_type": "total_bases",
       "line": 5.5,
       "predicted_direction": "UNDER",
@@ -301,69 +371,13 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_bd3db980749489ff840b",
+      "result_id": "pr_6c095414a228dea60f1c",
       "sport": "mlb",
-      "player_name": "Jacob Gonzalez",
-      "stat_type": "total_bases",
-      "line": 2.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "loss",
-      "actual_value": 5.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
-    },
-    {
-      "result_id": "pr_1d1a1351e9f9d039c941",
-      "sport": "mlb",
-      "player_name": "Owen Murphy",
-      "stat_type": "hits_allowed",
-      "line": 4.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "loss",
-      "actual_value": 5.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
-    },
-    {
-      "result_id": "pr_456edf07f2d8c3395c03",
-      "sport": "mlb",
-      "player_name": "Esmerlyn Valdez",
-      "stat_type": "walks",
-      "line": 1.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "win",
-      "actual_value": 0.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
-    },
-    {
-      "result_id": "pr_78a121dda957161c3a89",
-      "sport": "mlb",
-      "player_name": "Brayan Rocchio",
-      "stat_type": "total_bases",
-      "line": 4.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "win",
-      "actual_value": 0.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
-    },
-    {
-      "result_id": "pr_5907127c65fb5b5d71aa",
-      "sport": "mlb",
-      "player_name": "Jacob Gonzalez",
+      "player_name": "Blaze Jordan",
       "stat_type": "total_bases",
       "line": 4.5,
       "predicted_direction": "UNDER",
@@ -371,69 +385,41 @@
       "confidence_pct": 80.0,
       "result": "loss",
       "actual_value": 5.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_cf12445409c1aa78e8a1",
+      "result_id": "pr_7bf9511b8eb0b343c12b",
       "sport": "mlb",
-      "player_name": "Jake Mangum",
-      "stat_type": "rbis",
+      "player_name": "Andrés Giménez",
+      "stat_type": "runs",
       "line": 1.5,
       "predicted_direction": "UNDER",
       "predicted_score": 20.0,
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_ceb7adfc16f32b09c4c6",
+      "result_id": "pr_2b8afb9e5e948f7ba0f7",
       "sport": "mlb",
-      "player_name": "Kahlil Watson",
+      "player_name": "Anthony Volpe",
       "stat_type": "rbis",
       "line": 1.5,
       "predicted_direction": "UNDER",
       "predicted_score": 20.0,
       "confidence_pct": 80.0,
       "result": "win",
-      "actual_value": 0.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
+      "actual_value": 1.0,
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_dad8e68327649117ca25",
+      "result_id": "pr_cfbaa6f3dc34ee0dac9f",
       "sport": "mlb",
-      "player_name": "Kyle Manzardo",
-      "stat_type": "rbis",
-      "line": 2.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "win",
-      "actual_value": 0.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
-    },
-    {
-      "result_id": "pr_4c39acb8fb538d09e618",
-      "sport": "mlb",
-      "player_name": "Chase DeLauter",
-      "stat_type": "rbis",
-      "line": 2.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "win",
-      "actual_value": 0.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
-    },
-    {
-      "result_id": "pr_34cd6686bdfe691c37b8",
-      "sport": "mlb",
-      "player_name": "Esmerlyn Valdez",
+      "player_name": "Alec Burleson",
       "stat_type": "rbis",
       "line": 2.5,
       "predicted_direction": "UNDER",
@@ -441,13 +427,27 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 2.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_13fa1b9490bb26f9f101",
+      "result_id": "pr_b973368fb8116a21ad7c",
       "sport": "mlb",
-      "player_name": "Brayan Rocchio",
+      "player_name": "Andre Pallante",
+      "stat_type": "pitches_thrown",
+      "line": 102.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 88.0,
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_068e8ca5d94b3cb19190",
+      "sport": "mlb",
+      "player_name": "Alan Roden",
       "stat_type": "rbis",
       "line": 1.5,
       "predicted_direction": "UNDER",
@@ -455,50 +455,50 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "underdog"
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_428dbe2cd17472f1cef0",
+      "result_id": "pr_fe279dbb808463f60a45",
       "sport": "mlb",
-      "player_name": "Coby Mayo",
-      "stat_type": "stolen_bases",
-      "line": 0.5,
+      "player_name": "A.J. Ewing",
+      "stat_type": "rbis",
+      "line": 1.5,
       "predicted_direction": "UNDER",
       "predicted_score": 20.0,
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "draftkings_pick6"
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_ea961acaf04fe92a71ee",
+      "result_id": "pr_f7b03c1cb6b1154fecbf",
       "sport": "mlb",
-      "player_name": "Adley Rutschman",
-      "stat_type": "home_runs",
-      "line": 0.5,
+      "player_name": "Alika Williams",
+      "stat_type": "rbis",
+      "line": 1.5,
       "predicted_direction": "UNDER",
       "predicted_score": 20.0,
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "draftkings_pick6"
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_24b18973def1c5a9be5f",
+      "result_id": "pr_bfef3be6cfa8d67a2a22",
       "sport": "mlb",
-      "player_name": "Tyler Callihan",
+      "player_name": "Brandon Valenzuela",
       "stat_type": "total_bases",
-      "line": 2.5,
+      "line": 4.5,
       "predicted_direction": "UNDER",
       "predicted_score": 20.0,
       "confidence_pct": 80.0,
       "result": "win",
-      "actual_value": 2.0,
-      "game_date": "2026-07-18",
-      "bookmaker": "betr"
+      "actual_value": 0.0,
+      "game_date": "2026-07-19",
+      "bookmaker": "prizepicks"
     }
   ],
   "definitions": {
