@@ -1,0 +1,40 @@
+{
+  "name": "remotion",
+  "version": "1.0.0",
+  "description": "My Remotion video",
+  "repository": {},
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@remotion/captions": "4.0.489",
+    "@remotion/cli": "4.0.489",
+    "@remotion/fonts": "4.0.489",
+    "@remotion/media": "4.0.489",
+    "@remotion/tailwind-v4": "4.0.489",
+    "@remotion/transitions": "4.0.489",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "remotion": "4.0.489",
+    "tailwindcss": "4.0.0"
+  },
+  "devDependencies": {
+    "@remotion/eslint-config-flat": "4.0.489",
+    "@types/react": "19.2.7",
+    "@types/web": "0.0.166",
+    "eslint": "9.19.0",
+    "prettier": "3.8.1",
+    "typescript": "5.9.3"
+  },
+  "scripts": {
+    "dev": "remotion studio",
+    "build": "remotion bundle",
+    "prepare-assets": "node scripts/prepare-assets.mjs",
+    "render:master": "remotion render PropellerConfidenceWalkthrough ../final/confidence-score-remotion-v8.mp4 --codec=h264 --crf=18 --pixel-format=yuv420p",
+    "render:review": "remotion render PropellerConfidenceWalkthrough ../final/confidence-score-remotion-v8-review.mp4 --codec=h264 --crf=25 --scale=0.6666667 --pixel-format=yuv420p",
+    "upgrade": "remotion upgrade",
+    "lint": "eslint src && tsc"
+  },
+  "sideEffects": [
+    "*.css"
+  ]
+}

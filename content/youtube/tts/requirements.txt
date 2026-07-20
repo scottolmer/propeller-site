@@ -1,0 +1,10 @@
+kokoro==0.9.4
+soundfile==0.14.0
+# Kokoro 0.9.4 leaves these transitive dependencies unconstrained. Pin the
+# known-compatible stack so new environments do not silently install an
+# incompatible future PyTorch/Transformers pair.
+torch==2.6.0
+transformers==4.48.3
+tokenizers==0.21.0
+click==8.1.8
+faster-whisper==1.2.1

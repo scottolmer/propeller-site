@@ -12,3 +12,25 @@ analytics-dashboard/data/*.json
 /mockups/*.png
 /mockups/**/*.png
 .gstack/
+
+# Local video-production runtimes and generated review/delivery media. Keep
+# scripts, manifests, captions, and production documentation in version control.
+/content/youtube/**/.venv*/
+/content/youtube/**/.cache/
+/content/youtube/**/node_modules/
+/content/youtube/**/captures/
+/content/youtube/**/review/
+/content/youtube/**/visuals/
+/content/youtube/**/walkthrough-visuals/
+/content/youtube/**/final/
+/content/youtube/**/*.mp3
+/content/youtube/**/*.mp4
+/content/youtube/**/*.mov
+/content/youtube/**/*.wav
+/content/youtube/**/*.webm
+/content/youtube/**/*.png
+/content/youtube/**/*.jpg
+/content/youtube/**/*.jpeg
+
+# Raster export; the adjacent SVG remains the reusable source.
+/images/propeller-youtube-banner-2048x1152.png

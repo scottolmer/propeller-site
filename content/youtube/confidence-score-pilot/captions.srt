@@ -1,0 +1,472 @@
+1
+00:00:00,000 --> 00:00:03,360
+If propeller shows 72% confidence on a player prop,
+
+2
+00:00:03,860 --> 00:00:06,680
+does that mean the pick has a 72% chance of winning?
+
+3
+00:00:07,280 --> 00:00:09,420
+No, and that distinction matters.
+
+4
+00:00:10,140 --> 00:00:11,600
+A propeller confidence score measures
+
+5
+00:00:11,600 --> 00:00:13,900
+the strength of the model's directional signal.
+
+6
+00:00:14,740 --> 00:00:16,580
+It is not a calibrated win probability,
+
+7
+00:00:17,280 --> 00:00:18,160
+it is not a guarantee,
+
+8
+00:00:19,080 --> 00:00:21,600
+and it should never replace checking the current line
+
+9
+00:00:21,600 --> 00:00:23,320
+and the reasoning behind the score.
+
+10
+00:00:24,280 --> 00:00:25,340
+Here's how to read it correctly.
+
+11
+00:00:26,680 --> 00:00:28,840
+Every player prop begins with a specific question.
+
+12
+00:00:29,440 --> 00:00:33,020
+Will this player finish over or under a particular line?
+
+13
+00:00:33,800 --> 00:00:35,560
+Propeller analyzes that question using
+
+14
+00:00:35,560 --> 00:00:37,400
+several independent signal families.
+
+15
+00:00:38,180 --> 00:00:40,520
+Those signals can include the player's expected role
+
+16
+00:00:40,520 --> 00:00:42,940
+and usage, recent form, the matchup,
+
+17
+00:00:43,580 --> 00:00:45,400
+injuries, the likely game environment,
+
+18
+00:00:46,000 --> 00:00:47,340
+and available market information.
+
+19
+00:00:48,340 --> 00:00:50,180
+Each signal looks at a different piece of the problem.
+
+20
+00:00:50,860 --> 00:00:52,560
+A favorable matchup may support the over.
+
+21
+00:00:53,160 --> 00:00:54,680
+A reduced role may support the under.
+
+22
+00:00:55,600 --> 00:00:57,920
+An injury to a teammate could create more opportunity.
+
+23
+00:00:58,820 --> 00:01:01,480
+A slow game environment could work in the opposite direction.
+
+24
+00:01:02,120 --> 00:01:03,760
+Propeller combines those inputs
+
+25
+00:01:03,760 --> 00:01:07,100
+into a directional recommendation and a confidence score.
+
+26
+00:01:08,040 --> 00:01:10,080
+So, imagine the screen shows.
+
+27
+00:01:11,660 --> 00:01:15,120
+Over 6.5 strikeouts, 72% confidence.
+
+28
+00:01:16,180 --> 00:01:17,700
+The word over tells you the direction.
+
+29
+00:01:18,820 --> 00:01:20,540
+The number 72 tells you the model
+
+30
+00:01:20,540 --> 00:01:23,200
+sees a relatively strong signal behind that direction.
+
+31
+00:01:24,080 --> 00:01:26,040
+It does not mean the player will clear the line.
+
+32
+00:01:27,140 --> 00:01:28,820
+72% of the time.
+
+33
+00:01:30,180 --> 00:01:32,540
+Confidence and probability are not interchangeable.
+
+34
+00:01:33,820 --> 00:01:35,860
+That is the most important idea in this video.
+
+35
+00:01:37,220 --> 00:01:39,460
+Think of confidence as a model conviction meter.
+
+36
+00:01:40,420 --> 00:01:42,560
+A score near the low end of the displayed range
+
+37
+00:01:42,560 --> 00:01:44,980
+means the signals are weaker or more conflicted.
+
+38
+00:01:45,920 --> 00:01:48,080
+A score in the middle represents a moderate lean.
+
+39
+00:01:48,860 --> 00:01:51,260
+A score toward the high end means the available signals
+
+40
+00:01:51,260 --> 00:01:53,720
+agree more strongly with the displayed direction.
+
+41
+00:01:54,720 --> 00:01:57,280
+But stronger agreement does not remove uncertainty.
+
+42
+00:01:58,060 --> 00:02:00,240
+A late lineup change can alter a player's role.
+
+43
+00:02:00,800 --> 00:02:03,100
+A market can move after the analysis runs.
+
+44
+00:02:03,740 --> 00:02:05,000
+A starting pitcher can leave early.
+
+45
+00:02:05,700 --> 00:02:07,480
+A basketball game can become a blowout.
+
+46
+00:02:08,060 --> 00:02:10,160
+Even a well-supported read can lose
+
+47
+00:02:10,720 --> 00:02:13,120
+because sports outcomes contain real variance.
+
+48
+00:02:13,940 --> 00:02:16,040
+That's why the number should be the beginning of your research.
+
+49
+00:02:16,680 --> 00:02:17,060
+Not the end.
+
+50
+00:02:17,980 --> 00:02:19,880
+When you see a 72, check four things.
+
+51
+00:02:21,060 --> 00:02:22,780
+First, confirm the direction and line.
+
+52
+00:02:23,520 --> 00:02:27,800
+72 confidence on over 6.5 is not the same analysis
+
+53
+00:02:27,800 --> 00:02:29,560
+as over 7.5.
+
+54
+00:02:30,240 --> 00:02:33,720
+A half-point or full-point move can materially change the decision.
+
+55
+00:02:34,580 --> 00:02:37,320
+Second, check the timestamp and current information.
+
+56
+00:02:37,880 --> 00:02:38,540
+Has the market moved?
+
+57
+00:02:39,160 --> 00:02:40,400
+Has an injury status changed?
+
+58
+00:02:41,140 --> 00:02:42,660
+Is the expected role still intact?
+
+59
+00:02:44,160 --> 00:02:46,320
+Third, inspect the underlying signals.
+
+60
+00:02:47,380 --> 00:02:48,960
+Is the score being driven by usage,
+
+61
+00:02:48,960 --> 00:02:52,100
+match-up, market support, recent form,
+
+62
+00:02:52,500 --> 00:02:54,440
+or several factors agreeing at once?
+
+63
+00:02:55,540 --> 00:02:58,600
+One strong input and six conflicting inputs
+
+64
+00:02:58,600 --> 00:03:01,100
+should be treated differently from broad agreement.
+
+65
+00:03:01,920 --> 00:03:05,000
+Fourth, consider the platform and payout structure.
+
+66
+00:03:05,880 --> 00:03:08,020
+The same player line can carry different economics
+
+67
+00:03:08,020 --> 00:03:12,100
+on pick six, prize picks, underdog, or a sportsbook.
+
+68
+00:03:12,940 --> 00:03:14,980
+A directional signal does not tell you
+
+69
+00:03:14,980 --> 00:03:16,960
+whether every available payout is attractive.
+
+70
+00:03:17,960 --> 00:03:19,580
+Here is another detail that can be confusing.
+
+71
+00:03:20,420 --> 00:03:23,940
+Inside the model, the raw directional score is centered around 50.
+
+72
+00:03:24,680 --> 00:03:26,620
+Values above 50 lean over.
+
+73
+00:03:27,160 --> 00:03:29,120
+Values below 50 lean under.
+
+74
+00:03:30,000 --> 00:03:32,580
+The product can then present the selected direction separately
+
+75
+00:03:32,580 --> 00:03:34,640
+from a normalized measure of conviction.
+
+76
+00:03:35,640 --> 00:03:37,880
+For example, a strong under can begin
+
+77
+00:03:37,880 --> 00:03:39,720
+with a low-raw directional score.
+
+78
+00:03:40,460 --> 00:03:42,280
+That does not make it a low confidence pick.
+
+79
+00:03:42,820 --> 00:03:44,940
+Once direction is separated from strength,
+
+80
+00:03:44,940 --> 00:03:47,660
+the product can show the under-recommendation
+
+81
+00:03:47,660 --> 00:03:49,120
+with a higher confidence number.
+
+82
+00:03:50,100 --> 00:03:53,380
+In plain English, direction answers, which side?
+
+83
+00:03:54,120 --> 00:03:57,800
+Confidence answers how strong is the model's lean toward that side?
+
+84
+00:03:58,520 --> 00:04:00,620
+Neither one answers what is guaranteed to happen.
+
+85
+00:04:01,520 --> 00:04:03,500
+This separation is also why you should avoid
+
+86
+00:04:03,500 --> 00:04:05,880
+comparing a propeller confidence score directly
+
+87
+00:04:05,880 --> 00:04:08,200
+with sportsbook implied probability.
+
+88
+00:04:09,100 --> 00:04:11,260
+Market probability comes from prices.
+
+89
+00:04:12,020 --> 00:04:14,720
+Propeller confidence summarizes model conviction.
+
+90
+00:04:15,740 --> 00:04:17,480
+They can inform the same research process,
+
+91
+00:04:17,860 --> 00:04:18,980
+but they are different measurements.
+
+92
+00:04:20,200 --> 00:04:21,380
+The practical rule is simple.
+
+93
+00:04:22,600 --> 00:04:26,060
+Use high confidence props to decide where to investigate first.
+
+94
+00:04:27,120 --> 00:04:29,540
+Then verify the line, the latest context,
+
+95
+00:04:30,320 --> 00:04:32,480
+the supporting signals, and the payout
+
+96
+00:04:32,480 --> 00:04:34,020
+before making your own decision.
+
+97
+00:04:35,040 --> 00:04:37,600
+Use moderate confidence props with more caution.
+
+98
+00:04:38,600 --> 00:04:40,220
+And when the model is close to neutral
+
+99
+00:04:40,220 --> 00:04:42,700
+or the supporting information is incomplete,
+
+100
+00:04:43,480 --> 00:04:45,580
+skipping the prop is a valid outcome.
+
+101
+00:04:46,240 --> 00:04:49,120
+Propeller is designed to make that reasoning inspectable.
+
+102
+00:04:49,820 --> 00:04:52,680
+It is a research and analysis tool, not a sportsbook,
+
+103
+00:04:53,080 --> 00:04:55,680
+and it does not accept wagers or promise winning outcomes.
+
+104
+00:04:56,720 --> 00:05:00,300
+So, what does a 72-confidence score actually mean?
+
+105
+00:05:01,080 --> 00:05:03,300
+It means the model sees a comparatively strong
+
+106
+00:05:03,300 --> 00:05:05,740
+directional signal for the side shown on screen.
+
+107
+00:05:05,740 --> 00:05:08,760
+It does not mean a 72% chance of winning,
+
+108
+00:05:09,320 --> 00:05:11,220
+and it does not make the result certain.
+
+109
+00:05:11,940 --> 00:05:14,000
+The score helps you find the question worth researching.
+
+110
+00:05:14,860 --> 00:05:16,960
+The evidence helps you decide what to do with it.
+
+111
+00:05:17,500 --> 00:05:20,800
+To inspect today's player props and the signals behind each score,
+
+112
+00:05:21,180 --> 00:05:23,000
+visit propellerpicks.com.
+
+113
+00:05:23,620 --> 00:05:25,000
+And if you want the next breakdown,
+
+114
+00:05:25,520 --> 00:05:27,440
+subscribe for our step-by-step guide
+
+115
+00:05:27,440 --> 00:05:30,300
+to analyzing a player prop from start to finish.
+
+116
+00:05:31,260 --> 00:05:33,540
+Propeller is for informational research only.
+
+117
+00:05:33,540 --> 00:05:36,420
+You must be 21 or older where applicable.
+
+118
+00:05:37,640 --> 00:05:41,220
+If gambling is a problem, call 1-800-Gambler.
+

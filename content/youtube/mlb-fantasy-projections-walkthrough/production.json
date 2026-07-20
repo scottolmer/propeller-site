@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "slug": "mlb-fantasy-projections-walkthrough",
+  "state": "private_uploaded_correct_channel",
+  "brief": {
+    "concept": "How to Use Propeller\u2019s MLB Fantasy Projections: Floor, Ceiling & Sit/Start",
+    "primary_question": "How do I use Propeller's MLB Fantasy projections to compare hitters using floor, projected points, ceiling, and Sit/Start?",
+    "audience": "New and prospective Propeller users, especially fantasy baseball players who want a transparent daily player comparison.",
+    "learning_outcome": "The viewer can confirm the slate and scoring basis, interpret all three projection values, sort the board, compare two hitters on desktop and mobile, and understand the product's limitations.",
+    "cta": "Open Propeller Picks on web or mobile and run a current MLB Sit/Start comparison.",
+    "target_duration_seconds": 315,
+    "freshness_requirements": "Capture the live product after script approval; show current slate date and update status; do not narrate player names or exact values that can go stale."
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-07-18T21:19:20.483106+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-07-18T21:25:16Z",
+      "evidence": "User replied: approve the script"
+    },
+    "review": {
+      "approved": true,
+      "at": "2026-07-18T22:22:51Z",
+      "evidence": "User replied: approve the review package"
+    },
+    "publication": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "caption_language": "en",
+    "narration_duration_seconds": 324.85,
+    "narration_codec": "mp3",
+    "narration_sample_rate": 44100,
+    "narration_channels": 1,
+    "alignment_exact_words": 752,
+    "alignment_direct_matches": 738,
+    "caption_cues": 89
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {
+      "type": "live_page",
+      "url": "https://propellerpicks.com/fantasy/",
+      "verified_at": "2026-07-18T21:21:07Z"
+    },
+    {
+      "type": "live_page",
+      "url": "https://propellerpicks.com/fantasy/mlb/",
+      "verified_at": "2026-07-18T21:21:07Z"
+    },
+    {
+      "type": "live_api",
+      "url": "https://web-production-3c1c4.up.railway.app/api/fantasy/market-board?sport=mlb&platform=draftkings_pick6",
+      "verified_at": "2026-07-18T21:21:07Z"
+    },
+    {
+      "type": "shipped_source",
+      "repo": "/Users/scottolmer/Projects/nfl-betting-system",
+      "ref": "origin/main",
+      "files": [
+        "web/components/fantasy/fantasy-board.tsx",
+        "web/hooks/use-fantasy.ts",
+        "web/lib/fantasy.ts",
+        "mobile/src/screens/fantasy/FantasyHomeScreen.tsx",
+        "api/routers/fantasy.py",
+        "api/services/fantasy_service.py"
+      ],
+      "verified_at": "2026-07-18T21:21:07Z"
+    }
+  ],
+  "publishing": {
+    "requested_visibility": "private",
+    "channel_name": "Propeller Picks",
+    "channel_handle": "@propellerpicks",
+    "channel_id": "UCa0YkBvX4qlzV3J8QS7u1sg",
+    "video_id": "jV0GaQQDbPs",
+    "url": "https://youtu.be/jV0GaQQDbPs",
+    "uploaded": true,
+    "hd_processed": true,
+    "published_at": null,
+    "verified": false,
+    "metadata_applied": true,
+    "thumbnail_uploaded": true,
+    "captions_uploaded": true,
+    "caption_track_studio_verified": true,
+    "audience": "not_made_for_kids",
+    "paid_promotion": false,
+    "altered_content_disclosure": false,
+    "category": "Sports",
+    "language": "English (United States)",
+    "checks": "passed_no_issues",
+    "superseded_uploads": [
+      {
+        "channel_name": "Scott Olmer",
+        "channel_id": "UCrffMKmO56TKIPRbc39i6lg",
+        "video_id": "ZckLiz5zJts",
+        "url": "https://youtu.be/ZckLiz5zJts",
+        "status": "private_draft_awaiting_deletion_authorization"
+      }
+    ],
+    "pending": [
+      "Wait for the uploaded caption track to propagate to the private watch-page player",
+      "Obtain separate publication authorization before changing visibility"
+    ]
+  },
+  "visual_provenance": {
+    "captured_at": "2026-07-18T22:04:00Z",
+    "public_desktop": "Real live public Propeller Fantasy board",
+    "public_mobile": "Real responsive public Propeller Fantasy board",
+    "authenticated_web": "Source-faithful reconstruction from shipped origin/main component and live July 18 data",
+    "native_mobile": "Source-faithful reconstruction from shipped origin/main screen and live July 18 data",
+    "known_limitation": "Authenticated browser bridge and iOS simulator were unavailable during capture; reconstructions are labeled in-video"
+  },
+  "validation": {
+    "remotion_lint": "passed",
+    "typescript": "passed",
+    "master_full_decode": "passed",
+    "package_validator": "passed",
+    "validator_errors": 0,
+    "validator_warnings": 0,
+    "master_duration_seconds": 324.928,
+    "master_size_bytes": 46117544,
+    "review_duration_seconds": 324.928,
+    "review_size_bytes": 24761766
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-07-18T21:19:20.483106+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "script",
+      "at": "2026-07-18T21:21:07Z",
+      "note": "Final narration draft and semantic visual map prepared for user approval"
+    },
+    {
+      "phase": "script_approval",
+      "at": "2026-07-18T21:25:16Z",
+      "note": "User explicitly approved the final narration script"
+    },
+    {
+      "phase": "narration",
+      "at": "2026-07-18T21:41:08Z",
+      "note": "Generated Kokoro am_michael narration and aligned 752 exact words to 324.85 seconds of audio; created 89 timed caption cues"
+    },
+    {
+      "phase": "review_render",
+      "at": "2026-07-18T22:04:00Z",
+      "note": "Rendered and decoded 1280x720 H.264/AAC review cut; created thumbnail, contact sheet, and YouTube metadata package"
+    },
+    {
+      "phase": "package_validation",
+      "at": "2026-07-18T22:11:54Z",
+      "note": "Rendered and fully decoded 1920x1080 master; lint, TypeScript, caption checks, checksums, and package validator passed with zero errors or warnings"
+    },
+    {
+      "phase": "review_approval",
+      "at": "2026-07-18T22:22:51Z",
+      "note": "User explicitly approved the review package for private YouTube upload"
+    },
+    {
+      "phase": "private_upload",
+      "at": "2026-07-19T18:06:58Z",
+      "note": "Uploaded approved 1080p master as private video ZckLiz5zJts and applied approved title and description; pending required disclosure choices, phone verification for custom thumbnail, captions, HD processing, and checks"
+    },
+    {
+      "phase": "channel_correction",
+      "at": "2026-07-19T18:17:32Z",
+      "note": "User identified the initial upload as the wrong channel; stopped work on the Scott Olmer draft and uploaded the approved package to Propeller Picks channel UCa0YkBvX4qlzV3J8QS7u1sg as private video jV0GaQQDbPs"
+    },
+    {
+      "phase": "private_upload_verification",
+      "at": "2026-07-19T18:17:32Z",
+      "note": "Verified Propeller Picks channel, Private visibility, approved title and thumbnail, 1080p processing, English United States language, published manual subtitle source in Studio, and passed copyright and Community Guidelines checks; watch-page CC propagation remains pending"
+    }
+  ]
+}

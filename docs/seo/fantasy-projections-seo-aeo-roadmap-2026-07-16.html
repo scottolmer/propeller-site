@@ -1,0 +1,1056 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Fantasy Projections SEO &amp; AEO Roadmap | Propeller Picks</title>
+  <meta name="description" content="Internal implementation roadmap for Propeller Picks fantasy projections SEO, AEO, content, technical architecture, measurement, and future feature launches.">
+  <style>
+    :root{--forest:#123f32;--forest-2:#0a2c23;--mint:#d9ff67;--paper:#f4f3ed;--surface:#fff;--ink:#17211b;--muted:#667169;--line:#dce1da;--soft:#eaf0ea;--blue:#dcecff;--amber:#fff0c7;--red:#ffe2dc;--shadow:0 14px 42px rgba(18,63,50,.09);--code:#10251e}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.65 "Avenir Next",Avenir,"Segoe UI",sans-serif}a{color:#176049;text-decoration-thickness:1px;text-underline-offset:3px}strong{font-weight:750}code{padding:.12em .36em;border-radius:5px;background:#edf0ec;font:85%/1.4 ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere}h1,h2,h3,h4{font-family:"Avenir Next",Avenir,"Segoe UI",sans-serif;line-height:1.08;letter-spacing:-.035em}h2{margin:0;font-size:clamp(1.7rem,3vw,2.75rem)}h3{margin:2.2rem 0 .7rem;font-size:1.25rem}h4{margin:1.6rem 0 .6rem;font-size:1rem;letter-spacing:-.01em}p{max-width:82ch}li{margin:.38em 0}.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--forest-2),var(--forest) 60%,#19644c);color:#fff;padding:72px 24px 64px}.hero:before{content:"";position:absolute;width:600px;height:600px;border:1px solid rgba(217,255,103,.22);border-radius:50%;right:-180px;top:-330px;box-shadow:0 0 0 70px rgba(217,255,103,.035),0 0 0 140px rgba(217,255,103,.025)}.hero-inner{position:relative;width:min(1180px,100%);margin:auto}.eyebrow{color:var(--mint);font-size:.76rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.hero h1{max-width:1000px;margin:.22em 0;font-size:clamp(2.6rem,7vw,5.9rem)}.hero .lede{max-width:850px;color:#e4efe9;font-size:1.16rem}.meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:25px}.pill{padding:6px 10px;border:1px solid rgba(255,255,255,.2);border-radius:999px;background:rgba(255,255,255,.08);font-size:.76rem;font-weight:700}.toolbar{position:sticky;top:0;z-index:20;border-bottom:1px solid var(--line);background:rgba(244,243,237,.94);backdrop-filter:blur(14px)}.toolbar-inner{width:min(1400px,calc(100% - 28px));margin:auto;display:flex;align-items:center;gap:10px;padding:10px 0}.toolbar strong{margin-right:auto;color:var(--forest);font-size:.85rem}.toolbar button{appearance:none;border:1px solid #cbd3cb;border-radius:8px;background:#fff;color:var(--ink);padding:7px 10px;font:700 .76rem inherit;cursor:pointer}.progress{position:absolute;left:0;bottom:-1px;width:0;height:3px;background:var(--mint)}.layout{width:min(1400px,calc(100% - 28px));margin:0 auto;display:grid;grid-template-columns:260px minmax(0,1fr);gap:32px;align-items:start}.toc{position:sticky;top:62px;max-height:calc(100vh - 78px);overflow:auto;padding:28px 4px 28px 0}.toc-label{display:block;margin-bottom:10px;color:var(--muted);font-size:.68rem;font-weight:850;letter-spacing:.14em;text-transform:uppercase}.toc a{display:block;padding:6px 10px;border-left:2px solid transparent;color:#536159;text-decoration:none;font-size:.77rem;line-height:1.35}.toc a:hover,.toc a.active{border-left-color:var(--forest);color:var(--forest);background:rgba(18,63,50,.045)}main{min-width:0;padding:34px 0 100px}section{position:relative;margin:0 0 28px;padding:34px clamp(20px,4vw,48px);border:1px solid var(--line);border-radius:20px;background:var(--surface);box-shadow:var(--shadow);scroll-margin-top:64px}.section-number{position:absolute;right:28px;top:24px;color:#d6ddd7;font-size:2.7rem;font-weight:900;line-height:1}section>h2{max-width:850px;padding-right:50px;color:var(--forest)}section>p:first-of-type{font-size:1.02rem}.table-wrap{margin:18px 0 25px;overflow:auto;border:1px solid var(--line);border-radius:13px;background:#fff}table{width:100%;border-collapse:collapse;font-size:.84rem}th,td{min-width:130px;padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}th{position:sticky;top:0;z-index:1;background:var(--soft);color:#33453b;font-size:.69rem;letter-spacing:.07em;text-transform:uppercase}tr:last-child td{border-bottom:0}tbody tr:hover{background:#fafbf8}blockquote{margin:18px 0;padding:16px 20px;border-left:5px solid var(--mint);border-radius:0 12px 12px 0;background:#f7f9f4;font-size:1.02rem}pre{position:relative;overflow:auto;margin:18px 0 24px;padding:18px 20px;border-radius:13px;background:var(--code);color:#eaf6ef;font:13px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace}pre code{padding:0;background:transparent;color:inherit}hr{height:1px;margin:30px 0;border:0;background:var(--line)}.anchor{margin-left:.4em;color:#aeb8b1;text-decoration:none;font-size:.75em;opacity:0}.anchor:focus,.anchor:hover,h3:hover .anchor,h4:hover .anchor{opacity:1}.callout{margin:22px 0;padding:18px 20px;border:1px solid #d7e2bf;border-left:5px solid var(--mint);border-radius:12px;background:#fbfff0}.footer{width:min(1180px,calc(100% - 32px));margin:0 auto 60px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}.back-top{position:fixed;right:18px;bottom:18px;display:none;width:42px;height:42px;border:0;border-radius:50%;background:var(--forest);color:#fff;font-size:1.15rem;box-shadow:var(--shadow);cursor:pointer}.back-top.show{display:block}
+    body.dark{--paper:#0d1512;--surface:#14201b;--ink:#e8f0eb;--muted:#a3afa7;--line:#2c3d35;--soft:#203129;--shadow:none;--code:#09100d}body.dark .toolbar{background:rgba(13,21,18,.94)}body.dark .toolbar button,body.dark .table-wrap,body.dark table{background:#14201b;color:var(--ink)}body.dark th{background:#203129;color:#dbe7df}body.dark tbody tr:hover{background:#1a2a23}body.dark code{background:#26362f}body.dark .toc a{color:#aab7ae}body.dark .toc a:hover,body.dark .toc a.active{color:var(--mint);background:rgba(217,255,103,.05)}body.dark section>h2,body.dark .toolbar strong{color:#dff7e9}body.dark blockquote{background:#1c2b24}.print-only{display:none}
+    @media(max-width:900px){.layout{grid-template-columns:1fr}.toc{position:relative;top:auto;max-height:none;display:flex;gap:4px;overflow:auto;padding:16px 0}.toc-label{display:none}.toc a{flex:0 0 auto;border:1px solid var(--line);border-radius:999px;padding:7px 10px}.toc a:hover,.toc a.active{border-color:var(--forest)}main{padding-top:4px}}
+    @media(max-width:560px){.hero{padding:46px 18px 42px}.hero h1{font-size:2.55rem}.toolbar strong{display:none}.toolbar-inner{justify-content:flex-end}section{padding:25px 18px;border-radius:14px}.section-number{right:16px;top:17px;font-size:2rem}section>h2{font-size:1.75rem}.layout{width:min(100% - 18px,1400px)}th,td{min-width:150px}.back-top{right:10px;bottom:10px}}
+    @media print{body{background:#fff;font-size:10.5pt}.hero{padding:32px 0;background:#123f32!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.hero h1{font-size:34pt}.toolbar,.toc,.back-top{display:none!important}.layout{display:block;width:100%}main{padding:18px 0}.layout,section,.footer{width:100%}section{break-inside:auto;margin:0 0 18px;padding:20px;border:0;border-top:1px solid #ccc;border-radius:0;box-shadow:none}h2,h3,h4{break-after:avoid}table,pre,blockquote{break-inside:avoid}th{position:static}.table-wrap{overflow:visible}.print-only{display:block}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Propeller Picks · organic growth system</div>
+      <h1>Fantasy Projections SEO &amp; AEO Roadmap</h1>
+      <p class="lede">The implementation roadmap for launching MLB fantasy projections as a search and answer-engine acquisition surface, then reusing the same truth, utility, and measurement gates for every future feature.</p>
+      <div class="meta"><span class="pill">Prepared July 16, 2026</span><span class="pill">MLB hitters live</span><span class="pill">Web + mobile product</span><span class="pill">Internal implementation document</span></div>
+    </div>
+  </header>
+  <div class="toolbar"><div class="toolbar-inner"><strong>Fantasy Projections Roadmap</strong><button id="theme" type="button">Dark mode</button><button type="button" onclick="window.print()">Print / Save PDF</button><div class="progress" id="progress"></div></div></div>
+  <div class="layout">
+    <nav class="toc" aria-label="Roadmap sections"><span class="toc-label">Contents</span><a href="#1-executive-decision">1. Executive decision</a>
+<a href="#2-evidence-baseline">2. Evidence baseline</a>
+<a href="#3-non-negotiable-product-and-language-rules">3. Non-negotiable product and language rules</a>
+<a href="#4-canonical-intent-and-url-architecture">4. Canonical intent and URL architecture</a>
+<a href="#5-search-demand-and-query-portfolio">5. Search demand and query portfolio</a>
+<a href="#6-content-strategy-and-topical-model">6. Content strategy and topical model</a>
+<a href="#7-page-experience-and-frontend-design-brief">7. Page experience and frontend design brief</a>
+<a href="#8-technical-seo-specification">8. Technical SEO specification</a>
+<a href="#9-structured-data-plan">9. Structured data plan</a>
+<a href="#10-aeo-and-ai-search-strategy">10. AEO and AI-search strategy</a>
+<a href="#11-aeo-question-set-and-measurement-contract">11. AEO question set and measurement contract</a>
+<a href="#12-analytics-and-attribution">12. Analytics and attribution</a>
+<a href="#13-launch-roadmap">13. Launch roadmap</a>
+<a href="#14-prioritized-backlog">14. Prioritized backlog</a>
+<a href="#15-programmatic-expansion-gate">15. Programmatic expansion gate</a>
+<a href="#16-reusable-seo-aeo-launch-system-for-every-future-feature">16. Reusable SEO/AEO launch system for every future feature</a>
+<a href="#17-quality-assurance-plan">17. Quality assurance plan</a>
+<a href="#18-risk-register">18. Risk register</a>
+<a href="#19-30-60-90-day-scorecard">19. 30/60/90-day scorecard</a>
+<a href="#20-immediate-next-actions">20. Immediate next actions</a>
+<a href="#21-primary-external-references">21. Primary external references</a>
+<a href="#final-operating-principle">Final operating principle</a></nav>
+    <main><section id="1-executive-decision"><div class="section-number">1</div><h2>1. Executive decision</h2>
+<p>Propeller should launch a dedicated, public fantasy acquisition cluster instead of trying to make the signed-in web app rank.</p>
+<p>The recommended architecture is:</p>
+<ol>
+<li><code>/fantasy/</code> owns the broad product and category intent: market-powered fantasy projections, what Propeller's fantasy feature does, who it is for, and how the approach differs from generic season-long projection tables.</li>
+<li><code>/fantasy/mlb/</code> owns the live utility intent: today's MLB fantasy projections, daily fantasy baseball hitter projections, floor/projection/ceiling, and Sit/Start comparison.</li>
+<li><code>/fantasy/methodology/</code> becomes the evidence and citation owner only after the public methodology, scoring identity, range calibration, limitations, and version history are approved for publication.</li>
+<li><code>/fantasy/research/market-vs-recent-form/</code> becomes an original-research citation asset only after the backtest is reviewed, frozen, reproducible, and cleared for public claims.</li>
+</ol>
+<p>Do not create indexable NFL, NBA, player, date, matchup, or league pages at launch. MLB is the only live fantasy market board. NFL and NBA may be named as planned sports on the hub, but they must not receive indexable landing pages until their product and content gates pass.</p>
+<p>This recommendation preserves the site's existing canonical ownership:</p>
+<ul>
+<li><code>/analyzer/</code> remains the generic free AI player prop analyzer owner.</li>
+<li><code>/picks/mlb/</code> remains the current MLB player-prop research owner.</li>
+<li><code>/guides/how-ai-sports-betting-works/</code> remains the player-prop model card.</li>
+<li><code>/fantasy/</code> and <code>/fantasy/mlb/</code> introduce a distinct fantasy-points and Sit/Start job, not a renamed prop board.</li>
+</ul>
+<h3 id="what-success-means">What success means<a class="anchor" href="#what-success-means" aria-label="Link to this section">#</a></h3>
+<p>The feature should create a measurable path:</p>
+<pre data-language="text"><code>Fantasy question or projection query
+  -&gt; public, indexable answer or utility
+  -&gt; useful preview interaction
+  -&gt; signed-in fantasy board
+  -&gt; qualified account creation or returning-user activation</code></pre>
+<p>Rankings, AI citations, and impressions are leading indicators. The business outcome is qualified fantasy-board use and attributed signup or reactivation.</p>
+<hr>
+</section>
+<section id="2-evidence-baseline"><div class="section-number">2</div><h2>2. Evidence baseline</h2>
+<h3 id="2-1-what-is-live-in-the-product">2.1 What is live in the product<a class="anchor" href="#2-1-what-is-live-in-the-product" aria-label="Link to this section">#</a></h3>
+<p>The shipped web and mobile feature is narrower and more defensible than the phrase “fantasy projections” by itself suggests.</p>
+<div class="table-wrap"><table><thead><tr><th>Product fact</th><th>Current state</th><th>Public-language implication</th></tr></thead><tbody><tr><td>Supported sport</td><td>MLB only</td><td>Say “MLB projections are live.” Do not imply live NFL or NBA coverage.</td></tr><tr><td>Main output</td><td>Projected fantasy points</td><td>Define the scoring basis wherever the number is shown.</td></tr><tr><td>Range output</td><td>Floor and ceiling around today's projection</td><td>Explain that these are range estimates, not minimum and maximum guarantees.</td></tr><tr><td>Comparison</td><td>Select two same-group players for Sit/Start</td><td>Say that Propeller compares projected scoring; do not claim roster optimization.</td></tr><tr><td>Player groups</td><td>Hitters only in the current market-board response</td><td>Do not market pitcher projections until the backend returns them reliably. The clients can represent a pitcher group, but current service output labels every projection as <code>Hitter</code>.</td></tr><tr><td>Projection inputs</td><td>Current component prop markets plus recent form for uncovered scoring components</td><td>Never simplify this to “sportsbooks predict fantasy points” or “AI knows the outcome.”</td></tr><tr><td>Range method</td><td>Recent player scoring variance centered on today's projection</td><td>Publish the percentile and calibration claim only from an approved, dated methodology ledger.</td></tr><tr><td>Scoring</td><td>Current backend labels the board as DraftKings MLB scoring</td><td>Use precise descriptive trademark language and an independence disclaimer.</td></tr><tr><td>Refresh behavior</td><td>Web query refetches every 60 seconds; mobile supports pull-to-refresh</td><td>Public pages need a visible “data as of” time and a stale-state policy.</td></tr><tr><td>Empty state</td><td>Board waits for sufficient current component markets</td><td>Explain unavailable slates honestly. Do not show a blank indexable template.</td></tr><tr><td>Other sports</td><td>Product UI says they activate after market model and scoring ranges are calibrated</td><td>Keep them off the index until that statement is true and the page has real utility.</td></tr></tbody></table></div>
+<h3 id="2-2-methodology-facts-found-in-the-implementation">2.2 Methodology facts found in the implementation<a class="anchor" href="#2-2-methodology-facts-found-in-the-implementation" aria-label="Link to this section">#</a></h3>
+<p>These are internal source facts, not automatically approved marketing claims:</p>
+<ul>
+<li>MLB projections use current consensus component markets where available and recent-form averages for scoring components without a current market.</li>
+<li>The implementation uses MLB hitter scoring components such as hits, runs, RBIs, total bases, doubles, triples, home runs, walks, hit by pitch, and stolen bases.</li>
+<li>The floor and ceiling require at least five historical games.</li>
+<li>The range starts with recent 20th and 80th percentile distances from the recent median, centers those distances on today's projection, and applies a stored spread multiplier.</li>
+<li>The code comment records a July 14, 2026 calibration sample of 1,602 hitter outcomes and reports 61.1% empirical coverage after widening the raw range. This must be independently reproduced and added to an approved public methodology record before it appears in marketing copy, structured data, media pitches, or AI-readable files.</li>
+<li>The current public fantasy endpoint rejects unsupported sports and unsupported scoring platforms.</li>
+</ul>
+<h3 id="2-3-current-website-and-search-baseline">2.3 Current website and search baseline<a class="anchor" href="#2-3-current-website-and-search-baseline" aria-label="Link to this section">#</a></h3>
+<p>As checked July 16-17, 2026:</p>
+<ul>
+<li><code>https://propellerpicks.com/fantasy/</code> returns 404.</li>
+<li><code>https://app.propellerpicks.com/app/fantasy</code> routes unauthenticated visitors to login, so it is not an acquisition landing page.</li>
+<li>The live XML sitemap exposes 56 URLs at the time of the check. The repository generator currently has a larger pending set, so deployment state and local source must be reconciled before launch.</li>
+<li>The site already has a valid crawl foundation, canonical intent map, structured-data checks, product-fact ledger, <code>llms.txt</code>, public data catalog, and AEO measurement contract.</li>
+<li>The latest complete SEO audit found no critical crawl blocker, but it identified slow mobile visual completion on the analyzer template, non-HTML files in the Google sitemap, duplicate alias handling, authority gaps, and historical claim precision as priorities.</li>
+<li>The July AEO snapshot is still a draft: 255 of 300 observations are complete. Its completed rows report a 40.0% Propeller mention rate and 24.3% citation rate, but the snapshot is explicitly non-comparable until all required observations pass the completeness gate.</li>
+</ul>
+<h3 id="2-4-external-result-set-pattern">2.4 External result-set pattern<a class="anchor" href="#2-4-external-result-set-pattern" aria-label="Link to this section">#</a></h3>
+<p>Current search results separate several intents that Propeller must not collapse:</p>
+<ul>
+<li>Season-long and rest-of-season projection tables.</li>
+<li>Daily fantasy point projections.</li>
+<li>Salary-cap DFS lineup optimizers.</li>
+<li>Fantasy roster, waiver, and trade tools.</li>
+<li>Start/Sit editorial advice.</li>
+<li>Pick'em and player-prop research.</li>
+</ul>
+<p>FantasyPros, RotoWire, RotoBaller, FanGraphs-style projection ecosystems, and newer fantasy assistants compete for these searches. Their result pages show why intent precision matters: a daily projection table is not a lineup optimizer, a Sit/Start recommendation is not a season-long ranking, and a pick'em prop projection is not automatically a league-specific fantasy projection.</p>
+<p>Propeller's strongest initial position is <strong>daily MLB fantasy points derived from current market information, with a player-specific range and a fast two-player comparison</strong>. That is specific, useful, and consistent with the product.</p>
+<hr>
+</section>
+<section id="3-non-negotiable-product-and-language-rules"><div class="section-number">3</div><h2>3. Non-negotiable product and language rules</h2>
+<h3 id="3-1-category-definition">3.1 Category definition<a class="anchor" href="#3-1-category-definition" aria-label="Link to this section">#</a></h3>
+<p>Use this working definition until a public claim review approves final copy:</p>
+<blockquote>Propeller's MLB fantasy projections estimate a player's fantasy-point output for the current slate using available player markets and recent performance data. Each eligible player can include a projected score and a recent-variance range for comparing likely downside, expected scoring, and upside.</blockquote>
+<h3 id="3-2-terms-that-must-stay-distinct">3.2 Terms that must stay distinct<a class="anchor" href="#3-2-terms-that-must-stay-distinct" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>Term</th><th>Meaning</th><th>Must not be presented as</th></tr></thead><tbody><tr><td>Projection</td><td>Estimated fantasy-point output under a stated scoring format</td><td>Guaranteed result, actual platform line, win probability</td></tr><tr><td>Floor</td><td>Lower range estimate under the published method</td><td>Minimum score, worst possible outcome</td></tr><tr><td>Ceiling</td><td>Upper range estimate under the published method</td><td>Maximum score, best possible outcome</td></tr><tr><td>Range coverage</td><td>Historical share of outcomes inside a stated interval</td><td>Projection accuracy, hit rate, profitability</td></tr><tr><td>Sit/Start</td><td>Relative comparison of two projected scores</td><td>Full lineup optimizer, personalized roster advice</td></tr><tr><td>Market-derived</td><td>Uses current market information as model inputs</td><td>Official platform feed, endorsement, certainty</td></tr><tr><td>Confidence</td><td>Existing prop direction strength score</td><td>Fantasy projection probability unless a new calibrated target is built</td></tr><tr><td>Accuracy</td><td>Error or decision performance under a defined test</td><td>Profit, ROI, or future guarantee</td></tr></tbody></table></div>
+<h3 id="3-3-prohibited-claims">3.3 Prohibited claims<a class="anchor" href="#3-3-prohibited-claims" aria-label="Link to this section">#</a></h3>
+<p>Do not publish any of the following unless the product and public evidence change:</p>
+<ul>
+<li>“Best lineup optimizer,” “optimal lineup,” or “automatically optimizes your roster.”</li>
+<li>“Most accurate projections” or a competitor accuracy ranking without a reproducible independent benchmark.</li>
+<li>“Guaranteed floor,” “safe play,” “lock,” “sure start,” or “can't miss.”</li>
+<li>“Official DraftKings projections,” “powered by DraftKings,” or wording that implies affiliation.</li>
+<li>Live NFL or NBA fantasy projections.</li>
+<li>League-sync, scoring customization, roster import, waiver, trade, or season-long projections on the public feature pages unless the current shipped experience exposes and supports them.</li>
+<li>Profit, ROI, expected value, or betting outcome claims for fantasy projection usage.</li>
+</ul>
+<h3 id="3-4-required-disclosures">3.4 Required disclosures<a class="anchor" href="#3-4-required-disclosures" aria-label="Link to this section">#</a></h3>
+<p>Every public fantasy utility should visibly state:</p>
+<ol>
+<li>The supported sport and scoring format.</li>
+<li>The slate date and last data update.</li>
+<li>The projection's input classes at a useful level.</li>
+<li>What floor and ceiling mean.</li>
+<li>That projections involve uncertainty.</li>
+<li>That Propeller is independent from referenced platforms.</li>
+<li>That current markets and player availability can change.</li>
+</ol>
+<hr>
+</section>
+<section id="4-canonical-intent-and-url-architecture"><div class="section-number">4</div><h2>4. Canonical intent and URL architecture</h2>
+<h3 id="4-1-launch-architecture">4.1 Launch architecture<a class="anchor" href="#4-1-launch-architecture" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>URL</th><th>Canonical job</th><th>Primary intent</th><th>Index policy</th><th>Launch state</th></tr></thead><tbody><tr><td><code>/fantasy/</code></td><td>Fantasy category and feature hub</td><td>fantasy projections tool, market-powered fantasy projections, Propeller fantasy</td><td>Index</td><td>Build first</td></tr><tr><td><code>/fantasy/mlb/</code></td><td>Live MLB projection utility</td><td>MLB fantasy projections today, daily fantasy baseball projections, MLB Sit/Start tool</td><td>Index when useful public preview exists</td><td>Build first</td></tr><tr><td><code>/fantasy/methodology/</code></td><td>Projection and range methodology</td><td>how fantasy projections work, market-derived projections, floor and ceiling method</td><td>Index only after evidence review</td><td>Phase 2</td></tr><tr><td><code>/fantasy/research/market-vs-recent-form/</code></td><td>Original research</td><td>do betting markets improve fantasy projections, market vs recent form</td><td>Index only after reproducibility and editorial review</td><td>Phase 3</td></tr><tr><td><code>/help/how-do-propeller-fantasy-projections-work/</code></td><td>Short support answer</td><td>how does Propeller calculate fantasy projections</td><td>Index; concise; canonical to itself</td><td>Phase 2</td></tr></tbody></table></div>
+<h3 id="4-2-existing-pages-and-their-boundaries">4.2 Existing pages and their boundaries<a class="anchor" href="#4-2-existing-pages-and-their-boundaries" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>Existing owner</th><th>It continues to own</th><th>It must not absorb</th></tr></thead><tbody><tr><td><code>/analyzer/</code></td><td>Generic AI player prop analysis and product intent</td><td>Daily fantasy scoring tables or Sit/Start intent</td></tr><tr><td><code>/picks/mlb/</code></td><td>Current MLB prop-research board</td><td>Generic fantasy projection intent</td></tr><tr><td><code>/tools/</code></td><td>Utility discovery</td><td>The full fantasy category explanation</td></tr><tr><td><code>/guides/how-ai-sports-betting-works/</code></td><td>Player-prop model card</td><td>Fantasy range calibration unless the page clearly routes to the separate method</td></tr><tr><td><code>/compare/*/</code></td><td>Fair product comparison</td><td>Unverified fantasy competitor claims or self-awarded accuracy rankings</td></tr></tbody></table></div>
+<h3 id="4-3-future-sport-architecture">4.3 Future sport architecture<a class="anchor" href="#4-3-future-sport-architecture" aria-label="Link to this section">#</a></h3>
+<p>Reserve, but do not publish, these paths:</p>
+<ul>
+<li><code>/fantasy/nfl/</code></li>
+<li><code>/fantasy/nba/</code></li>
+<li><code>/fantasy/nhl/</code></li>
+</ul>
+<p>A future sport page earns indexability only when all of these gates pass:</p>
+<ol>
+<li>The sport is live in both web and mobile or has an approved platform-specific exception.</li>
+<li>Its scoring identity is explicit and tested.</li>
+<li>Its projection target is defined.</li>
+<li>Historical or shadow validation is complete enough to support the public description.</li>
+<li>The page has current, unique utility beyond a sport-name substitution.</li>
+<li>Empty, stale, postponed, off-season, and low-coverage states are specified.</li>
+<li>It has distinct search demand or a strategic product reason.</li>
+<li>The page is linked from the fantasy hub and included in the sitemap only after launch.</li>
+<li>Metadata, structured data, analytics, and AEO prompts are ready.</li>
+<li>Product facts, <code>llms.txt</code>, the data catalog, help content, and app-store descriptions are consistent.</li>
+</ol>
+<h3 id="4-4-pages-not-to-create-yet">4.4 Pages not to create yet<a class="anchor" href="#4-4-pages-not-to-create-yet" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>Date archives such as <code>/fantasy/mlb/2026-07-16/</code>.</li>
+<li>One URL per player.</li>
+<li>One URL per matchup.</li>
+<li>One URL per platform scoring variant.</li>
+<li>Thin “best fantasy projection” listicles.</li>
+<li>Programmatic “Player A vs Player B” pages.</li>
+<li>“Coming soon” pages for unsupported sports.</li>
+</ul>
+<p>These could produce large cohorts with unstable data and little unique value. Revisit them only after the programmatic-page gates in section 15 pass.</p>
+<hr>
+</section>
+<section id="5-search-demand-and-query-portfolio"><div class="section-number">5</div><h2>5. Search demand and query portfolio</h2>
+<p>Keyword tools and Search Console should determine final prioritization. The following portfolio is a hypothesis map, not claimed search volume.</p>
+<h3 id="5-1-launch-cluster-category-and-product">5.1 Launch cluster: category and product<a class="anchor" href="#5-1-launch-cluster-category-and-product" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>Query family</th><th>Intent</th><th>Owner</th><th>Content requirement</th></tr></thead><tbody><tr><td>fantasy projections tool</td><td>Commercial investigation</td><td><code>/fantasy/</code></td><td>Clear category definition, supported sport, preview, differentiation</td></tr><tr><td>AI fantasy projections</td><td>Commercial investigation</td><td><code>/fantasy/</code></td><td>Explain where AI/modeling contributes without vague “AI-powered” claims</td></tr><tr><td>market-based fantasy projections</td><td>Methodology</td><td><code>/fantasy/</code> then methodology</td><td>Direct definition and why current markets may add context</td></tr><tr><td>fantasy projection app</td><td>Product</td><td><code>/fantasy/</code></td><td>Web and mobile availability, screenshots, account path</td></tr><tr><td>free fantasy projections</td><td>Utility/commercial</td><td><code>/fantasy/</code></td><td>State exactly what is public and what requires sign-in</td></tr><tr><td>Propeller Picks fantasy projections</td><td>Branded</td><td><code>/fantasy/</code></td><td>Canonical product facts and navigation</td></tr></tbody></table></div>
+<h3 id="5-2-mlb-daily-utility-cluster">5.2 MLB daily utility cluster<a class="anchor" href="#5-2-mlb-daily-utility-cluster" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>Query family</th><th>Intent</th><th>Owner</th><th>Content requirement</th></tr></thead><tbody><tr><td>MLB fantasy projections today</td><td>Live utility</td><td><code>/fantasy/mlb/</code></td><td>Current slate, update time, hitter rankings, method summary</td></tr><tr><td>daily fantasy baseball projections</td><td>Live utility</td><td><code>/fantasy/mlb/</code></td><td>Hitter results and scoring label; qualify the scope visibly</td></tr><tr><td>MLB fantasy points projections</td><td>Live utility</td><td><code>/fantasy/mlb/</code></td><td>Projected points, range, scoring definition</td></tr><tr><td>fantasy baseball projections today</td><td>Live utility</td><td><code>/fantasy/mlb/</code></td><td>Date-specific visible state on evergreen URL</td></tr><tr><td>MLB hitter projections today</td><td>Live utility</td><td><code>/fantasy/mlb/</code></td><td>Hitter subsection and meaningful rows</td></tr><tr><td>MLB pitcher projections today</td><td>Future live utility</td><td><code>/fantasy/mlb/</code> or a later distinct owner</td><td>Do not target until pitcher data is reliably present and explained</td></tr><tr><td>MLB fantasy floor ceiling projections</td><td>Evaluation</td><td><code>/fantasy/mlb/</code></td><td>Range explainer, examples, limitations</td></tr><tr><td>fantasy baseball start sit tool</td><td>Decision support</td><td><code>/fantasy/mlb/</code></td><td>Two-player comparison, not lineup optimization</td></tr><tr><td>who should I start in fantasy baseball today</td><td>Decision support</td><td><code>/fantasy/mlb/</code></td><td>Explain the tool's relative comparison and scoring limits</td></tr><tr><td>compare MLB fantasy players</td><td>Decision support</td><td><code>/fantasy/mlb/</code></td><td>Interactive comparison plus crawlable worked example</td></tr></tbody></table></div>
+<h3 id="5-3-methodology-and-education-cluster">5.3 Methodology and education cluster<a class="anchor" href="#5-3-methodology-and-education-cluster" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>Query family</th><th>Intent</th><th>Owner</th><th>Content requirement</th></tr></thead><tbody><tr><td>how are fantasy baseball projections calculated</td><td>Education</td><td><code>/fantasy/methodology/</code></td><td>Inputs, scoring, assumptions, version</td></tr><tr><td>what does floor and ceiling mean in fantasy</td><td>Education</td><td>Methodology or help</td><td>Direct definitions with example</td></tr><tr><td>market-based fantasy baseball projections</td><td>Education</td><td>Methodology</td><td>Market input mechanics and limitations</td></tr><tr><td>fantasy projection vs player prop line</td><td>Comparison</td><td>Methodology</td><td>Clear distinction between outputs</td></tr><tr><td>how often fantasy projections update</td><td>Freshness</td><td>Help or MLB page</td><td>Actual refresh behavior and slate caveats</td></tr><tr><td>are fantasy projections accurate</td><td>Evaluation</td><td>Methodology/research</td><td>Error metrics and limitations, never unsupported reassurance</td></tr></tbody></table></div>
+<h3 id="5-4-research-and-authority-cluster">5.4 Research and authority cluster<a class="anchor" href="#5-4-research-and-authority-cluster" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table><thead><tr><th>Query family</th><th>Intent</th><th>Owner</th><th>Evidence needed</th></tr></thead><tbody><tr><td>betting markets vs fantasy projections</td><td>Research</td><td>Research report</td><td>Frozen dataset, method, sample, uncertainty</td></tr><tr><td>do player props predict fantasy points</td><td>Research</td><td>Research report</td><td>Sport/scoring-specific test and limitations</td></tr><tr><td>recent form vs market fantasy projections</td><td>Research</td><td>Research report</td><td>Reproducible comparison and untouched test set</td></tr><tr><td>fantasy projection interval calibration</td><td>Technical</td><td>Methodology/research</td><td>Coverage target, empirical coverage, sample dates</td></tr></tbody></table></div>
+<h3 id="5-5-future-sports">5.5 Future sports<a class="anchor" href="#5-5-future-sports" aria-label="Link to this section">#</a></h3>
+<p>Add future keyword families only after the corresponding product gate passes:</p>
+<ul>
+<li>NFL: weekly fantasy football projections, PPR projections, half-PPR projections, start/sit, floor/ceiling, position comparisons.</li>
+<li>NBA: daily fantasy basketball points, minutes-sensitive projections, floor/ceiling, player comparisons.</li>
+<li>NHL: daily fantasy hockey points and goalie/skater-specific intent.</li>
+</ul>
+<p>Each sport needs its own scoring and methodology map. Do not clone MLB copy.</p>
+<h3 id="5-6-negative-intent-map">5.6 Negative intent map<a class="anchor" href="#5-6-negative-intent-map" aria-label="Link to this section">#</a></h3>
+<p>Do not optimize the launch pages for:</p>
+<ul>
+<li>DFS lineup optimizer.</li>
+<li>Salary optimizer.</li>
+<li>Draft assistant or mock draft.</li>
+<li>Rest-of-season rankings.</li>
+<li>Dynasty rankings.</li>
+<li>Waiver wire or trade analyzer.</li>
+<li>Sportsbook picks, locks, guaranteed wins, or betting tips.</li>
+<li>Official DraftKings, ESPN, Yahoo, FanDuel, or Sleeper projections.</li>
+</ul>
+<p>If the product later ships one of these jobs, give it a separate intent owner instead of broadening the fantasy projection page until its topic becomes unclear.</p>
+<hr>
+</section>
+<section id="6-content-strategy-and-topical-model"><div class="section-number">6</div><h2>6. Content strategy and topical model</h2>
+<h3 id="6-1-the-topic-cluster">6.1 The topic cluster<a class="anchor" href="#6-1-the-topic-cluster" aria-label="Link to this section">#</a></h3>
+<p>The fantasy hub should answer the parent topic, while supporting pages handle distinct jobs:</p>
+<pre data-language="text"><code>/fantasy/
+├── What the feature is
+├── Who it helps
+├── MLB live now
+├── Daily vs season-long distinction
+├── Projection vs prop-line distinction
+├── Floor/projection/ceiling overview
+├── Sit/Start overview
+├── Web and mobile access
+├── Link to live MLB utility
+├── Link to methodology
+└── Link to evidence/research when approved
+
+/fantasy/mlb/
+├── Today's board
+├── Hitter view at launch
+├── Pitcher view only after the product gate passes
+├── Floor/projected/ceiling sorting
+├── Two-player comparison
+├── Visible worked example
+├── Data timestamp and slate status
+├── Scoring and independence note
+├── Method summary
+└── Links to method, product, and signup</code></pre>
+<p>This structure covers likely query fan-out without making one thin page for every phrase.</p>
+<h3 id="6-2-launch-content-inventory">6.2 Launch content inventory<a class="anchor" href="#6-2-launch-content-inventory" aria-label="Link to this section">#</a></h3>
+<h4 id="fantasy-required-sections"><code>/fantasy/</code> required sections<a class="anchor" href="#fantasy-required-sections" aria-label="Link to this section">#</a></h4>
+<ol>
+<li>Direct definition in the opening paragraph.</li>
+<li>“MLB is live now” status block.</li>
+<li>Product preview using real or clearly labeled sample data.</li>
+<li>“How it works” in three steps: gather current market inputs, calculate the fantasy-points projection, estimate a player-specific range.</li>
+<li>Clear distinction table: daily projection, season-long projection, player prop line, lineup optimizer.</li>
+<li>Sit/Start comparison example.</li>
+<li>Web and mobile product availability.</li>
+<li>Methodology and uncertainty section.</li>
+<li>FAQ built from real questions.</li>
+<li>CTA to the live public preview and signed-in board.</li>
+</ol>
+<h4 id="fantasy-mlb-required-sections"><code>/fantasy/mlb/</code> required sections<a class="anchor" href="#fantasy-mlb-required-sections" aria-label="Link to this section">#</a></h4>
+<ol>
+<li>Server-rendered title, date, status, and direct answer before the interactive board.</li>
+<li>Public preview with enough real utility to satisfy the query.</li>
+<li>Hitter controls at launch. Add pitcher controls only after pitcher projections are live and validated.</li>
+<li>Sort by floor, projected, and ceiling.</li>
+<li>Two-player Sit/Start comparison.</li>
+<li>Static worked example that remains meaningful if the API fails.</li>
+<li>“What changed since the last update?” only if the system can support it accurately.</li>
+<li>Explanation of scoring and input coverage.</li>
+<li>Range interpretation and limitations.</li>
+<li>Links to methodology, fantasy hub, relevant MLB prop research, and signup.</li>
+</ol>
+<h3 id="6-3-answer-blocks">6.3 Answer blocks<a class="anchor" href="#6-3-answer-blocks" aria-label="Link to this section">#</a></h3>
+<p>Use normal paragraphs and sections written for people. Do not fragment the page into artificial “AI chunks.” Each high-value section should still begin with a complete answer.</p>
+<p>Examples:</p>
+<p><strong>What are Propeller MLB fantasy projections?</strong> Propeller MLB fantasy projections estimate a player's fantasy-point output for the current slate. The current method combines available player-market information with recent performance data for scoring components that do not have a usable market.</p>
+<p><strong>What do floor and ceiling mean?</strong> The floor and ceiling are lower and upper range estimates around today's projection. They describe a modeled range based on recent player scoring variance; they are not guaranteed minimum or maximum scores.</p>
+<p><strong>Is this a lineup optimizer?</strong> No. The current fantasy feature ranks eligible MLB hitters and compares two players at a time. It does not build a salary-cap lineup or optimize an entire fantasy roster.</p>
+<p>Final published wording must match the approved product-fact and methodology ledgers.</p>
+<h3 id="6-4-worked-example-standard">6.4 Worked example standard<a class="anchor" href="#6-4-worked-example-standard" aria-label="Link to this section">#</a></h3>
+<p>Every feature page should include one crawlable example that:</p>
+<ul>
+<li>Uses labeled sample data or an archived, dated real observation.</li>
+<li>Shows the projection and range.</li>
+<li>Explains the input count without exposing private model data.</li>
+<li>Explains why one player ranks above another.</li>
+<li>States the scoring format.</li>
+<li>Avoids hindsight language after the game.</li>
+<li>Does not imply the example predicts the outcome with certainty.</li>
+</ul>
+<h3 id="6-5-editorial-formats-that-can-earn-citations">6.5 Editorial formats that can earn citations<a class="anchor" href="#6-5-editorial-formats-that-can-earn-citations" aria-label="Link to this section">#</a></h3>
+<p>Prioritize:</p>
+<ul>
+<li>Public methodology with formulas and limitations.</li>
+<li>Dated calibration reports.</li>
+<li>Market-versus-recent-form research.</li>
+<li>Projection error reports by sport and position.</li>
+<li>Transparent change logs when model versions change.</li>
+<li>Balanced definitions and comparison tables.</li>
+<li>Public datasets only when licensing and redistribution rights are clear.</li>
+</ul>
+<p>Avoid generic “10 fantasy tips” content unless Propeller has original data or product experience that makes it non-commodity.</p>
+<hr>
+</section>
+<section id="7-page-experience-and-frontend-design-brief"><div class="section-number">7</div><h2>7. Page experience and frontend design brief</h2>
+<p>The public fantasy pages should feel like an editorial sports research desk connected to a live instrument panel. They should not look like a generic SaaS landing page or a casino promotion.</p>
+<h3 id="7-1-design-direction">7.1 Design direction<a class="anchor" href="#7-1-design-direction" aria-label="Link to this section">#</a></h3>
+<p><strong>Concept:</strong> live scouting board with publication-grade explanation. <strong>Tone:</strong> precise, energetic, data-forward, independent. <strong>Memorable element:</strong> the floor-to-ceiling range is the visual spine of the page, with the projection visibly centered in context rather than presented as an isolated “magic number.”</p>
+<h3 id="7-2-visual-system">7.2 Visual system<a class="anchor" href="#7-2-visual-system" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>Preserve Propeller's established green accent and brand continuity.</li>
+<li>Use the site's existing distinctive typography and avoid introducing a separate fantasy microsite style.</li>
+<li>Give projected points the strongest hierarchy; floor and ceiling support it.</li>
+<li>Show freshness as a quiet data-status element, not a flashing urgency device.</li>
+<li>Use real table semantics on desktop and labeled card rows on narrow screens.</li>
+<li>Keep color meaningful. Do not make the floor red or ceiling green if that implies bad/good outcomes rather than range position.</li>
+<li>Use subtle motion only when the board refreshes or a comparison is completed. Respect <code>prefers-reduced-motion</code>.</li>
+<li>Avoid fake charts, decorative odds tickers, coins, chips, sportsbook motifs, and neon casino visuals.</li>
+</ul>
+<h3 id="7-3-recommended-page-composition">7.3 Recommended page composition<a class="anchor" href="#7-3-recommended-page-composition" aria-label="Link to this section">#</a></h3>
+<pre data-language="text"><code>Breadcrumb
+H1 + direct answer + current MLB status
+Primary CTA: View today's projections
+Secondary CTA: How the projections work
+
+Live preview panel
+  Slate date / updated time / scoring label
+  Hitters
+  Pitchers only after launch readiness
+  Floor | Projected | Ceiling
+  Ranked preview rows
+
+Sit/Start comparison demo
+  Player A range
+  Player B range
+  Relative projected difference
+  Limitation note
+
+How it works
+Daily vs season-long vs props vs optimizer comparison
+Method and uncertainty
+Web + mobile product screenshots
+FAQ
+Final CTA
+Editorial sources / reviewed date / correction link</code></pre>
+<h3 id="7-4-mobile-requirements">7.4 Mobile requirements<a class="anchor" href="#7-4-mobile-requirements" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>The direct answer and first useful projection must appear before a long brand hero.</li>
+<li>No horizontal page overflow at 320, 360, 390, 412, and 430 CSS pixels.</li>
+<li>Table alternatives must retain labels; do not rely on column position alone.</li>
+<li>Tap targets should be at least 44 by 44 CSS pixels where practical.</li>
+<li>The selected comparison state must be announced to assistive technology.</li>
+<li>Sticky controls must not hide headings, focused elements, or CTA targets.</li>
+<li>The page must remain useful at 200% text zoom.</li>
+</ul>
+<h3 id="7-5-performance-budgets">7.5 Performance budgets<a class="anchor" href="#7-5-performance-budgets" aria-label="Link to this section">#</a></h3>
+<p>Treat these as engineering targets, measured at the 75th percentile for real users where field data exists:</p>
+<ul>
+<li>LCP: 2.5 seconds or better.</li>
+<li>INP: 200 milliseconds or better.</li>
+<li>CLS: 0.1 or better.</li>
+</ul>
+<p>Additional launch budgets:</p>
+<ul>
+<li>Server-render the direct answer, headings, example, and initial preview rows.</li>
+<li>Avoid client-side rendering for all meaningful content.</li>
+<li>Reserve dimensions for screenshots and live rows.</li>
+<li>Defer analytics and interaction code that is not needed for first content.</li>
+<li>Use responsive AVIF/WebP screenshots and lazy-load below-the-fold media.</li>
+<li>Test one cold mobile Lighthouse run and repeatable WebPageTest runs, then validate field data after traffic accumulates.</li>
+</ul>
+<hr>
+</section>
+<section id="8-technical-seo-specification"><div class="section-number">8</div><h2>8. Technical SEO specification</h2>
+<h3 id="8-1-rendering">8.1 Rendering<a class="anchor" href="#8-1-rendering" aria-label="Link to this section">#</a></h3>
+<p>The marketing site is static. Build the launch pages as generated HTML with a resilient enhancement layer:</p>
+<ol>
+<li>Static HTML contains the direct answer, methodology summary, worked example, FAQ, and an initial public preview snapshot.</li>
+<li>JavaScript refreshes live rows after load.</li>
+<li>If the API fails, the page keeps the static explanation and shows a truthful slate status.</li>
+<li>Search crawlers and agents receive meaningful content without signing in or executing the app bundle.</li>
+</ol>
+<h3 id="8-2-public-data-contract">8.2 Public data contract<a class="anchor" href="#8-2-public-data-contract" aria-label="Link to this section">#</a></h3>
+<p>Do not expose the private app endpoint indiscriminately. Create a curated public fantasy endpoint or generated snapshot with:</p>
+<ul>
+<li>Sport.</li>
+<li>Slate date.</li>
+<li>Scoring label.</li>
+<li>Generated/updated time.</li>
+<li>Public player identifier or safe display name.</li>
+<li>Position group.</li>
+<li>Projected points.</li>
+<li>Floor and ceiling when eligible.</li>
+<li>Input count.</li>
+<li>Method version.</li>
+<li>Stale status.</li>
+<li>Public-use and attribution notes.</li>
+</ul>
+<p>Exclude private model weights, proprietary market inventory, account data, rich agent breakdowns, internal confidence components, or licensed data that cannot be redistributed.</p>
+<p>Add the endpoint to <code>/data/index.json</code> and the curated public agent API only after privacy, license, rate-limit, and product reviews.</p>
+<h3 id="8-3-url-and-canonical-rules">8.3 URL and canonical rules<a class="anchor" href="#8-3-url-and-canonical-rules" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>Use lowercase paths with trailing slashes to match the site.</li>
+<li>Add self-referencing canonicals.</li>
+<li>Keep query parameters for filters and sorting non-canonical.</li>
+<li>Do not generate separate indexable URLs for <code>?position=hitter</code>, <code>?sort=floor</code>, platform, or date filters.</li>
+<li>If filters become shareable, canonical them to the base live page unless a distinct page passes the unique-utility gate.</li>
+<li>Add true 301/308 redirects for any abandoned fantasy aliases if the hosting layer permits them.</li>
+</ul>
+<h3 id="8-4-index-and-stale-state-policy">8.4 Index and stale-state policy<a class="anchor" href="#8-4-index-and-stale-state-policy" aria-label="Link to this section">#</a></h3>
+<p><code>/fantasy/</code> can remain indexable year-round because its product explanation is evergreen.</p>
+<p><code>/fantasy/mlb/</code> should remain indexable in season if it always provides a useful explanation, current status, and a clearly labeled prior/example state. It must not present old rows as current.</p>
+<p>State rules:</p>
+<div class="table-wrap"><table><thead><tr><th>State</th><th>Visible behavior</th><th>Search behavior</th></tr></thead><tbody><tr><td>Live slate</td><td>Current rows and update time</td><td>Index</td></tr><tr><td>Markets not posted</td><td>Explanation, expected update condition, no fake rows</td><td>Index</td></tr><tr><td>Off day</td><td>State that no MLB slate is available; retain educational utility</td><td>Index</td></tr><tr><td>API error</td><td>Keep static content, show retrieval error</td><td>Index unless prolonged systemic failure</td></tr><tr><td>Stale snapshot</td><td>Label timestamp and suppress “today” claims</td><td>Index; alert maintenance</td></tr><tr><td>Unsupported sport</td><td>No public sport URL</td><td>404 until launch</td></tr><tr><td>Retired feature</td><td>Useful replacement and permanent redirect, or 410 if no replacement</td><td>Remove from sitemap</td></tr></tbody></table></div>
+<h3 id="8-5-sitemap">8.5 Sitemap<a class="anchor" href="#8-5-sitemap" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>Add only canonical HTML landing pages intended to appear in Google Search.</li>
+<li>Keep JSON, <code>llms.txt</code>, pricing Markdown, and machine-readable feeds discoverable through visible links and the data catalog, not the Google sitemap unless there is a deliberate indexing decision.</li>
+<li>Update <code>lastmod</code> only after substantive page or data changes under a documented policy.</li>
+<li>The generator must verify 200 status, canonical match, indexability, and content fingerprint before adding a fantasy URL.</li>
+</ul>
+<h3 id="8-6-internal-links">8.6 Internal links<a class="anchor" href="#8-6-internal-links" aria-label="Link to this section">#</a></h3>
+<p>Add descriptive links from:</p>
+<ul>
+<li>Homepage feature navigation or product grid.</li>
+<li><code>/tools/</code>.</li>
+<li><code>/picks/mlb/</code> with anchor language distinguishing fantasy points from player props.</li>
+<li><code>/analyzer/</code> where projection-versus-line education is relevant.</li>
+<li>MLB guide content when it genuinely supports the reader's next task.</li>
+<li>Help center.</li>
+<li>Footer product navigation.</li>
+</ul>
+<p>Do not sitewide-link every future sport or create keyword-heavy footer lists.</p>
+<h3 id="8-7-metadata-hypothesis">8.7 Metadata hypothesis<a class="anchor" href="#8-7-metadata-hypothesis" aria-label="Link to this section">#</a></h3>
+<p>Final titles and descriptions should be tested against real query data. Initial hypotheses:</p>
+<p><strong><code>/fantasy/</code></strong> Title: <code>Fantasy Projections Tool for Web &amp; Mobile | Propeller Picks</code> H1: <code>Market-powered fantasy projections, built for clearer decisions</code> Description: <code>Compare Propeller's daily MLB fantasy-point projections, player-specific ranges, and two-player Sit/Start views. MLB is live now on web and mobile.</code></p>
+<p><strong><code>/fantasy/mlb/</code></strong> Title: <code>MLB Fantasy Projections Today | Propeller Picks</code> H1: <code>Today's MLB fantasy projections</code> Description: <code>View current MLB fantasy-point projections for eligible hitters, compare floor, projected score, and ceiling, and test a two-player Sit/Start decision.</code></p>
+<p>Do not add “pitchers” to the title, description, H1, answer block, or structured data until the service returns validated pitcher projections.</p>
+<h3 id="8-8-image-and-video-search">8.8 Image and video search<a class="anchor" href="#8-8-image-and-video-search" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>Produce one annotated fantasy-board image with descriptive alt text.</li>
+<li>Produce one Sit/Start comparison image.</li>
+<li>Use stable filenames such as <code>propeller-mlb-fantasy-projections-board.avif</code>.</li>
+<li>Add captions that state the sport, view, and scoring context.</li>
+<li>Consider a short, transcript-backed product demo after the pages are stable.</li>
+<li>Add video structured data only when a real embedded video and required properties exist.</li>
+</ul>
+<hr>
+</section>
+<section id="9-structured-data-plan"><div class="section-number">9</div><h2>9. Structured data plan</h2>
+<p>Structured data should describe visible content. It is not an AEO ranking switch.</p>
+<h3 id="9-1-fantasy">9.1 <code>/fantasy/</code><a class="anchor" href="#9-1-fantasy" aria-label="Link to this section">#</a></h3>
+<p>Recommended graph:</p>
+<ul>
+<li><code>WebPage</code>.</li>
+<li><code>BreadcrumbList</code>.</li>
+<li>Existing <code>Organization</code> entity reference.</li>
+<li><code>SoftwareApplication</code> or <code>WebApplication</code> only if its visible product facts, operating systems, access model, and offers can be represented truthfully.</li>
+<li><code>FAQPage</code> as semantic markup if visible FAQ parity is exact. Do not expect a Google FAQ rich result for this site type.</li>
+</ul>
+<p>Do not invent ratings, review counts, prices, or application category properties.</p>
+<h3 id="9-2-fantasy-mlb">9.2 <code>/fantasy/mlb/</code><a class="anchor" href="#9-2-fantasy-mlb" aria-label="Link to this section">#</a></h3>
+<p>Recommended graph:</p>
+<ul>
+<li><code>WebPage</code>.</li>
+<li><code>BreadcrumbList</code>.</li>
+<li><code>ItemList</code> for a visible ranked preview only if item order and names match the rendered page.</li>
+<li><code>Dataset</code> only if Propeller publishes a stable, documented, downloadable dataset with license, creator, temporal coverage, and distribution metadata. A transient API response alone is not enough reason.</li>
+</ul>
+<p>Do not mark every player as a <code>Person</code> merely to increase entity count. Do not use <code>SportsEvent</code> without accurate event identity, start time, teams, and visible event content.</p>
+<h3 id="9-3-methodology-and-research-pages">9.3 Methodology and research pages<a class="anchor" href="#9-3-methodology-and-research-pages" aria-label="Link to this section">#</a></h3>
+<ul>
+<li><code>Article</code> or <code>TechArticle</code> for the method, with real author/reviewer, dates, headline, description, and version.</li>
+<li><code>Dataset</code> for a published research dataset when licensing allows it.</li>
+<li><code>ClaimReview</code> is not appropriate for Propeller reviewing its own model claims.</li>
+</ul>
+<h3 id="9-4-validation-gates">9.4 Validation gates<a class="anchor" href="#9-4-validation-gates" aria-label="Link to this section">#</a></h3>
+<ol>
+<li>JSON parses.</li>
+<li>Every claim matches visible copy.</li>
+<li>Canonical and schema URLs agree.</li>
+<li>Dates reflect real publication and substantive review.</li>
+<li>Visible FAQ and schema answers match exactly.</li>
+<li>Rich Results Test and Schema.org Validator are checked.</li>
+<li>Regression tests cover supported and empty states.</li>
+</ol>
+<hr>
+</section>
+<section id="10-aeo-and-ai-search-strategy"><div class="section-number">10</div><h2>10. AEO and AI-search strategy</h2>
+<h3 id="10-1-the-visibility-ladder">10.1 The visibility ladder<a class="anchor" href="#10-1-the-visibility-ladder" aria-label="Link to this section">#</a></h3>
+<p>Track each stage separately:</p>
+<ol>
+<li>Retrieved.</li>
+<li>Cited.</li>
+<li>Mentioned.</li>
+<li>Recommended.</li>
+<li>Recommended against.</li>
+<li>Converted or assisted.</li>
+</ol>
+<p>An AI answer may cite Propeller's methodology while recommending a larger fantasy platform. That is citation success but not recommendation success.</p>
+<h3 id="10-2-platform-requirements">10.2 Platform requirements<a class="anchor" href="#10-2-platform-requirements" aria-label="Link to this section">#</a></h3>
+<h4 id="google-ai-overviews-and-ai-mode">Google AI Overviews and AI Mode<a class="anchor" href="#google-ai-overviews-and-ai-mode" aria-label="Link to this section">#</a></h4>
+<ul>
+<li>The page must be indexed and snippet-eligible.</li>
+<li>Google's core SEO and quality systems apply.</li>
+<li>There is no required AI schema, Markdown mirror, or <code>llms.txt</code> benefit in Google Search.</li>
+<li>Google may use query fan-out, so the topical cluster matters more than exact-match page proliferation.</li>
+<li>As of June 2026, Google is rolling out a dedicated Generative AI performance report to a subset of Search Console properties. It reports impressions, pages, countries, devices for Search, and dates. Check whether the Propeller property has access; retain controlled prompt testing because the report does not replace cross-platform mention, citation, accuracy, or recommendation measurement.</li>
+</ul>
+<h4 id="chatgpt-search">ChatGPT Search<a class="anchor" href="#chatgpt-search" aria-label="Link to this section">#</a></h4>
+<ul>
+<li>Explicitly allow <code>OAI-SearchBot</code> and verify published IP access if a WAF is added.</li>
+<li>Treat <code>GPTBot</code> training access as a separate business choice.</li>
+<li><code>ChatGPT-User</code> is user-triggered and is not the Search inclusion control.</li>
+</ul>
+<h4 id="claude">Claude<a class="anchor" href="#claude" aria-label="Link to this section">#</a></h4>
+<ul>
+<li>Explicitly document <code>Claude-SearchBot</code>, <code>Claude-User</code>, and <code>ClaudeBot</code> choices.</li>
+<li>The current wildcard allow means the missing tokens are not blocked, but the policy is incomplete and hard to audit.</li>
+<li>Remove reliance on the legacy <code>anthropic-ai</code> token after verifying current official guidance.</li>
+</ul>
+<h4 id="perplexity">Perplexity<a class="anchor" href="#perplexity" aria-label="Link to this section">#</a></h4>
+<ul>
+<li>Explicitly allow <code>PerplexityBot</code> for search.</li>
+<li>Document the separate <code>Perplexity-User</code> fetcher.</li>
+<li>Verify WAF access against current published IP ranges if applicable.</li>
+</ul>
+<h4 id="bing-and-copilot">Bing and Copilot<a class="anchor" href="#bing-and-copilot" aria-label="Link to this section">#</a></h4>
+<ul>
+<li>Keep <code>Bingbot</code> crawlable.</li>
+<li>Add Bing Webmaster Tools verification and diagnostics.</li>
+<li>Evaluate IndexNow for new, updated, and removed evergreen fantasy URLs. Do not submit every 60-second data refresh.</li>
+</ul>
+<h3 id="10-3-robots-policy-decision">10.3 Robots policy decision<a class="anchor" href="#10-3-robots-policy-decision" aria-label="Link to this section">#</a></h3>
+<p>The current file allows search and training crawlers broadly. Replace implicit policy with an approved matrix:</p>
+<div class="table-wrap"><table><thead><tr><th>Agent</th><th>Purpose</th><th>Recommended default</th><th>Owner decision required</th></tr></thead><tbody><tr><td>Googlebot</td><td>Google Search and Search AI</td><td>Allow</td><td>No</td></tr><tr><td>Google-Extended</td><td>Some non-Search training/grounding uses</td><td>Neutral; decide separately</td><td>Yes</td></tr><tr><td>OAI-SearchBot</td><td>ChatGPT Search</td><td>Allow</td><td>No</td></tr><tr><td>GPTBot</td><td>OpenAI model training</td><td>Separate policy</td><td>Yes</td></tr><tr><td>ChatGPT-User</td><td>User-triggered fetch</td><td>Allow</td><td>No</td></tr><tr><td>Claude-SearchBot</td><td>Claude search</td><td>Allow</td><td>No</td></tr><tr><td>Claude-User</td><td>User-triggered fetch</td><td>Allow</td><td>No</td></tr><tr><td>ClaudeBot</td><td>Anthropic model training</td><td>Separate policy</td><td>Yes</td></tr><tr><td>PerplexityBot</td><td>Perplexity Search</td><td>Allow</td><td>No</td></tr><tr><td>Perplexity-User</td><td>User-triggered fetch</td><td>Allow</td><td>No</td></tr><tr><td>Bingbot</td><td>Bing/Copilot search foundation</td><td>Allow</td><td>No</td></tr></tbody></table></div>
+<h3 id="10-4-machine-readable-assets">10.4 Machine-readable assets<a class="anchor" href="#10-4-machine-readable-assets" aria-label="Link to this section">#</a></h3>
+<p>Update, but do not oversell:</p>
+<ul>
+<li><code>llms.txt</code>: add the fantasy hub, live MLB page, public method, and public data feed after each exists.</li>
+<li><code>/data/index.json</code>: add the approved product facts, public endpoint, method version, and safe-use notes.</li>
+<li><code>/pricing.md</code>: add fantasy availability only if access conditions are current and consistent.</li>
+<li>Curated agent OpenAPI: add a read-only fantasy snapshot endpoint only after public-data review.</li>
+<li>OKF: treat as an experiment. Do not prioritize it ahead of public pages, method evidence, crawler controls, and measurement.</li>
+</ul>
+<h3 id="10-5-citation-worthy-facts">10.5 Citation-worthy facts<a class="anchor" href="#10-5-citation-worthy-facts" aria-label="Link to this section">#</a></h3>
+<p>Build a small public fact set that can be quoted safely:</p>
+<ul>
+<li>What the feature does.</li>
+<li>Which sport is live.</li>
+<li>Which scoring format is used.</li>
+<li>Which input classes are used.</li>
+<li>How often the public board is refreshed.</li>
+<li>How floor and ceiling are constructed.</li>
+<li>Minimum history requirement.</li>
+<li>Method version and last substantive review.</li>
+<li>Calibration sample and coverage only after independent reproduction.</li>
+<li>Limitations and unsupported use cases.</li>
+</ul>
+<p>Each fact needs one canonical source and a source-of-truth owner.</p>
+<h3 id="10-6-third-party-presence">10.6 Third-party presence<a class="anchor" href="#10-6-third-party-presence" aria-label="Link to this section">#</a></h3>
+<p>Earn corroboration through useful evidence, not manufactured mentions:</p>
+<ul>
+<li>Pitch the methodology or research dataset to fantasy baseball analysts and data journalists.</li>
+<li>Offer a reproducible market-versus-form analysis with limitations.</li>
+<li>Create a short expert demo for YouTube with a full transcript and source links.</li>
+<li>Keep app-store feature descriptions and screenshots current so AI systems see consistent web and mobile facts.</li>
+<li>Participate in fantasy communities only when answering real questions. Disclose affiliation.</li>
+<li>Do not create or edit Wikipedia pages for promotional purposes.</li>
+</ul>
+<hr>
+</section>
+<section id="11-aeo-question-set-and-measurement-contract"><div class="section-number">11</div><h2>11. AEO question set and measurement contract</h2>
+<p>Do not modify the frozen July 20-question core in the middle of its incomplete 300-observation run.</p>
+<h3 id="11-1-supplemental-launch-benchmark">11.1 Supplemental launch benchmark<a class="anchor" href="#11-1-supplemental-launch-benchmark" aria-label="Link to this section">#</a></h3>
+<p>Create a separate fantasy supplement with 12 questions across the same five platforms and three fresh runs: 180 observations.</p>
+<ol>
+<li>What is a good free MLB fantasy projection tool?</li>
+<li>Where can I find today's MLB fantasy points projections?</li>
+<li>What is the best fantasy baseball start sit tool?</li>
+<li>Which MLB fantasy projection tools show floor and ceiling?</li>
+<li>How are daily fantasy baseball projections calculated?</li>
+<li>What does floor and ceiling mean in fantasy baseball projections?</li>
+<li>Are betting markets useful for fantasy baseball projections?</li>
+<li>What is the difference between a fantasy projection and a player prop line?</li>
+<li>Is Propeller Picks a fantasy lineup optimizer?</li>
+<li>Does Propeller Picks have MLB fantasy projections?</li>
+<li>Does Propeller Picks support NFL or NBA fantasy projections?</li>
+<li>How often does Propeller update its MLB fantasy projections?</li>
+</ol>
+<h3 id="11-2-observation-fields">11.2 Observation fields<a class="anchor" href="#11-2-observation-fields" aria-label="Link to this section">#</a></h3>
+<p>Reuse the existing contract fields and add:</p>
+<ul>
+<li>Fantasy intent class.</li>
+<li>Sport.</li>
+<li>Answer date sensitivity.</li>
+<li>Product-scope accuracy.</li>
+<li>Method accuracy.</li>
+<li>Scoring-format accuracy.</li>
+<li>Unsupported-feature hallucination.</li>
+<li>Cited Propeller URL role: hub, live utility, method, research, help, app store, other.</li>
+</ul>
+<h3 id="11-3-baseline-timing">11.3 Baseline timing<a class="anchor" href="#11-3-baseline-timing" aria-label="Link to this section">#</a></h3>
+<p>Run three waves:</p>
+<ol>
+<li>Pre-index baseline before public pages launch.</li>
+<li>Post-index check after the URLs are indexed and crawler logs show access.</li>
+<li>30-day comparable benchmark using identical prompts and modes.</li>
+</ol>
+<p>Do not infer causation from one answer change. Report completed denominators and retain blocked, absent, rate-limited, and inconclusive runs.</p>
+<h3 id="11-4-core-contract-evolution">11.4 Core-contract evolution<a class="anchor" href="#11-4-core-contract-evolution" aria-label="Link to this section">#</a></h3>
+<p>At the next approved version boundary, decide whether fantasy replaces any weak or obsolete core questions. Preserve the old immutable contract and do not splice new fantasy questions into historical rates.</p>
+<hr>
+</section>
+<section id="12-analytics-and-attribution"><div class="section-number">12</div><h2>12. Analytics and attribution</h2>
+<h3 id="12-1-event-model">12.1 Event model<a class="anchor" href="#12-1-event-model" aria-label="Link to this section">#</a></h3>
+<p>Add privacy-safe website events:</p>
+<div class="table-wrap"><table><thead><tr><th>Event</th><th>Trigger</th><th>Required parameters</th></tr></thead><tbody><tr><td><code>fantasy_landing_viewed</code></td><td>Public fantasy page view</td><td>page type, sport, landing path</td></tr><tr><td><code>fantasy_preview_loaded</code></td><td>Non-empty public preview loads</td><td>sport, slate date, row-count bucket, stale state</td></tr><tr><td><code>fantasy_filter_changed</code></td><td>Position group or sort change</td><td>sport, filter, sort</td></tr><tr><td><code>fantasy_compare_started</code></td><td>First player selected</td><td>sport, position group</td></tr><tr><td><code>fantasy_compare_completed</code></td><td>Two players selected</td><td>sport, position group, projection-gap bucket</td></tr><tr><td><code>fantasy_methodology_clicked</code></td><td>Method link selected</td><td>source page</td></tr><tr><td><code>fantasy_app_cta_clicked</code></td><td>App CTA selected</td><td>source page, CTA placement, auth state when known</td></tr><tr><td><code>fantasy_signup_started</code></td><td>Signup handoff begins</td><td>first/last-touch campaign fields</td></tr><tr><td><code>fantasy_signup_completed</code></td><td>Authoritative backend confirms new account</td><td>existing authoritative signup contract plus fantasy source</td></tr></tbody></table></div>
+<p>Do not send player names, raw search strings, roster data, or account-sensitive fantasy selections to GA4.</p>
+<h3 id="12-2-cross-domain-continuity">12.2 Cross-domain continuity<a class="anchor" href="#12-2-cross-domain-continuity" aria-label="Link to this section">#</a></h3>
+<p>Preserve the current first-touch and last-touch handoff from <code>propellerpicks.com</code> to <code>app.propellerpicks.com</code>. Add feature-source fields without replacing the existing attribution contract:</p>
+<ul>
+<li><code>feature=fantasy</code></li>
+<li><code>feature_sport=mlb</code></li>
+<li><code>landing_page=/fantasy/</code> or <code>/fantasy/mlb/</code></li>
+<li>CTA placement</li>
+</ul>
+<h3 id="12-3-reporting-views">12.3 Reporting views<a class="anchor" href="#12-3-reporting-views" aria-label="Link to this section">#</a></h3>
+<p>Build a fantasy scorecard with separate sections:</p>
+<p><strong>Discovery</strong></p>
+<ul>
+<li>Non-brand impressions and clicks.</li>
+<li>Query-to-page ownership.</li>
+<li>Indexed canonical pages.</li>
+<li>Google Generative AI impressions if the report is available.</li>
+</ul>
+<p><strong>Engagement</strong></p>
+<ul>
+<li>Preview load rate.</li>
+<li>Compare completion rate.</li>
+<li>Methodology click rate.</li>
+<li>App CTA rate.</li>
+</ul>
+<p><strong>Activation</strong></p>
+<ul>
+<li>Qualified signup rate by landing page.</li>
+<li>Signed-in fantasy board view within 7 days.</li>
+<li>Returning-account fantasy reactivation.</li>
+</ul>
+<p><strong>AEO</strong></p>
+<ul>
+<li>Mention, citation, and recommendation rates.</li>
+<li>Factual accuracy.</li>
+<li>Unsupported-feature hallucination rate.</li>
+<li>Cited page distribution.</li>
+</ul>
+<p><strong>Authority</strong></p>
+<ul>
+<li>Earned referring domains.</li>
+<li>Independent mentions.</li>
+<li>Research or methodology citations.</li>
+<li>App-store and video citation share.</li>
+</ul>
+<h3 id="12-4-decision-rules">12.4 Decision rules<a class="anchor" href="#12-4-decision-rules" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>High impressions, weak CTR: inspect query-to-page match and snippet before creating a new URL.</li>
+<li>Strong clicks, weak preview engagement: improve usefulness and above-fold clarity.</li>
+<li>Strong preview use, weak app CTA: test CTA framing and access explanation.</li>
+<li>Strong app CTA, weak signup: inspect cross-domain handoff and registration friction.</li>
+<li>Strong citations, weak recommendations: pursue independent corroboration and product proof.</li>
+<li>Wrong AI facts: correct the canonical source before outreach.</li>
+<li>Unsupported-sport hallucinations: make the live MLB boundary more explicit across owned and third-party surfaces.</li>
+</ul>
+<hr>
+</section>
+<section id="13-launch-roadmap"><div class="section-number">13</div><h2>13. Launch roadmap</h2>
+<h3 id="phase-0-truth-ownership-and-contracts-days-0-5">Phase 0: truth, ownership, and contracts (days 0-5)<a class="anchor" href="#phase-0-truth-ownership-and-contracts-days-0-5" aria-label="Link to this section">#</a></h3>
+<p><strong>Goal:</strong> lock what can be said and where it belongs.</p>
+<p>Tasks:</p>
+<ol>
+<li>Create <code>data/fantasy-product-facts.json</code> or extend the existing product ledger with fantasy-specific fields.</li>
+<li>Create a public-method approval record with input classes, scoring, range semantics, current sport, unsupported features, and last verification date.</li>
+<li>Reproduce the stored calibration result and document sample construction before public use.</li>
+<li>Record pitcher projections as not live in the launch ledger and define the later activation gate.</li>
+<li>Confirm trademark-safe scoring language.</li>
+<li>Approve <code>/fantasy/</code> and <code>/fantasy/mlb/</code> ownership in the intent map.</li>
+<li>Define the public preview size and access model.</li>
+<li>Decide search-versus-training crawler policy.</li>
+<li>Freeze the supplemental 12-question AEO contract.</li>
+<li>Capture pre-launch GSC, rank, and AEO baselines.</li>
+</ol>
+<p>Exit criteria:</p>
+<ul>
+<li>Product, method, and claim ledgers are approved.</li>
+<li>No unsupported feature appears in planned metadata.</li>
+<li>Canonical owners are recorded.</li>
+<li>Public data contract is reviewed.</li>
+</ul>
+<h3 id="phase-1-acquisition-foundation-days-5-14">Phase 1: acquisition foundation (days 5-14)<a class="anchor" href="#phase-1-acquisition-foundation-days-5-14" aria-label="Link to this section">#</a></h3>
+<p><strong>Goal:</strong> ship useful, indexable public surfaces.</p>
+<p>Tasks:</p>
+<ol>
+<li>Build <code>/fantasy/</code>.</li>
+<li>Build <code>/fantasy/mlb/</code> with server-rendered public preview and resilient empty states.</li>
+<li>Add internal links from the homepage, tools hub, MLB page, analyzer, help, and footer where relevant.</li>
+<li>Add metadata, canonical tags, Open Graph, and approved structured data.</li>
+<li>Add responsive images and alt text.</li>
+<li>Update sitemap with HTML pages only.</li>
+<li>Update <code>llms.txt</code> and data catalog after the pages are live.</li>
+<li>Add explicit current search crawler tokens to robots policy.</li>
+<li>Add analytics events and cross-domain feature attribution.</li>
+<li>Add IndexNow only for URL-level publication changes, not live-row refreshes.</li>
+</ol>
+<p>Exit criteria:</p>
+<ul>
+<li>Pages return 200, self-canonical, and indexable.</li>
+<li>Meaningful content is present without JavaScript.</li>
+<li>Public preview is useful and license-safe.</li>
+<li>Mobile, accessibility, schema, and performance gates pass.</li>
+<li>Existing analyzer and MLB prop intent tests remain green.</li>
+</ul>
+<h3 id="phase-2-explanation-and-citation-layer-days-14-30">Phase 2: explanation and citation layer (days 14-30)<a class="anchor" href="#phase-2-explanation-and-citation-layer-days-14-30" aria-label="Link to this section">#</a></h3>
+<p><strong>Goal:</strong> make the feature understandable and quotable.</p>
+<p>Tasks:</p>
+<ol>
+<li>Publish <code>/fantasy/methodology/</code> after review.</li>
+<li>Publish the concise help answer.</li>
+<li>Add a versioned methodology JSON file.</li>
+<li>Add a crawlable worked comparison.</li>
+<li>Produce one annotated screenshot and one short transcript-backed demo.</li>
+<li>Run the post-index AEO wave.</li>
+<li>Inspect crawler logs for Googlebot, OAI-SearchBot, Claude-SearchBot, PerplexityBot, and Bingbot.</li>
+<li>Check whether Search Console's Generative AI report is available.</li>
+</ol>
+<p>Exit criteria:</p>
+<ul>
+<li>Every public claim has a canonical source.</li>
+<li>AI answers can resolve live sport, scoring, method, and limitations correctly.</li>
+<li>No new structured-data mismatch.</li>
+</ul>
+<h3 id="phase-3-original-research-and-authority-days-30-60">Phase 3: original research and authority (days 30-60)<a class="anchor" href="#phase-3-original-research-and-authority-days-30-60" aria-label="Link to this section">#</a></h3>
+<p><strong>Goal:</strong> create evidence competitors cannot cheaply copy.</p>
+<p>Tasks:</p>
+<ol>
+<li>Review and reproduce the market-versus-form backtest.</li>
+<li>Publish the research page, method, sample dates, exclusions, uncertainty, and downloadable aggregate data if licensing allows.</li>
+<li>Add a correction and revision log.</li>
+<li>Build a qualified publisher and analyst prospect list.</li>
+<li>Prepare source-specific outreach briefs; do not contact anyone without explicit approval.</li>
+<li>Add the research asset to the AEO prompt set.</li>
+<li>Track citations separately from recommendations.</li>
+</ol>
+<p>Exit criteria:</p>
+<ul>
+<li>The report is reproducible from frozen inputs.</li>
+<li>No metric is called “accuracy” without its exact definition.</li>
+<li>At least one distribution format is easy to cite: HTML table, chart with transcript, or downloadable aggregate.</li>
+</ul>
+<h3 id="phase-4-measured-expansion-days-60-90">Phase 4: measured expansion (days 60-90)<a class="anchor" href="#phase-4-measured-expansion-days-60-90" aria-label="Link to this section">#</a></h3>
+<p><strong>Goal:</strong> improve the winning surfaces and prepare the next sport.</p>
+<p>Tasks:</p>
+<ol>
+<li>Review GSC query/page cohorts after a stable observation window.</li>
+<li>Complete the 30-day AEO supplement.</li>
+<li>Review fantasy-assisted signup and activation quality.</li>
+<li>Fix the highest-impact mismatch in the existing pages.</li>
+<li>Select the next sport only from product readiness, seasonality, and demand evidence.</li>
+<li>Build a shadow page in a non-indexed environment for the next sport.</li>
+<li>Run the full sport launch gate before publishing.</li>
+</ol>
+<hr>
+</section>
+<section id="14-prioritized-backlog"><div class="section-number">14</div><h2>14. Prioritized backlog</h2>
+<div class="table-wrap"><table><thead><tr><th>Priority</th><th>Work item</th><th>Owner</th><th>Dependency</th><th>Acceptance evidence</th></tr></thead><tbody><tr><td>P0</td><td>Fantasy product-fact ledger</td><td>Product + engineering</td><td>Current implementation</td><td>Reviewed JSON and tests</td></tr><tr><td>P0</td><td>Reproduce range calibration</td><td>Data/engineering</td><td>Frozen outcome sample</td><td>Reproducible report with uncertainty</td></tr><tr><td>P0</td><td>Canonical intent-map update</td><td>SEO</td><td>Product approval</td><td>Contract test passes</td></tr><tr><td>P0</td><td>Public fantasy preview contract</td><td>Backend + legal/data</td><td>License review</td><td>Safe fields, rate limits, stale policy</td></tr><tr><td>P0</td><td><code>/fantasy/</code> page</td><td>Web/design/content</td><td>Fact ledger</td><td>Rendered desktop/mobile review</td></tr><tr><td>P0</td><td><code>/fantasy/mlb/</code> live utility</td><td>Web/backend/design</td><td>Public preview</td><td>Useful no-JS content and live enhancement</td></tr><tr><td>P0</td><td>Analytics and attribution</td><td>Analytics + web app</td><td>Existing signup contract</td><td>DebugView and authoritative signup proof</td></tr><tr><td>P0</td><td>Sitemap/robots/canonical updates</td><td>SEO/engineering</td><td>URLs live</td><td>Automated crawl checks</td></tr><tr><td>P1</td><td>Fantasy methodology page</td><td>Data/content</td><td>Method approval</td><td>Sources, reviewer, version, limitations</td></tr><tr><td>P1</td><td>Supplemental AEO benchmark</td><td>SEO</td><td>Frozen questions</td><td>180 complete observations</td></tr><tr><td>P1</td><td>Images and demo video</td><td>Design/content</td><td>Stable UI</td><td>Accessible media and transcript</td></tr><tr><td>P1</td><td>Bing Webmaster Tools/IndexNow</td><td>SEO/engineering</td><td>Ownership verification</td><td>Successful URL notification and crawl</td></tr><tr><td>P1</td><td>Crawler log dashboard</td><td>Engineering</td><td>Log access</td><td>Verified search-bot requests</td></tr><tr><td>P1</td><td>Method JSON and data-catalog entry</td><td>Engineering/SEO</td><td>Public method</td><td>Contract tests pass</td></tr><tr><td>P2</td><td>Market-versus-form research</td><td>Data/editorial</td><td>Reproducible analysis</td><td>Public report and correction path</td></tr><tr><td>P2</td><td>Earned citation program</td><td>PR/content</td><td>Research asset</td><td>Qualified list and approved pitches</td></tr><tr><td>P2</td><td>Next-sport shadow launch</td><td>Product/engineering</td><td>Readiness gates</td><td>Non-indexed QA environment</td></tr><tr><td>P3</td><td>Programmatic player or comparison pages</td><td>SEO/product</td><td>Demand and unique utility</td><td>Cohort gate and rollback plan</td></tr></tbody></table></div>
+<hr>
+</section>
+<section id="15-programmatic-expansion-gate"><div class="section-number">15</div><h2>15. Programmatic expansion gate</h2>
+<p>Do not create large fantasy page cohorts until all conditions are met.</p>
+<h3 id="15-1-page-level-requirements">15.1 Page-level requirements<a class="anchor" href="#15-1-page-level-requirements" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>Stable user intent.</li>
+<li>Unique current data or functionality.</li>
+<li>Enough visible information to complete the task.</li>
+<li>Defined source and timestamp.</li>
+<li>Correct canonical owner.</li>
+<li>Useful empty and stale states.</li>
+<li>Distinct title and H1 generated from more than token substitution.</li>
+<li>Links from real user journeys.</li>
+<li>No private, licensed, or sensitive leakage.</li>
+</ul>
+<h3 id="15-2-cohort-requirements">15.2 Cohort requirements<a class="anchor" href="#15-2-cohort-requirements" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>Explicit inclusion rule.</li>
+<li>Explicit noindex/removal rule.</li>
+<li>Sitemap generation rule.</li>
+<li>Sample-based rendered QA.</li>
+<li>Automated uniqueness and data-depth tests.</li>
+<li>GSC cohort label.</li>
+<li>Conversion and engagement instrumentation.</li>
+<li>Rollback condition.</li>
+</ul>
+<h3 id="15-3-candidate-future-cohorts">15.3 Candidate future cohorts<a class="anchor" href="#15-3-candidate-future-cohorts" aria-label="Link to this section">#</a></h3>
+<p>In order of plausible value:</p>
+<ol>
+<li>Sport pages after product launch.</li>
+<li>Stable scoring-format explainers after the product supports them.</li>
+<li>High-demand player pages with current projection, inputs, history, and unique explanation.</li>
+<li>Matchup pages with verified events and sufficient unique data.</li>
+</ol>
+<p>Date archives and every possible player comparison remain low priority because they are easy to scale and hard to keep uniquely useful.</p>
+<hr>
+</section>
+<section id="16-reusable-seo-aeo-launch-system-for-every-future-feature"><div class="section-number">16</div><h2>16. Reusable SEO/AEO launch system for every future feature</h2>
+<p>Every new feature should complete this one-page intake before public SEO work begins.</p>
+<h3 id="16-1-feature-intake">16.1 Feature intake<a class="anchor" href="#16-1-feature-intake" aria-label="Link to this section">#</a></h3>
+<p><strong>Product job</strong></p>
+<ul>
+<li>What user decision does the feature improve?</li>
+<li>What does it output?</li>
+<li>Who can access it?</li>
+<li>Which sports, platforms, devices, and account states are live?</li>
+</ul>
+<p><strong>Truth contract</strong></p>
+<ul>
+<li>What is each score or number?</li>
+<li>What is it not?</li>
+<li>Which source fields populate it?</li>
+<li>What are the empty, stale, and failure states?</li>
+<li>Which claims have reproducible evidence?</li>
+</ul>
+<p><strong>Intent contract</strong></p>
+<ul>
+<li>What query family is new?</li>
+<li>Which existing page is closest?</li>
+<li>Can the existing page be strengthened?</li>
+<li>If a new URL is necessary, what single job does it own?</li>
+<li>Which query families are exclusions?</li>
+</ul>
+<p><strong>Public utility</strong></p>
+<ul>
+<li>What can a visitor use without signing in?</li>
+<li>What crawlable example proves the value?</li>
+<li>What private or licensed fields must stay hidden?</li>
+</ul>
+<p><strong>AEO contract</strong></p>
+<ul>
+<li>What five facts should an answer engine state correctly?</li>
+<li>What questions will be tested?</li>
+<li>Which page is canonical for each answer?</li>
+<li>What third-party evidence could legitimately corroborate it?</li>
+</ul>
+<p><strong>Measurement contract</strong></p>
+<ul>
+<li>What is the pre-launch baseline?</li>
+<li>What events show real use?</li>
+<li>What downstream activation matters?</li>
+<li>What 30/60/90-day decision will the data inform?</li>
+</ul>
+<h3 id="16-2-feature-launch-sequence">16.2 Feature launch sequence<a class="anchor" href="#16-2-feature-launch-sequence" aria-label="Link to this section">#</a></h3>
+<pre data-language="text"><code>1. Verify product truth
+2. Assign canonical intent
+3. Decide whether a new URL is justified
+4. Build public utility and resilient HTML
+5. Add sources, method, and limitations
+6. Add structured data that matches the page
+7. Instrument acquisition through activation
+8. Establish SEO and AEO baselines
+9. Launch and verify crawl/index/render
+10. Measure before expanding
+11. Publish original evidence
+12. Earn independent corroboration</code></pre>
+<h3 id="16-3-required-source-of-truth-files">16.3 Required source-of-truth files<a class="anchor" href="#16-3-required-source-of-truth-files" aria-label="Link to this section">#</a></h3>
+<p>The long-term system should maintain:</p>
+<ul>
+<li>Product fact ledger.</li>
+<li>Canonical intent map.</li>
+<li>Methodology version ledger.</li>
+<li>Public data catalog.</li>
+<li>Structured-data contracts.</li>
+<li>AEO prompt contracts and immutable snapshots.</li>
+<li>Sitemap fingerprints.</li>
+<li>Feature analytics dictionary.</li>
+<li>Claim and correction log.</li>
+</ul>
+<h3 id="16-4-definition-of-done-for-a-feature-landing-page">16.4 Definition of done for a feature landing page<a class="anchor" href="#16-4-definition-of-done-for-a-feature-landing-page" aria-label="Link to this section">#</a></h3>
+<p>A feature page is not done because it exists. It is done when:</p>
+<ul>
+<li>The feature is live as described.</li>
+<li>The page has a unique canonical job.</li>
+<li>A visitor can understand and test the value.</li>
+<li>The main content is available without heavy client rendering.</li>
+<li>Metadata and visible headings agree.</li>
+<li>Schema matches visible facts.</li>
+<li>Empty and stale states are honest.</li>
+<li>Mobile and accessibility checks pass.</li>
+<li>Search and AI-search crawlers can access it.</li>
+<li>Analytics prove the path to activation.</li>
+<li>The page is included in maintenance and regression tests.</li>
+<li>A 30-day measurement review is scheduled.</li>
+</ul>
+<hr>
+</section>
+<section id="17-quality-assurance-plan"><div class="section-number">17</div><h2>17. Quality assurance plan</h2>
+<h3 id="17-1-automated-checks">17.1 Automated checks<a class="anchor" href="#17-1-automated-checks" aria-label="Link to this section">#</a></h3>
+<p>Add tests for:</p>
+<ul>
+<li>Required fantasy fact fields.</li>
+<li>Forbidden unsupported-sport and optimizer claims.</li>
+<li>Canonical ownership conflicts with analyzer and MLB picks pages.</li>
+<li>Title, description, H1, canonical, Open Graph, and schema URL alignment.</li>
+<li>FAQ visible/schema parity.</li>
+<li>Public preview timestamp and stale rules.</li>
+<li>Floor less than or equal to projection; ceiling greater than or equal to projection when both exist.</li>
+<li>Minimum-history behavior.</li>
+<li>Empty and error-state HTML.</li>
+<li>Sitemap inclusion only for eligible pages.</li>
+<li><code>llms.txt</code> and data-catalog links.</li>
+<li>Generator idempotence.</li>
+<li>Privacy-safe analytics payloads.</li>
+<li>No horizontal overflow in automated browser widths.</li>
+</ul>
+<h3 id="17-2-manual-review-matrix">17.2 Manual review matrix<a class="anchor" href="#17-2-manual-review-matrix" aria-label="Link to this section">#</a></h3>
+<p>Test:</p>
+<ul>
+<li>Desktop Chrome, Safari, and Firefox.</li>
+<li>iPhone Safari sizes.</li>
+<li>Android Chrome sizes.</li>
+<li>Keyboard-only navigation.</li>
+<li>VoiceOver or equivalent screen reader pass.</li>
+<li>200% text zoom.</li>
+<li>Reduced motion.</li>
+<li>Slow 4G and failed API.</li>
+<li>Live slate, no slate, partial hitter data, stale data, and unsupported sport. Add pitcher-state tests when that output launches.</li>
+<li>Authenticated and unauthenticated CTA paths.</li>
+</ul>
+<h3 id="17-3-search-verification">17.3 Search verification<a class="anchor" href="#17-3-search-verification" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>Fetch live headers and final HTML.</li>
+<li>Inspect rendered DOM and JSON-LD.</li>
+<li>Validate canonical and robots directives.</li>
+<li>Submit and inspect in Search Console.</li>
+<li>Confirm sitemap discovery.</li>
+<li>Check Bing Webmaster Tools.</li>
+<li>Inspect bot logs.</li>
+<li>Run the exact AEO prompt supplement.</li>
+<li>Preserve screenshots and cited URLs as evidence.</li>
+</ul>
+<hr>
+</section>
+<section id="18-risk-register"><div class="section-number">18</div><h2>18. Risk register</h2>
+<div class="table-wrap"><table><thead><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Control</th></tr></thead><tbody><tr><td>Fantasy page cannibalizes MLB prop page</td><td>Medium</td><td>High</td><td>Explicit intent map, distinct copy, query/page monitoring</td></tr><tr><td>“Market-derived” is interpreted as official affiliation</td><td>Medium</td><td>High</td><td>Independence disclosure and precise source language</td></tr><tr><td>Range is marketed as guaranteed</td><td>Medium</td><td>High</td><td>Definition, UI labels, claim tests, reviewer gate</td></tr><tr><td>Unsupported sports get indexed early</td><td>High</td><td>Medium</td><td>404 until launch, no sitemap, no coming-soon pages</td></tr><tr><td>Public page is thin because all value stays behind login</td><td>High</td><td>High</td><td>Useful public preview and crawlable example</td></tr><tr><td>Live data becomes stale</td><td>Medium</td><td>High</td><td>Timestamp, stale threshold, alert, fallback state</td></tr><tr><td>Licensed data is exposed</td><td>Low/Medium</td><td>High</td><td>Public contract and legal/data review</td></tr><tr><td>Competitor comparison becomes self-promotional</td><td>Medium</td><td>Medium</td><td>Balanced criteria, first-party sources, independent evidence</td></tr><tr><td>AI answers hallucinate lineup optimization</td><td>High</td><td>Medium</td><td>Explicit “what it is not” facts and prompt monitoring</td></tr><tr><td>Analytics double-count signup</td><td>Low</td><td>High</td><td>Preserve authoritative backend new-account flag</td></tr><tr><td>More URLs dilute authority</td><td>High</td><td>Medium</td><td>Strengthen canonical pages and enforce cohort gates</td></tr><tr><td>Methodology changes silently</td><td>Medium</td><td>High</td><td>Version ledger, dateModified rules, change log</td></tr><tr><td>Search snippets overstate freshness</td><td>Medium</td><td>High</td><td>Generated dates only from actual data and review events</td></tr></tbody></table></div>
+<hr>
+</section>
+<section id="19-30-60-90-day-scorecard"><div class="section-number">19</div><h2>19. 30/60/90-day scorecard</h2>
+<p>Set numeric targets only after the pre-launch baseline. Use directional decision rules now.</p>
+<h3 id="day-30">Day 30<a class="anchor" href="#day-30" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>Both launch pages indexed or diagnosed.</li>
+<li>Query-to-page ownership is clean.</li>
+<li>Public preview and compare events are firing.</li>
+<li>Fantasy first/last-touch attribution reaches the app.</li>
+<li>AEO supplement is complete.</li>
+<li>No high-severity fact errors or unsupported-sport claims.</li>
+<li>Bot access is verified.</li>
+</ul>
+<h3 id="day-60">Day 60<a class="anchor" href="#day-60" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>At least one search query cohort shows sustained impressions.</li>
+<li>Engagement identifies which job matters most: rankings, range, or Sit/Start.</li>
+<li>Methodology page earns retrieval or citation evidence.</li>
+<li>Research asset is published or held with a documented evidence gap.</li>
+<li>Page performance has field data or a clear collection plan.</li>
+</ul>
+<h3 id="day-90">Day 90<a class="anchor" href="#day-90" aria-label="Link to this section">#</a></h3>
+<ul>
+<li>Decide whether to scale content, improve the existing pages, or pause expansion.</li>
+<li>Select the next sport only if product and demand gates pass.</li>
+<li>Evaluate earned authority and recommendation rate.</li>
+<li>Compare fantasy-assisted signup quality with site baseline.</li>
+<li>Version the AEO core only through the formal contract process.</li>
+</ul>
+<hr>
+</section>
+<section id="20-immediate-next-actions"><div class="section-number">20</div><h2>20. Immediate next actions</h2>
+<ol>
+<li>Approve the two-page launch architecture.</li>
+<li>Assign an owner to the fantasy product-fact ledger.</li>
+<li>Reproduce the range calibration and decide what can be public.</li>
+<li>Confirm exact scoring terminology and keep pitcher language out of the launch pages.</li>
+<li>Define the public preview endpoint and row limit.</li>
+<li>Add fantasy ownership to the intent map.</li>
+<li>Build <code>/fantasy/</code> and <code>/fantasy/mlb/</code> from the design and technical briefs above.</li>
+<li>Add analytics while preserving the existing signup-attribution contract.</li>
+<li>Freeze and run the supplemental AEO benchmark.</li>
+<li>Measure for a stable window before creating another fantasy URL.</li>
+</ol>
+<hr>
+</section>
+<section id="21-primary-external-references"><div class="section-number">21</div><h2>21. Primary external references</h2>
+<ul>
+<li>Google Search Central, <a href="https://developers.google.com/search/docs/appearance/ai-features" target="_blank" rel="noopener">AI features and your website</a></li>
+<li>Google Search Central, <a href="https://developers.google.com/search/docs/fundamentals/ai-optimization-guide" target="_blank" rel="noopener">Optimizing your website for generative AI features on Google Search</a></li>
+<li>Google Search Central, <a href="https://developers.google.com/search/blog/2026/06/gen-ai-performance-reports" target="_blank" rel="noopener">Search Generative AI performance reports in Search Console</a></li>
+<li>Google Search Central, <a href="https://developers.google.com/search/docs/appearance/structured-data/software-app" target="_blank" rel="noopener">Software application structured data</a></li>
+<li>Google Search Central, <a href="https://developers.google.com/search/docs/appearance/structured-data/dataset" target="_blank" rel="noopener">Dataset structured data</a></li>
+<li>OpenAI, <a href="https://developers.openai.com/api/docs/bots" target="_blank" rel="noopener">Overview of OpenAI crawlers</a></li>
+<li>Anthropic, <a href="https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler" target="_blank" rel="noopener">Web crawler controls</a></li>
+<li>Perplexity, <a href="https://docs.perplexity.ai/docs/resources/perplexity-crawlers" target="_blank" rel="noopener">Perplexity crawlers</a></li>
+<li>IndexNow, <a href="https://www.indexnow.org/documentation" target="_blank" rel="noopener">Protocol documentation</a></li>
+</ul>
+<h3 id="internal-evidence-used">Internal evidence used<a class="anchor" href="#internal-evidence-used" aria-label="Link to this section">#</a></h3>
+<ul>
+<li><code>docs/seo/competitor-seo-aeo-paid-search-strategy-2026-07-15.html</code></li>
+<li><code>docs/seo/complete-seo-audit-2026-07-16.html</code></li>
+<li><code>docs/seo/aeo-citation-tracker.md</code></li>
+<li><code>docs/seo/aeo-snapshot-2026-07-16.md</code></li>
+<li><code>docs/seo/aeo-target-questions.json</code></li>
+<li><code>data/product-facts.json</code></li>
+<li><code>data/platform-intent-map.json</code></li>
+<li><code>llms.txt</code></li>
+<li><code>robots.txt</code></li>
+<li>Shipped fantasy web, mobile, API, service, and test implementations in <code>nfl-betting-system</code></li>
+</ul>
+<hr>
+</section>
+<section id="final-operating-principle"><div class="section-number">•</div><h2>Final operating principle</h2>
+<p>The fantasy launch should not be a content-volume exercise. Its advantage is the combination of live utility, a distinct market-derived method, transparent uncertainty, and consistent web/mobile product proof. Build two strong canonical pages, publish the method only when the evidence is ready, measure the entire path to activation, and make every future feature pass the same truth and utility gates before it earns a URL.</p>
+</section>
+</main>
+  </div>
+  <footer class="footer">Propeller Picks internal roadmap · Source Markdown: <code>docs/seo/fantasy-projections-seo-aeo-roadmap-2026-07-16.md</code> · Verify product facts and external platform guidance before implementation.</footer>
+  <button class="back-top" id="backTop" type="button" aria-label="Back to top">↑</button>
+  <script>
+    const progress = document.getElementById('progress');
+    const backTop = document.getElementById('backTop');
+    const links = [...document.querySelectorAll('.toc a')];
+    const sections = [...document.querySelectorAll('main > section')];
+    const theme = document.getElementById('theme');
+    const update = () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      progress.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
+      backTop.classList.toggle('show', scrollY > 700);
+      let current = sections[0]?.id;
+      for (const section of sections) if (section.getBoundingClientRect().top < 120) current = section.id;
+      links.forEach(link => link.classList.toggle('active', link.hash === '#' + current));
+    };
+    addEventListener('scroll', update, {passive:true});
+    addEventListener('resize', update);
+    backTop.addEventListener('click', () => scrollTo({top:0,behavior:'smooth'}));
+    theme.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      theme.textContent = document.body.classList.contains('dark') ? 'Light mode' : 'Dark mode';
+    });
+    update();
+  </script>
+</body>
+</html>
