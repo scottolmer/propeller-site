@@ -16,22 +16,37 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "ab449aa6238ad031dacfecd71ee65f36ce87a5f8ce11fa1c689e0c45882f6f47",
+      "fingerprint": "85af1edb5775aa4663c47565d21bcc66be64faa19f42ba85be4318628dd7f3d9",
       "lastmod": "2026-07-20",
       "source": "analyzer/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/andres-gimenez/": {
-      "fingerprint": "4e3d646757b75a6ab63a9923964abd61ba75ec6f8a01c84820629372c12d2de7",
+      "fingerprint": "1dfffd1bde6c54a1e936fc030ba627d80de05234871e13f33d90896d0be67980",
       "lastmod": "2026-07-20",
       "source": "analyzer/mlb/andres-gimenez/index.html"
     },
+    "https://propellerpicks.com/analyzer/mlb/david-fry/": {
+      "fingerprint": "e5594d10cfbdca357d4a2e74f42da5cc5b4608951db0b7dd27bace456764e3b7",
+      "lastmod": "2026-07-20",
+      "source": "analyzer/mlb/david-fry/index.html"
+    },
     "https://propellerpicks.com/analyzer/mlb/pedro-pages/": {
-      "fingerprint": "90fbf54c2c0e7cc8756d340791f9730919df77408417c1918ea9d852db24cd64",
+      "fingerprint": "cc00635bb01c1dafe029c7367b992d470100e26da2ea0e32a0547cbf0a6569d0",
       "lastmod": "2026-07-20",
       "source": "analyzer/mlb/pedro-pages/index.html"
     },
+    "https://propellerpicks.com/analyzer/mlb/ryan-kreidler/": {
+      "fingerprint": "d6c7be3181bdd6f9cf0688f7eb1022dd56c461d1483c19c0ab3bb6282f63bebc",
+      "lastmod": "2026-07-20",
+      "source": "analyzer/mlb/ryan-kreidler/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/victor-caratini/": {
+      "fingerprint": "16d9674f0312fb0e428bedcfa58bf5548a5d5557002a1279607591fcfbc5ff31",
+      "lastmod": "2026-07-20",
+      "source": "analyzer/mlb/victor-caratini/index.html"
+    },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "ea05d6a63f0cf316c1296603bdd2ed91dbaab11750e356b1d60d418e8407a32b",
+      "fingerprint": "405c46af15d7a1bd7ccc03da6d1f4ce8b3d031443cbd0cdcaa3652b6dbf57ab0",
       "lastmod": "2026-07-20",
       "source": "blog/index.html"
     },
@@ -96,8 +111,8 @@
       "source": "fantasy/methodology/index.html"
     },
     "https://propellerpicks.com/fantasy/mlb/": {
-      "fingerprint": "7c12fb24cf6152df06e6e38f0a47f1952b44b106f915b47ef997c1397b3f1155",
-      "lastmod": "2026-07-16",
+      "fingerprint": "a6df91327093f39625025ccfb81ef1c0900b647cd5b7a995a586ce7bac0f9862",
+      "lastmod": "2026-07-20",
       "source": "fantasy/mlb/index.html"
     },
     "https://propellerpicks.com/guides/": {
@@ -111,8 +126,8 @@
       "source": "guides/how-ai-sports-betting-works/index.html"
     },
     "https://propellerpicks.com/guides/how-to-analyze-player-props/": {
-      "fingerprint": "39bfd42268c915cccc1ad41a27c96b16f8f02ebf41e0dc634e495cd4c99ea79d",
-      "lastmod": "2026-07-16",
+      "fingerprint": "382ed83892244e1b148ff6929e95070314ef231cb4e8635f7cd76dca0630c2ca",
+      "lastmod": "2026-07-20",
       "source": "guides/how-to-analyze-player-props/index.html"
     },
     "https://propellerpicks.com/guides/nba-prop-betting/": {
@@ -161,8 +176,8 @@
       "source": "help/does-propeller-support-underdog/index.html"
     },
     "https://propellerpicks.com/help/how-do-confidence-scores-work/": {
-      "fingerprint": "32966a093a7d48cf50ad15d28c9d62a1454e4443d40955be4e184351f0c8506c",
-      "lastmod": "2026-07-15",
+      "fingerprint": "bdb816ec9ea979eb81d21cb04b4accbc6e7be4c406cde322a6aa628acf1cd75b",
+      "lastmod": "2026-07-20",
       "source": "help/how-do-confidence-scores-work/index.html"
     },
     "https://propellerpicks.com/help/how-do-i-use-propeller-for-nba-pra-props/": {
@@ -211,7 +226,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "b4ccda875b006d68b263f8623dbe91dccbdf3b9e86df126d479ccf24539b1f80",
+      "fingerprint": "6d6b5719b03bcac70e464d069e321c14b1986309b5052b5ed26867b567291001",
       "lastmod": "2026-07-20",
       "source": "picks/mlb/index.html"
     },
@@ -221,7 +236,7 @@
       "source": "picks/nba/index.html"
     },
     "https://propellerpicks.com/picks/nfl/": {
-      "fingerprint": "0fb59568da72825c63a940c8f0a80e3073f22086fdbf8f7b60720ed59dd36372",
+      "fingerprint": "e882c63f989715d4e987574354d2326bf2b030306804685bc913fc6351229931",
       "lastmod": "2026-07-20",
       "source": "picks/nfl/index.html"
     },
