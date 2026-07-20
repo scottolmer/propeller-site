@@ -45,6 +45,8 @@
 <meta name="apple-mobile-web-app-title" content="Propeller">
 <meta name="theme-color" content="#f7f9fc">
 <meta name="color-scheme" content="light">
+<link rel="stylesheet" href="/assets/css/video-embeds.css?v=20260720">
+<style>body.pp-site-system .article-content .pp-video-card__prompt strong{color:#fff!important}body.pp-site-system .article-content .pp-video-card__takeaway{color:rgba(255,255,255,.76)!important}body.pp-site-system .article-content .pp-video-card__takeaway strong{color:#fff!important}</style>
 
 <!-- Favicon -->
 
@@ -52,6 +54,9 @@
 
 
 <!-- Structured Data -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoObject","name":"How to Analyze Player Props: 6 Signals Before Any Pick","description":"Learn how to analyze player props using volume, matchup, injuries, game environment, recent form, and market pricing.","thumbnailUrl":"https://i.ytimg.com/vi/_xaAxC9r0vw/maxresdefault.jpg","uploadDate":"2026-07-17","duration":"PT6M53S","embedUrl":"https://www.youtube.com/embed/_xaAxC9r0vw","contentUrl":"https://www.youtube.com/watch?v=_xaAxC9r0vw"}
+</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -61,7 +66,7 @@
   "url": "https://propellerpicks.com/guides/how-to-analyze-player-props/",
   "description": "A step-by-step guide to analyzing player props with matchup context, injury news, line shopping, no-vig math, and confidence scoring.",
   "datePublished": "2026-01-15",
-  "dateModified": "2026-07-16",
+  "dateModified": "2026-07-20",
   "author": {
     "@type": "Organization",
     "name": "Propeller Picks",
@@ -669,7 +674,7 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
 
 @media (max-width: 900px) {
   .article-layout { grid-template-columns: 1fr; }
-  .article-sidebar { order: -1; }
+  .article-sidebar { order: -1; position: static; }
 }
 
 /* ARTICLE CONTENT */
@@ -1286,6 +1291,9 @@ footer {
   margin-left: 4px;
   vertical-align: middle;
 }
+@media (max-width: 900px) {
+  .article-sidebar { position: static; }
+}
 </style>
   <link rel="stylesheet" href="/assets/css/site-white-overrides.css?v=20260625-white-site">
   <style id="pp-critical-hero">.hero .fade-in{opacity:1;transform:none;transition:none}</style>
@@ -1375,6 +1383,11 @@ footer {
 
         <h2 id="six-signals">What Are the 6 Key Signals for Analyzing Any Player Prop?</h2>
         <p><strong>Six useful player-prop research inputs are volume (minutes/usage), matchup quality, injury status, game environment (pace/total), recent form, and market pricing (no-vig market estimate).</strong> Reviewing them together makes the reasoning more complete and easier to audit.</p>
+
+        <section class="pp-video-section" aria-labelledby="signals-video-title">
+          <div class="pp-video-section__intro"><span class="pp-video-section__eyebrow">Watch the framework · 6:53</span><h2 id="signals-video-title">See all six signals in one repeatable workflow.</h2><p>The walkthrough shows why last-five hit rates are not enough, where each signal appears in Propeller, and how disagreement between signals should change your decision.</p></div>
+          <div class="pp-video-card" data-video-id="_xaAxC9r0vw" data-video-title="How to Analyze Player Props: 6 Signals Before Any Pick" data-video-placement="player_prop_guide_six_signals"><div class="pp-video-card__stage"><button class="pp-video-card__button" type="button" data-video-play aria-label="Play How to Analyze Player Props: 6 Signals Before Any Pick"><img class="pp-video-card__thumb" src="https://i.ytimg.com/vi/_xaAxC9r0vw/maxresdefault.jpg" alt="Six signals for analyzing player props video thumbnail" width="1280" height="720" loading="lazy"><span class="pp-video-card__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="pp-video-card__prompt"><strong>A good process starts with the line—not the last five games.</strong><span>Play guide</span></span></button></div><p class="pp-video-card__takeaway"><strong>Key takeaway:</strong> Define the exact player, stat, direction, and line first. Then evaluate opportunity, matchup, injuries, environment, recent form, and market price together.</p></div>
+        </section>
 
         <div class="factor-grid">
           <div class="factor-card fade-in">
@@ -1725,6 +1738,7 @@ document.querySelectorAll('.nav-item > .nav-item-link[href]').forEach(function(l
 });
 </script>
 <script src="/assets/js/analytics-events.js?v=20260708" defer></script>
+<script src="/assets/js/video-embeds.js?v=20260720" defer></script>
   <script src="/assets/js/site-nav.js?v=20260712" defer></script>
 </body>
 </html>
