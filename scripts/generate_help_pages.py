@@ -547,8 +547,7 @@ def render_page(page: dict) -> str:
   <footer>
     <div class="container">Propeller Picks is for research and analysis only. Propeller is not a sportsbook and does not accept wagers. If you or someone you know has a gambling problem, call or text 1-800-GAMBLER.</div>
   </footer>
-</div>
-{video_script}
+</div>{video_script}
 </body>
 </html>
 """
