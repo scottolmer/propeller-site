@@ -158,7 +158,22 @@ PAGES = [
         "title": "How Do Propeller Confidence Scores Work?",
         "description": "What Propeller's 50–100 directional confidence score means and why it is not a win probability.",
         "h1": "How do Propeller confidence scores work?",
+        "updated": "2026-07-20",
         "summary": "Propeller displays a More/Over or Less/Under direction plus a 50–100 model-confidence score. Higher values show stronger support for the displayed side. The score is not a calibrated win probability or guarantee.",
+        "video": {
+            "id": "FtkX3AuujJk",
+            "title": "What Does a 72 Confidence Score Mean? | Propeller Picks",
+            "short_title": "What Does a 72 Confidence Score Mean?",
+            "description": "Learn why a Propeller confidence score measures directional model strength rather than an exact chance that a player prop will hit.",
+            "upload_date": "2026-07-17",
+            "duration": "PT5M33S",
+            "duration_label": "5:33",
+            "heading": "What does a score like 72 actually tell you?",
+            "intro": "Follow the same historical prop across desktop and mobile to separate direction, confidence, and estimated chance to hit—and see what evidence to inspect next.",
+            "prompt": "Direction answers which side. Confidence answers how strong.",
+            "takeaway": "A score of 72 is a comparatively strong directional signal for the displayed side. It is not a 72% win probability and never guarantees the result.",
+            "placement": "confidence_help_after_answer",
+        },
         "sections": [
             ("How To Read The Score", "Read the displayed direction first, then the 50–100 confidence value. A value near 50 is closer to neutral; a higher value means stronger support for that displayed side."),
             ("What Goes Into A Score", "Signals can include matchup quality, role and minutes, injury cascade effects, game environment, recent form, hit-rate context, and market probability."),
@@ -300,6 +315,36 @@ def render_related(paths: list[str]) -> str:
     return "\n          ".join(items)
 
 
+def render_video(page: dict) -> tuple[str, str, str]:
+    video = page.get("video")
+    if not video:
+        return "", "", ""
+    video_id = esc(video["id"])
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "VideoObject",
+        "name": video["title"],
+        "description": video["description"],
+        "thumbnailUrl": f"https://i.ytimg.com/vi/{video['id']}/maxresdefault.jpg",
+        "uploadDate": video["upload_date"],
+        "duration": video["duration"],
+        "embedUrl": f"https://www.youtube.com/embed/{video['id']}",
+        "contentUrl": f"https://www.youtube.com/watch?v={video['id']}",
+    }
+    head = f'''\n<link rel="stylesheet" href="/assets/css/video-embeds.css?v=20260720">
+<style>body.pp-site-system main .pp-video-card .pp-video-card__prompt strong{{color:#fff!important}}body.pp-site-system main .pp-video-card .pp-video-card__takeaway{{color:rgba(255,255,255,.76)!important}}body.pp-site-system main .pp-video-card .pp-video-card__takeaway strong{{color:#fff!important}}</style>
+<script type="application/ld+json">
+{json_ld(schema)}
+</script>'''
+    body = f'''        <section class="pp-video-section" aria-labelledby="confidence-video-title">
+          <div class="pp-video-section__intro"><span class="pp-video-section__eyebrow">Watch the explanation · {esc(video['duration_label'])}</span><h2 id="confidence-video-title">{esc(video['heading'])}</h2><p>{esc(video['intro'])}</p></div>
+          <div class="pp-video-card" data-video-id="{video_id}" data-video-title="{esc(video['short_title'])}" data-video-placement="{esc(video['placement'])}"><div class="pp-video-card__stage"><button class="pp-video-card__button" type="button" data-video-play aria-label="Play {esc(video['short_title'])}"><img class="pp-video-card__thumb" src="https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg" alt="Propeller confidence score explanation video thumbnail" width="1280" height="720" loading="lazy"><span class="pp-video-card__play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span><span class="pp-video-card__prompt"><strong>{esc(video['prompt'])}</strong><span>Play explanation</span></span></button></div><p class="pp-video-card__takeaway"><strong>Key takeaway:</strong> {esc(video['takeaway'])}</p></div>
+        </section>
+'''
+    script = '\n  <script src="/assets/js/video-embeds.js?v=20260720" defer></script>'
+    return head, body, script
+
+
 def page_schema(page: dict) -> tuple[dict, dict, dict]:
     url = f"{BASE_URL}/help/{page['slug']}/"
     webpage = {
@@ -395,6 +440,7 @@ def render_page(page: dict) -> str:
     )
     related = render_related(page["related"])
     updated = page.get("updated", UPDATED)
+    video_head, video_body, video_script = render_video(page)
     evidence = ""
     if page.get("evidence_links"):
         links = "\n          ".join(
@@ -431,7 +477,7 @@ def render_page(page: dict) -> str:
 <meta name="twitter:description" content="{esc(page['description'])}">
 <meta name="twitter:image" content="{BASE_URL}/images/og-image.png">
 <meta name="author" content="Scott Olmer">
-<meta name="theme-color" content="#f2efe8">
+<meta name="theme-color" content="#f2efe8">{video_head}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -474,7 +520,7 @@ def render_page(page: dict) -> str:
 
     <div class="container content-grid">
       <article>
-{sections}
+{video_body}{sections}
         <section class="section">
           <h2>Frequently Asked Questions</h2>
           <div class="faq-list">
@@ -502,6 +548,7 @@ def render_page(page: dict) -> str:
     <div class="container">Propeller Picks is for research and analysis only. Propeller is not a sportsbook and does not accept wagers. If you or someone you know has a gambling problem, call or text 1-800-GAMBLER.</div>
   </footer>
 </div>
+{video_script}
 </body>
 </html>
 """
