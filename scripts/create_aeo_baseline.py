@@ -22,9 +22,11 @@ FIELDS = [
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--date", default=date.today().isoformat())
+    parser.add_argument("--targets", default=str(TARGETS), help="Versioned target-question JSON to materialize")
     parser.add_argument("--output")
     args = parser.parse_args()
-    config = json.loads(TARGETS.read_text(encoding="utf-8"))
+    targets = Path(args.targets)
+    config = json.loads(targets.read_text(encoding="utf-8"))
     output = Path(args.output) if args.output else ROOT / "docs" / "seo" / f"aeo-baseline-{args.date}.csv"
     rows = []
     for target in config["target_questions"]:
@@ -56,7 +58,11 @@ def main() -> None:
         writer = csv.DictWriter(handle, fieldnames=FIELDS)
         writer.writeheader()
         writer.writerows(rows)
-    print(f"output={output.relative_to(ROOT)} rows={len(rows)}")
+    try:
+        display_output = output.relative_to(ROOT)
+    except ValueError:
+        display_output = output
+    print(f"output={display_output} rows={len(rows)}")
 
 
 if __name__ == "__main__":

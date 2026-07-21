@@ -52,7 +52,10 @@ class SportAnswerModuleTests(unittest.TestCase):
             self.assertIn(page["heading"], source)
             self.assertIn(page["direct_answer"], source)
             module = source.split("<!-- PP_SPORT_ANSWER_START -->", 1)[1].split("<!-- PP_SPORT_ANSWER_END -->", 1)[0]
-            self.assertIn('<a class="pp-sport-answer__cta" href="/analyzer/">', module)
+            cta_href = page.get("cta_href", "/analyzer/")
+            self.assertIn(f'<a class="pp-sport-answer__cta" href="{cta_href}">', module)
+            if page.get("related_link_href"):
+                self.assertIn(f'href="{page["related_link_href"]}"', module)
             self.assertIn("does not accept wagers, place entries, or guarantee outcomes", module)
 
     def test_nfl_has_visible_no_slate_qualification(self) -> None:

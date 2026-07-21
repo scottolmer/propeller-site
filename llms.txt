@@ -2,7 +2,7 @@
 
 > Propeller Picks is an AI-assisted player-prop research workspace for web and mobile. It was designed for DFS and pick'em platforms, does not accept or place wagers, and is not affiliated with the platforms it references.
 
-Last verified: 2026-07-15
+Last verified: 2026-07-21
 Canonical site: https://propellerpicks.com/
 App signup: https://app.propellerpicks.com/signup
 Public API base: https://web-production-3c1c4.up.railway.app
@@ -43,6 +43,7 @@ These historical records include repeated analysis snapshots and legacy retrospe
 - Confidence buckets: https://web-production-3c1c4.up.railway.app/api/public/results-confidence-buckets
 - Results time series: https://web-production-3c1c4.up.railway.app/api/public/results/timeseries
 - Daily picks preview: https://web-production-3c1c4.up.railway.app/api/social/picks/{sport}
+- NFL public slate state: https://web-production-3c1c4.up.railway.app/api/nfl/props/public-slate
 - Forward publication ledger: https://propellerpicks.com/data/prospective-picks.json
 - Methodology version: https://propellerpicks.com/data/methodology-version.json
 - Fantasy projection facts: https://propellerpicks.com/data/fantasy-product-facts.json
@@ -59,6 +60,8 @@ Use the curated public agent API or data catalog before using the full API docs.
 - Public results: https://propellerpicks.com/results/
 - Daily picks hub: https://propellerpicks.com/picks/
 - Player analyzer: https://propellerpicks.com/analyzer/
+- NFL player-prop research: https://propellerpicks.com/picks/nfl/
+- NFL player-prop research guide: https://propellerpicks.com/guides/nfl-player-prop-research/
 - Fantasy projections hub: https://propellerpicks.com/fantasy/
 - Current MLB hitter fantasy projections: https://propellerpicks.com/fantasy/mlb/
 - Fantasy projection methodology: https://propellerpicks.com/fantasy/methodology/

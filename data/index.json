@@ -75,6 +75,12 @@
         "soccer"
       ],
       "description": "Limited public current-pick preview for website daily picks pages."
+    },
+    {
+      "id": "nfl-public-slate",
+      "url": "https://web-production-3c1c4.up.railway.app/api/nfl/props/public-slate",
+      "method": "GET",
+      "description": "Public NFL slate-state contract. Use its state and timestamp to distinguish a verified current board from offseason, preseason, no-slate, building, or degraded conditions; never treat historical rows as current props."
     }
   ],
   "answer_engine_pages": [

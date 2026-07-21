@@ -74,7 +74,10 @@
         }
       ],
       "availability_note": "During the offseason, preseason ramp, or days without a current NFL slate, no current props may be available. This page should show an empty state rather than relabeling older analysis as today.",
-      "cta_label": "Open the free NFL player prop analyzer"
+      "cta_label": "Open the free NFL player prop analyzer",
+      "cta_href": "/analyzer/?sport=nfl",
+      "related_link_label": "Read the NFL research guide",
+      "related_link_href": "/guides/nfl-player-prop-research/"
     }
   ]
 }

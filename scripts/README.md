@@ -128,5 +128,7 @@ python3 -m unittest scripts/test_schema_contracts.py
 python3 -m unittest scripts/test_sport_answer_modules.py
 python3 -m unittest scripts/test_seo_audit_remediation.py
 python3 -m unittest scripts/test_lighthouse_delivery.py
+node --test scripts/test_analyzer_sport_query.mjs
+python3 -m unittest scripts/test_nfl_launch_readiness.py
 python3 scripts/generate_sitemap.py --check
 ```
