@@ -44,6 +44,10 @@ def render_module(page: dict[str, object]) -> str:
         for index, card in enumerate(page["cards"], 1)
     )
     sport = esc(page["sport"])
+    cta_href = esc(page.get("cta_href", "/analyzer/"))
+    related_link = ""
+    if page.get("related_link_label") and page.get("related_link_href"):
+        related_link = f'<a href="{esc(page["related_link_href"])}">{esc(page["related_link_label"])}</a>'
     return f'''{BODY_START}
 <section class="pp-sport-answer pp-sport-answer--{esc(page["slug"])}" id="sport-analyzer-answer" aria-labelledby="sport-analyzer-answer-heading">
   <div class="container pp-sport-answer__inner">
@@ -55,8 +59,8 @@ def render_module(page: dict[str, object]) -> str:
     </div>
     <p class="pp-sport-answer__availability"><strong>Availability note</strong><span>{esc(page["availability_note"])}</span></p>
     <div class="pp-sport-answer__actions">
-      <a class="pp-sport-answer__cta" href="/analyzer/">{esc(page["cta_label"])} <span aria-hidden="true">&rarr;</span></a>
-      <span class="pp-sport-answer__links"><a href="/how-it-works/">Read the method</a><a href="/results/">Inspect public results</a></span>
+      <a class="pp-sport-answer__cta" href="{cta_href}">{esc(page["cta_label"])} <span aria-hidden="true">&rarr;</span></a>
+      <span class="pp-sport-answer__links"><a href="/how-it-works/">Read the method</a>{related_link}<a href="/results/">Inspect public results</a></span>
     </div>
     <p class="pp-sport-answer__disclosure">Propeller is an independent AI-assisted player-prop research workspace designed for DFS and pick'em platforms. It does not accept wagers, place entries, or guarantee outcomes.</p>
   </div>

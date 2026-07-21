@@ -2684,6 +2684,29 @@ function formatDisplayDate(isoDate) {
   return dt.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' });
 }
 
+function requestedSport() {
+  const candidate = new URLSearchParams(window.location.search).get('sport');
+  return SPORT_CONFIG.some(sport => sport.key === candidate) ? candidate : 'nba';
+}
+
+function activateSportTab(tab) {
+  document.querySelectorAll('.sport-tab').forEach(t => {
+    t.classList.remove('active');
+    t.setAttribute('aria-selected', 'false');
+    t.style.background  = '';
+    t.style.color       = '';
+    t.style.borderColor = '';
+    t.style.boxShadow   = '';
+  });
+
+  tab.classList.add('active');
+  tab.setAttribute('aria-selected', 'true');
+  tab.style.background  = tab.dataset.color;
+  tab.style.color       = '#000';
+  tab.style.borderColor = 'transparent';
+  tab.style.boxShadow   = `0 2px 12px ${tab.dataset.glow}`;
+}
+
 function formatStatType(raw) {
   const map = {
     points: 'Points',
@@ -3049,45 +3072,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const today = getETDate();
   document.getElementById('heroDateLabel').textContent = formatDisplayDate(today);
 
-  // Apply initial sport theme
-  applySportTheme('nba');
+  const initialSport = requestedSport();
+  applySportTheme(initialSport);
 
   // ---- Sport tabs ----
   document.querySelectorAll('.sport-tab').forEach(tab => {
     tab.addEventListener('click', () => {
       const sport = tab.dataset.sport;
       if (sport === activeSport) return;
-
-      // Update tab UI
-      document.querySelectorAll('.sport-tab').forEach(t => {
-        t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
-        t.style.background  = '';
-        t.style.color       = '';
-        t.style.borderColor = '';
-        t.style.boxShadow   = '';
-      });
-
-      const color = tab.dataset.color;
-      const glow  = tab.dataset.glow;
-      tab.classList.add('active');
-      tab.setAttribute('aria-selected', 'true');
-      tab.style.background  = color;
-      tab.style.color       = '#000';
-      tab.style.borderColor = 'transparent';
-      tab.style.boxShadow   = `0 2px 12px ${glow}`;
-
+      activateSportTab(tab);
+      const url = new URL(window.location.href);
+      url.searchParams.set('sport', sport);
+      window.history.replaceState({}, '', url);
       loadSport(sport);
     });
   });
 
-  // Style initial active tab
-  const initTab = document.querySelector('.sport-tab[data-sport="nba"]');
+  // The sport query parameter makes NFL entry points land on the intended board.
+  const initTab = document.querySelector(`.sport-tab[data-sport="${initialSport}"]`);
   if (initTab) {
-    initTab.style.background  = initTab.dataset.color;
-    initTab.style.color       = '#000';
-    initTab.style.borderColor = 'transparent';
-    initTab.style.boxShadow   = `0 2px 12px ${initTab.dataset.glow}`;
+    activateSportTab(initTab);
+    loadSport(initialSport);
   }
 
   // ---- Search ----

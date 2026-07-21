@@ -1,5 +1,18 @@
 # AEO Citation Tracker
 
+## August 2026 NFL launch measurement
+
+`aeo-target-questions-2026-08.json` is a new, frozen 20-question target set for the August NFL launch period. It preserves the core product, tool, education, trust, and comparison intents while adding five NFL-specific questions that map to the NFL research guide, public slate state, and analyzer deep link. Do not overwrite the July target set or compare a new August run directly with the incomplete July draft. Materialize the August blank matrix with:
+
+```bash
+python3 scripts/create_aeo_baseline.py \
+  --targets docs/seo/aeo-target-questions-2026-08.json \
+  --date 2026-08-01 \
+  --output docs/seo/aeo-baseline-2026-08-01.csv
+```
+
+The frozen contract is 20 prompts × 5 platforms × 3 fresh runs = 300 manual observations. A blank matrix is not an observation and must not be reported as a citation result.
+
 Last updated: 2026-07-13
 
 This file defines the recurring answer-engine visibility workflow for Propeller Picks. The internal target-question set lives at `docs/seo/aeo-target-questions.json` and is intentionally not published as a discovery asset.
