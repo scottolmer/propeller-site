@@ -92,24 +92,24 @@
         setTone("[data-forward-roi]", roi);
         setText(
           "[data-forward-roi-detail]",
-          `${formatNumber.format(pricedSettled)} priced settled ${pricedSettled === 1 ? "pick" : "picks"} · flat 1-unit stakes`,
+          `${formatNumber.format(pricedSettled)} completed ${pricedSettled === 1 ? "pick" : "picks"}, each counted as a $1 stake`,
         );
         const since = trackingDate ? ` · tracking since ${trackingDate}` : "";
-        setText("[data-forward-roi-updated]", `${coverage.toFixed(1)}% settled-pick odds coverage${since}`);
+        setText("[data-forward-roi-updated]", `${coverage.toFixed(1)}% of completed picks have a recorded price${since}`);
         return;
       }
 
       setText("[data-forward-roi]", "—");
       setTone("[data-forward-roi]", 0);
-      setText("[data-forward-roi-detail]", "Tracking begins after the first eligible priced pick settles.");
+      setText("[data-forward-roi-detail]", "Waiting for the first completed pick with a recorded price.");
       const published = Number(payload.published_total || 0);
       const status = published > 0
-        ? `${formatNumber.format(published)} public ${published === 1 ? "pick" : "picks"} logged · awaiting priced settlement`
-        : "Forward ledger live · awaiting the first eligible public pick";
+        ? `${formatNumber.format(published)} public ${published === 1 ? "pick" : "picks"} logged · waiting for a completed pick with a recorded price`
+        : "The public record starts with the first eligible pick";
       setText("[data-forward-roi-updated]", status);
     } catch (error) {
       console.warn("Forward ROI ledger unavailable", error);
-      setText("[data-forward-roi-updated]", "Forward ROI ledger pending API availability");
+      setText("[data-forward-roi-updated]", "Public record data is loading");
     }
   }
 
