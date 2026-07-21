@@ -1,7 +1,7 @@
 {
   "name": "Propeller Picks Public Data Catalog",
   "description": "Canonical public, machine-readable Propeller Picks sources for AI agents, search crawlers, and citation systems.",
-  "generated_at": "2026-07-20T22:37:02Z",
+  "generated_at": "2026-07-21T12:07:38Z",
   "canonical_site": "https://propellerpicks.com/",
   "llms_txt": "https://propellerpicks.com/llms.txt",
   "product_facts": "https://propellerpicks.com/data/product-facts.json",
@@ -16,9 +16,9 @@
   "curated_agent_index": "https://web-production-3c1c4.up.railway.app/api/public/agent/v1/index",
   "curated_openapi": "https://web-production-3c1c4.up.railway.app/api/public/agent/v1/openapi.json",
   "record_snapshot": {
-    "generated_at": "2026-07-20T22:37:02Z",
-    "historical_database_rows": 2162059,
-    "deduplicated_public_ledger_entries": 290258,
+    "generated_at": "2026-07-21T12:07:38Z",
+    "historical_database_rows": 2173469,
+    "deduplicated_public_ledger_entries": 291643,
     "scope": "Historical analysis archive; includes repeated snapshots and legacy retrospective data.",
     "not_a_claim_of": [
       "unique published recommendations",
