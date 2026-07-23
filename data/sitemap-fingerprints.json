@@ -16,23 +16,13 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "a5521a026dc0382fa792c27a820724f86fb3c1f951b3473a17abec51085b07bb",
+      "fingerprint": "0216e41df2fe1402ae5701bdd6f09f6dca48fd249d228453065887defec869a2",
       "lastmod": "2026-07-23",
       "source": "analyzer/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/austin-hedges/": {
-      "fingerprint": "99935c626a343afef60b21ace2ed6df055df5c5aaea0b47e53772c7acc48f02a",
-      "lastmod": "2026-07-23",
-      "source": "analyzer/mlb/austin-hedges/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/victor-mesa-jr/": {
-      "fingerprint": "e223f0b0c3e7b577cd0cd8f8b1650d28e827127ebc5d6f36704e70321dcdf133",
-      "lastmod": "2026-07-23",
-      "source": "analyzer/mlb/victor-mesa-jr/index.html"
-    },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "eee3331fa998bec37412bec04eadd9e112ed0ec9f72f3d25795940740bfdb528",
-      "lastmod": "2026-07-22",
+      "fingerprint": "e9336925d956ebcb89b523be5772bbee4b0aeb18168b688a161f59e86396604b",
+      "lastmod": "2026-07-23",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -216,7 +206,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "acb4667ee8e1670260142486faad050cb8a7ffb4f66b1514c2cca1391075a1ca",
+      "fingerprint": "41f3fd527472ecbfe5ca421cc36787784a98a36649d0ff4251b7c3c2af7cde79",
       "lastmod": "2026-07-23",
       "source": "picks/mlb/index.html"
     },
