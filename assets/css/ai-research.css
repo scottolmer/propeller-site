@@ -35,6 +35,31 @@ body.pp-ai-page { background-color: var(--pp-paper); }
 .air-watch__link span { color: var(--air-blue); font-size: 17px; line-height: 1; }
 .air-video { position: relative; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--pp-ink); background: var(--pp-ink); box-shadow: 10px 10px 0 var(--air-blue); }
 .air-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.air-section--answer { background: linear-gradient(115deg, #f6dd68 0%, #f6dd68 57%, #efece4 57%); }
+.air-answer-layout { display: grid; grid-template-columns: minmax(0,1.13fr) minmax(330px,.87fr); gap: clamp(36px,8vw,120px); align-items: center; }
+.air-answer-layout h2 { max-width: 710px; margin: 15px 0 24px; color: var(--pp-ink); font-size: clamp(38px,5.2vw,70px); line-height: .96; letter-spacing: -.055em; }
+.air-answer-layout .air-prose { max-width: 650px; margin: 0; color: #34351f; }
+.air-answer-layout .air-prose strong { color: var(--pp-ink); }
+.air-answer-steps { display: grid; gap: 1px; margin: 0; padding: 0; list-style: none; border: 1px solid var(--pp-ink); background: var(--pp-ink); }
+.air-answer-steps li { display: grid; grid-template-columns: 38px 1fr; column-gap: 13px; padding: 20px; background: var(--pp-paper-light); }
+.air-answer-steps span { grid-row: span 2; color: var(--air-blue); font: 600 10px var(--pp-mono); }
+.air-answer-steps strong { color: var(--pp-ink); font: 600 21px/1 var(--pp-display); }
+.air-answer-steps small { margin-top: 7px; color: var(--pp-sub); font-size: 13px; line-height: 1.45; }
+.air-section--setup { background: #edeae2; }
+.air-template-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; }
+.air-template { min-height: 230px; padding: 25px; border: 1px solid var(--pp-ink); background: var(--pp-paper-light); color: var(--pp-ink); text-align: left; cursor: pointer; transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease; }
+.air-template:hover, .air-template:focus-visible { transform: translate(-3px,-3px); background: #fff; box-shadow: 6px 6px 0 var(--air-blue); }
+.air-template span { display: block; color: var(--air-blue); font: 600 10px var(--pp-mono); }
+.air-template strong { display: block; margin-top: 52px; font: 600 clamp(24px,2.4vw,34px)/.98 var(--pp-display); letter-spacing: -.04em; }
+.air-template small { display: block; margin-top: 13px; color: var(--pp-sub); font-size: 14px; line-height: 1.45; }
+.air-section--sample { background: var(--air-blue); color: #fff; }
+.air-sample { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(290px,.85fr); gap: clamp(32px,8vw,120px); align-items: end; }
+.air-sample .air-label { color: var(--air-yellow); }
+.air-sample h2 { max-width: 650px; margin: 16px 0 18px; font-size: clamp(38px,5.2vw,68px); line-height: .96; letter-spacing: -.055em; }
+.air-sample > div > p:last-child { max-width: 690px; margin: 0; color: rgba(255,255,255,.86); font-size: 17px; line-height: 1.68; }
+.air-sample aside { padding: 25px; border: 1px solid rgba(255,255,255,.8); background: rgba(0,0,0,.12); }
+.air-sample aside > p { margin: 0; color: rgba(255,255,255,.85); font-size: 14px; line-height: 1.55; }
+.air-sample aside > p:nth-child(2) { margin: 20px 0 9px; color: #fff; font-size: 20px; line-height: 1.18; }
 .air-head { display: grid; grid-template-columns: minmax(180px,.7fr) minmax(0,2fr); gap: 48px; margin-bottom: 42px; align-items: start; }
 .air-head .air-label { color: var(--air-blue); }
 .air-section--ink .air-label, .air-section--blue .air-label { color: var(--air-yellow); }
@@ -86,8 +111,11 @@ body.pp-ai-page { background-color: var(--pp-paper); }
 
 @media (max-width: 840px) {
   .air-wrap { width: min(var(--air-max), calc(100vw - 32px)); }
-  .air-head, .air-watch { grid-template-columns: 1fr; gap: 16px; }
+  .air-head, .air-watch, .air-answer-layout, .air-sample { grid-template-columns: 1fr; gap: 16px; }
   .air-grid, .air-grid--2, .air-proof { grid-template-columns: 1fr; }
+  .air-template-grid { grid-template-columns: 1fr; }
+  .air-template { min-height: 0; }
+  .air-template strong { margin-top: 28px; }
   .air-diagram { grid-template-columns: repeat(6, 180px); }
 }
 

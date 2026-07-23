@@ -27,6 +27,14 @@ OWNERS = {
         "/research/prospective-record/",
         "/data/index.json",
     ],
+    "/tools/ai-betting-prompt-builder/": [
+        "What is a good ChatGPT prompt for sports betting research?",
+        "fresh primary sources",
+        "no-action conclusion",
+        "/analyzer/",
+        "/guides/how-ai-sports-betting-works/",
+        "/research/ai-player-prop-benchmark/",
+    ],
     "/compare/propeller-vs-oddsjam/": [
         "Is Propeller Picks or OddsJam better for pick'em player props?",
         "Neither tool is universally better.",

@@ -82,8 +82,25 @@ def main() -> int:
         require(count <= 50, f"{sport} has {count} indexed player cards", errors)
 
     prompt_js = (ROOT / "assets/js/ai-prompt-builder.js").read_text(encoding="utf-8")
-    for phrase in ("primary sources", "no action", "Do not recommend a stake", "strongest case for each side"):
+    for phrase in (
+        "primary sources",
+        "no action",
+        "Do not recommend a stake",
+        "strongest case for each side",
+        "prompt_builder_view",
+        "prompt_builder_started",
+        "prompt_generated",
+        "prompt_copied",
+    ):
         require(phrase in prompt_js, f"prompt builder missing requirement: {phrase}", errors)
+    prompt_page = (ROOT / "tools/ai-betting-prompt-builder/index.html").read_text(encoding="utf-8")
+    for phrase in (
+        '"@type":"WebApplication"',
+        '"@type":"FAQPage"',
+        "analytics-loader.js",
+        "page_location:location.origin+location.pathname",
+    ):
+        require(phrase in prompt_page, f"prompt builder missing research contract: {phrase}", errors)
 
     for rel in (
         "images/ai-sports-betting-research.png",

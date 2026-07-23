@@ -1214,6 +1214,35 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   transition: width 0.9s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+.pick-card-actions {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.pick-research-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .35px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.pick-research-prompt::after {
+  color: var(--sport-color, var(--accent));
+  content: '↗';
+  font-size: 16px;
+  line-height: 1;
+}
+
+.pick-research-prompt:hover { color: var(--sport-color, var(--accent)); }
+
 /* ---- SKELETON ---- */
 .skeleton-card {
   padding: 22px 24px;
@@ -2653,7 +2682,9 @@ const SPORT_CONFIG = [
 // STATE
 // ============================================================
 let cache       = {};       // { nba: [...], nhl: [...], ... }
+let generatedAtBySport = {}; // API snapshot timestamps, kept separate from pick data
 let activeSport = 'nba';
+let activeGeneratedAt = '';
 let allPicks    = [];
 let filteredPicks = [];
 let activeSort  = 'confidence';
@@ -2815,6 +2846,15 @@ function buildPickCard(prop, locked) {
   const teamHtml = prop.team
     ? `<span class="pick-team">${escHtml(prop.team)}</span>`
     : '';
+  const promptQuery = new URLSearchParams({
+    sport: activeSport,
+    market: statLabel,
+    subject: prop.player_name || '',
+    line: prop.line == null ? '' : String(prop.line),
+    source: 'Propeller public analyzer snapshot',
+    snapshot: activeGeneratedAt || ''
+  });
+  const promptLink = `/tools/ai-betting-prompt-builder/?${promptQuery.toString()}`;
 
   const inner = `
       <div class="pick-card-top">
@@ -2840,6 +2880,9 @@ function buildPickCard(prop, locked) {
       </div>
       <div class="confidence-bar-track" role="none">
         <div class="confidence-bar-fill" data-width="${barWidth}" style="background:${barBg};" role="progressbar" aria-valuenow="${confidence}" aria-valuemin="50" aria-valuemax="100"></div>
+      </div>
+      <div class="pick-card-actions">
+        <a class="pick-research-prompt" href="${promptLink}">Build AI research prompt</a>
       </div>
   `;
 
@@ -3007,6 +3050,7 @@ async function loadSport(sport) {
 
   if (cache[sport]) {
     hideSkeleton();
+    activeGeneratedAt = generatedAtBySport[sport] || '';
     allPicks      = cache[sport];
     filteredPicks = allPicks;
     renderPicks(filteredPicks);
@@ -3024,11 +3068,17 @@ async function loadSport(sport) {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     cache[sport]  = Array.isArray(data.props) ? data.props : [];
+    generatedAtBySport[sport] = typeof data.generated_at === 'string' ? data.generated_at : '';
+    if (sport !== activeSport) return;
+    activeGeneratedAt = generatedAtBySport[sport];
     allPicks      = cache[sport];
     filteredPicks = allPicks;
   } catch (err) {
     console.warn('Fetch error:', err);
     cache[sport]  = [];
+    generatedAtBySport[sport] = '';
+    if (sport !== activeSport) return;
+    activeGeneratedAt = '';
     allPicks      = [];
     filteredPicks = [];
   }
