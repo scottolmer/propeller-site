@@ -16,9 +16,24 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "0216e41df2fe1402ae5701bdd6f09f6dca48fd249d228453065887defec869a2",
+      "fingerprint": "4a28076fe07725b4242cc25aaa0b7fc07798ff83d0883d83246f1278fa81614e",
       "lastmod": "2026-07-23",
       "source": "analyzer/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/austin-martin/": {
+      "fingerprint": "80a3a84431696637355baa3c1225eb2946ac9edcd9c380fbdf5349abd51ac334",
+      "lastmod": "2026-07-23",
+      "source": "analyzer/mlb/austin-martin/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/davis-schneider/": {
+      "fingerprint": "959d1d37086220740b92f831183aaa83e80a770d14dc6ffb6ccb65ce05b7c970",
+      "lastmod": "2026-07-23",
+      "source": "analyzer/mlb/davis-schneider/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/yohendrick-pinango/": {
+      "fingerprint": "52ceeda2149d91b8d806b4737c2d5aa28ecbbcfa87975cd2fc830c3900be55c6",
+      "lastmod": "2026-07-23",
+      "source": "analyzer/mlb/yohendrick-pinango/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "e9336925d956ebcb89b523be5772bbee4b0aeb18168b688a161f59e86396604b",
@@ -206,7 +221,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "41f3fd527472ecbfe5ca421cc36787784a98a36649d0ff4251b7c3c2af7cde79",
+      "fingerprint": "9335b78bf1f2e9dd2df28096fde3f1e7abe0a0300dd30613bd725beb82274056",
       "lastmod": "2026-07-23",
       "source": "picks/mlb/index.html"
     },
@@ -276,8 +291,8 @@
       "source": "tools/index.html"
     },
     "https://propellerpicks.com/tools/ai-betting-prompt-builder/": {
-      "fingerprint": "5fb49983fcf792fc11157cd2363cb10d6f2c38dec298e7bde9c7ca7554415a12",
-      "lastmod": "2026-07-14",
+      "fingerprint": "06e62776238a7087bd1e5a3eb4bf8451e10c9a59184450485d05a5675706a643",
+      "lastmod": "2026-07-23",
       "source": "tools/ai-betting-prompt-builder/index.html"
     },
     "https://propellerpicks.com/tools/pick6-payout-calculator/": {
