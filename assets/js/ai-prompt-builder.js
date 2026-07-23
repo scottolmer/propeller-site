@@ -1,12 +1,82 @@
 (function () {
   "use strict";
+
   var form = document.getElementById("promptBuilder");
   var output = document.getElementById("promptOutput");
   var status = document.getElementById("promptStatus");
   var copy = document.getElementById("copyPrompt");
   if (!form || !output || !status || !copy) return;
 
-  function value(id) { return document.getElementById(id).value.trim(); }
+  function track(name) {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", name, {
+        transport_type: "beacon",
+        page_location: window.location.href.split("?")[0],
+        page_title: document.title
+      });
+    }
+  }
+
+  function value(id) {
+    return document.getElementById(id).value.trim();
+  }
+
+  function setValue(id, nextValue) {
+    var field = document.getElementById(id);
+    if (field && nextValue) field.value = nextValue;
+  }
+
+  function safeParam(params, name, maxLength) {
+    return (params.get(name) || "").trim().slice(0, maxLength);
+  }
+
+  function prefillFromQuery() {
+    var params = new URLSearchParams(window.location.search);
+    if (!params.toString()) return;
+    var sportMap = { mlb: "MLB", nba: "NBA", nfl: "NFL", nhl: "NHL", soccer: "Soccer", other: "Other" };
+    var sport = sportMap[safeParam(params, "sport", 12).toLowerCase()];
+    if (sport) setValue("sport", sport);
+    setValue("market", safeParam(params, "market", 80));
+    setValue("subject", safeParam(params, "subject", 100));
+    setValue("line", safeParam(params, "line", 40));
+
+    if (safeParam(params, "source", 80) === "Propeller public analyzer snapshot") {
+      setValue("source", "Propeller public analyzer snapshot");
+      var snapshot = safeParam(params, "snapshot", 40);
+      if (/^\d{4}-\d{2}-\d{2}T/.test(snapshot)) {
+        setValue("context", "Public Analyzer snapshot reported at " + snapshot + ". Re-verify this data and the live line now.");
+      } else {
+        setValue("context", "This is a limited public Analyzer snapshot. Re-verify this data and the live line now.");
+      }
+      status.textContent = "A limited public Analyzer snapshot was added. Verify it before generating.";
+    }
+  }
+
+  function selectTemplate(goal) {
+    setValue("goal", goal);
+    document.getElementById("sport").focus();
+    status.textContent = "Research posture selected. Add the exact sport, market, player or event, and line.";
+  }
+
+  var started = false;
+  form.addEventListener("input", function () {
+    if (!started) {
+      started = true;
+      track("prompt_builder_started");
+    }
+  });
+  form.addEventListener("change", function () {
+    if (!started) {
+      started = true;
+      track("prompt_builder_started");
+    }
+  });
+
+  document.querySelectorAll(".air-template[data-goal]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      selectTemplate(button.getAttribute("data-goal"));
+    });
+  });
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -18,6 +88,7 @@
       copy.disabled = true;
       return;
     }
+
     var source = value("source") || "the source I provide";
     var context = value("context") || "No additional context provided.";
     var prompt = [
@@ -45,10 +116,12 @@
       "",
       "Return a compact evidence table followed by counterarguments, missing information, and the conclusion."
     ].join("\n");
+
     output.textContent = prompt;
     status.textContent = "Prompt generated. Review the line and source before copying.";
     copy.disabled = false;
     output.focus();
+    track("prompt_generated");
   });
 
   copy.addEventListener("click", async function () {
@@ -56,6 +129,7 @@
     try {
       await navigator.clipboard.writeText(output.textContent);
       status.textContent = "Prompt copied.";
+      track("prompt_copied");
     } catch (error) {
       var selection = window.getSelection();
       var range = document.createRange();
@@ -63,6 +137,14 @@
       selection.removeAllRanges();
       selection.addRange(range);
       status.textContent = "Select Copy from your browser to copy the highlighted prompt.";
+      track("prompt_copy_fallback");
     }
   });
+
+  document.querySelectorAll(".air-watch__link").forEach(function (link) {
+    link.addEventListener("click", function () { track("walkthrough_video_click"); });
+  });
+
+  prefillFromQuery();
+  track("prompt_builder_view");
 })();

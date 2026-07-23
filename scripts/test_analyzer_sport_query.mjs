@@ -16,3 +16,9 @@ test('NFL research links can target the NFL analyzer tab', () => {
   assert.match(nflPage, /href="\/analyzer\/\?sport=nfl"/);
   assert.match(source, /url\.searchParams\.set\('sport', sport\)/);
 });
+
+test('late Analyzer responses cannot render into a newer sport selection', () => {
+  assert.match(source, /generatedAtBySport\[sport\] = typeof data\.generated_at === 'string' \? data\.generated_at : '';/);
+  assert.match(source, /generatedAtBySport\[sport\] = typeof data\.generated_at === 'string' \? data\.generated_at : '';\s+if \(sport !== activeSport\) return;\s+activeGeneratedAt = generatedAtBySport\[sport\];/);
+  assert.match(source, /generatedAtBySport\[sport\] = '';\s+if \(sport !== activeSport\) return;\s+activeGeneratedAt = '';/);
+});

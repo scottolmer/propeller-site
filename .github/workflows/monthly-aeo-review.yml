@@ -1,0 +1,52 @@
+name: Monthly AEO review reminder
+
+on:
+  schedule:
+    - cron: "0 15 2 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  create-review-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open one review issue for the current month
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const month = new Date().toISOString().slice(0, 7);
+            const title = `AEO measurement review — ${month}`;
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100,
+            });
+            if (issues.some((issue) => issue.title === title)) {
+              core.info(`An open issue already exists: ${title}`);
+              return;
+            }
+            const body = [
+              'Run this review manually. Do not automate authenticated AI-search checks or publish partial results as a benchmark.',
+              '',
+              '## AEO observation checklist',
+              '- [ ] Copy the columns and observation method in `docs/seo/aeo-baseline-2026-07-13.csv` to a dated snapshot.',
+              '- [ ] Complete the declared 20-question × 5-platform × 3-run observation method, recording blocked or inconclusive checks explicitly.',
+              '- [ ] Check row counts and required fields locally; keep any incomplete snapshot labeled draft/non-comparable.',
+              '',
+              '## Search and conversion checklist',
+              '- [ ] Review Google Search Console queries/pages for the AI research hub, prompt builder, model card, and benchmark.',
+              '- [ ] Review privacy-safe prompt-builder events in GA4: views, starts, generations, copies, and walkthrough clicks.',
+              '- [ ] Record decisions, source dates, and any changes needed to the canonical content owners.',
+              '',
+              'This recurring issue is a reminder only; it does not access Google, GA4, or AI accounts.',
+            ].join('\n');
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body,
+            });
