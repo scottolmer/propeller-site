@@ -16,33 +16,28 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "f3ef4f69e28745d39d39cd9491d6ba44ac856c00500399f80136603ac7ed7a21",
+      "fingerprint": "b756aa32e333f47f3ec8b82c2a522595cf3de69891715310b9ab16bd6b2be860",
       "lastmod": "2026-07-24",
       "source": "analyzer/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/alex-call/": {
-      "fingerprint": "b99f05b2f1366eabcef7f01459c32ca9e757b9fe76564d22be280d3de9e8e3d8",
+      "fingerprint": "bee8ce70d6e8bcfd3cea54eb8a38919cc9d2a0cf6fbd26670c75a0163265644b",
       "lastmod": "2026-07-24",
       "source": "analyzer/mlb/alex-call/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/amed-rosario/": {
-      "fingerprint": "20b56358e7a1dc6c9a1d02da8fcee8be59317ca02227a5948dd857f3f955844e",
+      "fingerprint": "e268f85b86cccd2a88bd7fb7f2513efad7607cc6eec33d5663b4ee1ef21f34c1",
       "lastmod": "2026-07-24",
       "source": "analyzer/mlb/amed-rosario/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/austin-martin/": {
-      "fingerprint": "8fc30e5cff923acd096ffdc004af1e57f0fc42696ed6a99155271e6aecc59d41",
-      "lastmod": "2026-07-24",
-      "source": "analyzer/mlb/austin-martin/index.html"
-    },
     "https://propellerpicks.com/analyzer/mlb/brandon-valenzuela/": {
-      "fingerprint": "31627625ad356b3973afc50f7fd3db7a340e0bebdc27c6b802abdbf9c2a2f260",
+      "fingerprint": "ca93b8d106e68f23fcbec9a9be34d635ea2ed824250da3659564af3ffdec6c42",
       "lastmod": "2026-07-24",
       "source": "analyzer/mlb/brandon-valenzuela/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "e9336925d956ebcb89b523be5772bbee4b0aeb18168b688a161f59e86396604b",
-      "lastmod": "2026-07-23",
+      "fingerprint": "7229392aeb6f4495e717fa4644d99bfe0034b57679c3fa83c951471f94572f3e",
+      "lastmod": "2026-07-24",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -226,7 +221,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "8be96822f334d24d1e26746e8463dd0302e252ba221f90fa95b25af7326b0ae4",
+      "fingerprint": "c6a00b9d176e9bf55a9387ad10a77cc519481c2055990a26d02952291c43ce3e",
       "lastmod": "2026-07-24",
       "source": "picks/mlb/index.html"
     },
