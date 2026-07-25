@@ -14,6 +14,7 @@ HEADER = "/* Lucide icon subset v0.344.0. See /assets/js/LICENSE-lucide.txt. */\
 REQUIRED_DYNAMIC_ICONS = {
     "arrow-up": '<path d="m5 12 7-7 7 7" /> <path d="M12 19V5" />',
     "arrow-down": '<path d="M12 5v14" /> <path d="m19 12-7 7-7-7" />',
+    "circle-dot": '<circle cx="12" cy="12" r="10" /> <circle cx="12" cy="12" r="1" />',
 }
 
 
