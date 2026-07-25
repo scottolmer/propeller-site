@@ -16,14 +16,29 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "8cbde1a296297217dcbbf534518764fbfb5bf64bda187eff79862e6914d4db7f",
+      "fingerprint": "274206f4a0ac6695a23b5b0fb1c431e96851d128dc9dfa37ba2f851d3905d4e0",
       "lastmod": "2026-07-25",
       "source": "analyzer/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/andres-gimenez/": {
-      "fingerprint": "97306fff246d1e16247e1619152459783ce3fa3668cfbf7db7ab1c4b0c12892c",
+    "https://propellerpicks.com/analyzer/mlb/amed-rosario/": {
+      "fingerprint": "f8738e121124d793e060bd2762aa8860a4c639a770ce2b6d2e59a682d7c2ba53",
       "lastmod": "2026-07-25",
-      "source": "analyzer/mlb/andres-gimenez/index.html"
+      "source": "analyzer/mlb/amed-rosario/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/austin-martin/": {
+      "fingerprint": "11e92f1334aa3e7422c75f97059744a68b35972a7558e1b995e869f97c95155a",
+      "lastmod": "2026-07-25",
+      "source": "analyzer/mlb/austin-martin/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/nick-kurtz/": {
+      "fingerprint": "d48f1ed4b190bb580e99d13f2eb3054907f5929c923403c819e8c0c6580917d7",
+      "lastmod": "2026-07-25",
+      "source": "analyzer/mlb/nick-kurtz/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/victor-caratini/": {
+      "fingerprint": "4492be2899714e795e8a543c2c7bd0541717e3a8218ae2635ef2d3d7cb8a7c90",
+      "lastmod": "2026-07-25",
+      "source": "analyzer/mlb/victor-caratini/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "ae3884b5ec266d2615b140e295862a7f201a881fc9fcf01d6475ba076655f00e",
@@ -221,7 +236,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "5d32190e32776a7e2a64005e42bd822b2e881d53cf41222a74e11f287daf08d2",
+      "fingerprint": "48b56de75335d3c5a1b1c79a5b68cf9dc7d0709baae740346d7af31465495b60",
       "lastmod": "2026-07-25",
       "source": "picks/mlb/index.html"
     },
