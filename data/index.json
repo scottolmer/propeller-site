@@ -95,6 +95,11 @@
       "description": "Public model card defining inputs, confidence, limitations, and versions."
     },
     {
+      "id": "analyzer-vs-dfs-optimizer",
+      "url": "https://propellerpicks.com/guides/ai-player-prop-analyzer-vs-dfs-optimizer/",
+      "description": "Plain-language distinction between player-line analysis and DFS entry optimization; Propeller provides the former, not entry construction or submission."
+    },
+    {
       "id": "forward-publication-record",
       "url": "https://propellerpicks.com/research/prospective-record/",
       "data_url": "https://propellerpicks.com/data/prospective-picks.json",
@@ -104,6 +109,16 @@
       "id": "ai-tool-benchmark",
       "url": "https://propellerpicks.com/research/ai-player-prop-benchmark/",
       "description": "Disclosed editorial comparison of AI player-prop research tools."
+    },
+    {
+      "id": "research-evidence-hub",
+      "url": "https://propellerpicks.com/research/evidence/",
+      "description": "Citation-ready public index for methodology, data definitions, calculator logic, archive limits, and the publication-capture record."
+    },
+    {
+      "id": "research-library",
+      "url": "https://propellerpicks.com/research/",
+      "description": "Public library that routes researchers to the evidence hub, methodology, historical archive, publication capture, and disclosed comparisons."
     },
     {
       "id": "help-center",

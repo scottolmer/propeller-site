@@ -69,6 +69,7 @@ def main() -> None:
         assert f'href="{platform["payout_calculator"]}"' in module
         assert f'href="{platform["strategy_guide"]}"' in module
         assert 'href="/analyzer/"' in module
+        assert f'href="{MAP["analyzer_vs_optimizer_guide"]}"' in module
         assert 'href="#picks"' in module
         assert platform["official_source"]["url"] in module
         assert "Propeller Picks" in module
@@ -77,6 +78,8 @@ def main() -> None:
             assert f'href="{item["url"]}"' in module
         assert f'https://propellerpicks.com{platform["current_research"]}' in module
         assert "not a calibrated win probability or a guarantee" in module
+        assert MAP["analyzer_access_note"] in module
+        assert "Analyzer vs. DFS optimizer" in module
         assert "does not accept wagers, place wagers, submit entries" in module
         assert "not affiliated" in module
         assert "FAQPage" not in module
@@ -85,7 +88,7 @@ def main() -> None:
         evidence = platform["gsc_evidence"]
         assert evidence["date_range"] == "2026-06-16 to 2026-07-13"
         assert evidence["impressions"] > 0
-        assert platform["official_source"]["checked"] == "2026-07-16"
+        assert platform["official_source"]["checked"] == "2026-07-25"
         assert platform["official_source"]["url"].startswith("https://")
         if evidence["impressions"] <= 1:
             assert evidence["primary_cluster"] is None
@@ -122,6 +125,7 @@ def main() -> None:
     analyzer = source(MAP["shared_analyzer"])
     assert_canonical(analyzer, MAP["shared_analyzer"])
     assert "player prop analyzer" in title(analyzer).lower()
+    assert f'href="{MAP["analyzer_vs_optimizer_guide"]}"' in analyzer
     for platform in MAP["platforms"]:
         assert f'href="{platform["current_research"]}"' in analyzer
 

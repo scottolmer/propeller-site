@@ -11,7 +11,10 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 PAGES = {
     "ai-sports-betting/index.html": ("Free AI Sports Betting Tool", "/ai-sports-betting/"),
     "guides/how-ai-sports-betting-works/index.html": ("How AI Sports Betting Analysis Works", "/guides/how-ai-sports-betting-works/"),
+    "guides/ai-player-prop-analyzer-vs-dfs-optimizer/index.html": ("AI Player Prop Analyzer vs DFS Optimizer", "/guides/ai-player-prop-analyzer-vs-dfs-optimizer/"),
     "research/ai-player-prop-benchmark/index.html": ("AI Player Prop Tools Compared", "/research/ai-player-prop-benchmark/"),
+    "research/index.html": ("Propeller Research Library", "/research/"),
+    "research/evidence/index.html": ("Propeller Research Evidence Hub", "/research/evidence/"),
     "research/prospective-record/index.html": ("Forward ROI Record", "/research/prospective-record/"),
     "tools/ai-betting-prompt-builder/index.html": ("AI Sports Betting Prompt Builder", "/tools/ai-betting-prompt-builder/"),
 }
