@@ -34,17 +34,18 @@ def faq_schema(page: str) -> dict:
 
 
 class SharedCalculatorContracts(unittest.TestCase):
-    def test_every_page_has_seven_faqs_sources_and_research_links(self):
+    def test_every_page_has_expected_faqs_sources_and_research_links(self):
         expected_pick_links = {
             "prizepicks": "/picks/prizepicks/",
             "underdog": "/picks/underdog/",
             "pick6": "/picks/pick6/",
         }
+        expected_faq_counts = {"prizepicks": 7, "underdog": 8, "pick6": 8}
         for name, picks_link in expected_pick_links.items():
             with self.subTest(page=name):
                 page = source(name)
-                self.assertEqual(len(faq_schema(page)["mainEntity"]), 7)
-                self.assertEqual(page.count('class="faq-item"'), 7)
+                self.assertEqual(len(faq_schema(page)["mainEntity"]), expected_faq_counts[name])
+                self.assertEqual(page.count('class="faq-item"'), expected_faq_counts[name])
                 self.assertIn("Verified July", page)
                 self.assertIn('class="source-note"', page)
                 self.assertIn(f'href="{picks_link}"', page)
@@ -76,6 +77,22 @@ class UnderdogContracts(unittest.TestCase):
         self.assertIn("2:3.5", page)
         self.assertIn("8:120", page)
         self.assertIn("8:[{need:8,mult:80}", page)
+        self.assertIn("published base return for four correct picks is 0.25x", page)
+        self.assertIn("not an ROI or profitability estimate", page)
+        self.assertNotIn("Scenario expected return", page)
+        self.assertNotIn('class="result-label">Profit', page)
+        self.assertNotIn('class="flex-cell header">Profit', page)
+        self.assertIn("function money(value)", page)
+        self.assertIn("money(Math.abs(payoutMinusEntry))", page)
+        self.assertIn("money(amount*t.mult)", page)
+        self.assertNotIn("payoutMinusEntry.toFixed(0)", page)
+        self.assertNotIn("(amount*t.mult).toFixed(0)", page)
+
+    def test_six_pick_flex_quarter_return_keeps_cents(self):
+        entry = 10.0
+        payout = entry * 0.25
+        self.assertEqual(f"${payout:,.2f}", "$2.50")
+        self.assertEqual(f"-${abs(payout - entry):,.2f}", "-$7.50")
 
     def test_invalid_custom_amount_resets_visible_state(self):
         page = source("underdog")
@@ -93,7 +110,26 @@ class Pick6Contracts(unittest.TestCase):
         self.assertNotIn("const PAYOUTS", page)
         self.assertNotIn("40x", page)
         self.assertIn("payout = amount * mult", page)
-        self.assertIn("const scenarioReturn = (payout * prob) - amount", page)
+        self.assertIn("Pick count and entry amount cannot derive that current multiplier", page)
+        self.assertIn("does not estimate ROI, expected value, or profitability", page)
+        self.assertNotIn("Scenario expected return", page)
+        self.assertNotIn("const scenarioReturn", page)
+
+    def test_public_calculator_claims_match_product_fact_ledger(self):
+        facts = json.loads((ROOT / "data/product-facts.json").read_text(encoding="utf-8"))
+        calculators = facts["payout_calculators"]
+        self.assertEqual(
+            calculators["underdog"]["six_pick_flex_four_correct_base_return"],
+            "0.25x",
+        )
+        self.assertTrue(
+            calculators["draftkings_pick6"]["requires_visitor_entered_final_screen_multiplier"]
+        )
+        self.assertFalse(
+            calculators["draftkings_pick6"]["pick_count_alone_determines_multiplier"]
+        )
+        self.assertFalse(calculators["claim_policy"]["estimates_roi"])
+        self.assertFalse(calculators["claim_policy"]["recommends_profitability"])
 
 
 if __name__ == "__main__":

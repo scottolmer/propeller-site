@@ -64,7 +64,7 @@ def schema() -> str:
                 "description": DESCRIPTION,
                 "isPartOf": {"@id": "https://propellerpicks.com/#website"},
                 "about": {"@id": "https://propellerpicks.com/#software"},
-                "dateModified": "2026-07-15",
+                "dateModified": "2026-07-25",
             },
             {
                 "@type": "SoftwareApplication",
@@ -479,6 +479,11 @@ def main() -> None:
         '<a class="button secondary" href="/ai-sports-betting/">Explore the AI research hub</a>',
     )
     html = html.replace(
+        '<a class="button" href="https://app.propellerpicks.com/signup">Analyze today’s props free <span aria-hidden="true">→</span></a>',
+        '<a class="button" href="/analyzer/">Try the free AI player prop analyzer <span aria-hidden="true">→</span></a>',
+        1,
+    )
+    html = html.replace(
         '<img src="/images/web-app-dashboard-live.png" width="1462" height="797"',
         '<img src="/images/web-app-dashboard-live.png" srcset="/images/web-app-dashboard-live-640.avif 640w, /images/web-app-dashboard-live-768.avif 768w, /images/web-app-dashboard-live-1024.avif 1024w, /images/web-app-dashboard-live.png 1462w" sizes="(max-width: 1080px) calc(100vw - 32px), 56vw" width="1462" height="797" fetchpriority="high" decoding="async"',
     )
@@ -493,15 +498,15 @@ def main() -> None:
     html = html.replace("Public graded record", "Documented historical archive")
     html = html.replace(
         '<div class="proof-item proof-live"><small>Verified record</small><strong>● Live</strong><span data-record-updated>Snapshot · Jul 7, 2026 · live API in production</span></div>',
-        '<div class="proof-item proof-live"><small>Historical archive</small><strong>● Dated</strong><span data-record-updated>Static API snapshot · July 15, 2026; live refresh enabled</span></div>',
+        '<div class="proof-item proof-live"><small>Historical archive</small><strong>● Dated</strong><span data-record-updated>Static API snapshot · July 25, 2026; live refresh enabled</span></div>',
     )
     html = html.replace(
         '<div class="proof-item"><small>Graded props</small><strong data-record-total>2M+</strong><span data-record-total-detail>2,099,988 total props</span></div>',
-        '<div class="proof-item"><small>Collapsed ledger</small><strong data-record-total>283K</strong><span data-record-total-detail>283,187 ledger entries</span></div>',
+        '<div class="proof-item"><small>Collapsed ledger</small><strong data-record-total>315K</strong><span data-record-total-detail>314,776 ledger entries</span></div>',
     )
     html = html.replace(
         '<div class="proof-item"><small>Recorded outcomes</small><strong data-record-outcome>1.41M W · 687.5K L · 30 P</strong><span>Pushes tracked separately</span></div>',
-        '<div class="proof-item"><small>Historical database</small><strong data-record-raw-total>2.11M</strong><span>Raw graded analysis rows</span></div>',
+        '<div class="proof-item"><small>Historical database</small><strong data-record-raw-total>2.34M</strong><span>Raw graded analysis rows</span></div>',
     )
     html = html.replace(
         '<div class="proof-item"><small>Historical win rate</small><strong data-record-win-rate>67.3%</strong><span>Past performance is not predictive</span></div>',
@@ -509,14 +514,19 @@ def main() -> None:
     )
     html = html.replace(
         '<div class="record-copy scroll-reveal"><p class="section-kicker">03 / Proof before the pitch</p><h2>Trust the record, not the promise.</h2><p>Every published model output is logged before the result is known, graded against the final stat, and rolled into a public record you can inspect.</p><a class="button" href="/results/">Inspect every graded result →</a></div>',
-        '<div class="record-copy scroll-reveal"><p class="section-kicker">03 / A record you can check</p><h2>See the record before you decide.</h2><p>We log featured picks before the result is known, then grade each one afterward. The public record treats every pick the same: a $1 stake at the price shown when it was posted. That gives you a result you can check—not a promise about what happens next.</p><a class="button" href="/research/prospective-record/">View the public record →</a><p class="record-method-link"><a href="/how-it-works/">See how the record is calculated →</a></p></div>',
+        '<div class="record-copy scroll-reveal"><p class="section-kicker">03 / A record you can check</p><h2>See the record before you decide.</h2><p>We record the first observed version of featured picks, then grade each one afterward. The current ledger does not independently verify event-start ordering or outcome timing. The public record applies the same $1-stake method to every eligible priced pick, giving you a result you can check—not a promise about what happens next.</p><a class="button" href="/research/prospective-record/">View the public record →</a><p class="record-method-link"><a href="/how-it-works/">See how the record is calculated →</a><br><a href="/research/ai-player-prop-benchmark/">Compare AI research transparency →</a></p></div>',
     )
     html = re.sub(
         r'<div class="record-board scroll-reveal">.*?<div class="record-update" data-record-updated>Snapshot · Jul 7, 2026 · live API in production</div></div>',
-        '<div class="record-board scroll-reveal"><div class="record-head"><span>Public pick record</span><span>Logged before results</span></div><div class="record-main"><div class="record-primary"><small>Return on $1 stakes</small><strong data-forward-roi data-roi-tone="neutral">—</strong><span data-forward-roi-detail>Waiting for the first completed pick with a recorded price.</span></div><div class="record-stats"><div class="record-stat"><small>Completed picks with a price</small><strong data-forward-priced-settled>0</strong></div><div class="record-stat"><small>Profit or loss from $1 stakes</small><strong data-forward-net-units data-roi-tone="neutral">0.00u</strong></div></div></div><div class="record-update"><span data-forward-roi-updated>The record starts with the first eligible public pick.</span><span class="record-source-links"><a href="/research/prospective-record/">View public record</a><a href="/how-it-works/">How we calculate it</a></span></div></div>',
+        '<div class="record-board scroll-reveal"><div class="record-head"><span>Public pick record</span><span>First-observed capture</span></div><div class="record-main"><div class="record-primary"><small>Return on $1 stakes</small><strong data-forward-roi data-roi-tone="neutral">—</strong><span data-forward-roi-detail>Waiting for the first completed pick with a recorded price.</span></div><div class="record-stats"><div class="record-stat"><small>Completed picks with a price</small><strong data-forward-priced-settled>0</strong></div><div class="record-stat"><small>Profit or loss from $1 stakes</small><strong data-forward-net-units data-roi-tone="neutral">0.00u</strong></div></div></div><div class="record-update"><span data-forward-roi-updated>The record starts with the first eligible public pick.</span><span class="record-source-links"><a href="/research/prospective-record/">View public record</a><a href="/how-it-works/">How we calculate it</a><a href="/research/ai-player-prop-benchmark/">Transparency benchmark</a></span></div></div>',
         html,
         count=1,
         flags=re.DOTALL,
+    )
+    html = html.replace(
+        '<div class="benefit"><span>03</span><div><h3>Keep the workflow moving</h3><p>Save props, build combinations, track outcomes, and check changes on mobile.</p></div></div>',
+        '<div class="benefit"><span>03</span><div><h3>Keep the workflow moving</h3><p>Save props, build combinations, track outcomes, and check changes on mobile.</p></div></div>\n            <div class="benefit"><span>04</span><div><h3>Compare fantasy outcomes as ranges</h3><p>Use MLB hitter floor, point, and ceiling projections on one DraftKings scoring basis. <a href="/fantasy/">Explore fantasy projections →</a></p></div></div>',
+        1,
     )
     html = html.replace('    <section class="final-cta">', faq_section() + '    <section class="final-cta">', 1)
     old_nav_start = html.find('    const nav = document.querySelector(".nav");')

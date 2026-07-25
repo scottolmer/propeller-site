@@ -163,6 +163,13 @@ body.pp-ai-sports-betting .asb-board__output { margin: 18px; padding: 18px; bord
 body.pp-ai-sports-betting .asb-board__output > span { display: block; margin-bottom: 11px; color: var(--pp-lime); font: 600 10px var(--pp-mono); letter-spacing: .1em; }
 body.pp-ai-sports-betting .asb-board__output strong { color: #fff; font: 600 clamp(23px,2vw,29px)/1 var(--pp-display); letter-spacing: -.04em; }
 body.pp-ai-sports-betting .asb-board__output p { margin: 14px 0 0; color: #b6c1b8; font-size: 12px; line-height: 1.45; }
+body.pp-ai-sports-betting .asb-answer { scroll-margin-top: 68px; padding: clamp(66px,8vw,104px) 0; border-bottom: 1px solid var(--pp-line); background: var(--pp-paper-light); }
+body.pp-ai-sports-betting .asb-answer__grid { display: grid; grid-template-columns: minmax(290px,.8fr) minmax(0,1.2fr); gap: clamp(42px,8vw,120px); align-items: start; }
+body.pp-ai-sports-betting .asb-answer h2 { max-width: 520px; margin: 0; scroll-margin-top: 90px; color: var(--pp-ink); font: 600 clamp(38px,4.5vw,62px)/.96 var(--pp-display); letter-spacing: -.055em; }
+body.pp-ai-sports-betting .asb-answer__copy > p { max-width: 740px; margin: 0 0 18px; color: var(--pp-sub); font-size: clamp(17px,1.65vw,21px); line-height: 1.58; }
+body.pp-ai-sports-betting .asb-answer__copy strong { color: var(--pp-ink); }
+body.pp-ai-sports-betting .asb-answer__links { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 28px; }
+body.pp-ai-sports-betting .asb-answer__links a { min-height: 44px; display: inline-flex; align-items: center; color: var(--pp-orange-dark); font: 600 12px var(--pp-mono); letter-spacing: .02em; text-underline-offset: 4px; }
 body.pp-ai-sports-betting .asb-principle { padding: clamp(76px,10vw,132px) 0; border-bottom: 1px solid var(--pp-line); background: var(--pp-paper-light); }
 body.pp-ai-sports-betting .asb-section-head { display: grid; grid-template-columns: minmax(160px,.55fr) minmax(0,1.55fr); gap: 42px; align-items: start; margin-bottom: clamp(40px,6vw,72px); }
 body.pp-ai-sports-betting .asb-section-head > p, body.pp-ai-sports-betting .asb-loop__intro > p, body.pp-ai-sports-betting .asb-library__header > p, body.pp-ai-sports-betting .asb-cta p { margin: 6px 0 0; color: var(--pp-orange-dark); font: 600 11px/1.2 var(--pp-mono); letter-spacing: .1em; text-transform: uppercase; }
@@ -251,7 +258,7 @@ body.pp-ai-sports-betting .asb-cta__policy { color: var(--pp-ink); font: 600 13p
   @keyframes asb-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
 }
 @media (max-width: 940px) {
-  body.pp-ai-sports-betting .asb-hero__grid, body.pp-ai-sports-betting .asb-evidence__grid, body.pp-ai-sports-betting .asb-faq__grid { grid-template-columns: 1fr; }
+  body.pp-ai-sports-betting .asb-hero__grid, body.pp-ai-sports-betting .asb-answer__grid, body.pp-ai-sports-betting .asb-evidence__grid, body.pp-ai-sports-betting .asb-faq__grid { grid-template-columns: 1fr; }
   body.pp-ai-sports-betting .asb-hero__grid { gap: 48px; }
   body.pp-ai-sports-betting .asb-board { max-width: 620px; }
   body.pp-ai-sports-betting .asb-loop__intro { grid-template-columns: minmax(150px,.45fr) 1fr; }
