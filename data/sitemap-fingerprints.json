@@ -16,19 +16,14 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "912a88a662d0175938f5e0c6062f4600e90e3d8781c40713f884398f2501b467",
+      "fingerprint": "8cbde1a296297217dcbbf534518764fbfb5bf64bda187eff79862e6914d4db7f",
       "lastmod": "2026-07-25",
       "source": "analyzer/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/andres-gimenez/": {
-      "fingerprint": "d0e42c890f1a73e0367b202085bec71e8170c7de86a0600a8c05f5ecafcf895b",
+      "fingerprint": "8228fba5e0ceb40460e7dde9a4c1a8bcd8ed4b6566f48a35c7c7bed2ce048434",
       "lastmod": "2026-07-25",
       "source": "analyzer/mlb/andres-gimenez/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/eury-perez/": {
-      "fingerprint": "010f28c9e2d0d554895793a7b38526e3019d5f595f9417bffb6fffaa79613e84",
-      "lastmod": "2026-07-25",
-      "source": "analyzer/mlb/eury-perez/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "7229392aeb6f4495e717fa4644d99bfe0034b57679c3fa83c951471f94572f3e",
@@ -221,7 +216,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "d86739c4385ec87bdbefc13efc79cada6d00ea9e1962a5b74cf57d3759a96718",
+      "fingerprint": "5d32190e32776a7e2a64005e42bd822b2e881d53cf41222a74e11f287daf08d2",
       "lastmod": "2026-07-25",
       "source": "picks/mlb/index.html"
     },
