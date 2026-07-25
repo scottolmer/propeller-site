@@ -96,7 +96,7 @@
       "source": "fantasy/mlb/index.html"
     },
     "https://propellerpicks.com/guides/": {
-      "fingerprint": "d40fe53dab448a1289acd8bfbfb803c9edb2c1136604d5b1c286d72c4e19b56b",
+      "fingerprint": "bc39f152236ce30b19c0b60edae533218b79964a0508931656f9f3a2c92a3ae9",
       "lastmod": "2026-07-25",
       "source": "guides/index.html"
     },
@@ -130,9 +130,14 @@
       "lastmod": "2026-07-16",
       "source": "guides/pick6-strategy/index.html"
     },
+    "https://propellerpicks.com/guides/prizepicks-demons-goblins/": {
+      "fingerprint": "4a35078154747b3343bef1e116f5da200cbd337d34b1b3c30b1be291bb045f48",
+      "lastmod": "2026-07-25",
+      "source": "guides/prizepicks-demons-goblins/index.html"
+    },
     "https://propellerpicks.com/guides/prizepicks-strategy/": {
-      "fingerprint": "f7b88903c9d3573ca04744c396e38b2ae0be637b01e7a4b03f111e67c8bf64ba",
-      "lastmod": "2026-07-16",
+      "fingerprint": "e6fa87c73479dcf2063c9230b2b3d1c521caf88ab66e0c37581d385a7d90bd31",
+      "lastmod": "2026-07-25",
       "source": "guides/prizepicks-strategy/index.html"
     },
     "https://propellerpicks.com/guides/underdog-strategy/": {
