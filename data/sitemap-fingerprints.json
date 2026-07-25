@@ -1,7 +1,7 @@
 {
   "entries": {
     "https://propellerpicks.com/": {
-      "fingerprint": "66efdd523e684f910e7567c854f5807d8d90de76cb83d61632e7d0e344d5c0f8",
+      "fingerprint": "d632143aa1da7fe9bc6f19291053c42d873ada4f52f2a8b50d5fa44a7da22f53",
       "lastmod": "2026-07-25",
       "source": "index.html"
     },
@@ -11,8 +11,8 @@
       "source": "about/index.html"
     },
     "https://propellerpicks.com/ai-sports-betting/": {
-      "fingerprint": "8adef429d3a72fbe931db3f3b02c7e3b2bb6b85596ea0a05643349faf4a636f5",
-      "lastmod": "2026-07-23",
+      "fingerprint": "7c016a2e0f08d866b6fdd7769213a483ab4d7066e97d3f557ca27c91a8dcf3c3",
+      "lastmod": "2026-07-25",
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
@@ -271,8 +271,8 @@
       "source": "research/index.html"
     },
     "https://propellerpicks.com/research/ai-player-prop-benchmark/": {
-      "fingerprint": "32ce63d6d3f61ce99efb8ff19d1e872f3da27f94b016de983c42ed3eaf827d80",
-      "lastmod": "2026-07-23",
+      "fingerprint": "83a10e2681d4d2b6ef1736e9874d5feccde919d4ad7b0378f135e1a65a5233f0",
+      "lastmod": "2026-07-25",
       "source": "research/ai-player-prop-benchmark/index.html"
     },
     "https://propellerpicks.com/research/evidence/": {
@@ -306,7 +306,7 @@
       "source": "tools/ai-betting-prompt-builder/index.html"
     },
     "https://propellerpicks.com/tools/pick6-payout-calculator/": {
-      "fingerprint": "78090b2be28469b74b932172c1efa35c64c924e8ad4535479962eabf3dfe22e8",
+      "fingerprint": "ef08c166b23eceb71b577936902fa7e43907d06803634cfd9097ad579b50fb0a",
       "lastmod": "2026-07-25",
       "source": "tools/pick6-payout-calculator/index.html"
     },
@@ -316,7 +316,7 @@
       "source": "tools/prizepicks-payout-calculator/index.html"
     },
     "https://propellerpicks.com/tools/underdog-payout-calculator/": {
-      "fingerprint": "021ab2a92c392accc9f0f8f930da76facbc9a798ae0d952eaf5ff83a93be48fd",
+      "fingerprint": "fb330758c3f9d8f453cdec1b75c65b56dcdf129284ac1c2071f800d2fae146f4",
       "lastmod": "2026-07-25",
       "source": "tools/underdog-payout-calculator/index.html"
     },

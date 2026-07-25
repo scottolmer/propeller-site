@@ -67,6 +67,14 @@
     },
     {
       "@type": "Question",
+      "name": "What does 4 of 6 pay on an Underdog Flex entry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Underdog's published base table lists a 0.25x return for four correct picks on a six-pick Flex entry. That is $2.50 on a $10 entry before selection modifiers or entry-specific adjustments. This is payout arithmetic, not an ROI or profitability estimate."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "What happens after one or two losses on an Underdog Flex entry?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -221,7 +229,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
     <div class="results" id="results" aria-live="polite">
       <div class="result-grid" id="resultGrid"></div>
       <div id="flexBreakdown"></div>
-      <div id="evBar"></div>
+      <div id="scenarioNote"></div>
       <p class="result-sub" style="margin-top:16px;text-align:center">Base-table estimate only. Confirm the final multiplier and grading in Underdog.</p>
       <div class="result-actions" aria-label="Next research steps"><a class="result-link primary" href="/picks/underdog/">Research Underdog picks</a><a class="result-link" href="/analyzer/">Free AI player prop analyzer</a></div>
       <div style="margin-top:16px;text-align:center"><button class="copy-btn" type="button" onclick="copyResults()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy Results</button></div>
@@ -230,9 +238,10 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
 
   <section class="answer-block" aria-labelledby="calculator-answer-heading">
     <h2 id="calculator-answer-heading">How this Underdog payout calculator works</h2>
-    <p>This free calculator applies Underdog's published base Standard and Flex payout tables to your entry amount. It can estimate a base payout and a visitor-supplied hit-rate scenario, but it cannot reproduce every entry-specific modifier or determine how Underdog will grade a live entry.</p>
+    <p>This free calculator applies Underdog's published base Standard and Flex payout tables to your entry amount. It can estimate a base payout and a visitor-supplied hit-rate scenario, but it cannot reproduce every entry-specific modifier or determine how Underdog will grade a live entry. It does not estimate ROI or recommend whether an entry is profitable.</p>
     <ul>
       <li><strong>Base payouts:</strong> Standard entries currently range from 3.5x for two picks to 120x for eight picks. Flex sweep payouts range from 3.25x for three picks to 80x for eight picks, with smaller listed returns after eligible losses.</li>
+      <li><strong>Six-pick Flex:</strong> the published base return for four correct picks is 0.25x. A $10 entry returns $2.50 before selection modifiers or entry-specific adjustments.</li>
       <li><strong>Ties, DNPs, and voids:</strong> a tied projection or qualifying DNP is generally voided. A still-valid entry pays based on its remaining active picks; an entry made invalid by a void is refunded.</li>
       <li><strong>Rescue:</strong> an eligible Higher selection may qualify when a player participates in the first half but does not return in the second. Rescue depends on entry, sport, projection, and promotion rules and remains at Underdog's discretion.</li>
       <li><strong>Limits:</strong> selection multipliers, correlations, promotions, contest type, voids, and state-specific formats can change the final amount. Underdog lists a 5,000x maximum multiplier for Standard and Flex entries, separate from the 120x eight-pick Standard base payout.</li>
@@ -293,6 +302,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
     <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">How much does Underdog pay for a 4-pick Standard entry?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>A 4-pick Standard entry on Underdog pays 10x your entry. A $10 entry returns $100 if all 4 picks hit.</p></div></div>
     <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">How do Underdog Standard payouts work?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>A Standard entry requires every active pick to be correct. Current base payouts range from 3.5x for two picks to 120x for eight picks, before selection multipliers, correlated projections, promotions, or other entry-specific adjustments.</p></div></div>
     <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">How do Underdog Flex payouts work?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>Flex entries can return a reduced amount when some picks lose. Base sweep payouts range from 3.25x for three picks to 80x for eight picks, while the lower payout depends on the number of correct picks and the multiplier shown on the entry.</p></div></div>
+    <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">What does 4 of 6 pay on an Underdog Flex entry?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>Underdog's published base table lists a 0.25x return for four correct picks on a six-pick Flex entry. That is $2.50 on a $10 entry before selection modifiers or entry-specific adjustments. This is payout arithmetic, not an ROI or profitability estimate.</p></div></div>
     <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">What happens after one or two losses on an Underdog Flex entry?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>A three- through eight-pick Flex entry has a listed base return after one loss. Six- through eight-pick Flex entries also have a listed base return after two losses. These are up-to amounts, so the actual result depends on the entry's selections and displayed multiplier.</p></div></div>
     <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">What happens after a tie, DNP, or void on Underdog?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>A tied projection or qualifying DNP is generally voided. If at least two eligible picks from different teams remain, an otherwise winning entry pays for the remaining active pick count; if the entry becomes invalid, Underdog refunds it. A qualifying Rescue is separate, conditional, and applied at Underdog's discretion.</p></div></div>
     <div class="faq-item"><button class="faq-q" type="button" onclick="toggleFaq(this)" aria-expanded="false">What is the difference between Underdog's 120x base payout and maximum multiplier?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="faq-a"><p>The 120x multiplier is the current base payout for an eight-pick Standard entry. Underdog separately states that selection modifiers can raise a Standard or Flex entry as high as a 5,000x maximum multiplier.</p></div></div>
@@ -363,6 +373,7 @@ function setCustom(){const input=document.getElementById('customAmt');const raw=
 
 function getHitRate(){const input=document.getElementById('hitRate');const raw=Number(input?.value||55);const clamped=Math.max(1,Math.min(99,raw));if(input&&Number(input.value)!==clamped)input.value=clamped;return clamped/100}
 function hitRateLabel(){return `${(getHitRate()*100).toFixed(0)}%`}
+function money(value){return value.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
 function refreshIfVisible(){if(document.getElementById('results')?.classList.contains('show'))calculate()}
 
 function updateUI(){
@@ -381,32 +392,31 @@ function calculate(){
   const n=parseInt(document.getElementById('numPicks').value);
   const grid=document.getElementById('resultGrid');
   const flexDiv=document.getElementById('flexBreakdown');
-  const evDiv=document.getElementById('evBar');
+  const scenarioNote=document.getElementById('scenarioNote');
   const wr=getHitRate();
   const wrText=hitRateLabel();
 
   if(type==='standard'){
-    const mult=STD[n];const payout=amount*mult;const profit=payout-amount;
-    const prob=Math.pow(wr,n);const ev=(payout*prob)-amount;
+    const mult=STD[n];const payout=amount*mult;const returnAboveEntry=payout-amount;
+    const prob=Math.pow(wr,n);
     grid.innerHTML=`
       <div class="result-cell"><div class="result-label">Multiplier</div><div class="result-value orange">${mult}x</div></div>
-      <div class="result-cell"><div class="result-label">Payout</div><div class="result-value green">$${payout.toLocaleString()}</div><div class="result-sub">on $${amount} entry</div></div>
-      <div class="result-cell"><div class="result-label">Profit</div><div class="result-value green">+$${profit.toLocaleString()}</div></div>
+      <div class="result-cell"><div class="result-label">Payout</div><div class="result-value green">$${money(payout)}</div><div class="result-sub">on $${money(amount)} entry</div></div>
+      <div class="result-cell"><div class="result-label">Payout Minus Entry</div><div class="result-value green">+$${money(returnAboveEntry)}</div></div>
       <div class="result-cell"><div class="result-label">Scenario Sweep Probability</div><div class="result-value">${(prob*100).toFixed(1)}%</div><div class="result-sub">using your ${wrText} per-pick assumption</div></div>`;
     flexDiv.innerHTML='';
-    evDiv.innerHTML=`<div class="prob-label"><span>Scenario expected return per $${amount} entry</span><span style="color:${ev>0?'var(--win)':'var(--loss)'};font-weight:700;font-family:var(--mono)">${ev>=0?'+':''}$${ev.toFixed(2)}</span></div><div class="prob-label" style="margin-top:4px"><span style="font-size:12px;color:var(--text-3)">Based only on your ${wrText} per-pick assumption; not a Propeller prediction</span></div>`;
+    scenarioNote.innerHTML=`<div class="prob-label"><span>Probability scenario only</span><span style="font-size:12px;color:var(--text-3)">Based on your ${wrText} per-pick assumption; no ROI or profitability estimate</span></div>`;
   } else {
     const tiers=FLEX[n];if(!tiers)return;
     const topMult=tiers[0].mult;
-    grid.innerHTML=`<div class="result-cell"><div class="result-label">Base Sweep Payout</div><div class="result-value green">$${(amount*topMult).toLocaleString()}</div><div class="result-sub">${n}/${n} correct · ${topMult}x base</div></div>`;
+    grid.innerHTML=`<div class="result-cell"><div class="result-label">Base Sweep Payout</div><div class="result-value green">$${money(amount*topMult)}</div><div class="result-sub">${n}/${n} correct · ${topMult}x base</div></div>`;
     let rows=tiers.map(t=>{
-      const prob=binomProb(n,t.need,wr);const payout=amount*t.mult;const pl=payout-amount;
-      return `<div class="flex-cell"><div class="val">${t.need}/${n}</div><div class="sub">${(prob*100).toFixed(1)}% scenario probability</div></div><div class="flex-cell"><div class="val orange">${t.mult}x</div></div><div class="flex-cell"><div class="val ${pl>=0?'green':''}">${pl>=0?'+':''}$${pl.toFixed(0)}</div><div class="sub">$${payout.toFixed(0)} base payout</div></div>`;
+      const prob=binomProb(n,t.need,wr);const payout=amount*t.mult;const payoutMinusEntry=payout-amount;
+      const payoutMinusEntryLabel=`${payoutMinusEntry>=0?'+':'-'}$${money(Math.abs(payoutMinusEntry))}`;
+      return `<div class="flex-cell"><div class="val">${t.need}/${n}</div><div class="sub">${(prob*100).toFixed(1)}% scenario probability</div></div><div class="flex-cell"><div class="val orange">${t.mult}x</div></div><div class="flex-cell"><div class="val ${payoutMinusEntry>=0?'green':''}">${payoutMinusEntryLabel}</div><div class="sub">$${money(payout)} base payout</div></div>`;
     }).join('');
-    flexDiv.innerHTML=`<div class="flex-row"><div class="flex-cell header">Result</div><div class="flex-cell header">Multiplier</div><div class="flex-cell header">Profit</div>${rows}</div>`;
-    let ev=-amount;
-    for(let k=0;k<=n;k++){const prob=binomProb(n,k,wr);const tier=tiers.find(t=>t.need===k);if(tier)ev+=prob*amount*tier.mult}
-    evDiv.innerHTML=`<div class="prob-label" style="margin-top:16px"><span>Scenario expected return per $${amount} Flex entry</span><span style="color:${ev>0?'var(--win)':'var(--loss)'};font-weight:700;font-family:var(--mono)">${ev>=0?'+':''}$${ev.toFixed(2)}</span></div><div class="prob-label" style="margin-top:4px"><span style="font-size:12px;color:var(--text-3)">Based only on your ${wrText} per-pick assumption; not a Propeller prediction</span></div>`;
+    flexDiv.innerHTML=`<div class="flex-row"><div class="flex-cell header">Result</div><div class="flex-cell header">Multiplier</div><div class="flex-cell header">Payout Minus Entry</div>${rows}</div>`;
+    scenarioNote.innerHTML=`<div class="prob-label" style="margin-top:16px"><span>Probability scenario only</span><span style="font-size:12px;color:var(--text-3)">Based on your ${wrText} per-pick assumption; no ROI or profitability estimate</span></div>`;
   }
   document.getElementById('results').classList.add('show');
   gtag('event','calculator_used',{platform:'underdog',entry_type:type,num_picks:n,amount:amount});
@@ -416,8 +426,8 @@ function calculate(){
 function copyResults(){
   const type=document.getElementById('entryType').value;const n=document.getElementById('numPicks').value;
   let text=`Underdog ${type==='standard'?'Standard':'Flex'} · ${n} picks · $${amount} entry\n`;
-  if(type==='standard'){text+=`Base payout: $${(amount*STD[n]).toLocaleString()} (${STD[n]}x)\nScenario sweep probability: ${(Math.pow(getHitRate(),n)*100).toFixed(1)}% using your ${hitRateLabel()}/pick assumption\n`}
-  else{FLEX[n].forEach(t=>{text+=`${t.need}/${n}: $${(amount*t.mult).toFixed(0)} (${t.mult}x)\n`})}
+  if(type==='standard'){text+=`Base payout: $${money(amount*STD[n])} (${STD[n]}x)\nScenario sweep probability: ${(Math.pow(getHitRate(),n)*100).toFixed(1)}% using your ${hitRateLabel()}/pick assumption\n`}
+  else{FLEX[n].forEach(t=>{text+=`${t.need}/${n}: $${money(amount*t.mult)} (${t.mult}x)\n`})}
   text+=`\nCalculated at propellerpicks.com/tools/underdog-payout-calculator/`;
   window.ppPaidSearchEvents?.trackCopy({entry_type:type,num_picks:Number(n),amount:amount});
   navigator.clipboard.writeText(text).then(()=>{const b=document.querySelector('.copy-btn');b.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--win)" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg> Copied!';setTimeout(()=>{b.innerHTML='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg> Copy Results'},2000)});

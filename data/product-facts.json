@@ -66,5 +66,27 @@
     "availability_note": "Current feature availability, eligibility, exclusions, and terms are shown at signup.",
     "pricing_url": "https://propellerpicks.com/pricing.md",
     "signup_url": "https://app.propellerpicks.com/signup"
+  },
+  "payout_calculators": {
+    "last_verified": "2026-07-25",
+    "claim_policy": {
+      "estimates_roi": false,
+      "estimates_expected_value": false,
+      "recommends_profitability": false,
+      "visitor_hit_rate_is_prediction": false
+    },
+    "underdog": {
+      "canonical_url": "https://propellerpicks.com/tools/underdog-payout-calculator/",
+      "official_source_url": "https://help.underdogsports.com/en/articles/13780101-pick-em-standard-flex-entry-payouts",
+      "six_pick_flex_four_correct_base_return": "0.25x",
+      "final_entry_screen_controls": true
+    },
+    "draftkings_pick6": {
+      "canonical_url": "https://propellerpicks.com/tools/pick6-payout-calculator/",
+      "official_rules_url": "https://pick6.draftkings.com/pick6-rules-and-scoring",
+      "requires_visitor_entered_final_screen_multiplier": true,
+      "pick_count_alone_determines_multiplier": false,
+      "final_contest_winnings_can_include_extra_winnings": true
+    }
   }
 }
