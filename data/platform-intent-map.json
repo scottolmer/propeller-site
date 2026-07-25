@@ -1,6 +1,8 @@
 {
-  "version": "2026-07-16",
+  "version": "2026-07-25",
   "shared_analyzer": "/analyzer/",
+  "analyzer_vs_optimizer_guide": "/guides/ai-player-prop-analyzer-vs-dfs-optimizer/",
+  "analyzer_access_note": "The public player prop analyzer is free to use without an account. It helps evaluate a displayed player line; it does not build or submit DFS entries.",
   "feature_intents": {
     "fantasy": {
       "category_owner": "/fantasy/",
@@ -26,7 +28,7 @@
       "official_source": {
         "label": "PrizePicks Player Picks help",
         "url": "https://www.prizepicks.com/help-center/player-picks",
-        "checked": "2026-07-16"
+        "checked": "2026-07-25"
       },
       "evidence_links": [
         {"label": "How Propeller Picks analyzes props", "url": "/guides/how-ai-sports-betting-works/"},
@@ -75,7 +77,7 @@
       "official_source": {
         "label": "Underdog Fantasy Pick'em",
         "url": "https://www.underdogsports.com/games/pickem",
-        "checked": "2026-07-16"
+        "checked": "2026-07-25"
       },
       "evidence_links": [
         {"label": "How Propeller Picks analyzes props", "url": "/guides/how-ai-sports-betting-works/"},
@@ -124,7 +126,7 @@
       "official_source": {
         "label": "DraftKings Pick6 how to play",
         "url": "https://pick6.draftkings.com/how-to-play-pick6",
-        "checked": "2026-07-16"
+        "checked": "2026-07-25"
       },
       "evidence_links": [
         {"label": "How Propeller Picks analyzes props", "url": "/guides/how-ai-sports-betting-works/"},

@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+from datetime import date
 from pathlib import Path
 
 
@@ -34,7 +35,7 @@ def replace_managed(source: str, start: str, end: str, content: str) -> str:
     return f"{before}{content}{after}"
 
 
-def render_module(platform: dict[str, object]) -> str:
+def render_module(platform: dict[str, object], payload: dict[str, object]) -> str:
     module = platform["answer_module"]
     compact_class = " pp-platform-answer--compact" if module.get("compact") else ""
     cards = "\n".join(
@@ -50,6 +51,10 @@ def render_module(platform: dict[str, object]) -> str:
         f'<a href="{esc(item["url"])}">{esc(item["label"])}</a>'
         for item in platform["evidence_links"]
     )
+    guide = payload["analyzer_vs_optimizer_guide"]
+    access_note = payload["analyzer_access_note"]
+    checked = str(source["checked"])
+    checked_label = date.fromisoformat(checked).strftime("%B %-d, %Y")
     return f'''{BODY_START}
 <section class="pp-sport-answer pp-platform-answer pp-platform-answer--{esc(platform["slug"])}{compact_class}" id="platform-research-answer" aria-labelledby="platform-research-answer-heading">
   <div class="container pp-sport-answer__inner">
@@ -60,11 +65,12 @@ def render_module(platform: dict[str, object]) -> str:
 {cards}
     </div>
     <p class="pp-sport-answer__availability"><strong>Freshness</strong><span>{esc(module["availability_note"])}</span></p>
-    <p class="pp-sport-answer__availability"><strong>Platform check</strong><span>{esc(module["platform_note"])} Terminology checked <time datetime="{esc(source["checked"])}">July 16, 2026</time> against <a href="{esc(source["url"])}">{esc(source["label"])}</a>.</span></p>
+    <p class="pp-sport-answer__availability"><strong>Platform check</strong><span>{esc(module["platform_note"])} Terminology checked <time datetime="{esc(checked)}">{esc(checked_label)}</time> against <a href="{esc(source["url"])}">{esc(source["label"])}</a>.</span></p>
+    <p class="pp-sport-answer__availability"><strong>Tool boundary</strong><span>{esc(access_note)} <a href="{esc(guide)}">Analyzer vs. DFS optimizer</a>.</span></p>
     <div class="pp-sport-answer__evidence" aria-label="Propeller Picks evidence and permanent URL"><strong>Evidence</strong><span>{evidence_links}</span></div>
     <div class="pp-sport-answer__actions">
       <a class="pp-sport-answer__cta" href="#picks">View current research <span aria-hidden="true">&rarr;</span></a>
-      <span class="pp-sport-answer__links"><a href="{esc(platform["payout_calculator"])}">Payout calculator</a><a href="{esc(platform["strategy_guide"])}">Strategy guide</a><a href="/analyzer/">Player prop analyzer</a></span>
+      <span class="pp-sport-answer__links"><a href="{esc(platform["payout_calculator"])}">Payout calculator</a><a href="{esc(platform["strategy_guide"])}">Strategy guide</a><a href="/analyzer/">Player prop analyzer</a><a href="{esc(guide)}">Analyzer vs. optimizer</a></span>
     </div>
     <p class="pp-sport-answer__disclosure">Propeller Picks is an independent AI-assisted player-prop research workspace designed for DFS and pick'em platforms. It does not accept wagers, place wagers, submit entries, or guarantee outcomes, and it is not affiliated with {esc(platform["name"])}.</p>
   </div>
@@ -72,7 +78,7 @@ def render_module(platform: dict[str, object]) -> str:
 {BODY_END}'''
 
 
-def update_page(platform: dict[str, object], *, write: bool = True) -> tuple[Path, bool]:
+def update_page(platform: dict[str, object], payload: dict[str, object], *, write: bool = True) -> tuple[Path, bool]:
     path = ROOT / str(platform["current_research"]).strip("/") / "index.html"
     source = path.read_text(encoding="utf-8")
 
@@ -86,7 +92,7 @@ def update_page(platform: dict[str, object], *, write: bool = True) -> tuple[Pat
             raise ValueError(f"site head anchor missing: {path}")
         output = source.replace(anchor, f"{anchor}\n{HEAD_BLOCK}", 1)
 
-    rendered = render_module(platform)
+    rendered = render_module(platform, payload)
     if BODY_START in output or BODY_END in output:
         if output.count(BODY_START) != 1 or output.count(BODY_END) != 1:
             raise ValueError(f"invalid body marker count: {path}")
@@ -114,7 +120,7 @@ def main() -> int:
 
     changed_paths: list[Path] = []
     for platform in platforms:
-        path, changed = update_page(platform, write=not args.check)
+        path, changed = update_page(platform, payload, write=not args.check)
         print(f"{'changed' if changed else 'current'} {path.relative_to(ROOT)}")
         if changed:
             changed_paths.append(path)

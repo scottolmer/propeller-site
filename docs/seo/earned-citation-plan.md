@@ -1,6 +1,6 @@
 # Earned Citation Plan
 
-Last updated: 2026-07-13
+Last updated: 2026-07-25
 
 Propeller Picks should earn citations by publishing useful, accurately defined resources and giving relevant researchers or editors a clear reason to reference them. This is not a link-exchange or manufactured-mention program.
 
@@ -11,6 +11,7 @@ Propeller Picks should earn citations by publishing useful, accurately defined r
 3. **Player-prop research framework** — `/guides/how-to-analyze-player-props/` provides a reusable, six-signal research method.
 4. **Answer-first Help center** — `/help/` supplies concise product, grading, sport, platform, and confidence-score answers.
 5. **Free calculators** — the PrizePicks, Pick6, and Underdog calculators answer high-intent payout questions without requiring signup.
+6. **Evidence hub** — `/research/evidence/` provides the public source map for methodology, data definitions, calculator logic, publication-capture limits, and corrections.
 
 ## Outreach Priorities
 

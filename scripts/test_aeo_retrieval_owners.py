@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OWNERS = {
     "/analyzer/": [
         "Propeller Picks is a free AI player prop analyzer",
+        "/guides/ai-player-prop-analyzer-vs-dfs-optimizer/",
         "/guides/how-ai-sports-betting-works/",
         "/data/methodology-version.json",
         "/results/",
@@ -26,6 +27,35 @@ OWNERS = {
         "/results/",
         "/research/prospective-record/",
         "/data/index.json",
+    ],
+    "/guides/ai-player-prop-analyzer-vs-dfs-optimizer/": [
+        "Research a line. Do not confuse that with building an entry.",
+        "Propeller’s public analyzer helps research a listed line.",
+        "does not build, rank, or submit DFS entries",
+        "/analyzer/",
+        "/research/evidence/",
+        "/data/methodology-version.json",
+        "/data/product-facts.json",
+        "/results/",
+        "/research/prospective-record/",
+    ],
+    "/research/evidence/": [
+        "Evidence before",
+        "A public evidence map—not a performance claim.",
+        "/guides/how-ai-sports-betting-works/",
+        "/data/methodology-version.json",
+        "/results/",
+        "/research/prospective-record/",
+        "/data/prospective-picks.json",
+        "/editorial-policy/",
+    ],
+    "/research/": [
+        "Methods, data, and",
+        "/research/evidence/",
+        "/guides/how-ai-sports-betting-works/",
+        "/research/prospective-record/",
+        "/results/",
+        "/research/ai-player-prop-benchmark/",
     ],
     "/tools/ai-betting-prompt-builder/": [
         "What is a good ChatGPT prompt for sports betting research?",
