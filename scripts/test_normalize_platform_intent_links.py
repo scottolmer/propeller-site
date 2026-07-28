@@ -12,6 +12,14 @@ from normalize_platform_intent_links import normalize
 
 
 class NormalizePlatformIntentLinksTests(unittest.TestCase):
+    def test_legacy_alias_is_replaced_with_current_research_link(self) -> None:
+        source = '<a href="/prizepicks/">PrizePicks Strategy</a>'
+
+        self.assertEqual(
+            normalize(source),
+            '<a href="/picks/prizepicks/">PrizePicks Research</a>',
+        )
+
     def test_current_research_links_are_not_labeled_as_strategy(self) -> None:
         source = (
             '<a href="/picks/prizepicks/">PrizePicks Strategy</a>'

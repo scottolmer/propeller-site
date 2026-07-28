@@ -11,6 +11,8 @@ ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED = {".git", "analytics-dashboard", "docs", "mockups", "node_modules"}
 
 REPLACEMENTS = {
+    '<a href="/prizepicks/">PrizePicks Strategy</a>':
+        '<a href="/picks/prizepicks/">PrizePicks Research</a>',
     '<a href="/picks/prizepicks/">PrizePicks Strategy</a>':
         '<a href="/picks/prizepicks/">PrizePicks Research</a>',
     '<a href="/picks/underdog/">Underdog Strategy</a>':
