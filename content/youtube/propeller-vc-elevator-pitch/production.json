@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "slug": "propeller-vc-elevator-pitch",
+  "state": "review_ready",
+  "brief": {
+    "concept": "A two-minute, founder-led-in-message no-on-camera investor elevator pitch for Propeller Picks: the market problem, inspectable sport-specific research product, explainable ensemble and statistical methods, web/mobile and fantasy expansion, documented methodology, and steady organic-search growth. No analytics dashboard data, revenue claim, generic historical win-rate claim, or fundraising ask.",
+    "primary_question": "Why is Propeller Picks a differentiated research platform for player props and fantasy, and what makes its model outputs more inspectable than a generic picks feed?",
+    "audience": "Prospective investors and strategic partners.",
+    "learning_outcome": "The viewer can articulate the fragmented research problem, Propeller's inspectable workflow, the sport-specific signal policy, initial organic-discovery traction, and fantasy expansion path.",
+    "cta": "No fundraising ask. End on the company vision: trusted research infrastructure for player-prop and fantasy decisions.",
+    "target_duration_seconds": 122,
+    "freshness_requirements": "Use current product captures when available; detailed historical UI must be labelled. Organic-discovery visuals must remain qualitative: no GA4/GSC dashboard, users, sessions, clicks, impressions, revenue, generic historic win-rate, ROI, or profit claim."
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-07-23T00:15:53.892351+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-07-23T00:40:00Z",
+      "evidence": "User explicitly instructed: Great use the produce YouTube video skill to create that video, after approving the revised VC script and wedge."
+    },
+    "review": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    },
+    "publication": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration-v2.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {"path": "data/product-facts.json", "use": "Product definition, workflows, signal policy, and confidence semantics."},
+    {"path": "data/fantasy-product-facts.json", "use": "MLB hitter fantasy scope and floor/point/ceiling outputs."},
+    {"path": "docs/seo/research-and-media-brief.md", "use": "Archive limitation and responsible-use language."}
+  ],
+  "publishing": {
+    "requested_visibility": "not_requested",
+    "video_id": null,
+    "url": null,
+    "uploaded": false,
+    "hd_processed": false,
+    "published_at": null,
+    "verified": false
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-07-23T00:15:53.892351+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "brief",
+      "at": "2026-07-23T00:13:24Z",
+      "note": "Locked the investor-oriented companion: a 122-second product and traction film without founder footage, a synthetic founder, a fundraising ask, user/revenue claims, or unsupported performance claims."
+    },
+    {
+      "phase": "script",
+      "at": "2026-07-23T00:13:24Z",
+      "note": "Prepared a narration-first script and visual semantic plan. Awaiting explicit script approval before narration generation and rendering."
+    },
+    {
+      "phase": "script_revision",
+      "at": "2026-07-23T00:25:00Z",
+      "note": "Added an evidence-backed technical-method section: explainable weighted ensemble, sport-specific calibration, recency weighting, trend and consistency measures, no-vig probability normalization, and injury-cascade logic. Script approval remains pending for this revised version."
+    },
+    {
+      "phase": "script_revision",
+      "at": "2026-07-23T00:30:00Z",
+      "note": "Removed all GA4 and Google Search Console metrics and source references. The investor script now characterizes growth qualitatively as steady and climbing through organic search; its visual plan expressly excludes dashboard or metric cards."
+    },
+    {
+      "phase": "script_revision",
+      "at": "2026-07-23T00:35:00Z",
+      "note": "Added the product-and-distribution wedge: the free Analyzer earns organic discovery and the broader research workspace makes the transparent workflow repeatable. Tightened the methodology and closing language to retain the two-minute target."
+    },
+    {
+      "phase": "script_approval",
+      "at": "2026-07-23T00:40:00Z",
+      "note": "User approved the final revised VC script by instructing production to begin."
+    },
+    {
+      "phase": "narration_revision",
+      "at": "2026-07-23T00:42:00Z",
+      "note": "The first approved-script stock narration ran 130.475 seconds. Tightened only redundant phrasing to meet the user’s two-minute duration request, preserved narration-v1.mp3, and will generate narration-v2.mp3 as the current timing source."
+    },
+    {
+      "phase": "narration",
+      "at": "2026-07-23T00:45:00Z",
+      "note": "Generated Kokoro am_michael narration v2. Verified MP3, mono 44.1 kHz, 121.500 seconds. Faster-whisper alignment produced 230 exact script words, 215 direct timestamp matches, and 27 timed English caption cues."
+    },
+    {
+      "phase": "capture",
+      "at": "2026-07-23T00:47:00Z",
+      "note": "Staged dated July 2026 desktop/mobile product captures for analyzer, prop detail, agent breakdown, and fantasy views. Every detailed product frame carries an illustrative-capture label; editorial scenes contain no claimed live values."
+    },
+    {
+      "phase": "render",
+      "at": "2026-07-23T00:55:00Z",
+      "note": "Created a pinned Remotion 4.0.497 project, rendered a 1280x720 H.264/AAC review and a 1920x1080 H.264/AAC 30fps master. Lint/type-check passed; representative frames and the contact sheet were inspected."
+    },
+    {
+      "phase": "review_package",
+      "at": "2026-07-23T00:56:00Z",
+      "note": "Prepared thumbnail, title/description/chapters/pinned-comment proposal, timed English SRT, production manifest, semantic map, and SHA-256 checksums. Awaiting explicit review approval; no YouTube upload has been requested or attempted."
+    }
+  ]
+}

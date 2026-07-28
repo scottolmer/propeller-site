@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "slug": "propeller-pinned-product-film",
+  "state": "script_ready",
+  "brief": {
+    "concept": "A two-minute founder-led-in-message, no-on-camera flagship introduction to Propeller Picks for the pinned YouTube channel: the technical research platform, its sport-specific signals, inspectable confidence and agent evidence, MLB fantasy projections, and current search traction\u2014without unsupported win-rate claims or a fundraising ask.",
+    "primary_question": "What is Propeller Picks, how is its product different from a typical picks service, and what can a new user actually inspect before acting on a model signal?",
+    "audience": "Prospective users, channel visitors, search viewers, and prospective partners who need a concise, credible explanation of the platform and its technical approach.",
+    "learning_outcome": "The viewer can explain that Propeller is an independent research workspace—not a sportsbook or promise machine—and knows to examine the line, directional confidence, available sport-specific signals, and context before making a decision.",
+    "cta": "Start with the free Prop Analyzer at https://propellerpicks.com/analyzer/.",
+    "target_duration_seconds": 122,
+    "freshness_requirements": "Capture current desktop and mobile product state close to render time. Detailed historical UI may be used only when clearly labelled. GA4 and GSC proof cards must identify the exact reporting period; no users, revenue, generic historic win-rate, ROI, or profit claim."
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-07-23T00:13:24.028172+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    },
+    "review": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    },
+    "publication": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {"path": "data/product-facts.json", "use": "Product definition, no-wagering position, workflows, signal policy, and confidence semantics."},
+    {"path": "data/fantasy-product-facts.json", "use": "MLB hitter fantasy scope, DraftKings scoring, floor/point/ceiling, and exclusions."},
+    {"path": "docs/seo/research-and-media-brief.md", "use": "Historical archive limitation and responsible-use language."},
+    {"path": "GA4 property 525454922, 2026-06-22 to 2026-07-21", "use": "948 sessions and 579 Organic Search sessions."},
+    {"path": "GSC sc-domain:propellerpicks.com, 2026-06-20 to 2026-07-19", "use": "479 clicks and 55,784 impressions."}
+  ],
+  "publishing": {
+    "requested_visibility": "not_requested",
+    "video_id": null,
+    "url": null,
+    "uploaded": false,
+    "hd_processed": false,
+    "published_at": null,
+    "verified": false
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-07-23T00:13:24.028172+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "brief",
+      "at": "2026-07-23T00:13:24Z",
+      "note": "Locked a separate 122-second pinned-channel product film. It uses founder-led messaging without an on-camera or synthetic founder and intentionally preserves the prior long technical walkthrough as a separate review project."
+    },
+    {
+      "phase": "script",
+      "at": "2026-07-23T00:13:24Z",
+      "note": "Prepared narration-only final script, factual source notes, and a visual semantic plan. Awaiting explicit script approval before final narration generation and rendering."
+    }
+  ]
+}

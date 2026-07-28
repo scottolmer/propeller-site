@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "slug": "ai-player-prop-analyzer-walkthrough",
+  "state": "private_uploaded",
+  "brief": {
+    "concept": "How to Analyze a Player Prop With Propeller: Start-to-Finish Walkthrough",
+    "primary_question": "How do I use a free AI player prop analyzer without mistaking a score for a guaranteed outcome?",
+    "audience": "New and prospective Propeller users researching a listed player prop on desktop or mobile.",
+    "learning_outcome": "Viewers can confirm the current line, interpret direction and confidence, inspect supporting and conflicting agents, recheck freshness, and decide whether to continue research or pass.",
+    "cta": "Explore the current Prop Analyzer at https://propellerpicks.com/analyzer/.",
+    "target_duration_seconds": 255,
+    "freshness_requirements": "Capture desktop and mobile interface close to render time. Use the same current prop or clearly label an illustrative/historical example. Show the exact line, direction, confidence, agent breakdown, and freshness/context check."
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-07-21T23:08:08.669494+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-07-21T23:08:08.669494+00:00",
+      "evidence": "User explicitly replied: approved"
+    },
+    "review": {
+      "approved": true,
+      "at": "2026-07-21T23:56:19Z",
+      "evidence": "User explicitly approved the review package and instructed the private upload to proceed."
+    },
+    "publication": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {
+      "path": "guides/how-to-analyze-player-props/index.html",
+      "use": "Public analyzer workflow, supported research inputs, and confidence semantics."
+    },
+    {
+      "path": "guides/how-ai-sports-betting-works/index.html",
+      "use": "Freshness, changing-line, missing-data, and uncertainty disclosures."
+    },
+    {
+      "path": "help/how-do-confidence-scores-work/index.html",
+      "use": "Directional confidence definition and non-probability limitation."
+    },
+    {
+      "path": "https://propellerpicks.com/analyzer/",
+      "use": "Captured current public analyzer state on 2026-07-21; public NBA feed truthfully showed no current rows."
+    },
+    {
+      "path": "https://app.propellerpicks.com/app",
+      "use": "Captured current authenticated mobile app empty-slate state on 2026-07-21."
+    },
+    {
+      "path": "content/youtube/confidence-score-pilot/captures/",
+      "use": "Source of explicitly labelled July 2026 historical product examples for detailed line, confidence, and agent UI."
+    }
+  ],
+  "publishing": {
+    "requested_visibility": "private",
+    "video_id": "FNvAvgBtq9o",
+    "url": "https://www.youtube.com/watch?v=FNvAvgBtq9o",
+    "uploaded": true,
+    "hd_processed": true,
+    "published_at": null,
+    "verified": true
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-07-21T23:08:08.669494+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "brief",
+      "at": "2026-07-21T23:08:08.669494+00:00",
+      "note": "Brief locked: a 4.5–5 minute start-to-finish onboarding workflow with matched desktop and mobile coverage."
+    },
+    {
+      "phase": "script",
+      "at": "2026-07-21T23:08:08.669494+00:00",
+      "note": "Final narration draft and initial semantic map prepared; awaiting explicit script approval before narration generation."
+    },
+    {
+      "phase": "script_approval",
+      "at": "2026-07-21T23:08:08.669494+00:00",
+      "note": "User approved the final script."
+    },
+    {
+      "phase": "narration",
+      "at": "2026-07-21T23:08:08.669494+00:00",
+      "note": "Generated Kokoro am_michael narration v1 as 12 paragraph renders and losslessly concatenated it to avoid a single-pass inference timeout. Final MP3 is mono 44.1 kHz at 128 kbps; duration 238.701 seconds."
+    },
+    {
+      "phase": "alignment",
+      "at": "2026-07-21T23:08:08.669494+00:00",
+      "note": "Generated word-level alignment v1 and upload SRT with faster-whisper base.en: 594 exact words, 586 ASR timestamp matches, 69 caption cues."
+    },
+    {
+      "phase": "capture",
+      "at": "2026-07-21T23:08:08.669494+00:00",
+      "note": "Captured current public and authenticated mobile surfaces. Current public feed was empty; detailed workflow uses matching historical desktop/mobile captures with a mandatory visible historical label."
+    },
+    {
+      "phase": "render",
+      "at": "2026-07-21T23:08:08.669494+00:00",
+      "note": "Rendered review v1 and 1080p master v2. Master is H.264/AAC, 1920x1080, 30 fps, yuv420p limited range, and fast-start."
+    },
+    {
+      "phase": "review_ready",
+      "at": "2026-07-21T23:08:08.669494+00:00",
+      "note": "Review package assembled with timed captions, thumbnail, metadata, semantic map, contact sheet, production manifest, and checksums. Awaiting explicit review approval before private upload."
+    },
+    {
+      "phase": "private_upload",
+      "at": "2026-07-21T23:56:19Z",
+      "note": "Uploaded to the verified Propeller Picks channel as private. Approved title, description, thumbnail, English video language, Sports category, and timed English SRT captions are saved. SD/HD processing and copyright/community checks completed with no issues."
+    }
+  ]
+}

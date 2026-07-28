@@ -14,6 +14,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 TARGETS = ROOT / "docs" / "seo" / "aeo-target-questions.json"
+AUGUST_TARGETS = ROOT / "docs" / "seo" / "aeo-target-questions-2026-08.json"
 
 
 def load_importer():
@@ -27,13 +28,15 @@ def load_importer():
     return module
 
 
-def generate_matrix(path: Path) -> list[dict[str, str]]:
+def generate_matrix(path: Path, targets: Path = TARGETS) -> list[dict[str, str]]:
     subprocess.run(
         [
             "python3",
             str(ROOT / "scripts" / "create_aeo_baseline.py"),
             "--date",
             "2026-07-16",
+            "--targets",
+            str(targets),
             "--output",
             str(path),
         ],
@@ -122,6 +125,23 @@ class AeoMeasurementTests(unittest.TestCase):
                 text=True,
             )
             self.assertIn("DRAFT — NON-COMPARABLE", draft.read_text(encoding="utf-8"))
+
+    def test_versioned_august_targets_materialize_a_valid_draft_matrix(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            matrix = Path(directory) / "august.csv"
+            rows = generate_matrix(matrix, AUGUST_TARGETS)
+            self.assertEqual(300, len(rows))
+            self.assertEqual({"2026-08-nfl-v1"}, {row["contract_version"] for row in rows})
+
+            draft = Path(directory) / "august-draft.md"
+            subprocess.run(
+                ["python3", str(ROOT / "scripts" / "summarize_aeo_snapshot.py"), str(matrix), "--draft", "--output", str(draft)],
+                check=True,
+                cwd=ROOT,
+                capture_output=True,
+                text=True,
+            )
+            self.assertIn("Contract: `2026-08-nfl-v1`", draft.read_text(encoding="utf-8"))
 
     def test_complete_matrix_passes_and_embeds_contract(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

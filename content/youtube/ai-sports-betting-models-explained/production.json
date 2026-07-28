@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "slug": "ai-sports-betting-models-explained",
+  "state": "uploaded_private",
+  "brief": {
+    "concept": "How AI Sports Betting Models Actually Work (And What They Can\u2019t Tell You)",
+    "primary_question": "How does an AI sports betting model analyze a player prop, and what should I not assume from its score?",
+    "audience": "Prospective and new Propeller Picks users who want a plain-language explanation of the model and its limits.",
+    "learning_outcome": "Viewers can understand the available sport-specific signals, inspect agreement and conflict in the agents, treat confidence as directional signal strength rather than probability, and pass when context is incomplete.",
+    "cta": "Explore the current free Prop Analyzer at https://propellerpicks.com/analyzer/.",
+    "target_duration_seconds": 300,
+    "freshness_requirements": "Capture current desktop and mobile product states close to render time. Label any historical detailed examples and never imply they are current recommendations."
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-07-22T21:44:28.530347+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-07-22T21:55:40Z",
+      "evidence": "User explicitly replied: approve the script"
+    },
+    "review": {
+      "approved": true,
+      "at": "2026-07-22T22:55:06Z",
+      "evidence": "User explicitly replied: approved"
+    },
+    "publication": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review-v3.mp4",
+    "contact_sheet": "review/contact-sheet-v3.jpg",
+    "master": "final/master-1080p-v3.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {
+      "path": "guides/how-ai-sports-betting-works/index.html",
+      "use": "Public model card: confidence semantics, input categories, missing-data behavior, freshness, market movement, and failure modes."
+    },
+    {
+      "path": "guides/how-to-analyze-player-props/index.html",
+      "use": "Sport-specific signals and representative agent categories."
+    },
+    {
+      "path": "help/how-do-confidence-scores-work/index.html",
+      "use": "Directional 50–100 confidence definition and non-probability limitation."
+    },
+    {
+      "path": "help/is-propeller-a-sportsbook/index.html",
+      "use": "Propeller research-and-analytics positioning and no-wagering claim."
+    },
+    {
+      "path": "https://propellerpicks.com/analyzer/",
+      "use": "Current public analyzer inspected on 2026-07-22. Used as the current instructional analyzer visual, not as an active recommendation."
+    },
+    {
+      "path": "../ai-player-prop-analyzer-walkthrough/captures/historical/",
+      "use": "Desktop and mobile detailed product captures from July 2026. Every use is permanently labeled as illustrative historical material."
+    }
+  ],
+  "publishing": {
+    "requested_visibility": "private",
+    "video_id": "udKKP6mWg24",
+    "url": "https://youtu.be/udKKP6mWg24",
+    "uploaded": true,
+    "hd_processed": true,
+    "published_at": null,
+    "verified": true
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-07-22T21:44:28.530347+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "brief",
+      "at": "2026-07-22T21:44:38Z",
+      "note": "Brief locked for an answer-first model explainer with required desktop and mobile agent, confidence, and uncertainty coverage."
+    },
+    {
+      "phase": "script",
+      "at": "2026-07-22T21:44:38Z",
+      "note": "Final narration draft and visual semantic map prepared from current Propeller public methodology; awaiting explicit script approval before narration generation."
+    },
+    {
+      "phase": "script_approval",
+      "at": "2026-07-22T21:55:40Z",
+      "note": "User approved the final script."
+    },
+    {
+      "phase": "narration",
+      "at": "2026-07-22T21:55:40Z",
+      "note": "Generated Kokoro am_michael narration. Final MP3 is mono 44.1 kHz at 128 kbps; duration 287.100 seconds."
+    },
+    {
+      "phase": "alignment",
+      "at": "2026-07-22T21:55:40Z",
+      "note": "Generated word-level alignment and timed English upload SRT with faster-whisper: 692 exact script words, 673 ASR timestamp matches, 81 caption cues."
+    },
+    {
+      "phase": "capture",
+      "at": "2026-07-22T22:05:00Z",
+      "note": "Inspected the current public Analyzer. A current mobile development server was unavailable, so the walkthrough uses clearly labeled July 2026 historical desktop and mobile product captures for detailed agent and confidence views."
+    },
+    {
+      "phase": "review_package",
+      "at": "2026-07-22T22:25:00Z",
+      "note": "Rendered 1280x720 review and 1920x1080 H.264/AAC master at 30 fps; sampled the final review visual track, created thumbnail/contact sheet/upload metadata, and passed validate_video_package.py with no errors. Awaiting explicit review approval before any YouTube upload."
+    },
+    {
+      "phase": "review_revision_v2",
+      "at": "2026-07-22T22:45:00Z",
+      "note": "User requested more product visuals during the confidence and closing Analyzer narration. Version two adds labeled desktop and mobile confidence close-ups and returns to the visible current Analyzer page at the spoken Explorer CTA. Rendered fresh review/master versions; awaiting review approval."
+    },
+    {
+      "phase": "review_revision_v3",
+      "at": "2026-07-22T23:00:00Z",
+      "note": "Re-timed visual sequences to the finished word alignment after review found that confidence screens appeared under the agent narration. Agent breakdown desktop/mobile visual now runs 01:50-02:34; paired desktop/mobile confidence visual runs 02:34-03:15. Rendered and technically validated version three."
+    },
+    {
+      "phase": "review_approval",
+      "at": "2026-07-22T22:55:06Z",
+      "note": "User approved the version-three review for private YouTube upload."
+    },
+    {
+      "phase": "youtube_private_upload",
+      "at": "2026-07-22T22:55:06Z",
+      "note": "Uploaded final/master-1080p-v3.mp4 as Private to the verified Propeller Picks channel (UCa0YkBvX4qlzV3J8QS7u1sg). Set approved title, corrected chapters, Sports category, English (United States) language, tags, custom thumbnail, and timed English SRT captions. YouTube checks found no copyright or Community Guidelines issues; Studio confirmed the video is visible only to the channel owner."
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "slug": "propeller-introduction-x",
+  "state": "script_ready",
+  "brief": {
+    "concept": "A concise social introduction to Propeller Picks: what it is, how its AI player-prop research works, what makes it different, and how to read its public historical record responsibly.",
+    "primary_question": "What is Propeller Picks, how is it different from a typical picks service, and what proof can a new user inspect?",
+    "audience": "Sports fans and DFS or pick'em users seeing Propeller for the first time on X/Twitter.",
+    "learning_outcome": "Viewers understand that Propeller is a free, inspectable AI player-prop research platform—not a sportsbook or promise machine—and know where to start.",
+    "cta": "Try the free Prop Analyzer at https://propellerpicks.com/analyzer/.",
+    "target_duration_seconds": 60,
+    "freshness_requirements": "Use a current public Analyzer capture and current Results page data. Historical archive figures must carry the dated, non-ROI limitation; do not call the archive a forward-tested win rate."
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-07-22T23:01:18.192943+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    },
+    "review": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    },
+    "publication": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {
+      "path": "https://propellerpicks.com/analyzer/",
+      "use": "Current free Analyzer positioning, supported sport tabs, directional confidence definition, and no-wager placement claim; checked July 22, 2026."
+    },
+    {
+      "path": "https://propellerpicks.com/how-it-works/",
+      "use": "Methodology: sport-specific inputs, inspectable agents, directional confidence, and forward-record standard; checked July 22, 2026."
+    },
+    {
+      "path": "https://propellerpicks.com/results/",
+      "use": "Current historical-archive figures and mandatory limitations: 2,185,007 raw historical rows, 293,020 collapsed-ledger entries, no forward-tested ROI claim; checked July 22, 2026."
+    }
+  ],
+  "publishing": {
+    "requested_visibility": "not_requested",
+    "video_id": null,
+    "url": null,
+    "uploaded": false,
+    "hd_processed": false,
+    "published_at": null,
+    "verified": false
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-07-22T23:01:18.192943+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "brief",
+      "at": "2026-07-22T23:01:18Z",
+      "note": "Locked a 60-second vertical X/Twitter introduction. The proof section will describe the public archive and its limits rather than use an unqualified historical win-rate claim."
+    },
+    {
+      "phase": "script",
+      "at": "2026-07-22T23:01:18Z",
+      "note": "Prepared a narration-first social script and semantic visual plan. Awaiting explicit script approval before narration, capture, or render."
+    }
+  ]
+}

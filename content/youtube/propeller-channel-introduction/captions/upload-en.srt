@@ -1,0 +1,649 @@
+1
+00:00:00,000 --> 00:00:03,290
+Before you use any player-prop model, you
+should be able to
+
+2
+00:00:03,300 --> 00:00:05,200
+answer a few basic questions.
+
+3
+00:00:05,760 --> 00:00:07,540
+What exact line is it analyzing?
+
+4
+00:00:08,220 --> 00:00:10,220
+What evidence is behind the signal?
+
+5
+00:00:10,720 --> 00:00:12,440
+What changed since it was analyzed?
+
+6
+00:00:13,260 --> 00:00:14,740
+And what can the model not know?
+
+7
+00:00:15,640 --> 00:00:18,080
+That is what Propeller Picks is built for.
+
+8
+00:00:18,900 --> 00:00:23,280
+Propeller is an AI-assisted player-prop
+research workspace for web and mobile.
+
+9
+00:00:23,920 --> 00:00:25,160
+It is not a sportsbook.
+
+10
+00:00:25,540 --> 00:00:27,780
+It does not take wagers, place entries,
+
+11
+00:00:28,120 --> 00:00:31,850
+or promise outcomes. Its job is to make
+the evidence around
+
+12
+00:00:31,860 --> 00:00:36,760
+a specific player, stat, direction, and
+line easier to inspect.
+
+13
+00:00:37,800 --> 00:00:40,320
+There are two related ways to use
+Propeller.
+
+14
+00:00:40,880 --> 00:00:45,210
+The first is player-prop research: should
+the available evidence lean More
+
+15
+00:00:45,220 --> 00:00:47,360
+or Less for this exact player line?
+
+16
+00:00:48,020 --> 00:00:51,860
+The second is fantasy research: what is a
+reasonable floor,
+
+17
+00:00:52,200 --> 00:00:55,790
+point projection, and ceiling for an
+eligible player in the current
+
+18
+00:00:55,800 --> 00:01:00,940
+scoring context? They use different
+outputs because they answer different
+questions.
+
+19
+00:01:01,920 --> 00:01:03,780
+Start with the free Prop Analyzer.
+
+20
+00:01:04,360 --> 00:01:07,060
+Choose a sport, find an available player
+line,
+
+21
+00:01:07,300 --> 00:01:08,940
+and open the prop you want to research.
+
+22
+00:01:09,780 --> 00:01:13,750
+The exact player, stat, direction, and
+displayed line are the unit
+
+23
+00:01:13,760 --> 00:01:17,480
+of analysis. If the line moves, the
+question changes.
+
+24
+00:01:18,160 --> 00:01:23,150
+A research result tied to 22.5 points is
+not automatically the
+
+25
+00:01:23,160 --> 00:01:26,050
+same research result at 24.5.
+
+26
+00:01:26,060 --> 00:01:31,270
+For the displayed line, Propeller
+evaluates the sport-specific context that
+
+27
+00:01:31,280 --> 00:01:35,230
+is available and summarizes it as a
+direction plus a 50-to-100
+
+28
+00:01:35,240 --> 00:01:38,840
+confidence score. Depending on the sport
+and market,
+
+29
+00:01:39,140 --> 00:01:43,150
+that context can include recent
+production, role and opportunity,
+
+30
+00:01:43,160 --> 00:01:47,800
+matchup, injuries and lineup effects,
+market context,
+
+31
+00:01:48,240 --> 00:01:52,140
+and game environment. That is where the
+agents come in.
+
+32
+00:01:52,780 --> 00:01:56,130
+An agent is not a generic chatbot and it
+is not
+
+33
+00:01:56,140 --> 00:01:58,100
+a fixed vote in a simple poll.
+
+34
+00:01:58,740 --> 00:02:03,120
+In Propeller, agents are separate
+sport-specific analysis signals.
+
+35
+00:02:03,680 --> 00:02:06,320
+Each one focuses on a different source of
+context,
+
+36
+00:02:06,980 --> 00:02:10,830
+and the model combines the signals that
+return usable evidence for
+
+37
+00:02:10,840 --> 00:02:12,620
+the player prop in front of you.
+
+38
+00:02:13,360 --> 00:02:15,390
+Take a basketball prop as an example.
+
+39
+00:02:15,400 --> 00:02:19,580
+The Minutes agent looks at playing-time
+trajectory and blowout risk.
+
+40
+00:02:20,240 --> 00:02:23,450
+The Usage agent looks at the volume of
+opportunity a player
+
+41
+00:02:23,460 --> 00:02:24,720
+is likely to have.
+
+42
+00:02:25,300 --> 00:02:28,510
+The Pace agent asks whether the game
+environment creates more or
+
+43
+00:02:28,520 --> 00:02:33,110
+fewer possessions. The Injury agent looks
+beyond one player’s status to
+
+44
+00:02:33,120 --> 00:02:36,970
+the downstream role changes that can
+follow a scratch or lineup
+
+45
+00:02:36,980 --> 00:02:41,360
+change. And the Matchup agent adds
+opponent and position context.
+
+46
+00:02:42,120 --> 00:02:45,120
+Market context is separate for a reason.
+
+47
+00:02:45,720 --> 00:02:50,030
+The No-Vig or market signal can compare
+the implied probabilities available
+
+48
+00:02:50,040 --> 00:02:53,440
+across books after removing the bookmaker
+margin.
+
+49
+00:02:54,040 --> 00:02:57,140
+If the market disagrees with a posted
+player line,
+
+50
+00:02:57,580 --> 00:02:59,500
+that creates a research question.
+
+51
+00:03:00,000 --> 00:03:03,500
+It does not automatically prove that
+either side is valuable.
+
+52
+00:03:04,200 --> 00:03:06,870
+Other agents can account for recent form,
+
+53
+00:03:06,880 --> 00:03:10,480
+hit-rate trends, rest, or sport-specific
+conditions.
+
+54
+00:03:11,240 --> 00:03:14,970
+In baseball, the important evidence may
+lean more heavily toward pitching
+
+55
+00:03:14,980 --> 00:03:19,260
+matchup, park, handedness, batting role,
+and lineup context.
+
+56
+00:03:20,080 --> 00:03:22,830
+In football, it can be opportunity,
+matchup,
+
+57
+00:03:22,840 --> 00:03:27,190
+and game environment. The right evidence
+is not identical across every
+
+58
+00:03:27,200 --> 00:03:31,410
+sport or prop. That is also why Propeller
+does not publish
+
+59
+00:03:31,420 --> 00:03:35,850
+one universal agent count or pretend every
+agent always has the
+
+60
+00:03:35,860 --> 00:03:40,680
+same weight. Signal availability and
+active weighting can vary by sport,
+
+61
+00:03:41,160 --> 00:03:44,060
+prop, model version, and production
+calibration.
+
+62
+00:03:45,260 --> 00:03:48,280
+Only available signals contribute to the
+directional score.
+
+63
+00:03:48,960 --> 00:03:53,110
+A missing input is a limitation to
+disclose—not a neutral vote
+
+64
+00:03:53,120 --> 00:03:55,860
+that silently makes the model look more
+certain.
+
+65
+00:03:56,320 --> 00:04:00,770
+On both desktop and mobile, open the agent
+breakdown before you
+
+66
+00:04:00,780 --> 00:04:02,320
+give a score too much meaning.
+
+67
+00:04:02,960 --> 00:04:05,060
+You should be able to see what supports
+the direction,
+
+68
+00:04:05,560 --> 00:04:08,970
+what pushes back, and which part of the
+research deserves another
+
+69
+00:04:08,980 --> 00:04:12,740
+look. Agreement can make a case easier to
+understand.
+
+70
+00:04:13,540 --> 00:04:17,810
+Conflict can be just as valuable:
+opportunity may support a side
+
+71
+00:04:17,820 --> 00:04:20,760
+while matchup or market context adds
+caution.
+
+72
+00:04:21,500 --> 00:04:23,460
+Now read confidence correctly.
+
+73
+00:04:24,320 --> 00:04:26,870
+Start with the displayed direction: More
+or Over,
+
+74
+00:04:26,880 --> 00:04:28,060
+or Less or Under.
+
+75
+00:04:28,680 --> 00:04:31,030
+Then read the score as the strength of the
+model’s directional
+
+76
+00:04:31,040 --> 00:04:33,080
+signal for that exact line.
+
+77
+00:04:33,640 --> 00:04:36,740
+A higher number means stronger support for
+the side shown,
+
+78
+00:04:37,140 --> 00:04:38,380
+based on the usable evidence.
+
+79
+00:04:39,140 --> 00:04:41,870
+It does not mean that side has the same
+percentage chance
+
+80
+00:04:41,880 --> 00:04:46,170
+of winning. A confidence score of 72 is
+not a 72
+
+81
+00:04:46,180 --> 00:04:50,200
+percent probability, a guarantee, or a
+promise of profit.
+
+82
+00:04:51,360 --> 00:04:54,420
+The workflow is more important than any
+single number.
+
+83
+00:04:54,840 --> 00:04:56,120
+Confirm the current line.
+
+84
+00:04:56,760 --> 00:04:58,660
+Read direction and confidence together.
+
+85
+00:04:59,220 --> 00:05:00,360
+Open the agent breakdown.
+
+86
+00:05:01,380 --> 00:05:05,220
+Check lineup news, player status,
+freshness, and market movement.
+
+87
+00:05:05,860 --> 00:05:10,030
+Then decide whether the evidence is strong
+enough to keep researching—or
+
+88
+00:05:10,040 --> 00:05:12,300
+whether passing is the smarter decision.
+
+89
+00:05:13,320 --> 00:05:16,580
+Propeller also has a distinct
+fantasy-projections workflow.
+
+90
+00:05:17,420 --> 00:05:22,600
+The current public feature covers MLB
+hitters under DraftKings MLB scoring.
+
+91
+00:05:23,300 --> 00:05:25,860
+Instead of returning an Over or Under
+signal,
+
+92
+00:05:26,200 --> 00:05:29,260
+it produces a floor, a central point
+projection,
+
+93
+00:05:29,780 --> 00:05:31,660
+and a ceiling for eligible hitters.
+
+94
+00:05:32,580 --> 00:05:38,430
+Technically, the central MLB fantasy
+projection converts available current
+hitter-stat
+
+95
+00:05:38,440 --> 00:05:41,660
+market components into DraftKings fantasy
+points.
+
+96
+00:05:42,320 --> 00:05:46,070
+Recent form is used for scoring components
+that do not have
+
+97
+00:05:46,080 --> 00:05:51,390
+current market coverage. Recent outcome
+variation then widens the lower
+
+98
+00:05:51,400 --> 00:05:54,240
+and upper distances around the central
+projection.
+
+99
+00:05:55,380 --> 00:05:58,020
+Those three numbers are scenarios, not
+guarantees.
+
+100
+00:05:58,960 --> 00:06:00,920
+The point projection is the central
+estimate.
+
+101
+00:06:01,680 --> 00:06:05,950
+The floor and ceiling are widened
+P20-style and P80-style ranges,
+
+102
+00:06:05,960 --> 00:06:10,130
+so an actual fantasy result can finish
+below the floor or
+
+103
+00:06:10,140 --> 00:06:14,250
+above the ceiling. The current public
+feature does not publish pitcher
+
+104
+00:06:14,260 --> 00:06:20,160
+projections, non-MLB projections, lineup
+optimization, salary optimization,
+
+105
+00:06:20,940 --> 00:06:25,810
+or contest-entry submission. It is
+research input for daily fantasy,
+
+106
+00:06:25,820 --> 00:06:31,030
+player comparison, and sit/start
+decisions—not an automated lineup
+
+107
+00:06:31,040 --> 00:06:34,260
+tool. Freshness matters here too.
+
+108
+00:06:34,860 --> 00:06:38,790
+The fantasy board shows its source-update
+state so you can distinguish
+
+109
+00:06:38,800 --> 00:06:42,760
+current data from latest available or
+unavailable data.
+
+110
+00:06:43,180 --> 00:06:47,290
+Late lineup news and role changes can
+still alter the research
+
+111
+00:06:47,300 --> 00:06:51,070
+picture. And you should be able to inspect
+the record behind
+
+112
+00:06:51,080 --> 00:06:56,260
+the product. Propeller publishes a public
+historical Results archive with wins,
+
+113
+00:06:56,820 --> 00:07:00,800
+losses, pushes, sport splits, and
+confidence ranges.
+
+114
+00:07:01,660 --> 00:07:07,270
+As of July 22, 2026, it includes more than
+2.18 million
+
+115
+00:07:07,280 --> 00:07:12,820
+raw graded analysis rows and a
+293-thousand-entry public ledger.
+
+116
+00:07:13,700 --> 00:07:15,440
+Those numbers need context.
+
+117
+00:07:16,000 --> 00:07:20,880
+Historical rows can include repeated
+snapshots and legacy retrospective data.
+
+118
+00:07:21,480 --> 00:07:25,950
+They are descriptive historical outcomes,
+not a clean cohort of uniquely
+
+119
+00:07:25,960 --> 00:07:31,060
+published recommendations, and they are
+not a forward-tested ROI claim.
+
+120
+00:07:31,780 --> 00:07:35,210
+We keep that limitation visible because a
+record should be something
+
+121
+00:07:35,220 --> 00:07:38,570
+you can audit—not a number you are asked
+to accept on
+
+122
+00:07:38,580 --> 00:07:43,930
+faith. For a stricter standard, Propeller
+also maintains a forward record
+
+123
+00:07:43,940 --> 00:07:46,000
+for eligible featured public picks.
+
+124
+00:07:46,720 --> 00:07:50,630
+Those rows require publication before a
+verified event start,
+
+125
+00:07:50,640 --> 00:07:54,620
+an exact side and line, a named book and
+price,
+
+126
+00:07:55,020 --> 00:07:56,320
+and an exact settlement.
+
+127
+00:07:56,880 --> 00:08:00,800
+That is the standard needed to talk
+responsibly about ROI.
+
+128
+00:08:01,620 --> 00:08:04,440
+Propeller will not remove uncertainty from
+sports.
+
+129
+00:08:05,040 --> 00:08:09,960
+Late injuries, role changes, sparse
+samples, bad source data,
+
+130
+00:08:10,000 --> 00:08:12,240
+and line movement can all change an
+analysis.
+
+131
+00:08:13,040 --> 00:08:15,650
+The goal is not to hand off your decision
+to AI.
+
+132
+00:08:15,660 --> 00:08:18,360
+It is to make your research clearer,
+
+133
+00:08:18,560 --> 00:08:20,600
+faster, and easier to challenge.
+
+134
+00:08:21,600 --> 00:08:25,330
+Start with the free Prop Analyzer at
+PropellerPicks.com.
+
+135
+00:08:25,340 --> 00:08:27,780
+Read the line. Inspect the agents.
+
+136
+00:08:28,420 --> 00:08:31,680
+Use fantasy projections for the question
+they actually answer.
+
+137
+00:08:32,180 --> 00:08:33,520
+And make your own decision.

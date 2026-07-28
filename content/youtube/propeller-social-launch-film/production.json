@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "slug": "propeller-social-launch-film",
+  "state": "review_ready",
+  "brief": {
+    "concept": "A 75-second vertical social launch film that introduces Propeller Picks at a high level: who it is for, what it is, where and when to use it, and how it turns player-prop research into a more informed and enjoyable experience without promises of outcomes.",
+    "primary_question": "What is Propeller Picks, who is it for, and how can sports fans use it to make player-prop and fantasy research more informed and more enjoyable?",
+    "audience": "Sports fans discovering Propeller on vertical social, including DFS, pick'em, and MLB fantasy users.",
+    "learning_outcome": "Viewers understand that Propeller is an independent AI-assisted research workspace for web and mobile, can inspect the reasoning behind a directional read, and can start in the free public Analyzer.",
+    "cta": "Start with the free Prop Analyzer at https://propellerpicks.com/analyzer/.",
+    "target_duration_seconds": 84,
+    "freshness_requirements": "Use current product captures where available. Any reused July 2026 product screen must be visibly labelled as an illustrative product capture. Do not use win-rate, ROI, profitability, agent-count, or promotional-availability claims."
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-07-23T13:47:59.632822+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-07-23T13:50:00Z",
+      "evidence": "User approved the social launch-film script."
+    },
+    "review": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    },
+    "publication": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080x1920.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {
+      "path": "data/product-facts.json",
+      "use": "Canonical product positioning, product scope, independence, confidence definition, sport-specific analysis signals, and public Analyzer CTA; verified July 15, 2026."
+    },
+    {
+      "path": "data/fantasy-product-facts.json",
+      "use": "Current fantasy scope: MLB hitters, DraftKings MLB scoring, and floor, central projection, and ceiling outputs; verified July 17, 2026."
+    }
+  ],
+  "publishing": {
+    "requested_visibility": "not_requested",
+    "video_id": null,
+    "url": null,
+    "uploaded": false,
+    "hd_processed": false,
+    "published_at": null,
+    "verified": false
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-07-23T13:47:59.632822+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "brief",
+      "at": "2026-07-23T13:47:59Z",
+      "note": "Locked a 75-second 9:16 social-first launch film for Reels, TikTok, and Shorts. The public promise is more fun and more informed research, never a profitable-outcome claim."
+    },
+    {
+      "phase": "script",
+      "at": "2026-07-23T13:47:59Z",
+      "note": "Prepared narration-first launch script, exact product visual map, and safety constraints. Awaiting explicit script approval before narration or render."
+    },
+    {
+      "phase": "script_approved",
+      "at": "2026-07-23T13:50:00Z",
+      "note": "User approved the social launch-film script; narration, capture preparation, and review-cut construction are authorized."
+    },
+    {
+      "phase": "narration_aligned",
+      "at": "2026-07-23T13:55:00Z",
+      "note": "Generated approved Kokoro am_michael narration and word-level alignment. Actual narration duration is 83.675 seconds; composition timing follows that source of truth."
+    },
+    {
+      "phase": "review_ready",
+      "at": "2026-07-23T14:05:00Z",
+      "note": "Rendered a 1080x1920 H.264/AAC social master and 540x960 review copy. Captions are burned in and upload-ready SRT is included. Product captures are visibly labelled illustrative July 2026. Semantic visual QA verified confidence, agent breakdown, line, and fantasy beats against the final visual map."
+    },
+    {
+      "phase": "mobile_crop_correction",
+      "at": "2026-07-23T14:22:00Z",
+      "note": "Reframed the mobile line and confidence captures to the top player-card area, and replaced the generic mobile zoom in the agent scene with a dedicated crop that shows Agent Breakdown and Player Workload. Re-rendered master and review copy; inspected final line, confidence, and mobile Agent Breakdown frames."
+    },
+    {
+      "phase": "caption_pacing_correction",
+      "at": "2026-07-23T14:33:00Z",
+      "note": "Replaced word-follow captions with phrase cards that hold for complete spoken clauses, typically 2 to 4 seconds. Re-rendered master and review copy; inspected the final caption treatment."
+    }
+  ]
+}
