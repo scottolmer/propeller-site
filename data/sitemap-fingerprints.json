@@ -16,43 +16,33 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "712f4fb5e10280d6018df289c891a11ae45d23c0c05a5689aba2b17cf1a50494",
+      "fingerprint": "95fa6f1b545ce7d3f0d1d664346bfd9ab7122dc8f1714e310ad4d89c1bbf72d0",
       "lastmod": "2026-07-31",
       "source": "analyzer/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/amed-rosario/": {
-      "fingerprint": "e79de98e536916b44c8fb59c15bb5b51bbec57e2270fec07084020bec94f3f05",
+      "fingerprint": "d3a7dc8fdf0c6b8d4cc6cc8b7def0eb1c29b93c9c5de843336ed1312c4732792",
       "lastmod": "2026-07-31",
       "source": "analyzer/mlb/amed-rosario/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/andres-gimenez/": {
-      "fingerprint": "7768dfc9aff187558dc6756bbf4686d5d03e94d1e79d58cd160339f31d862bcb",
+    "https://propellerpicks.com/analyzer/mlb/jose-siri/": {
+      "fingerprint": "8b1129a316cdbcc120a348b6d5f4eab610848bf622ca5c876a7adee191581b2f",
       "lastmod": "2026-07-31",
-      "source": "analyzer/mlb/andres-gimenez/index.html"
+      "source": "analyzer/mlb/jose-siri/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/jose-tena/": {
-      "fingerprint": "7accafdc63016e6b53e4bf35b9f9b18d3b33408a1970a8f64c295046d6c12ba6",
+      "fingerprint": "335be42e83228c940f02cad377addcfd9bcc49724bbd7235ad0ae57fc3eb5513",
       "lastmod": "2026-07-31",
       "source": "analyzer/mlb/jose-tena/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/wade-meckler/": {
-      "fingerprint": "702d4037e04c67fad20c51981b92b0701262d85e67a366ef003908d2f88ab54e",
-      "lastmod": "2026-07-31",
-      "source": "analyzer/mlb/wade-meckler/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/will-warren/": {
-      "fingerprint": "e2644a13832b9ee6a42dd59fcb2cd0d8122e80a2f4356d9c5e4c225dbd15ca9c",
-      "lastmod": "2026-07-31",
-      "source": "analyzer/mlb/will-warren/index.html"
-    },
     "https://propellerpicks.com/analyzer/mlb/yohendrick-pinango/": {
-      "fingerprint": "f5fd0e33edc82e1b4d0aa244648480ccae5793be83a9ba36464b2012e8bd6eef",
+      "fingerprint": "31d36aa0f29099bec99e3aed41103bdf079be2a6a24c53be921f51f9c90d0c9a",
       "lastmod": "2026-07-31",
       "source": "analyzer/mlb/yohendrick-pinango/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "b7fa99e700231c782870528d704eee01bc9eee85614a15fca1dfb7e13675fdbe",
-      "lastmod": "2026-07-30",
+      "fingerprint": "48e20e6106e9971f33ce16136f1d2f014c9a0d86c298812b6aadda0c22af6007",
+      "lastmod": "2026-07-31",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -246,7 +236,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "ba1b16523cba872147f09676b87e89dccb8c9e068be02c32970b7e98412119e1",
+      "fingerprint": "d1512558641fa702d60e3846344a1e94ba4252d6094206346f41aed85b7a5fcd",
       "lastmod": "2026-07-31",
       "source": "picks/mlb/index.html"
     },
