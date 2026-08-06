@@ -16,43 +16,53 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "4bd0663cc47c64a3d963619827d4cd631f04ef9738a391e57d80d2c232435f1a",
+      "fingerprint": "9fa1efee759d0378b6e6007d39b3eb82ff9902431ba1170db2c1fcd2c1556980",
       "lastmod": "2026-08-06",
       "source": "analyzer/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/andres-gimenez/": {
-      "fingerprint": "221405abb67a7bd39f595315d55193f0a7bcaf33acde40811eb33970a8dd7995",
+      "fingerprint": "055b5a16cb13af86dae3d5e03d485dfa4e5bccaa171e605d64df6b74ee301af7",
       "lastmod": "2026-08-06",
       "source": "analyzer/mlb/andres-gimenez/index.html"
     },
+    "https://propellerpicks.com/analyzer/mlb/brendan-donovan/": {
+      "fingerprint": "45f7ee880f371cfa3f3021b7e1edc278a8e5a01795c92a99dfa5e50e609f5712",
+      "lastmod": "2026-08-06",
+      "source": "analyzer/mlb/brendan-donovan/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/davis-schneider/": {
+      "fingerprint": "7d484c6b637b8cccd957503c4d45e06ce3e9003e30dff7aea83eeafb55d0ffe8",
+      "lastmod": "2026-08-06",
+      "source": "analyzer/mlb/davis-schneider/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/jose-siri/": {
+      "fingerprint": "95fc8d390637411357a9afb610b0382d652cae2e26e54daab70f5e44929c62ac",
+      "lastmod": "2026-08-06",
+      "source": "analyzer/mlb/jose-siri/index.html"
+    },
     "https://propellerpicks.com/analyzer/mlb/kyle-isbel/": {
-      "fingerprint": "027a3c6c035a0ed0364a8759e630ce4d9ef23c2edd626d7fe9fee822adae2109",
+      "fingerprint": "3113f2e214dd3fde9c9e361a484f9a3899e216433016c3b74c143e629a31f765",
       "lastmod": "2026-08-06",
       "source": "analyzer/mlb/kyle-isbel/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/leo-jimenez/": {
-      "fingerprint": "ec6cab7727bc3d99e3bcd4f64ba314d46c32de7a3cc997190bd5da56aa7cc918",
+      "fingerprint": "fb1fbb78fe7bc1f1ad79c87659998c19152828180a6ff8292a3f45f6ee2dea52",
       "lastmod": "2026-08-06",
       "source": "analyzer/mlb/leo-jimenez/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/leo-rivas/": {
-      "fingerprint": "59e1fbb7a20a6053618e0efeda0fb53363849a2c44b12ee0ff2493c4cae664b1",
-      "lastmod": "2026-08-06",
-      "source": "analyzer/mlb/leo-rivas/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/martin-perez/": {
-      "fingerprint": "200afd097478054a9ea12ad2d5d2beb2f32284f3665d369c8f40b855a344cc25",
-      "lastmod": "2026-08-06",
-      "source": "analyzer/mlb/martin-perez/index.html"
-    },
     "https://propellerpicks.com/analyzer/mlb/tyler-heineman/": {
-      "fingerprint": "a02c68b82d93a29bf7104bfc1c71f014bbba591011b1560386094e6166eb4754",
+      "fingerprint": "79403d27b6b11780f59187342da1426b1fa560cf88a042d43a5bc9a1c51c25cb",
       "lastmod": "2026-08-06",
       "source": "analyzer/mlb/tyler-heineman/index.html"
     },
+    "https://propellerpicks.com/analyzer/mlb/wade-meckler/": {
+      "fingerprint": "5df8fa403257d7bca1e98810ec61f70d287ad4c1b22a11e9025847954824960e",
+      "lastmod": "2026-08-06",
+      "source": "analyzer/mlb/wade-meckler/index.html"
+    },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "bc50fd416d7e9edd9ad3d855e5710a405f4c239f1da33a6f53d4facc45a7b74d",
-      "lastmod": "2026-08-05",
+      "fingerprint": "7c88429fec668e86a48b3a5c8bdb33d881b8a5556dc2fb9c452aaf94667c2dc4",
+      "lastmod": "2026-08-06",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -246,7 +256,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "bfe7eef987a7d2372185d415ac60f56942f2f190338ae6c928483e500dd0eace",
+      "fingerprint": "08a33b341e152d884dbf14d16e1f2bb517ed45d00ad4ac11d39dba0cfe815a38",
       "lastmod": "2026-08-06",
       "source": "picks/mlb/index.html"
     },
