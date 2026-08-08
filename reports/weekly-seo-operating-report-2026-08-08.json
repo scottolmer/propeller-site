@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "report_type": "weekly_seo_operating_report",
+  "as_of": "2026-08-08",
+  "status": "captured_baseline_blocked_for_current_movement",
+  "freshness": {
+    "gsc_dashboard_generated": "2026-07-21",
+    "gsc_status": "stale",
+    "aeo_status": "incomplete"
+  },
+  "gsc_captured_baseline": {
+    "window": "2026-06-21 to 2026-07-18",
+    "impressions": 52240,
+    "clicks": 442,
+    "ctr_percent": 0.85,
+    "average_position": 7.5,
+    "coverage": "captured dashboard; verify completeness before current-week claims"
+  },
+  "movement": {
+    "status": "blocked",
+    "reason": "GSC/GA4 dashboard is stale: 2026-07-21.; Latest AEO matrix is incomplete; rates are not publishable."
+  },
+  "indexation_and_schema": {
+    "sitemap_urls": 70,
+    "source": "sitemap.xml",
+    "note": "Run repository contracts for full schema and link results."
+  },
+  "aeo": {
+    "source": "docs/seo/aeo-snapshot-2026-08-01.csv",
+    "date": "2026-08-01",
+    "contract_rows": 300,
+    "completed": 1,
+    "status_counts": {
+      "completed": 1,
+      "pending_manual_platform_run": 299
+    },
+    "publishable_rates": false,
+    "status": "incomplete"
+  },
+  "opportunities": [
+    {
+      "cluster": "Review captured low-CTR rows",
+      "owner": "/tools/",
+      "source": "analytics-dashboard/data/analytics-dashboard.json",
+      "status": "captured_only"
+    }
+  ],
+  "ctr_losers": {
+    "status": "captured_only",
+    "note": "Do not present stale dashboard rows as current-week losers."
+  },
+  "next_three_actions": [
+    "Obtain a complete current GSC export.",
+    "Complete or retry the frozen 300-row AEO matrix.",
+    "Run site schema/sitemap contracts on the release base."
+  ],
+  "sources": [
+    "analytics-dashboard/data/analytics-dashboard.json",
+    "docs/seo/aeo-snapshot-2026-08-01.csv",
+    "docs/seo/seo-survey-2026-06-10.md",
+    "sitemap.xml"
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "report_type": "propeller_seo_aeo_backlog",
+  "as_of": "2026-08-08",
+  "prepared_at": "2026-08-08",
+  "report_author_model": "gpt-5.6-terra / high (evidence memo); primary agent integration",
+  "scope": "Evidence-backed audit of the ten Propeller Picks SEO/AEO backlog items.",
+  "public_status": "internal_only",
+  "measurement_policy": "Use captured local evidence only. Do not simulate rankings, AEO answers, citations, competitor findings, or current GSC movement.",
+  "sources": [
+    {"path": "analytics-dashboard/data/analytics-dashboard.json", "date": "2026-07-21", "type": "captured GSC/GA4 dashboard", "limitation": "Top-N/capped snapshot; not current as of the report date."},
+    {"path": "docs/seo/seo-survey-2026-06-10.md", "date": "2026-06-10", "type": "captured GSC survey", "limitation": "Window ended 2026-06-08."},
+    {"path": "docs/seo/aeo-snapshot-2026-07-16.csv", "date": "2026-07-16", "type": "AEO matrix", "limitation": "255 completed and 45 failed_inconclusive; non-comparable draft."},
+    {"path": "docs/seo/aeo-snapshot-2026-08-01.csv", "date": "2026-08-01", "type": "AEO matrix", "limitation": "1 completed and 299 pending_manual_platform_run; not publishable."},
+    {"path": "data/platform-intent-map.json", "date": "2026-07-25", "type": "canonical intent and GSC evidence map"},
+    {"path": "data/sport-answer-modules.json", "date": "2026-07-16", "type": "sport answer modules and GSC evidence"},
+    {"path": "competitor-profiles/", "date": "2026-07-24", "type": "captured competitor source registers", "limitation": "Not a current SERP or rank-tracker export."},
+    {"path": "scripts/", "date": "2026-08-08", "type": "site and measurement contracts"}
+  ],
+  "items": [
+    {
+      "item": 1,
+      "title": "GSC opportunity mining",
+      "status": "partial",
+      "evidence_window": "2026-06-16 to 2026-07-18 in captured artifacts; older survey 2026-05-12 to 2026-06-08",
+      "sources": ["analytics-dashboard/data/analytics-dashboard.json", "docs/seo/seo-survey-2026-06-10.md", "data/platform-intent-map.json", "data/sport-answer-modules.json"],
+      "findings": [
+        "The captured 28-day dashboard reports 52,240 impressions, 442 clicks, 0.85% CTR, and average position 7.5; the artifact is capped/top-N and stale relative to 2026-08-08.",
+        "Captured opportunity clusters include PrizePicks pick-count/rules, Pick6 calculator, 5-of-6 answers, player-prop stats, and Underdog payout queries.",
+        "The survey confirms calculator strength, zero-click strategy pages, and platform-query cannibalization; canonical owners remain the calculator, current research, and strategy-guide URLs in the intent map."
+      ],
+      "limitations": ["No current raw GSC export is committed; complete query universe, fresh movement, and current low-CTR ranking cannot be claimed."],
+      "actions": ["Export complete query/page/query-page data weekly.", "Add deterministic intent labels and canonical-owner mapping.", "Prioritize calculator and 5-of-6 answer snippets after a fresh stable window."],
+      "canonical_owners": ["/tools/prizepicks-payout-calculator/", "/tools/pick6-payout-calculator/", "/tools/underdog-payout-calculator/", "/guides/prizepicks-strategy/", "/picks/underdog/"]
+    },
+    {
+      "item": 2,
+      "title": "FAQ/AEO gap audit",
+      "status": "partial",
+      "evidence_window": "2026-07-16 to 2026-08-01 AEO captures; 2026-08-08 local site contracts",
+      "sources": ["docs/seo/aeo-snapshot-2026-07-16.csv", "docs/seo/aeo-snapshot-2026-08-01.csv", "scripts/generate_help_pages.py", "scripts/sync_faq_schema.py", "data/platform-intent-map.json", "data/sport-answer-modules.json"],
+      "findings": ["Help and comparison generators provide direct-answer blocks and FAQ/schema parity passes for managed pages.", "Research hub has explanatory CollectionPage/BreadcrumbList schema but no confirmed FAQPage or explicit direct-answer block.", "Analyzer visibility is weak in the completed July AEO sample; strengthen the existing analyzer owner rather than creating a duplicate generic URL."],
+      "limitations": ["August AEO is incomplete and cannot support mention or citation rates."],
+      "actions": ["Add an answer-first block and evidence links to research/index.html if product/content approval allows.", "Review analyzer answer, availability, confidence-limit, methodology, and non-optimizer copy.", "Re-run the frozen 300-row matrix before publishing AEO rates."],
+      "canonical_owners": ["/research/", "/analyzer/", "/help/", "/guides/how-ai-sports-betting-works/"]
+    },
+    {
+      "item": 3,
+      "title": "Snippet improvement queue",
+      "status": "partial",
+      "evidence_window": "2026-06-10 to 2026-07-18 captured GSC evidence",
+      "sources": ["analytics-dashboard/data/analytics-dashboard.json", "docs/seo/seo-survey-2026-06-10.md", "analyzer/index.html", "fantasy/mlb/index.html"],
+      "findings": ["Captured low-CTR opportunities cluster around rules/count questions, calculators, and player-prop research.", "No fresh position 4–12 queue can be asserted from the current date.", "Supported test variants include Free AI Player Prop Analyzer: Lines, Confidence & Limits | Propeller; Free Player Prop Analyzer for DFS & Pick'em Research | Propeller; and AI Player Prop Research Tool: Free Analyzer | Propeller."],
+      "limitations": ["Variants are hypotheses for controlled testing, not proven winners; no current SERP or CTR result is available."],
+      "actions": ["Run variants only after a fresh stable GSC query/page window.", "Keep descriptions answer-first and research-only; avoid guarantee, sportsbook, ROI, or profitability language."],
+      "canonical_owners": ["/analyzer/", "/tools/pick6-payout-calculator/", "/tools/prizepicks-payout-calculator/", "/tools/underdog-payout-calculator/"]
+    },
+    {
+      "item": 4,
+      "title": "Internal-link graph cleanup",
+      "status": "partial",
+      "evidence_window": "2026-08-08 local public-scope crawl",
+      "sources": ["research/index.html", "scripts/generate_help_pages.py", "scripts/generate_comparison_pages.py", "docs/seo/seo-survey-2026-06-10.md"],
+      "findings": ["Public crawl found 120,967 internal references and zero broken public links.", "research/index.html is a confirmed indexable orphan with zero incoming internal links.", "Fourteen indexable pages have one or fewer incoming links; 439 links point to 215 noindex historical blog pages."],
+      "limitations": ["Weak-link findings are prioritization heuristics, not proof that every historical link is wrong."],
+      "actions": ["Add contextual links to /research/ from the homepage, guides, or methodology surfaces.", "Review weak comparison/help pages for useful contextual links.", "Route nonessential historical links toward /results/, /track-record/, or current research owners."],
+      "canonical_owners": ["/research/", "/results/", "/track-record/", "/how-it-works/", "/analyzer/"]
+    },
+    {
+      "item": 5,
+      "title": "Schema/sitemap hygiene",
+      "status": "partial",
+      "evidence_window": "2026-08-08 local contract checks",
+      "sources": ["sitemap.xml", "data/sitemap-fingerprints.json", "scripts/generate_sitemap.py", "scripts/check_schema_parity.py", "scripts/check_structured_data_contracts.py", "scripts/sync_faq_schema.py"],
+      "findings": ["FAQ parity passed for 47 pages and 219 entries; structured-data checks found zero errors in the public inventory.", "The checked-in sitemap has 70 URLs matching 70 indexable canonical pages in the public inventory.", "generate_sitemap.py --check reports out_of_date for sitemap.xml and data/sitemap-fingerprints.json because untracked content assets are discovered; the generator skips noindex HTML, but does not skip content/ entirely."],
+      "limitations": ["The local worktree includes unrelated untracked content assets; no generator fix was made in this scope."],
+      "actions": ["Resolve the content/ discovery issue in a separate maintenance change with an explicit allowlist.", "Re-run sitemap and schema checks on a clean, current base.", "Review Article dateModified freshness for dated guides before changing publication metadata."],
+      "canonical_owners": ["sitemap.xml", "data/sitemap-fingerprints.json", "scripts/generate_sitemap.py"]
+    },
+    {
+      "item": 6,
+      "title": "Content-refresh candidates",
+      "status": "partial",
+      "evidence_window": "2026-07-16 to 2026-07-25 captured content/source review",
+      "sources": ["tools/underdog-payout-calculator/index.html", "tools/pick6-payout-calculator/index.html", "guides/prizepicks-strategy/index.html", "docs/seo/complete-seo-audit-2026-07-16.html", "data/platform-intent-map.json"],
+      "findings": ["Calculator pages are the strongest captured demand/AEO surfaces, but the August observation cited Odds Reference and PrizePicks rather than Propeller.", "Platform source lists and review dates should be rechecked before substantive freshness changes.", "Guide/calculator ownership should stay separated: exact arithmetic on calculators; context, rules caveats, and education on guides."],
+      "limitations": ["No live platform-rule verification, fresh screenshot review, or current GSC refresh was performed."],
+      "actions": ["Re-verify official platform rules and source dates.", "Refresh calculator differentiators and answer blocks only after factual review.", "Review dated guide metadata for substantive changes rather than changing dates mechanically."],
+      "canonical_owners": ["/tools/prizepicks-payout-calculator/", "/tools/underdog-payout-calculator/", "/tools/pick6-payout-calculator/", "/guides/prizepicks-strategy/"]
+    },
+    {
+      "item": 7,
+      "title": "Competitor/SERP evidence organization",
+      "status": "partial",
+      "evidence_window": "2026-07-21 to 2026-07-24 captured reports and source registers",
+      "sources": ["competitor-profiles/", "docs/seo/competitor-intelligence-baseline-2026-07-24.html", "docs/seo/competitor-search-traffic-benchmark-2026-07-21.html", "docs/seo/aeo-snapshot-2026-07-16.csv"],
+      "findings": ["Captured clusters are payout calculators, generic analyzers, and transparency/methodology.", "Captured recurring comparison surfaces include Odds Reference, OddsJam, OddsShopper, Action Network, PropsBot, PlayerProps.ai, Rithmm, Outlier, Props.Cash, and Props Optimizer.", "The grounded brief is to improve transparent arithmetic, inspectable methodology, evidence links, and clear product boundaries; platform ecosystems remain distinct from direct competitors."],
+      "limitations": ["No current SERP screenshots, live rank tracker, competitor Search Console, paid-spend, or ad-history evidence is present."],
+      "actions": ["Maintain a dated source register per query cluster.", "Build comparison/content briefs only from captured evidence.", "Do not claim rankings, traffic parity, ad history, ROI, or profitability."],
+      "canonical_owners": ["/tools/", "/analyzer/", "/how-it-works/", "/research/", "/compare/"]
+    },
+    {
+      "item": 8,
+      "title": "AEO measurement preparation",
+      "status": "partial",
+      "evidence_window": "2026-07-16 and 2026-08-01 matrices",
+      "sources": ["docs/seo/aeo-citation-tracker.md", "docs/seo/aeo-contracts/2026-07-v1.json", "scripts/aeo_contract.py", "scripts/create_aeo_baseline.py", "scripts/import_aeo_observations.py", "scripts/summarize_aeo_snapshot.py", "docs/seo/aeo-snapshot-2026-07-16.csv", "docs/seo/aeo-snapshot-2026-08-01.csv"],
+      "findings": ["The rubric and normalization contract are implemented for 20 questions × 5 platforms × 3 runs = 300 observations.", "July has 255 completed and 45 failed_inconclusive rows; August has 1 completed and 299 pending_manual_platform_run rows.", "Exact cited Propeller URLs, semicolon-delimited multi-values, domain classification, evidence URLs, and accuracy grading are represented by the existing contract."],
+      "limitations": ["Neither current matrix passes the strict completeness gate; no August rates or month-over-month comparison is publishable."],
+      "actions": ["Complete or retry the 299 August manual observations.", "Resolve July inconclusive rows before a comparable rollup.", "Keep blocked/rate_limited/inconclusive rows explicit and never infer missing answers or citations."],
+      "canonical_owners": ["docs/seo/aeo-citation-tracker.md", "scripts/summarize_aeo_snapshot.py", "docs/seo/aeo-snapshot-2026-08-01.csv"]
+    },
+    {
+      "item": 9,
+      "title": "Programmatic SEO QA",
+      "status": "partial",
+      "evidence_window": "2026-08-08 local public-scope crawl and contracts",
+      "sources": ["scripts/check_site_consistency.py", "scripts/check_schema_parity.py", "scripts/check_structured_data_contracts.py", "scripts/generate_sitemap.py", "analyzer/", "help/", "compare/", "blog/"],
+      "findings": ["The local public inventory contains 3,062 HTML files, 70 indexable canonical pages, and 2,992 noindex pages.", "No exact visible-body duplicates were confirmed in analyzer, blog, help, or compare inventories; six indexable analyzer pages contain answer/context copy while most player pages are intentionally noindex.", "Managed help/comparison answer blocks and schema checks pass; the sitemap generator discrepancy is the main confirmed programmatic QA issue."],
+      "limitations": ["Thin-content risk outside the public indexable set is not an indexation defect by itself; content/ untracked assets contaminate the local generator discovery."],
+      "actions": ["Keep indexation cohort gates for generated player pages.", "Add a deterministic exclusion/allowlist for non-public content inputs in sitemap generation.", "Preserve direct answer and differentiator contracts in generated templates."],
+      "canonical_owners": ["scripts/generate_help_pages.py", "scripts/generate_comparison_pages.py", "scripts/generate_sitemap.py", "/analyzer/"]
+    },
+    {
+      "item": 10,
+      "title": "Weekly SEO operating report",
+      "status": "completed",
+      "evidence_window": "Captured inputs through 2026-08-08; source data latest 2026-08-01/2026-07-24",
+      "sources": ["reports/weekly-seo-operating-report-2026-08-08.json", "/Users/scottolmer/.codex/skills/weekly-seo-report/SKILL.md", "/Users/scottolmer/.codex/skills/weekly-seo-report/scripts/generate_weekly_report.py"],
+      "findings": ["A reusable weekly report skill and deterministic stdlib generator were created.", "The example report includes GSC movement, shipped/checked work, opportunities, CTR losers, indexation/schema issues, AEO completeness, and the next three actions.", "The generator fails closed or marks blocked when current GSC/GA4 evidence is missing or stale and never publishes incomplete AEO rates."],
+      "limitations": ["The first report is a captured-evidence baseline, not a current-week performance trend."],
+      "actions": ["Run the skill after each complete weekly GSC/GA4 export.", "Keep source freshness and coverage visible.", "Publish only completed comparable AEO observations."],
+      "canonical_owners": ["reports/", "/Users/scottolmer/.codex/skills/weekly-seo-report/"]
+    }
+  ],
+  "next_three_actions": [
+    "Obtain and store a complete current GSC query/page/query-page export, then generate deterministic clusters and a fresh low-CTR queue.",
+    "Complete the 300-row AEO matrix or retry blocked/inconclusive observations with exact evidence URLs.",
+    "Resolve sitemap generator discovery of unrelated content inputs and add a contextual incoming link to /research/."
+  ]
+}
