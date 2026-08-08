@@ -12,6 +12,7 @@ EXCLUDED_PARTS = {
     "mockups",
     "analytics-dashboard",
     "docs",
+    "reports",
     "content",
     "node_modules",
     ".git",
