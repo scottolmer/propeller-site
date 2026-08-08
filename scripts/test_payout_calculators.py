@@ -40,7 +40,7 @@ class SharedCalculatorContracts(unittest.TestCase):
             "underdog": "/picks/underdog/",
             "pick6": "/picks/pick6/",
         }
-        expected_faq_counts = {"prizepicks": 7, "underdog": 8, "pick6": 8}
+        expected_faq_counts = {"prizepicks": 8, "underdog": 8, "pick6": 8}
         for name, picks_link in expected_pick_links.items():
             with self.subTest(page=name):
                 page = source(name)

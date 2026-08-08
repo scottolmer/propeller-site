@@ -9,7 +9,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 OWNERS = {
     "/analyzer/": [
-        "Propeller Picks is a free AI player prop analyzer",
+        "Propeller Picks is a free player prop analyzer with AI-assisted, plain-language research",
+        "Is there a free player prop analyzer with no account required?",
         "/guides/ai-player-prop-analyzer-vs-dfs-optimizer/",
         "/guides/how-ai-sports-betting-works/",
         "/data/methodology-version.json",
