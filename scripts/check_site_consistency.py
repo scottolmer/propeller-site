@@ -14,6 +14,7 @@ EXCLUDED_PARTS = {
     "docs",
     "reports",
     "content",
+    "reports",
     "node_modules",
     ".git",
 }
