@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/site-system.css">
+  <link rel="stylesheet" href="/assets/css/site-compat.css">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script src="/assets/js/site-nav.js" defer></script>
+  <title>GSC Snippet and Content Refresh Queue — 2026-08-08</title>
+  <style>
+    :root{--ink:#182235;--muted:#5b687c;--line:#dbe2ec;--blue:#175cd3;--green:#067647;--amber:#a15c00;--bg:#f6f8fb}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    main{max-width:1180px;margin:auto;padding:42px 22px 70px}header,section{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;margin-bottom:18px;box-shadow:0 4px 18px rgba(24,34,53,.05)}
+    h1{margin:0 0 8px;font-size:clamp(27px,4vw,42px);letter-spacing:-.03em}h2{margin:0 0 14px;font-size:22px}h3{margin:18px 0 6px}
+    .eyebrow{color:var(--blue);font-weight:750;text-transform:uppercase;letter-spacing:.09em;font-size:12px}.lede{font-size:17px;color:var(--muted)}
+    .tag{display:inline-block;padding:4px 9px;border-radius:999px;font-weight:700;font-size:12px}.done{background:#dcfae6;color:var(--green)}.refresh{background:#fff3dc;color:var(--amber)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.metric{border:1px solid var(--line);border-radius:12px;padding:14px}.metric strong{display:block;font-size:25px}.metric span{color:var(--muted);font-size:13px}
+    table{width:100%;border-collapse:collapse}th,td{text-align:left;vertical-align:top;padding:10px 8px;border-bottom:1px solid var(--line)}th{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}td small{color:var(--muted)}
+    code{background:#eef2f7;border-radius:5px;padding:2px 5px}a{color:var(--blue)}.note{border-left:4px solid var(--blue);padding-left:13px}.owner{white-space:nowrap}
+    footer{color:var(--muted);font-size:13px}
+  </style>
+</head>
+<body>
+<main>
+  <nav class="pp-site-nav" aria-label="Site navigation"><a href="/">Propeller Picks</a></nav>
+  <header>
+    <div class="eyebrow">Propeller Picks · Search Console execution</div>
+    <h1>Snippet and content-refresh queue</h1>
+    <p class="lede">Completed from the connected <a href="https://search.google.com/search-console">Google Search Console</a> property <code>sc-domain:propellerpicks.com</code>.</p>
+    <p><span class="tag done">#3 QUEUE COMPLETE</span> <span class="tag done">#6 REFRESH LIST COMPLETE</span> <span class="tag refresh">Implementation and CTR testing remain follow-up work</span></p>
+  </header>
+
+  <section>
+    <h2>Evidence window</h2>
+    <div class="grid">
+      <div class="metric"><strong>115,041</strong><span>web impressions</span></div>
+      <div class="metric"><strong>1,062</strong><span>web clicks</span></div>
+      <div class="metric"><strong>0.9%</strong><span>average CTR</span></div>
+      <div class="metric"><strong>8.2</strong><span>average position</span></div>
+      <div class="metric"><strong>May 7–Aug 6</strong><span>GSC date range</span></div>
+    </div>
+    <p class="note">Priorities use observed page-level impressions, CTR, and position. They are not simulated expected CTRs or rankings.</p>
+  </section>
+
+  <section>
+    <h2>Ranked snippet queue</h2>
+    <table>
+      <thead><tr><th>Priority</th><th>Page owner</th><th>GSC evidence</th><th>Why now</th><th>Action</th></tr></thead>
+      <tbody>
+        <tr><td>P0</td><td class="owner"><code>/guides/nba-prop-betting/</code><br><small>guides/nba-prop-betting/index.html</small></td><td>17,170 impressions<br>29 clicks · 0.2% CTR · position 11.2</td><td>Largest observed high-impression, weak-CTR page and near the top-10 boundary.</td><td>Rewrite title/meta around NBA player-prop analysis; preserve research-only positioning and add a direct answer block.</td></tr>
+        <tr><td>P0</td><td class="owner"><code>/tools/prizepicks-payout-calculator/</code><br><small>tools/prizepicks-payout-calculator/index.html</small></td><td>50,817 impressions<br>369 clicks · 0.7% CTR · position 6.3</td><td>Largest page-level demand with weak aggregate CTR despite strong calculator query CTR.</td><td>Clarify Power/Flex, 5-of-6, and current-rule verification in the snippet; test against the existing title.</td></tr>
+        <tr><td>P0</td><td class="owner"><code>/tools/underdog-payout-calculator/</code><br><small>tools/underdog-payout-calculator/index.html</small></td><td>14,272 impressions<br>203 clicks · 1.4% CTR · position 6.2</td><td>High demand, position six, and a broad query surface where the snippet can be more explicit.</td><td>Lead with free calculator plus Flex/8-pick coverage; refresh platform-rule source date.</td></tr>
+        <tr><td>P1</td><td class="owner"><code>/picks/underdog/</code><br><small>picks/underdog/index.html</small></td><td>2,890 impressions<br>27 clicks · 0.9% CTR · position 11.6</td><td>Position is outside the top ten with low CTR and a date-sensitive title.</td><td>Refresh date only from the actual rendered slate; align title with Higher/Lower research and current availability.</td></tr>
+        <tr><td>P1</td><td class="owner"><code>/tools/pick6-payout-calculator/</code><br><small>tools/pick6-payout-calculator/index.html</small></td><td>2,881 impressions<br>44 clicks · 1.5% CTR · position 7.5</td><td>Useful page-level demand with room to clarify that it estimates the multiplier shown by DraftKings.</td><td>Keep the estimator qualification visible; refresh current-rule/source language.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Three title/meta variants</h2>
+    <h3><code>/guides/nba-prop-betting/</code></h3>
+    <ol>
+      <li><b>Title:</b> NBA Player Prop Analysis Guide 2026 | Minutes, Pace &amp; Matchups<br><b>Description:</b> Research NBA player props with minutes, usage, pace, injuries, matchup context, and line movement. Use Propeller to inspect the evidence before deciding.</li>
+      <li><b>Title:</b> How to Analyze NBA Player Props: A Research Guide<br><b>Description:</b> A practical NBA prop research framework covering role, minutes, injuries, pace, matchup, and market context—without promising outcomes.</li>
+      <li><b>Title:</b> NBA Props Research: Odds, Minutes, Injuries &amp; Pace<br><b>Description:</b> Learn how to research NBA player props using current role, minutes, injury context, pace, matchup, and market signals.</li>
+    </ol>
+
+    <h3><code>/tools/prizepicks-payout-calculator/</code></h3>
+    <ol>
+      <li><b>Title:</b> PrizePicks Payout Calculator 2026 | Power, Flex &amp; 5-of-6<br><b>Description:</b> Calculate standard PrizePicks Power Play and Flex Play payouts, including 5-of-6 outcomes. Verify the final entry payout against PrizePicks.</li>
+      <li><b>Title:</b> Free PrizePicks Calculator for Power Play &amp; Flex Play<br><b>Description:</b> Use a free PrizePicks payout calculator for 2–6 pick Power and Flex scenarios, including partial-hit outcomes and current rule notes.</li>
+      <li><b>Title:</b> PrizePicks Calculator: Payouts, Flex Results &amp; 6 Picks<br><b>Description:</b> Estimate PrizePicks payouts for Power and Flex entries, then check the official app for promotions, custom multipliers, or final changes.</li>
+    </ol>
+
+    <h3><code>/tools/underdog-payout-calculator/</code></h3>
+    <ol>
+      <li><b>Title:</b> Underdog Payout Calculator 2026 | Flex &amp; 2–8 Picks<br><b>Description:</b> Calculate Underdog Standard and Flex entry outcomes for 2–8 picks, including partial-hit scenarios and the current payout notes.</li>
+      <li><b>Title:</b> Free Underdog Flex Payout Calculator<br><b>Description:</b> Estimate Underdog Flex payouts by entry size and correct picks. Use the displayed platform terms as the final authority.</li>
+      <li><b>Title:</b> Underdog Flex Calculator: Payouts for 2–8 Picks<br><b>Description:</b> Research Underdog Flex payout scenarios with a free calculator covering 2–8 picks and partial results.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Content-refresh candidates</h2>
+    <table>
+      <thead><tr><th>Priority</th><th>Owner</th><th>Observed reason</th><th>Refresh scope</th></tr></thead>
+      <tbody>
+        <tr><td>P0</td><td><code>picks/prizepicks/index.html</code></td><td>Title says “July 28”; page has 3,399 impressions, 4.2% CTR, position 7.3.</td><td>Replace only with a date generated from the actual current slate; verify visible date, title, schema, and availability copy together.</td></tr>
+        <tr><td>P0</td><td><code>picks/underdog/index.html</code></td><td>Title says “July 28”; page has 2,890 impressions, 0.9% CTR, position 11.6.</td><td>Refresh current-slate date and Higher/Lower terminology from the current platform surface; recheck indexable fallback copy.</td></tr>
+        <tr><td>P0</td><td><code>guides/nba-prop-betting/index.html</code></td><td>17,170 impressions, 0.2% CTR, position 11.2.</td><td>Run the P0 snippet rewrite, then audit above-fold answer alignment, source dates, screenshots, and current NBA examples.</td></tr>
+        <tr><td>P1</td><td><code>tools/prizepicks-payout-calculator/index.html</code></td><td>Description says rules were verified in July 2026; page has 50,817 impressions and 0.7% CTR.</td><td>Recheck official payout sources, update visible verification date, FAQ/schema parity, and calculator caveats.</td></tr>
+        <tr><td>P1</td><td><code>tools/underdog-payout-calculator/index.html</code></td><td>14,272 impressions, 1.4% CTR, position 6.2.</td><td>Recheck current Flex/Standard terminology, source links, screenshots, and description specificity.</td></tr>
+        <tr><td>P1</td><td><code>tools/pick6-payout-calculator/index.html</code></td><td>2,881 impressions, 1.5% CTR, position 7.5.</td><td>Reconfirm DraftKings multiplier wording and keep the estimator/non-guarantee qualification visible.</td></tr>
+        <tr><td>P2</td><td><code>tools/ai-betting-prompt-builder/index.html</code></td><td>914 impressions, 2.5% CTR, position 9.3.</td><td>Review “sports betting” wording against the research-only product facts and align the snippet with player-prop research intent.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Additional completed hygiene work</h2>
+    <table>
+      <thead><tr><th>Backlog item</th><th>Completed work</th><th>Validation</th><th>Follow-up</th></tr></thead>
+      <tbody>
+        <tr><td>#4 Internal-link graph cleanup</td><td>Added an incoming <a href="/research/">Public research library</a> link from <code>analyzer/index.html</code>, resolving the verified orphaned research hub.</td><td><code>rg</code> confirms an incoming research-hub link; site consistency and schema checks pass.</td><td>Continue broader graph monitoring for duplicate anchors and weak contextual links.</td></tr>
+        <tr><td>#5 Schema/sitemap hygiene</td><td>Regenerated <code>sitemap.xml</code> and <code>data/sitemap-fingerprints.json</code>; excluded internal <code>reports/</code> and user-owned <code>content/</code> artifacts from public sitemap generation.</td><td>Local sitemap check passes; 47 FAQ pages / 219 entries pass parity; schema, SEO remediation, and site consistency tests pass. GSC reports the submitted sitemap as Success, last read August 8, with 65 discovered pages.</td><td>After deployment, compare the local 70-URL sitemap with the next GSC crawl. The 65-versus-70 difference is a crawl-state reconciliation item, not a simulated indexation result.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Acceptance checks</h2>
+    <ul>
+      <li>Re-run the same GSC window after implementation; do not attribute movement to a title change without a stable comparison period.</li>
+      <li>Run the repository’s page consistency, FAQ/schema parity, sitemap, and rendered stale-string checks after edits.</li>
+      <li>Do not publish stale “today” dates, unsupported payout rules, sportsbook framing, guaranteed outcomes, or fabricated expected CTRs.</li>
+    </ul>
+  </section>
+  <footer class="pp-site-footer">Generated 2026-08-08 from connected Search Console data. The queue and refresh candidates are complete deliverables; implementation and post-change measurement are explicitly separate follow-up actions.</footer>
+</main>
+</body>
+</html>

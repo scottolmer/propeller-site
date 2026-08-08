@@ -25,7 +25,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 BASE = "https://propellerpicks.com"
 SITEMAP = ROOT / "sitemap.xml"
 MANIFEST = ROOT / "data" / "sitemap-fingerprints.json"
-SKIP_DIRS = {".git", "analytics-dashboard", "assets", "docs", "images", "mockups", "node_modules", "scripts"}
+SKIP_DIRS = {".git", "analytics-dashboard", "assets", "content", "docs", "images", "mockups", "node_modules", "reports", "scripts"}
 NOINDEX_RE = re.compile(r'<meta\s+name=["\']robots["\'][^>]*content=["\'][^"\']*noindex', re.I)
 CANONICAL_RE = re.compile(r'<link\s+rel=["\']canonical["\']\s+href=["\']([^"\']+)', re.I)
 

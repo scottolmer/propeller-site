@@ -13,6 +13,7 @@ EXCLUDED_PARTS = {
     "analytics-dashboard",
     "docs",
     "content",
+    "reports",
     "node_modules",
     ".git",
 }
