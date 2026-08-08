@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <link rel="stylesheet" href="/assets/css/site-system.css?v=20260712">
+  <link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">
+  <title>Programmatic SEO QA — 2026-08-08</title>
+  <style>
+    :root{--ink:#17231e;--muted:#5f7067;--line:#dce5df;--paper:#f5f7f4;--card:#fff;--green:#123f32;--lime:#d9ff67;--amber:#8a5d00;--red:#8c3026;--blue:#e9f1ff}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:#176049;text-underline-offset:3px}.wrap{width:min(1180px,calc(100% - 32px));margin:auto}.hero{background:linear-gradient(135deg,#102e27,var(--green));color:#fff;padding:48px 20px}.eyebrow{color:var(--lime);font-size:.75rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}.hero h1{max-width:920px;margin:.25em 0;font-size:clamp(2.2rem,5vw,4.6rem);line-height:1.02;letter-spacing:-.05em}.hero p{max-width:850px;color:#e1eee8;font-size:1.05rem}.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}.pill{border:1px solid #ffffff33;background:#ffffff12;border-radius:999px;padding:5px 10px;font-size:.76rem}main{padding:30px 0 70px}section{margin:0 0 24px;padding:24px clamp(16px,3vw,32px);border:1px solid var(--line);border-radius:16px;background:var(--card);box-shadow:0 8px 28px #123f320b}h2{color:var(--green);line-height:1.15;letter-spacing:-.03em}.notice{padding:15px 17px;border-left:5px solid var(--lime);background:#fbfff0;border-radius:0 10px 10px 0}.notice.warn{border-left-color:#edb83e;background:#fff9e9}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}.metric{padding:15px;border:1px solid var(--line);border-radius:12px}.metric strong{display:block;color:var(--green);font-size:1.7rem}.metric small{color:var(--muted)}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px}.table-wrap table{width:100%;min-width:900px;border-collapse:collapse;font-size:.86rem}.table-wrap th,.table-wrap td{padding:10px 11px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.table-wrap th{background:#edf3ee;color:#334a40;font-size:.69rem;letter-spacing:.06em;text-transform:uppercase}.table-wrap tr:last-child td{border-bottom:0}code{overflow-wrap:anywhere;font-size:.78rem}.status{display:inline-block;border-radius:999px;padding:2px 7px;font-size:.7rem;font-weight:800;white-space:nowrap}.pass{color:#176049;background:#e4f5e8}.opportunity{color:#244a83;background:var(--blue)}.risk{color:var(--amber);background:#fff1ca}.low{color:var(--red);background:#fde6e1}.muted{color:var(--muted)}li{margin:.45em 0}.footer{padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:.82rem}@media(max-width:800px){.metrics{grid-template-columns:repeat(2,1fr)}}@media(max-width:520px){.metrics{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <nav class="pp-site-nav"><div class="pp-site-nav__inner"><a class="pp-site-nav__brand" href="/">Propeller Picks</a><div class="pp-site-nav__links"><a href="/research/">Research</a><a href="/how-it-works/">Methodology</a></div></div></nav>
+  <header class="hero"><div class="wrap">
+    <div class="eyebrow">Internal SEO / programmatic QA · 2026-08-08</div>
+    <h1>Generated-page quality and indexation audit</h1>
+    <p>Evidence-led QA of the site’s generated and template-backed page families: duplicate metadata, thin-content risk, answer blocks, differentiators, canonicals, robots directives, sitemap membership, and internal discovery.</p>
+    <div class="pills"><span class="pill">Audit complete</span><span class="pill">Snapshot: origin/master 300de4d75</span><span class="pill">2,867 index.html files</span><span class="pill">No page changes in this release</span></div>
+  </div></header>
+  <main class="wrap">
+    <div class="notice warn"><strong>Interpretation:</strong> this is a cohort QA report, not a ranking or traffic claim. No arbitrary word-count threshold was used. Noindex archive pages are evaluated for indexation policy separately from the four indexable player pages.</div>
+    <section>
+      <h2>Executive result</h2>
+      <div class="metrics">
+        <div class="metric"><strong>68</strong><small>sitemap URLs audited</small></div>
+        <div class="metric"><strong>4</strong><small>indexable analyzer player pages</small></div>
+        <div class="metric"><strong>0</strong><small>canonical/sitemap/discovery failures</small></div>
+        <div class="metric"><strong>2</strong><small>noindex duplicate-title pages</small></div>
+      </div>
+      <p>The generated cohorts are structurally healthy: generator checks pass, indexable sitemap URLs are self-canonical and internally discoverable, and no indexable page is missing a title, description, H1, or canonical. The prioritized work is preventive and extractability-focused: enforce freshness before indexing player cards, add an answer-first block to the four indexable player pages, add suitable structured data to two indexable content pages, clean malformed long-tail entity metadata, and disambiguate a noindex archive title.</p>
+    </section>
+    <section>
+      <h2>Findings and owners</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Priority</th><th>Finding</th><th>Evidence</th><th>Owner / recommended action</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td><strong>P1</strong></td><td><strong>Indexable player pages lack a distinct answer-first block.</strong> The pages have current prop tables, player-specific statistics, model caveats, and a “How the model works” link, but no concise answer module marked as direct/answer-first.</td><td>All four entries in <code>scripts/analyzer_indexed.txt</code>: <code>analyzer/mlb/jose-tena/</code>, <code>pedro-pages/</code>, <code>amed-rosario/</code>, and <code>jordan-beck/</code>.</td><td><code>analyzer</code> player-page generator/template. Add a player-specific answer using the current slate, market set, and directional-confidence limitation; keep stale/no-current cards noindex.</td><td><span class="status opportunity">Opportunity</span></td></tr>
+          <tr><td><strong>P1</strong></td><td><strong>Indexing freshness gate is not regression-tested.</strong> The current release’s four indexable cards all show <code>data-slate-date="2026-08-08"</code>, but the indexing script does not have a test that fails when an indexable page’s slate date is not the current ET date.</td><td><code>scripts/apply_analyzer_indexing.py</code> filters on current date, but no regression contract asserts the invariant after generation. The preserved local baseline diverged to six indexable cards with July 28 dates; that state was not included in this deployed snapshot.</td><td><code>scripts/apply_analyzer_indexing.py</code> plus a focused test. Assert: indexable analyzer URL ⇒ current card exists, slate date equals the required ET date, and URL is in the sitemap.</td><td><span class="status risk">Preventive risk</span></td></tr>
+          <tr><td><strong>P1</strong></td><td><strong>Two indexable content pages have no JSON-LD block.</strong> Legal pages without schema are reasonable; the model-card guide and prospective-record page deserve an explicit structured-data decision.</td><td><code>/guides/how-ai-sports-betting-works/</code> and <code>/research/prospective-record/</code> are indexable, canonical, in the sitemap, and contain no JSON-LD. The two legal pages without JSON-LD are excluded from this content recommendation.</td><td>Page owners plus <code>scripts/check_structured_data_contracts.py</code>. Add only visible-content-supported Article/WebPage/Dataset markup, or record an intentional no-schema exception and test it.</td><td><span class="status opportunity">Opportunity</span></td></tr>
+          <tr><td><strong>P1</strong></td><td><strong>Long-tail entity metadata is malformed in noindex analyzer pages.</strong> NFL pages contain lowercase player names and empty team values; soccer pages contain unresolved <code>Unknown (ID)</code> entities.</td><td>250 NFL titles begin with lowercase player names; 274 NFL descriptions contain <code>() prop analysis</code>; 7 soccer titles contain <code>Unknown (ID)</code>. All are noindex in this snapshot, so the issue is data quality and future-expansion risk rather than current sitemap exposure.</td><td>Upstream player-page generator in the app repository plus source-data normalization. Suppress or quarantine unresolved entities; require display-name and team validation before page generation.</td><td><span class="status risk">P1 data risk</span></td></tr>
+          <tr><td><strong>P2</strong></td><td><strong>Duplicate title in the noindex archive cohort.</strong> NHL and MLB players named Will Smith share the exact title “Will Smith Historical Prop Analysis — AI Signal Context | Propeller.”</td><td><code>analyzer/nhl/will-smith/index.html</code> and <code>analyzer/mlb/will-smith/index.html</code> both have <code>noindex,follow</code>, self-canonicals, and are absent from the sitemap.</td><td>Analyzer title generator. Add sport/team disambiguation to archive titles and descriptions without changing noindex policy.</td><td><span class="status low">Low risk</span></td></tr>
+          <tr><td><strong>P2</strong></td><td><strong>Long-tail archive thinness is contained by noindex.</strong> The noindex analyzer cohort contains low-information historical pages, including pages with roughly 74 visible words, but none are eligible for the sitemap.</td><td>2,786 noindex analyzer pages; 523 are below 120 visible words. The indexable cohort is 4 pages with current props and approximately 291–301 visible words plus player-specific tables.</td><td>Keep the noindex/empty-state policy. Do not expand the indexable cohort until current player data, unique utility, answer copy, and rollback criteria are present.</td><td><span class="status pass">Contained</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+    <section>
+      <h2>Cohort matrix</h2>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Cohort</th><th>Inventory</th><th>Metadata / canonical</th><th>Answer / schema</th><th>Sitemap / discovery</th><th>Conclusion</th></tr></thead>
+        <tbody>
+          <tr><td><code>help/*</code></td><td>13 generator outputs: 12 help pages plus the hub.</td><td>All pages have unique title, description, canonical, H1, and H2 structure.</td><td>All 12 help pages have direct-answer content and FAQPage schema.</td><td>Indexable pages are internally linked and sitemap-valid.</td><td><span class="status pass">Pass</span></td></tr>
+          <tr><td><code>compare/{slug}</code></td><td>5 editorially reviewed generated comparisons.</td><td>Unique titles/descriptions, self-canonicals, indexable robots.</td><td>All 5 have answer-first comparison content and FAQPage schema generated from source data.</td><td>All 5 are in the sitemap and comparison hub/discovery paths.</td><td><span class="status pass">Pass</span></td></tr>
+          <tr><td><code>picks/{platform}</code> and sport answer owners</td><td>3 platform hubs plus 2 sport answer owners.</td><td>Canonical ownership and platform-intent tests pass.</td><td>Answer modules are present on all 5 existing canonical hubs; no duplicate page family was created.</td><td>All are indexable, internally linked, and sitemap-valid.</td><td><span class="status pass">Pass</span></td></tr>
+          <tr><td><code>analyzer/{sport}/{player}</code></td><td>2,790 player pages: 4 indexable, 2,786 noindex.</td><td>All inspected pages have titles, descriptions, and self-canonicals. One duplicate-title pair is confined to noindex pages.</td><td>Indexable pages have player-specific current tables and limitations but no distinct answer-first block; noindex pages are not expanded for indexing.</td><td>All 4 indexable pages are in the 68-URL sitemap; noindex archive pages are excluded.</td><td><span class="status opportunity">Targeted follow-up</span></td></tr>
+          <tr><td><code>fantasy/*</code></td><td>3 fantasy pages in the current static inventory.</td><td>Unique titles, indexable robots, self-canonicals, and H1s.</td><td>Methodology and product contracts pass; no duplicate expansion identified.</td><td>Covered by current site and fantasy contract checks.</td><td><span class="status pass">Pass</span></td></tr>
+        </tbody>
+      </table></div>
+    </section>
+    <section>
+      <h2>Validation evidence</h2>
+      <ul>
+        <li><code>generate_help_pages.py --check</code>: 13 current.</li>
+        <li><code>generate_comparison_pages.py --check</code>: 5 current.</li>
+        <li><code>generate_sport_answer_modules.py --check</code>: current.</li>
+        <li><code>generate_sitemap.py --check</code>: 68 URLs, unchanged.</li>
+        <li><code>check_site_consistency.py</code>: 3,091 files, 0 errors.</li>
+        <li><code>check_structured_data_contracts.py</code>: 3,090 pages checked, 0 errors; it validates existing blocks but does not require every indexable page to have JSON-LD.</li>
+        <li><code>test_sport_answer_modules.py</code>: 5 passed; <code>test_platform_intent_ownership.py</code>: passed; <code>test_normalize_platform_intent_links.py</code>: 4 passed.</li>
+        <li><code>check_fantasy_contracts.py</code>: 4 pages, 180 AEO observations, 0 errors.</li>
+        <li><code>check_ai_search_assets.py</code>: passed; <code>check_product_fact_consistency.py</code>: 3,095 HTML pages, 0 errors.</li>
+        <li><code>test_seo_audit_remediation.py</code>: 6 passed; <code>git diff --check</code>: passed.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Recommended next implementation order</h2>
+      <ol>
+        <li>Add and test the analyzer freshness invariant before increasing the indexed player cohort.</li>
+        <li>Add one concise, current-data answer block to the four indexable player pages through the generator/template.</li>
+        <li>Decide whether the methodology guide and prospective record should receive visible-content-supported schema; add an explicit test either way.</li>
+        <li>Disambiguate noindex duplicate player titles as a low-risk generator cleanup.</li>
+      </ol>
+      <p class="muted"><strong>Release status:</strong> QA report complete and ready for deployment. No generated pages, indexation directives, canonicals, schema, or sitemap entries were changed by this report release.</p>
+    </section>
+    <p class="footer">Generated 2026-08-08 from local source and rendered HTML at origin/master commit <code>300de4d75f864a33908f03c09f01c54b5ea03748</code>. This report is internal, noindex/nofollow, and excluded from the sitemap. Propeller is a research and analysis tool; it does not accept wagers or operate as a sportsbook.</p>
+  </main>
+</body>
+</html>
