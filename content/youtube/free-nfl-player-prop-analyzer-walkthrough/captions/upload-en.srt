@@ -1,0 +1,421 @@
+1
+00:00:00,000 --> 00:00:03,280
+What is a free NFL player prop analyzer?
+
+2
+00:00:03,960 --> 00:00:07,130
+It is a research tool that starts with a
+specific NFL
+
+3
+00:00:07,140 --> 00:00:12,550
+player, stat, and listed line, then shows
+whether the available evidence
+
+4
+00:00:12,560 --> 00:00:15,060
+leans above or below that number.
+
+5
+00:00:15,620 --> 00:00:19,380
+Propeller’s public Analyzer is free to use
+without an account,
+
+6
+00:00:19,880 --> 00:00:22,580
+and it does not place entries or accept
+wagers.
+
+7
+00:00:23,260 --> 00:00:26,290
+Here is how to use it correctly before the
+NFL season
+
+8
+00:00:26,300 --> 00:00:31,100
+begins. Open the Analyzer and select the
+NFL tab.
+
+9
+00:00:31,780 --> 00:00:34,720
+The first thing to check is not the
+confidence score.
+
+10
+00:00:35,300 --> 00:00:38,540
+It is whether a current NFL slate actually
+exists.
+
+11
+00:00:39,320 --> 00:00:43,290
+Training camp may be underway, but that
+does not automatically mean
+
+12
+00:00:43,300 --> 00:00:46,100
+current regular-season player props are
+available.
+
+13
+00:00:46,800 --> 00:00:51,090
+At the time of this recording, Propeller’s
+public NFL feed reports
+
+14
+00:00:51,100 --> 00:00:54,090
+an offseason state with zero current
+props.
+
+15
+00:00:54,100 --> 00:00:58,450
+The Analyzer should show that honestly
+instead of presenting an old
+
+16
+00:00:58,460 --> 00:01:00,200
+line as today’s market.
+
+17
+00:01:01,100 --> 00:01:02,880
+That empty state is useful.
+
+18
+00:01:03,300 --> 00:01:06,970
+It tells you to wait for verified player
+lines rather than
+
+19
+00:01:06,980 --> 00:01:09,420
+force an analysis from stale information.
+
+20
+00:01:10,460 --> 00:01:14,500
+To demonstrate the interface while the
+live NFL tab is empty,
+
+21
+00:01:14,880 --> 00:01:19,690
+this walkthrough will use a clearly
+labeled historical Josh Allen
+passing-yards
+
+22
+00:01:19,700 --> 00:01:23,260
+record from Propeller’s archived 2025
+data.
+
+23
+00:01:24,080 --> 00:01:27,730
+It is an interface example, not a live
+line and not
+
+24
+00:01:27,740 --> 00:01:29,520
+a published pregame recommendation.
+
+25
+00:01:30,760 --> 00:01:33,990
+When a current slate is available, search
+for a player and
+
+26
+00:01:34,000 --> 00:01:35,620
+open one specific prop.
+
+27
+00:01:36,200 --> 00:01:39,500
+Before reading the model output, confirm
+the player,
+
+28
+00:01:39,740 --> 00:01:43,320
+stat category, exact line, and platform
+context.
+
+29
+00:01:44,180 --> 00:01:46,910
+Those details define the question being
+analyzed.
+
+30
+00:01:46,920 --> 00:01:51,590
+Josh Allen passing yards at one hundred
+ninety-five and a half
+
+31
+00:01:51,600 --> 00:01:55,857
+is not the same decision as passing yards
+at two hundred
+
+32
+00:01:55,867 --> 00:01:57,350
+fifteen and a half.
+
+33
+00:01:57,360 --> 00:02:01,380
+If the line changes, the research question
+changes with it.
+
+34
+00:02:02,180 --> 00:02:05,880
+Next, read the displayed direction before
+the confidence number.
+
+35
+00:02:06,360 --> 00:02:10,080
+In this historical interface example, the
+direction is Under.
+
+36
+00:02:10,680 --> 00:02:14,790
+That means the available model signals
+leaned below the displayed line.
+
+37
+00:02:14,800 --> 00:02:17,440
+It does not mean the outcome was certain,
+
+38
+00:02:17,920 --> 00:02:20,210
+and it does not tell you to copy an entry
+without
+
+39
+00:02:20,220 --> 00:02:21,620
+checking the current market.
+
+40
+00:02:22,600 --> 00:02:24,340
+Then read the confidence score.
+
+41
+00:02:24,920 --> 00:02:28,930
+Propeller’s confidence scale runs from
+fifty to one hundred and measures
+
+42
+00:02:28,940 --> 00:02:31,740
+the strength of support for the displayed
+direction.
+
+43
+00:02:32,400 --> 00:02:37,490
+A score of sixty-two means the available
+signals provided a stronger-than-neutral
+
+44
+00:02:37,500 --> 00:02:39,440
+lean toward the shown side.
+
+45
+00:02:39,940 --> 00:02:43,130
+It does not mean a sixty-two-percent
+chance of winning.
+
+46
+00:02:43,140 --> 00:02:48,450
+Confidence, win probability, implied
+probability, and the listed
+
+47
+00:02:48,460 --> 00:02:50,480
+line are different pieces of information.
+
+48
+00:02:51,220 --> 00:02:55,470
+Keep them separate. The free Analyzer is
+designed for a quick
+
+49
+00:02:55,480 --> 00:03:00,770
+player-line lookup: player, stat, line,
+direction, confidence
+
+50
+00:03:00,780 --> 00:03:03,320
+context, and documented limitations.
+
+51
+00:03:04,180 --> 00:03:06,930
+It does not build or submit DFS entries,
+
+52
+00:03:06,940 --> 00:03:10,670
+and it does not expose every detail
+available in the deeper
+
+53
+00:03:10,680 --> 00:03:14,780
+Propeller workspace. When a current result
+card is available,
+
+54
+00:03:15,400 --> 00:03:18,580
+the Build AI research prompt link can
+carry the sport,
+
+55
+00:03:18,960 --> 00:03:23,640
+player, market, line, and snapshot time
+into Propeller’s prompt builder.
+
+56
+00:03:24,380 --> 00:03:27,730
+That gives you a structured list of
+questions to investigate with
+
+57
+00:03:27,740 --> 00:03:31,430
+fresh sources. It does not turn the model
+output into a
+
+58
+00:03:31,440 --> 00:03:35,460
+prediction or replace current injury,
+lineup, weather,
+
+59
+00:03:35,740 --> 00:03:40,610
+and market information. The full workspace
+can provide deeper sport-specific
+
+60
+00:03:40,620 --> 00:03:44,240
+research context. That is a separate
+product surface,
+
+61
+00:03:44,720 --> 00:03:47,380
+and the exact evidence can vary with the
+sport,
+
+62
+00:03:48,000 --> 00:03:51,160
+prop type, data availability, and model
+version.
+
+63
+00:03:51,880 --> 00:03:54,720
+A missing signal is not proof of a neutral
+condition.
+
+64
+00:03:55,400 --> 00:03:58,920
+It means you may need to verify that
+information somewhere else.
+
+65
+00:03:59,560 --> 00:04:03,130
+Before making any decision, run a final
+freshness check.
+
+66
+00:04:03,140 --> 00:04:08,000
+Confirm that the player is active, the
+expected role still exists,
+
+67
+00:04:08,620 --> 00:04:10,480
+the stat and line match your platform,
+
+68
+00:04:11,000 --> 00:04:14,020
+and the information was updated recently
+enough to matter.
+
+69
+00:04:14,660 --> 00:04:18,590
+During the NFL season, practice reports,
+inactive lists,
+
+70
+00:04:18,600 --> 00:04:23,390
+weather, depth-chart changes, and line
+movement can all change the context
+
+71
+00:04:23,400 --> 00:04:24,940
+after your first review.
+
+72
+00:04:25,680 --> 00:04:28,640
+If the slate is missing, the line has
+moved,
+
+73
+00:04:29,000 --> 00:04:33,020
+or the role is uncertain, no action is a
+valid result.
+
+74
+00:04:33,700 --> 00:04:36,860
+A useful analyzer should help you
+recognize uncertainty,
+
+75
+00:04:37,460 --> 00:04:43,110
+not manufacture confidence. You can also
+inspect Propeller’s methodology and
+
+76
+00:04:43,120 --> 00:04:45,960
+public results separately from the
+Analyzer.
+
+77
+00:04:46,460 --> 00:04:49,790
+The method explains what the score
+represents and what it does
+
+78
+00:04:49,800 --> 00:04:54,470
+not. The results pages show how eligible
+published rows are graded
+
+79
+00:04:54,480 --> 00:04:58,040
+without turning a historical record into a
+current pick.
+
+80
+00:04:59,020 --> 00:05:03,010
+To prepare for the season, save the free
+NFL Analyzer now
+
+81
+00:05:03,020 --> 00:05:04,980
+and build the habit before game week:
+
+82
+00:05:05,660 --> 00:05:08,750
+verify the slate, confirm the exact line,
+
+83
+00:05:08,760 --> 00:05:13,160
+read direction before confidence, inspect
+the available evidence,
+
+84
+00:05:13,660 --> 00:05:16,520
+and recheck freshness before making your
+own decision.
+
+85
+00:05:17,160 --> 00:05:22,220
+Open the NFL tab at propellerpicks.com
+slash analyzer.
+
+86
+00:05:22,640 --> 00:05:26,380
+Propeller is an independent research and
+analytics platform,
+
+87
+00:05:26,680 --> 00:05:29,430
+not a sportsbook. It does not place
+entries,
+
+88
+00:05:29,440 --> 00:05:32,480
+and no model signal guarantees an outcome.
+

@@ -1,0 +1,175 @@
+{
+  "version": 1,
+  "slug": "nfl-player-prop-research-workflow",
+  "state": "publication_pending",
+  "brief": {
+    "concept": "How to Research NFL Player Props: A Game-Week Workflow",
+    "primary_question": "How do you research NFL player props?",
+    "audience": "NFL fans and DFS or pick'em users who want a repeatable, source-aware research process",
+    "search_intent": "Educational and product-assisted",
+    "learning_outcome": "Verify the current market, evaluate role, injury, matchup, agents, and confidence, and recognize when no action is the correct outcome",
+    "cta": "Read the NFL research guide, then open the NFL analyzer when a verified slate is available",
+    "target_duration_seconds": 360,
+    "freshness_requirements": "Capture the current public slate state; use only clearly labeled historical NFL prop details when no verified current slate exists; recheck all product facts before render"
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-07-29T22:50:18.601929+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-07-29T23:03:03Z",
+      "evidence": "User replied 'continue' after being asked to approve the revised script and historical Josh Allen walkthrough"
+    },
+    "review": {
+      "approved": true,
+      "at": "2026-07-29T23:41:17Z",
+      "evidence": "User replied 'approve review package' after receiving the rendered review video, thumbnail, metadata, and timed captions"
+    },
+    "publication": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {
+      "type": "live_product",
+      "url": "https://propellerpicks.com/picks/nfl/",
+      "verified_at": "2026-07-29T22:51:05Z",
+      "note": "Public NFL page and current product-language source"
+    },
+    {
+      "type": "live_api",
+      "url": "https://web-production-3c1c4.up.railway.app/api/nfl/props/public-slate",
+      "verified_at": "2026-07-29T22:51:05Z",
+      "note": "Reported offseason, week 0, zero current props"
+    },
+    {
+      "type": "companion_content",
+      "url": "https://propellerpicks.com/guides/nfl-player-prop-research/",
+      "verified_at": "2026-07-29T22:51:05Z",
+      "note": "Canonical educational owner for the primary viewer question"
+    },
+    {
+      "type": "primary_external_source",
+      "url": "https://www.nfl.com/injuries/",
+      "verified_at": "2026-07-29T22:51:05Z",
+      "note": "Official NFL injury-report source"
+    },
+    {
+      "type": "source_code",
+      "path": "/Users/scottolmer/Projects/nfl-betting-system/scripts/nfl_analysis/orchestrator.py",
+      "verified_at": "2026-07-29T22:51:05Z",
+      "note": "NFL signal orchestration and directional-confidence implementation"
+    },
+    {
+      "type": "production_readonly",
+      "record": "nfl_analysis_results.id=9559",
+      "verified_at": "2026-07-29T22:51:05Z",
+      "note": "Josh Allen archived 2025 Week 17 passing-yards fixture; retrospective analysis, not a public pregame recommendation"
+    }
+  ],
+  "publishing": {
+    "requested_visibility": "private",
+    "video_id": "yH23a5wn2Zk",
+    "url": "https://youtu.be/yH23a5wn2Zk",
+    "uploaded": true,
+    "hd_processed": true,
+    "published_at": null,
+    "verified": true
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-07-29T22:50:18.601929+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "brief",
+      "at": "2026-07-29T22:51:05Z",
+      "note": "Brief locked against current public slate, live product language, official NFL injury source, and shipped NFL orchestration"
+    },
+    {
+      "phase": "script",
+      "at": "2026-07-29T22:51:05Z",
+      "note": "Final narration and planned semantic map created; awaiting explicit user approval before Kokoro generation"
+    },
+    {
+      "phase": "script_revision",
+      "at": "2026-07-29T22:51:05Z",
+      "note": "Added a source-backed Josh Allen historical UI fixture with persistent disclosure so football features can be demonstrated during the offseason"
+    },
+    {
+      "phase": "script_approval",
+      "at": "2026-07-29T23:03:03Z",
+      "note": "User approved continuation with the revised script and historical-example treatment"
+    },
+    {
+      "phase": "narration",
+      "at": "2026-07-29T23:06:01Z",
+      "note": "Kokoro am_michael narration generated and aligned; MP3 duration 384.700 seconds, 44.1 kHz mono; 912 script words, 873 exact alignment matches, 109 caption cues"
+    },
+    {
+      "phase": "narration_revision",
+      "at": "2026-07-29T23:06:01Z",
+      "note": "Preserved narration-v1 and generated pronunciation-corrected current narration; duration 387.675 seconds, 917 script words, 883 exact alignment matches, 110 caption cues"
+    },
+    {
+      "phase": "visual_build",
+      "at": "2026-07-29T23:27:00Z",
+      "note": "Built a source-faithful Remotion walkthrough with current desktop slate evidence, desktop and mobile historical fixture views, exact stored agent rows, timed direction and confidence focus, and stable phrase captions"
+    },
+    {
+      "phase": "review_package",
+      "at": "2026-07-29T23:29:00Z",
+      "note": "Rendered the 1280x720 H.264/AAC review cut and 1280x720 thumbnail; representative-frame and contact-sheet QA passed; awaiting explicit user review approval"
+    },
+    {
+      "phase": "review_approval",
+      "at": "2026-07-29T23:41:17Z",
+      "note": "User explicitly approved the review package; 1080p master render and private YouTube upload are authorized"
+    },
+    {
+      "phase": "master_render",
+      "at": "2026-07-29T23:46:00Z",
+      "note": "Rendered and decoded the 1920x1080 H.264/AAC master at 30 fps; duration 387.755 seconds; no black frames or unintended silence longer than 1.5 seconds detected"
+    },
+    {
+      "phase": "private_upload",
+      "at": "2026-07-29T23:52:46Z",
+      "note": "Uploaded to the verified Propeller Picks channel UCa0YkBvX4qlzV3J8QS7u1sg as private; applied final title, description, custom thumbnail, not-made-for-kids audience setting, English (United States) language, and timed manual SRT captions; HD processing complete and YouTube policy check still in progress"
+    },
+    {
+      "phase": "private_verification",
+      "at": "2026-07-29T23:54:57Z",
+      "note": "Verified the authenticated private watch page, correct Propeller Picks channel, title, description, private visibility, 6:27 playback duration, completed HD processing, cleared notices, and published English (United States) timed caption track; awaiting separate public or scheduled publication authorization"
+    }
+  ]
+}

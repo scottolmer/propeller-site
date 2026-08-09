@@ -1,0 +1,139 @@
+{
+  "version": 1,
+  "slug": "free-nfl-player-prop-analyzer-walkthrough",
+  "state": "review_ready",
+  "brief": {
+    "concept": "How to Use a Free NFL Player Prop Analyzer: Step-by-Step Walkthrough",
+    "primary_question": "What is a free NFL player prop analyzer, and how do you use one correctly?",
+    "audience": "NFL DFS and pick'em researchers preparing for the 2026 season, especially new Propeller users",
+    "search_intent": "High-intent product tutorial",
+    "learning_outcome": "Verify the current NFL slate, locate the exact player-stat line, read direction before confidence, understand the free analyzer's limits, and know when no action is correct",
+    "cta": "Open https://propellerpicks.com/analyzer/?sport=nfl and use the NFL guide or full workspace for deeper context",
+    "target_duration_seconds": 300,
+    "freshness_requirements": "Show the current public NFL slate state; when no verified current line exists, use only a persistently labeled historical interface example; reverify product facts and slate state before review render and publication"
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-07-31T16:23:16.350224+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-07-31T16:34:30Z",
+      "evidence": "User replied 'script approved' on 2026-07-31"
+    },
+    "review": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    },
+    "publication": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {
+      "type": "live_product",
+      "url": "https://propellerpicks.com/analyzer/?sport=nfl",
+      "verified_at": "2026-07-31T16:23:33Z",
+      "note": "Canonical free analyzer product surface and current feature language"
+    },
+    {
+      "type": "live_product",
+      "url": "https://propellerpicks.com/picks/nfl/",
+      "verified_at": "2026-07-31T16:23:33Z",
+      "note": "NFL-specific research page, sport answer module, and current availability language"
+    },
+    {
+      "type": "live_api",
+      "url": "https://web-production-3c1c4.up.railway.app/api/nfl/props/public-slate",
+      "verified_at": "2026-07-31T16:23:33Z",
+      "note": "Reported offseason, 2026 week 0, zero current props, and no precomputed analysis"
+    },
+    {
+      "type": "companion_content",
+      "url": "https://propellerpicks.com/guides/nfl-player-prop-research/",
+      "verified_at": "2026-07-31T16:23:33Z",
+      "note": "Canonical educational owner for the NFL game-week research workflow"
+    },
+    {
+      "type": "production_readonly",
+      "record": "nfl_analysis_results.id=9559",
+      "verified_at": "2026-07-31T16:23:33Z",
+      "note": "Josh Allen archived 2025 Week 17 passing-yards fixture; retrospective interface example, not a live or published pregame recommendation"
+    }
+  ],
+  "publishing": {
+    "requested_visibility": "not_requested",
+    "video_id": null,
+    "url": null,
+    "uploaded": false,
+    "hd_processed": false,
+    "published_at": null,
+    "verified": false
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-07-31T16:23:16.350224+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "brief",
+      "at": "2026-07-31T16:24:01Z",
+      "note": "Brief locked against the high-priority August NFL analyzer question, canonical analyzer and NFL page ownership, the current zero-prop offseason endpoint, and a persistently labeled historical interface fixture"
+    },
+    {
+      "phase": "script",
+      "at": "2026-07-31T16:24:01Z",
+      "note": "Created the answer-first narration and 13-beat semantic visual plan; awaiting explicit script approval before Kokoro narration"
+    },
+    {
+      "phase": "script_approval",
+      "at": "2026-07-31T16:34:30Z",
+      "note": "User explicitly approved the script; wording locked for narration production"
+    },
+    {
+      "phase": "narration",
+      "at": "2026-07-31T16:35:45Z",
+      "note": "Generated local Kokoro narration with am_michael and aligned 757 exact-script words into 88 timed SRT cues; duration 333.350 seconds"
+    },
+    {
+      "phase": "capture",
+      "at": "2026-07-31T16:39:40Z",
+      "note": "Captured fresh live Analyzer, prompt builder, methodology, results, and free-vs-workspace surfaces at desktop and 390x844 mobile sizes; manually selected NFL to avoid the query initialization mismatch"
+    },
+    {
+      "phase": "review_package",
+      "at": "2026-07-31T16:48:50Z",
+      "note": "Rendered 1280x720 H.264/AAC review, generated contact sheet and thumbnail, verified audio/video streams and no black-frame or long-silence detections; awaiting explicit review approval"
+    }
+  ]
+}

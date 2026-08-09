@@ -1,0 +1,37 @@
+What is a free NFL player prop analyzer?
+
+It is a research tool that starts with a specific NFL player, stat, and listed line, then shows whether the available evidence leans above or below that number. Propeller’s public Analyzer is free to use without an account, and it does not place entries or accept wagers. Here is how to use it correctly before the NFL season begins.
+
+Open the Analyzer and select the NFL tab. The first thing to check is not the confidence score. It is whether a current NFL slate actually exists.
+
+Training camp may be underway, but that does not automatically mean current regular-season player props are available. At the time of this recording, Propeller’s public NFL feed reports an offseason state with zero current props. The Analyzer should show that honestly instead of presenting an old line as today’s market.
+
+That empty state is useful. It tells you to wait for verified player lines rather than force an analysis from stale information.
+
+To demonstrate the interface while the live NFL tab is empty, this walkthrough will use a clearly labeled historical Josh Allen passing-yards record from Propeller’s archived 2025 data. It is an interface example, not a live line and not a published pregame recommendation.
+
+When a current slate is available, search for a player and open one specific prop. Before reading the model output, confirm the player, stat category, exact line, and platform context.
+
+Those details define the question being analyzed. Josh Allen passing yards at one hundred ninety-five and a half is not the same decision as passing yards at two hundred fifteen and a half. If the line changes, the research question changes with it.
+
+Next, read the displayed direction before the confidence number. In this historical interface example, the direction is Under. That means the available model signals leaned below the displayed line. It does not mean the outcome was certain, and it does not tell you to copy an entry without checking the current market.
+
+Then read the confidence score. Propeller’s confidence scale runs from fifty to one hundred and measures the strength of support for the displayed direction. A score of sixty-two means the available signals provided a stronger-than-neutral lean toward the shown side.
+
+It does not mean a sixty-two-percent chance of winning. Confidence, win probability, implied probability, and the listed line are different pieces of information. Keep them separate.
+
+The free Analyzer is designed for a quick player-line lookup: player, stat, line, direction, confidence context, and documented limitations. It does not build or submit DFS entries, and it does not expose every detail available in the deeper Propeller workspace.
+
+When a current result card is available, the Build AI research prompt link can carry the sport, player, market, line, and snapshot time into Propeller’s prompt builder. That gives you a structured list of questions to investigate with fresh sources. It does not turn the model output into a prediction or replace current injury, lineup, weather, and market information.
+
+The full workspace can provide deeper sport-specific research context. That is a separate product surface, and the exact evidence can vary with the sport, prop type, data availability, and model version. A missing signal is not proof of a neutral condition. It means you may need to verify that information somewhere else.
+
+Before making any decision, run a final freshness check. Confirm that the player is active, the expected role still exists, the stat and line match your platform, and the information was updated recently enough to matter. During the NFL season, practice reports, inactive lists, weather, depth-chart changes, and line movement can all change the context after your first review.
+
+If the slate is missing, the line has moved, or the role is uncertain, no action is a valid result. A useful analyzer should help you recognize uncertainty, not manufacture confidence.
+
+You can also inspect Propeller’s methodology and public results separately from the Analyzer. The method explains what the score represents and what it does not. The results pages show how eligible published rows are graded without turning a historical record into a current pick.
+
+To prepare for the season, save the free NFL Analyzer now and build the habit before game week: verify the slate, confirm the exact line, read direction before confidence, inspect the available evidence, and recheck freshness before making your own decision.
+
+Open the NFL tab at propellerpicks.com slash analyzer. Propeller is an independent research and analytics platform, not a sportsbook. It does not place entries, and no model signal guarantees an outcome.
