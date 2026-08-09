@@ -1,0 +1,35 @@
+{
+  "fixture_id": "nfl-2025-w17-josh-allen-pass-yds",
+  "display_disclosure": "Historical workflow example — not a live or published pregame recommendation",
+  "player_name": "Josh Allen",
+  "stat_type": "Passing Yards",
+  "line": 195.5,
+  "direction": "UNDER",
+  "directional_confidence": 62,
+  "season": 2025,
+  "week": 17,
+  "archived_game_date": "2025-12-29",
+  "platform": null,
+  "agent_breakdown": {
+    "DVOA": 42,
+    "GameScript": 58,
+    "HitRate": 49.64853398061195,
+    "Injury": 50,
+    "Matchup": 25,
+    "NoVig": 51.03627795527157,
+    "Variance": 62,
+    "Volume": 70
+  },
+  "provenance": {
+    "source": "production-readonly",
+    "table": "nfl_analysis_results",
+    "record_id": 9559,
+    "analyzed_at": "2026-03-03T18:45:01.989965",
+    "verified_at": "2026-07-29T22:51:05Z"
+  },
+  "limitations": [
+    "This retrospective analysis row was not published before the game.",
+    "The archived record does not retain a bookmaker or DFS platform.",
+    "Do not present the fixture as current, forward-tested, or actionable."
+  ]
+}

@@ -1,0 +1,31 @@
+A fantasy projection can look like one exact answer. But the better question is: how much downside and upside sits around that number? In this walkthrough, I’ll show you how to use Propeller’s MLB Fantasy board on the web and mobile app, how to read floor, projection, and ceiling, and how to compare two hitters with Sit/Start.
+
+Start by opening Propeller and choosing Fantasy. The current public release is built for MLB hitters, using DraftKings MLB scoring. Before comparing anyone, confirm the sport, slate date, scoring label, and update status. Those details matter because the available market inputs can change during the day.
+
+The board gives every listed hitter three numbers: floor, projected points, and ceiling.
+
+Projected points is the central estimate. Propeller builds it from available current player markets, then uses recent performance for scoring components that those markets do not cover. The goal is to turn several pieces of information into one estimated fantasy score under the scoring system shown on the page.
+
+Each player card also shows how many market inputs and recent games support the estimate. Those counts give you useful context, but they are not quality grades. More inputs can mean more of the projection is connected to today’s available markets; it does not mean the outcome is certain.
+
+Floor is the lower end of the player’s expected scoring range. Ceiling is the upper end. These ranges use the player’s recent scoring variation, centered around today’s projection. They are not guaranteed minimums or maximums. A real result can finish below the floor or above the ceiling.
+
+You can sort the board three ways. Choose Projected for the central ranking of the slate. Choose Floor when you want to see which hitters carry the strongest lower-range estimates. Choose Ceiling to find the largest upper-range outcomes. No single sort is automatically best. Each one answers a different question.
+
+For example, Projected is a practical starting point for an overall comparison. Floor brings downside protection into focus. Ceiling is useful when you are looking for upside. The important part is knowing which lens you selected before you interpret the order of the list.
+
+Now let’s compare two hitters. Select the first player, then select a second. Propeller opens the Sit/Start comparison and places the player with the higher projected score in the Start position. The other player appears as Sit, and the point difference shows how far apart their central projections are.
+
+The comparison also keeps both ranges visible. That context is important. Two players can have nearly identical projections but very different floors and ceilings. One may have a tighter range, while the other offers more upside with more downside. A large ceiling does not erase a low floor, and a higher floor does not guarantee the better final score.
+
+Treat Sit/Start as a direct comparison under the displayed scoring system—not as a complete lineup optimizer. It does not know every league setting, contest rule, roster constraint, injury update, weather condition, or late lineup change. It is designed to make the projection difference and the uncertainty around it easier to understand.
+
+The same workflow is available in the mobile app. Open Fantasy, confirm the MLB slate, then use the Floor, Projected, or Ceiling chips to change the ranking. Tap two hitters to open the mobile Sit/Start card. You will see the recommendation, projected-point gap, each player’s range, and the amount of market and recent-game information supporting the comparison.
+
+Because today’s inputs can move, refresh before making a final decision. The web board updates periodically and also has a manual refresh control. On mobile, pull down to refresh. If the board says “latest available” instead of live, check the slate date and update time before relying on it.
+
+Here is the full workflow: confirm MLB, the date, and the scoring system. Choose the sort that matches the question you are asking. Select two hitters. Compare the projected score, then inspect both ranges. Finally, verify lineup status, weather, and the rules of your fantasy contest.
+
+Propeller’s public Fantasy page is useful for discovering the current board, while the full comparison workflow is available inside Propeller on web and mobile. Pitchers and additional sports are not part of this public release yet; they will only be added when their market coverage and projection ranges are ready.
+
+Open Propeller Picks to explore today’s MLB Fantasy projections and try a Sit/Start comparison of your own. Propeller is an independent research and analytics platform, not a sportsbook, and every projection is an estimate—not a guarantee.

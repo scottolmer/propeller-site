@@ -1,0 +1,47 @@
+Before you use any player-prop model, you should be able to answer a few basic questions. What exact line is it analyzing? What evidence is behind the signal? What changed since it was analyzed? And what can the model not know?
+
+That is what Propeller Picks is built for.
+
+Propeller is an AI-assisted player-prop research workspace for web and mobile. It is not a sportsbook. It does not take wagers, place entries, or promise outcomes. Its job is to make the evidence around a specific player, stat, direction, and line easier to inspect.
+
+There are two related ways to use Propeller. The first is player-prop research: should the available evidence lean More or Less for this exact player line? The second is fantasy research: what is a reasonable floor, point projection, and ceiling for an eligible player in the current scoring context? They use different outputs because they answer different questions.
+
+Start with the free Prop Analyzer. Choose a sport, find an available player line, and open the prop you want to research. The exact player, stat, direction, and displayed line are the unit of analysis. If the line moves, the question changes. A research result tied to 22.5 points is not automatically the same research result at 24.5.
+
+For the displayed line, Propeller evaluates the sport-specific context that is available and summarizes it as a direction plus a 50-to-100 confidence score. Depending on the sport and market, that context can include recent production, role and opportunity, matchup, injuries and lineup effects, market context, and game environment.
+
+That is where the agents come in.
+
+An agent is not a generic chatbot and it is not a fixed vote in a simple poll. In Propeller, agents are separate sport-specific analysis signals. Each one focuses on a different source of context, and the model combines the signals that return usable evidence for the player prop in front of you.
+
+Take a basketball prop as an example. The Minutes agent looks at playing-time trajectory and blowout risk. The Usage agent looks at the volume of opportunity a player is likely to have. The Pace agent asks whether the game environment creates more or fewer possessions. The Injury agent looks beyond one player’s status to the downstream role changes that can follow a scratch or lineup change. And the Matchup agent adds opponent and position context.
+
+Market context is separate for a reason. The No-Vig or market signal can compare the implied probabilities available across books after removing the bookmaker margin. If the market disagrees with a posted player line, that creates a research question. It does not automatically prove that either side is valuable.
+
+Other agents can account for recent form, hit-rate trends, rest, or sport-specific conditions. In baseball, the important evidence may lean more heavily toward pitching matchup, park, handedness, batting role, and lineup context. In football, it can be opportunity, matchup, and game environment. The right evidence is not identical across every sport or prop.
+
+That is also why Propeller does not publish one universal agent count or pretend every agent always has the same weight. Signal availability and active weighting can vary by sport, prop, model version, and production calibration. Only available signals contribute to the directional score. A missing input is a limitation to disclose—not a neutral vote that silently makes the model look more certain.
+
+On both desktop and mobile, open the agent breakdown before you give a score too much meaning. You should be able to see what supports the direction, what pushes back, and which part of the research deserves another look. Agreement can make a case easier to understand. Conflict can be just as valuable: opportunity may support a side while matchup or market context adds caution.
+
+Now read confidence correctly. Start with the displayed direction: More or Over, or Less or Under. Then read the score as the strength of the model’s directional signal for that exact line. A higher number means stronger support for the side shown, based on the usable evidence. It does not mean that side has the same percentage chance of winning. A confidence score of 72 is not a 72 percent probability, a guarantee, or a promise of profit.
+
+The workflow is more important than any single number. Confirm the current line. Read direction and confidence together. Open the agent breakdown. Check lineup news, player status, freshness, and market movement. Then decide whether the evidence is strong enough to keep researching—or whether passing is the smarter decision.
+
+Propeller also has a distinct fantasy-projections workflow. The current public feature covers MLB hitters under DraftKings MLB scoring. Instead of returning an Over or Under signal, it produces a floor, a central point projection, and a ceiling for eligible hitters.
+
+Technically, the central MLB fantasy projection converts available current hitter-stat market components into DraftKings fantasy points. Recent form is used for scoring components that do not have current market coverage. Recent outcome variation then widens the lower and upper distances around the central projection.
+
+Those three numbers are scenarios, not guarantees. The point projection is the central estimate. The floor and ceiling are widened P20-style and P80-style ranges, so an actual fantasy result can finish below the floor or above the ceiling. The current public feature does not publish pitcher projections, non-MLB projections, lineup optimization, salary optimization, or contest-entry submission. It is research input for daily fantasy, player comparison, and sit/start decisions—not an automated lineup tool.
+
+Freshness matters here too. The fantasy board shows its source-update state so you can distinguish current data from latest available or unavailable data. Late lineup news and role changes can still alter the research picture.
+
+And you should be able to inspect the record behind the product. Propeller publishes a public historical Results archive with wins, losses, pushes, sport splits, and confidence ranges. As of July 22, 2026, it includes more than 2.18 million raw graded analysis rows and a 293-thousand-entry public ledger.
+
+Those numbers need context. Historical rows can include repeated snapshots and legacy retrospective data. They are descriptive historical outcomes, not a clean cohort of uniquely published recommendations, and they are not a forward-tested ROI claim. We keep that limitation visible because a record should be something you can audit—not a number you are asked to accept on faith.
+
+For a stricter standard, Propeller also maintains a forward record for eligible featured public picks. Those rows require publication before a verified event start, an exact side and line, a named book and price, and an exact settlement. That is the standard needed to talk responsibly about ROI.
+
+Propeller will not remove uncertainty from sports. Late injuries, role changes, sparse samples, bad source data, and line movement can all change an analysis. The goal is not to hand off your decision to AI. It is to make your research clearer, faster, and easier to challenge.
+
+Start with the free Prop Analyzer at PropellerPicks.com. Read the line. Inspect the agents. Use fantasy projections for the question they actually answer. And make your own decision.

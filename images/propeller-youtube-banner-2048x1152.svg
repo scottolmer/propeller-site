@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="1152" viewBox="0 0 2048 1152">
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07090c"/>
+      <stop offset="0.56" stop-color="#0b0e12"/>
+      <stop offset="1" stop-color="#130b09"/>
+    </linearGradient>
+    <radialGradient id="orangeGlow" cx="0" cy="0.5" r="0.72">
+      <stop offset="0" stop-color="#ff6038" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#ff6038" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="greenGlow" cx="1" cy="0.5" r="0.72">
+      <stop offset="0" stop-color="#10b981" stop-opacity="0.14"/>
+      <stop offset="1" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="topLine" x1="0" x2="1">
+      <stop offset="0" stop-color="#ff6038" stop-opacity="0"/>
+      <stop offset="0.25" stop-color="#ff6038"/>
+      <stop offset="0.72" stop-color="#ff6038"/>
+      <stop offset="1" stop-color="#ff6038" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="112" height="112" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+      <line x1="0" y1="0" x2="0" y2="112" stroke="#ffffff" stroke-opacity="0.032" stroke-width="2"/>
+    </pattern>
+    <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000000" flood-opacity="0.42"/>
+    </filter>
+    <filter id="markGlow" x="-70%" y="-70%" width="240%" height="240%">
+      <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#ff6038" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+
+  <rect width="2048" height="1152" fill="url(#background)"/>
+  <rect width="2048" height="1152" fill="url(#orangeGlow)"/>
+  <rect width="2048" height="1152" fill="url(#greenGlow)"/>
+  <rect width="2048" height="1152" fill="url(#grid)"/>
+
+  <rect x="0" y="45" width="2048" height="5" fill="url(#topLine)"/>
+  <rect x="0" y="1101" width="2048" height="3" fill="#10b981" opacity="0.42"/>
+
+  <!-- Decorative product signals outside the mobile-safe center -->
+  <g opacity="0.58" filter="url(#softShadow)">
+    <rect x="-34" y="284" width="408" height="206" rx="24" fill="#10151c" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="42" y="340" fill="#98a7b8" font-family="Avenir Next, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">CONFIDENCE</text>
+    <text x="42" y="424" fill="#ff6038" font-family="Avenir Next, Arial, sans-serif" font-size="68" font-weight="800">79</text>
+    <rect x="156" y="377" width="170" height="16" rx="8" fill="#252d37"/>
+    <rect x="156" y="377" width="134" height="16" rx="8" fill="#ff6038"/>
+    <text x="156" y="429" fill="#dce3ea" font-family="Avenir Next, Arial, sans-serif" font-size="18" font-weight="600">STRONG MODEL LEAN</text>
+
+    <rect x="42" y="692" width="374" height="184" rx="24" fill="#10151c" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="82" y="749" fill="#98a7b8" font-family="Avenir Next, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">LINE CHECK</text>
+    <text x="82" y="822" fill="#f4f7fb" font-family="Avenir Next, Arial, sans-serif" font-size="48" font-weight="800">LESS 0.5</text>
+    <circle cx="346" cy="808" r="10" fill="#10b981"/>
+  </g>
+
+  <g opacity="0.52" filter="url(#softShadow)">
+    <rect x="1675" y="300" width="410" height="238" rx="24" fill="#10151c" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="1724" y="356" fill="#98a7b8" font-family="Avenir Next, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">AGENT BREAKDOWN</text>
+    <g font-family="Avenir Next, Arial, sans-serif" font-size="17" font-weight="650">
+      <text x="1724" y="414" fill="#e4e9ef">Market Check</text><text x="1984" y="414" text-anchor="end" fill="#10b981">SUPPORTS LESS</text>
+      <text x="1724" y="458" fill="#e4e9ef">Hit Rate</text><text x="1984" y="458" text-anchor="end" fill="#10b981">SUPPORTS LESS</text>
+      <text x="1724" y="502" fill="#e4e9ef">Matchup</text><text x="1984" y="502" text-anchor="end" fill="#ff6038">INDEPENDENT</text>
+    </g>
+
+    <rect x="1626" y="715" width="458" height="150" rx="24" fill="#10151c" stroke="#ffffff" stroke-opacity="0.1"/>
+    <text x="1674" y="766" fill="#98a7b8" font-family="Avenir Next, Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="3">SIGNAL MIX</text>
+    <rect x="1674" y="808" width="350" height="18" rx="9" fill="#252d37"/>
+    <path d="M1683 817h142" stroke="#ff6038" stroke-width="18" stroke-linecap="round"/>
+    <path d="M1825 817h104" stroke="#4f8df7" stroke-width="18"/>
+    <path d="M1929 817h58" stroke="#f7ad2f" stroke-width="18"/>
+    <path d="M1987 817h28" stroke="#8b5cf6" stroke-width="18" stroke-linecap="round"/>
+  </g>
+
+  <!-- All essential branding remains inside the centered all-device safe area. -->
+  <g>
+    <text x="1024" y="451" text-anchor="middle" fill="#ff6038" font-family="Avenir Next, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="7">SPORT-SPECIFIC AI PLAYER PROP RESEARCH</text>
+
+    <g transform="translate(660 586)" fill="#ff6038" filter="url(#markGlow)">
+      <rect x="-11" y="-91" width="22" height="82" rx="11"/>
+      <rect x="-11" y="-91" width="22" height="82" rx="11" transform="rotate(120)"/>
+      <rect x="-11" y="-91" width="22" height="82" rx="11" transform="rotate(240)"/>
+      <circle r="18"/>
+    </g>
+
+    <text x="776" y="594" fill="#f4f7fb" font-family="Avenir Next, Arial, sans-serif" font-size="92" font-weight="800" letter-spacing="-2">PROPELLER</text>
+    <text x="784" y="646" fill="#ff6038" font-family="Avenir Next, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="18">PICKS</text>
+
+    <line x1="705" y1="689" x2="1343" y2="689" stroke="#ffffff" stroke-opacity="0.12"/>
+    <text x="1024" y="735" text-anchor="middle" fill="#c7d0da" font-family="Avenir Next, Arial, sans-serif" font-size="27" font-weight="600" letter-spacing="1.4">SEE THE SIGNAL. YOU MAKE THE CALL.</text>
+  </g>
+
+  <circle cx="154" cy="126" r="5" fill="#ff6038"/>
+  <circle cx="1894" cy="1028" r="5" fill="#10b981"/>
+  <path d="M84 126h168M1796 1028h168" stroke="#ffffff" stroke-opacity="0.1" stroke-width="2"/>
+</svg>

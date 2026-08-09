@@ -94,6 +94,7 @@ jobs:
           node --test scripts/test_analyzer_sport_query.mjs
           python3 -m unittest scripts/test_nfl_launch_readiness.py
           python3 -m unittest scripts/test_lighthouse_delivery.py
+          python3 -m unittest scripts/test_aeo_measurement.py
           python3 scripts/generate_sitemap.py --check
 
       - name: Commit and push if changed

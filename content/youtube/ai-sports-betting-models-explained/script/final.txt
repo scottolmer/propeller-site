@@ -1,0 +1,31 @@
+How do AI sports betting models actually work?
+
+The useful answer is less dramatic than the marketing language. A good model does not know the future. It organizes the evidence around a specific player prop, shows which direction the available signals support, and makes it easier to see what still needs your attention.
+
+That is how Propeller is designed to be used. It is a research and analytics tool, not a sportsbook, and its confidence score is not a guarantee or the exact chance that a player prop will hit.
+
+Start with the question the model is answering. Not, “Is this player good?” And not, “Will this definitely win?” The question is narrower: for this player, this stat, this direction, and this current line, what does the available evidence support right now?
+
+That last part matters. The displayed line belongs in the question. If the line changes, you are no longer looking at exactly the same research problem.
+
+Behind the scenes, a player-prop model combines sport-specific signals that are relevant and available for the prop in front of you. Those inputs can include the listed line and market context, recent and longer-term performance, player role and opportunity, matchup, injuries and lineup effects, plus sport-specific context such as pace, rest, venue, or game state.
+
+The exact mix changes by sport and market. Minutes and usage may matter a lot for one basketball prop. A baseball analysis can put more weight on the pitching matchup, park, handedness, or batting role. The point is not to force every prop through one universal checklist. It is to use the right evidence for the question being asked.
+
+In Propeller, those inputs appear as agents or signal categories. The agent breakdown is important because it lets you see the work behind the final direction. You can see which available signals support the lean, which ones push back, and which one is doing the most work.
+
+Do not expect every agent to agree. Agreement can make the case easier to understand. Conflict can be just as useful, because it tells you where the uncertainty is. Maybe opportunity supports a side, while matchup or market context adds caution. That does not automatically make the analysis wrong. It tells you what deserves another look before you rely on it.
+
+Now, confidence. Read the displayed direction first: More or Over, or Less or Under. Then read the confidence score as the strength of the model’s directional signal after it combines the available evidence.
+
+A higher Propeller score means stronger support for the side shown. It does not mean that side has that same percentage chance of hitting. A score of 70 is not a 70 percent win probability, and it is never a promise of a result. Probability calibration, closing-line value, and actual outcomes are different things. The product should not collapse them into one claim.
+
+The other side of using an AI model well is knowing when to slow down. Missing data is not positive evidence. A signal may be unavailable or down-weighted. Late injury news, a role change, sparse samples, an unusual game state, source problems, or a changed line can all make an earlier analysis less useful.
+
+That is why the workflow matters more than one number. Confirm the exact current line. Read the direction and confidence. Open the agent breakdown. Identify the strongest support and the strongest concern. Recheck lineup news, freshness, and the market context. Then decide whether the evidence is strong enough to research further—or whether passing is the smarter outcome.
+
+What can an AI sports betting model not tell you? It cannot guarantee a result. It cannot remove the uncertainty in sports. It cannot know information that has not reached the available data, and it cannot decide your personal risk tolerance for you.
+
+Use the model to make the research clearer, not to hand off the decision. Explore the current free Prop Analyzer at PropellerPicks.com.
+
+Propeller Picks is a research and analytics platform, not a sportsbook. Player props involve uncertainty, and nothing in this video is a guarantee or financial advice. If you choose to wager, be responsible and follow the laws where you live.

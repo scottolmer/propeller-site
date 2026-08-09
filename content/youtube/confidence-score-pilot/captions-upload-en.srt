@@ -1,0 +1,471 @@
+1
+00:00:00,000 --> 00:00:03,560
+If Propeller shows 72
+confidence on a player prop,
+
+2
+00:00:03,840 --> 00:00:06,690
+does that mean the pick
+has a 72 percent chance of
+
+3
+00:00:06,700 --> 00:00:11,230
+hitting? No. And the easiest way
+to understand the difference is
+
+4
+00:00:11,240 --> 00:00:15,240
+to see exactly where confidence
+appears, what sits beside it,
+
+5
+00:00:15,340 --> 00:00:16,620
+and what to inspect next.
+
+6
+00:00:17,660 --> 00:00:20,870
+In this walkthrough, we’ll use the
+same historical prop across the
+
+7
+00:00:20,880 --> 00:00:22,460
+desktop and mobile platforms.
+
+8
+00:00:23,200 --> 00:00:25,490
+The example on screen shows Luis Torrens,
+
+9
+00:00:25,500 --> 00:00:29,740
+LESS than 0.5 RBIs, with 79 confidence.
+
+10
+00:00:30,380 --> 00:00:33,090
+The number is different
+from 72, but it is read in
+
+11
+00:00:33,100 --> 00:00:34,620
+exactly the same way.
+
+12
+00:00:35,140 --> 00:00:37,330
+Let’s start on the desktop Props Board.
+
+13
+00:00:37,340 --> 00:00:39,540
+Each row keeps the player, market, line,
+
+14
+00:00:39,700 --> 00:00:41,960
+direction, source, and
+confidence together.
+
+15
+00:00:42,520 --> 00:00:45,840
+Confidence helps you decide which
+props may be worth opening first.
+
+16
+00:00:46,500 --> 00:00:49,840
+It is a research-priority signal—not
+a promise about the result.
+
+17
+00:00:50,220 --> 00:00:53,020
+Select a player to open
+the full Prop Detail page.
+
+18
+00:00:53,480 --> 00:00:56,320
+At the top, Propeller shows
+the player and market.
+
+19
+00:00:56,960 --> 00:01:01,520
+In this example, the
+recommendation is LESS 0.5 RBIs.
+
+20
+00:01:01,780 --> 00:01:02,840
+The direction is LESS.
+
+21
+00:01:03,260 --> 00:01:05,290
+The line is 0.5.
+
+22
+00:01:05,300 --> 00:01:07,500
+Those two pieces must
+always be read together.
+
+23
+00:01:08,320 --> 00:01:11,350
+On desktop, you can find the
+line beside the recommendation at
+
+24
+00:01:11,360 --> 00:01:12,360
+the top of the page.
+
+25
+00:01:12,880 --> 00:01:15,630
+It also appears in the
+recommendation card and again in the
+
+26
+00:01:15,640 --> 00:01:16,880
+market panel on the right.
+
+27
+00:01:17,360 --> 00:01:21,310
+Repeating the line matters
+because a move from 0.5 to 1.5
+
+28
+00:01:21,320 --> 00:01:22,900
+creates a different question.
+
+29
+00:01:23,420 --> 00:01:26,430
+On mobile, the same information
+is placed near the top of
+
+30
+00:01:26,440 --> 00:01:30,720
+Pick Detail. LESS 0.5
+appears beside the stat,
+
+31
+00:01:30,940 --> 00:01:34,550
+and the Line Check card repeats
+this line while comparing it
+
+32
+00:01:34,560 --> 00:01:36,180
+with the available market average.
+
+33
+00:01:36,720 --> 00:01:39,810
+Before using any score, confirm
+that the line on your platform
+
+34
+00:01:39,820 --> 00:01:42,220
+still matches the line Propeller analyzed.
+
+35
+00:01:43,100 --> 00:01:44,040
+Now look at confidence.
+
+36
+00:01:44,560 --> 00:01:48,220
+On desktop, confidence appears
+in its own summary card.
+
+37
+00:01:48,480 --> 00:01:50,640
+This historical example shows 79.
+
+38
+00:01:51,220 --> 00:01:54,550
+On mobile, the same score is
+displayed in the confidence ring
+
+39
+00:01:54,560 --> 00:01:57,620
+at the upper right and
+again inside Model Read.
+
+40
+00:01:58,220 --> 00:02:00,820
+A score of 72 would be
+interpreted the same way:
+
+41
+00:02:01,200 --> 00:02:04,770
+the model sees a comparatively strong
+directional signal for the side
+
+42
+00:02:04,780 --> 00:02:08,300
+displayed. It does not mean
+a 72 percent chance to hit,
+
+43
+00:02:08,480 --> 00:02:10,180
+and it does not guarantee the outcome.
+
+44
+00:02:10,860 --> 00:02:13,520
+The mobile Model Read makes that
+distinction especially clear.
+
+45
+00:02:14,100 --> 00:02:17,120
+Confidence and chance to hit are
+displayed as separate measurements.
+
+46
+00:02:17,780 --> 00:02:21,980
+Confidence summarizes the strength and
+agreement of the model’s directional evidence.
+
+47
+00:02:22,620 --> 00:02:24,320
+Chance to hit is a separate estimate.
+
+48
+00:02:25,020 --> 00:02:26,780
+Do not substitute one for the other.
+
+49
+00:02:27,300 --> 00:02:29,620
+Next, review the evidence
+behind the recommendation.
+
+50
+00:02:30,660 --> 00:02:33,060
+On desktop, scroll to Why This Lean.
+
+51
+00:02:33,680 --> 00:02:36,760
+This section turns the model
+output into readable reasons,
+
+52
+00:02:37,080 --> 00:02:41,160
+such as recent usage, matchup
+context, performance against the line,
+
+53
+00:02:41,440 --> 00:02:45,220
+or role-related information.
+Below that is the Model Breakdown.
+
+54
+00:02:45,760 --> 00:02:49,390
+These are the independent analysis
+agents that contribute to the final
+
+55
+00:02:49,400 --> 00:02:52,240
+direction. Depending on
+the sport and market,
+
+56
+00:02:52,480 --> 00:02:54,680
+you may see agents covering
+market information,
+
+57
+00:02:55,080 --> 00:02:58,920
+recent hit rate, injuries,
+matchup, venue, usage,
+
+58
+00:02:59,240 --> 00:03:01,740
+lineup status, and other relevant factors.
+
+59
+00:03:02,460 --> 00:03:04,580
+The value is not that
+every agent always agrees.
+
+60
+00:03:05,040 --> 00:03:07,390
+The value is that you can see
+where the recommendation came
+
+61
+00:03:07,400 --> 00:03:11,630
+from. Broad agreement is different
+from one strong signal surrounded by
+
+62
+00:03:11,640 --> 00:03:15,970
+conflicting evidence. The mobile
+platform presents the same idea in Model
+
+63
+00:03:15,980 --> 00:03:19,280
+Read. It identifies the
+pick side, the top driver,
+
+64
+00:03:19,740 --> 00:03:22,000
+the level of agreement,
+and the signal mix.
+
+65
+00:03:22,560 --> 00:03:26,350
+Continue down the page to Agent
+Breakdown to inspect the contributing
+
+66
+00:03:26,360 --> 00:03:30,360
+agents individually. This is
+where confidence becomes useful.
+
+67
+00:03:31,080 --> 00:03:34,390
+A stronger score means the available
+signals support the displayed direction
+
+68
+00:03:34,400 --> 00:03:37,240
+more strongly. It does
+not remove uncertainty.
+
+69
+00:03:37,800 --> 00:03:40,300
+Lineups change. Roles change.
+
+70
+00:03:40,700 --> 00:03:44,240
+Markets move. Players leave games early.
+
+71
+00:03:44,840 --> 00:03:48,270
+Sports outcomes also
+contain real variance.
+
+72
+00:03:48,280 --> 00:03:50,240
+That is why Propeller
+should begin your research,
+
+73
+00:03:50,420 --> 00:03:53,940
+not end it. Here is a practical
+workflow for new users.
+
+74
+00:03:54,760 --> 00:03:57,090
+First, scan the Props Board
+and open a prop you want
+
+75
+00:03:57,100 --> 00:04:01,020
+to understand. Second, confirm
+the direction and exact line.
+
+76
+00:04:01,440 --> 00:04:05,260
+On this example, that means LESS 0.5 RBIs.
+
+77
+00:04:05,620 --> 00:04:09,090
+Third, find the confidence score,
+then keep it separate from any
+
+78
+00:04:09,100 --> 00:04:13,890
+displayed chance-to-hit estimate.
+Fourth, inspect Why This Lean,
+
+79
+00:04:13,900 --> 00:04:16,180
+Model Read, and the agent breakdown.
+
+80
+00:04:16,920 --> 00:04:19,450
+Look for the factors doing the
+work and whether the evidence
+
+81
+00:04:19,460 --> 00:04:24,530
+broadly agrees. Fifth, verify the
+current line and player context on
+
+82
+00:04:24,540 --> 00:04:26,740
+the platform where you
+make your own decision.
+
+83
+00:04:27,520 --> 00:04:30,040
+If the line has moved or
+the context has changed,
+
+84
+00:04:30,380 --> 00:04:33,170
+the original analysis may no
+longer answer the same question.
+
+85
+00:04:33,180 --> 00:04:38,510
+And finally, decide whether the prop
+deserves more research—or whether
+
+86
+00:04:38,520 --> 00:04:41,900
+to skip it. Skipping is
+always a valid outcome.
+
+87
+00:04:42,560 --> 00:04:45,760
+So, what does 72 confidence actually mean?
+
+88
+00:04:46,500 --> 00:04:50,550
+It means Propeller sees a comparatively
+strong directional signal for the
+
+89
+00:04:50,560 --> 00:04:54,480
+displayed side. It is not a
+72 percent win probability.
+
+90
+00:04:55,160 --> 00:04:56,020
+It is not a guarantee.
+
+91
+00:04:56,600 --> 00:04:59,010
+And it is most useful
+when you read it with the
+
+92
+00:04:59,020 --> 00:05:02,180
+direction, the line, and the
+evidence behind the score.
+
+93
+00:05:03,120 --> 00:05:06,910
+Use the desktop platform for the
+full research workspace and the
+
+94
+00:05:06,920 --> 00:05:09,920
+mobile companion for quick
+access to the same core analysis.
+
+95
+00:05:10,620 --> 00:05:14,300
+To explore today’s player props,
+visit Propeller Picks dot com.
+
+96
+00:05:14,760 --> 00:05:17,140
+Propeller is a research and analysis tool.
+
+97
+00:05:17,680 --> 00:05:21,270
+We do not accept wagers or
+operate as a sportsbook.
+
+98
+00:05:21,280 --> 00:05:24,300
+All analysis is for
+informational purposes only.
+
+99
+00:05:25,020 --> 00:05:27,390
+You must be 21 or older where applicable.
+
+100
+00:05:27,400 --> 00:05:32,200
+If gambling is a problem, call
+one eight hundred GAMBLER.
+

@@ -1,0 +1,11 @@
+beat_id	start	end	narration	visual_required	desktop_asset	mobile_asset	crop_or_focus	status	notes
+01			The hardest part of a player prop is not finding an opinion.	Editorial opening paired with analyzer detail			Line, direction, evidence chips; no active recommendation implication	planned	Use an illustrative product capture only if the current board is empty.
+02			That is why we built Propeller Picks.	Propeller brand and product ecosystem			Desktop/mobile device pair with Analyzer	planned	No stock-person footage or synthetic founder.
+03			Start in the free Prop Analyzer.	Analyzer workflow			Desktop Analyzer then paired mobile Analyzer	planned	Show sport selection, player/market, then detail flow.
+04			The first job is simple: confirm the line, the direction, and when that information was last updated.	Exact line and freshness UI			Desktop line/freshness crop + mobile line/freshness crop	planned	Named values must be legible.
+05			Next is confidence.	Exact confidence UI			Desktop confidence close-up + matching mobile confidence close-up	planned	Display the non-probability clarification as a small editorial callout.
+06			The difference is that you can inspect the reasoning.	Exact agent breakdown UI			Desktop agent rows + mobile agent breakdown rows	planned	Show agreement/conflict examples; do not claim a universal agent count.
+07			For MLB hitters, Propeller Fantasy adds a DraftKings-scoring view.	Fantasy projections UI			Desktop floor / point / ceiling projection crop	planned	Label current feature scope: MLB hitters, DraftKings MLB.
+08			We also keep performance language honest.	Public methodology / historical archive editorial card			Historical archive screenshot or typography card	planned	State “documented archive, not a forward-tested ROI claim.”
+09			The platform is beginning to earn discovery.	Dated traction proof card			GSC and GA4 aggregate cards	planned	Show exact reporting periods and source labels.
+10			Propeller Picks is building the research layer.	Closing analyzer CTA			Desktop + mobile Analyzer with URL	planned	End with research/use-responsibly footer.

@@ -1,0 +1,513 @@
+1
+00:00:00,000 --> 00:00:02,640
+How do you research NFL player props?
+
+2
+00:00:03,040 --> 00:00:04,880
+Start with the market, not the model.
+
+3
+00:00:05,280 --> 00:00:09,220
+Confirm that a current slate exists, then
+verify the player,
+
+4
+00:00:09,300 --> 00:00:12,220
+stat, exact line, platform, and timestamp.
+
+5
+00:00:13,120 --> 00:00:17,420
+After that, research role, injuries,
+matchup, and game environment.
+
+6
+00:00:18,000 --> 00:00:21,310
+Only then should a model direction or
+confidence score enter the
+
+7
+00:00:21,320 --> 00:00:25,890
+decision. Here is a repeatable game-week
+workflow you can use on
+
+8
+00:00:25,900 --> 00:00:28,260
+Propeller, on the web or mobile.
+
+9
+00:00:29,040 --> 00:00:32,510
+Because we are recording during the NFL
+offseason,
+
+10
+00:00:32,520 --> 00:00:36,100
+the current board correctly shows that no
+live slate is available.
+
+11
+00:00:36,800 --> 00:00:40,410
+To make the features concrete, this
+walkthrough then switches to a
+
+12
+00:00:40,420 --> 00:00:45,150
+clearly labeled Josh Allen passing-yards
+example built from Propeller's archived
+
+13
+00:00:45,160 --> 00:00:49,660
+2025 NFL data. It demonstrates the
+interface,
+
+14
+00:00:50,120 --> 00:00:53,400
+but it was not a live or published pregame
+recommendation.
+
+15
+00:00:54,160 --> 00:00:55,700
+Step one is availability.
+
+16
+00:00:56,620 --> 00:00:59,420
+Open the NFL board and check its current
+state.
+
+17
+00:01:00,000 --> 00:01:02,780
+During the offseason, while a slate is
+being built,
+
+18
+00:01:03,020 --> 00:01:04,920
+or on a day with no listed games,
+
+19
+00:01:05,460 --> 00:01:07,240
+there may be nothing current to analyze.
+
+20
+00:01:08,020 --> 00:01:09,260
+That is useful information.
+
+21
+00:01:10,120 --> 00:01:13,220
+Do not replace a missing current line with
+an old screenshot,
+
+22
+00:01:13,740 --> 00:01:17,000
+an archived result, or a number from
+another platform.
+
+23
+00:01:17,660 --> 00:01:21,670
+When a verified slate is available, open a
+prop and identify
+
+24
+00:01:21,680 --> 00:01:25,520
+five things before reading any analysis:
+the player,
+
+25
+00:01:25,840 --> 00:01:29,160
+the stat category, the exact line, the
+platform,
+
+26
+00:01:29,540 --> 00:01:31,480
+and the time the source was updated.
+
+27
+00:01:32,120 --> 00:01:35,660
+Lines can differ across platforms and can
+move during the week.
+
+28
+00:01:36,240 --> 00:01:39,690
+Research built around the wrong number is
+research for a different
+
+29
+00:01:39,700 --> 00:01:43,260
+decision. Step two is role and
+opportunity.
+
+30
+00:01:43,980 --> 00:01:46,110
+Recent box scores tell you what happened,
+
+31
+00:01:46,120 --> 00:01:47,980
+but they do not always tell you what
+changed.
+
+32
+00:01:48,760 --> 00:01:50,760
+For a receiver, look for routes, targets,
+
+33
+00:01:51,300 --> 00:01:52,460
+alignment, and snap participation.
+
+34
+00:01:53,380 --> 00:01:55,170
+For a running back, look at carry volume,
+
+35
+00:01:55,180 --> 00:01:57,660
+passing-game work, and goal-line usage.
+
+36
+00:01:58,260 --> 00:02:01,010
+For a quarterback, consider attempts,
+designed runs,
+
+37
+00:02:01,020 --> 00:02:02,800
+and the expected game environment.
+
+38
+00:02:03,620 --> 00:02:06,970
+The key question is not simply, “Did this
+player clear the
+
+39
+00:02:06,980 --> 00:02:11,350
+line last week?” It is, “Is the role that
+created those
+
+40
+00:02:11,360 --> 00:02:16,360
+opportunities still present this week?”
+Step three is injury context.
+
+41
+00:02:17,020 --> 00:02:19,640
+Start with the official NFL injury report,
+
+42
+00:02:20,000 --> 00:02:23,600
+then confirm game status and the inactive
+list as kickoff approaches.
+
+43
+00:02:24,360 --> 00:02:26,880
+Also look beyond the player named on the
+prop.
+
+44
+00:02:27,480 --> 00:02:30,660
+A teammate being limited or ruled out can
+change routes,
+
+45
+00:02:31,060 --> 00:02:34,750
+target share, carry volume, protection,
+and red-zone work.
+
+46
+00:02:34,760 --> 00:02:37,760
+That is why injury research is a cascade,
+
+47
+00:02:38,500 --> 00:02:40,460
+not a single yes-or-no flag.
+
+48
+00:02:41,500 --> 00:02:43,710
+Step four is matchup and game environment.
+
+49
+00:02:43,720 --> 00:02:48,590
+Position-specific defensive context can be
+more useful than a broad team
+
+50
+00:02:48,600 --> 00:02:53,100
+ranking. Then add likely pace,
+pass-versus-run environment,
+
+51
+00:02:53,560 --> 00:02:56,520
+weather for outdoor games, and possible
+game scripts.
+
+52
+00:02:57,180 --> 00:02:59,750
+None of those inputs proves an outcome by
+itself.
+
+53
+00:02:59,760 --> 00:03:03,490
+The goal is to understand the range of
+ways the game
+
+54
+00:03:03,500 --> 00:03:06,840
+could develop and which assumptions the
+prop depends on.
+
+55
+00:03:07,580 --> 00:03:09,840
+Now inspect the Propeller agent breakdown.
+
+56
+00:03:10,580 --> 00:03:13,060
+Each agent is a specialized research lens.
+
+57
+00:03:13,680 --> 00:03:17,920
+In this historical example, the saved
+breakdown includes DVOA,
+
+58
+00:03:18,120 --> 00:03:23,060
+game script, hit rate, injury, matchup,
+sportsbook-margin adjustment,
+
+59
+00:03:23,460 --> 00:03:27,350
+variance, and volume. The agents shown can
+vary with the evidence
+
+60
+00:03:27,360 --> 00:03:31,510
+and model version. Signals without usable
+evidence are skipped,
+
+61
+00:03:31,520 --> 00:03:35,340
+and the available signals are combined
+into the displayed direction.
+
+62
+00:03:36,480 --> 00:03:38,020
+Do not look only for agreement.
+
+63
+00:03:38,480 --> 00:03:41,160
+Disagreement can be the most useful part
+of the breakdown.
+
+64
+00:03:41,940 --> 00:03:46,070
+A favorable matchup beside uncertain
+volume is a reason to investigate
+
+65
+00:03:46,080 --> 00:03:51,170
+the role. A market signal that conflicts
+with injury context is
+
+66
+00:03:51,180 --> 00:03:53,690
+a reason to check when both sources were
+updated.
+
+67
+00:03:53,700 --> 00:03:57,300
+And if an injury signal has no usable
+result,
+
+68
+00:03:57,800 --> 00:03:59,920
+that does not prove the player is healthy.
+
+69
+00:04:00,500 --> 00:04:03,460
+It means the official status still needs
+to be verified.
+
+70
+00:04:04,700 --> 00:04:07,740
+Next, read the direction before the
+confidence number.
+
+71
+00:04:08,340 --> 00:04:12,250
+The label MORE, or OVER, means the
+available signals lean above
+
+72
+00:04:12,260 --> 00:04:15,210
+the listed line. The label LESS, or UNDER,
+
+73
+00:04:15,220 --> 00:04:17,070
+means they lean below it.
+
+74
+00:04:17,080 --> 00:04:21,830
+Propeller’s confidence score runs from
+fifty to one hundred and shows
+
+75
+00:04:21,840 --> 00:04:26,160
+how strongly the available model signals
+support that displayed direction.
+
+76
+00:04:27,300 --> 00:04:30,080
+That score is not a calibrated win
+probability.
+
+77
+00:04:30,920 --> 00:04:34,350
+A confidence score of seventy-five does
+not mean the prop has
+
+78
+00:04:34,360 --> 00:04:36,760
+a seventy-five-percent chance of winning.
+
+79
+00:04:37,360 --> 00:04:40,000
+It is also different from market-implied
+probability,
+
+80
+00:04:40,480 --> 00:04:42,700
+which is estimated from listed prices.
+
+81
+00:04:43,240 --> 00:04:48,080
+Keep direction, confidence, line, and
+market probability separate.
+
+82
+00:04:49,020 --> 00:04:51,320
+Line movement deserves the same care.
+
+83
+00:04:51,900 --> 00:04:54,160
+A changing number tells you the market
+changed;
+
+84
+00:04:54,800 --> 00:04:56,100
+it does not tell you why.
+
+85
+00:04:56,680 --> 00:05:00,060
+The move could reflect injury news, role
+information,
+
+86
+00:05:00,640 --> 00:05:02,730
+limits, or ordinary market adjustment.
+
+87
+00:05:02,740 --> 00:05:07,610
+Recheck the current line and timestamp
+instead of assuming movement confirms
+
+88
+00:05:07,620 --> 00:05:12,340
+the model. Before making a decision, run
+one final checklist.
+
+89
+00:05:13,020 --> 00:05:13,960
+Is the slate current?
+
+90
+00:05:14,580 --> 00:05:17,340
+Does the player, stat, line, and platform
+match?
+
+91
+00:05:17,740 --> 00:05:19,500
+Is the expected role intact?
+
+92
+00:05:20,140 --> 00:05:23,060
+Are the injury report and inactive status
+current?
+
+93
+00:05:23,640 --> 00:05:27,120
+Do the matchup and game environment
+support the same assumptions?
+
+94
+00:05:27,760 --> 00:05:29,400
+What do the agents disagree about?
+
+95
+00:05:29,840 --> 00:05:32,020
+And what new information would make you
+pass?
+
+96
+00:05:33,280 --> 00:05:34,430
+That last question matters.
+
+97
+00:05:34,440 --> 00:05:38,220
+A good research process needs a clear
+no-action outcome.
+
+98
+00:05:39,040 --> 00:05:42,480
+If the line moved too far, the player’s
+role is uncertain,
+
+99
+00:05:43,060 --> 00:05:46,760
+or the evidence is stale, walking away is
+a valid conclusion.
+
+100
+00:05:48,200 --> 00:05:51,190
+Then repeat the freshness check close to
+kickoff.
+
+101
+00:05:51,200 --> 00:05:54,420
+NFL context can change after your first
+review,
+
+102
+00:05:54,880 --> 00:05:58,150
+so the final decision should use the
+current line and the
+
+103
+00:05:58,160 --> 00:06:00,340
+newest official information available.
+
+104
+00:06:00,980 --> 00:06:05,350
+You can save this workflow with
+Propeller’s NFL player prop research
+
+105
+00:06:05,360 --> 00:06:09,650
+guide, then open the NFL analyzer when a
+verified slate is
+
+106
+00:06:09,660 --> 00:06:14,540
+available. Propeller is an independent
+research and analytics platform.
+
+107
+00:06:15,220 --> 00:06:17,600
+It does not accept wagers or place
+entries,
+
+108
+00:06:18,100 --> 00:06:20,520
+and no model signal guarantees an outcome.
+
+109
+00:06:21,380 --> 00:06:24,590
+If you choose to play, use limits and
+treat the research
+
+110
+00:06:24,600 --> 00:06:26,880
+as one input in your own decision.
+

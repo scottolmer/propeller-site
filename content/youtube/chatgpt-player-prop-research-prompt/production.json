@@ -1,0 +1,134 @@
+{
+  "version": 1,
+  "slug": "chatgpt-player-prop-research-prompt",
+  "state": "public_published",
+  "brief": {
+    "concept": "Can ChatGPT Analyze Player Props? A Better Research Prompt, Its Limits, and a Smarter Workflow",
+    "primary_question": "Can ChatGPT help research a player prop, and what prompt and verification workflow keep it from becoming a source of confident guessing?",
+    "audience": "Sports and DFS/pick'em users who use a general AI assistant, plus prospective Propeller users seeking a repeatable player-prop research process.",
+    "learning_outcome": "Viewers can build a specific skeptical prompt, require fresh sources and counterarguments, recognize a valid no-action outcome, and separately inspect the current line and available evidence in Propeller.",
+    "cta": "Build a free research prompt at https://propellerpicks.com/tools/ai-betting-prompt-builder/, then verify the current player-prop context in the free Prop Analyzer at https://propellerpicks.com/analyzer/.",
+    "target_duration_seconds": 310,
+    "freshness_requirements": "Use the current prompt builder for the primary walkthrough. Capture matching current desktop and mobile analyzer states close to render; label any historical detail capture permanently and do not show an active recommendation."
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-07-23T14:41:34.333014+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-07-23T15:02:00Z",
+      "evidence": "User explicitly replied: Approve the script."
+    },
+    "review": {
+      "approved": true,
+      "at": "2026-07-23T15:54:37Z",
+      "evidence": "User explicitly replied: Approve review package."
+    },
+    "publication": {
+      "approved": true,
+      "at": "2026-07-23T19:49:42Z",
+      "evidence": "User explicitly authorized public release."
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {
+      "path": "tools/ai-betting-prompt-builder/index.html",
+      "use": "Current prompt-builder capabilities, safety language, CTA, and primary product walkthrough source."
+    },
+    {
+      "path": "assets/js/ai-prompt-builder.js",
+      "use": "Exact generated-prompt requirements: freshness, line verification, official sources, counterarguments, missing-data disclosure, calibration restraint, and no-action conclusion."
+    },
+    {
+      "path": "guides/how-ai-sports-betting-works/index.html",
+      "use": "Confidence semantics, input categories, freshness, missing-data behavior, market movement, and failure modes."
+    },
+    {
+      "path": "data/product-facts.json",
+      "use": "Current product positioning, no-wagering status, confidence definition, and signal-availability limits."
+    }
+  ],
+  "publishing": {
+    "requested_visibility": "public",
+    "video_id": "Dfemq0bqo68",
+    "url": "https://www.youtube.com/watch?v=Dfemq0bqo68",
+    "uploaded": true,
+    "hd_processed": true,
+    "published_at": "2026-07-23T19:49:42Z",
+    "verified": true
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-07-23T14:41:34.333014+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "brief",
+      "at": "2026-07-23T14:46:00Z",
+      "note": "Locked a search-oriented, answer-first brief around the current free AI Betting Prompt Builder, with desktop/mobile analyzer verification coverage required later in production."
+    },
+    {
+      "phase": "script",
+      "at": "2026-07-23T14:46:00Z",
+      "note": "Prepared final narration, production notes, and a ten-beat visual semantic map from current prompt-builder, model-card, and product-fact sources. Awaiting explicit script approval before narration, capture, or rendering."
+    },
+    {
+      "phase": "script_approval",
+      "at": "2026-07-23T15:02:00Z",
+      "note": "User approved the final script; Kokoro narration, timestamp alignment, and production rendering were authorized."
+    },
+    {
+      "phase": "narration",
+      "at": "2026-07-23T15:10:00Z",
+      "note": "Generated stock narration with local Kokoro voice am_michael and aligned 734 words to a 313.25-second master."
+    },
+    {
+      "phase": "capture",
+      "at": "2026-07-23T15:18:00Z",
+      "note": "Captured current prompt-builder desktop and mobile views; detail-level analyzer examples are permanently labeled illustrative historical captures."
+    },
+    {
+      "phase": "render_and_qa",
+      "at": "2026-07-23T15:32:00Z",
+      "note": "Rendered the 1920x1080 H.264/AAC master, review file, thumbnail, and timestamped English captions. Full decode, semantic-map, checksum, and package validation passed. Awaiting separate review approval before any private upload."
+    },
+    {
+      "phase": "private_upload",
+      "at": "2026-07-23T15:54:37Z",
+      "note": "Uploaded privately to the verified Propeller Picks channel (UCa0YkBvX4qlzV3J8QS7u1sg). Title, description, thumbnail, English captions, category, language, and audience settings were configured; HD processing and Studio checks completed without issues."
+    },
+    {
+      "phase": "public_release",
+      "at": "2026-07-23T19:49:42Z",
+      "note": "User authorized public release. Studio showed Public visibility for the verified Propeller Picks video, and YouTube's public oEmbed endpoint returned the title, channel, thumbnail, and playable embed URL."
+    }
+  ]
+}

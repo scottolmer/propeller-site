@@ -1,0 +1,412 @@
+1
+00:00:00,000 --> 00:00:03,880
+Can ChatGPT help you research a player
+prop?
+
+2
+00:00:03,890 --> 00:00:06,870
+Yes—but it should not be the source of
+truth for a
+
+3
+00:00:06,880 --> 00:00:10,000
+current line, injury, lineup, or outcome.
+
+4
+00:00:10,840 --> 00:00:13,160
+Use it as a skeptical research assistant:
+
+5
+00:00:13,760 --> 00:00:17,840
+give it a precise question, require
+sources and counterarguments,
+
+6
+00:00:18,100 --> 00:00:20,900
+and tell it to stop when current evidence
+is incomplete.
+
+7
+00:00:22,220 --> 00:00:24,690
+In this video, I’ll show you a better
+prompt,
+
+8
+00:00:24,700 --> 00:00:28,310
+what it can and cannot do, and how to
+verify the
+
+9
+00:00:28,320 --> 00:00:30,220
+answer before you rely on it.
+
+10
+00:00:31,020 --> 00:00:32,840
+Start by making the question specific.
+
+11
+00:00:33,560 --> 00:00:35,980
+“Is this player good tonight?” is too
+vague.
+
+12
+00:00:36,600 --> 00:00:39,740
+Name the sport, player, stat, exact line,
+
+13
+00:00:39,940 --> 00:00:43,630
+source or platform, and whether you want
+to evaluate both sides
+
+14
+00:00:43,640 --> 00:00:45,560
+or challenge an initial lean.
+
+15
+00:00:46,220 --> 00:00:48,140
+That exact line matters.
+
+16
+00:00:48,700 --> 00:00:52,030
+A half point, a changed number, or a
+different stat creates
+
+17
+00:00:52,040 --> 00:00:56,460
+a different question. If an AI cannot
+verify the current line,
+
+18
+00:00:56,740 --> 00:00:58,940
+the right answer is not a confident
+prediction.
+
+19
+00:00:59,860 --> 00:01:02,400
+It is: stop and verify the line.
+
+20
+00:01:03,280 --> 00:01:07,750
+Propeller’s free AI Betting Prompt Builder
+turns those details into a
+
+21
+00:01:07,760 --> 00:01:10,390
+research brief you can use with ChatGPT,
+
+22
+00:01:10,400 --> 00:01:14,480
+Claude, Gemini, or another general AI
+assistant.
+
+23
+00:01:15,180 --> 00:01:16,380
+It is not a pick generator.
+
+24
+00:01:17,420 --> 00:01:20,910
+First, the prompt tells the assistant to
+act as a skeptical
+
+25
+00:01:20,920 --> 00:01:24,870
+sports research assistant, not a betting
+tipster.
+
+26
+00:01:24,880 --> 00:01:28,570
+That changes the job from finding a flashy
+answer to checking
+
+27
+00:01:28,580 --> 00:01:31,680
+whether the evidence can support any
+answer at all.
+
+28
+00:01:32,500 --> 00:01:35,340
+Next, it requires the current date and
+time,
+
+29
+00:01:35,700 --> 00:01:38,840
+plus the timestamp of every time-sensitive
+source.
+
+30
+00:01:39,500 --> 00:01:44,090
+A response can sound detailed while
+relying on yesterday’s injury report
+
+31
+00:01:44,100 --> 00:01:45,560
+or an old line.
+
+32
+00:01:46,420 --> 00:01:49,350
+It also requires a check of the exact
+market line.
+
+33
+00:01:49,360 --> 00:01:52,300
+If that cannot be verified, stop.
+
+34
+00:01:52,860 --> 00:01:56,480
+A polished explanation built on the wrong
+number is still wrong.
+
+35
+00:01:57,500 --> 00:02:00,020
+The next requirement is to check official
+injury,
+
+36
+00:02:00,400 --> 00:02:03,700
+lineup, roster, and availability sources
+first.
+
+37
+00:02:04,380 --> 00:02:08,620
+General AI can summarize information, but
+it can miss late news,
+
+38
+00:02:09,120 --> 00:02:11,840
+repeat a stale report, or cite a weak
+source.
+
+39
+00:02:12,560 --> 00:02:16,390
+Verify current status rather than assuming
+it because it appeared in
+
+40
+00:02:16,400 --> 00:02:21,010
+a chat response. After that, separate
+recent form from the longer
+
+41
+00:02:21,020 --> 00:02:26,380
+sample; evaluate role and opportunity,
+matchup, game environment,
+
+42
+00:02:26,720 --> 00:02:31,010
+and market context; then explain why each
+piece of evidence applies
+
+43
+00:02:31,020 --> 00:02:32,480
+to this exact prop.
+
+44
+00:02:33,380 --> 00:02:37,290
+Instead of asking, “Will this go over?”
+you are asking the
+
+45
+00:02:37,300 --> 00:02:41,220
+assistant to show its work, distinguish
+sourced facts from inference,
+
+46
+00:02:41,540 --> 00:02:44,320
+and identify the strongest case for both
+sides.
+
+47
+00:02:45,140 --> 00:02:49,800
+The counterargument matters. A player may
+have a strong recent trend,
+
+48
+00:02:50,320 --> 00:02:52,800
+but a teammate returning could change the
+role.
+
+49
+00:02:53,440 --> 00:02:56,520
+A line might have moved after the
+statistic you are reading.
+
+50
+00:02:57,140 --> 00:03:00,980
+Good research makes those conflicts
+visible instead of hiding them.
+
+51
+00:03:01,880 --> 00:03:05,280
+The prompt also requires direct links to
+primary sources,
+
+52
+00:03:05,960 --> 00:03:08,200
+a list of missing or conflicting data,
+
+53
+00:03:08,480 --> 00:03:11,260
+and a clear separation between facts and
+inference.
+
+54
+00:03:11,870 --> 00:03:14,800
+It tells the assistant not to invent a
+statistic,
+
+55
+00:03:15,360 --> 00:03:19,560
+injury, price, or citation; not to
+recommend a stake;
+
+56
+00:03:20,020 --> 00:03:23,180
+and not to claim a probability without
+calibration evidence.
+
+57
+00:03:24,020 --> 00:03:26,720
+Finally, it must end with one of three
+conclusions:
+
+58
+00:03:27,820 --> 00:03:31,260
+evidence leans over, evidence leans under,
+or no action.
+
+59
+00:03:31,880 --> 00:03:34,110
+“No action” is not a failed answer.
+
+60
+00:03:34,120 --> 00:03:36,860
+It is the correct answer when the line,
+
+61
+00:03:36,880 --> 00:03:39,880
+source, lineup, or current evidence is
+incomplete.
+
+62
+00:03:41,140 --> 00:03:44,490
+Here is the limit to remember: a prompt
+cannot make stale
+
+63
+00:03:44,500 --> 00:03:48,110
+data current. It can make an AI ask better
+questions,
+
+64
+00:03:48,120 --> 00:03:50,740
+but you still need to verify the player,
+
+65
+00:03:50,980 --> 00:03:54,400
+line, source timestamps, and current
+context yourself.
+
+66
+00:03:55,340 --> 00:03:57,650
+That is where a product workflow matters.
+
+67
+00:03:57,660 --> 00:04:01,020
+In Propeller, start with the exact player,
+
+68
+00:04:01,340 --> 00:04:04,220
+stat, displayed direction, and current
+line.
+
+69
+00:04:04,780 --> 00:04:09,220
+Then inspect the sport-specific signals
+that support or challenge the analysis.
+
+70
+00:04:10,060 --> 00:04:14,570
+The agent breakdown makes agreement and
+conflict visible rather than burying
+
+71
+00:04:14,580 --> 00:04:16,060
+them in a single answer.
+
+72
+00:04:17,080 --> 00:04:19,300
+When you see confidence, read it
+correctly.
+
+73
+00:04:19,860 --> 00:04:25,310
+Propeller’s 50-to-100 confidence score
+describes how strongly the available
+signals
+
+74
+00:04:25,320 --> 00:04:28,000
+support the displayed More or Less
+direction.
+
+75
+00:04:28,700 --> 00:04:31,320
+It is not the exact chance the prop will
+hit,
+
+76
+00:04:31,520 --> 00:04:32,840
+and it is not a guarantee.
+
+77
+00:04:34,040 --> 00:04:36,100
+Use the prompt to structure your
+questions.
+
+78
+00:04:36,940 --> 00:04:40,530
+Use current sources and the Propeller
+Analyzer to inspect the line
+
+79
+00:04:40,540 --> 00:04:44,670
+and evidence. If the information has
+changed or does not hold
+
+80
+00:04:44,680 --> 00:04:46,740
+together, pause or pass.
+
+81
+00:04:47,360 --> 00:04:51,250
+Build your free research prompt at
+PropellerPicks.com,
+
+82
+00:04:51,260 --> 00:04:55,180
+then explore the free Prop Analyzer for
+the current player-prop context.
+
+83
+00:04:56,080 --> 00:04:59,360
+Propeller Picks is a research and
+analytics platform,
+
+84
+00:04:59,700 --> 00:05:03,380
+not a sportsbook. Nothing in this video is
+a guarantee,
+
+85
+00:05:03,980 --> 00:05:07,120
+financial advice, or a recommendation to
+wager.
+
+86
+00:05:07,780 --> 00:05:11,310
+If you choose to wager, do so responsibly
+and follow the
+
+87
+00:05:11,320 --> 00:05:12,540
+laws where you live.

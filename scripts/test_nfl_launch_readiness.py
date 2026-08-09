@@ -44,7 +44,7 @@ class NflLaunchReadinessTests(unittest.TestCase):
 
     def test_august_aeo_cohort_is_frozen_and_complete(self) -> None:
         targets = json.loads((ROOT / "docs" / "seo" / "aeo-target-questions-2026-08.json").read_text(encoding="utf-8"))
-        self.assertEqual(targets["version"], "2026-08-nfl-v1")
+        self.assertEqual(targets["contract_version"], "2026-08-nfl-v1")
         self.assertEqual(len(targets["target_questions"]), 20)
         instructions = targets["measurement_instructions"]
         self.assertEqual(instructions["expected_observations"], 20 * len(instructions["platforms"]) * instructions["runs_per_prompt"])

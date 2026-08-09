@@ -1,5 +1,35 @@
 # Site maintenance scripts
 
+## Monthly AEO measurement
+
+Create the 300-row monthly matrix from the frozen 20-question contract:
+
+```bash
+python3 scripts/create_aeo_baseline.py --date YYYY-MM-DD \
+  --output docs/seo/aeo-snapshot-YYYY-MM-DD.csv
+```
+
+The active contract must exactly match its immutable versioned copy in `docs/seo/aeo-contracts/`; generation fails if a version was edited in place or was not archived.
+
+After the five answer-engine runs are recorded, validate the matrix and build the deterministic scorecard:
+
+```bash
+python3 scripts/summarize_aeo_snapshot.py \
+  docs/seo/aeo-snapshot-YYYY-MM-DD.csv \
+  --output docs/seo/aeo-snapshot-YYYY-MM-DD.md
+```
+
+Use `--check` on the summarizer to fail when a committed rollup is stale. The full field definitions, source taxonomy, and manual-run rules live in `docs/seo/aeo-citation-tracker.md`.
+
+Browser-run observations can be normalized into the matrix with:
+
+```bash
+python3 scripts/import_aeo_observations.py \
+  docs/seo/aeo-snapshot-YYYY-MM-DD.csv < observations.json
+```
+
+The importer compares explicit captured Propeller claims with `data/product-facts.json`: contradictions are `inaccurate`, supported ledger facts can be `accurate`, and claims without a resolvable ledger fact remain `unverifiable`. It preserves nonfinal statuses for authentication, rate-limit, and domain-only citation failures and never fills blocked rows with assumed results. Completeness is the default publication gate; retry blocked observations until all 300 rows are complete. Use `--draft` only for a prominently marked, non-comparable working report.
+
 These keep the SEO-critical state of the site fresh. The daily content
 pipeline should run them in this order after it regenerates pages:
 

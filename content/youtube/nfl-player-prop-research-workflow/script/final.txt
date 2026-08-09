@@ -1,0 +1,33 @@
+How do you research NFL player props? Start with the market, not the model. Confirm that a current slate exists, then verify the player, stat, exact line, platform, and timestamp. After that, research role, injuries, matchup, and game environment. Only then should a model direction or confidence score enter the decision.
+
+Here is a repeatable game-week workflow you can use on Propeller, on the web or mobile.
+
+Because we are recording during the NFL offseason, the current board correctly shows that no live slate is available. To make the features concrete, this walkthrough then switches to a clearly labeled Josh Allen passing-yards example built from Propeller's archived 2025 NFL data. It demonstrates the interface, but it was not a live or published pregame recommendation.
+
+Step one is availability. Open the NFL board and check its current state. During the offseason, while a slate is being built, or on a day with no listed games, there may be nothing current to analyze. That is useful information. Do not replace a missing current line with an old screenshot, an archived result, or a number from another platform.
+
+When a verified slate is available, open a prop and identify five things before reading any analysis: the player, the stat category, the exact line, the platform, and the time the source was updated. Lines can differ across platforms and can move during the week. Research built around the wrong number is research for a different decision.
+
+Step two is role and opportunity. Recent box scores tell you what happened, but they do not always tell you what changed. For a receiver, look for routes, targets, alignment, and snap participation. For a running back, look at carry volume, passing-game work, and goal-line usage. For a quarterback, consider attempts, designed runs, and the expected game environment. The key question is not simply, “Did this player clear the line last week?” It is, “Is the role that created those opportunities still present this week?”
+
+Step three is injury context. Start with the official NFL injury report, then confirm game status and the inactive list as kickoff approaches. Also look beyond the player named on the prop. A teammate being limited or ruled out can change routes, target share, carry volume, protection, and red-zone work. That is why injury research is a cascade, not a single yes-or-no flag.
+
+Step four is matchup and game environment. Position-specific defensive context can be more useful than a broad team ranking. Then add likely pace, pass-versus-run environment, weather for outdoor games, and possible game scripts. None of those inputs proves an outcome by itself. The goal is to understand the range of ways the game could develop and which assumptions the prop depends on.
+
+Now inspect the Propeller agent breakdown. Each agent is a specialized research lens. In this historical example, the saved breakdown includes DVOA, game script, hit rate, injury, matchup, sportsbook-margin adjustment, variance, and volume. The agents shown can vary with the evidence and model version. Signals without usable evidence are skipped, and the available signals are combined into the displayed direction.
+
+Do not look only for agreement. Disagreement can be the most useful part of the breakdown. A favorable matchup beside uncertain volume is a reason to investigate the role. A market signal that conflicts with injury context is a reason to check when both sources were updated. And if an injury signal has no usable result, that does not prove the player is healthy. It means the official status still needs to be verified.
+
+Next, read the direction before the confidence number. The label MORE, or OVER, means the available signals lean above the listed line. The label LESS, or UNDER, means they lean below it. Propeller’s confidence score runs from fifty to one hundred and shows how strongly the available model signals support that displayed direction.
+
+That score is not a calibrated win probability. A confidence score of seventy-five does not mean the prop has a seventy-five-percent chance of winning. It is also different from market-implied probability, which is estimated from listed prices. Keep direction, confidence, line, and market probability separate.
+
+Line movement deserves the same care. A changing number tells you the market changed; it does not tell you why. The move could reflect injury news, role information, limits, or ordinary market adjustment. Recheck the current line and timestamp instead of assuming movement confirms the model.
+
+Before making a decision, run one final checklist. Is the slate current? Does the player, stat, line, and platform match? Is the expected role intact? Are the injury report and inactive status current? Do the matchup and game environment support the same assumptions? What do the agents disagree about? And what new information would make you pass?
+
+That last question matters. A good research process needs a clear no-action outcome. If the line moved too far, the player’s role is uncertain, or the evidence is stale, walking away is a valid conclusion.
+
+Then repeat the freshness check close to kickoff. NFL context can change after your first review, so the final decision should use the current line and the newest official information available.
+
+You can save this workflow with Propeller’s NFL player prop research guide, then open the NFL analyzer when a verified slate is available. Propeller is an independent research and analytics platform. It does not accept wagers or place entries, and no model signal guarantees an outcome. If you choose to play, use limits and treat the research as one input in your own decision.

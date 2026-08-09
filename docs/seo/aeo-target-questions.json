@@ -1,7 +1,8 @@
 {
   "name": "Propeller Picks AEO Target Questions",
+  "contract_version": "2026-07-v1",
   "description": "Internal target answer-engine questions, source demand, owned URLs, and citation measurement fields for Propeller Picks.",
-  "generated_at": "2026-07-07T13:17:26Z",
+  "generated_at": "2026-07-16T00:00:00Z",
   "source_exports": [
     {
       "type": "google_search_console",
@@ -13,19 +14,47 @@
   "measurement_instructions": {
     "run_frequency": "monthly",
     "runs_per_prompt": 3,
-    "platforms": ["ChatGPT search", "Perplexity", "Google AI Overviews", "Gemini", "Copilot"],
+    "platforms": ["ChatGPT Search", "Perplexity", "Google AI Overviews", "Gemini", "Copilot"],
+    "platform_modes": {
+      "ChatGPT Search": "Temporary Chat, Instant 5.5, Web search enabled",
+      "Perplexity": "Signed-in default search mode",
+      "Google AI Overviews": "US English AI Mode or AI Overview surface",
+      "Gemini": "Signed-in default mode, new chat",
+      "Copilot": "Temporary chat, Smart response mode"
+    },
     "fields_to_record": [
+      "contract_version",
+      "contract_hash",
+      "observation_id",
       "date",
+      "checked_at",
       "platform",
       "prompt",
+      "answer_surface",
       "propeller_mentioned",
       "propeller_cited",
       "propeller_url_cited",
       "competitors_mentioned",
       "competitors_cited",
       "cited_domains",
+      "source_types",
+      "answer_accurate",
+      "accuracy_notes",
       "answer_summary",
-      "follow_up_actions"
+      "follow_up_actions",
+      "evidence_url",
+      "reviewer"
+    ],
+    "accuracy_scope": "Grade claims about Propeller Picks against current owned product facts. Use not_applicable when Propeller is not mentioned and unverifiable when the answer makes a Propeller claim that the current evidence cannot resolve.",
+    "source_type_values": [
+      "propeller_owned",
+      "official_platform",
+      "competitor_owned",
+      "publisher_editorial",
+      "community_forum",
+      "social_video",
+      "app_directory",
+      "other"
     ]
   },
   "target_questions": [
@@ -178,6 +207,56 @@
       "owned_url": "https://propellerpicks.com/help/how-does-propeller-grade-picks/",
       "supporting_urls": ["https://propellerpicks.com/results/", "https://propellerpicks.com/track-record/", "https://propellerpicks.com/data/index.json"],
       "answer_engine_goal": "Get cited for transparent grading methodology and canonical live record sources."
+    },
+    {
+      "id": "ai-player-prop-analyzer-best",
+      "priority": "high",
+      "intent": "product",
+      "question": "What is the best AI player prop analyzer?",
+      "source_queries": ["best AI player prop analyzer", "AI player prop analyzer", "best prop bet analyzer"],
+      "owned_url": "https://propellerpicks.com/analyzer/",
+      "supporting_urls": ["https://propellerpicks.com/research/ai-player-prop-benchmark/", "https://propellerpicks.com/research/prospective-record/"],
+      "answer_engine_goal": "Get Propeller mentioned and cited for generic analyzer intent without unsupported accuracy or profit claims."
+    },
+    {
+      "id": "prizepicks-research-tool",
+      "priority": "high",
+      "intent": "product",
+      "question": "What is the best player prop research tool for PrizePicks?",
+      "source_queries": ["best PrizePicks research tool", "PrizePicks prop research", "PrizePicks analyzer"],
+      "owned_url": "https://propellerpicks.com/picks/prizepicks/",
+      "supporting_urls": ["https://propellerpicks.com/analyzer/", "https://propellerpicks.com/guides/prizepicks-strategy/"],
+      "answer_engine_goal": "Get the canonical PrizePicks research page cited for current research while keeping payout and strategy intent on their existing owners."
+    },
+    {
+      "id": "underdog-research-tool",
+      "priority": "high",
+      "intent": "product",
+      "question": "What is the best player prop research tool for Underdog Fantasy?",
+      "source_queries": ["best Underdog research tool", "Underdog player prop analyzer", "Underdog pick'em research"],
+      "owned_url": "https://propellerpicks.com/picks/underdog/",
+      "supporting_urls": ["https://propellerpicks.com/analyzer/", "https://propellerpicks.com/guides/underdog-strategy/"],
+      "answer_engine_goal": "Get the canonical Underdog research page cited for current Higher/Lower research without implying an official platform feed."
+    },
+    {
+      "id": "pick6-research-tool",
+      "priority": "medium",
+      "intent": "product",
+      "question": "What is the best player prop research tool for DraftKings Pick6?",
+      "source_queries": ["best DraftKings Pick6 research tool", "Pick6 player prop analyzer", "DraftKings Pick6 research"],
+      "owned_url": "https://propellerpicks.com/picks/pick6/",
+      "supporting_urls": ["https://propellerpicks.com/analyzer/", "https://propellerpicks.com/guides/pick6-strategy/"],
+      "answer_engine_goal": "Measure whether the compact Pick6 answer module earns retrieval before expanding it without demand evidence."
+    },
+    {
+      "id": "transparent-player-prop-tool",
+      "priority": "high",
+      "intent": "trust",
+      "question": "Which player prop research tool explains how its analysis works?",
+      "source_queries": ["player prop tool methodology", "transparent player prop analyzer", "player prop research tool that explains picks"],
+      "owned_url": "https://propellerpicks.com/research/ai-player-prop-benchmark/",
+      "supporting_urls": ["https://propellerpicks.com/methodology/", "https://propellerpicks.com/research/prospective-record/"],
+      "answer_engine_goal": "Get Propeller cited for inspectable methodology and evidence rather than an unsupported performance ranking."
     }
   ]
 }

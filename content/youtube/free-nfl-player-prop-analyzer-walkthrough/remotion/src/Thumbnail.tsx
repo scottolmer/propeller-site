@@ -1,0 +1,16 @@
+import React from "react";
+import {AbsoluteFill} from "remotion";
+import "./fonts";
+
+const orange="#ff6038", ink="#111316", paper="#f2efe8", blue="#5d99ef";
+
+const Mark:React.FC=()=> <svg width="58" height="58" viewBox="0 0 54 54"><circle cx="27" cy="27" r="5.5" fill={orange}/><path d="M27 27V5M27 27L7 40M27 27L47 40" stroke={orange} strokeWidth="7.5" strokeLinecap="round"/></svg>;
+
+export const Thumbnail:React.FC=()=> <AbsoluteFill style={{background:paper,color:ink,fontFamily:"IBM Plex Sans",overflow:"hidden"}}>
+  <div style={{position:"absolute",inset:0,backgroundImage:"linear-gradient(rgba(17,19,22,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(17,19,22,.055) 1px,transparent 1px)",backgroundSize:"32px 32px"}}/>
+  <div style={{position:"absolute",left:0,top:0,bottom:0,width:17,background:orange}}/>
+  <div style={{position:"relative",height:"100%",padding:"50px 63px",display:"grid",gridTemplateColumns:"1.08fr .92fr",gap:45,alignItems:"center"}}>
+    <div><div style={{display:"flex",alignItems:"center",gap:12}}><Mark/><div style={{fontFamily:"Familjen Grotesk",fontSize:25,fontWeight:700}}>PROPELLER PICKS</div></div><div style={{fontFamily:"IBM Plex Mono",fontSize:17,fontWeight:600,letterSpacing:2.2,color:orange,marginTop:30}}>FREE NFL PLAYER PROP ANALYZER</div><div style={{fontFamily:"Familjen Grotesk",fontSize:87,fontWeight:700,lineHeight:.88,letterSpacing:-3.5,marginTop:18}}>Use it<br/>the right<br/>way.</div><div style={{display:"inline-flex",marginTop:27,background:ink,color:"white",padding:"13px 18px",borderRadius:8,fontFamily:"IBM Plex Mono",fontSize:16}}>DIRECTION → CONFIDENCE → FRESHNESS</div></div>
+    <div style={{background:"white",border:`7px solid ${ink}`,borderRadius:22,padding:27,boxShadow:`16px 18px 0 ${orange}`,rotate:"1deg"}}><div style={{display:"flex",justifyContent:"space-between",alignItems:"start"}}><div><div style={{fontFamily:"IBM Plex Mono",fontSize:12,color:"#656a73"}}>HISTORICAL INTERFACE EXAMPLE</div><div style={{fontFamily:"Familjen Grotesk",fontSize:43,fontWeight:700,marginTop:6}}>Josh Allen</div><div style={{fontSize:17,color:"#656a73"}}>Passing Yards · 195.5</div></div><div style={{background:blue,color:"white",borderRadius:9,padding:"9px 13px",fontFamily:"IBM Plex Mono",fontSize:13}}>NFL</div></div><div style={{display:"grid",gridTemplateColumns:"1.25fr .75fr",gap:11,marginTop:27}}><div style={{borderRadius:12,background:"#fff0eb",padding:17,border:`2px solid ${orange}`}}><div style={{fontFamily:"IBM Plex Mono",fontSize:11,color:"#656a73"}}>DIRECTION</div><div style={{fontFamily:"Familjen Grotesk",fontSize:43,fontWeight:700,color:orange}}>UNDER</div></div><div style={{borderRadius:12,background:"#f2f3f5",padding:17,textAlign:"center"}}><div style={{fontFamily:"IBM Plex Mono",fontSize:11,color:"#656a73"}}>CONFIDENCE</div><div style={{fontFamily:"Familjen Grotesk",fontSize:43,fontWeight:700}}>62</div></div></div><div style={{height:8,borderRadius:8,background:"#dedbd5",marginTop:17,overflow:"hidden"}}><div style={{width:"62%",height:"100%",background:orange}}/></div><div style={{marginTop:18,fontFamily:"IBM Plex Mono",fontSize:12,color:"#2d7c45"}}>NOT A LIVE LINE · WORKFLOW DEMO</div></div>
+  </div>
+</AbsoluteFill>;

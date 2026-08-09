@@ -1,0 +1,137 @@
+{
+  "version": 1,
+  "slug": "propeller-channel-introduction",
+  "state": "review_ready",
+  "brief": {
+    "concept": "The definitive pinned YouTube introduction to Propeller Picks: an in-depth walkthrough of the free Analyzer and full research workspace, confidence and agent evidence, desktop and mobile flow, public historical record, methodology, limitations, and responsible use.",
+    "primary_question": "What is Propeller Picks, how does its research workflow work on desktop and mobile, and what should a new user understand before relying on a model signal?",
+    "audience": "Prospective and new Propeller Picks users arriving from the channel home page, search, or a shared video.",
+    "learning_outcome": "Viewers can explain the distinct jobs of Propeller's sport-specific analysis agents, use the free Analyzer responsibly, distinguish directional confidence from probability, understand current MLB hitter fantasy projections, and interpret the public historical archive without mistaking it for a guarantee or forward-tested ROI.",
+    "cta": "Start with the free Prop Analyzer at https://propellerpicks.com/analyzer/, then open the web app when you want the full research workspace.",
+    "target_duration_seconds": 514.275,
+    "freshness_requirements": "Capture the current public Analyzer, current desktop and mobile research UI, and current Results page shortly before render. Historical figures must carry date, unit, and non-ROI limitation; never present repeated or retrospective archive rows as uniquely published future recommendations."
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-07-22T23:05:06.079291+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-07-22T23:20:00Z",
+      "evidence": "User explicitly replied: approved"
+    },
+    "review": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    },
+    "publication": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review-v2.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {
+      "path": "https://propellerpicks.com/analyzer/",
+      "use": "Current Analyzer positioning, sport coverage, direction/confidence presentation, free access, and no-wager placement claim; checked July 22, 2026."
+    },
+    {
+      "path": "https://propellerpicks.com/how-it-works/",
+      "use": "Methodology: player, market, line, game context, team environment, recent usage, agent categories, directional confidence, and forward-record contract; checked July 22, 2026."
+    },
+    {
+      "path": "https://propellerpicks.com/results/",
+      "use": "Current public historical archive and limitations: 2,185,007 raw historical analysis rows and 293,020 collapsed public-ledger entries; not a uniquely published forward-test or ROI record; checked July 22, 2026."
+    },
+    {
+      "path": "https://propellerpicks.com/research/prospective-record/",
+      "use": "Forward record methodology: published before verified event start, exact price, and settlement contract."
+    },
+    {
+      "path": "https://propellerpicks.com/fantasy/methodology/",
+      "use": "Current MLB hitter fantasy projection method: current market components, recent-form completion, DraftKings MLB scoring, and range limitations."
+    },
+    {
+      "path": "https://propellerpicks.com/data/fantasy-product-facts.json",
+      "use": "Current public fantasy scope and explicit exclusions: MLB hitters only; floor, point projection, ceiling; no pitchers, other sports, salary optimization, lineup optimization, entry submission, or guarantees."
+    }
+  ],
+  "publishing": {
+    "requested_visibility": "not_requested",
+    "video_id": null,
+    "url": null,
+    "uploaded": false,
+    "hd_processed": false,
+    "published_at": null,
+    "verified": false
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-07-22T23:05:06.079291+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "brief",
+      "at": "2026-07-22T23:10:00Z",
+      "note": "Reframed from a short social cut into the definitive 6–7 minute, 16:9 pinned YouTube channel introduction. Required coverage: current Analyzer, desktop/mobile workflow, technical agent explanation, line, direction, confidence, current MLB hitter fantasy projections, public results, forward-record standard, and limitations."
+    },
+    {
+      "phase": "script",
+      "at": "2026-07-22T23:10:00Z",
+      "note": "Prepared full narration and semantic visual plan. SEO/AEO revision now covers direct-answer fan-out questions about AI player-prop models, agents, confidence, and MLB fantasy projections without keyword stuffing. Awaiting explicit script approval before audio, product capture, or render."
+    },
+    {
+      "phase": "script_approval",
+      "at": "2026-07-22T23:20:00Z",
+      "note": "User explicitly approved the revised flagship script."
+    },
+    {
+      "phase": "narration",
+      "at": "2026-07-22T23:23:00Z",
+      "note": "Generated Kokoro narration with am_michael. Verified MP3, 44.1 kHz mono, duration 514.275 seconds. Generated word-level alignment and 137 timed English caption cues; exact-script timestamp match count was 1126 of 1168 words, with unmapped tokens interpolated by the alignment tool."
+    },
+    {
+      "phase": "visual_build",
+      "at": "2026-07-22T23:40:00Z",
+      "note": "Built a 1920x1080, 30 fps Remotion walkthrough from word-alignment timing. It uses current-adjacent Analyzer capture plus explicitly labeled July 2026 historical desktop/mobile product captures for the prop-agent and fantasy walkthrough. The review render is in progress; type check passes and representative agent, fantasy, and results frames were inspected."
+    },
+    {
+      "phase": "review_package",
+      "at": "2026-07-22T23:50:00Z",
+      "note": "Rendered review v1 (1280x720 H.264/AAC, 514.347 seconds), extracted a contact sheet and representative frames, rendered a 1280x720 PNG thumbnail (709 KB), created 137 valid timed English SRT cues, and prepared the title/description/pinned-comment package. Awaiting explicit review approval before 1080p master render or private YouTube upload."
+    },
+    {
+      "phase": "review_revision",
+      "at": "2026-07-22T23:58:00Z",
+      "note": "User correctly flagged the agent scene. Review v2 replaces the broad desktop view with a tight agent-row zoom (NoVig, HitRate, Injury, PitchingMatchup, Ballpark, Usage, Lineup) and replaces the mobile title-only view with the Agent Breakdown section plus a visible Player Workload contributing-agent row. Rendered review/review-v2.mp4; review v1 is retained."
+    }
+  ]
+}

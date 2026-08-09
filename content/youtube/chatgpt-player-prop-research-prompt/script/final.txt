@@ -1,0 +1,41 @@
+Can ChatGPT help you research a player prop?
+
+Yes—but it should not be the source of truth for a current line, injury, lineup, or outcome. Use it as a skeptical research assistant: give it a precise question, require sources and counterarguments, and tell it to stop when current evidence is incomplete.
+
+In this video, I’ll show you a better prompt, what it can and cannot do, and how to verify the answer before you rely on it.
+
+Start by making the question specific. “Is this player good tonight?” is too vague. Name the sport, player, stat, exact line, source or platform, and whether you want to evaluate both sides or challenge an initial lean.
+
+That exact line matters. A half point, a changed number, or a different stat creates a different question. If an AI cannot verify the current line, the right answer is not a confident prediction. It is: stop and verify the line.
+
+Propeller’s free AI Betting Prompt Builder turns those details into a research brief you can use with ChatGPT, Claude, Gemini, or another general AI assistant. It is not a pick generator.
+
+First, the prompt tells the assistant to act as a skeptical sports research assistant, not a betting tipster. That changes the job from finding a flashy answer to checking whether the evidence can support any answer at all.
+
+Next, it requires the current date and time, plus the timestamp of every time-sensitive source. A response can sound detailed while relying on yesterday’s injury report or an old line.
+
+It also requires a check of the exact market line. If that cannot be verified, stop. A polished explanation built on the wrong number is still wrong.
+
+The next requirement is to check official injury, lineup, roster, and availability sources first. General AI can summarize information, but it can miss late news, repeat a stale report, or cite a weak source. Verify current status rather than assuming it because it appeared in a chat response.
+
+After that, separate recent form from the longer sample; evaluate role and opportunity, matchup, game environment, and market context; then explain why each piece of evidence applies to this exact prop.
+
+Instead of asking, “Will this go over?” you are asking the assistant to show its work, distinguish sourced facts from inference, and identify the strongest case for both sides.
+
+The counterargument matters. A player may have a strong recent trend, but a teammate returning could change the role. A line might have moved after the statistic you are reading. Good research makes those conflicts visible instead of hiding them.
+
+The prompt also requires direct links to primary sources, a list of missing or conflicting data, and a clear separation between facts and inference. It tells the assistant not to invent a statistic, injury, price, or citation; not to recommend a stake; and not to claim a probability without calibration evidence.
+
+Finally, it must end with one of three conclusions: evidence leans over, evidence leans under, or no action. “No action” is not a failed answer. It is the correct answer when the line, source, lineup, or current evidence is incomplete.
+
+Here is the limit to remember: a prompt cannot make stale data current. It can make an AI ask better questions, but you still need to verify the player, line, source timestamps, and current context yourself.
+
+That is where a product workflow matters. In Propeller, start with the exact player, stat, displayed direction, and current line. Then inspect the sport-specific signals that support or challenge the analysis. The agent breakdown makes agreement and conflict visible rather than burying them in a single answer.
+
+When you see confidence, read it correctly. Propeller’s 50-to-100 confidence score describes how strongly the available signals support the displayed More or Less direction. It is not the exact chance the prop will hit, and it is not a guarantee.
+
+Use the prompt to structure your questions. Use current sources and the Propeller Analyzer to inspect the line and evidence. If the information has changed or does not hold together, pause or pass.
+
+Build your free research prompt at PropellerPicks.com, then explore the free Prop Analyzer for the current player-prop context.
+
+Propeller Picks is a research and analytics platform, not a sportsbook. Nothing in this video is a guarantee, financial advice, or a recommendation to wager. If you choose to wager, do so responsibly and follow the laws where you live.
