@@ -16,12 +16,17 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "a44e77468d5e6860301a0d38ec5c1c82baa24f2a64cf11518ff1c6dbaff7e8ea",
+      "fingerprint": "70bdec2edb46be24e335965037de17e443d820579eea27e344c6e1f3cde240e8",
       "lastmod": "2026-08-09",
       "source": "analyzer/index.html"
     },
+    "https://propellerpicks.com/analyzer/mlb/jesus-luzardo/": {
+      "fingerprint": "564452729d5800926b49058f182efe3b4f3ef81cca35d51fc7824f595d6f433e",
+      "lastmod": "2026-08-09",
+      "source": "analyzer/mlb/jesus-luzardo/index.html"
+    },
     "https://propellerpicks.com/analyzer/mlb/jose-tena/": {
-      "fingerprint": "3181bb11418398ce28455ef90f56d7e6eab04c3c7e6b1dfebc92c3fe0e5db42a",
+      "fingerprint": "a7c9e1e301141e5e33b581a8df30f4a93bf63ad1c6dacc78f508f4952a2478e5",
       "lastmod": "2026-08-09",
       "source": "analyzer/mlb/jose-tena/index.html"
     },
@@ -221,7 +226,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "7589dd4563a6266a4f35b3fcd724d34ed61832e25e84ad008a5deb314c4076d8",
+      "fingerprint": "5448a8d4d467580cc6475b28ad7c571fb24761de751911a144e6d19ddf0c04af",
       "lastmod": "2026-08-09",
       "source": "picks/mlb/index.html"
     },
