@@ -16,33 +16,18 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "266bc1ebfec0bc9e479d7f1c8ad7245b712d89766783a3d0bc29ede57b8c4381",
+      "fingerprint": "a44e77468d5e6860301a0d38ec5c1c82baa24f2a64cf11518ff1c6dbaff7e8ea",
       "lastmod": "2026-08-09",
       "source": "analyzer/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/alex-call/": {
-      "fingerprint": "a65ab8c4f1a1d03138a6aeb05c019903bcb13ce9678cc4b5e7484f9d71188b40",
-      "lastmod": "2026-08-09",
-      "source": "analyzer/mlb/alex-call/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/jhonny-pereda/": {
-      "fingerprint": "08d420f247fae9a6d3d7aff81ccd8d9c757dc5d6879206858ecccec77e12fa0f",
-      "lastmod": "2026-08-09",
-      "source": "analyzer/mlb/jhonny-pereda/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/joey-cantillo/": {
-      "fingerprint": "e79e19e6699670b4a5041ec2a4b1d1b59173b2c3946d73746a8eff32b4e14fa8",
-      "lastmod": "2026-08-09",
-      "source": "analyzer/mlb/joey-cantillo/index.html"
-    },
     "https://propellerpicks.com/analyzer/mlb/jose-tena/": {
-      "fingerprint": "c4aa1b5437e3775cef71981acb2a0488b89fad3fa9aed616b7e8959774d848f4",
+      "fingerprint": "7e6823ffcc70fe0faf11079707f4c5ef3f4ef5014d005fae6770ac0414199d3b",
       "lastmod": "2026-08-09",
       "source": "analyzer/mlb/jose-tena/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "311d099789e796169252c241c7cc92344380d279e18362db73bc42b15e3cb4bf",
-      "lastmod": "2026-08-08",
+      "fingerprint": "39776528873be65d99a72a8cebde0eb879ca54c5d6a8511bf8a4e8ea0fdea721",
+      "lastmod": "2026-08-09",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -236,7 +221,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "db171053a30edb63cea46d1d1faa6b8f6b7295e9a8d0990fcd3124d02d99ddd1",
+      "fingerprint": "7589dd4563a6266a4f35b3fcd724d34ed61832e25e84ad008a5deb314c4076d8",
       "lastmod": "2026-08-09",
       "source": "picks/mlb/index.html"
     },
