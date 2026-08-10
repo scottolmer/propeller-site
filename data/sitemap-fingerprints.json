@@ -16,22 +16,27 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "f98a7e94d7b5a49722ae221d09fb51ae92b0ec2c16141487a1a6a2cb4f054f10",
+      "fingerprint": "ab64859993b0a641236b2c3df5f453ab4719894b86d79060c304075a50a9c7f3",
       "lastmod": "2026-08-10",
       "source": "analyzer/index.html"
     },
+    "https://propellerpicks.com/analyzer/mlb/carson-williams/": {
+      "fingerprint": "451627fe251d86e95a479979937515294282929970688358c051f9051a9efafb",
+      "lastmod": "2026-08-10",
+      "source": "analyzer/mlb/carson-williams/index.html"
+    },
     "https://propellerpicks.com/analyzer/mlb/enrique-hernandez/": {
-      "fingerprint": "96a74378a4cff7d0acc3db916758e34d80df2c54820eb4e6ed51bfa6302efc77",
+      "fingerprint": "1ec1dc085b0b3cc45f4013e18f249368b265d104ea60cd9c8046ed460a08d681",
       "lastmod": "2026-08-10",
       "source": "analyzer/mlb/enrique-hernandez/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/jesus-sanchez/": {
-      "fingerprint": "23f2a4ca6d8f9f8fd832be3b69d373d7d54ff958487a4f03e7a6977017444bc3",
+      "fingerprint": "1dca14ce3a49585edc2a2a71d4f2f60bc20e7d900e4eed704ff475de491d3a53",
       "lastmod": "2026-08-10",
       "source": "analyzer/mlb/jesus-sanchez/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/jordan-beck/": {
-      "fingerprint": "7a4d63b85d4037c087253812b01300a34749de941e9e0fe3e17bb262399620f5",
+      "fingerprint": "382459b2c64a653d8d3ca11bce40e9209922b1cd3dd3b54b4c5482427f53ca2a",
       "lastmod": "2026-08-10",
       "source": "analyzer/mlb/jordan-beck/index.html"
     },
@@ -231,7 +236,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "a780c38ff5690a026040429a866436c0ac08e959b6ae0ee3016db0fc052f799c",
+      "fingerprint": "e03409b1667b1fb162ec54a18b1504d6a23c9c16e9a365b0d2164b29801e342a",
       "lastmod": "2026-08-10",
       "source": "picks/mlb/index.html"
     },
