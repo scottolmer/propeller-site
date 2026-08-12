@@ -16,19 +16,9 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "c4c49795822226afe9700b9799e668b0f2857322a14bdaa6b3e7c4c0de6df28e",
+      "fingerprint": "bb8be8268811a9d030619017eb30a4e97f0ce0350c9ab9aa8648a5f088e32d30",
       "lastmod": "2026-08-12",
       "source": "analyzer/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/ryan-feltner/": {
-      "fingerprint": "84b2a8c9e920d233941a78579a6b7adba78e2e03d02fb973d0c39d766976f432",
-      "lastmod": "2026-08-12",
-      "source": "analyzer/mlb/ryan-feltner/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/victor-bericoto/": {
-      "fingerprint": "f668b206cb16abed1e1eac5e9994af112380c4a072a38d83c23bb63cbabc1b7d",
-      "lastmod": "2026-08-12",
-      "source": "analyzer/mlb/victor-bericoto/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "34be6c076dbb263069d5abe2452ea5897902e4d79997d71b882b78be51f9d616",
@@ -226,7 +216,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "3c1178d87e8c54630b621b4a59643e72ca0d435c7f6539a2281a89463c8eb056",
+      "fingerprint": "11ae871e12c658c2d3d05bbd51bdeba9728e730c266797505dbb8331c2610217",
       "lastmod": "2026-08-12",
       "source": "picks/mlb/index.html"
     },
