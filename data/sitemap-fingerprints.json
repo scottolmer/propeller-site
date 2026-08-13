@@ -16,24 +16,9 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "976efd565499d6d05ca8fdfa6c01240bed0e7765736c117748f0cd1d79977ab2",
+      "fingerprint": "bb8be8268811a9d030619017eb30a4e97f0ce0350c9ab9aa8648a5f088e32d30",
       "lastmod": "2026-08-13",
       "source": "analyzer/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/jhonny-pereda/": {
-      "fingerprint": "fe2e861f0d7aea9ce95dd2dc8bbeb4b091a728382faf1700eaea439eb5d287b9",
-      "lastmod": "2026-08-13",
-      "source": "analyzer/mlb/jhonny-pereda/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/jose-tena/": {
-      "fingerprint": "c3475d9f17b61a5199adcd4fdd639e25817a1eb5ba4421c4c6ce151c44b55b34",
-      "lastmod": "2026-08-13",
-      "source": "analyzer/mlb/jose-tena/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/weston-wilson/": {
-      "fingerprint": "0a97b8d320c0fb79f93a58aca59c4ae98f8f54fd137d6fcca9d10d83f633637a",
-      "lastmod": "2026-08-13",
-      "source": "analyzer/mlb/weston-wilson/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "c66bf3b556b677c71c79df9c37da89a3aa83e661d246def3241e02bccfa9793a",
@@ -231,7 +216,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "ab2896c10c0d50979a85280c507f8ff9b035a48ecf5230d4afda6b398bae0980",
+      "fingerprint": "2f8b569c3444053a408af86f620fe2976d6afaa6d4867c120eadd9fc794f0c5d",
       "lastmod": "2026-08-13",
       "source": "picks/mlb/index.html"
     },
