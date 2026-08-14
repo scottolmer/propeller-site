@@ -162,7 +162,34 @@
     .product { padding: 118px 0 128px; }
     .product-intro { display: grid; grid-template-columns: .78fr 1.22fr; gap: 95px; align-items: start; }
     .product-copy p { max-width: 480px; margin: 24px 0 0; color: var(--sub); font-size: 17px; line-height: 1.68; }
-    .product-copy .button { margin-top: 28px; }
+    .product-actions { display: grid; justify-items: start; gap: 22px; margin-top: 28px; }
+    .product-copy .product-actions .button { margin-top: 0; }
+    .mobile-app-cta { display: grid; gap: 10px; }
+    .mobile-app-label { color: var(--sub); font: 600 9px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .store-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .store-link { min-height: 52px; border-radius: 7px; box-shadow: 4px 4px 0 var(--orange); transition: transform .18s ease, box-shadow .18s ease; }
+    .store-link:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--orange); }
+    .store-link:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+    .app-store-button { display: inline-flex; background: #000; }
+    .app-store-button img { display: block; width: auto; height: 52px; }
+    .play-store-button {
+      min-height: 52px;
+      min-width: 176px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 7px 16px 7px 13px;
+      border: 1px solid var(--ink);
+      border-radius: 7px;
+      background: var(--ink);
+      color: white;
+      text-decoration: none;
+    }
+    .play-store-button svg { width: 25px; height: 25px; flex: 0 0 auto; }
+    .play-store-button span { display: grid; gap: 2px; text-align: left; }
+    .play-store-button small { font: 600 8px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+    .play-store-button strong { font: 600 18px/1 var(--display); letter-spacing: -.02em; }
     .product-benefits { margin: 12px 0 0; border-top: 1px solid var(--ink); }
     .benefit { display: grid; grid-template-columns: 42px 1fr; gap: 17px; padding: 20px 0; border-bottom: 1px solid var(--line); }
     .benefit > span { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--ink); font: 500 10px/1 var(--mono); }
@@ -263,6 +290,11 @@
 
     @media (max-width: 570px) {
       .hero-actions .button { width: 100%; }
+      .product-actions { justify-items: stretch; }
+      .product-actions .button { width: 100%; max-width: 340px; }
+      .store-links { gap: 10px; }
+      .app-store-button img { width: 165px; height: auto; }
+      .play-store-button { min-width: 165px; }
       .app-hero { padding: 0 8px 11px 0; }
       .app-hero::after { inset: 9px 0 0 9px; }
       .app-browser-head { min-height: 37px; grid-template-columns: auto 1fr; gap: 9px; padding: 0 10px; }
@@ -376,7 +408,7 @@
     <section class="product" id="product">
       <div class="container">
         <div class="product-intro scroll-reveal">
-          <div class="product-copy"><p class="section-kicker">02 / From model to decision</p><h2>The AI is only useful if you can use it.</h2><p>Research the full board on desktop, inspect every signal, and carry saved props and scores with you on mobile.</p><a class="button" href="https://app.propellerpicks.com/signup">Open the full research workspace →</a></div>
+          <div class="product-copy"><p class="section-kicker">02 / From model to decision</p><h2>The AI is only useful if you can use it.</h2><p>Research the full board on desktop, inspect every signal, and carry saved props and scores with you on mobile.</p><div class="product-actions"><a class="button" href="https://app.propellerpicks.com/signup">Open the full research workspace →</a><div class="mobile-app-cta"><span class="mobile-app-label">Get the mobile app · iOS + Android</span><div class="store-links"><a class="store-link app-store-button" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store"><img src="../images/app-store-badge.svg" width="135" height="40" alt="Download on the App Store"></a><a class="store-link play-store-button" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&amp;utm_source=na_Med" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3.5v17l14-8.5L5 3.5Z" fill="#fff"/><path d="m5 3.5 8.2 8.5L5 20.5V3.5Z" fill="#c8ef83"/></svg><span><small>Get it on</small><strong>Google Play</strong></span></a></div></div></div></div>
           <div class="product-benefits">
             <div class="benefit"><span>01</span><div><h3>Scan the strongest signals first</h3><p>Sort the slate by confidence, direction, sport, market, and platform.</p></div></div>
             <div class="benefit"><span>02</span><div><h3>Open the reasoning behind the score</h3><p>See model support, counter-signals, line context, and recent performance.</p></div></div>
@@ -431,6 +463,7 @@
     document.querySelectorAll(".scroll-reveal").forEach((node) => revealObserver.observe(node));
   </script>
   <script src="../assets/js/live-record.js"></script>
+  <script src="../assets/js/analytics-events.js?v=20260814" defer></script>
   <script>
     const mirrorRecordField = (attribute) => {
       const fields = [...document.querySelectorAll(`[${attribute}]`)];

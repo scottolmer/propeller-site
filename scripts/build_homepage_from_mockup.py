@@ -16,6 +16,8 @@ OUTPUT = ROOT / "index.html"
 CSS_OUTPUT = ROOT / "assets" / "css" / "home-ai.css"
 
 TITLE = "Propeller Picks | AI Player Prop Research"
+APP_STORE_URL = "https://apps.apple.com/app/id6760788202"
+PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&utm_source=na_Med"
 DESCRIPTION = (
     "AI player prop research with inspectable matchup, usage, injury, market, and form signals. "
     "Analyze today's board free on desktop and mobile."
@@ -64,7 +66,7 @@ def schema() -> str:
                 "description": DESCRIPTION,
                 "isPartOf": {"@id": "https://propellerpicks.com/#website"},
                 "about": {"@id": "https://propellerpicks.com/#software"},
-                "dateModified": "2026-07-25",
+                "dateModified": "2026-08-14",
             },
             {
                 "@type": "SoftwareApplication",
@@ -73,7 +75,11 @@ def schema() -> str:
                 "applicationCategory": "SportsApplication",
                 "operatingSystem": "Web, iOS, Android",
                 "url": "https://propellerpicks.com/",
-                "installUrl": "https://app.propellerpicks.com/signup",
+                "installUrl": [
+                    "https://app.propellerpicks.com/signup",
+                    APP_STORE_URL,
+                    PLAY_STORE_URL,
+                ],
                 "image": "https://propellerpicks.com/images/og-home-ai-1200x630.png",
                 "description": "AI-powered player prop research with inspectable confidence signals, line context, saved props, and a public historical results archive.",
                 "featureList": [
@@ -161,7 +167,7 @@ def head() -> str:
   </script>
   <link rel="preload" href="/assets/fonts/familjen-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260715">
+  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260814">
 </head>"""
 
 
@@ -498,15 +504,15 @@ def main() -> None:
     html = html.replace("Public graded record", "Documented historical archive")
     html = html.replace(
         '<div class="proof-item proof-live"><small>Verified record</small><strong>● Live</strong><span data-record-updated>Snapshot · Jul 7, 2026 · live API in production</span></div>',
-        '<div class="proof-item proof-live"><small>Historical archive</small><strong>● Dated</strong><span data-record-updated>Static API snapshot · July 25, 2026; live refresh enabled</span></div>',
+        '<div class="proof-item proof-live"><small>Historical archive</small><strong>● Dated</strong><span data-record-updated>Static API snapshot · August 14, 2026; live refresh enabled</span></div>',
     )
     html = html.replace(
         '<div class="proof-item"><small>Graded props</small><strong data-record-total>2M+</strong><span data-record-total-detail>2,099,988 total props</span></div>',
-        '<div class="proof-item"><small>Collapsed ledger</small><strong data-record-total>315K</strong><span data-record-total-detail>314,776 ledger entries</span></div>',
+        '<div class="proof-item"><small>Collapsed ledger</small><strong data-record-total>353K</strong><span data-record-total-detail>353,497 ledger entries</span></div>',
     )
     html = html.replace(
         '<div class="proof-item"><small>Recorded outcomes</small><strong data-record-outcome>1.41M W · 687.5K L · 30 P</strong><span>Pushes tracked separately</span></div>',
-        '<div class="proof-item"><small>Historical database</small><strong data-record-raw-total>2.34M</strong><span>Raw graded analysis rows</span></div>',
+        '<div class="proof-item"><small>Historical database</small><strong data-record-raw-total>2.67M</strong><span>Raw graded analysis rows</span></div>',
     )
     html = html.replace(
         '<div class="proof-item"><small>Historical win rate</small><strong data-record-win-rate>67.3%</strong><span>Past performance is not predictive</span></div>',

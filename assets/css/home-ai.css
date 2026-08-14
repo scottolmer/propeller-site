@@ -150,7 +150,34 @@
     .product { padding: 118px 0 128px; }
     .product-intro { display: grid; grid-template-columns: .78fr 1.22fr; gap: 95px; align-items: start; }
     .product-copy p { max-width: 480px; margin: 24px 0 0; color: var(--sub); font-size: 17px; line-height: 1.68; }
-    .product-copy .button { margin-top: 28px; }
+    .product-actions { display: grid; justify-items: start; gap: 22px; margin-top: 28px; }
+    .product-copy .product-actions .button { margin-top: 0; }
+    .mobile-app-cta { display: grid; gap: 10px; }
+    .mobile-app-label { color: var(--sub); font: 600 9px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .store-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .store-link { min-height: 52px; border-radius: 7px; box-shadow: 4px 4px 0 var(--orange); transition: transform .18s ease, box-shadow .18s ease; }
+    .store-link:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--orange); }
+    .store-link:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+    .app-store-button { display: inline-flex; background: #000; }
+    .app-store-button img { display: block; width: auto; height: 52px; }
+    .play-store-button {
+      min-height: 52px;
+      min-width: 176px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      padding: 7px 16px 7px 13px;
+      border: 1px solid var(--ink);
+      border-radius: 7px;
+      background: var(--ink);
+      color: white;
+      text-decoration: none;
+    }
+    .play-store-button svg { width: 25px; height: 25px; flex: 0 0 auto; }
+    .play-store-button span { display: grid; gap: 2px; text-align: left; }
+    .play-store-button small { font: 600 8px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+    .play-store-button strong { font: 600 18px/1 var(--display); letter-spacing: -.02em; }
     .product-benefits { margin: 12px 0 0; border-top: 1px solid var(--ink); }
     .benefit { display: grid; grid-template-columns: 42px 1fr; gap: 17px; padding: 20px 0; border-bottom: 1px solid var(--line); }
     .benefit > span { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--ink); font: 500 10px/1 var(--mono); }
@@ -251,6 +278,11 @@
 
     @media (max-width: 570px) {
       .hero-actions .button { width: 100%; }
+      .product-actions { justify-items: stretch; }
+      .product-actions .button { width: 100%; max-width: 340px; }
+      .store-links { gap: 10px; }
+      .app-store-button img { width: 165px; height: auto; }
+      .play-store-button { min-width: 165px; }
       .app-hero { padding: 0 8px 11px 0; }
       .app-hero::after { inset: 9px 0 0 9px; }
       .app-browser-head { min-height: 37px; grid-template-columns: auto 1fr; gap: 9px; padding: 0 10px; }

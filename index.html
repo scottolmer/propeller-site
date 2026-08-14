@@ -67,7 +67,7 @@
       "about": {
         "@id": "https://propellerpicks.com/#software"
       },
-      "dateModified": "2026-07-25"
+      "dateModified": "2026-08-14"
     },
     {
       "@type": "SoftwareApplication",
@@ -76,7 +76,11 @@
       "applicationCategory": "SportsApplication",
       "operatingSystem": "Web, iOS, Android",
       "url": "https://propellerpicks.com/",
-      "installUrl": "https://app.propellerpicks.com/signup",
+      "installUrl": [
+        "https://app.propellerpicks.com/signup",
+        "https://apps.apple.com/app/id6760788202",
+        "https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&utm_source=na_Med"
+      ],
       "image": "https://propellerpicks.com/images/og-home-ai-1200x630.png",
       "description": "AI-powered player prop research with inspectable confidence signals, line context, saved props, and a public historical results archive.",
       "featureList": [
@@ -148,7 +152,7 @@
   </script>
   <link rel="preload" href="/assets/fonts/familjen-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260715">
+  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260814">
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="/favicon.ico">
@@ -251,7 +255,7 @@
     <section class="product" id="product">
       <div class="container">
         <div class="product-intro scroll-reveal">
-          <div class="product-copy"><p class="section-kicker">02 / From model to decision</p><h2>The AI is only useful if you can use it.</h2><p>Research the full board on desktop, inspect every signal, and carry saved props and scores with you on mobile.</p><a class="button" href="https://app.propellerpicks.com/signup">Open the full research workspace →</a></div>
+          <div class="product-copy"><p class="section-kicker">02 / From model to decision</p><h2>The AI is only useful if you can use it.</h2><p>Research the full board on desktop, inspect every signal, and carry saved props and scores with you on mobile.</p><div class="product-actions"><a class="button" href="https://app.propellerpicks.com/signup">Open the full research workspace →</a><div class="mobile-app-cta"><span class="mobile-app-label">Get the mobile app · iOS + Android</span><div class="store-links"><a class="store-link app-store-button" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store"><img src="/images/app-store-badge.svg" width="135" height="40" alt="Download on the App Store"></a><a class="store-link play-store-button" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&amp;utm_source=na_Med" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3.5v17l14-8.5L5 3.5Z" fill="#fff"/><path d="m5 3.5 8.2 8.5L5 20.5V3.5Z" fill="#c8ef83"/></svg><span><small>Get it on</small><strong>Google Play</strong></span></a></div></div></div></div>
           <div class="product-benefits">
             <div class="benefit"><span>01</span><div><h3>Scan the strongest signals first</h3><p>Sort the slate by confidence, direction, sport, market, and platform.</p></div></div>
             <div class="benefit"><span>02</span><div><h3>Open the reasoning behind the score</h3><p>See model support, counter-signals, line context, and recent performance.</p></div></div>
@@ -353,6 +357,7 @@
     document.querySelectorAll(".scroll-reveal").forEach((node) => revealObserver.observe(node));
   </script>
   <script src="/assets/js/live-record.js?v=20260715-2"></script>
+  <script src="/assets/js/analytics-events.js?v=20260814" defer></script>
   <script>
     const mirrorRecordField = (attribute) => {
       const fields = [...document.querySelectorAll(`[${attribute}]`)];

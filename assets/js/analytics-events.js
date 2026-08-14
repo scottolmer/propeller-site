@@ -51,6 +51,10 @@
       return { name: "app_store_click", params: params };
     }
 
+    if (host === "play.google.com" && path.indexOf("/store/apps/details") === 0) {
+      return { name: "play_store_click", params: params };
+    }
+
     return null;
   }
 
