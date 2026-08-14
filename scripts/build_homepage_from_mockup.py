@@ -16,6 +16,7 @@ OUTPUT = ROOT / "index.html"
 CSS_OUTPUT = ROOT / "assets" / "css" / "home-ai.css"
 
 TITLE = "Propeller Picks | AI Player Prop Research"
+APP_STORE_URL = "https://apps.apple.com/app/id6760788202"
 PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&utm_source=na_Med"
 DESCRIPTION = (
     "AI player prop research with inspectable matchup, usage, injury, market, and form signals. "
@@ -76,6 +77,7 @@ def schema() -> str:
                 "url": "https://propellerpicks.com/",
                 "installUrl": [
                     "https://app.propellerpicks.com/signup",
+                    APP_STORE_URL,
                     PLAY_STORE_URL,
                 ],
                 "image": "https://propellerpicks.com/images/og-home-ai-1200x630.png",
