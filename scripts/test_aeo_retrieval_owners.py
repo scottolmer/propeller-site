@@ -118,7 +118,7 @@ def main() -> None:
         "homepage must promote the benchmark in both the record copy and evidence links"
     )
     assert "First-observed capture" in homepage, "homepage publication boundary missing"
-    assert '"dateModified": "2026-07-25"' in homepage, "homepage schema date is stale"
+    assert '"dateModified": "2026-08-14"' in homepage, "homepage schema date is stale"
     assert "does not independently verify event-start ordering or outcome timing" in homepage, (
         "homepage must disclose the prospective ledger timing limitation"
     )
