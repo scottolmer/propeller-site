@@ -16,18 +16,23 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "dbb5e5ccabe4ad7d69f39c374191bd3b1e6231b0ec0455fd63c1c1cd9b5e0420",
+      "fingerprint": "5017807e6033d39108340e86351be308721e08f71872f3636375d6e238438be7",
       "lastmod": "2026-08-14",
       "source": "analyzer/index.html"
     },
+    "https://propellerpicks.com/analyzer/mlb/connor-norby/": {
+      "fingerprint": "dd00827b95eb02d42b8000e3dadf4aa4a2dd0521ac6a6026bcba9fb6fbb5350a",
+      "lastmod": "2026-08-14",
+      "source": "analyzer/mlb/connor-norby/index.html"
+    },
     "https://propellerpicks.com/analyzer/mlb/matthew-liberatore/": {
-      "fingerprint": "e07cd263eb59cdc8dd784989d63fb2c89da0d1e960b716ec02108448675908b9",
+      "fingerprint": "5866aeb161bd570ef31d0e45a64cdaf7d874b2b556b551ec47bebf317f574e82",
       "lastmod": "2026-08-14",
       "source": "analyzer/mlb/matthew-liberatore/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "c66bf3b556b677c71c79df9c37da89a3aa83e661d246def3241e02bccfa9793a",
-      "lastmod": "2026-08-13",
+      "fingerprint": "e3c29dd93e38af5b280609c789b37090626eee75aca273826d6455ee16f95994",
+      "lastmod": "2026-08-14",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -221,7 +226,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "34997e69ece79e308e39db468f7b7dd7cd5314401f538fa98a37d2ed23c7f1a1",
+      "fingerprint": "d1f51dcfd49a78fd1327455fae5d7330961a5ef45ebfdfba737308655910381d",
       "lastmod": "2026-08-14",
       "source": "picks/mlb/index.html"
     },
