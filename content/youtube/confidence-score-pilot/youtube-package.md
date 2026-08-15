@@ -26,7 +26,7 @@ How Propeller works: https://propellerpicks.com/how-it-works/
 Confidence-score help: https://propellerpicks.com/help/how-do-confidence-scores-work/  
 Public methodology and records: https://propellerpicks.com/results/
 
-Propeller is a research and analysis tool. It does not accept wagers or operate as a sportsbook. Analysis is informational and does not constitute gambling advice. Must be 21+. If gambling is a problem, call 1-800-GAMBLER. Past performance does not guarantee future results.
+Propeller is a research and analysis tool. It does not accept wagers or operate as a sportsbook. Analysis is informational and does not constitute gambling advice. Must be 18+. If gambling is a problem, call 1-800-GAMBLER. Past performance does not guarantee future results.
 
 ## Chapters
 
@@ -63,4 +63,3 @@ Use the raw-score explanation and finish with: “Direction answers which side. 
 ### Short 3: “The four checks”
 
 Condense line, freshness, signals, and payout into a 45–55 second checklist.
-

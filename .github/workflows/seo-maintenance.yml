@@ -73,6 +73,7 @@ jobs:
           python3 scripts/check_schema_parity.py
           python3 scripts/check_structured_data_contracts.py
           python3 scripts/check_product_fact_consistency.py
+          python3 scripts/check_account_deletion_page.py
           python3 scripts/check_ai_search_assets.py
           python3 scripts/check_fantasy_contracts.py
           python3 scripts/test_platform_intent_ownership.py

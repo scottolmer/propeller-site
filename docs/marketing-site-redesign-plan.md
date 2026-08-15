@@ -351,7 +351,7 @@ High-priority SEO pages to preserve:
 
 Required footer language:
 
-`Propeller is a research and analysis tool. We do not accept wagers or operate as a sportsbook. All analysis is for informational purposes only and does not constitute gambling advice. Must be 21+. If gambling is a problem, call 1-800-GAMBLER.`
+`Propeller is a research and analysis tool. We do not accept wagers or operate as a sportsbook. All analysis is for informational purposes only and does not constitute gambling advice. Must be 18+. If gambling is a problem, call 1-800-GAMBLER.`
 
 Use:
 

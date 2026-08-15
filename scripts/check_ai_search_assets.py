@@ -41,7 +41,7 @@ def main() -> int:
         require('<h1' in source, f"{rel}: H1 missing", errors)
         require(re.search(r'<span class="air-byline">[^<]*Scott Olmer[^<]*</span>', source), f"{rel}: visible byline missing", errors)
         require('/editorial-policy/' in source, f"{rel}: corrections/editorial link missing", errors)
-        require('21+' in source and '1-800-GAMBLER' in source, f"{rel}: responsible-use footer missing", errors)
+        require('18+' in source and '1-800-GAMBLER' in source, f"{rel}: responsible-use footer missing", errors)
         require('/assets/css/ai-research.css' in source, f"{rel}: shared design missing", errors)
         for phrase in FORBIDDEN:
             require(phrase not in source.lower(), f"{rel}: forbidden claim '{phrase}'", errors)
