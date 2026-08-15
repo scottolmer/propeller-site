@@ -16,23 +16,18 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "d0a064a51f94872d44de1d971a43b773db2b3fe5d2b2b348b5ddb5beeb69bef8",
+      "fingerprint": "d51e095e3cd3fca96311c234f00ade068c77a2d56c48f601afd87afd960fad30",
       "lastmod": "2026-08-15",
       "source": "analyzer/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/connor-norby/": {
-      "fingerprint": "4f3ca676915a9f76191c19fbb7b3a9b0d0aa69b3d4e3506a49abb187dba6c7ea",
-      "lastmod": "2026-08-15",
-      "source": "analyzer/mlb/connor-norby/index.html"
-    },
     "https://propellerpicks.com/analyzer/mlb/pedro-pages/": {
-      "fingerprint": "8fb4b47cb07c1f870e58a9f528b86fdd18f767769f0eb3399912b31f04a24aaa",
+      "fingerprint": "22467a9b7211248557a8c7b61d4696d8011ac2b3f15d23e25becbaa6ede4e9e6",
       "lastmod": "2026-08-15",
       "source": "analyzer/mlb/pedro-pages/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "e3c29dd93e38af5b280609c789b37090626eee75aca273826d6455ee16f95994",
-      "lastmod": "2026-08-14",
+      "fingerprint": "61ec88d36a1387e4336f3cb50805e26f1ab325ac4493bfb0f794579a33ed2a65",
+      "lastmod": "2026-08-15",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -226,7 +221,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "87caafdc619252849c5aec884b8092fe3a371bcaa96ef42b186884c01ea7bc73",
+      "fingerprint": "3d23410ab0d1516867228c7e557a466fa5988c00169f830544cfdcf6823206b2",
       "lastmod": "2026-08-15",
       "source": "picks/mlb/index.html"
     },
