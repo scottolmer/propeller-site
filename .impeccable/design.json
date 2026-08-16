@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-15T00:00:00-05:00",
+  "title": "Design System: Propeller Picks Replay Room",
+  "extensions": {
+    "colorMeta": {
+      "night": { "role": "neutral", "displayName": "Replay Night", "canonical": "#031a2c", "tonalRamp": ["oklch(15% .04 245)", "oklch(26% .05 245)", "oklch(37% .06 245)", "oklch(48% .07 245)", "oklch(59% .07 245)", "oklch(70% .06 245)", "oklch(82% .04 245)", "oklch(94% .02 245)"] },
+      "night-2": { "role": "neutral", "displayName": "Studio Navy", "canonical": "#06243a", "tonalRamp": ["oklch(15% .05 245)", "oklch(26% .06 245)", "oklch(37% .07 245)", "oklch(48% .08 245)", "oklch(59% .08 245)", "oklch(70% .07 245)", "oklch(82% .05 245)", "oklch(94% .02 245)"] },
+      "cream": { "role": "neutral", "displayName": "Cream Mic", "canonical": "#f7f1e7", "tonalRamp": ["oklch(15% .01 80)", "oklch(26% .01 80)", "oklch(37% .01 80)", "oklch(48% .01 80)", "oklch(59% .01 80)", "oklch(70% .01 80)", "oklch(82% .015 80)", "oklch(95% .015 80)"] },
+      "orange": { "role": "primary", "displayName": "Propeller Orange", "canonical": "#ff5b23", "tonalRamp": ["oklch(15% .08 35)", "oklch(26% .13 35)", "oklch(37% .17 35)", "oklch(48% .20 35)", "oklch(59% .21 35)", "oklch(70% .19 35)", "oklch(82% .13 35)", "oklch(95% .04 35)"] },
+      "blue": { "role": "secondary", "displayName": "Telestrator Blue", "canonical": "#54c8ff", "tonalRamp": ["oklch(15% .05 230)", "oklch(26% .08 230)", "oklch(37% .11 230)", "oklch(48% .14 230)", "oklch(59% .15 230)", "oklch(70% .14 230)", "oklch(82% .10 230)", "oklch(95% .03 230)"] },
+      "muted": { "role": "neutral", "displayName": "Muted Analysis", "canonical": "#b8d3df", "tonalRamp": ["oklch(15% .02 230)", "oklch(26% .03 230)", "oklch(37% .035 230)", "oklch(48% .04 230)", "oklch(59% .04 230)", "oklch(70% .04 230)", "oklch(82% .035 230)", "oklch(95% .015 230)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Broadcast Display", "purpose": "Plain-English hero promises, section headlines, score numerals, and decisive actions." },
+      "body": { "displayName": "Plain-English Body", "purpose": "Readable product explanation and disclosures." },
+      "label": { "displayName": "Analyst Label", "purpose": "Short uppercase labels, signals, and technical callouts." }
+    },
+    "shadows": [
+      { "name": "store-lift", "value": "0 10px 24px rgba(0,0,0,.22)", "purpose": "App-store actions at rest." },
+      { "name": "primary-lift", "value": "0 12px 30px rgba(255,91,35,.2)", "purpose": "Orange web-access CTA." },
+      { "name": "desktop-screen", "value": "0 34px 70px rgba(0,0,0,.4)", "purpose": "Real web workspace in the product-proof stage." },
+      { "name": "phone-overlay", "value": "-18px 24px 46px rgba(0,0,0,.48)", "purpose": "Mobile screenshot layered over desktop." }
+    ],
+    "motion": [
+      { "name": "action-ease", "value": "cubic-bezier(.16,1,.3,1)", "purpose": "Store-link and CTA hover lifts." },
+      { "name": "reveal", "value": "opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1)", "purpose": "One-time section reveal when reduced motion is not requested." },
+      { "name": "phone-in", "value": ".8s .15s cubic-bezier(.16,1,.3,1)", "purpose": "Phone screenshot enters from a blurred offset only when reduced motion is not requested." }
+    ],
+    "breakpoints": [
+      { "name": "nav-collapse", "value": "1080px" },
+      { "name": "mobile", "value": "760px" },
+      { "name": "compact-mobile", "value": "380px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Store Link",
+      "kind": "button",
+      "refersTo": "store-link",
+      "description": "Equal-weight mobile download action for a real App Store or Google Play destination.",
+      "html": "<a class=\"ds-store-link\" href=\"#\">Download the app</a>",
+      "css": ".ds-store-link { min-width: 190px; height: 58px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #54c8ff; border-radius: 12px; background: #021522; color: #f7f1e7; box-shadow: 0 10px 24px rgba(0,0,0,.22); font: 600 14px PlexMono, monospace; text-decoration: none; transition: transform .2s cubic-bezier(.16,1,.3,1), background .2s; } .ds-store-link:hover { transform: translateY(-3px); background: #092c44; } .ds-store-link:focus-visible { outline: 3px solid #ff5b23; outline-offset: 4px; }"
+    },
+    {
+      "name": "Primary Web CTA",
+      "kind": "button",
+      "refersTo": "primary-cta",
+      "description": "Direct web-workspace access, using the only filled orange action treatment.",
+      "html": "<a class=\"ds-primary-cta\" href=\"#\">Get free access</a>",
+      "css": ".ds-primary-cta { min-height: 58px; display: inline-flex; align-items: center; justify-content: center; padding: 0 30px; border-radius: 10px; background: #ff5b23; color: #fff; box-shadow: 0 12px 30px rgba(255,91,35,.2); font: 700 18px Familjen, 'Arial Narrow', sans-serif; text-decoration: none; transition: transform .2s cubic-bezier(.16,1,.3,1); } .ds-primary-cta:hover { transform: translateY(-3px); } .ds-primary-cta:focus-visible { outline: 3px solid #f7f1e7; outline-offset: 4px; }"
+    },
+    {
+      "name": "Replay Story Panel",
+      "kind": "card",
+      "refersTo": "replay-panel",
+      "description": "One step in the line-to-score-to-action research story.",
+      "html": "<article class=\"ds-replay-panel\"><span class=\"ds-step\">2</span><h3>What Propeller checks</h3><p>Matchup · Recent role · Line context</p></article>",
+      "css": ".ds-replay-panel { position: relative; min-height: 260px; padding: 34px 24px 26px; border: 1px solid #54c8ff; border-radius: 14px; background: rgba(2,21,34,.6); color: #f7f1e7; } .ds-step { position: absolute; top: -18px; left: 50%; width: 38px; height: 38px; display: grid; place-items: center; transform: translateX(-50%); border-radius: 50%; background: #54c8ff; color: #031a2c; font: 700 18px Familjen, 'Arial Narrow', sans-serif; } .ds-replay-panel h3 { margin: 0 0 24px; color: #54c8ff; font: 600 15px PlexMono, monospace; text-align: center; text-transform: uppercase; } .ds-replay-panel p { margin: 0; color: #b8d3df; font: 400 16px/1.6 Plex, sans-serif; }"
+    },
+    {
+      "name": "Confidence Score",
+      "kind": "custom",
+      "refersTo": "score-panel",
+      "description": "Directional research strength with the mandatory non-probability qualification visible in the component.",
+      "html": "<section class=\"ds-score\"><strong>78</strong><span>Confidence Score</span><small>Directional model strength for the displayed side—not win probability or a guarantee.</small></section>",
+      "css": ".ds-score { padding: 16px; border: 2px solid #ff5b23; border-radius: 14px; color: #f7f1e7; text-align: center; } .ds-score strong { display: block; color: #ff5b23; font: 700 70px/.78 Familjen, 'Arial Narrow', sans-serif; } .ds-score span { display: block; color: #54c8ff; font: 600 14px PlexMono, monospace; text-transform: uppercase; } .ds-score small { display: block; margin-top: 10px; color: #f7f1e7; font: 400 11px/1.45 Plex, sans-serif; }"
+    },
+    {
+      "name": "Difference Benefit List",
+      "kind": "custom",
+      "refersTo": "difference",
+      "description": "Four plain-language product differentiators followed by a free-analyzer CTA and quieter evidence links.",
+      "html": "<section class=\"ds-difference\"><div class=\"ds-difference-list\"><div class=\"ds-difference-item\"><svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><path d=\"M4 8h24M4 16h17M4 24h11\"/></svg><strong>No confusing betting jargon</strong></div><div class=\"ds-difference-item\"><svg viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" aria-hidden=\"true\"><circle cx=\"16\" cy=\"16\" r=\"11\"/><path d=\"M16 9v7l5 3\"/></svg><strong>One clear Confidence Score</strong></div></div><a class=\"ds-difference-cta\" href=\"#\">See how the Confidence Score works →</a></section>",
+      "css": ".ds-difference { max-width: 720px; padding: 30px; background: #06243a; color: #f7f1e7; } .ds-difference-list { border-top: 1px solid #54c8ff; } .ds-difference-item { min-height: 76px; display: grid; grid-template-columns: 48px 1fr; gap: 18px; align-items: center; border-bottom: 1px solid rgba(84,200,255,.35); } .ds-difference-item svg { width: 30px; color: #54c8ff; } .ds-difference-item strong { color: #f7f1e7; font: 600 clamp(20px,2.4vw,29px)/1.15 Familjen, 'Arial Narrow', sans-serif; } .ds-difference-cta { min-height: 54px; display: inline-flex; align-items: center; margin-top: 30px; padding: 0 22px; border: 1px solid #54c8ff; border-radius: 10px; color: #f7f1e7; font: 600 16px Plex, sans-serif; text-decoration: none; } .ds-difference-cta:hover { background: #0b3552; } .ds-difference-cta:focus-visible { outline: 3px solid #ff5b23; outline-offset: 4px; }"
+    },
+    {
+      "name": "Replay Navigation",
+      "kind": "nav",
+      "refersTo": "navigation",
+      "description": "Translucent midnight navigation with one orange conversion action.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-brand\" href=\"#\">Propeller</a><a href=\"#\">Method</a><a class=\"ds-nav-cta\" href=\"#\">Get Free Access</a></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 18px; padding: 14px 20px; border-bottom: 1px solid rgba(84,200,255,.35); background: rgba(3,26,44,.96); color: #f7f1e7; backdrop-filter: blur(16px); font: 600 14px Plex, sans-serif; } .ds-nav a { color: inherit; text-decoration: none; } .ds-brand { margin-right: auto; font: 700 20px Familjen, 'Arial Narrow', sans-serif; } .ds-nav-cta { padding: 10px 14px; border: 1px solid #ff5b23; border-radius: 10px; background: #ff5b23; color: #fff !important; } .ds-nav a:focus-visible { outline: 3px solid #ff5b23; outline-offset: 4px; }"
+    },
+    {
+      "name": "FAQ Disclosure",
+      "kind": "custom",
+      "refersTo": "faq",
+      "description": "Native accessible disclosure styled as a broadcast-question row; the fourth item carries detailed public-record and methodology context.",
+      "html": "<details class=\"ds-faq\"><summary>Can I inspect Propeller's methodology and record?<span>+</span></summary><p>Yes. The public archive separates historical graded analysis rows from the First-observed capture.</p></details>",
+      "css": ".ds-faq { border-top: 1px solid rgba(84,200,255,.35); border-bottom: 1px solid rgba(84,200,255,.35); color: #f7f1e7; } .ds-faq summary { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; cursor: pointer; font: 600 20px Familjen, 'Arial Narrow', sans-serif; } .ds-faq summary span { color: #ff5b23; font-size: 26px; } .ds-faq p { max-width: 760px; margin: 0 0 24px; color: #b8d3df; font: 400 16px/1.7 Plex, sans-serif; } .ds-faq summary:focus-visible { outline: 3px solid #ff5b23; outline-offset: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Replay Room",
+    "overview": "This homepage treats player-prop research like a clear broadcast replay, not a generic SaaS dashboard or a sportsbook. Midnight panels create the analytical room; compressed cream headlines make the plain-English promise feel decisive; orange marks the point of action; electric blue supplies the technical field-line notation. Real product screens are the proof, not decoration.\n\nThe composition moves from the big promise to an inspectable three-step sequence—line, Confidence Score, next research action—then into the real desktop and mobile experience. A four-row difference section makes the product's plain-language, single-score, explainable, DFS/pick'em research stance legible before the FAQ. Detailed record context belongs in the fourth FAQ disclosure rather than a standalone performance panel. The page stays firm about what the product is and is not: a research tool, never a wager flow or performance guarantee.",
+    "keyCharacteristics": ["Broadcast-dark, evidence-led, and deliberately non-generic.", "Mobile acquisition and web access receive equal visual legitimacy.", "Large editorial display type is paired with compact mono labels for inspectable detail.", "Thin blue field lines and outlined panels carry structure; orange appears where a decision or emphasis is earned.", "The differentiators are stated as four readable benefit rows, not as unqualified performance proof."],
+    "rules": [
+      { "name": "The Earned Orange Rule", "body": "Orange marks a conclusion, a high-value number, or a direct action. Blue is the default structural accent; do not turn every outline, label, and callout orange.", "section": "colors" },
+      { "name": "The Broadcast Pairing Rule", "body": "Use display type for the human takeaway and mono only for a short label, signal, or annotation. Do not set explanatory paragraphs in mono.", "section": "typography" },
+      { "name": "The Evidence-Has-Depth Rule", "body": "Give depth to the real product and to actions, not to every informational panel.", "section": "elevation" }
+    ],
+    "dos": ["Do lead the hero with a plain-English promise before showing model mechanics.", "Do use real desktop and mobile product screens as the main proof asset.", "Do keep App Store, Google Play, and web access visible as distinct, real routes.", "Do pair the 2.5M+ proof with its scope disclosure and a link to what the number means.", "Do retain the explicit research-only boundary: directional signals are not probabilities or guarantees, and Propeller does not accept wagers.", "Do use the four Difference rows to explain product fit before routing visitors to the free analyzer and supporting evidence."],
+    "donts": ["Don't replace Replay Room with a pale SaaS hero, generic feature-card grid, sportsbook chrome, or invented social proof.", "Don't use orange decoratively across the whole interface; reserve it for earned emphasis and action.", "Don't turn the Confidence Score or historical rows into ROI, accuracy, or future-outcome claims.", "Don't reintroduce a standalone homepage record strip; keep the detailed record evidence in the fourth FAQ disclosure.", "Don't bury mobile acquisition behind a web-only primary path."]
+  }
+}

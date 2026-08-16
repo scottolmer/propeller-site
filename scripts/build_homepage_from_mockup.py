@@ -15,12 +15,12 @@ MOCKUP = ROOT / "mockups" / "home-ai-winning-v2.html"
 OUTPUT = ROOT / "index.html"
 CSS_OUTPUT = ROOT / "assets" / "css" / "home-ai.css"
 
-TITLE = "Propeller Picks | AI Player Prop Research"
+TITLE = "AI Player Prop Research in Plain English | Propeller Picks"
 APP_STORE_URL = "https://apps.apple.com/app/id6760788202"
 PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&utm_source=na_Med"
 DESCRIPTION = (
-    "AI player prop research with inspectable matchup, usage, injury, market, and form signals. "
-    "Analyze today's board free on desktop and mobile."
+    "Use AI-assisted player prop research without confusing betting jargon. See Propeller's directional confidence score, "
+    "the context behind it, and free apps for iOS, Android, and the web."
 )
 
 FAQS = [
@@ -35,6 +35,10 @@ FAQS = [
     (
         "Why desktop and mobile?",
         "The desktop web app is built for deeper slate research. Mobile is for quick checks, saved props, alerts, and digest workflows when you are away from the desk.",
+    ),
+    (
+        "Can I inspect Propeller's methodology and record?",
+        "Yes. Review the historical graded analysis rows, the separate First-observed capture, and how Propeller works. The current ledger does not independently verify event-start ordering or outcome timing. You can also read our AI research transparency benchmark.",
     ),
 ]
 
@@ -66,7 +70,7 @@ def schema() -> str:
                 "description": DESCRIPTION,
                 "isPartOf": {"@id": "https://propellerpicks.com/#website"},
                 "about": {"@id": "https://propellerpicks.com/#software"},
-                "dateModified": "2026-08-14",
+                "dateModified": "2026-08-15",
             },
             {
                 "@type": "SoftwareApplication",
@@ -154,7 +158,7 @@ def head() -> str:
   <meta name="twitter:image:alt" content="Propeller Picks AI player prop research workspace">
   <meta name="twitter:site" content="@propellerpicks">
   <meta name="twitter:creator" content="@propellerpicks">
-  <meta name="color-scheme" content="light">
+  <meta name="color-scheme" content="dark">
   <script src="/assets/js/analytics-loader.js?v=20260716"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -167,7 +171,7 @@ def head() -> str:
   </script>
   <link rel="preload" href="/assets/fonts/familjen-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260814">
+  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260815">
 </head>"""
 
 
@@ -471,77 +475,11 @@ def main() -> None:
     style = re.search(r"<style>(.*?)</style>", source, flags=re.DOTALL)
     if not style:
         raise SystemExit("Mockup style block not found")
-    CSS_OUTPUT.write_text(style.group(1).strip() + CSS_ADDITIONS.rstrip() + "\n", encoding="utf-8")
+    CSS_OUTPUT.write_text(style.group(1).strip() + "\n", encoding="utf-8")
 
     html = re.sub(r"<head>.*?</head>", head(), source, count=1, flags=re.DOTALL)
-    html = html.replace("<body>", '<body class="pp-site-system pp-home">', 1)
+    html = html.replace("<body>", '<body class="pp-site-system pp-home pp-replay-room">', 1)
     html = html.replace("../images/", "/images/").replace("../assets/", "/assets/")
-    html = html.replace(
-        '<script src="/assets/js/live-record.js"></script>',
-        '<script src="/assets/js/live-record.js?v=20260715-2"></script>',
-    )
-    html = html.replace(
-        '<a class="button secondary" href="/results/">Review the public record</a>',
-        '<a class="button secondary" href="/ai-sports-betting/">Explore the AI research hub</a>',
-    )
-    html = html.replace(
-        '<a class="button" href="https://app.propellerpicks.com/signup">Analyze today’s props free <span aria-hidden="true">→</span></a>',
-        '<a class="button" href="/analyzer/">Try the free AI player prop analyzer <span aria-hidden="true">→</span></a>',
-        1,
-    )
-    html = html.replace(
-        '<img src="/images/web-app-dashboard-live.png" width="1462" height="797"',
-        '<img src="/images/web-app-dashboard-live.png" srcset="/images/web-app-dashboard-live-640.avif 640w, /images/web-app-dashboard-live-768.avif 768w, /images/web-app-dashboard-live-1024.avif 1024w, /images/web-app-dashboard-live.png 1462w" sizes="(max-width: 1080px) calc(100vw - 32px), 56vw" width="1462" height="797" fetchpriority="high" decoding="async"',
-    )
-    html = html.replace(
-        '<img src="/images/web-app-andrew-abbott-prop-detail.png" width="1462" height="797"',
-        '<img src="/images/web-app-andrew-abbott-prop-detail.png" width="1462" height="797" loading="lazy" decoding="async"',
-    )
-    html = html.replace(
-        '<img src="/images/app-prop-detail-white-simulator.png" alt=',
-        '<img src="/images/app-prop-detail-white-simulator.png" width="1206" height="2622" loading="lazy" decoding="async" alt=',
-    )
-    html = html.replace("Public graded record", "Documented historical archive")
-    html = html.replace(
-        '<div class="proof-item proof-live"><small>Verified record</small><strong>● Live</strong><span data-record-updated>Snapshot · Jul 7, 2026 · live API in production</span></div>',
-        '<div class="proof-item proof-live"><small>Historical archive</small><strong>● Dated</strong><span data-record-updated>Static API snapshot · August 14, 2026; live refresh enabled</span></div>',
-    )
-    html = html.replace(
-        '<div class="proof-item"><small>Graded props</small><strong data-record-total>2M+</strong><span data-record-total-detail>2,099,988 total props</span></div>',
-        '<div class="proof-item"><small>Collapsed ledger</small><strong data-record-total>353K</strong><span data-record-total-detail>353,497 ledger entries</span></div>',
-    )
-    html = html.replace(
-        '<div class="proof-item"><small>Recorded outcomes</small><strong data-record-outcome>1.41M W · 687.5K L · 30 P</strong><span>Pushes tracked separately</span></div>',
-        '<div class="proof-item"><small>Historical database</small><strong data-record-raw-total>2.67M</strong><span>Raw graded analysis rows</span></div>',
-    )
-    html = html.replace(
-        '<div class="proof-item"><small>Historical win rate</small><strong data-record-win-rate>67.3%</strong><span>Past performance is not predictive</span></div>',
-        '<div class="proof-item"><small>Known limits</small><strong>No ROI claim</strong><span>Repeats and retrospective data included</span></div>',
-    )
-    html = html.replace(
-        '<div class="record-copy scroll-reveal"><p class="section-kicker">03 / Proof before the pitch</p><h2>Trust the record, not the promise.</h2><p>Every published model output is logged before the result is known, graded against the final stat, and rolled into a public record you can inspect.</p><a class="button" href="/results/">Inspect every graded result →</a></div>',
-        '<div class="record-copy scroll-reveal"><p class="section-kicker">03 / A record you can check</p><h2>See the record before you decide.</h2><p>We record the first observed version of featured picks, then grade each one afterward. The current ledger does not independently verify event-start ordering or outcome timing. The public record applies the same $1-stake method to every eligible priced pick, giving you a result you can check—not a promise about what happens next.</p><a class="button" href="/research/prospective-record/">View the public record →</a><p class="record-method-link"><a href="/how-it-works/">See how the record is calculated →</a><br><a href="/research/ai-player-prop-benchmark/">Compare AI research transparency →</a></p></div>',
-    )
-    html = re.sub(
-        r'<div class="record-board scroll-reveal">.*?<div class="record-update" data-record-updated>Snapshot · Jul 7, 2026 · live API in production</div></div>',
-        '<div class="record-board scroll-reveal"><div class="record-head"><span>Public pick record</span><span>First-observed capture</span></div><div class="record-main"><div class="record-primary"><small>Return on $1 stakes</small><strong data-forward-roi data-roi-tone="neutral">—</strong><span data-forward-roi-detail>Waiting for the first completed pick with a recorded price.</span></div><div class="record-stats"><div class="record-stat"><small>Completed picks with a price</small><strong data-forward-priced-settled>0</strong></div><div class="record-stat"><small>Profit or loss from $1 stakes</small><strong data-forward-net-units data-roi-tone="neutral">0.00u</strong></div></div></div><div class="record-update"><span data-forward-roi-updated>The record starts with the first eligible public pick.</span><span class="record-source-links"><a href="/research/prospective-record/">View public record</a><a href="/how-it-works/">How we calculate it</a><a href="/research/ai-player-prop-benchmark/">Transparency benchmark</a></span></div></div>',
-        html,
-        count=1,
-        flags=re.DOTALL,
-    )
-    html = html.replace(
-        '<div class="benefit"><span>03</span><div><h3>Keep the workflow moving</h3><p>Save props, build combinations, track outcomes, and check changes on mobile.</p></div></div>',
-        '<div class="benefit"><span>03</span><div><h3>Keep the workflow moving</h3><p>Save props, build combinations, track outcomes, and check changes on mobile.</p></div></div>\n            <div class="benefit"><span>04</span><div><h3>Compare fantasy outcomes as ranges</h3><p>Use MLB hitter floor, point, and ceiling projections on one DraftKings scoring basis. <a href="/fantasy/">Explore fantasy projections →</a></p></div></div>',
-        1,
-    )
-    html = html.replace('    <section class="final-cta">', faq_section() + '    <section class="final-cta">', 1)
-    old_nav_start = html.find('    const nav = document.querySelector(".nav");')
-    old_nav_end_marker = '    window.addEventListener("resize", () => { if (window.matchMedia("(min-width: 861px)").matches) setNavigationOpen(false); });\n\n'
-    if old_nav_start != -1:
-        old_nav_end = html.find(old_nav_end_marker, old_nav_start)
-        if old_nav_end == -1:
-            raise SystemExit("Mockup navigation script end marker not found")
-        html = html[:old_nav_start] + html[old_nav_end + len(old_nav_end_marker) :]
     html = migrate_html(html, OUTPUT, True)
     OUTPUT.write_text(html, encoding="utf-8")
     print(f"wrote={OUTPUT.relative_to(ROOT)} css={CSS_OUTPUT.relative_to(ROOT)}")

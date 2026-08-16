@@ -114,11 +114,22 @@ def main() -> None:
             assert value in markup, f"{value!r} missing on {path}"
 
     homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+    for contextual_owner in (
+        "/analyzer/",
+        "/how-it-works/",
+        "/results/",
+        "/research/prospective-record/",
+        "/research/ai-player-prop-benchmark/",
+    ):
+        assert contextual_owner in homepage, f"homepage contextual link missing: {contextual_owner}"
     assert homepage.count('/research/ai-player-prop-benchmark/') >= 2, (
-        "homepage must promote the benchmark in both the record copy and evidence links"
+        "homepage must promote the benchmark in both the difference section and record FAQ"
+    )
+    assert "AI-assisted player prop research tool" in homepage, (
+        "homepage must clearly define Propeller's category in visible copy"
     )
     assert "First-observed capture" in homepage, "homepage publication boundary missing"
-    assert '"dateModified": "2026-08-14"' in homepage, "homepage schema date is stale"
+    assert '"dateModified": "2026-08-15"' in homepage, "homepage schema date is stale"
     assert "does not independently verify event-start ordering or outcome timing" in homepage, (
         "homepage must disclose the prospective ledger timing limitation"
     )

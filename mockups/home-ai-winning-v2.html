@@ -3,477 +3,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex, nofollow">
-  <title>Propeller — Stop Guessing. Start Researching.</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='42' fill='%23ff6038'/%3E%3C/svg%3E">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <title>Propeller Picks</title>
   <style>
-    :root {
-      --paper: #f2efe8;
-      --paper-light: #faf8f3;
-      --ink: #101311;
-      --ink-2: #191d1a;
-      --text: #141815;
-      --sub: #59615b;
-      --muted: #878e88;
-      --line: rgba(16, 19, 17, .15);
-      --line-dark: rgba(255, 255, 255, .14);
-      --orange: #ff6038;
-      --orange-dark: #dd3d16;
-      --orange-wash: #ffe1d6;
-      --lime: #c8f56a;
-      --green: #35cf73;
-      --red: #ff6f61;
-      --display: "Familjen Grotesk", "Avenir Next", sans-serif;
-      --body: "IBM Plex Sans", sans-serif;
-      --mono: "IBM Plex Mono", monospace;
-      --max: 1220px;
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      overflow-x: hidden;
-      color: var(--text);
-      background:
-        linear-gradient(rgba(16, 19, 17, .035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(16, 19, 17, .035) 1px, transparent 1px),
-        var(--paper);
-      background-size: 32px 32px;
-      font-family: var(--body);
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    button { color: inherit; font: inherit; }
-    .container { width: min(var(--max), calc(100vw - 48px)); margin: 0 auto; }
-
-    :focus-visible { outline: 3px solid var(--lime); outline-offset: 4px; }
-
-    .topline { border-bottom: 1px solid rgba(255,255,255,.08); background: var(--ink); color: #fff; }
-    .topline-inner {
-      min-height: 34px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      font: 500 10px/1 var(--mono);
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-    .status { display: inline-flex; align-items: center; gap: 9px; }
-    .status::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 0 4px rgba(200,245,106,.12); animation: pulse 2.2s ease-in-out infinite; }
-    .topline-center { color: rgba(255,255,255,.5); }
-
-    .nav { position: sticky; top: 0; z-index: 40; border-bottom: 1px solid var(--line); background: rgba(242,239,232,.92); backdrop-filter: blur(18px); }
-    .nav-inner { position: relative; min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; flex: 0 0 auto; font: 700 22px/1 var(--display); }
-    .brand-mark { position: relative; width: 34px; height: 34px; }
-    .brand-mark i { position: absolute; left: 14px; top: 1px; width: 6px; height: 15px; border-radius: 5px; background: var(--orange); transform-origin: 3px 16px; }
-    .brand-mark i:nth-child(2) { transform: rotate(120deg); }
-    .brand-mark i:nth-child(3) { transform: rotate(240deg); }
-    .brand-mark::after { content: ""; position: absolute; inset: 13px; border-radius: 50%; background: var(--orange); }
-    .nav-links { display: flex; align-items: center; gap: clamp(10px,1.25vw,20px); color: #3c433e; font-size: clamp(11px,.9vw,13px); font-weight: 600; white-space: nowrap; }
-    .nav-links > a:not(.nav-cta) { position: relative; }
-    .nav-links > a:not(.nav-cta)::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -8px; height: 2px; background: var(--orange); transition: right .2s ease; }
-    .nav-links > a:hover::after { right: 0; }
-    .menu { display: none; width: 42px; height: 42px; place-items: center; padding: 0; border: 1px solid var(--line); border-radius: 3px; background: rgba(250,248,243,.84); cursor: pointer; }
-    .menu svg { width: 21px; height: 21px; }
-
-    .button, .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 49px;
-      padding: 0 20px;
-      border: 1px solid var(--ink);
-      border-radius: 3px;
-      background: var(--ink);
-      color: #fff;
-      font-size: 13px;
-      font-weight: 600;
-      box-shadow: 5px 5px 0 var(--orange);
-      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-    }
-    .nav-cta { min-height: 41px; padding: 0 clamp(11px,1.1vw,15px); box-shadow: 3px 3px 0 var(--orange); }
-    .button:hover, .nav-cta:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--orange); }
-    .button.secondary { border-color: var(--line); background: transparent; color: var(--ink); box-shadow: none; }
-    .button.secondary:hover { border-color: var(--ink); transform: none; }
-
-    .hero { position: relative; padding: 76px 0 48px; }
-    .hero::before { content: "AI / 02"; position: absolute; top: 48px; left: max(20px, calc((100vw - var(--max)) / 2 - 76px)); color: rgba(16,19,17,.25); font: 500 10px/1 var(--mono); letter-spacing: .14em; writing-mode: vertical-rl; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0,.9fr) minmax(540px,1.1fr); gap: 62px; align-items: center; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 24px; font: 600 11px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
-    .eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--orange); }
-    .hero h1 { margin: 0; max-width: 680px; font: 600 clamp(64px,7vw,101px)/.86 var(--display); letter-spacing: -.068em; }
-    .hero h1 span { display: block; color: var(--orange); }
-    .hero-lede { max-width: 570px; margin: 27px 0 0; color: #3f4741; font-size: 18px; line-height: 1.58; }
-    .hero-lede strong { color: var(--ink); font-weight: 600; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
-    .risk-note { margin: 15px 0 0; color: var(--muted); font: 500 10px/1.45 var(--mono); }
-
-    .app-hero { position: relative; min-width: 0; padding: 0 16px 20px 0; }
-    .app-hero::after { content: ""; position: absolute; z-index: -1; inset: 17px 0 0 17px; border: 1px solid var(--orange); background: var(--orange-wash); }
-    .app-browser { overflow: hidden; border: 1px solid var(--ink); background: #fff; box-shadow: 0 20px 55px rgba(16,19,17,.16); }
-    .app-browser-head { min-height: 43px; padding: 0 13px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 12px; border-bottom: 1px solid var(--line); background: #f7f7f5; color: var(--sub); font: 500 9px/1 var(--mono); letter-spacing: .04em; }
-    .window-dots { display: flex; gap: 6px; }
-    .window-dots i { width: 7px; height: 7px; border: 1px solid #a8ada9; border-radius: 50%; }
-    .window-dots i:first-child { background: var(--orange); border-color: var(--orange); }
-    .browser-address { min-width: 0; padding: 8px 12px; overflow: hidden; border: 1px solid #d9dcd9; border-radius: 3px; background: #fff; color: #6d746f; text-align: center; text-overflow: ellipsis; white-space: nowrap; }
-    .app-live { display: flex; align-items: center; gap: 6px; color: var(--green); font-weight: 600; text-transform: uppercase; }
-    .app-live i { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 3px rgba(20,125,80,.1); }
-    .app-browser img { display: block; width: 100%; height: auto; }
-    .app-hero-note { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin: 11px 0 0 1px; color: var(--muted); font: 500 9px/1.4 var(--mono); letter-spacing: .045em; text-transform: uppercase; }
-    .app-hero-note strong { color: var(--ink); font-weight: 600; }
-
-    .proof-rail { margin-top: 64px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); background: rgba(250,248,243,.6); }
-    .proof-grid { display: grid; grid-template-columns: 1.25fr .8fr 1fr 1.15fr; }
-    .proof-item { min-width: 0; padding: 21px 24px; border-right: 1px solid var(--line); }
-    .proof-item:first-child { padding-left: 0; }
-    .proof-item:last-child { border-right: 0; padding-right: 0; }
-    .proof-item small { display: block; color: var(--sub); font: 500 9px/1 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
-    .proof-item strong { display: block; margin-top: 8px; font: 600 23px/1 var(--display); letter-spacing: -.02em; }
-    .proof-item span { display: block; margin-top: 6px; color: var(--muted); font-size: 11px; }
-    .proof-live strong { color: var(--green); }
-
-    .pipeline { padding: 112px 0; background: var(--ink); color: white; }
-    .section-head { display: grid; grid-template-columns: 1fr .7fr; align-items: end; gap: 80px; }
-    .section-kicker { margin: 0 0 17px; color: var(--orange); font: 600 10px/1 var(--mono); letter-spacing: .12em; text-transform: uppercase; }
-    .section-head h2, .product-copy h2, .record-copy h2, .final-panel h2 { margin: 0; font: 600 clamp(46px,5.5vw,74px)/.94 var(--display); letter-spacing: -.056em; }
-    .section-head > p { margin: 0; color: rgba(255,255,255,.55); font-size: 16px; line-height: 1.65; }
-    .pipeline-map { position: relative; display: grid; grid-template-columns: 1.35fr 52px 1fr 52px .9fr 52px 1fr; align-items: stretch; margin-top: 58px; }
-    .pipeline-stage { min-height: 246px; padding: 22px; border: 1px solid var(--line-dark); background: rgba(255,255,255,.025); }
-    .pipeline-stage.inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; padding: 0; background: rgba(255,255,255,.12); }
-    .input-cell { min-height: 122px; padding: 18px; background: var(--ink); }
-    .input-cell small, .stage-label { color: var(--orange); font: 500 9px/1 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
-    .input-cell strong { display: block; margin-top: 12px; font: 600 17px/1.1 var(--display); }
-    .input-cell span { display: block; margin-top: 7px; color: rgba(255,255,255,.43); font-size: 10px; line-height: 1.4; }
-    .pipeline-stage:not(.inputs) { display: flex; flex-direction: column; justify-content: space-between; }
-    .pipeline-stage h3 { margin: 20px 0 0; font: 600 26px/1 var(--display); letter-spacing: -.03em; }
-    .pipeline-stage p { margin: 9px 0 0; color: rgba(255,255,255,.48); font-size: 12px; line-height: 1.5; }
-    .stage-readout { padding-top: 18px; border-top: 1px solid var(--line-dark); color: var(--lime); font: 600 12px/1 var(--mono); }
-    .pipeline-arrow { position: relative; display: grid; place-items: center; color: var(--orange); font: 500 24px/1 var(--mono); }
-    .pipeline-arrow::before { content: ""; position: absolute; left: 0; right: 0; height: 1px; background: var(--orange); }
-    .pipeline-arrow span { position: relative; z-index: 1; padding-left: 4px; background: var(--ink); }
-
-    .product { padding: 118px 0 128px; }
-    .product-intro { display: grid; grid-template-columns: .78fr 1.22fr; gap: 95px; align-items: start; }
-    .product-copy p { max-width: 480px; margin: 24px 0 0; color: var(--sub); font-size: 17px; line-height: 1.68; }
-    .product-actions { display: grid; justify-items: start; gap: 22px; margin-top: 28px; }
-    .product-copy .product-actions .button { margin-top: 0; }
-    .mobile-app-cta { display: grid; gap: 10px; }
-    .mobile-app-label { color: var(--sub); font: 600 9px/1 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
-    .store-links { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
-    .store-link { min-height: 52px; border-radius: 7px; box-shadow: 4px 4px 0 var(--orange); transition: transform .18s ease, box-shadow .18s ease; }
-    .store-link:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--orange); }
-    .store-link:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
-    .app-store-button { display: inline-flex; background: #000; }
-    .app-store-button img { display: block; width: auto; height: 52px; }
-    .play-store-button {
-      min-height: 52px;
-      min-width: 176px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 11px;
-      padding: 7px 16px 7px 13px;
-      border: 1px solid var(--ink);
-      border-radius: 7px;
-      background: var(--ink);
-      color: white;
-      text-decoration: none;
-    }
-    .play-store-button svg { width: 25px; height: 25px; flex: 0 0 auto; }
-    .play-store-button span { display: grid; gap: 2px; text-align: left; }
-    .play-store-button small { font: 600 8px/1 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
-    .play-store-button strong { font: 600 18px/1 var(--display); letter-spacing: -.02em; }
-    .product-benefits { margin: 12px 0 0; border-top: 1px solid var(--ink); }
-    .benefit { display: grid; grid-template-columns: 42px 1fr; gap: 17px; padding: 20px 0; border-bottom: 1px solid var(--line); }
-    .benefit > span { width: 34px; height: 34px; display: grid; place-items: center; border: 1px solid var(--ink); font: 500 10px/1 var(--mono); }
-    .benefit h3 { margin: 0; font: 600 20px/1.1 var(--display); }
-    .benefit p { margin: 7px 0 0; color: var(--sub); font-size: 12px; line-height: 1.5; }
-
-    .product-stage { position: relative; margin-top: 68px; padding: 20px 82px 70px 0; }
-    .desktop-app { position: relative; overflow: hidden; border: 1px solid var(--ink); background: #f8f8f5; box-shadow: 15px 15px 0 var(--orange-wash), 15px 15px 0 1px var(--orange); }
-    .desktop-app img { display: block; width: 100%; height: auto; }
-    .desktop-app-note { position: absolute; z-index: 2; left: 18px; bottom: 17px; padding: 9px 12px; border: 1px solid rgba(16,19,17,.18); background: rgba(255,255,255,.94); color: var(--ink); font: 600 8px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; box-shadow: 4px 4px 0 rgba(255,94,58,.18); }
-
-    .phone { position: absolute; z-index: 4; right: 0; bottom: 0; width: 252px; padding: 8px; border: 2px solid #343a36; border-radius: 40px; background: #070807; box-shadow: 0 25px 45px rgba(16,19,17,.25); }
-    .phone img { display: block; width: 100%; height: auto; border-radius: 31px; }
-
-    .record { padding: 112px 0; background: var(--paper-light); border-top: 1px solid var(--line); }
-    .record-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px; align-items: center; }
-    .record-copy p { max-width: 500px; margin: 24px 0 0; color: var(--sub); font-size: 17px; line-height: 1.68; }
-    .record-copy .button { margin-top: 28px; }
-    .record-board { border: 1px solid var(--ink); background: white; box-shadow: 13px 13px 0 var(--ink); }
-    .record-head { min-height: 48px; padding: 0 17px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--ink); font: 500 9px/1 var(--mono); text-transform: uppercase; letter-spacing: .07em; }
-    .record-head span:last-child { color: var(--green); }
-    .record-main { display: grid; grid-template-columns: 1.1fr .9fr; }
-    .record-primary { padding: 28px; border-right: 1px solid var(--line); }
-    .record-primary small, .record-stat small { color: var(--muted); font: 500 9px/1 var(--mono); text-transform: uppercase; letter-spacing: .07em; }
-    .record-primary strong { display: block; margin-top: 10px; font: 600 58px/.9 var(--display); letter-spacing: -.05em; }
-    .record-primary span { display: block; margin-top: 9px; color: var(--sub); font-size: 12px; }
-    .record-stats { display: grid; grid-template-rows: 1fr 1fr; }
-    .record-stat { padding: 22px; }
-    .record-stat + .record-stat { border-top: 1px solid var(--line); }
-    .record-stat strong { display: block; margin-top: 9px; font: 600 24px/1 var(--display); }
-    .record-update { padding: 14px 18px; border-top: 1px solid var(--line); color: var(--muted); font: 500 9px/1 var(--mono); }
-
-    .final-cta { padding: 112px 0; }
-    .final-panel { position: relative; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 55px; padding: 58px; overflow: hidden; border: 1px solid var(--ink); background: var(--orange); }
-    .final-panel::after { content: "AI"; position: absolute; right: 165px; bottom: -74px; color: rgba(16,19,17,.07); font: 600 220px/1 var(--display); letter-spacing: -.1em; }
-    .final-panel h2 { position: relative; z-index: 1; max-width: 760px; }
-    .final-panel .button { position: relative; z-index: 1; box-shadow: 5px 5px 0 white; }
-
-    footer { padding: 42px 0 50px; border-top: 1px solid var(--line); }
-    .footer-grid { display: grid; grid-template-columns: 1fr auto; gap: 45px; }
-    .footer-copy { max-width: 560px; margin: 16px 0 0; color: var(--sub); font-size: 12px; line-height: 1.6; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 24px; color: var(--sub); font-size: 12px; font-weight: 600; }
-    .legal { margin: 32px 0 0; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 10px; line-height: 1.6; }
-
-    .enter { opacity: 0; transform: translateY(18px); animation: enter .7s cubic-bezier(.2,.7,.2,1) forwards; }
-    .delay-1 { animation-delay: .08s; }
-    .delay-2 { animation-delay: .16s; }
-    .delay-3 { animation-delay: .24s; }
-    .scroll-reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s ease; }
-    .scroll-reveal.visible { opacity: 1; transform: none; }
-    @keyframes enter { to { opacity: 1; transform: none; } }
-    @keyframes pulse { 0%,100% { opacity: .65; } 50% { opacity: 1; box-shadow: 0 0 0 7px rgba(200,245,106,.05); } }
-
-    @media (max-width: 1080px) {
-      .hero-grid { grid-template-columns: 1fr; gap: 55px; }
-      .hero-copy { max-width: 760px; }
-      .app-hero { width: min(900px,100%); }
-      .proof-grid { grid-template-columns: repeat(2,1fr); }
-      .proof-item:nth-child(2) { border-right: 0; }
-      .proof-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-      .proof-item:nth-child(3) { padding-left: 0; }
-      .pipeline-map { grid-template-columns: 1fr; gap: 0; }
-      .pipeline-arrow { min-height: 48px; transform: rotate(90deg); }
-      .pipeline-map .pipeline-stage, .pipeline-map .pipeline-arrow { grid-column: 1; }
-      .product-intro { gap: 55px; }
-    }
-
-    @media (max-width: 860px) {
-      .menu { display: grid; }
-      .nav-links { position: absolute; top: calc(100% + 10px); left: 0; right: 0; display: none; padding: 10px; flex-direction: column; align-items: stretch; gap: 0; border: 1px solid var(--ink); border-radius: 3px; background: rgba(250,248,243,.98); box-shadow: 9px 9px 0 var(--orange-wash), 9px 9px 0 1px var(--orange); font-size: 13px; white-space: normal; }
-      .nav-links.is-open { display: flex; }
-      .nav-links > a { min-height: 44px; display: flex; align-items: center; padding: 0 12px; border-bottom: 1px solid rgba(16,19,17,.08); }
-      .nav-links > a:not(.nav-cta)::after { display: none; }
-      .nav-links > a:not(.nav-cta):hover { background: rgba(255,96,56,.08); }
-      .nav-links .nav-cta { margin-top: 9px; border-bottom: 0; }
-    }
-
-    @media (max-width: 820px) {
-      .container { width: min(var(--max), calc(100vw - 32px)); }
-      .topline { display: none; }
-      .nav { top: 0; }
-      .nav-inner { min-height: 66px; }
-      .hero { padding: 58px 0 42px; }
-      .hero::before { display: none; }
-      .hero-grid { grid-template-columns: minmax(0,1fr); gap: 45px; }
-      .hero h1 { font-size: clamp(57px,16vw,82px); }
-      .hero-lede { font-size: 16px; }
-      .proof-rail { margin-top: 50px; }
-      .section-head, .product-intro, .record-grid, .final-panel { grid-template-columns: 1fr; }
-      .section-head { gap: 25px; }
-      .pipeline, .product, .record, .final-cta { padding: 80px 0; }
-      .product-stage { padding: 0; }
-      .phone { position: relative; right: auto; bottom: auto; width: min(270px,85%); margin: -65px 22px 0 auto; }
-      .record-grid { gap: 50px; }
-      .final-panel { padding: 44px 28px; }
-      .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-    }
-
-    @media (max-width: 570px) {
-      .hero-actions .button { width: 100%; }
-      .product-actions { justify-items: stretch; }
-      .product-actions .button { width: 100%; max-width: 340px; }
-      .store-links { gap: 10px; }
-      .app-store-button img { width: 165px; height: auto; }
-      .play-store-button { min-width: 165px; }
-      .app-hero { padding: 0 8px 11px 0; }
-      .app-hero::after { inset: 9px 0 0 9px; }
-      .app-browser-head { min-height: 37px; grid-template-columns: auto 1fr; gap: 9px; padding: 0 10px; }
-      .app-live { display: none; }
-      .browser-address { padding: 6px 8px; text-align: left; }
-      .app-hero-note { align-items: flex-start; flex-direction: column; gap: 3px; }
-      .proof-grid { grid-template-columns: 1fr; }
-      .proof-item { padding: 18px 0; border-right: 0; border-bottom: 1px solid var(--line); }
-      .proof-item:nth-child(2) { border-bottom: 1px solid var(--line); }
-      .proof-item:last-child { border-bottom: 0; }
-      .pipeline-stage.inputs { grid-template-columns: 1fr 1fr; }
-      .product-benefits { margin-top: 25px; }
-      .product-stage { margin-top: 45px; }
-      .desktop-app-note { left: 10px; bottom: 9px; padding: 7px 9px; font-size: 7px; }
-      .phone { margin-top: -35px; }
-      .record-main { grid-template-columns: 1fr; }
-      .record-primary { border-right: 0; border-bottom: 1px solid var(--line); }
-      .final-panel { padding: 38px 22px; }
-      .final-panel::after { right: -25px; }
-      .footer-links { gap: 16px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-    }
+    @font-face{font-family:Familjen;src:url('/assets/fonts/familjen-grotesk-latin.woff2') format('woff2');font-display:swap;font-weight:500 700}
+    @font-face{font-family:Plex;src:url('/assets/fonts/ibm-plex-sans-latin.woff2') format('woff2');font-display:swap;font-weight:400 600}
+    @font-face{font-family:PlexMono;src:url('/assets/fonts/ibm-plex-mono-600-latin.woff2') format('woff2');font-display:swap;font-weight:600}
+    :root{--night:#031a2c;--night-2:#06243a;--cream:#f7f1e7;--orange:#ff5b23;--blue:#54c8ff;--blue-soft:#9bddff;--line:rgba(84,200,255,.72);--muted:#b8d3df;--display:Familjen,'Arial Narrow',sans-serif;--body:Plex,sans-serif;--mono:PlexMono,monospace;--max:1180px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--night)}body{margin:0;overflow-x:hidden;background:var(--night);color:var(--cream);font-family:var(--body);-webkit-font-smoothing:antialiased}a{color:inherit}img{display:block;max-width:100%}button{font:inherit}.rr-container{width:min(var(--max),calc(100vw - 40px));margin-inline:auto}
+    ::selection{background:var(--orange);color:#fff}::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:#02121f}::-webkit-scrollbar-thumb{background:var(--blue);border:3px solid #02121f;border-radius:10px}:focus-visible{outline:3px solid var(--orange);outline-offset:4px}
+    body.pp-replay-room main{background:var(--night);color:var(--cream)}body.pp-replay-room main h1,body.pp-replay-room main h2,body.pp-replay-room main h3,body.pp-replay-room main strong,body.pp-replay-room main b{color:inherit}body.pp-replay-room .pp-site-nav{background:rgba(3,26,44,.96);border-bottom:1px solid rgba(84,200,255,.35);color:var(--cream);backdrop-filter:blur(16px)}body.pp-replay-room .pp-brand,body.pp-replay-room .pp-site-nav__links a{color:var(--cream)}body.pp-replay-room .pp-site-nav__cta{background:var(--orange);color:#fff;border-color:var(--orange)}body.pp-replay-room .pp-site-nav__menu{color:var(--cream);border-color:var(--line);background:transparent}
+    .rr-hero{position:relative;isolation:isolate;padding:56px 0 72px;overflow:hidden;background:radial-gradient(circle at 84% 10%,rgba(10,92,145,.24),transparent 30%),linear-gradient(180deg,#031a2c 0%,#021725 100%)}.rr-hero:before{content:"";position:absolute;inset:0;z-index:-1;opacity:.15;background-image:linear-gradient(rgba(84,200,255,.12) 1px,transparent 1px);background-size:100% 54px;mask-image:linear-gradient(90deg,transparent 58%,#000 100%)}
+    .rr-eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 28px;color:var(--blue);font:600 13px/1 var(--mono);letter-spacing:.04em;text-transform:uppercase}.rr-eyebrow:before{content:"[●]";font-size:18px;letter-spacing:-.2em}
+    .rr-hero h1{max-width:930px;margin:0;font:700 clamp(64px,9vw,122px)/.84 var(--display);letter-spacing:-.04em;text-wrap:balance}.rr-hero h1 span{display:block;color:var(--orange)}.rr-lede{max-width:690px;margin:30px 0 0;color:var(--cream);font-size:clamp(19px,2vw,26px);line-height:1.45}
+    .store-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}.store-link{height:58px;min-width:190px;display:flex;align-items:center;justify-content:center;border:1px solid var(--blue);border-radius:12px;background:#021522;color:var(--cream)!important;box-shadow:0 10px 24px rgba(0,0,0,.22);text-decoration:none;transition:transform .2s cubic-bezier(.16,1,.3,1),background .2s}.store-link:hover{transform:translateY(-3px);background:#092c44}.store-link img{width:auto;height:44px}.play-store{gap:11px;padding:0 20px}.play-store svg{width:34px}.play-store small,.play-store strong{display:block;color:var(--cream)!important}.play-store small{font-size:10px;text-transform:uppercase}.play-store strong{font-size:20px;line-height:1.05}.rr-web-link{display:inline-flex;align-items:center;min-height:48px;margin-top:12px;color:var(--blue)!important;font:600 14px var(--mono);text-underline-offset:6px}
+    .proof-card{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:22px;margin-top:42px;padding:24px 28px;border:1px solid var(--blue);border-radius:14px;background:rgba(2,21,34,.76)}.proof-icon{width:70px;height:70px;display:grid;place-items:center;border:2px solid var(--blue);border-radius:50%;color:var(--blue)}.proof-icon svg{width:40px}.proof-card strong{color:var(--orange)!important;font:700 clamp(58px,8vw,96px)/.85 var(--display);font-variant-numeric:tabular-nums}.proof-copy{color:var(--cream);font-size:clamp(24px,3vw,38px);line-height:1.05}.proof-copy a{display:block;margin-top:10px;color:var(--blue)!important;font:600 14px var(--mono);text-underline-offset:6px}.proof-scope{max-width:520px;margin:14px 0 0 auto;color:var(--muted)!important;font-size:12px;line-height:1.55;text-align:right}
+    .story{display:grid;grid-template-columns:.9fr 1.15fr .95fr;gap:18px;margin-top:42px}.story-card{position:relative;min-height:360px;padding:34px 24px 26px;border:1px solid var(--blue);border-radius:14px;background:rgba(2,21,34,.6)}.story-step{position:absolute;top:-18px;left:50%;width:38px;height:38px;display:grid;place-items:center;transform:translateX(-50%);border-radius:50%;background:var(--blue);color:var(--night);font:700 18px var(--display)}.story-card h2{margin:0 0 24px;color:var(--blue);font:600 15px var(--mono);text-align:center;text-transform:uppercase}.player{text-align:center}.player img{width:104px;height:104px;margin:0 auto 14px;object-fit:cover;object-position:50% 12%;border:2px solid var(--blue);border-radius:50%}.player strong{display:block;font:700 25px var(--display);text-transform:uppercase}.player span{display:block;margin-top:10px;color:var(--blue);font:600 17px var(--mono);text-transform:uppercase}.player b{display:block;margin-top:6px;color:var(--orange);font:700 36px var(--display)}
+    .score{padding:16px;border:2px solid var(--orange);border-radius:14px;text-align:center}.score strong{display:block;color:var(--orange);font:700 70px/.78 var(--display)}.score span{color:var(--blue);font:600 14px var(--mono);text-transform:uppercase}.score small{display:block;margin-top:10px;color:var(--cream);font-size:11px;line-height:1.45}.signal-list{margin-top:16px}.signal-list div{padding:10px 0;border-top:1px solid rgba(84,200,255,.45);font:600 14px var(--mono);text-transform:uppercase}.closing{display:grid;place-items:center;text-align:center}.closing-ring{display:grid;place-items:center;width:220px;min-height:150px;padding:18px;border:4px solid var(--orange);border-radius:52% 48% 46% 54%;font:700 30px/.98 var(--display);text-transform:uppercase;transform:rotate(-2deg)}.closing p{margin:22px 0 0;font-size:18px;line-height:1.4}.boundary{margin:30px 0 0;color:var(--muted);font-size:12px;text-align:center}
+    .product-proof{padding:98px 0 120px;border-top:1px solid rgba(84,200,255,.55);background:linear-gradient(180deg,#031a2c,#02131f)}.product-copy{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end}.product-copy h2{margin:0;color:var(--cream)!important;font:700 clamp(48px,7vw,84px)/.9 var(--display);letter-spacing:-.035em}.product-copy h2 span{color:var(--orange)!important}.product-copy p{max-width:560px;margin:0 0 6px;color:var(--muted)!important;font-size:19px;line-height:1.6}.device-stage{position:relative;margin-top:52px;padding:18px 13% 70px 0}.desktop-shot{overflow:hidden;border:1px solid var(--blue);border-radius:14px;background:#fff;box-shadow:0 34px 70px rgba(0,0,0,.4);transform:perspective(1200px) rotateY(2deg)}.desktop-shot img{width:100%;height:auto}.phone-shot{position:absolute;right:0;bottom:0;width:27%;max-height:92%;overflow:hidden;border:2px solid var(--cream);border-radius:28px;background:#fff;box-shadow:-18px 24px 46px rgba(0,0,0,.48);transform:rotate(2deg)}.phone-shot img{width:100%;height:auto}.callout{position:absolute;color:var(--blue)!important;font:600 14px/1.25 var(--mono)}.callout.desktop{right:2%;top:8%}.callout.mobile{right:29%;bottom:5%}.product-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:48px}.primary-cta{min-height:58px;padding:0 30px;border-radius:10px;background:var(--orange);color:#fff!important;font:700 18px var(--display);text-decoration:none;box-shadow:0 12px 30px rgba(255,91,35,.2);transition:transform .2s cubic-bezier(.16,1,.3,1)}.primary-cta:hover{transform:translateY(-3px)}
+    .record-strip{padding:72px 0;border-top:1px solid rgba(84,200,255,.35);background:var(--night-2);color:var(--cream)}.record-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}.record-copy h2{margin:0;color:var(--cream)!important;font:700 clamp(42px,6vw,70px)/.92 var(--display)}.record-copy p{max-width:600px;color:var(--muted)!important;line-height:1.7}.record-copy a{color:var(--blue)!important;text-underline-offset:5px}.record-data{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--blue);border-radius:14px;overflow:hidden}.record-data div{padding:22px}.record-data div+div{border-left:1px solid rgba(84,200,255,.35)}.record-data small,.record-data span{display:block;color:var(--muted)!important;font-size:11px}.record-data strong{display:block;margin:10px 0;color:var(--cream)!important;font:700 28px var(--display)}
+    .difference{padding:86px 0;border-top:1px solid rgba(84,200,255,.35);background:var(--night-2);color:var(--cream)}.difference-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:78px;align-items:start}.difference h2{max-width:560px;margin:0;color:var(--cream)!important;font:700 clamp(46px,6vw,76px)/.92 var(--display)}.difference h2 span{display:block;color:var(--orange)!important}.difference-list{border-top:1px solid var(--blue)}.difference-item{display:grid;grid-template-columns:48px 1fr;gap:18px;align-items:center;min-height:76px;border-bottom:1px solid rgba(84,200,255,.35)}.difference-item svg{width:30px;color:var(--blue)}.difference-item strong{color:var(--cream)!important;font:600 clamp(20px,2.4vw,29px)/1.15 var(--display)}.difference-actions{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px;margin-top:30px}.difference-cta{display:inline-flex;align-items:center;min-height:54px;padding:0 22px;border:1px solid var(--blue);border-radius:10px;color:var(--cream)!important;font-weight:600;text-decoration:none}.difference-cta:hover{background:#0b3552}.difference-link{color:var(--blue-soft)!important;font:600 13px/1.5 var(--mono);text-underline-offset:5px}.record-contract{display:none}
+    .home-faq{padding:90px 0;border-top:1px solid rgba(84,200,255,.35);background:var(--night);color:var(--cream)}.home-faq h2{max-width:780px;margin:0 0 40px;color:var(--cream)!important;font:700 clamp(44px,6vw,72px)/.92 var(--display)}.home-faq__item{border-top:1px solid rgba(84,200,255,.35)}.home-faq__item:last-child{border-bottom:1px solid rgba(84,200,255,.35)}.home-faq__item summary{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;color:var(--cream)!important;font:600 20px var(--display);list-style:none}.home-faq__item summary::-webkit-details-marker{display:none}.home-faq__item summary span{color:var(--orange);font-size:26px}.home-faq__item p{max-width:760px;margin:0 0 24px;color:var(--muted);line-height:1.7}
+    .final-close{padding:90px 0;border-top:1px solid var(--blue);background:var(--night-2);color:var(--cream);text-align:center}.final-close h2{max-width:900px;margin:0 auto;color:var(--cream)!important;font:700 clamp(48px,7vw,86px)/.9 var(--display)}.final-close h2 span{color:var(--orange)}.final-close .store-row{justify-content:center}.legal-note{max-width:780px;margin:24px auto 0;color:var(--muted);font-size:12px;line-height:1.7}
+    body.pp-replay-room .pp-site-footer{background:#02121f;border-top:1px solid rgba(84,200,255,.35);color:var(--cream)}body.pp-replay-room .pp-site-footer a,body.pp-replay-room .pp-site-footer h2{color:var(--cream)}body.pp-replay-room .pp-site-footer__copy,body.pp-replay-room .pp-site-footer__legal{color:var(--muted)}
+    .reveal{opacity:1;transform:none}@media(prefers-reduced-motion:no-preference){.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}.js .reveal.is-visible{opacity:1;transform:none}.device-stage.is-visible .phone-shot{animation:phone-in .8s .15s cubic-bezier(.16,1,.3,1) both}@keyframes phone-in{from{transform:translate(26px,30px) rotate(4deg);filter:blur(3px)}to{transform:rotate(2deg);filter:none}}}
+    @media(max-width:1080px){body.pp-replay-room .pp-site-nav__links{background:#06243a!important;border-color:var(--line)!important;box-shadow:0 18px 42px rgba(0,0,0,.42)!important}body.pp-replay-room .pp-site-nav__links a{min-height:44px;color:var(--cream)!important;border-bottom-color:rgba(84,200,255,.2)!important}body.pp-replay-room .pp-site-nav__links a:hover,body.pp-replay-room .pp-site-nav__links a:focus-visible{background:#0b3552!important;color:#fff!important}}
+    @media(max-width:760px){.rr-container{width:min(100% - 28px,680px)}.rr-hero{padding:40px 0 58px}.rr-eyebrow{font-size:11px;margin-bottom:22px}.rr-hero h1{font-size:clamp(55px,15.5vw,78px);line-height:.88}.rr-lede{margin-top:24px;font-size:18px}.store-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.store-link{min-width:0;height:56px}.store-link img{height:38px}.play-store{padding:0 10px}.play-store svg{width:27px}.play-store strong{font-size:16px}.proof-card{grid-template-columns:auto 1fr;gap:14px;padding:20px 16px}.proof-icon{width:54px;height:54px}.proof-icon svg{width:31px}.proof-card strong{font-size:60px}.proof-copy{font-size:21px}.proof-copy a{font-size:11px}.proof-scope{text-align:left;margin-left:0}.story{grid-template-columns:1fr;gap:34px}.story-card{min-height:0;padding:40px 24px 28px}.story-card h2{font-size:14px;line-height:1.35}.player img{width:104px;height:104px}.player strong{font-size:24px}.player span{font-size:14px}.player b{font-size:36px}.score{padding:18px}.score strong{font-size:72px}.score span{font-size:13px}.score small{font-size:12px}.signal-list div{font-size:13px}.closing-ring{width:min(230px,85%);min-height:150px;padding:18px;border-width:4px;font-size:27px}.closing p{font-size:17px}.product-proof{padding:72px 0 90px}.product-copy{grid-template-columns:1fr;gap:18px}.product-copy p{font-size:16px}.device-stage{margin-top:36px;padding:8px 18% 90px 0}.phone-shot{width:35%;border-radius:18px}.callout.desktop{right:0;top:-2%;font-size:10px}.callout.mobile{right:37%;bottom:4%;font-size:10px}.product-actions{display:grid;grid-template-columns:1fr 1fr;margin-top:30px}.primary-cta{grid-column:1/-1;text-align:center}.difference{padding:70px 0}.difference-grid{grid-template-columns:1fr;gap:36px}.difference-item{grid-template-columns:40px 1fr;min-height:68px}.difference-item strong{font-size:20px}.home-faq,.final-close{padding:70px 0}.home-faq__item summary{font-size:17px}.final-close .store-row{max-width:560px;margin-inline:auto}}
+    @media(max-width:380px){.rr-container{width:calc(100% - 22px)}.story{gap:5px}.story-card{padding-inline:6px}.closing-ring{width:94px;font-size:14px}.store-link{height:52px}.play-store strong{font-size:14px}}
   </style>
 </head>
 <body>
-  <div class="topline">
-    <div class="container topline-inner">
-      <span class="status">Model system live</span>
-      <span class="topline-center">Sport-specific AI analysis · Public graded record · Inspectable signals</span>
-      <span>Updated continuously</span>
-    </div>
-  </div>
-
-  <nav class="nav" aria-label="Primary navigation">
-    <div class="container nav-inner">
-      <a class="brand" href="https://propellerpicks.com/" aria-label="Propeller Picks"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Propeller</span></a>
-      <button class="menu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNavLinks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg></button>
-      <div class="nav-links" id="siteNavLinks">
-        <a href="https://propellerpicks.com/picks/">Picks</a>
-        <a href="https://propellerpicks.com/results/">Results</a>
-        <a href="https://propellerpicks.com/track-record/">Track Record</a>
-        <a href="https://propellerpicks.com/how-it-works/">Method</a>
-        <a href="https://propellerpicks.com/guides/">Guides</a>
-        <a href="https://propellerpicks.com/tools/">Tools</a>
-        <a href="https://propellerpicks.com/analyzer/">Analyzer</a>
-        <a href="https://app.propellerpicks.com/app" rel="noopener">Web App</a>
-        <a class="nav-cta" href="https://app.propellerpicks.com/signup" rel="noopener">Get Free Lifetime Access</a>
-      </div>
-    </div>
-  </nav>
-
+  <!--
+  THESIS: Propeller is the replay-room analyst that makes player-prop research understandable; this page refuses the generic pale SaaS hero and feature-card grid.
+  OWN-WORLD: Midnight broadcast panels, cream condensed headlines, Propeller orange decisions, electric-blue telestrator marks, thin field lines, and real product screens.
+  STORY: A visitor understands the plain-English promise, sees the Confidence Score and its inputs, trusts the historical scope, then chooses iOS, Android, or web.
+  FIRST VIEWPORT: An oversized promise leads into equal mobile-store actions, a 2.5M+ proof board, and a three-step line-to-score-to-action sequence.
+  FORM: Replay Room was the approved model pick and proof-led composition; seed f4d3699f.
+  FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+  -->
+  <nav class="nav" aria-label="Primary navigation"><a href="/">Propeller Picks</a></nav>
   <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow enter">AI-powered player prop research</p>
-          <h1 class="enter delay-1">Stop Guessing.<span>Start Researching.</span></h1>
-          <p class="hero-lede enter delay-2">Propeller’s sport-specific AI analyzes matchup, usage, injuries, market odds, and recent form—then shows what drives every confidence score. <strong>You see the signal. You make the call.</strong></p>
-          <div class="hero-actions enter delay-3">
-            <a class="button" href="https://app.propellerpicks.com/signup">Analyze today’s props free <span aria-hidden="true">→</span></a>
-            <a class="button secondary" href="/results/">Review the public record</a>
-          </div>
-          <p class="risk-note enter delay-3">Free access · Analysis only · Model outputs are not guarantees</p>
+    <section class="rr-hero">
+      <div class="rr-container">
+        <p class="rr-eyebrow">Built for people, not betting experts</p>
+        <h1>Player prop research that <span>finally makes sense.</span></h1>
+        <p class="rr-lede">Propeller Picks is an AI-assisted player prop research tool that turns matchup, recent role, and line context into plain English.</p>
+        <div class="store-row" aria-label="Download Propeller Picks">
+          <a class="store-link" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store"><img src="../images/app-store-badge.svg" width="135" height="40" alt="Download on the App Store"></a>
+          <a class="store-link play-store" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&amp;utm_source=na_Med" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#54c8ff" d="M4 2.8v18.4L20 12 4 2.8Z"/><path fill="#fff" d="m4 2.8 9 9.2-9 9.2V2.8Z" opacity=".75"/></svg><span><small>Get it on</small><strong>Google Play</strong></span></a>
         </div>
+        <span class="sr-only">Get the mobile app · iOS + Android</span>
+        <a class="rr-web-link" href="https://app.propellerpicks.com/signup" rel="noopener">Use it on the web →</a>
 
-        <div class="app-hero enter delay-2">
-          <div class="app-browser">
-            <div class="app-browser-head"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="browser-address">app.propellerpicks.com/app</span><span class="app-live"><i></i> Live board</span></div>
-            <img src="../images/web-app-dashboard-live.png" width="1462" height="797" alt="Propeller Picks web app showing live MLB player props, confidence scores, projected edges, market watch, and confidence mix">
-          </div>
-          <p class="app-hero-note"><strong>The real Propeller workspace</strong><span>Live MLB board · captured July 12, 2026</span></p>
+        <div class="proof-card reveal">
+          <span class="proof-icon" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3"><path d="M7 31V21h6v10M17 31V14h6v17M27 31V7h6v24M7 12l8-6 7 4 11-8"/></svg></span>
+          <strong data-record-raw-total>2.5M+</strong>
+          <div class="proof-copy">props graded<a href="/results/">What that number means →</a></div>
         </div>
-      </div>
+        <p class="proof-scope">Historical prop-analysis rows include repeated snapshots and retrospective data. They are not unique customer bets or proof of future results.</p>
 
-      <div class="proof-rail">
-        <div class="container proof-grid">
-          <div class="proof-item proof-live"><small>Verified record</small><strong>● Live</strong><span data-record-updated>Snapshot · Jul 7, 2026 · live API in production</span></div>
-          <div class="proof-item"><small>Graded props</small><strong data-record-total>2M+</strong><span data-record-total-detail>2,099,988 total props</span></div>
-          <div class="proof-item"><small>Recorded outcomes</small><strong data-record-outcome>1.41M W · 687.5K L · 30 P</strong><span>Pushes tracked separately</span></div>
-          <div class="proof-item"><small>Historical win rate</small><strong data-record-win-rate>67.3%</strong><span>Past performance is not predictive</span></div>
+        <div class="story reveal">
+          <article class="story-card player"><span class="story-step">1</span><h2>The line</h2><img src="../images/andrew-abbott-headshot.png" width="190" height="190" alt="Andrew Abbott"><strong>Andrew Abbott</strong><span>Strikeouts</span><b>More 2.5</b></article>
+          <article class="story-card"><span class="story-step">2</span><h2>What Propeller checks</h2><div class="score"><strong>78</strong><span>Confidence Score</span><small>Directional model strength for the displayed side—not win probability or a guarantee.</small></div><div class="signal-list"><div>Matchup</div><div>Recent role</div><div>Line context</div></div></article>
+          <article class="story-card closing"><span class="story-step">3</span><h2>Your next pick</h2><div class="closing-ring">Stop guessing.<br>Pick with confidence.</div><p>Clear context.<br>One simple score.</p></article>
         </div>
+        <p class="boundary">DFS &amp; pick’em research. No wagers accepted.</p>
       </div>
     </section>
 
-    <section class="pipeline" id="method">
-      <div class="container">
-        <div class="section-head scroll-reveal">
-          <div><p class="section-kicker">01 / See what drives every score</p><h2>Signals go in.<br>Reasoning comes out.</h2></div>
-          <p>Propeller does not rely on one generic answer. Each sport uses its own data, weights, and specialists before the ensemble produces a directional confidence score.</p>
-        </div>
-        <div class="pipeline-map scroll-reveal">
-          <div class="pipeline-stage inputs">
-            <div class="input-cell"><small>Signal 01</small><strong>Matchup</strong><span>Opponent, scheme, position, environment.</span></div>
-            <div class="input-cell"><small>Signal 02</small><strong>Usage</strong><span>Touches, minutes, opportunities, role.</span></div>
-            <div class="input-cell"><small>Signal 03</small><strong>Injuries</strong><span>Direct and cascading teammate effects.</span></div>
-            <div class="input-cell"><small>Signal 04+</small><strong>Market</strong><span>No-vig probability and line context.</span></div>
-          </div>
-          <div class="pipeline-arrow" aria-hidden="true"><span>→</span></div>
-          <div class="pipeline-stage"><div><span class="stage-label">Sport-specific layer</span><h3>Context decides the weight.</h3><p>NBA usage is not MLB ballpark context. Each sport emphasizes what matters.</p></div><div class="stage-readout">VALID SIGNALS: 7 / 8</div></div>
-          <div class="pipeline-arrow" aria-hidden="true"><span>→</span></div>
-          <div class="pipeline-stage"><div><span class="stage-label">Ensemble</span><h3>Independent inputs combine.</h3><p>Missing data is excluded instead of diluting a strong signal.</p></div><div class="stage-readout">MODEL AGREEMENT: HIGH</div></div>
-          <div class="pipeline-arrow" aria-hidden="true"><span>→</span></div>
-          <div class="pipeline-stage"><div><span class="stage-label">Your output</span><h3>A score you can inspect.</h3><p>Direction, confidence, supporting signals, and counter-signals.</p></div><div class="stage-readout">LEAN OVER · 76</div></div>
-        </div>
+    <section class="product-proof" aria-labelledby="product-title">
+      <div class="rr-container">
+        <div class="product-copy reveal"><h2 id="product-title">One score. <span>The full story behind it.</span></h2><p>Go deeper with the full research workspace on the web. Check saved props and key research on your phone.</p></div>
+        <div class="device-stage reveal"><div class="desktop-shot"><img src="../images/web-app-andrew-abbott-prop-detail.png" width="1462" height="797" loading="lazy" decoding="async" alt="Propeller web app showing Andrew Abbott prop research and a 78 Confidence Score"></div><div class="phone-shot"><img src="../images/app-prop-detail-white-simulator.png" width="1206" height="2622" loading="lazy" decoding="async" alt="Propeller mobile app showing Andrew Abbott pick detail and Confidence Score"></div><span class="callout desktop">Full research<br>on the web ↙</span><span class="callout mobile">Quick checks<br>on your phone ↗</span></div>
+        <div class="product-actions"><a class="primary-cta" href="https://app.propellerpicks.com/signup" rel="noopener">Get free access</a><a class="store-link" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store"><img src="../images/app-store-badge.svg" width="135" height="40" alt="Download on the App Store"></a><a class="store-link play-store" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&amp;utm_source=na_Med" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#54c8ff" d="M4 2.8v18.4L20 12 4 2.8Z"/><path fill="#fff" d="m4 2.8 9 9.2-9 9.2V2.8Z" opacity=".75"/></svg><span><small>Get it on</small><strong>Google Play</strong></span></a></div>
       </div>
     </section>
 
-    <section class="product" id="product">
-      <div class="container">
-        <div class="product-intro scroll-reveal">
-          <div class="product-copy"><p class="section-kicker">02 / From model to decision</p><h2>The AI is only useful if you can use it.</h2><p>Research the full board on desktop, inspect every signal, and carry saved props and scores with you on mobile.</p><div class="product-actions"><a class="button" href="https://app.propellerpicks.com/signup">Open the full research workspace →</a><div class="mobile-app-cta"><span class="mobile-app-label">Get the mobile app · iOS + Android</span><div class="store-links"><a class="store-link app-store-button" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store"><img src="../images/app-store-badge.svg" width="135" height="40" alt="Download on the App Store"></a><a class="store-link play-store-button" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&amp;utm_source=na_Med" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3.5v17l14-8.5L5 3.5Z" fill="#fff"/><path d="m5 3.5 8.2 8.5L5 20.5V3.5Z" fill="#c8ef83"/></svg><span><small>Get it on</small><strong>Google Play</strong></span></a></div></div></div></div>
-          <div class="product-benefits">
-            <div class="benefit"><span>01</span><div><h3>Scan the strongest signals first</h3><p>Sort the slate by confidence, direction, sport, market, and platform.</p></div></div>
-            <div class="benefit"><span>02</span><div><h3>Open the reasoning behind the score</h3><p>See model support, counter-signals, line context, and recent performance.</p></div></div>
-            <div class="benefit"><span>03</span><div><h3>Keep the workflow moving</h3><p>Save props, build combinations, track outcomes, and check changes on mobile.</p></div></div>
-          </div>
-        </div>
+    <section class="difference" aria-labelledby="difference-title"><div class="rr-container difference-grid"><h2 id="difference-title">Why Propeller <span>feels different.</span></h2><div><div class="difference-list"><div class="difference-item"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 8h24M4 16h17M4 24h11"/></svg><strong>No confusing betting jargon</strong></div><div class="difference-item"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="M16 9v7l5 3"/></svg><strong>One clear Confidence Score</strong></div><div class="difference-item"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 23 12 16l5 4 10-11"/><circle cx="5" cy="23" r="2"/><circle cx="12" cy="16" r="2"/><circle cx="17" cy="20" r="2"/><circle cx="27" cy="9" r="2"/></svg><strong>The reasons behind every score</strong></div><div class="difference-item"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 25V10l9-4 9 4v15M11 15h10M11 20h10"/></svg><strong>Built for DFS and pick’em research—not wager placement</strong></div></div><div class="difference-actions"><a class="difference-cta" href="/analyzer/">Try the free player prop analyzer →</a><a class="difference-link" href="/help/how-do-confidence-scores-work/">How the Confidence Score works</a><a class="difference-link" href="/research/ai-player-prop-benchmark/">Our AI transparency benchmark</a></div></div></div></section>
 
-        <div class="product-stage scroll-reveal">
-          <div class="desktop-app" aria-label="Current Propeller desktop player-prop detail screen">
-            <img src="../images/web-app-andrew-abbott-prop-detail.png" width="1462" height="797" alt="Propeller web app showing Andrew Abbott More 2.5 strikeouts, 78 confidence, market details, and recent performance">
-            <span class="desktop-app-note">Same pick · full desktop analysis</span>
-          </div>
-          <div class="phone" aria-label="Current Propeller mobile pick-detail screen">
-            <img src="../images/app-prop-detail-white-simulator.png" alt="Propeller mobile app showing Andrew Abbott pick detail, confidence score, line comparison, and recent game performance">
-          </div>
-        </div>
-      </div>
-    </section>
+    <section class="home-faq" aria-labelledby="faq-title"><div class="rr-container"><h2 id="faq-title">The useful questions, answered plainly.</h2><details class="home-faq__item"><summary>Is Propeller a sportsbook?<span aria-hidden="true">+</span></summary><p>No. Propeller is a research and analysis tool. We do not accept wagers or place bets for users.</p></details><details class="home-faq__item"><summary>What does the record include?<span aria-hidden="true">+</span></summary><p>The public archive has two units: raw graded analysis rows and entries retained after the current API collapse rules. It includes repeated snapshots and legacy retrospective data, so it is not a uniquely published forward-test or ROI record.</p></details><details class="home-faq__item"><summary>Why desktop and mobile?<span aria-hidden="true">+</span></summary><p>The desktop web app is built for deeper slate research. Mobile is for quick checks, saved props, alerts, and digest workflows when you are away from the desk.</p></details><details class="home-faq__item"><summary>Can I inspect Propeller's methodology and record?<span aria-hidden="true">+</span></summary><p>Yes. Review the <a href="/results/">historical graded analysis rows,</a> the separate <a href="/research/prospective-record/">First-observed capture,</a> and <a href="/how-it-works/">how Propeller works.</a> The current ledger does not independently verify event-start ordering or outcome timing. You can also read our <a href="/research/ai-player-prop-benchmark/">AI research transparency benchmark.</a></p><span class="record-contract" data-forward-roi data-roi-tone="neutral">—</span><span class="record-contract" data-forward-roi-detail>Waiting for eligible completed picks.</span><span class="record-contract" data-forward-priced-settled>0</span><span class="record-contract" data-forward-net-units data-roi-tone="neutral">0.00u</span><span class="record-contract" data-forward-roi-updated>Record updates after eligible results settle.</span><span class="record-contract" data-record-total>353K</span><span class="record-contract" data-record-total-detail>Collapsed ledger entries</span><span class="record-contract" data-record-updated>Updated historical snapshot</span></details></div></section>
 
-    <section class="record" id="record">
-      <div class="container record-grid">
-        <div class="record-copy scroll-reveal"><p class="section-kicker">03 / Proof before the pitch</p><h2>Trust the record, not the promise.</h2><p>Every published model output is logged before the result is known, graded against the final stat, and rolled into a public record you can inspect.</p><a class="button" href="/results/">Inspect every graded result →</a></div>
-        <div class="record-board scroll-reveal"><div class="record-head"><span>Public graded record</span><span>● API connected</span></div><div class="record-main"><div class="record-primary"><small>Total graded props</small><strong data-record-total-secondary>2M+</strong><span>Published model outputs with a recorded result.</span></div><div class="record-stats"><div class="record-stat"><small>Historical win rate</small><strong data-record-win-rate-secondary>67.3%</strong></div><div class="record-stat"><small>Outcome ledger</small><strong data-record-outcome>1.41M W · 687.5K L · 30 P</strong></div></div></div><div class="record-update" data-record-updated>Snapshot · Jul 7, 2026 · live API in production</div></div>
-      </div>
-    </section>
-
-    <section class="final-cta">
-      <div class="container final-panel scroll-reveal"><h2>Today’s board is already moving.</h2><a class="button" href="https://app.propellerpicks.com/signup">Analyze today’s props free →</a></div>
-    </section>
+    <section class="final-close"><div class="rr-container"><h2>Stop guessing. <span>Start researching.</span></h2><div class="store-row"><a class="store-link" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store"><img src="../images/app-store-badge.svg" width="135" height="40" alt="Download on the App Store"></a><a class="store-link play-store" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&amp;utm_source=na_Med" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#54c8ff" d="M4 2.8v18.4L20 12 4 2.8Z"/><path fill="#fff" d="m4 2.8 9 9.2-9 9.2V2.8Z" opacity=".75"/></svg><span><small>Get it on</small><strong>Google Play</strong></span></a></div><a class="rr-web-link" href="https://app.propellerpicks.com/signup" rel="noopener">Or use Propeller on the web →</a><p class="legal-note">Propeller is a sports analytics and information service. Confidence Scores are directional research signals, not win probabilities or guarantees. Propeller does not accept or place wagers.</p></div></section>
   </main>
-
-  <footer>
-    <div class="container"><div class="footer-grid"><div><a class="brand" href="#"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>Propeller</span></a><p class="footer-copy">AI-powered player prop research with inspectable signals and a public graded record.</p></div><div class="footer-links"><a href="/analyzer/">Analyzer</a><a href="/results/">Results</a><a href="/how-it-works/">Method</a><a href="/privacy/">Privacy</a><a href="/terms/">Terms</a></div></div><p class="legal">Propeller is a sports analytics and information service. Propeller is not a sportsbook and does not accept or place wagers. Confidence scores and model outputs are research signals, not guarantees. Past performance does not guarantee future results.</p></div>
-  </footer>
-
-  <script>
-    const nav = document.querySelector(".nav");
-    const menu = document.querySelector(".menu");
-    const navLinks = document.getElementById("siteNavLinks");
-    const setNavigationOpen = (open) => {
-      navLinks.classList.toggle("is-open", open);
-      menu.setAttribute("aria-expanded", String(open));
-      menu.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
-    };
-    menu.addEventListener("click", (event) => { event.stopPropagation(); setNavigationOpen(!navLinks.classList.contains("is-open")); });
-    navLinks.addEventListener("click", (event) => { if (event.target.closest("a")) setNavigationOpen(false); });
-    document.addEventListener("click", (event) => { if (!nav.contains(event.target)) setNavigationOpen(false); });
-    document.addEventListener("keydown", (event) => { if (event.key === "Escape") setNavigationOpen(false); });
-    window.addEventListener("resize", () => { if (window.matchMedia("(min-width: 861px)").matches) setNavigationOpen(false); });
-
-    const revealObserver = new IntersectionObserver((entries) => entries.forEach((entry) => { if (entry.isIntersecting) { entry.target.classList.add("visible"); revealObserver.unobserve(entry.target); } }), { threshold: .12 });
-    document.querySelectorAll(".scroll-reveal").forEach((node) => revealObserver.observe(node));
-  </script>
-  <script src="../assets/js/live-record.js"></script>
+  <footer><p>Propeller Picks</p></footer>
+  <script>document.documentElement.classList.add('js');const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-visible');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));</script>
+  <script src="../assets/js/live-record.js?v=20260715-2"></script>
   <script src="../assets/js/analytics-events.js?v=20260814" defer></script>
-  <script>
-    const mirrorRecordField = (attribute) => {
-      const fields = [...document.querySelectorAll(`[${attribute}]`)];
-      if (fields.length < 2) return;
-      const sync = () => fields.slice(1).forEach((field) => { field.textContent = fields[0].textContent; });
-      new MutationObserver(sync).observe(fields[0], { childList: true, characterData: true, subtree: true });
-      sync();
-    };
-    mirrorRecordField("data-record-outcome");
-    mirrorRecordField("data-record-updated");
-  </script>
 </body>
 </html>
