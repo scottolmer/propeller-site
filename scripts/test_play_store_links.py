@@ -57,7 +57,7 @@ class PlayStoreContracts(unittest.TestCase):
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn('host === "play.google.com"', analytics)
         self.assertIn('name: "play_store_click"', analytics)
-        self.assertIn("/assets/css/home-ai.css?v=20260814", homepage)
+        self.assertIn("/assets/css/home-ai.css?v=20260815", homepage)
         self.assertIn("/assets/js/analytics-events.js?v=20260814", homepage)
 
 
