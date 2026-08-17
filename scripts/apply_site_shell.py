@@ -26,7 +26,7 @@ HEAD_BLOCK = """  <!-- PP_SITE_HEAD_START -->
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#f2efe8">
   <link rel="stylesheet" href="/assets/css/site-system.css?v=20260712">
-  {compat}<​!-- PP_SITE_HEAD_END -->""".replace("<​!", "<!")
+  {compat}{page_styles}<​!-- PP_SITE_HEAD_END -->""".replace("<​!", "<!")
 
 NAV = """<!-- PP_SITE_NAV_START -->
 <nav class="pp-site-nav" aria-label="Primary navigation">
@@ -233,7 +233,13 @@ def ensure_script(html: str) -> str:
 def migrate_html(original: str, path: Path, home: bool) -> str:
     html = remove_managed_head(original)
     compat = "" if home else '<link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">\n  '
-    block = HEAD_BLOCK.format(compat=compat)
+    page_styles = ""
+    if "pp-wave-a-page" in original:
+        page_styles = (
+            '<link rel="stylesheet" href="/assets/css/home-ai.css?v=20260815">\n  '
+            '<link rel="stylesheet" href="/assets/css/wave-a-companion-pages.css?v=20260817c">\n  '
+        )
+    block = HEAD_BLOCK.format(compat=compat, page_styles=page_styles)
     html = re.sub(r"</head>", block + "\n</head>", html, count=1, flags=re.IGNORECASE)
     html = add_body_class(html, home, family_class(path, home))
     html = replace_primary_nav(html)
