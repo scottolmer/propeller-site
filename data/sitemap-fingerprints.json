@@ -106,8 +106,8 @@
       "source": "fantasy/mlb/index.html"
     },
     "https://propellerpicks.com/guides/": {
-      "fingerprint": "bc39f152236ce30b19c0b60edae533218b79964a0508931656f9f3a2c92a3ae9",
-      "lastmod": "2026-07-25",
+      "fingerprint": "30a23e569dfdec7ae2a22c043a7b65a39bc4aeed4b3622eadca37d7d98694bf8",
+      "lastmod": "2026-08-17",
       "source": "guides/index.html"
     },
     "https://propellerpicks.com/guides/ai-player-prop-analyzer-vs-dfs-optimizer/": {
@@ -115,14 +115,19 @@
       "lastmod": "2026-07-25",
       "source": "guides/ai-player-prop-analyzer-vs-dfs-optimizer/index.html"
     },
+    "https://propellerpicks.com/guides/compare-player-prop-lines/": {
+      "fingerprint": "0285f48816a56d21a7d971f2797614a5958ee8916bf5859c17890cc7f9b0fd60",
+      "lastmod": "2026-08-17",
+      "source": "guides/compare-player-prop-lines/index.html"
+    },
     "https://propellerpicks.com/guides/how-ai-sports-betting-works/": {
       "fingerprint": "9fb97fa3e399a2ca39567ea8ead69a557ff05742e1713efd700f83a03884df30",
       "lastmod": "2026-07-23",
       "source": "guides/how-ai-sports-betting-works/index.html"
     },
     "https://propellerpicks.com/guides/how-to-analyze-player-props/": {
-      "fingerprint": "382ed83892244e1b148ff6929e95070314ef231cb4e8635f7cd76dca0630c2ca",
-      "lastmod": "2026-07-20",
+      "fingerprint": "4e6bdec61ee7ec36e88226cddae55f1c86538332dbfaf31caba39285577e9dba",
+      "lastmod": "2026-08-17",
       "source": "guides/how-to-analyze-player-props/index.html"
     },
     "https://propellerpicks.com/guides/nba-prop-betting/": {
@@ -321,13 +326,13 @@
       "source": "tools/pick6-payout-calculator/index.html"
     },
     "https://propellerpicks.com/tools/prizepicks-payout-calculator/": {
-      "fingerprint": "7de626a6ca818f4bab5e14f07d7a065567b330ac63048935f8c2e763d6b009a9",
-      "lastmod": "2026-08-08",
+      "fingerprint": "ccd8370e1c0c49e3e11e9b2c108d14f51a72e3d0a90afbb9cfa3a4932fb6217e",
+      "lastmod": "2026-08-17",
       "source": "tools/prizepicks-payout-calculator/index.html"
     },
     "https://propellerpicks.com/tools/underdog-payout-calculator/": {
-      "fingerprint": "fb330758c3f9d8f453cdec1b75c65b56dcdf129284ac1c2071f800d2fae146f4",
-      "lastmod": "2026-07-25",
+      "fingerprint": "4a62e771df274191b8c0341b5bafcaa53b0df078f1dbb0f8412ad530f642b137",
+      "lastmod": "2026-08-17",
       "source": "tools/underdog-payout-calculator/index.html"
     },
     "https://propellerpicks.com/track-record/": {

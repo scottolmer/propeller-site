@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "slug": "prizepicks-power-play-vs-flex-play",
+  "state": "public_published",
+  "brief": {
+    "concept": "PrizePicks Power Play vs. Flex Play: Picks, Payouts & Rules Explained",
+    "primary_question": "How do current PrizePicks Power Play and Flex Play structures differ?",
+    "audience": "People researching PrizePicks rules and payout math before using Propeller's calculator",
+    "learning_outcome": "Understand the standard payout shapes, lineup constraints, reversion rules, and why the individual details screen controls",
+    "cta": "Use Propeller's calculator only to illustrate published standard-rate scenarios, then verify the current PrizePicks rules and details screen for your location",
+    "target_duration_seconds": 260,
+    "freshness_requirements": "PrizePicks rules, payouts, and availability rechecked against live official pages on 2026-08-16"
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-08-16T16:44:23Z",
+      "evidence": "User supplied the exact approved Wave A concept"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-08-16T16:44:23Z",
+      "evidence": "User explicitly authorized autonomous script decisions for Wave A production"
+    },
+    "review": {
+      "approved": true,
+      "at": "2026-08-17T21:12:44Z",
+      "evidence": "User approved the three exact titles, Private visibility, metadata packages, thumbnails, captions, audience, paid-promotion, and altered-content settings and instructed: do it."
+    },
+    "publication": {
+      "approved": true,
+      "at": "2026-08-17T21:20:03Z",
+      "evidence": "User stated that all three videos had been set to Public so they would show on the new webpages; YouTube Studio then verified Public visibility."
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "review_width": 1280,
+    "review_height": 720,
+    "fps": 30,
+    "caption_language": "en",
+    "source_duration_seconds": 260
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "master_contact_sheet": "final/qa/master-contact-sheet.jpg",
+    "master_qa_frames": "final/qa/",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {
+      "title": "PrizePicks Payouts",
+      "url": "https://www.prizepicks.com/help-center/payouts",
+      "official": true,
+      "page_updated": "2026-08-11",
+      "accessed": "2026-08-16"
+    },
+    {
+      "title": "PrizePicks Player Picks",
+      "url": "https://www.prizepicks.com/help-center/player-picks",
+      "official": true,
+      "page_updated": "2026-07-16",
+      "accessed": "2026-08-16"
+    },
+    {
+      "title": "PrizePicks DNPs, Reboots, and Ties",
+      "url": "https://www.prizepicks.com/help-center/dnps-reboots-and-ties",
+      "official": true,
+      "page_updated": "2026-08-11",
+      "accessed": "2026-08-16"
+    },
+    {
+      "title": "PrizePicks Eligibility",
+      "url": "https://www.prizepicks.com/help-center/eligibility",
+      "official": true,
+      "page_updated": "2026-08-14",
+      "accessed": "2026-08-16"
+    },
+    {
+      "title": "PrizePicks Potential Outcomes",
+      "url": "https://www.prizepicks.com/help-center/potential-outcomes",
+      "official": true,
+      "page_updated": "2026-08-05",
+      "accessed": "2026-08-16"
+    },
+    {
+      "title": "Propeller PrizePicks Payout Calculator",
+      "path": "../../../tools/prizepicks-payout-calculator/index.html",
+      "official": false,
+      "accessed": "2026-08-16",
+      "role": "scenario illustration only; not a prediction or payout promise"
+    }
+  ],
+  "publishing": {
+    "requested_visibility": "public",
+    "channel_name": "Propeller Picks",
+    "channel_handle": "@propellerpicks",
+    "channel_id": "UCa0YkBvX4qlzV3J8QS7u1sg",
+    "video_id": "s2NGgkyWOZs",
+    "url": "https://youtu.be/s2NGgkyWOZs",
+    "uploaded": true,
+    "hd_processed": true,
+    "published_at": "2026-08-17T21:20:03Z",
+    "verified": true,
+    "metadata_applied": true,
+    "thumbnail_uploaded": true,
+    "captions_uploaded": true,
+    "caption_track_studio_verified": true,
+    "audience": "not_made_for_kids",
+    "paid_promotion": false,
+    "altered_content_disclosure": false,
+    "category": "Sports",
+    "language": "English (United States)",
+    "checks": "passed_no_issues",
+    "uploaded_at": "2026-08-17T21:12:44Z"
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-08-16T16:44:23Z",
+      "note": "Project initialized from the user-approved Wave A concept"
+    },
+    {
+      "phase": "research",
+      "at": "2026-08-16T16:54:00Z",
+      "note": "Five live official PrizePicks help pages were checked and dated; jurisdiction and individual-details-screen caveats were retained"
+    },
+    {
+      "phase": "research",
+      "at": "2026-08-16T16:55:00Z",
+      "note": "Resolved a stale search-index 5x value: direct live Payouts and Potential Outcomes pages both showed 6x for standard four-pick Flex, with the newer dedicated Payouts page controlling source hierarchy"
+    },
+    {
+      "phase": "product_evidence",
+      "at": "2026-08-16T16:58:00Z",
+      "note": "Recorded the two-pick Flex mismatch: current official rules include two-pick Flex, while the local calculator exposes Flex only for three to six picks. The video uses an editorial rules graphic for two-pick Flex and never places that claim over local UI. The companion page was not changed."
+    },
+    {
+      "phase": "captures",
+      "at": "2026-08-16T16:59:00Z",
+      "note": "Captured fresh desktop and mobile calculator states for a supported four-pick, $20 Power/Flex comparison; reproducible helper lives at remotion/scripts/capture-calculator.mjs"
+    },
+    {
+      "phase": "narration_and_alignment",
+      "at": "2026-08-16T17:00:00Z",
+      "note": "Generated 260-second Kokoro narration, word alignment, 69 timed caption cues, and upload SRT"
+    },
+    {
+      "phase": "semantic_verification",
+      "at": "2026-08-16T17:01:00Z",
+      "note": "Verified all 10 narration beats against either current product captures or explicitly labelled editorial rule graphics"
+    },
+    {
+      "phase": "review_render_v1",
+      "at": "2026-08-16T17:03:00Z",
+      "note": "Preserved the first 1280x720 review as review/review-v1.mp4 after visual QA found serif fallback fonts"
+    },
+    {
+      "phase": "font_correction",
+      "at": "2026-08-16T17:10:25Z",
+      "note": "Replaced the remote loader with local @remotion/fonts and top-level await, retained the font module as a bundle side effect, and verified sans Familjen/IBM Plex output in proof frame and corrected thumbnail. Corrected full review awaits coordinator render GO."
+    },
+    {
+      "phase": "audio_normalization",
+      "at": "2026-08-16T17:13:00Z",
+      "note": "Preserved the original Kokoro track as narration-v1.mp3 and created duration-identical narration-v2.mp3 at -17.42 LUFS integrated and -1.69 dB true peak for the corrected review"
+    },
+    {
+      "phase": "render_fix",
+      "at": "2026-08-16T17:27:00Z",
+      "note": "Removed the @remotion/fonts delayRender dependency and injected the same embedded WOFF2 bytes with inline @font-face CSS. The corrected proof, thumbnail, and complete 7,800-frame review render all retained the verified sans brand type."
+    },
+    {
+      "phase": "review_qa",
+      "at": "2026-08-16T17:31:00Z",
+      "note": "Corrected review-v2 was promoted to review.mp4. Lint and TypeScript, full decode, media probe, caption timing, semantic map, thumbnail limits, contact-sheet inspection, black/silence scans, and checksums passed. The package validator has only the intentional missing 1080p master gate."
+    },
+    {
+      "phase": "master_render_and_qa",
+      "at": "2026-08-17T20:51:29Z",
+      "note": "Rendered the corrected-font, normalized-narration 1920x1080 master and promoted the package to master_ready. Lint and TypeScript, complete 7,800-frame decode, H.264/AAC stream probe, fast-start atom order, loudness/true-peak/LRA, black and silence scans, 69-cue SRT timing, 596-word caption timing, all 10 semantic beats, thumbnail limits, representative master frames, checksums, and the package validator passed. Review approval, upload, and publication remain pending."
+    }
+  ]
+}

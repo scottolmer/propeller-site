@@ -1,0 +1,190 @@
+{
+  "version": 1,
+  "slug": "underdog-payout-calculator-walkthrough",
+  "state": "public_published",
+  "brief": {
+    "concept": "How Much Do Underdog Picks Pay? Calculate Payouts Before You Enter",
+    "primary_question": "How do I calculate a possible Underdog Pick'em payout before submitting an entry?",
+    "audience": "Adults researching Underdog Pick'em Standard and Flex payout math, including first-time calculator users",
+    "search_intent": "Answer-first calculator walkthrough",
+    "learning_outcome": "Multiply the entry amount by the displayed multiplier, use Propeller only to estimate scenarios, and confirm the current Underdog entry screen and eligibility",
+    "cta": "Use https://propellerpicks.com/tools/underdog-payout-calculator/ for independent scenario math, then verify the current amount and eligibility in Underdog",
+    "target_duration_seconds": 225,
+    "actual_narration_duration_seconds": 201.175,
+    "actual_review_duration_seconds": 202.0,
+    "freshness_requirements": "Recheck official Underdog payout and state-eligibility help before publication; never show the local page's stale 4-pick Standard value; current entry screen controls"
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-08-16T16:43:47Z",
+      "evidence": "User supplied the exact approved video concept and requested autonomous Wave A production"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-08-16T16:45:04Z",
+      "evidence": "User explicitly authorized autonomous script decisions for Wave A production"
+    },
+    "review": {
+      "approved": true,
+      "at": "2026-08-17T21:12:44Z",
+      "evidence": "User approved the three exact titles, Private visibility, metadata packages, thumbnails, captions, audience, paid-promotion, and altered-content settings and instructed: do it."
+    },
+    "publication": {
+      "approved": true,
+      "at": "2026-08-17T21:20:03Z",
+      "evidence": "User stated that all three videos had been set to Public so they would show on the new webpages; YouTube Studio then verified Public visibility."
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "review_width": 1280,
+    "review_height": 720,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {
+      "type": "official_rules",
+      "url": "https://help.underdogsports.com/en/articles/13780101-pick-em-standard-flex-entry-payouts",
+      "verified_at": "2026-08-16T16:45:04Z",
+      "note": "Current Standard and Flex base payouts; payouts include entry fee; Flex supports 3-8 picks; modifiers and correlations can adjust amounts"
+    },
+    {
+      "type": "official_rules",
+      "url": "https://help.underdogsports.com/en/articles/10730924-payout-differences-and-discrepancies",
+      "verified_at": "2026-08-16T16:45:04Z",
+      "note": "Flex lower-result values are up-to amounts; Champions prize-pool results can vary"
+    },
+    {
+      "type": "official_availability",
+      "url": "https://help.underdogsports.com/en/articles/8923390-state-eligibility",
+      "verified_at": "2026-08-16T16:45:04Z",
+      "note": "Pick'em availability varies by physical location and unavailable modes may not appear"
+    },
+    {
+      "type": "official_availability",
+      "url": "https://help.underdogsports.com/en/articles/11102893-can-i-switch-to-classic-pick-em",
+      "verified_at": "2026-08-16T16:45:04Z",
+      "note": "Physical location determines Classic versus Champions availability"
+    },
+    {
+      "type": "local_product",
+      "path": "tools/underdog-payout-calculator/index.html",
+      "verified_at": "2026-08-16T16:45:04Z",
+      "note": "Current local calculator scenario estimator; video uses only 5-pick Standard and 6-pick Flex values that match the current official table"
+    }
+  ],
+  "publishing": {
+    "requested_visibility": "public",
+    "channel_name": "Propeller Picks",
+    "channel_handle": "@propellerpicks",
+    "channel_id": "UCa0YkBvX4qlzV3J8QS7u1sg",
+    "video_id": "eDEo1qPA2xQ",
+    "url": "https://youtu.be/eDEo1qPA2xQ",
+    "uploaded": true,
+    "hd_processed": true,
+    "published_at": "2026-08-17T21:20:03Z",
+    "verified": true,
+    "metadata_applied": true,
+    "thumbnail_uploaded": true,
+    "captions_uploaded": true,
+    "caption_track_studio_verified": true,
+    "audience": "not_made_for_kids",
+    "paid_promotion": false,
+    "altered_content_disclosure": false,
+    "category": "Sports",
+    "language": "English (United States)",
+    "checks": "passed_no_issues",
+    "uploaded_at": "2026-08-17T21:12:44Z"
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-08-16T16:43:47Z",
+      "note": "Project initialized from the approved Wave A concept"
+    },
+    {
+      "phase": "brief",
+      "at": "2026-08-16T16:45:04Z",
+      "note": "Brief locked against current official Underdog payout, payout-variation, and physical-location eligibility documentation"
+    },
+    {
+      "phase": "script_approval",
+      "at": "2026-08-16T16:45:04Z",
+      "note": "Answer-first narration and twelve-beat semantic plan completed; user-authorized autonomous script decisions recorded as approval"
+    },
+    {
+      "phase": "source_drift_warning",
+      "at": "2026-08-16T16:45:04Z",
+      "note": "Local companion page displays stale 10x for 4-pick Standard while official Underdog help now says 12x; video excludes that value and uses only matching 5-pick Standard and 6-pick Flex scenarios; webpage edit is outside this assignment"
+    },
+    {
+      "phase": "narration",
+      "at": "2026-08-16T16:54:30Z",
+      "note": "Generated 201.175-second Kokoro narration with am_michael; aligned 454 exact-script words with 432 direct matches into 52 timed SRT cues; preserved v1 audio, alignment, caption JSON, and SRT"
+    },
+    {
+      "phase": "capture",
+      "at": "2026-08-16T16:58:00Z",
+      "note": "Captured current local calculator at 1440x1000 desktop and 390x844 mobile for a neutral 5-pick state, a 5-pick $10 Standard result, and a 6-pick $10 Flex result; no 4-pick multiplier appears"
+    },
+    {
+      "phase": "review_package",
+      "at": "2026-08-16T17:01:00Z",
+      "note": "Rendered the initial 1280x720 H.264/AAC review at 30 fps and preserved it as review-v1.mp4 after visual QA found fallback serif type; final 1080p master and upload remain intentionally unperformed"
+    },
+    {
+      "phase": "font_correction",
+      "at": "2026-08-16T17:14:00Z",
+      "note": "Corrected the fallback-font defect by making the loaded font exports explicit component dependencies and embedding the exact local WOFF2 bytes as generated data URLs to eliminate intermittent worker-page font fetch timeouts. Preserved the corrected-sans visual render as review-v2.mp4 and regenerated the sans thumbnail, contact sheet, and representative frames."
+    },
+    {
+      "phase": "audio_normalization",
+      "at": "2026-08-16T17:18:03Z",
+      "note": "Preserved narration-v1.mp3, created duration-identical narration-v2/current at 201.175 seconds and approximately -17.52 LUFS with -1.68 dBFS true peak, updated the Remotion public audio, and set the stereo render gain to compensate for dual-mono summing. Remuxed review-v2 by video stream copy with new AAC audio into review-v3/current; no visual frames were rerendered."
+    },
+    {
+      "phase": "validation",
+      "at": "2026-08-16T17:18:03Z",
+      "note": "Lint/typecheck, full review and narration decode, 52-cue caption validation, checksum verification, transition-aware black-frame scan, adaptive silence scan, media probes, thumbnail limits, and semantic-map verification passed. Current review-v3 is 202.000 seconds at 1280x720/30 fps with -17.54 LUFS integrated loudness and -4.64 dBFS true peak. Package validator reports only the intentionally missing final/master-1080p.mp4 required by its fixed upload-ready contract."
+    },
+    {
+      "phase": "brand_correction",
+      "at": "2026-08-17T20:29:02Z",
+      "note": "Replaced the incorrect three-bar symbol in every scene header, the closing scene, and the thumbnail with the canonical orange three-spoke Propeller mark. Preserved review-v3 and thumbnail-v2-wrong-logo.png as superseded artifacts."
+    },
+    {
+      "phase": "brand_correction_validation",
+      "at": "2026-08-17T20:29:02Z",
+      "note": "Promoted corrected review-v4 and thumbnail-v3 to the current aliases. Inline embedded @font-face CSS removed the intermittent font-loader render hold. Lint/typecheck, full decode, contact-sheet and representative-frame inspection, black/silence scans, loudness, thumbnail dimensions, semantic map, captions, checksums, and package validation passed; only the intentionally missing 1080p master remains gated on review approval."
+    },
+    {
+      "phase": "master_render_validation",
+      "at": "2026-08-17T21:00:54Z",
+      "note": "Rendered final/master-1080p.mp4 from the corrected-logo, embedded-brand-font composition and normalized narration. Master is 202.000 seconds, H.264 High 1920x1080 at 30 fps with 4:2:0 full-range yuvj420p video and AAC-LC stereo 48 kHz audio. Fast-start, full decode, -17.59 LUFS integrated loudness, -4.69 dBFS true peak, 2.30 LU LRA, black/silence scans, 12-scene representative visual inspection, canonical three-spoke logo, captions, semantic map, thumbnail, SHA-256 checksums, and fixed-contract package validation passed."
+    }
+  ],
+  "warnings": [
+    "At capture time, the local companion page displayed a stale 10x 4-pick Standard value while the official help page checked August 16, 2026 said 12x. The video excludes that value and uses only matching 5-pick Standard and 6-pick Flex scenarios. The historical mismatch remains recorded; webpage work was outside this video assignment."
+  ]
+}

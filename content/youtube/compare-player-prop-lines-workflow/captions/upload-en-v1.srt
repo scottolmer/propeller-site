@@ -1,0 +1,305 @@
+1
+00:00:00,000 --> 00:00:04,030
+The fastest useful way to compare player
+prop odds is not
+
+2
+00:00:04,040 --> 00:00:05,740
+to scan for the biggest number.
+
+3
+00:00:06,340 --> 00:00:07,960
+It is to compare the same question,
+
+4
+00:00:08,340 --> 00:00:12,050
+captured at nearly the same time, and keep
+the line separate
+
+5
+00:00:12,060 --> 00:00:13,720
+from the price or payout.
+
+6
+00:00:14,540 --> 00:00:18,110
+In this walkthrough, I will show you a
+desktop workflow that
+
+7
+00:00:18,120 --> 00:00:21,190
+takes a few minutes and still leaves room
+for a no-action
+
+8
+00:00:21,200 --> 00:00:25,250
+result. Start by opening each platform in
+its own tab.
+
+9
+00:00:25,260 --> 00:00:29,080
+Then create one simple research row with
+six fields:
+
+10
+00:00:29,340 --> 00:00:33,200
+player, stat, direction, exact line,
+source, and timestamp.
+
+11
+00:00:33,960 --> 00:00:35,560
+Do not add an opinion yet.
+
+12
+00:00:35,980 --> 00:00:38,850
+If one tab shows over eight and a half
+rebounds and
+
+13
+00:00:38,860 --> 00:00:40,860
+another shows over nine and a half,
+
+14
+00:00:41,120 --> 00:00:42,440
+those are different questions.
+
+15
+00:00:43,120 --> 00:00:44,440
+Keep them on separate rows.
+
+16
+00:00:45,600 --> 00:00:48,540
+Next, record the terms attached to each
+exact line.
+
+17
+00:00:48,920 --> 00:00:52,270
+On a sportsbook, that may be an
+American-odds price such as
+
+18
+00:00:52,280 --> 00:00:56,040
+minus one ten. On a pick'em or daily
+fantasy platform,
+
+19
+00:00:56,600 --> 00:00:59,500
+it may be a displayed multiplier, payout
+structure,
+
+20
+00:00:59,560 --> 00:01:02,640
+or contest term. Those numbers are not
+interchangeable.
+
+21
+00:01:03,240 --> 00:01:05,370
+Write down what the platform actually
+shows,
+
+22
+00:01:05,380 --> 00:01:09,380
+and check the current rules and final
+entry screen because promotions,
+
+23
+00:01:09,680 --> 00:01:13,960
+combinations, limits, grading rules, and
+payouts can change.
+
+24
+00:01:14,520 --> 00:01:17,860
+Here is the speed trick: compare exact
+matches first.
+
+25
+00:01:18,580 --> 00:01:20,260
+Same player. Same stat.
+
+26
+00:01:20,680 --> 00:01:22,540
+Same direction. Same line.
+
+27
+00:01:22,920 --> 00:01:24,180
+Nearly the same timestamp.
+
+28
+00:01:25,040 --> 00:01:28,630
+When all five match, the attached price or
+payout context becomes
+
+29
+00:01:28,640 --> 00:01:31,720
+easier to compare. When one field differs,
+
+30
+00:01:31,980 --> 00:01:34,100
+flag the row instead of forcing a winner.
+
+31
+00:01:34,740 --> 00:01:36,820
+A moved line may be useful information,
+
+32
+00:01:37,200 --> 00:01:39,680
+but it is not a clean apples-to-apples
+comparison.
+
+33
+00:01:40,480 --> 00:01:43,320
+Now add Propeller as the evidence layer.
+
+34
+00:01:43,760 --> 00:01:48,220
+Propeller does not automatically compare
+every sportsbook or platform for you.
+
+35
+00:01:48,480 --> 00:01:52,230
+Open the current Analyzer, find the same
+player and stat when
+
+36
+00:01:52,240 --> 00:01:55,700
+that slate is available, and confirm the
+displayed line.
+
+37
+00:01:56,360 --> 00:01:58,720
+Then read the direction and confidence
+together.
+
+38
+00:01:59,300 --> 00:02:03,200
+Confidence is directional signal strength
+for that displayed line.
+
+39
+00:02:03,640 --> 00:02:07,150
+It is not a guaranteed outcome or a
+calibrated chance of
+
+40
+00:02:07,160 --> 00:02:11,660
+winning. After the headline signal,
+inspect the available context.
+
+41
+00:02:12,220 --> 00:02:15,960
+Look for role, injuries, matchup, recent
+form,
+
+42
+00:02:16,160 --> 00:02:20,910
+game environment, market context, and any
+missing data the analysis discloses.
+
+43
+00:02:20,920 --> 00:02:25,210
+No-vig market probability may appear as
+one signal where data is
+
+44
+00:02:25,220 --> 00:02:28,460
+available, but it is still a
+market-implied estimate,
+
+45
+00:02:28,840 --> 00:02:30,900
+not the true probability of the outcome.
+
+46
+00:02:31,640 --> 00:02:35,470
+A strong-looking price does not repair
+stale news or a mismatched
+
+47
+00:02:35,480 --> 00:02:40,010
+line. Before you finish, refresh the tabs
+and stamp the time
+
+48
+00:02:40,020 --> 00:02:43,400
+again. Check player status and event
+status.
+
+49
+00:02:43,840 --> 00:02:48,250
+Confirm that the line, price, multiplier,
+and rules still match your
+
+50
+00:02:48,260 --> 00:02:52,300
+notes. If the platform changed the line
+while you were researching,
+
+51
+00:02:52,640 --> 00:02:53,900
+move it to a new row.
+
+52
+00:02:54,540 --> 00:02:58,110
+Do not silently reuse the earlier
+Propeller signal for a different
+
+53
+00:02:58,120 --> 00:03:02,340
+threshold. Your final row should answer
+three questions:
+
+54
+00:03:02,780 --> 00:03:04,460
+Is this the exact same prop?
+
+55
+00:03:04,940 --> 00:03:06,600
+Are the source and terms current?
+
+56
+00:03:07,180 --> 00:03:09,400
+Does the evidence still apply to this
+line?
+
+57
+00:03:09,900 --> 00:03:13,400
+If any answer is no, the correct output is
+no action.
+
+58
+00:03:13,940 --> 00:03:15,860
+Passing is not a failed comparison.
+
+59
+00:03:16,700 --> 00:03:19,360
+It is the workflow protecting you from a
+false match.
+
+60
+00:03:20,160 --> 00:03:23,340
+Use Propeller as a research and analytics
+tool,
+
+61
+00:03:23,600 --> 00:03:26,560
+not as a sportsbook or an automatic odds
+screen.
+
+62
+00:03:27,160 --> 00:03:31,440
+Open the free Analyzer at propellerpicks
+dot com slash analyzer,
+
+63
+00:03:31,860 --> 00:03:34,960
+keep your line ledger beside it, and make
+your own decision.
+
+64
+00:03:35,740 --> 00:03:40,230
+Use limits, verify current terms, and
+remember that no model signal
+
+65
+00:03:40,240 --> 00:03:41,700
+guarantees an outcome.
+
