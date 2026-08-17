@@ -41,12 +41,13 @@ class SharedCalculatorContracts(unittest.TestCase):
             "pick6": "/picks/pick6/",
         }
         expected_faq_counts = {"prizepicks": 8, "underdog": 8, "pick6": 8}
+        expected_verified_months = {"prizepicks": "August", "underdog": "August", "pick6": "July"}
         for name, picks_link in expected_pick_links.items():
             with self.subTest(page=name):
                 page = source(name)
                 self.assertEqual(len(faq_schema(page)["mainEntity"]), expected_faq_counts[name])
                 self.assertEqual(page.count('class="faq-item"'), expected_faq_counts[name])
-                self.assertIn("Verified July", page)
+                self.assertIn(f"Verified {expected_verified_months[name]}", page)
                 self.assertIn('class="source-note"', page)
                 self.assertIn(f'href="{picks_link}"', page)
                 self.assertIn('href="/analyzer/"', page)

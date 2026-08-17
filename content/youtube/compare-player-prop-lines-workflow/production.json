@@ -1,0 +1,249 @@
+{
+  "version": 1,
+  "slug": "compare-player-prop-lines-workflow",
+  "state": "public_published",
+  "brief": {
+    "concept": "How to Compare Player Prop Odds Quickly: A Desktop Research Workflow",
+    "primary_question": "How can someone compare the same player prop across multiple platforms without confusing the line, price, payout terms, or research signal?",
+    "audience": "A desktop-first DFS, pick'em, or sportsbook researcher who wants a repeatable comparison process in plain language.",
+    "learning_outcome": "Viewers can build a manual comparison ledger, match the exact player/stat/direction/line, record source and timestamp, separate price from payout context, add Propeller signal and evidence, and accept no action when the rows do not match or the evidence is stale.",
+    "cta": "Open the current Propeller Analyzer at https://propellerpicks.com/analyzer/ and use the companion workflow at https://propellerpicks.com/guides/compare-player-prop-lines/.",
+    "target_duration_seconds": 245,
+    "freshness_requirements": "Use fresh desktop and mobile captures of the public Analyzer and a current payout-calculator surface. Any line-comparison numbers must be visibly illustrative. Verify the exact line, timestamp, platform terms, player and event status before any conclusion."
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-08-16T16:43:42.611336+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-08-16T16:45:10Z",
+      "evidence": "User explicitly authorized autonomous script decisions for the five-video Wave A batch."
+    },
+    "review": {
+      "approved": true,
+      "at": "2026-08-17T21:12:44Z",
+      "evidence": "User approved the three exact titles, Private visibility, metadata packages, thumbnails, captions, audience, paid-promotion, and altered-content settings and instructed: do it."
+    },
+    "publication": {
+      "approved": true,
+      "at": "2026-08-17T21:20:03Z",
+      "evidence": "User stated that all three videos had been set to Public so they would show on the new webpages; YouTube Studio then verified Public visibility."
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "checksums": "checksums.sha256"
+  },
+  "artifact_versions": {
+    "narration": [
+      "audio/narration-v1.mp3"
+    ],
+    "alignment": [
+      "audio/alignment-v1.json"
+    ],
+    "captions": [
+      "captions/upload-en-v1.srt",
+      "captions/captions-v1.json"
+    ],
+    "review": [
+      "review/review-v1.mp4",
+      "review/review-v2.mp4"
+    ],
+    "contact_sheet": [
+      "review/contact-sheet-v1.jpg",
+      "review/contact-sheet-v2.jpg"
+    ],
+    "thumbnail": [
+      "thumbnail/thumbnail-v1.png",
+      "thumbnail/thumbnail-v2.png",
+      "thumbnail/thumbnail-v3.png"
+    ],
+    "master": [
+      "final/master-1080p-v1-raw.mp4"
+    ],
+    "master_qa": [
+      "final/master-contact-sheet.jpg"
+    ]
+  },
+  "sources": [
+    {
+      "path": "analyzer/index.html",
+      "url": "https://propellerpicks.com/analyzer/",
+      "checked_at": "2026-08-16",
+      "use": "Current exact-line workflow, direction and confidence semantics, platform-rule verification, and no-wager product boundary."
+    },
+    {
+      "path": "help/does-propeller-show-no-vig-odds/index.html",
+      "url": "https://propellerpicks.com/help/does-propeller-show-no-vig-odds/",
+      "checked_at": "2026-08-16",
+      "use": "No-vig market probability is one available signal and is not true outcome probability or a guarantee."
+    },
+    {
+      "path": "tools/pick6-payout-calculator/index.html",
+      "url": "https://propellerpicks.com/tools/pick6-payout-calculator/",
+      "checked_at": "2026-08-16",
+      "use": "Displayed multiplier and live platform terms control; payout arithmetic is not ROI, EV, or profitability."
+    },
+    {
+      "path": "captures/desktop/analyzer-current-2026-08-16.png",
+      "use": "Fresh 1440x900 public Analyzer capture collected 2026-08-16."
+    },
+    {
+      "path": "captures/mobile/analyzer-current-2026-08-16.png",
+      "use": "Fresh 390x844 public Analyzer mobile capture collected 2026-08-16."
+    },
+    {
+      "path": "captures/desktop/pick6-calculator-current-2026-08-16.png",
+      "use": "Fresh 1440x900 Propeller Pick6 calculator capture collected 2026-08-16."
+    },
+    {
+      "path": "captures/mobile/pick6-calculator-current-2026-08-16.png",
+      "use": "Fresh 390x844 Propeller Pick6 calculator mobile capture collected 2026-08-16."
+    }
+  ],
+  "publishing": {
+    "requested_visibility": "public",
+    "channel_name": "Propeller Picks",
+    "channel_handle": "@propellerpicks",
+    "channel_id": "UCa0YkBvX4qlzV3J8QS7u1sg",
+    "video_id": "NLmhM3BshPw",
+    "url": "https://youtu.be/NLmhM3BshPw",
+    "uploaded": true,
+    "hd_processed": true,
+    "published_at": "2026-08-17T21:20:03Z",
+    "verified": true,
+    "metadata_applied": true,
+    "thumbnail_uploaded": true,
+    "captions_uploaded": true,
+    "caption_track_studio_verified": true,
+    "audience": "not_made_for_kids",
+    "paid_promotion": false,
+    "altered_content_disclosure": false,
+    "category": "Sports",
+    "language": "English (United States)",
+    "checks": "passed_no_issues",
+    "uploaded_at": "2026-08-17T21:12:44Z"
+  },
+  "qa": {
+    "completed_at": "2026-08-17T20:42:18Z",
+    "lint_and_typecheck": "passed",
+    "review_full_decode": "passed",
+    "review_duration_seconds": 222.7,
+    "review_video": "H.264, 1280x720, 30 fps",
+    "review_audio": "AAC stereo; -16.45 LUFS integrated; -1.32 dB true peak; 2.60 LU LRA",
+    "black_frame_check": "passed; no black segments longer than 0.5 seconds at pixel threshold 0.02",
+    "silence_check": "passed; no silence longer than 1.5 seconds at -45 dB",
+    "caption_check": "passed; 65 monotonic non-overlapping cues, 549 tokens, last cue ends at 221.700 seconds",
+    "semantic_map": "passed; all nine beats have exactly 10 TSV columns, use verified in the status column, and match the rendered review",
+    "thumbnail": "passed; 1280x720 PNG, 135387 bytes",
+    "master_full_decode": "passed",
+    "master_duration_seconds": 222.7,
+    "master_video": "H.264, 1920x1080, 30 fps, yuvj420p, fast-start",
+    "master_audio": "AAC stereo, 48 kHz; -16.44 LUFS integrated; -1.40 dB true peak; 2.60 LU LRA",
+    "master_visual_qa": "passed; scene-start and midpoint frames inspected for all nine beats in final/master-contact-sheet.jpg",
+    "caption_json_notice": "four interpolated word tokens have zero active-highlight duration at phrase boundaries; the words remain present in burned caption pages and the 65-cue upload SRT is complete, monotonic, and non-overlapping",
+    "package_validator": "passed with zero errors and zero warnings on 2026-08-17T20:43:22Z",
+    "dependency_notice": "npm audit reports two low-severity notices in the scaffolded Remotion dependency tree; no forced dependency rewrite applied",
+    "master_status": "complete; current final/master-1080p.mp4 is the normalized fast-start master and final/master-1080p-v1-raw.mp4 preserves the direct Remotion render"
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-08-16T16:43:42.611336+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "brief",
+      "at": "2026-08-16T16:45:10Z",
+      "note": "Brief locked around a manual six-field ledger, clear separation of price and payout terms, Propeller as one evidence layer, and no action as a valid outcome."
+    },
+    {
+      "phase": "capture",
+      "at": "2026-08-16T16:45:10Z",
+      "note": "Captured current public Analyzer and Pick6 calculator surfaces on desktop and mobile. Captures show only public pages and no account or personal data."
+    },
+    {
+      "phase": "script_approval",
+      "at": "2026-08-16T16:45:10Z",
+      "note": "Final narration approved under the user's explicit autonomous Wave A batch authorization."
+    },
+    {
+      "phase": "narration",
+      "at": "2026-08-16T17:05:47Z",
+      "note": "Generated Kokoro am_michael narration; duration 222.600 seconds, 44.1 kHz mono, 549 script words."
+    },
+    {
+      "phase": "alignment",
+      "at": "2026-08-16T17:05:47Z",
+      "note": "Aligned 549 script words with 533 exact timestamp matches and produced 65 caption cues; unmatched words were interpolated by the alignment tool."
+    },
+    {
+      "phase": "visual_build",
+      "at": "2026-08-16T17:05:47Z",
+      "note": "Built the Remotion walkthrough around a manual six-field ledger, fresh Analyzer and Pick6 calculator captures, visibly illustrative examples, and a no-action decision gate."
+    },
+    {
+      "phase": "review_render",
+      "at": "2026-08-16T17:05:47Z",
+      "note": "Rendered and preserved the 1280x720 Remotion review, then created an audio-normalized derivative by copying the video stream and normalizing the AAC track. Current review duration is 222.700 seconds."
+    },
+    {
+      "phase": "review_qa",
+      "at": "2026-08-16T17:05:47Z",
+      "note": "Lint, TypeScript, full decode, loudness, caption, thumbnail, black-frame, silence, representative-frame, contact-sheet, and nine-beat semantic QA passed."
+    },
+    {
+      "phase": "review_ready",
+      "at": "2026-08-16T17:05:47Z",
+      "note": "Staged review package is complete. A 1080p master, upload, and publication remain intentionally unperformed pending separate authorization."
+    },
+    {
+      "phase": "master_authorization",
+      "at": "2026-08-17T20:42:18Z",
+      "note": "The primary task explicitly authorized compare-lines 1080p master production and package QA while prohibiting upload, publication, webpage edits, commits, and pushes."
+    },
+    {
+      "phase": "master_render",
+      "at": "2026-08-17T20:42:18Z",
+      "note": "Rendered and preserved the direct 1920x1080, 30 fps H.264/AAC Remotion output as final/master-1080p-v1-raw.mp4; duration 222.656 seconds."
+    },
+    {
+      "phase": "master_audio_normalization",
+      "at": "2026-08-17T20:42:18Z",
+      "note": "Created final/master-1080p.mp4 by copying the rendered H.264 video stream unchanged and normalizing narration to -16.44 LUFS integrated and -1.40 dB true peak in 48 kHz AAC; fast-start enabled."
+    },
+    {
+      "phase": "master_qa",
+      "at": "2026-08-17T20:42:18Z",
+      "note": "Lint, TypeScript, full decode, media contract, loudness, black-frame, silence, thumbnail, SRT, semantic-map, fast-start, and 18-frame visual QA passed. Final package validation follows checksum refresh."
+    },
+    {
+      "phase": "package_validation",
+      "at": "2026-08-17T20:43:22Z",
+      "note": "All SHA-256 entries verified and validate_video_package.py passed with zero errors and zero warnings. Package is master-ready; upload and publication remain unrequested."
+    }
+  ]
+}
