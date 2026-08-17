@@ -1,0 +1,560 @@
+/* Wave A companion pages — current Propeller replay-room visual system. */
+body.pp-wave-a-page {
+  --bg: var(--night);
+  --surface: #06243a;
+  --surface-2: #021522;
+  --surface-3: #0b3552;
+  --border: rgba(84, 200, 255, 0.42);
+  --border-accent: var(--blue);
+  --text-1: var(--cream);
+  --text-2: var(--muted);
+  --text-3: #83a9ba;
+  --accent: var(--orange);
+  --accent-glow: rgba(255, 91, 35, 0.28);
+  --font: var(--body);
+  background: var(--night);
+}
+
+body.pp-wave-a-page main {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 4%, rgba(10, 92, 145, 0.24), transparent 28%),
+    var(--night);
+}
+
+body.pp-wave-a-page main h1,
+body.pp-wave-a-page main h2,
+body.pp-wave-a-page main h3 {
+  font-family: var(--display);
+}
+
+body.pp-wave-a-page main p,
+body.pp-wave-a-page main li {
+  color: var(--muted);
+}
+
+body.pp-wave-a-page .pp-site-nav__links a[aria-current="page"] {
+  color: var(--orange) !important;
+}
+
+/* Shared video treatment */
+body.pp-wave-a-page .pp-video-section {
+  margin-top: 30px;
+}
+
+body.pp-wave-a-page .pp-video-card {
+  border: 1px solid var(--blue);
+  border-radius: 14px;
+  background: rgba(2, 21, 34, 0.86);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+}
+
+body.pp-wave-a-page .pp-video-card__stage {
+  border-radius: 13px 13px 0 0;
+}
+
+body.pp-wave-a-page .pp-video-card__takeaway {
+  border-top: 1px solid rgba(84, 200, 255, 0.35);
+  background: #021522;
+  color: var(--muted) !important;
+}
+
+/* Exact-line guide */
+body.pp-wave-a-page .air-skip {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 2000;
+  transform: translateY(-150%);
+  padding: 10px 14px;
+  background: var(--orange);
+  color: var(--night);
+}
+
+body.pp-wave-a-page .air-skip:focus {
+  transform: none;
+}
+
+body.pp-wave-a-page .air-wrap {
+  width: min(var(--max), calc(100vw - 40px));
+}
+
+body.pp-wave-a-page .air-hero {
+  position: relative;
+  isolation: isolate;
+  padding: 70px 0 76px;
+  border-bottom: 1px solid rgba(84, 200, 255, 0.55);
+  background: transparent;
+}
+
+body.pp-wave-a-page .air-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgba(84, 200, 255, 0.14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(84, 200, 255, 0.08) 1px, transparent 1px);
+  background-size: 100% 54px, 54px 100%;
+  mask-image: linear-gradient(90deg, #000, rgba(0, 0, 0, 0.2));
+}
+
+body.pp-site-system.pp-wave-a-page main .air-kicker,
+body.pp-site-system.pp-wave-a-page main .air-label {
+  color: var(--blue) !important;
+  font: 600 13px/1.25 var(--mono);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body.pp-wave-a-page .air-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+body.pp-wave-a-page .air-kicker::before {
+  content: "[●]";
+  font-size: 18px;
+  letter-spacing: -0.2em;
+}
+
+body.pp-wave-a-page .air-hero h1 {
+  max-width: 1040px;
+  margin: 0;
+  color: var(--cream) !important;
+  font: 700 clamp(62px, 8.4vw, 112px) / 0.88 var(--display);
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+body.pp-wave-a-page .air-hero h1 em {
+  display: block;
+  color: var(--orange) !important;
+  font-style: normal;
+}
+
+body.pp-site-system.pp-wave-a-page main .air-deck {
+  max-width: 760px;
+  margin-top: 28px;
+  color: var(--cream) !important;
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.5;
+}
+
+body.pp-wave-a-page .air-actions {
+  margin-top: 30px;
+}
+
+body.pp-site-system.pp-wave-a-page main .air-button {
+  min-height: 54px;
+  border: 1px solid var(--orange);
+  border-radius: 10px;
+  background: var(--orange);
+  color: var(--night) !important;
+  font: 700 16px var(--display);
+  box-shadow: 0 12px 30px rgba(255, 91, 35, 0.18);
+}
+
+body.pp-site-system.pp-wave-a-page main .air-button--secondary {
+  border-color: var(--blue);
+  background: transparent;
+  color: var(--cream) !important;
+  box-shadow: none;
+}
+
+body.pp-site-system.pp-wave-a-page main .air-button:hover {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+body.pp-wave-a-page .air-meta {
+  color: var(--muted);
+  font-family: var(--mono);
+}
+
+body.pp-wave-a-page .air-byline {
+  color: var(--cream);
+}
+
+body.pp-wave-a-page .air-section {
+  padding: 82px 0;
+  border-bottom: 1px solid rgba(84, 200, 255, 0.35);
+  background: var(--night);
+  color: var(--cream);
+}
+
+body.pp-wave-a-page .air-section:nth-of-type(odd),
+body.pp-wave-a-page .air-section--ink,
+body.pp-wave-a-page .air-section--answer,
+body.pp-wave-a-page .air-section--blue {
+  background: var(--night-2);
+  color: var(--cream);
+}
+
+body.pp-wave-a-page .air-section h2 {
+  max-width: 950px;
+  margin-top: 0;
+  color: var(--cream) !important;
+  font: 700 clamp(42px, 6vw, 72px) / 0.94 var(--display);
+  letter-spacing: -0.035em;
+}
+
+body.pp-wave-a-page .air-note,
+body.pp-wave-a-page .air-section p {
+  color: var(--muted) !important;
+}
+
+body.pp-wave-a-page .line-ledger {
+  border-color: var(--blue);
+  border-radius: 14px;
+  background: #021522;
+  color: var(--cream);
+  box-shadow: 8px 8px 0 var(--orange);
+}
+
+body.pp-wave-a-page .line-ledger div {
+  border-color: rgba(84, 200, 255, 0.28);
+}
+
+body.pp-wave-a-page .line-ledger span {
+  color: var(--blue);
+  font-family: var(--mono);
+}
+
+body.pp-wave-a-page .refresh-strip {
+  border: 1px solid var(--orange);
+  border-radius: 14px;
+  background: rgba(255, 91, 35, 0.12);
+}
+
+body.pp-wave-a-page .refresh-strip b {
+  color: var(--orange) !important;
+  font-family: var(--display);
+}
+
+body.pp-wave-a-page .refresh-strip p,
+body.pp-wave-a-page .refresh-strip strong,
+body.pp-wave-a-page .refresh-strip small {
+  color: var(--cream) !important;
+}
+
+body.pp-wave-a-page .compare-split article,
+body.pp-wave-a-page .air-card {
+  border: 1px solid var(--blue);
+  border-radius: 14px;
+  background: rgba(2, 21, 34, 0.7);
+  color: var(--cream);
+}
+
+body.pp-wave-a-page .compare-split article:last-child {
+  background: #0b3552;
+}
+
+body.pp-wave-a-page .compare-split h3,
+body.pp-wave-a-page .air-card h3 {
+  color: var(--cream) !important;
+}
+
+body.pp-wave-a-page .compare-split p,
+body.pp-wave-a-page .air-card p {
+  color: var(--muted) !important;
+}
+
+body.pp-wave-a-page .air-number {
+  color: var(--orange);
+  font-family: var(--display);
+}
+
+body.pp-wave-a-page .air-faq .faq-item {
+  border-color: rgba(84, 200, 255, 0.38);
+  background: transparent;
+}
+
+body.pp-wave-a-page .air-faq summary {
+  color: var(--cream) !important;
+  font-family: var(--display);
+}
+
+body.pp-wave-a-page .air-sample aside {
+  border-color: var(--blue);
+  background: #021522;
+}
+
+/* Payout calculator pages */
+body.pp-wave-a-page.tool-calculator-page .container {
+  width: min(1000px, calc(100vw - 40px));
+  max-width: none;
+  padding: 0;
+}
+
+body.pp-wave-a-page.tool-calculator-page .hero {
+  position: relative;
+  padding: 70px 0 52px;
+  text-align: left;
+}
+
+body.pp-wave-a-page.tool-calculator-page .hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: linear-gradient(90deg, var(--blue), transparent);
+}
+
+body.pp-wave-a-page.tool-calculator-page .hero-badge {
+  gap: 12px;
+  margin-bottom: 28px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--blue);
+  font: 600 13px/1 var(--mono);
+}
+
+body.pp-wave-a-page.tool-calculator-page .hero-badge::before {
+  content: "[●]";
+  font-size: 18px;
+  letter-spacing: -0.2em;
+}
+
+body.pp-wave-a-page.tool-calculator-page .hero h1 {
+  max-width: 920px;
+  margin: 0;
+  color: var(--cream) !important;
+  font: 700 clamp(58px, 8vw, 104px) / 0.88 var(--display);
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+}
+
+body.pp-wave-a-page.tool-calculator-page .hero h1 .accent {
+  display: block;
+  color: var(--orange) !important;
+}
+
+body.pp-site-system.pp-wave-a-page.tool-calculator-page main .hero > p {
+  max-width: 720px;
+  margin: 28px 0 0;
+  color: var(--cream) !important;
+  font-size: clamp(18px, 2vw, 23px);
+  line-height: 1.55;
+}
+
+body.pp-wave-a-page .calc-card,
+body.pp-wave-a-page .results,
+body.pp-wave-a-page .answer-block,
+body.pp-wave-a-page .cta-box {
+  border: 1px solid var(--blue);
+  border-radius: 14px;
+  background: rgba(2, 21, 34, 0.88);
+  color: var(--cream);
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.25);
+}
+
+body.pp-wave-a-page .calc-card {
+  margin-top: 42px;
+  border-top: 4px solid var(--orange);
+}
+
+body.pp-wave-a-page .form-label,
+body.pp-wave-a-page .result-label,
+body.pp-wave-a-page .prob-label {
+  color: var(--blue) !important;
+  font-family: var(--mono);
+}
+
+body.pp-site-system.pp-wave-a-page main select,
+body.pp-site-system.pp-wave-a-page main input[type="number"] {
+  border-color: rgba(84, 200, 255, 0.45);
+  background-color: #021522 !important;
+  color: var(--cream) !important;
+  font-family: var(--body);
+}
+
+body.pp-site-system.pp-wave-a-page main select option {
+  background: #021522;
+  color: var(--cream);
+}
+
+body.pp-site-system.pp-wave-a-page main select:focus,
+body.pp-site-system.pp-wave-a-page main input:focus {
+  border-color: var(--orange);
+}
+
+body.pp-wave-a-page .pill {
+  border-color: rgba(84, 200, 255, 0.45);
+  background: #021522;
+  color: var(--cream);
+}
+
+body.pp-wave-a-page .pill.active,
+body.pp-wave-a-page .calc-btn,
+body.pp-wave-a-page .cta-btn {
+  border-color: var(--orange);
+  background: var(--orange);
+  color: var(--night);
+  box-shadow: 0 12px 30px rgba(255, 91, 35, 0.2);
+}
+
+body.pp-wave-a-page .hit-rate-control,
+body.pp-wave-a-page .result-cell,
+body.pp-wave-a-page .flex-cell,
+body.pp-wave-a-page .scenario-note {
+  border-color: rgba(84, 200, 255, 0.3);
+  background: #06243a;
+}
+
+body.pp-wave-a-page .flex-row {
+  background: rgba(84, 200, 255, 0.35);
+}
+
+body.pp-wave-a-page .flex-cell.header {
+  background: #0b3552;
+}
+
+body.pp-wave-a-page .result-value,
+body.pp-wave-a-page .flex-cell .val {
+  color: var(--cream);
+}
+
+body.pp-wave-a-page .result-value.orange,
+body.pp-wave-a-page .flex-cell .val.orange,
+body.pp-wave-a-page .multiplier {
+  color: var(--orange) !important;
+}
+
+body.pp-wave-a-page .result-value.green,
+body.pp-wave-a-page .flex-cell .val.green {
+  color: #5ee8ac !important;
+}
+
+body.pp-wave-a-page .result-link,
+body.pp-wave-a-page .copy-btn {
+  border-color: rgba(84, 200, 255, 0.45);
+  background: #06243a;
+  color: var(--cream);
+}
+
+body.pp-wave-a-page .result-link.primary {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+body.pp-wave-a-page .content-section {
+  margin-bottom: 76px;
+}
+
+body.pp-wave-a-page .content-section h2,
+body.pp-wave-a-page .answer-block h2,
+body.pp-wave-a-page .cta-box h2 {
+  color: var(--cream) !important;
+  font: 700 clamp(36px, 5vw, 58px) / 0.96 var(--display);
+  letter-spacing: -0.03em;
+}
+
+body.pp-wave-a-page .answer-block {
+  border-left: 4px solid var(--orange);
+}
+
+body.pp-wave-a-page .source-note {
+  border-color: rgba(84, 200, 255, 0.32);
+  color: var(--text-3) !important;
+}
+
+body.pp-site-system.pp-wave-a-page main .content-section p,
+body.pp-site-system.pp-wave-a-page main .answer-block p,
+body.pp-site-system.pp-wave-a-page main .answer-block li,
+body.pp-site-system.pp-wave-a-page main .hit-rate-copy,
+body.pp-site-system.pp-wave-a-page main .scenario-note,
+body.pp-site-system.pp-wave-a-page main .source-note,
+body.pp-site-system.pp-wave-a-page main .faq-a p {
+  color: var(--muted) !important;
+}
+
+body.pp-site-system.pp-wave-a-page main .content-section a,
+body.pp-site-system.pp-wave-a-page main .answer-block a,
+body.pp-site-system.pp-wave-a-page main .source-note a,
+body.pp-site-system.pp-wave-a-page main .faq-a a {
+  color: var(--blue) !important;
+}
+
+body.pp-wave-a-page .payout-table {
+  border-color: var(--blue);
+  background: #021522;
+  color: var(--cream);
+}
+
+body.pp-wave-a-page .payout-table th {
+  background: #0b3552;
+  color: var(--blue);
+  font-family: var(--mono);
+}
+
+body.pp-wave-a-page .payout-table td {
+  border-color: rgba(84, 200, 255, 0.24);
+  color: var(--muted);
+}
+
+body.pp-wave-a-page .payout-table td:first-child {
+  color: var(--cream);
+}
+
+body.pp-wave-a-page .faq-item {
+  border-color: rgba(84, 200, 255, 0.4);
+  background: transparent;
+}
+
+body.pp-wave-a-page .faq-q {
+  background: #021522;
+  color: var(--cream);
+  font-family: var(--display);
+}
+
+body.pp-wave-a-page .faq-q:hover {
+  background: #0b3552;
+}
+
+body.pp-wave-a-page .faq-a {
+  background: #021522;
+}
+
+body.pp-wave-a-page .cta-box {
+  padding: 54px clamp(24px, 5vw, 60px);
+}
+
+body.pp-wave-a-page .cta-btn {
+  font-family: var(--display);
+}
+
+@media (max-width: 760px) {
+  body.pp-wave-a-page .air-wrap,
+  body.pp-wave-a-page.tool-calculator-page .container {
+    width: min(100% - 28px, 680px);
+  }
+
+  body.pp-wave-a-page .air-hero,
+  body.pp-wave-a-page.tool-calculator-page .hero {
+    padding: 46px 0 50px;
+  }
+
+  body.pp-wave-a-page .air-hero h1,
+  body.pp-wave-a-page.tool-calculator-page .hero h1 {
+    font-size: clamp(52px, 14vw, 74px);
+  }
+
+  body.pp-wave-a-page .air-section {
+    padding: 64px 0;
+  }
+
+  body.pp-wave-a-page .calc-card {
+    margin-top: 28px;
+    padding: 22px 16px;
+  }
+
+  body.pp-wave-a-page .pp-video-card {
+    border-radius: 10px;
+  }
+}
