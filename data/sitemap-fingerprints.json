@@ -21,12 +21,12 @@
       "source": "analyzer/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/jahmai-jones/": {
-      "fingerprint": "e3bc457cf5c5e0ef124e198ec481700f87c997988f5a343dcca99078b1054779",
+      "fingerprint": "51d748e6e60ef725877254834265354ec3147160aec970f224eea3d993cd1830",
       "lastmod": "2026-08-17",
       "source": "analyzer/mlb/jahmai-jones/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/shota-imanaga/": {
-      "fingerprint": "6d5904efe70e67489ad48ca7413d14ce4985197e1824f8df025f051c68d1b767",
+      "fingerprint": "1738edbad515ce5c301149b5dff1525ba3e90d6e840a520727b970b57cd76199",
       "lastmod": "2026-08-17",
       "source": "analyzer/mlb/shota-imanaga/index.html"
     },
@@ -321,17 +321,17 @@
       "source": "tools/ai-betting-prompt-builder/index.html"
     },
     "https://propellerpicks.com/tools/pick6-payout-calculator/": {
-      "fingerprint": "ef08c166b23eceb71b577936902fa7e43907d06803634cfd9097ad579b50fb0a",
-      "lastmod": "2026-07-25",
+      "fingerprint": "ede7d6af310baf7ab9f4e0674d98e5132590b15f4e436a7a25d712ca762dc13d",
+      "lastmod": "2026-08-17",
       "source": "tools/pick6-payout-calculator/index.html"
     },
     "https://propellerpicks.com/tools/prizepicks-payout-calculator/": {
-      "fingerprint": "ccd8370e1c0c49e3e11e9b2c108d14f51a72e3d0a90afbb9cfa3a4932fb6217e",
+      "fingerprint": "4b02f530076c2fcd87f6d5dfaacae080d5399e7404d7b4eb9d8b49d33b3d8293",
       "lastmod": "2026-08-17",
       "source": "tools/prizepicks-payout-calculator/index.html"
     },
     "https://propellerpicks.com/tools/underdog-payout-calculator/": {
-      "fingerprint": "4a62e771df274191b8c0341b5bafcaa53b0df078f1dbb0f8412ad530f642b137",
+      "fingerprint": "c6270c0e0c98a84ab3b74f8e7b460bbaa969c7fb14f09c4c80b209522604f02b",
       "lastmod": "2026-08-17",
       "source": "tools/underdog-payout-calculator/index.html"
     },
