@@ -240,17 +240,10 @@ class FixtureCollector:
     """Dependency-free fixture seam used by tests and manual local replays."""
     def __init__(self, payload: dict[str, Any]):
         self.rows = safe_daily_rows(payload)
-        self.ranges = payload.get("ranges", {})
-        if not isinstance(self.ranges, dict):
-            raise ValueError("Fixture ranges must be an object when supplied.")
+        if "ranges" in payload:
+            raise ValueError("Fixture ranges are unsupported; use allowlisted daily aggregates.")
 
     def collect(self, start: date, end: date) -> dict[str, Any]:
-        key = f"{start.isoformat()}..{end.isoformat()}"
-        supplied = self.ranges.get(key)
-        if supplied is not None:
-            if not isinstance(supplied, dict):
-                raise ValueError("Fixture range values must be objects.")
-            return supplied
         return {"overview": totals(self.rows, start, end), **{name: [] for name, *_ in SLICE_SPECS}}
 
 
@@ -328,9 +321,10 @@ def phase_report(collector: Collector, phase: dict[str, Any]) -> dict[str, Any]:
     return report
 
 
-def report_meta(as_of: date, status: str) -> dict[str, Any]:
+def report_meta(as_of: date, status: str, data_source: str = "ga4") -> dict[str, Any]:
     return {
         "status": status,
+        "data_source": data_source,
         "release_date": "2026-08-17",
         "excluded_release_date": "2026-08-17",
         "as_of": as_of.isoformat(),
@@ -341,11 +335,16 @@ def report_meta(as_of: date, status: str) -> dict[str, Any]:
     }
 
 
-def build_report(collector: Collector, as_of: date, phases: Iterable[dict[str, Any]] | None = None) -> dict[str, Any]:
+def build_report(
+    collector: Collector,
+    as_of: date,
+    phases: Iterable[dict[str, Any]] | None = None,
+    data_source: str = "ga4",
+) -> dict[str, Any]:
     phases = list(due_phases(as_of) if phases is None else phases)
     baseline = normalized_snapshot(collector.collect(BASELINE["start"], BASELINE["end"]))
     return {
-        "meta": report_meta(as_of, "complete"),
+        "meta": report_meta(as_of, "complete", data_source),
         "baseline": {
             "window": {"start": BASELINE["start"].isoformat(), "end": BASELINE["end"].isoformat()},
             **baseline,
@@ -379,6 +378,42 @@ def write_idempotent(path: Path, payload: dict[str, Any]) -> bool:
     return True
 
 
+def due_milestones(as_of: date) -> set[str]:
+    """Return the release milestones that should already exist by this date."""
+    if not baseline_is_due(as_of):
+        return set()
+    return {"baseline", *(phase["name"] for phase in due_phases(as_of))}
+
+
+def completed_milestones(path: Path) -> set[str]:
+    """Read only the completion markers needed to make scheduled runs quiet."""
+    if not path.exists():
+        return set()
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return set()
+    if not isinstance(payload, dict):
+        return set()
+    meta = payload.get("meta")
+    if not isinstance(meta, dict) or meta.get("status") != "complete":
+        return set()
+    if meta.get("data_source", "ga4") != "ga4":
+        return set()
+    completed: set[str] = set()
+    if isinstance(payload.get("baseline"), dict):
+        completed.add("baseline")
+    phases = payload.get("phases", {})
+    if isinstance(phases, dict):
+        completed.update(str(name) for name in phases)
+    return completed
+
+
+def blocked_as_of(phases: list[dict[str, Any]]) -> date:
+    """Keep repeat failures for one milestone byte-stable and non-noisy."""
+    return phases[-1]["due"] if phases else BASELINE_DUE
+
+
 def load_fixture(path: Path) -> FixtureCollector:
     payload = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(payload, dict):
@@ -401,17 +436,22 @@ def main(argv: list[str] | None = None, collector_factory: Callable[[], Collecto
         return 0
     output_path = resolve_output_path(args.output_dir)
     blocked_path = output_path.with_name("post-redesign-measurement-blocked.json")
+    if args.input is None and due_milestones(args.as_of) <= completed_milestones(output_path):
+        return 0
     try:
-        collector = load_fixture(args.input) if args.input else collector_factory()
-        report = build_report(collector, args.as_of, phases)
+        using_fixture = args.input is not None
+        collector = load_fixture(args.input) if using_fixture else collector_factory()
+        report = build_report(collector, args.as_of, phases, data_source="fixture" if using_fixture else "ga4")
         exit_code = 0
     except Exception:  # Do not persist auth paths, account IDs, or upstream details.
-        report = blocked_report(args.as_of, phases)
+        report = blocked_report(blocked_as_of(phases), phases)
         exit_code = 1
     destination = output_path if exit_code == 0 else blocked_path
-    write_idempotent(destination, report)
-    print(destination)
-    return exit_code
+    changed = write_idempotent(destination, report)
+    if changed:
+        print(destination)
+        return exit_code
+    return 0
 
 
 if __name__ == "__main__":

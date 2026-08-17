@@ -72,6 +72,11 @@ class PostRedesignMeasurementTests(unittest.TestCase):
             MEASUREMENT.safe_daily_rows({"daily": [{"date": "2026-08-18"}, {"date": "2026-08-18"}]})
         with self.assertRaises(ValueError):
             MEASUREMENT.safe_daily_rows({"daily": [{"date": "2026-08-18", "sessions": float("nan")} ]})
+        with self.assertRaises(ValueError):
+            MEASUREMENT.FixtureCollector({
+                "daily": [],
+                "ranges": {"2026-08-03..2026-08-16": {"overview": {"email": "person@example.com"}}},
+            })
 
     def test_report_has_private_aggregate_slices_and_descriptive_deltas(self) -> None:
         report = MEASUREMENT.build_report(MockCollector(), date(2026, 9, 3))
@@ -125,6 +130,48 @@ class PostRedesignMeasurementTests(unittest.TestCase):
             self.assertEqual(report["baseline"]["overview"]["sign_ups"], 0)
             self.assertEqual(collector.calls, [(date(2026, 8, 3), date(2026, 8, 16))])
 
+    def test_scheduled_runs_are_quiet_between_new_milestones(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output = pathlib.Path(temp_dir) / "private-output"
+            with contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(MEASUREMENT.main(
+                    ["--as-of", "2026-08-18", "--output-dir", str(output)],
+                    collector_factory=MockCollector,
+                ), 0)
+            called = False
+            def factory() -> MockCollector:
+                nonlocal called
+                called = True
+                return MockCollector()
+            stream = io.StringIO()
+            with contextlib.redirect_stdout(stream):
+                self.assertEqual(MEASUREMENT.main(
+                    ["--as-of", "2026-08-26", "--output-dir", str(output)],
+                    collector_factory=factory,
+                ), 0)
+            self.assertFalse(called)
+            self.assertEqual(stream.getvalue(), "")
+
+            with contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(MEASUREMENT.main(
+                    ["--as-of", "2026-08-27", "--output-dir", str(output)],
+                    collector_factory=MockCollector,
+                ), 0)
+            called = False
+            with contextlib.redirect_stdout(stream := io.StringIO()):
+                self.assertEqual(MEASUREMENT.main(
+                    ["--as-of", "2026-09-02", "--output-dir", str(output)],
+                    collector_factory=factory,
+                ), 0)
+            self.assertFalse(called)
+            self.assertEqual(stream.getvalue(), "")
+
+    def test_malformed_existing_report_is_not_treated_as_complete(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            path = pathlib.Path(temp_dir) / MEASUREMENT.DEFAULT_OUTPUT_NAME
+            path.write_text('{"meta":"invalid"}', encoding="utf-8")
+            self.assertEqual(MEASUREMENT.completed_milestones(path), set())
+
     def test_unattended_failure_writes_sanitized_blocked_artifact(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             output = pathlib.Path(temp_dir) / "private-output"
@@ -144,7 +191,7 @@ class PostRedesignMeasurementTests(unittest.TestCase):
             output = pathlib.Path(temp_dir) / "private-output"
             with contextlib.redirect_stdout(io.StringIO()):
                 self.assertEqual(MEASUREMENT.main(
-                    ["--as-of", "2026-08-27", "--output-dir", str(output)], collector_factory=MockCollector,
+                    ["--as-of", "2026-08-18", "--output-dir", str(output)], collector_factory=MockCollector,
                 ), 0)
             complete_path = output / MEASUREMENT.DEFAULT_OUTPUT_NAME
             complete = complete_path.read_text(encoding="utf-8")
@@ -155,6 +202,21 @@ class PostRedesignMeasurementTests(unittest.TestCase):
                 ), 1)
             self.assertEqual(complete_path.read_text(encoding="utf-8"), complete)
             self.assertTrue((output / "post-redesign-measurement-blocked.json").exists())
+
+    def test_repeat_failure_for_the_same_milestone_is_quiet(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            output = pathlib.Path(temp_dir) / "private-output"
+            failing = lambda: (_ for _ in ()).throw(RuntimeError("authentication failure"))
+            with contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(MEASUREMENT.main(
+                    ["--as-of", "2026-08-27", "--output-dir", str(output)], collector_factory=failing,
+                ), 1)
+            stream = io.StringIO()
+            with contextlib.redirect_stdout(stream):
+                self.assertEqual(MEASUREMENT.main(
+                    ["--as-of", "2026-08-28", "--output-dir", str(output)], collector_factory=failing,
+                ), 0)
+            self.assertEqual(stream.getvalue(), "")
 
     def test_fixture_injection_remains_available_without_calling_ga4(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -171,7 +233,32 @@ class PostRedesignMeasurementTests(unittest.TestCase):
                 )
             report = json.loads((directory / "out" / MEASUREMENT.DEFAULT_OUTPUT_NAME).read_text(encoding="utf-8"))
             self.assertEqual(code, 0)
+            self.assertEqual(report["meta"]["data_source"], "fixture")
             self.assertEqual(report["phases"]["7d"]["overview"]["sessions"]["post"], 10)
+
+    def test_fixture_report_does_not_suppress_the_next_live_ga4_run(self) -> None:
+        with tempfile.TemporaryDirectory() as temp_dir:
+            directory = pathlib.Path(temp_dir)
+            output = directory / "out"
+            fixture = directory / "fixture.json"
+            fixture.write_text(json.dumps({"daily": [
+                {"date": "2026-08-10", "sessions": 5},
+                {"date": "2026-08-18", "sessions": 10},
+            ]}), encoding="utf-8")
+            with contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(MEASUREMENT.main(
+                    ["--as-of", "2026-08-27", "--input", str(fixture), "--output-dir", str(output)],
+                ), 0)
+
+            collector = MockCollector()
+            with contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(MEASUREMENT.main(
+                    ["--as-of", "2026-08-27", "--output-dir", str(output)],
+                    collector_factory=lambda: collector,
+                ), 0)
+            report = json.loads((output / MEASUREMENT.DEFAULT_OUTPUT_NAME).read_text(encoding="utf-8"))
+            self.assertTrue(collector.calls)
+            self.assertEqual(report["meta"]["data_source"], "ga4")
 
     def test_not_due_is_quiet_and_does_not_create_a_collector(self) -> None:
         called = False
