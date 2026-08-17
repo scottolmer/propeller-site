@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="/assets/js/analytics-loader.js?v=20260716"></script>
+<script src="/assets/js/analytics-loader.js?v=20260817"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -171,8 +171,9 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
       <div class="prob-bar" id="probBar"></div>
       <p class="result-note" id="resultNote"></p>
       <div class="result-actions">
-        <a class="result-link primary" href="/picks/pick6/">Research DraftKings Pick6 props</a>
-        <a class="result-link secondary" href="/analyzer/">Free AI player prop analyzer</a>
+        <a class="result-link primary" href="/picks/pick6/" data-cta-id="calculator-pick6-result-research" data-cta-surface="calculator_result">Research DraftKings Pick6 props</a>
+        <a class="result-link secondary" href="/analyzer/" data-cta-id="calculator-pick6-result-analyzer" data-cta-surface="calculator_result">Free AI player prop analyzer</a>
+        <a class="result-link secondary" href="https://app.propellerpicks.com/signup" data-cta-id="calculator-pick6-result-signup" data-cta-surface="calculator_result">Continue your research free</a>
       </div>
       <div style="margin-top:16px;text-align:center;"><button class="copy-btn" onclick="copyResults()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy Results</button></div>
     </div>
@@ -359,8 +360,7 @@ function calculate() {
   `;
   document.getElementById('resultNote').textContent = `This estimates the minimum guaranteed Base Payout using the ${mult.toLocaleString()}x multiplier you entered. Final winnings may include Extra Winnings and cannot be known until DraftKings finalizes the peer-to-peer contest. The scenario figures use your own hit-rate assumption; Propeller does not validate it.`;
   document.getElementById('results').classList.add('show');
-  gtag('event','calculator_used',{platform:'pick6',num_picks:n,amount:amount,minimum_multiplier:mult});
-  window.ppPaidSearchEvents?.trackCalculatorResult({num_picks:n,amount:amount});
+  window.ppPaidSearchEvents?.trackCalculatorCompletion({num_picks:n});
 }
 
 function copyResults() {
@@ -375,7 +375,7 @@ function copyResults() {
 function toggleFaq(el){const open=el.classList.toggle('open');el.setAttribute('aria-expanded',String(open));el.nextElementSibling.classList.toggle('open',open)}
 </script>
 <script src="/assets/js/mobile-nav.js?v=20260624-nav3" defer></script>
-<script src="/assets/js/paid-search-events.js?v=20260708" defer></script>
+<script src="/assets/js/paid-search-events.js?v=20260817" defer></script>
   <script src="/assets/js/site-nav.js?v=20260712" defer></script>
 </body>
 </html>

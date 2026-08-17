@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="/assets/js/analytics-loader.js?v=20260716"></script>
+<script src="/assets/js/analytics-loader.js?v=20260817"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -370,8 +370,9 @@ footer a:hover { color: var(--text-2); }
       <div class="prob-bar" id="probBar"></div>
       <p class="scenario-note">Scenario probabilities and expected returns use only the hit rate you entered. They are mathematical illustrations, not Propeller predictions.</p>
       <div class="result-actions" aria-label="Next research steps">
-        <a class="result-link" href="/picks/prizepicks/">Review PrizePicks research</a>
-        <a class="result-link" href="/analyzer/">Free AI player prop analyzer</a>
+        <a class="result-link" href="/picks/prizepicks/" data-cta-id="calculator-prizepicks-result-research" data-cta-surface="calculator_result">Review PrizePicks research</a>
+        <a class="result-link" href="/analyzer/" data-cta-id="calculator-prizepicks-result-analyzer" data-cta-surface="calculator_result">Free AI player prop analyzer</a>
+        <a class="result-link" href="https://app.propellerpicks.com/signup" data-cta-id="calculator-prizepicks-result-signup" data-cta-surface="calculator_result">Continue your research free</a>
       </div>
       <div style="margin-top:16px;text-align:center;">
         <button type="button" class="copy-btn" onclick="copyResults()">
@@ -749,8 +750,7 @@ function calculate() {
   }
 
   document.getElementById('results').classList.add('show');
-  gtag('event', 'calculator_used', { platform: 'prizepicks', entry_type: type, num_picks: n, amount: amount });
-  window.ppPaidSearchEvents?.trackCalculatorResult({ entry_type: type, num_picks: n, amount: amount });
+  window.ppPaidSearchEvents?.trackCalculatorCompletion({ entry_type: type, num_picks: n });
 }
 
 function copyResults() {
@@ -783,7 +783,7 @@ function toggleFaq(el) {
 updateUI();
 </script>
 <script src="/assets/js/mobile-nav.js?v=20260624-nav3" defer></script>
-<script src="/assets/js/paid-search-events.js?v=20260708" defer></script>
+<script src="/assets/js/paid-search-events.js?v=20260817" defer></script>
 <script src="/assets/js/video-embeds.js?v=20260720" defer></script>
   <script src="/assets/js/site-nav.js?v=20260712" defer></script>
 </body>

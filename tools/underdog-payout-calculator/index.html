@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<script src="/assets/js/analytics-loader.js?v=20260716"></script>
+<script src="/assets/js/analytics-loader.js?v=20260817"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-NLXM4C2G7D');</script>
 
 <title>Underdog Payout Calculator 2026 | Flex &amp; 8-Pick Chart</title>
@@ -239,7 +239,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
       <div id="flexBreakdown"></div>
       <div id="scenarioNote"></div>
       <p class="result-sub" style="margin-top:16px;text-align:center">Base-table estimate only. Confirm the final multiplier and grading in Underdog.</p>
-      <div class="result-actions" aria-label="Next research steps"><a class="result-link primary" href="/picks/underdog/">Research Underdog picks</a><a class="result-link" href="/analyzer/">Free AI player prop analyzer</a></div>
+      <div class="result-actions" aria-label="Next research steps"><a class="result-link primary" href="/picks/underdog/" data-cta-id="calculator-underdog-result-research" data-cta-surface="calculator_result">Research Underdog picks</a><a class="result-link" href="/analyzer/" data-cta-id="calculator-underdog-result-analyzer" data-cta-surface="calculator_result">Free AI player prop analyzer</a><a class="result-link" href="https://app.propellerpicks.com/signup" data-cta-id="calculator-underdog-result-signup" data-cta-surface="calculator_result">Continue your research free</a></div>
       <div style="margin-top:16px;text-align:center"><button class="copy-btn" type="button" onclick="copyResults()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy Results</button></div>
     </div>
   </div>
@@ -436,8 +436,7 @@ function calculate(){
     scenarioNote.innerHTML=`<div class="prob-label" style="margin-top:16px"><span>Probability scenario only</span><span style="font-size:12px;color:var(--text-3)">Based on your ${wrText} per-pick assumption; no ROI or profitability estimate</span></div>`;
   }
   document.getElementById('results').classList.add('show');
-  gtag('event','calculator_used',{platform:'underdog',entry_type:type,num_picks:n,amount:amount});
-  window.ppPaidSearchEvents?.trackCalculatorResult({entry_type:type,num_picks:n,amount:amount});
+  window.ppPaidSearchEvents?.trackCalculatorCompletion({entry_type:type,num_picks:n});
 }
 
 function copyResults(){
@@ -453,7 +452,7 @@ function toggleFaq(el){const open=el.classList.toggle('open');el.nextElementSibl
 updateUI();
 </script>
 <script src="/assets/js/mobile-nav.js?v=20260624-nav3" defer></script>
-<script src="/assets/js/paid-search-events.js?v=20260708" defer></script>
+<script src="/assets/js/paid-search-events.js?v=20260817" defer></script>
 <script src="/assets/js/video-embeds.js?v=20260720" defer></script>
   <script src="/assets/js/site-nav.js?v=20260712" defer></script>
 </body>

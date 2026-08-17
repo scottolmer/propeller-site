@@ -14,6 +14,10 @@
     document.head.appendChild(script);
   }
 
+  // Other deferred event handlers can start loading before their first event is
+  // queued. This function is synchronous and never delays a navigation.
+  window.ppLoadAnalytics = loadAnalytics;
+
   ['pointerdown', 'keydown', 'touchstart'].forEach((eventName) => {
     window.addEventListener(eventName, loadAnalytics, { once: true, passive: true });
   });

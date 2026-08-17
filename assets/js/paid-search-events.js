@@ -15,6 +15,8 @@
   var params = new URLSearchParams(window.location.search);
   var pagePlatform = platformFromPath(window.location.pathname);
   var calculatorStarted = false;
+  var calculatorCompletedInMemory = false;
+  var completionStorageKey = "pp_calculator_completed_v1:" + window.location.pathname;
 
   function platformFromPath(pathname) {
     if (pathname.indexOf("prizepicks") !== -1) return "prizepicks";
@@ -38,12 +40,37 @@
   }
 
   function track(eventName, eventParams) {
-    if (typeof window.gtag !== "function") return;
-    window.gtag("event", eventName, Object.assign({
+    if (typeof window.ppLoadAnalytics === "function") window.ppLoadAnalytics();
+    window.dataLayer = window.dataLayer || [];
+    var gtag = typeof window.gtag === "function"
+      ? window.gtag
+      : function () { window.dataLayer.push(arguments); };
+    gtag("event", eventName, Object.assign({
       page_path: window.location.pathname,
       page_location: window.location.href,
-      platform: pagePlatform
+      platform: pagePlatform,
+      transport_type: "beacon"
     }, attributionParams(), eventParams || {}));
+    return true;
+  }
+
+  function preservesBrowserNavigation(event, link) {
+    var target = link.target || link.getAttribute("target") || "";
+    return !event || event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ||
+      (typeof event.button === "number" && event.button !== 0) || (target && target !== "_self");
+  }
+
+  function navigateOnce(url) {
+    var navigated = false;
+    return function () {
+      if (navigated) return;
+      navigated = true;
+      if (window.location && typeof window.location.assign === "function") {
+        window.location.assign(url);
+      } else {
+        window.location.href = url;
+      }
+    };
   }
 
   function textFor(node) {
@@ -53,10 +80,46 @@
       .slice(0, 120);
   }
 
+  function clean(value, limit) {
+    return String(value || "").replace(/\s+/g, " ").trim().slice(0, limit || 120);
+  }
+
   function markCalculatorStarted(trigger) {
     if (calculatorStarted) return;
     calculatorStarted = true;
     track("calculator_started", { interaction_type: trigger || "unknown" });
+  }
+
+  function hasCompletedCalculator() {
+    if (calculatorCompletedInMemory) return true;
+    try {
+      return window.sessionStorage.getItem(completionStorageKey) === "1";
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function markCalculatorCompleted() {
+    calculatorCompletedInMemory = true;
+    try {
+      window.sessionStorage.setItem(completionStorageKey, "1");
+    } catch (_) {
+      // The in-memory guard still prevents duplicate events in this page view.
+    }
+  }
+
+  function trackCalculatorCompletion(eventParams) {
+    if (hasCompletedCalculator()) return false;
+    var safe = {};
+    if (eventParams && /^[a-z_]{1,24}$/.test(String(eventParams.entry_type || ""))) {
+      safe.entry_type = eventParams.entry_type;
+    }
+    if (eventParams && Number.isFinite(Number(eventParams.num_picks))) {
+      safe.num_picks = Math.floor(Number(eventParams.num_picks));
+    }
+    track("calculator_completed", safe);
+    markCalculatorCompleted();
+    return true;
   }
 
   function handleCtaClick(event) {
@@ -74,16 +137,25 @@
     var common = {
       link_url: absoluteHref,
       link_text: textFor(link),
-      cta_location: link.closest("nav") ? "nav" : link.closest(".cta-box") ? "cta_box" : "page"
+      cta_location: link.closest("nav") ? "nav" : link.closest(".cta-box") ? "cta_box" : "page",
+      cta_id: clean(link.getAttribute("data-cta-id"), 80) || "unlabeled",
+      cta_surface: clean(link.getAttribute("data-cta-surface"), 80) || "calculator"
     };
 
-    if (isSignup) {
+    if (isSignup && !preservesBrowserNavigation(event, link) && typeof event.preventDefault === "function") {
+      event.preventDefault();
+      var navigate = navigateOnce(absoluteHref);
+      var timeout = window.setTimeout(navigate, 250);
+      common.event_timeout = 250;
+      common.event_callback = function () {
+        window.clearTimeout(timeout);
+        navigate();
+      };
       track("signup_click", common);
+      return;
     }
 
-    track("app_cta_clicked", Object.assign({
-      cta_type: isSignup ? "signup" : isApp ? "app" : "product"
-    }, common));
+    track(isSignup ? "signup_click" : isApp ? "web_app_click" : "research_cta_click", common);
   }
 
   function initCalculatorInteractionTracking() {
@@ -106,9 +178,7 @@
 
   window.ppPaidSearchEvents = {
     track: track,
-    trackCalculatorResult: function (eventParams) {
-      track("calculator_result_viewed", eventParams);
-    },
+    trackCalculatorCompletion: trackCalculatorCompletion,
     trackCopy: function (eventParams) {
       track("calculator_copy_clicked", eventParams);
     },
