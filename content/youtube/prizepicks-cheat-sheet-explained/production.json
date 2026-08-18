@@ -80,7 +80,11 @@
     "chapters_verified": 12,
     "pinned_comment_posted": true,
     "pinned_comment_id": "Ugz5QIx2DYF3F2EJzHh4AaABAg",
-    "pinned_comment_url": "https://www.youtube.com/watch?v=z-IRp7LxgXc&lc=Ugz5QIx2DYF3F2EJzHh4AaABAg"
+    "pinned_comment_url": "https://www.youtube.com/watch?v=z-IRp7LxgXc&lc=Ugz5QIx2DYF3F2EJzHh4AaABAg",
+    "webpage_deployed": true,
+    "webpage_url": "https://propellerpicks.com/guides/prizepicks-cheat-sheet/",
+    "webpage_deployed_at": "2026-08-18T21:40:25Z",
+    "webpage_deploy_sha": "9d1761dbe00f20d8a7106ddc4a091d8d23a8c4bc"
   },
   "checkpoints": [
     {
@@ -122,6 +126,11 @@
       "phase": "public_release",
       "at": "2026-08-18T21:26:36Z",
       "note": "Published z-IRp7LxgXc as Public with embedding enabled; external yt-dlp verification confirmed public availability, 233-second duration, 12 chapters, en-US uploaded captions, public 1280x720 custom thumbnail, owner watch-page 1080p playback, and the approved source-boundary comment pinned"
+    },
+    {
+      "phase": "web_release",
+      "at": "2026-08-18T21:40:25Z",
+      "note": "Deployed the companion page through GitHub Pages run 32188895040 at 9d1761dbe; live bytes matched origin/master and the public lazy player resolved to z-IRp7LxgXc through youtube-nocookie.com"
     }
   ]
 }

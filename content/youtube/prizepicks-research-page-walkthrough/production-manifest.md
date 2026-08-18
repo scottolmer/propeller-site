@@ -56,4 +56,4 @@ Full sourced notes and URLs are recorded in `production-notes.md` and `productio
 
 ## Pending gates
 
-- Coordinated webpage deployment and live lazy-player, analytics, internal-link, transcript, and `VideoObject` verification.
+- None. The companion page deployed successfully through GitHub Pages run `32188895040`; live bytes matched `origin/master` at `9d1761dbe`, and the real-ID lazy player, analytics placement, internal links, transcript, and `VideoObject` were verified in production.
