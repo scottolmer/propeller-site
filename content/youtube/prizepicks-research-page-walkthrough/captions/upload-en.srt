@@ -1,0 +1,320 @@
+1
+00:00:00,000 --> 00:00:03,860
+Here is the safe way to use Propeller's
+PrizePicks research page:
+
+2
+00:00:04,400 --> 00:00:06,920
+find a current row, match the player,
+
+3
+00:00:07,060 --> 00:00:10,360
+stat, and exact line, read direction and
+confidence,
+
+4
+00:00:10,760 --> 00:00:15,090
+inspect the supporting evidence and
+timestamp, and then verify the same
+
+5
+00:00:15,100 --> 00:00:19,260
+projection inside PrizePicks. If the final
+match fails,
+
+6
+00:00:19,680 --> 00:00:24,150
+stop. We will use one real, dated example
+captured on August
+
+7
+00:00:24,160 --> 00:00:28,760
+seventeenth, twenty twenty-six. This is
+current Propeller analysis,
+
+8
+00:00:29,360 --> 00:00:32,440
+not a claim that PrizePicks offers the
+same line.
+
+9
+00:00:33,440 --> 00:00:37,100
+First, open the PrizePicks research page
+and check the visible date.
+
+10
+00:00:37,680 --> 00:00:40,760
+The page requests current public preview
+data for NBA,
+
+11
+00:00:41,900 --> 00:00:47,110
+MLB, and NHL. On this capture, MLB had
+five Propeller
+
+12
+00:00:47,120 --> 00:00:50,980
+research rows while NBA and NHL returned
+no rows.
+
+13
+00:00:51,760 --> 00:00:54,740
+Desktop and mobile show the same first
+row:
+
+14
+00:00:55,200 --> 00:01:00,390
+Christian Franklin, Baltimore, runs batted
+in, zero point five.
+
+15
+00:01:00,400 --> 00:01:05,710
+The displayed direction is under and the
+model-confidence score is seventy-nine.
+
+16
+00:01:05,720 --> 00:01:08,860
+Before reading anything else, pause on
+those three fields:
+
+17
+00:01:09,180 --> 00:01:10,700
+player, stat, and line.
+
+18
+00:01:11,280 --> 00:01:12,820
+They define the research question.
+
+19
+00:01:13,520 --> 00:01:16,610
+A different player, different stat, or
+different number is not a
+
+20
+00:01:16,620 --> 00:01:20,980
+match. Next, read direction and confidence
+separately.
+
+21
+00:01:21,600 --> 00:01:24,430
+Under is the side supported by the
+combined analysis.
+
+22
+00:01:24,440 --> 00:01:29,090
+Seventy-nine is the strength of that
+directional signal for the displayed
+
+23
+00:01:29,100 --> 00:01:33,040
+line. It is not a seventy-nine percent win
+probability.
+
+24
+00:01:34,280 --> 00:01:36,600
+Now inspect the evidence behind the row.
+
+25
+00:01:37,140 --> 00:01:39,910
+The dated analysis detail included five
+agents.
+
+26
+00:01:39,920 --> 00:01:44,320
+Hit-rate evidence noted a long run of
+games below this threshold.
+
+27
+00:01:44,880 --> 00:01:47,000
+Ballpark context leaned under.
+
+28
+00:01:47,420 --> 00:01:49,320
+Usage produced an under projection.
+
+29
+00:01:50,020 --> 00:01:51,700
+Market context was neutral.
+
+30
+00:01:52,340 --> 00:01:56,120
+The injury agent reported that no injury
+data was available.
+
+31
+00:01:57,260 --> 00:01:59,500
+That missing injury input matters.
+
+32
+00:01:59,980 --> 00:02:03,170
+It tells you to check late news and the
+expected lineup
+
+33
+00:02:03,180 --> 00:02:07,970
+yourself. Agent evidence explains why the
+model leaned one way;
+
+34
+00:02:07,980 --> 00:02:11,830
+it does not remove the need to verify what
+changed after
+
+35
+00:02:11,840 --> 00:02:15,320
+the analysis ran. Then check freshness.
+
+36
+00:02:15,860 --> 00:02:19,750
+The source analysis timestamp for this row
+was August seventeenth at
+
+37
+00:02:19,760 --> 00:02:24,370
+twenty thirty UTC. The public page and
+both captures used the
+
+38
+00:02:24,380 --> 00:02:28,810
+same dated row. A response generated later
+does not make the
+
+39
+00:02:28,820 --> 00:02:32,640
+underlying analysis newer, so use the
+analysis timestamp,
+
+40
+00:02:33,140 --> 00:02:34,760
+not just the page-load time.
+
+41
+00:02:35,340 --> 00:02:38,000
+Now perform the PrizePicks line check.
+
+42
+00:02:38,400 --> 00:02:41,510
+Open the current Player Picks board and
+search for the same
+
+43
+00:02:41,520 --> 00:02:45,930
+player and stat. Compare Christian
+Franklin, runs batted in,
+
+44
+00:02:45,940 --> 00:02:50,100
+zero point five. Do not match by player
+name alone.
+
+45
+00:02:51,080 --> 00:02:55,550
+For this production capture, Propeller's
+platform-backed PrizePicks endpoint
+
+46
+00:02:55,560 --> 00:03:00,850
+returned no records. The analysis record
+also identified its market source
+
+47
+00:03:00,860 --> 00:03:03,050
+as Underdog, not PrizePicks.
+
+48
+00:03:03,060 --> 00:03:08,330
+So the exact projection could not be
+verified in PrizePicks.
+
+49
+00:03:08,340 --> 00:03:11,670
+That is not a reason to substitute a
+similar line or
+
+50
+00:03:11,680 --> 00:03:13,420
+reuse an older screenshot.
+
+51
+00:03:14,240 --> 00:03:15,180
+It is the answer.
+
+52
+00:03:15,720 --> 00:03:18,720
+No verified match means no action from
+this row.
+
+53
+00:03:19,720 --> 00:03:21,740
+On mobile, follow the same order.
+
+54
+00:03:22,260 --> 00:03:24,800
+Confirm the date, player, stat, and line.
+
+55
+00:03:25,380 --> 00:03:26,920
+Read the direction and confidence.
+
+56
+00:03:27,580 --> 00:03:29,000
+Open the detailed evidence.
+
+57
+00:03:29,880 --> 00:03:32,110
+Check missing inputs and the analysis
+time.
+
+58
+00:03:32,120 --> 00:03:36,500
+Then compare the actual PrizePicks
+projection on the final screen.
+
+59
+00:03:37,700 --> 00:03:40,370
+If the line moves from zero point five,
+
+60
+00:03:40,380 --> 00:03:43,680
+if the stat type differs, if the player is
+unavailable,
+
+61
+00:03:44,320 --> 00:03:48,210
+or if the projection is missing, the
+original research question no
+
+62
+00:03:48,220 --> 00:03:53,040
+longer matches. Refresh Propeller or
+choose another current row.
+
+63
+00:03:54,040 --> 00:03:56,160
+The page is a starting point for research,
+
+64
+00:03:56,620 --> 00:03:58,340
+not a shortcut around verification.
+
+65
+00:03:59,020 --> 00:04:02,070
+Propeller is independent, does not submit
+entries,
+
+66
+00:04:02,080 --> 00:04:04,180
+and does not guarantee outcomes.
+
+67
+00:04:04,920 --> 00:04:08,020
+The safest workflow is simple: exact row,
+
+68
+00:04:08,260 --> 00:04:12,340
+inspectable evidence, honest freshness,
+actual platform check,
+
+69
+00:04:12,740 --> 00:04:14,380
+and stop when they do not agree.

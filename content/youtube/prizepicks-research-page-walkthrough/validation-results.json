@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "generated_at": "2026-08-18T21:27:44Z",
+  "overall": "pass",
+  "package": "prizepicks-research-page-walkthrough",
+  "checks": {
+    "freshness_and_source_boundary": {
+      "status": "pass",
+      "result": "The August 17, 2026 Propeller row and 20:30:12 UTC source-analysis time are dated; the final-board interaction is persistently labeled illustrative and is followed by the captured empty platform-backed PrizePicks result."
+    },
+    "narration": {
+      "status": "pass",
+      "provider": "local Kokoro",
+      "voice": "am_michael",
+      "script_words": 562,
+      "caption_cues": 69
+    },
+    "remotion": {
+      "status": "pass",
+      "version": "4.0.512",
+      "lint_and_typescript": "pass",
+      "semantic_beats_verified": 15
+    },
+    "review_media": {
+      "status": "pass",
+      "codec": "H.264 High / AAC LC",
+      "dimensions": "1280x720",
+      "fps": 30,
+      "duration_seconds": 255.2,
+      "bytes": 20107317,
+      "full_decode": "pass"
+    },
+    "master_media": {
+      "status": "pass",
+      "codec": "H.264 High / AAC LC",
+      "dimensions": "1920x1080",
+      "fps": 30,
+      "duration_seconds": 255.2,
+      "bytes": 21974946,
+      "audio_sample_rate_hz": 48000,
+      "integrated_loudness_lufs": -14.5,
+      "true_peak_dbfs": -2.3,
+      "fast_start": true,
+      "full_decode": "pass",
+      "black_interval_scan": "none at 0.5 seconds / pixel threshold 0.02",
+      "silence_interval_scan": "none longer than 1.5 seconds at -45 dB"
+    },
+    "visual_review": {
+      "status": "pass",
+      "result": "Independent review passed the cursor-guided walkthrough, 88 px caption-safe margin, line/confidence/agent timing, persistent illustrative label, desktop/mobile consistency, Injury-first missing-input beat, and explicit no-match transition."
+    },
+    "website": {
+      "status": "pass",
+      "result": "3 Wave B integration tests, 8 schema/SEO tests, 3,125-page consistency scan, 3,124-page structured-data scan, product-fact scan, and generated sitemap check passed."
+    },
+    "independent_code_review": {
+      "status": "pass",
+      "result": "Final recheck found no remaining Wave B blocker; all declared deliverables resolve and release gates remain closed."
+    },
+    "private_youtube_upload": {
+      "status": "pass",
+      "result": "Video yO6gWjmH_5w is Private and owner-playable at 1080p with the approved title, description, thumbnail, chapters, and English (United States) timed caption track; copyright and Community Guidelines checks found no issues; embedding is disabled."
+    },
+    "public_youtube_release": {
+      "status": "pass",
+      "result": "Video yO6gWjmH_5w is externally Public and embeddable; the public watch page, 1080p playback, 1280x720 custom thumbnail, 15 chapters, approved metadata links, en-US uploaded captions, and approved pinned source-boundary comment were verified."
+    }
+  },
+  "release_gates": {
+    "exact_review_package_approved": true,
+    "requested_visibility": "public",
+    "uploaded": true,
+    "youtube_video_id": "yO6gWjmH_5w",
+    "web_embed_activated": true,
+    "deployed": false
+  }
+}

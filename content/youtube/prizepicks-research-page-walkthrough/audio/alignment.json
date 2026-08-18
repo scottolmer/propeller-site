@@ -1,0 +1,7108 @@
+{
+  "language": "en",
+  "language_probability": 1,
+  "duration": 255.1,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.74,
+      "text": "Here is the Safeway to use Propeller's Price Bix research page."
+    },
+    {
+      "start": 4.44,
+      "end": 10.24,
+      "text": "Find a current row, match the player, stat and exact line, red direction and confidence,"
+    },
+    {
+      "start": 10.8,
+      "end": 12.96,
+      "text": "inspect the supporting evidence and timestamp,"
+    },
+    {
+      "start": 13.88,
+      "end": 16.98,
+      "text": "and then verify the same projection inside Price Bix."
+    },
+    {
+      "start": 17.72,
+      "end": 19.72,
+      "text": "If the final match fails, stop."
+    },
+    {
+      "start": 20.58,
+      "end": 26.06,
+      "text": "We will use one real, dated example captured on August 17th, 2026."
+    },
+    {
+      "start": 26.06,
+      "end": 32.32,
+      "text": "This is current Propeller analysis, not a claim that Price Bix offers the same line."
+    },
+    {
+      "start": 33.48,
+      "end": 36.98,
+      "text": "First, open the Price Bix research page and check the visible date."
+    },
+    {
+      "start": 37.72,
+      "end": 43.08,
+      "text": "The page requests current public preview data for NBA, MLB and NHL."
+    },
+    {
+      "start": 44.08,
+      "end": 50.86,
+      "text": "On this capture, MLB had five Propeller research rows while NBA and NHL returned no rows."
+    },
+    {
+      "start": 51.8,
+      "end": 54.62,
+      "text": "Desktop and mobile show the same first row."
+    },
+    {
+      "start": 55.24,
+      "end": 59.84,
+      "text": "Christian Franklin, Baltimore, runs batted in, 0.5."
+    },
+    {
+      "start": 60.44,
+      "end": 64.46,
+      "text": "The displayed direction is under and the model confidence score is 79."
+    },
+    {
+      "start": 65.76,
+      "end": 70.58,
+      "text": "Before reading anything else, pause on those three fields, player, stat and line."
+    },
+    {
+      "start": 71.32,
+      "end": 72.7,
+      "text": "They define the research question."
+    },
+    {
+      "start": 73.56,
+      "end": 76.92,
+      "text": "A different player, different stat or different number is not a match."
+    },
+    {
+      "start": 77.92,
+      "end": 80.86,
+      "text": "Next, read direction and confidence separately."
+    },
+    {
+      "start": 81.64,
+      "end": 84.48,
+      "text": "Under is the side supported by the combined analysis."
+    },
+    {
+      "start": 85.44,
+      "end": 89.58,
+      "text": "79 is the strength of that directional signal for the displayed line."
+    },
+    {
+      "start": 90.3,
+      "end": 92.92,
+      "text": "It is not a 79% win probability."
+    },
+    {
+      "start": 94.32,
+      "end": 96.48,
+      "text": "Now inspect the evidence behind the row."
+    },
+    {
+      "start": 97.18,
+      "end": 99.96,
+      "text": "The dated analysis detail included five agents."
+    },
+    {
+      "start": 99.96,
+      "end": 104.2,
+      "text": "Hitch rate evidence noted a long run of games below this threshold."
+    },
+    {
+      "start": 104.92,
+      "end": 106.88,
+      "text": "Ballpark context leaned under."
+    },
+    {
+      "start": 107.46,
+      "end": 109.2,
+      "text": "Usage produced an under projection."
+    },
+    {
+      "start": 110.06,
+      "end": 111.58,
+      "text": "Market context was neutral."
+    },
+    {
+      "start": 112.38,
+      "end": 116.0,
+      "text": "The injury agent reported that no injury data was available."
+    },
+    {
+      "start": 117.3,
+      "end": 119.38,
+      "text": "That missing injury input matters."
+    },
+    {
+      "start": 120.02,
+      "end": 123.76,
+      "text": "It tells you to check late news and the expected lineup yourself."
+    },
+    {
+      "start": 124.54,
+      "end": 128.02,
+      "text": "Agent evidence explains why the model leaned one way."
+    },
+    {
+      "start": 128.02,
+      "end": 132.84,
+      "text": "It does not remove the need to verify what changed after the analysis ran."
+    },
+    {
+      "start": 133.88,
+      "end": 135.2,
+      "text": "Then check freshness."
+    },
+    {
+      "start": 135.9,
+      "end": 141.0,
+      "text": "The source analysis timestamp for this row was August 17th at 2030 UTC."
+    },
+    {
+      "start": 141.88,
+      "end": 145.46,
+      "text": "The public page in both captures used the same dated row."
+    },
+    {
+      "start": 146.24,
+      "end": 150.4,
+      "text": "A response generated later does not make the underlying analysis newer,"
+    },
+    {
+      "start": 151.0,
+      "end": 154.64,
+      "text": "so use the analysis timestamp, not just the page load time."
+    },
+    {
+      "start": 155.38,
+      "end": 157.88,
+      "text": "Now perform the prize picks line check."
+    },
+    {
+      "start": 158.44,
+      "end": 162.54,
+      "text": "Open the current player picks board and search for the same player and stat."
+    },
+    {
+      "start": 163.18,
+      "end": 167.58,
+      "text": "Compare Christian Franklin runs batted in 0.5."
+    },
+    {
+      "start": 168.14,
+      "end": 169.98,
+      "text": "Do not match by player name alone."
+    },
+    {
+      "start": 171.12,
+      "end": 175.6,
+      "text": "For this production capture, Propeller's platform backed prize picks end point"
+    },
+    {
+      "start": 175.6,
+      "end": 176.78,
+      "text": "returned no records."
+    },
+    {
+      "start": 177.72,
+      "end": 183.1,
+      "text": "The analysis record also identified its market source as underdog, not prize picks."
+    },
+    {
+      "start": 183.1,
+      "end": 187.26,
+      "text": "So the exact projection could not be verified in prize picks."
+    },
+    {
+      "start": 188.38,
+      "end": 193.3,
+      "text": "That is not a reason to substitute a similar line or reuse an older screenshot."
+    },
+    {
+      "start": 194.28,
+      "end": 195.06,
+      "text": "It is the answer."
+    },
+    {
+      "start": 195.76,
+      "end": 198.6,
+      "text": "No verified match means no action from this row."
+    },
+    {
+      "start": 199.76,
+      "end": 201.62,
+      "text": "On mobile follow the same order."
+    },
+    {
+      "start": 202.3,
+      "end": 204.68,
+      "text": "Confirm the date, player, stat and line."
+    },
+    {
+      "start": 205.42,
+      "end": 206.8,
+      "text": "Read the direction and confidence."
+    },
+    {
+      "start": 207.62,
+      "end": 208.88,
+      "text": "Open the detailed evidence."
+    },
+    {
+      "start": 209.92,
+      "end": 212.16,
+      "text": "Check missing inputs and the analysis time."
+    },
+    {
+      "start": 212.16,
+      "end": 216.38,
+      "text": "Then compare the actual prize picks projection on the final screen."
+    },
+    {
+      "start": 217.74,
+      "end": 223.56,
+      "text": "If the line moves from 0.5, if the stat type differs, if the player is unavailable,"
+    },
+    {
+      "start": 224.36,
+      "end": 229.12,
+      "text": "or if the projection is missing, the original research question no longer matches."
+    },
+    {
+      "start": 229.98,
+      "end": 232.92,
+      "text": "Refresh Propeller or choose another current row."
+    },
+    {
+      "start": 234.08,
+      "end": 238.22,
+      "text": "The page is a starting point for research, not a shortcut around verification."
+    },
+    {
+      "start": 239.06,
+      "end": 244.06,
+      "text": "Propeller is independent, does not submit entries and does not guarantee outcomes."
+    },
+    {
+      "start": 244.96,
+      "end": 246.58,
+      "text": "The safest workflow is simple."
+    },
+    {
+      "start": 247.22,
+      "end": 252.22,
+      "text": "Exact row, inspectable evidence, honest freshness, actual platform check,"
+    },
+    {
+      "start": 252.78,
+      "end": 254.26,
+      "text": "and stop when they do not agree."
+    }
+  ],
+  "words": [
+    {
+      "start": 0.0,
+      "end": 0.54,
+      "text": "Here",
+      "probability": 0.8512676954269409
+    },
+    {
+      "start": 0.54,
+      "end": 0.74,
+      "text": "is",
+      "probability": 0.9789373278617859
+    },
+    {
+      "start": 0.74,
+      "end": 0.88,
+      "text": "the",
+      "probability": 0.9959011673927307
+    },
+    {
+      "start": 0.88,
+      "end": 1.36,
+      "text": "Safeway",
+      "probability": 0.8655152916908264
+    },
+    {
+      "start": 1.36,
+      "end": 1.56,
+      "text": "to",
+      "probability": 0.8495752215385437
+    },
+    {
+      "start": 1.56,
+      "end": 1.74,
+      "text": "use",
+      "probability": 0.7243271470069885
+    },
+    {
+      "start": 1.74,
+      "end": 2.38,
+      "text": "Propeller's",
+      "probability": 0.905405580997467
+    },
+    {
+      "start": 2.38,
+      "end": 2.58,
+      "text": "Price",
+      "probability": 0.1119210422039032
+    },
+    {
+      "start": 2.58,
+      "end": 2.94,
+      "text": "Bix",
+      "probability": 0.5213732868432999
+    },
+    {
+      "start": 2.94,
+      "end": 3.16,
+      "text": "research",
+      "probability": 0.61836177110672
+    },
+    {
+      "start": 3.16,
+      "end": 3.74,
+      "text": "page.",
+      "probability": 0.9960935711860657
+    },
+    {
+      "start": 4.44,
+      "end": 4.64,
+      "text": "Find",
+      "probability": 0.9917919635772705
+    },
+    {
+      "start": 4.64,
+      "end": 4.8,
+      "text": "a",
+      "probability": 0.9944533705711365
+    },
+    {
+      "start": 4.8,
+      "end": 5.0,
+      "text": "current",
+      "probability": 0.9493491053581238
+    },
+    {
+      "start": 5.0,
+      "end": 5.42,
+      "text": "row,",
+      "probability": 0.9306436777114868
+    },
+    {
+      "start": 5.98,
+      "end": 6.16,
+      "text": "match",
+      "probability": 0.9823430180549622
+    },
+    {
+      "start": 6.16,
+      "end": 6.42,
+      "text": "the",
+      "probability": 0.9966902732849121
+    },
+    {
+      "start": 6.42,
+      "end": 6.8,
+      "text": "player,",
+      "probability": 0.9715293645858765
+    },
+    {
+      "start": 7.1,
+      "end": 7.3,
+      "text": "stat",
+      "probability": 0.9691573977470398
+    },
+    {
+      "start": 7.3,
+      "end": 7.66,
+      "text": "and",
+      "probability": 0.6198675036430359
+    },
+    {
+      "start": 7.66,
+      "end": 7.82,
+      "text": "exact",
+      "probability": 0.9942803382873535
+    },
+    {
+      "start": 7.82,
+      "end": 8.46,
+      "text": "line,",
+      "probability": 0.9974356293678284
+    },
+    {
+      "start": 8.92,
+      "end": 9.02,
+      "text": "red",
+      "probability": 0.908601701259613
+    },
+    {
+      "start": 9.02,
+      "end": 9.48,
+      "text": "direction",
+      "probability": 0.987774670124054
+    },
+    {
+      "start": 9.48,
+      "end": 9.8,
+      "text": "and",
+      "probability": 0.9395320415496826
+    },
+    {
+      "start": 9.8,
+      "end": 10.24,
+      "text": "confidence,",
+      "probability": 0.9991809725761414
+    },
+    {
+      "start": 10.8,
+      "end": 11.24,
+      "text": "inspect",
+      "probability": 0.9909296631813049
+    },
+    {
+      "start": 11.24,
+      "end": 11.54,
+      "text": "the",
+      "probability": 0.9986112117767334
+    },
+    {
+      "start": 11.54,
+      "end": 11.92,
+      "text": "supporting",
+      "probability": 0.9836277961730957
+    },
+    {
+      "start": 11.92,
+      "end": 12.3,
+      "text": "evidence",
+      "probability": 0.9829634428024292
+    },
+    {
+      "start": 12.3,
+      "end": 12.68,
+      "text": "and",
+      "probability": 0.7723698019981384
+    },
+    {
+      "start": 12.68,
+      "end": 12.96,
+      "text": "timestamp,",
+      "probability": 0.7514596581459045
+    },
+    {
+      "start": 13.88,
+      "end": 13.98,
+      "text": "and",
+      "probability": 0.9854734539985657
+    },
+    {
+      "start": 13.98,
+      "end": 14.12,
+      "text": "then",
+      "probability": 0.9971478581428528
+    },
+    {
+      "start": 14.12,
+      "end": 14.44,
+      "text": "verify",
+      "probability": 0.991895854473114
+    },
+    {
+      "start": 14.44,
+      "end": 14.86,
+      "text": "the",
+      "probability": 0.997808039188385
+    },
+    {
+      "start": 14.86,
+      "end": 15.14,
+      "text": "same",
+      "probability": 0.9984103441238403
+    },
+    {
+      "start": 15.14,
+      "end": 15.5,
+      "text": "projection",
+      "probability": 0.9967818260192871
+    },
+    {
+      "start": 15.5,
+      "end": 16.06,
+      "text": "inside",
+      "probability": 0.9954417943954468
+    },
+    {
+      "start": 16.06,
+      "end": 16.52,
+      "text": "Price",
+      "probability": 0.5582002401351929
+    },
+    {
+      "start": 16.52,
+      "end": 16.98,
+      "text": "Bix.",
+      "probability": 0.9958626627922058
+    },
+    {
+      "start": 17.72,
+      "end": 17.86,
+      "text": "If",
+      "probability": 0.9929360747337341
+    },
+    {
+      "start": 17.86,
+      "end": 18.0,
+      "text": "the",
+      "probability": 0.9932891726493835
+    },
+    {
+      "start": 18.0,
+      "end": 18.36,
+      "text": "final",
+      "probability": 0.9455640316009521
+    },
+    {
+      "start": 18.36,
+      "end": 18.62,
+      "text": "match",
+      "probability": 0.9928063154220581
+    },
+    {
+      "start": 18.62,
+      "end": 19.14,
+      "text": "fails,",
+      "probability": 0.9991795420646667
+    },
+    {
+      "start": 19.72,
+      "end": 19.72,
+      "text": "stop.",
+      "probability": 0.987149178981781
+    },
+    {
+      "start": 20.58,
+      "end": 20.94,
+      "text": "We",
+      "probability": 0.9896172285079956
+    },
+    {
+      "start": 20.94,
+      "end": 21.08,
+      "text": "will",
+      "probability": 0.9951856732368469
+    },
+    {
+      "start": 21.08,
+      "end": 21.28,
+      "text": "use",
+      "probability": 0.9990954399108887
+    },
+    {
+      "start": 21.28,
+      "end": 21.58,
+      "text": "one",
+      "probability": 0.9571706056594849
+    },
+    {
+      "start": 21.58,
+      "end": 22.04,
+      "text": "real,",
+      "probability": 0.97700035572052
+    },
+    {
+      "start": 22.3,
+      "end": 22.5,
+      "text": "dated",
+      "probability": 0.978773295879364
+    },
+    {
+      "start": 22.5,
+      "end": 22.98,
+      "text": "example",
+      "probability": 0.9821677207946777
+    },
+    {
+      "start": 22.98,
+      "end": 23.56,
+      "text": "captured",
+      "probability": 0.9798011779785156
+    },
+    {
+      "start": 23.56,
+      "end": 23.82,
+      "text": "on",
+      "probability": 0.9960793852806091
+    },
+    {
+      "start": 23.82,
+      "end": 24.2,
+      "text": "August",
+      "probability": 0.9596371054649353
+    },
+    {
+      "start": 24.2,
+      "end": 25.4,
+      "text": "17th,",
+      "probability": 0.7977354824542999
+    },
+    {
+      "start": 25.6,
+      "end": 26.06,
+      "text": "2026.",
+      "probability": 0.9646604359149933
+    },
+    {
+      "start": 26.06,
+      "end": 27.3,
+      "text": "This",
+      "probability": 0.2026669681072235
+    },
+    {
+      "start": 27.3,
+      "end": 27.5,
+      "text": "is",
+      "probability": 0.9871370792388916
+    },
+    {
+      "start": 27.5,
+      "end": 27.82,
+      "text": "current",
+      "probability": 0.9625415205955505
+    },
+    {
+      "start": 27.82,
+      "end": 28.36,
+      "text": "Propeller",
+      "probability": 0.6642327780524889
+    },
+    {
+      "start": 28.36,
+      "end": 28.64,
+      "text": "analysis,",
+      "probability": 0.5939969420433044
+    },
+    {
+      "start": 29.4,
+      "end": 29.66,
+      "text": "not",
+      "probability": 0.9952372312545776
+    },
+    {
+      "start": 29.66,
+      "end": 29.72,
+      "text": "a",
+      "probability": 0.9966840147972107
+    },
+    {
+      "start": 29.72,
+      "end": 30.04,
+      "text": "claim",
+      "probability": 0.9997254014015198
+    },
+    {
+      "start": 30.04,
+      "end": 30.34,
+      "text": "that",
+      "probability": 0.9936747550964355
+    },
+    {
+      "start": 30.34,
+      "end": 30.62,
+      "text": "Price",
+      "probability": 0.057887859642505646
+    },
+    {
+      "start": 30.62,
+      "end": 31.04,
+      "text": "Bix",
+      "probability": 0.48229990154504776
+    },
+    {
+      "start": 31.04,
+      "end": 31.44,
+      "text": "offers",
+      "probability": 0.9777997732162476
+    },
+    {
+      "start": 31.44,
+      "end": 31.7,
+      "text": "the",
+      "probability": 0.9976492524147034
+    },
+    {
+      "start": 31.7,
+      "end": 31.96,
+      "text": "same",
+      "probability": 0.9987704157829285
+    },
+    {
+      "start": 31.96,
+      "end": 32.32,
+      "text": "line.",
+      "probability": 0.9964607357978821
+    },
+    {
+      "start": 33.48,
+      "end": 33.7,
+      "text": "First,",
+      "probability": 0.8917065262794495
+    },
+    {
+      "start": 33.96,
+      "end": 34.24,
+      "text": "open",
+      "probability": 0.9892894625663757
+    },
+    {
+      "start": 34.24,
+      "end": 34.34,
+      "text": "the",
+      "probability": 0.9966676831245422
+    },
+    {
+      "start": 34.34,
+      "end": 34.5,
+      "text": "Price",
+      "probability": 0.9353030920028687
+    },
+    {
+      "start": 34.5,
+      "end": 34.86,
+      "text": "Bix",
+      "probability": 0.9929429590702057
+    },
+    {
+      "start": 34.86,
+      "end": 35.02,
+      "text": "research",
+      "probability": 0.762758731842041
+    },
+    {
+      "start": 35.02,
+      "end": 35.56,
+      "text": "page",
+      "probability": 0.9967361092567444
+    },
+    {
+      "start": 35.56,
+      "end": 35.96,
+      "text": "and",
+      "probability": 0.9677222967147827
+    },
+    {
+      "start": 35.96,
+      "end": 36.16,
+      "text": "check",
+      "probability": 0.9980528354644775
+    },
+    {
+      "start": 36.16,
+      "end": 36.36,
+      "text": "the",
+      "probability": 0.9958953857421875
+    },
+    {
+      "start": 36.36,
+      "end": 36.56,
+      "text": "visible",
+      "probability": 0.9712779521942139
+    },
+    {
+      "start": 36.56,
+      "end": 36.98,
+      "text": "date.",
+      "probability": 0.9918931722640991
+    },
+    {
+      "start": 37.72,
+      "end": 37.8,
+      "text": "The",
+      "probability": 0.9469125270843506
+    },
+    {
+      "start": 37.8,
+      "end": 38.04,
+      "text": "page",
+      "probability": 0.9321421384811401
+    },
+    {
+      "start": 38.04,
+      "end": 38.5,
+      "text": "requests",
+      "probability": 0.9868996143341064
+    },
+    {
+      "start": 38.5,
+      "end": 39.04,
+      "text": "current",
+      "probability": 0.9943895936012268
+    },
+    {
+      "start": 39.04,
+      "end": 39.34,
+      "text": "public",
+      "probability": 0.9597453474998474
+    },
+    {
+      "start": 39.34,
+      "end": 39.74,
+      "text": "preview",
+      "probability": 0.9960654377937317
+    },
+    {
+      "start": 39.74,
+      "end": 40.12,
+      "text": "data",
+      "probability": 0.9965260624885559
+    },
+    {
+      "start": 40.12,
+      "end": 40.4,
+      "text": "for",
+      "probability": 0.9980207681655884
+    },
+    {
+      "start": 40.4,
+      "end": 40.64,
+      "text": "NBA,",
+      "probability": 0.6032347083091736
+    },
+    {
+      "start": 41.94,
+      "end": 41.94,
+      "text": "MLB",
+      "probability": 0.979812741279602
+    },
+    {
+      "start": 41.94,
+      "end": 42.8,
+      "text": "and",
+      "probability": 0.46167895197868347
+    },
+    {
+      "start": 42.8,
+      "end": 43.08,
+      "text": "NHL.",
+      "probability": 0.9946752786636353
+    },
+    {
+      "start": 44.08,
+      "end": 44.32,
+      "text": "On",
+      "probability": 0.9939033389091492
+    },
+    {
+      "start": 44.32,
+      "end": 44.46,
+      "text": "this",
+      "probability": 0.9982774257659912
+    },
+    {
+      "start": 44.46,
+      "end": 44.76,
+      "text": "capture,",
+      "probability": 0.9769781827926636
+    },
+    {
+      "start": 45.38,
+      "end": 45.78,
+      "text": "MLB",
+      "probability": 0.9984186887741089
+    },
+    {
+      "start": 45.78,
+      "end": 46.2,
+      "text": "had",
+      "probability": 0.9958586096763611
+    },
+    {
+      "start": 46.2,
+      "end": 46.52,
+      "text": "five",
+      "probability": 0.9188075065612793
+    },
+    {
+      "start": 46.52,
+      "end": 47.16,
+      "text": "Propeller",
+      "probability": 0.9821699062983195
+    },
+    {
+      "start": 47.16,
+      "end": 47.56,
+      "text": "research",
+      "probability": 0.9725514054298401
+    },
+    {
+      "start": 47.56,
+      "end": 47.82,
+      "text": "rows",
+      "probability": 0.9593275785446167
+    },
+    {
+      "start": 47.82,
+      "end": 48.18,
+      "text": "while",
+      "probability": 0.8441829681396484
+    },
+    {
+      "start": 48.18,
+      "end": 48.52,
+      "text": "NBA",
+      "probability": 0.995201587677002
+    },
+    {
+      "start": 48.52,
+      "end": 49.22,
+      "text": "and",
+      "probability": 0.9973788261413574
+    },
+    {
+      "start": 49.22,
+      "end": 49.58,
+      "text": "NHL",
+      "probability": 0.9988916516304016
+    },
+    {
+      "start": 49.58,
+      "end": 50.16,
+      "text": "returned",
+      "probability": 0.5418246388435364
+    },
+    {
+      "start": 50.16,
+      "end": 50.62,
+      "text": "no",
+      "probability": 0.9928163290023804
+    },
+    {
+      "start": 50.62,
+      "end": 50.86,
+      "text": "rows.",
+      "probability": 0.9818731546401978
+    },
+    {
+      "start": 51.8,
+      "end": 52.44,
+      "text": "Desktop",
+      "probability": 8.244481432484463e-05
+    },
+    {
+      "start": 52.44,
+      "end": 52.96,
+      "text": "and",
+      "probability": 0.9704080820083618
+    },
+    {
+      "start": 52.96,
+      "end": 53.14,
+      "text": "mobile",
+      "probability": 0.6192396283149719
+    },
+    {
+      "start": 53.14,
+      "end": 53.52,
+      "text": "show",
+      "probability": 0.9846467971801758
+    },
+    {
+      "start": 53.52,
+      "end": 53.72,
+      "text": "the",
+      "probability": 0.9968371391296387
+    },
+    {
+      "start": 53.72,
+      "end": 53.98,
+      "text": "same",
+      "probability": 0.9896608591079712
+    },
+    {
+      "start": 53.98,
+      "end": 54.32,
+      "text": "first",
+      "probability": 0.9927785992622375
+    },
+    {
+      "start": 54.32,
+      "end": 54.62,
+      "text": "row.",
+      "probability": 0.9978451728820801
+    },
+    {
+      "start": 55.24,
+      "end": 55.54,
+      "text": "Christian",
+      "probability": 0.9236694574356079
+    },
+    {
+      "start": 55.54,
+      "end": 55.86,
+      "text": "Franklin,",
+      "probability": 0.9677781462669373
+    },
+    {
+      "start": 56.82,
+      "end": 56.82,
+      "text": "Baltimore,",
+      "probability": 0.9937176704406738
+    },
+    {
+      "start": 57.18,
+      "end": 57.46,
+      "text": "runs",
+      "probability": 0.9915958046913147
+    },
+    {
+      "start": 57.46,
+      "end": 57.9,
+      "text": "batted",
+      "probability": 0.9634358286857605
+    },
+    {
+      "start": 57.9,
+      "end": 58.22,
+      "text": "in,",
+      "probability": 0.9861607551574707
+    },
+    {
+      "start": 58.64,
+      "end": 58.84,
+      "text": "0",
+      "probability": 0.9377286434173584
+    },
+    {
+      "start": 58.84,
+      "end": 59.84,
+      "text": ".5.",
+      "probability": 0.9976182281970978
+    },
+    {
+      "start": 60.44,
+      "end": 60.6,
+      "text": "The",
+      "probability": 0.9837900996208191
+    },
+    {
+      "start": 60.6,
+      "end": 60.9,
+      "text": "displayed",
+      "probability": 0.7763175368309021
+    },
+    {
+      "start": 60.9,
+      "end": 61.42,
+      "text": "direction",
+      "probability": 0.983860969543457
+    },
+    {
+      "start": 61.42,
+      "end": 61.76,
+      "text": "is",
+      "probability": 0.9954215884208679
+    },
+    {
+      "start": 61.76,
+      "end": 62.1,
+      "text": "under",
+      "probability": 0.9967875480651855
+    },
+    {
+      "start": 62.1,
+      "end": 62.34,
+      "text": "and",
+      "probability": 0.8756689429283142
+    },
+    {
+      "start": 62.34,
+      "end": 62.46,
+      "text": "the",
+      "probability": 0.9974767565727234
+    },
+    {
+      "start": 62.46,
+      "end": 62.68,
+      "text": "model",
+      "probability": 0.9328063130378723
+    },
+    {
+      "start": 62.68,
+      "end": 63.22,
+      "text": "confidence",
+      "probability": 0.9900749325752258
+    },
+    {
+      "start": 63.22,
+      "end": 63.7,
+      "text": "score",
+      "probability": 0.9993131160736084
+    },
+    {
+      "start": 63.7,
+      "end": 64.0,
+      "text": "is",
+      "probability": 0.9985730648040771
+    },
+    {
+      "start": 64.0,
+      "end": 64.46,
+      "text": "79.",
+      "probability": 0.9917939305305481
+    },
+    {
+      "start": 65.76,
+      "end": 66.08,
+      "text": "Before",
+      "probability": 0.9974268078804016
+    },
+    {
+      "start": 66.08,
+      "end": 66.4,
+      "text": "reading",
+      "probability": 0.9980936646461487
+    },
+    {
+      "start": 66.4,
+      "end": 66.74,
+      "text": "anything",
+      "probability": 0.9989833235740662
+    },
+    {
+      "start": 66.74,
+      "end": 67.1,
+      "text": "else,",
+      "probability": 0.9973365664482117
+    },
+    {
+      "start": 67.24,
+      "end": 67.46,
+      "text": "pause",
+      "probability": 0.9966433048248291
+    },
+    {
+      "start": 67.46,
+      "end": 67.82,
+      "text": "on",
+      "probability": 0.9984527826309204
+    },
+    {
+      "start": 67.82,
+      "end": 67.98,
+      "text": "those",
+      "probability": 0.9951052665710449
+    },
+    {
+      "start": 67.98,
+      "end": 68.26,
+      "text": "three",
+      "probability": 0.9508678913116455
+    },
+    {
+      "start": 68.26,
+      "end": 68.74,
+      "text": "fields,",
+      "probability": 0.9985526204109192
+    },
+    {
+      "start": 69.22,
+      "end": 69.48,
+      "text": "player,",
+      "probability": 0.47987064719200134
+    },
+    {
+      "start": 69.84,
+      "end": 70.0,
+      "text": "stat",
+      "probability": 0.9791060090065002
+    },
+    {
+      "start": 70.0,
+      "end": 70.3,
+      "text": "and",
+      "probability": 0.42420199513435364
+    },
+    {
+      "start": 70.3,
+      "end": 70.58,
+      "text": "line.",
+      "probability": 0.998380184173584
+    },
+    {
+      "start": 71.32,
+      "end": 71.44,
+      "text": "They",
+      "probability": 0.9961457252502441
+    },
+    {
+      "start": 71.44,
+      "end": 71.7,
+      "text": "define",
+      "probability": 0.9353144764900208
+    },
+    {
+      "start": 71.7,
+      "end": 72.02,
+      "text": "the",
+      "probability": 0.9990479350090027
+    },
+    {
+      "start": 72.02,
+      "end": 72.34,
+      "text": "research",
+      "probability": 0.9945722222328186
+    },
+    {
+      "start": 72.34,
+      "end": 72.7,
+      "text": "question.",
+      "probability": 0.995896577835083
+    },
+    {
+      "start": 73.56,
+      "end": 73.58,
+      "text": "A",
+      "probability": 0.9968159794807434
+    },
+    {
+      "start": 73.58,
+      "end": 73.82,
+      "text": "different",
+      "probability": 0.9991776347160339
+    },
+    {
+      "start": 73.82,
+      "end": 74.14,
+      "text": "player,",
+      "probability": 0.9896309971809387
+    },
+    {
+      "start": 74.5,
+      "end": 74.7,
+      "text": "different",
+      "probability": 0.9408345818519592
+    },
+    {
+      "start": 74.7,
+      "end": 75.0,
+      "text": "stat",
+      "probability": 0.9914981722831726
+    },
+    {
+      "start": 75.0,
+      "end": 75.44,
+      "text": "or",
+      "probability": 0.7731960415840149
+    },
+    {
+      "start": 75.44,
+      "end": 75.76,
+      "text": "different",
+      "probability": 0.9573285579681396
+    },
+    {
+      "start": 75.76,
+      "end": 76.1,
+      "text": "number",
+      "probability": 0.9968609809875488
+    },
+    {
+      "start": 76.1,
+      "end": 76.32,
+      "text": "is",
+      "probability": 0.9583072066307068
+    },
+    {
+      "start": 76.32,
+      "end": 76.54,
+      "text": "not",
+      "probability": 0.9995169639587402
+    },
+    {
+      "start": 76.54,
+      "end": 76.66,
+      "text": "a",
+      "probability": 0.9976328611373901
+    },
+    {
+      "start": 76.66,
+      "end": 76.92,
+      "text": "match.",
+      "probability": 0.9994460940361023
+    },
+    {
+      "start": 77.92,
+      "end": 78.4,
+      "text": "Next,",
+      "probability": 0.2199440896511078
+    },
+    {
+      "start": 78.84,
+      "end": 78.9,
+      "text": "read",
+      "probability": 0.9601829051971436
+    },
+    {
+      "start": 78.9,
+      "end": 79.38,
+      "text": "direction",
+      "probability": 0.8478550910949707
+    },
+    {
+      "start": 79.38,
+      "end": 79.78,
+      "text": "and",
+      "probability": 0.9740203619003296
+    },
+    {
+      "start": 79.78,
+      "end": 80.2,
+      "text": "confidence",
+      "probability": 0.997109591960907
+    },
+    {
+      "start": 80.2,
+      "end": 80.86,
+      "text": "separately.",
+      "probability": 0.9951313734054565
+    },
+    {
+      "start": 81.64,
+      "end": 81.86,
+      "text": "Under",
+      "probability": 0.7880885004997253
+    },
+    {
+      "start": 81.86,
+      "end": 82.06,
+      "text": "is",
+      "probability": 0.9846811294555664
+    },
+    {
+      "start": 82.06,
+      "end": 82.2,
+      "text": "the",
+      "probability": 0.9940476417541504
+    },
+    {
+      "start": 82.2,
+      "end": 82.58,
+      "text": "side",
+      "probability": 0.9492989182472229
+    },
+    {
+      "start": 82.58,
+      "end": 82.96,
+      "text": "supported",
+      "probability": 0.9942079782485962
+    },
+    {
+      "start": 82.96,
+      "end": 83.4,
+      "text": "by",
+      "probability": 0.9990465044975281
+    },
+    {
+      "start": 83.4,
+      "end": 83.52,
+      "text": "the",
+      "probability": 0.9929391145706177
+    },
+    {
+      "start": 83.52,
+      "end": 83.9,
+      "text": "combined",
+      "probability": 0.9744083881378174
+    },
+    {
+      "start": 83.9,
+      "end": 84.48,
+      "text": "analysis.",
+      "probability": 0.9930909872055054
+    },
+    {
+      "start": 85.44,
+      "end": 85.82,
+      "text": "79",
+      "probability": 0.7660203576087952
+    },
+    {
+      "start": 85.82,
+      "end": 86.5,
+      "text": "is",
+      "probability": 0.9805673956871033
+    },
+    {
+      "start": 86.5,
+      "end": 86.64,
+      "text": "the",
+      "probability": 0.9990519881248474
+    },
+    {
+      "start": 86.64,
+      "end": 86.98,
+      "text": "strength",
+      "probability": 0.9975735545158386
+    },
+    {
+      "start": 86.98,
+      "end": 87.2,
+      "text": "of",
+      "probability": 0.9983735084533691
+    },
+    {
+      "start": 87.2,
+      "end": 87.36,
+      "text": "that",
+      "probability": 0.9946086406707764
+    },
+    {
+      "start": 87.36,
+      "end": 87.8,
+      "text": "directional",
+      "probability": 0.9923722743988037
+    },
+    {
+      "start": 87.8,
+      "end": 88.32,
+      "text": "signal",
+      "probability": 0.998393714427948
+    },
+    {
+      "start": 88.32,
+      "end": 88.7,
+      "text": "for",
+      "probability": 0.9979004859924316
+    },
+    {
+      "start": 88.7,
+      "end": 88.82,
+      "text": "the",
+      "probability": 0.9982718229293823
+    },
+    {
+      "start": 88.82,
+      "end": 89.14,
+      "text": "displayed",
+      "probability": 0.9943971633911133
+    },
+    {
+      "start": 89.14,
+      "end": 89.58,
+      "text": "line.",
+      "probability": 0.9983769655227661
+    },
+    {
+      "start": 90.3,
+      "end": 90.38,
+      "text": "It",
+      "probability": 0.9907956719398499
+    },
+    {
+      "start": 90.38,
+      "end": 90.48,
+      "text": "is",
+      "probability": 0.9966664910316467
+    },
+    {
+      "start": 90.48,
+      "end": 90.72,
+      "text": "not",
+      "probability": 0.9992275238037109
+    },
+    {
+      "start": 90.72,
+      "end": 90.9,
+      "text": "a",
+      "probability": 0.9949906468391418
+    },
+    {
+      "start": 90.9,
+      "end": 91.38,
+      "text": "79",
+      "probability": 0.9922080636024475
+    },
+    {
+      "start": 91.38,
+      "end": 92.26,
+      "text": "%",
+      "probability": 0.841054379940033
+    },
+    {
+      "start": 92.26,
+      "end": 92.44,
+      "text": "win",
+      "probability": 0.924591600894928
+    },
+    {
+      "start": 92.44,
+      "end": 92.92,
+      "text": "probability.",
+      "probability": 0.9797597527503967
+    },
+    {
+      "start": 94.32,
+      "end": 94.54,
+      "text": "Now",
+      "probability": 0.995890736579895
+    },
+    {
+      "start": 94.54,
+      "end": 94.98,
+      "text": "inspect",
+      "probability": 0.9763020873069763
+    },
+    {
+      "start": 94.98,
+      "end": 95.28,
+      "text": "the",
+      "probability": 0.9970059990882874
+    },
+    {
+      "start": 95.28,
+      "end": 95.6,
+      "text": "evidence",
+      "probability": 0.9957987666130066
+    },
+    {
+      "start": 95.6,
+      "end": 95.94,
+      "text": "behind",
+      "probability": 0.99826580286026
+    },
+    {
+      "start": 95.94,
+      "end": 96.28,
+      "text": "the",
+      "probability": 0.9977442026138306
+    },
+    {
+      "start": 96.28,
+      "end": 96.48,
+      "text": "row.",
+      "probability": 0.9964128136634827
+    },
+    {
+      "start": 97.18,
+      "end": 97.2,
+      "text": "The",
+      "probability": 0.9935153722763062
+    },
+    {
+      "start": 97.2,
+      "end": 97.5,
+      "text": "dated",
+      "probability": 0.8155134916305542
+    },
+    {
+      "start": 97.5,
+      "end": 97.98,
+      "text": "analysis",
+      "probability": 0.9937410950660706
+    },
+    {
+      "start": 97.98,
+      "end": 98.44,
+      "text": "detail",
+      "probability": 0.9907979965209961
+    },
+    {
+      "start": 98.44,
+      "end": 98.82,
+      "text": "included",
+      "probability": 0.9950838685035706
+    },
+    {
+      "start": 98.82,
+      "end": 99.46,
+      "text": "five",
+      "probability": 0.859103262424469
+    },
+    {
+      "start": 99.46,
+      "end": 99.96,
+      "text": "agents.",
+      "probability": 0.9943479895591736
+    },
+    {
+      "start": 99.96,
+      "end": 100.72,
+      "text": "Hitch",
+      "probability": 0.0034831527154892683
+    },
+    {
+      "start": 100.72,
+      "end": 100.96,
+      "text": "rate",
+      "probability": 0.7641141414642334
+    },
+    {
+      "start": 100.96,
+      "end": 101.3,
+      "text": "evidence",
+      "probability": 0.9366045594215393
+    },
+    {
+      "start": 101.3,
+      "end": 101.78,
+      "text": "noted",
+      "probability": 0.9831482172012329
+    },
+    {
+      "start": 101.78,
+      "end": 102.08,
+      "text": "a",
+      "probability": 0.9865858554840088
+    },
+    {
+      "start": 102.08,
+      "end": 102.36,
+      "text": "long",
+      "probability": 0.9881443977355957
+    },
+    {
+      "start": 102.36,
+      "end": 102.7,
+      "text": "run",
+      "probability": 0.992259681224823
+    },
+    {
+      "start": 102.7,
+      "end": 102.86,
+      "text": "of",
+      "probability": 0.9947880506515503
+    },
+    {
+      "start": 102.86,
+      "end": 103.1,
+      "text": "games",
+      "probability": 0.9874629974365234
+    },
+    {
+      "start": 103.1,
+      "end": 103.5,
+      "text": "below",
+      "probability": 0.9885184168815613
+    },
+    {
+      "start": 103.5,
+      "end": 103.8,
+      "text": "this",
+      "probability": 0.9870026707649231
+    },
+    {
+      "start": 103.8,
+      "end": 104.2,
+      "text": "threshold.",
+      "probability": 0.9648164510726929
+    },
+    {
+      "start": 104.92,
+      "end": 105.44,
+      "text": "Ballpark",
+      "probability": 0.8643676936626434
+    },
+    {
+      "start": 105.44,
+      "end": 105.94,
+      "text": "context",
+      "probability": 0.4511968791484833
+    },
+    {
+      "start": 105.94,
+      "end": 106.38,
+      "text": "leaned",
+      "probability": 0.987116277217865
+    },
+    {
+      "start": 106.38,
+      "end": 106.88,
+      "text": "under.",
+      "probability": 0.9976031184196472
+    },
+    {
+      "start": 107.46,
+      "end": 107.8,
+      "text": "Usage",
+      "probability": 0.9532307386398315
+    },
+    {
+      "start": 107.8,
+      "end": 108.24,
+      "text": "produced",
+      "probability": 0.997101366519928
+    },
+    {
+      "start": 108.24,
+      "end": 108.6,
+      "text": "an",
+      "probability": 0.5395135283470154
+    },
+    {
+      "start": 108.6,
+      "end": 108.84,
+      "text": "under",
+      "probability": 0.9972389936447144
+    },
+    {
+      "start": 108.84,
+      "end": 109.2,
+      "text": "projection.",
+      "probability": 0.5850579738616943
+    },
+    {
+      "start": 110.06,
+      "end": 110.38,
+      "text": "Market",
+      "probability": 0.9755246639251709
+    },
+    {
+      "start": 110.38,
+      "end": 110.82,
+      "text": "context",
+      "probability": 0.9882473349571228
+    },
+    {
+      "start": 110.82,
+      "end": 111.28,
+      "text": "was",
+      "probability": 0.9987884163856506
+    },
+    {
+      "start": 111.28,
+      "end": 111.58,
+      "text": "neutral.",
+      "probability": 0.9935137033462524
+    },
+    {
+      "start": 112.38,
+      "end": 112.42,
+      "text": "The",
+      "probability": 0.9681838154792786
+    },
+    {
+      "start": 112.42,
+      "end": 112.74,
+      "text": "injury",
+      "probability": 0.33605465292930603
+    },
+    {
+      "start": 112.74,
+      "end": 113.24,
+      "text": "agent",
+      "probability": 0.9978873133659363
+    },
+    {
+      "start": 113.24,
+      "end": 113.72,
+      "text": "reported",
+      "probability": 0.9983441829681396
+    },
+    {
+      "start": 113.72,
+      "end": 114.12,
+      "text": "that",
+      "probability": 0.9963638186454773
+    },
+    {
+      "start": 114.12,
+      "end": 114.42,
+      "text": "no",
+      "probability": 0.9853857755661011
+    },
+    {
+      "start": 114.42,
+      "end": 114.92,
+      "text": "injury",
+      "probability": 0.9734381437301636
+    },
+    {
+      "start": 114.92,
+      "end": 115.42,
+      "text": "data",
+      "probability": 0.9936869740486145
+    },
+    {
+      "start": 115.42,
+      "end": 115.64,
+      "text": "was",
+      "probability": 0.9985755681991577
+    },
+    {
+      "start": 115.64,
+      "end": 116.0,
+      "text": "available.",
+      "probability": 0.9991685152053833
+    },
+    {
+      "start": 117.3,
+      "end": 117.54,
+      "text": "That",
+      "probability": 0.9825040698051453
+    },
+    {
+      "start": 117.54,
+      "end": 117.74,
+      "text": "missing",
+      "probability": 0.8956604599952698
+    },
+    {
+      "start": 117.74,
+      "end": 118.4,
+      "text": "injury",
+      "probability": 0.9672808647155762
+    },
+    {
+      "start": 118.4,
+      "end": 118.8,
+      "text": "input",
+      "probability": 0.992689311504364
+    },
+    {
+      "start": 118.8,
+      "end": 119.38,
+      "text": "matters.",
+      "probability": 0.9985539317131042
+    },
+    {
+      "start": 120.02,
+      "end": 120.16,
+      "text": "It",
+      "probability": 0.9951327443122864
+    },
+    {
+      "start": 120.16,
+      "end": 120.38,
+      "text": "tells",
+      "probability": 0.9981485605239868
+    },
+    {
+      "start": 120.38,
+      "end": 120.66,
+      "text": "you",
+      "probability": 0.9991604089736938
+    },
+    {
+      "start": 120.66,
+      "end": 120.8,
+      "text": "to",
+      "probability": 0.9974494576454163
+    },
+    {
+      "start": 120.8,
+      "end": 121.06,
+      "text": "check",
+      "probability": 0.9976685643196106
+    },
+    {
+      "start": 121.06,
+      "end": 121.34,
+      "text": "late",
+      "probability": 0.9803480505943298
+    },
+    {
+      "start": 121.34,
+      "end": 121.7,
+      "text": "news",
+      "probability": 0.9960141181945801
+    },
+    {
+      "start": 121.7,
+      "end": 122.26,
+      "text": "and",
+      "probability": 0.956423819065094
+    },
+    {
+      "start": 122.26,
+      "end": 122.38,
+      "text": "the",
+      "probability": 0.9971857666969299
+    },
+    {
+      "start": 122.38,
+      "end": 122.76,
+      "text": "expected",
+      "probability": 0.9980018734931946
+    },
+    {
+      "start": 122.76,
+      "end": 123.22,
+      "text": "lineup",
+      "probability": 0.8530964255332947
+    },
+    {
+      "start": 123.22,
+      "end": 123.76,
+      "text": "yourself.",
+      "probability": 0.9911337494850159
+    },
+    {
+      "start": 124.54,
+      "end": 124.9,
+      "text": "Agent",
+      "probability": 0.9697741866111755
+    },
+    {
+      "start": 124.9,
+      "end": 125.24,
+      "text": "evidence",
+      "probability": 0.7144656777381897
+    },
+    {
+      "start": 125.24,
+      "end": 125.84,
+      "text": "explains",
+      "probability": 0.9943072199821472
+    },
+    {
+      "start": 125.84,
+      "end": 126.4,
+      "text": "why",
+      "probability": 0.9983934760093689
+    },
+    {
+      "start": 126.4,
+      "end": 126.58,
+      "text": "the",
+      "probability": 0.9986050724983215
+    },
+    {
+      "start": 126.58,
+      "end": 126.86,
+      "text": "model",
+      "probability": 0.9978206157684326
+    },
+    {
+      "start": 126.86,
+      "end": 127.22,
+      "text": "leaned",
+      "probability": 0.9921712875366211
+    },
+    {
+      "start": 127.22,
+      "end": 127.64,
+      "text": "one",
+      "probability": 0.9909928441047668
+    },
+    {
+      "start": 127.64,
+      "end": 128.02,
+      "text": "way.",
+      "probability": 0.9937707781791687
+    },
+    {
+      "start": 128.02,
+      "end": 128.64,
+      "text": "It",
+      "probability": 0.4498295187950134
+    },
+    {
+      "start": 128.64,
+      "end": 128.76,
+      "text": "does",
+      "probability": 0.9893214702606201
+    },
+    {
+      "start": 128.76,
+      "end": 128.96,
+      "text": "not",
+      "probability": 0.999249279499054
+    },
+    {
+      "start": 128.96,
+      "end": 129.32,
+      "text": "remove",
+      "probability": 0.9966819882392883
+    },
+    {
+      "start": 129.32,
+      "end": 129.66,
+      "text": "the",
+      "probability": 0.9977974891662598
+    },
+    {
+      "start": 129.66,
+      "end": 129.86,
+      "text": "need",
+      "probability": 0.9987486600875854
+    },
+    {
+      "start": 129.86,
+      "end": 130.04,
+      "text": "to",
+      "probability": 0.9984322190284729
+    },
+    {
+      "start": 130.04,
+      "end": 130.3,
+      "text": "verify",
+      "probability": 0.996567964553833
+    },
+    {
+      "start": 130.3,
+      "end": 130.88,
+      "text": "what",
+      "probability": 0.997837245464325
+    },
+    {
+      "start": 130.88,
+      "end": 131.28,
+      "text": "changed",
+      "probability": 0.9928898811340332
+    },
+    {
+      "start": 131.28,
+      "end": 131.88,
+      "text": "after",
+      "probability": 0.9972867965698242
+    },
+    {
+      "start": 131.88,
+      "end": 132.0,
+      "text": "the",
+      "probability": 0.9951987862586975
+    },
+    {
+      "start": 132.0,
+      "end": 132.44,
+      "text": "analysis",
+      "probability": 0.9652613997459412
+    },
+    {
+      "start": 132.44,
+      "end": 132.84,
+      "text": "ran.",
+      "probability": 0.9972344040870667
+    },
+    {
+      "start": 133.88,
+      "end": 134.32,
+      "text": "Then",
+      "probability": 0.9516575336456299
+    },
+    {
+      "start": 134.32,
+      "end": 134.6,
+      "text": "check",
+      "probability": 0.8229445815086365
+    },
+    {
+      "start": 134.6,
+      "end": 135.2,
+      "text": "freshness.",
+      "probability": 0.9025300741195679
+    },
+    {
+      "start": 135.9,
+      "end": 135.98,
+      "text": "The",
+      "probability": 0.9844117760658264
+    },
+    {
+      "start": 135.98,
+      "end": 136.2,
+      "text": "source",
+      "probability": 0.916027307510376
+    },
+    {
+      "start": 136.2,
+      "end": 136.62,
+      "text": "analysis",
+      "probability": 0.9868484139442444
+    },
+    {
+      "start": 136.62,
+      "end": 137.14,
+      "text": "timestamp",
+      "probability": 0.8277382850646973
+    },
+    {
+      "start": 137.14,
+      "end": 137.72,
+      "text": "for",
+      "probability": 0.9964441657066345
+    },
+    {
+      "start": 137.72,
+      "end": 137.86,
+      "text": "this",
+      "probability": 0.9983028173446655
+    },
+    {
+      "start": 137.86,
+      "end": 138.14,
+      "text": "row",
+      "probability": 0.9844956398010254
+    },
+    {
+      "start": 138.14,
+      "end": 138.42,
+      "text": "was",
+      "probability": 0.987083911895752
+    },
+    {
+      "start": 138.42,
+      "end": 138.76,
+      "text": "August",
+      "probability": 0.9719436168670654
+    },
+    {
+      "start": 138.76,
+      "end": 139.78,
+      "text": "17th",
+      "probability": 0.8166559636592865
+    },
+    {
+      "start": 139.78,
+      "end": 139.8,
+      "text": "at",
+      "probability": 0.9349861741065979
+    },
+    {
+      "start": 139.8,
+      "end": 140.16,
+      "text": "2030",
+      "probability": 0.830772876739502
+    },
+    {
+      "start": 140.16,
+      "end": 141.0,
+      "text": "UTC.",
+      "probability": 0.9845662713050842
+    },
+    {
+      "start": 141.88,
+      "end": 142.06,
+      "text": "The",
+      "probability": 0.9951222538948059
+    },
+    {
+      "start": 142.06,
+      "end": 142.32,
+      "text": "public",
+      "probability": 0.9821548461914062
+    },
+    {
+      "start": 142.32,
+      "end": 142.76,
+      "text": "page",
+      "probability": 0.9980132579803467
+    },
+    {
+      "start": 142.76,
+      "end": 143.06,
+      "text": "in",
+      "probability": 0.6812378764152527
+    },
+    {
+      "start": 143.06,
+      "end": 143.26,
+      "text": "both",
+      "probability": 0.9988672733306885
+    },
+    {
+      "start": 143.26,
+      "end": 143.7,
+      "text": "captures",
+      "probability": 0.982043445110321
+    },
+    {
+      "start": 143.7,
+      "end": 144.14,
+      "text": "used",
+      "probability": 0.7052784562110901
+    },
+    {
+      "start": 144.14,
+      "end": 144.42,
+      "text": "the",
+      "probability": 0.9949453473091125
+    },
+    {
+      "start": 144.42,
+      "end": 144.72,
+      "text": "same",
+      "probability": 0.9991621971130371
+    },
+    {
+      "start": 144.72,
+      "end": 145.1,
+      "text": "dated",
+      "probability": 0.9632601737976074
+    },
+    {
+      "start": 145.1,
+      "end": 145.46,
+      "text": "row.",
+      "probability": 0.995694637298584
+    },
+    {
+      "start": 146.24,
+      "end": 146.32,
+      "text": "A",
+      "probability": 0.9959781169891357
+    },
+    {
+      "start": 146.32,
+      "end": 146.66,
+      "text": "response",
+      "probability": 0.9976266026496887
+    },
+    {
+      "start": 146.66,
+      "end": 147.16,
+      "text": "generated",
+      "probability": 0.9908283948898315
+    },
+    {
+      "start": 147.16,
+      "end": 147.82,
+      "text": "later",
+      "probability": 0.9965474009513855
+    },
+    {
+      "start": 147.82,
+      "end": 148.2,
+      "text": "does",
+      "probability": 0.989547073841095
+    },
+    {
+      "start": 148.2,
+      "end": 148.42,
+      "text": "not",
+      "probability": 0.999661922454834
+    },
+    {
+      "start": 148.42,
+      "end": 148.68,
+      "text": "make",
+      "probability": 0.9986615180969238
+    },
+    {
+      "start": 148.68,
+      "end": 148.86,
+      "text": "the",
+      "probability": 0.9974954724311829
+    },
+    {
+      "start": 148.86,
+      "end": 149.26,
+      "text": "underlying",
+      "probability": 0.9851269125938416
+    },
+    {
+      "start": 149.26,
+      "end": 149.94,
+      "text": "analysis",
+      "probability": 0.9956415891647339
+    },
+    {
+      "start": 149.94,
+      "end": 150.4,
+      "text": "newer,",
+      "probability": 0.977978527545929
+    },
+    {
+      "start": 151.0,
+      "end": 151.1,
+      "text": "so",
+      "probability": 0.9934281706809998
+    },
+    {
+      "start": 151.1,
+      "end": 151.38,
+      "text": "use",
+      "probability": 0.9895955920219421
+    },
+    {
+      "start": 151.38,
+      "end": 151.64,
+      "text": "the",
+      "probability": 0.9986435770988464
+    },
+    {
+      "start": 151.64,
+      "end": 151.98,
+      "text": "analysis",
+      "probability": 0.9792312383651733
+    },
+    {
+      "start": 151.98,
+      "end": 152.52,
+      "text": "timestamp,",
+      "probability": 0.9401306509971619
+    },
+    {
+      "start": 153.18,
+      "end": 153.46,
+      "text": "not",
+      "probability": 0.9988259673118591
+    },
+    {
+      "start": 153.46,
+      "end": 153.64,
+      "text": "just",
+      "probability": 0.9990729093551636
+    },
+    {
+      "start": 153.64,
+      "end": 153.82,
+      "text": "the",
+      "probability": 0.9971644282341003
+    },
+    {
+      "start": 153.82,
+      "end": 154.06,
+      "text": "page",
+      "probability": 0.9692826271057129
+    },
+    {
+      "start": 154.06,
+      "end": 154.3,
+      "text": "load",
+      "probability": 0.9850795865058899
+    },
+    {
+      "start": 154.3,
+      "end": 154.64,
+      "text": "time.",
+      "probability": 0.9939377307891846
+    },
+    {
+      "start": 155.38,
+      "end": 156.06,
+      "text": "Now",
+      "probability": 0.314050555229187
+    },
+    {
+      "start": 156.06,
+      "end": 156.4,
+      "text": "perform",
+      "probability": 0.8206127285957336
+    },
+    {
+      "start": 156.4,
+      "end": 156.7,
+      "text": "the",
+      "probability": 0.9889495372772217
+    },
+    {
+      "start": 156.7,
+      "end": 156.9,
+      "text": "prize",
+      "probability": 0.2065138816833496
+    },
+    {
+      "start": 156.9,
+      "end": 157.18,
+      "text": "picks",
+      "probability": 0.6931857466697693
+    },
+    {
+      "start": 157.18,
+      "end": 157.56,
+      "text": "line",
+      "probability": 0.9338285326957703
+    },
+    {
+      "start": 157.56,
+      "end": 157.88,
+      "text": "check.",
+      "probability": 0.9549639821052551
+    },
+    {
+      "start": 158.44,
+      "end": 158.84,
+      "text": "Open",
+      "probability": 0.9906325340270996
+    },
+    {
+      "start": 158.84,
+      "end": 159.02,
+      "text": "the",
+      "probability": 0.9926062822341919
+    },
+    {
+      "start": 159.02,
+      "end": 159.24,
+      "text": "current",
+      "probability": 0.9914636015892029
+    },
+    {
+      "start": 159.24,
+      "end": 159.62,
+      "text": "player",
+      "probability": 0.9927234053611755
+    },
+    {
+      "start": 159.62,
+      "end": 159.96,
+      "text": "picks",
+      "probability": 0.9724982976913452
+    },
+    {
+      "start": 159.96,
+      "end": 160.38,
+      "text": "board",
+      "probability": 0.9177468419075012
+    },
+    {
+      "start": 160.38,
+      "end": 160.68,
+      "text": "and",
+      "probability": 0.863486111164093
+    },
+    {
+      "start": 160.68,
+      "end": 160.9,
+      "text": "search",
+      "probability": 0.9971440434455872
+    },
+    {
+      "start": 160.9,
+      "end": 161.2,
+      "text": "for",
+      "probability": 0.9976160526275635
+    },
+    {
+      "start": 161.2,
+      "end": 161.32,
+      "text": "the",
+      "probability": 0.9947905540466309
+    },
+    {
+      "start": 161.32,
+      "end": 161.56,
+      "text": "same",
+      "probability": 0.9974638223648071
+    },
+    {
+      "start": 161.56,
+      "end": 161.96,
+      "text": "player",
+      "probability": 0.9959911704063416
+    },
+    {
+      "start": 161.96,
+      "end": 162.26,
+      "text": "and",
+      "probability": 0.9698731899261475
+    },
+    {
+      "start": 162.26,
+      "end": 162.54,
+      "text": "stat.",
+      "probability": 0.9785152673721313
+    },
+    {
+      "start": 163.18,
+      "end": 163.54,
+      "text": "Compare",
+      "probability": 0.9706659913063049
+    },
+    {
+      "start": 163.54,
+      "end": 164.02,
+      "text": "Christian",
+      "probability": 0.974027693271637
+    },
+    {
+      "start": 164.02,
+      "end": 164.42,
+      "text": "Franklin",
+      "probability": 0.9772799015045166
+    },
+    {
+      "start": 164.42,
+      "end": 165.12,
+      "text": "runs",
+      "probability": 0.6041916012763977
+    },
+    {
+      "start": 165.12,
+      "end": 165.64,
+      "text": "batted",
+      "probability": 0.913274884223938
+    },
+    {
+      "start": 165.64,
+      "end": 165.98,
+      "text": "in",
+      "probability": 0.9742459058761597
+    },
+    {
+      "start": 165.98,
+      "end": 166.54,
+      "text": "0",
+      "probability": 0.8678556084632874
+    },
+    {
+      "start": 166.54,
+      "end": 167.58,
+      "text": ".5.",
+      "probability": 0.9885185360908508
+    },
+    {
+      "start": 168.14,
+      "end": 168.26,
+      "text": "Do",
+      "probability": 0.9870316386222839
+    },
+    {
+      "start": 168.26,
+      "end": 168.42,
+      "text": "not",
+      "probability": 0.9975845813751221
+    },
+    {
+      "start": 168.42,
+      "end": 168.72,
+      "text": "match",
+      "probability": 0.9964179992675781
+    },
+    {
+      "start": 168.72,
+      "end": 168.98,
+      "text": "by",
+      "probability": 0.992099404335022
+    },
+    {
+      "start": 168.98,
+      "end": 169.4,
+      "text": "player",
+      "probability": 0.982563316822052
+    },
+    {
+      "start": 169.4,
+      "end": 169.58,
+      "text": "name",
+      "probability": 0.9834007620811462
+    },
+    {
+      "start": 169.58,
+      "end": 169.98,
+      "text": "alone.",
+      "probability": 0.9798049330711365
+    },
+    {
+      "start": 171.12,
+      "end": 171.32,
+      "text": "For",
+      "probability": 0.9823890328407288
+    },
+    {
+      "start": 171.32,
+      "end": 171.5,
+      "text": "this",
+      "probability": 0.9982972741127014
+    },
+    {
+      "start": 171.5,
+      "end": 171.72,
+      "text": "production",
+      "probability": 0.9884824156761169
+    },
+    {
+      "start": 171.72,
+      "end": 172.44,
+      "text": "capture,",
+      "probability": 0.9917324781417847
+    },
+    {
+      "start": 172.9,
+      "end": 173.54,
+      "text": "Propeller's",
+      "probability": 0.7659677565097809
+    },
+    {
+      "start": 173.54,
+      "end": 173.88,
+      "text": "platform",
+      "probability": 0.9074681401252747
+    },
+    {
+      "start": 173.88,
+      "end": 174.32,
+      "text": "backed",
+      "probability": 0.6505539417266846
+    },
+    {
+      "start": 174.32,
+      "end": 174.68,
+      "text": "prize",
+      "probability": 0.965912401676178
+    },
+    {
+      "start": 174.68,
+      "end": 175.06,
+      "text": "picks",
+      "probability": 0.9858142733573914
+    },
+    {
+      "start": 175.06,
+      "end": 175.32,
+      "text": "end",
+      "probability": 0.632271409034729
+    },
+    {
+      "start": 175.32,
+      "end": 175.6,
+      "text": "point",
+      "probability": 0.7872828245162964
+    },
+    {
+      "start": 175.6,
+      "end": 175.92,
+      "text": "returned",
+      "probability": 0.46169421076774597
+    },
+    {
+      "start": 175.92,
+      "end": 176.42,
+      "text": "no",
+      "probability": 0.9348797798156738
+    },
+    {
+      "start": 176.42,
+      "end": 176.78,
+      "text": "records.",
+      "probability": 0.9939776659011841
+    },
+    {
+      "start": 177.72,
+      "end": 177.82,
+      "text": "The",
+      "probability": 0.9924545288085938
+    },
+    {
+      "start": 177.82,
+      "end": 178.14,
+      "text": "analysis",
+      "probability": 0.9809530377388
+    },
+    {
+      "start": 178.14,
+      "end": 178.62,
+      "text": "record",
+      "probability": 0.9933179616928101
+    },
+    {
+      "start": 178.62,
+      "end": 179.04,
+      "text": "also",
+      "probability": 0.9943428039550781
+    },
+    {
+      "start": 179.04,
+      "end": 179.68,
+      "text": "identified",
+      "probability": 0.9718167781829834
+    },
+    {
+      "start": 179.68,
+      "end": 180.26,
+      "text": "its",
+      "probability": 0.9100244641304016
+    },
+    {
+      "start": 180.26,
+      "end": 180.54,
+      "text": "market",
+      "probability": 0.9299315810203552
+    },
+    {
+      "start": 180.54,
+      "end": 180.9,
+      "text": "source",
+      "probability": 0.7856540083885193
+    },
+    {
+      "start": 180.9,
+      "end": 181.22,
+      "text": "as",
+      "probability": 0.9895555377006531
+    },
+    {
+      "start": 181.22,
+      "end": 181.52,
+      "text": "underdog,",
+      "probability": 0.8718453049659729
+    },
+    {
+      "start": 182.34,
+      "end": 182.5,
+      "text": "not",
+      "probability": 0.9931134581565857
+    },
+    {
+      "start": 182.5,
+      "end": 182.78,
+      "text": "prize",
+      "probability": 0.9211264252662659
+    },
+    {
+      "start": 182.78,
+      "end": 183.1,
+      "text": "picks.",
+      "probability": 0.9948878884315491
+    },
+    {
+      "start": 183.1,
+      "end": 183.92,
+      "text": "So",
+      "probability": 0.4511956572532654
+    },
+    {
+      "start": 183.92,
+      "end": 184.12,
+      "text": "the",
+      "probability": 0.7408314347267151
+    },
+    {
+      "start": 184.12,
+      "end": 184.38,
+      "text": "exact",
+      "probability": 0.9975953698158264
+    },
+    {
+      "start": 184.38,
+      "end": 185.18,
+      "text": "projection",
+      "probability": 0.9971768856048584
+    },
+    {
+      "start": 185.18,
+      "end": 185.4,
+      "text": "could",
+      "probability": 0.993256688117981
+    },
+    {
+      "start": 185.4,
+      "end": 185.64,
+      "text": "not",
+      "probability": 0.997356653213501
+    },
+    {
+      "start": 185.64,
+      "end": 185.82,
+      "text": "be",
+      "probability": 0.9968032836914062
+    },
+    {
+      "start": 185.82,
+      "end": 186.14,
+      "text": "verified",
+      "probability": 0.9970636963844299
+    },
+    {
+      "start": 186.14,
+      "end": 186.64,
+      "text": "in",
+      "probability": 0.9978075623512268
+    },
+    {
+      "start": 186.64,
+      "end": 186.9,
+      "text": "prize",
+      "probability": 0.3719005882740021
+    },
+    {
+      "start": 186.9,
+      "end": 187.26,
+      "text": "picks.",
+      "probability": 0.6924498677253723
+    },
+    {
+      "start": 188.38,
+      "end": 188.58,
+      "text": "That",
+      "probability": 0.9638988375663757
+    },
+    {
+      "start": 188.58,
+      "end": 188.68,
+      "text": "is",
+      "probability": 0.9911949634552002
+    },
+    {
+      "start": 188.68,
+      "end": 188.9,
+      "text": "not",
+      "probability": 0.9982370138168335
+    },
+    {
+      "start": 188.9,
+      "end": 189.06,
+      "text": "a",
+      "probability": 0.9955812096595764
+    },
+    {
+      "start": 189.06,
+      "end": 189.4,
+      "text": "reason",
+      "probability": 0.998913049697876
+    },
+    {
+      "start": 189.4,
+      "end": 189.62,
+      "text": "to",
+      "probability": 0.9987568855285645
+    },
+    {
+      "start": 189.62,
+      "end": 190.12,
+      "text": "substitute",
+      "probability": 0.9943758249282837
+    },
+    {
+      "start": 190.12,
+      "end": 190.38,
+      "text": "a",
+      "probability": 0.9984596967697144
+    },
+    {
+      "start": 190.38,
+      "end": 190.62,
+      "text": "similar",
+      "probability": 0.9982535243034363
+    },
+    {
+      "start": 190.62,
+      "end": 191.18,
+      "text": "line",
+      "probability": 0.9978316426277161
+    },
+    {
+      "start": 191.18,
+      "end": 191.72,
+      "text": "or",
+      "probability": 0.912929892539978
+    },
+    {
+      "start": 191.72,
+      "end": 192.06,
+      "text": "reuse",
+      "probability": 0.9499123096466064
+    },
+    {
+      "start": 192.06,
+      "end": 192.42,
+      "text": "an",
+      "probability": 0.9910056591033936
+    },
+    {
+      "start": 192.42,
+      "end": 192.68,
+      "text": "older",
+      "probability": 0.9432404637336731
+    },
+    {
+      "start": 192.68,
+      "end": 193.3,
+      "text": "screenshot.",
+      "probability": 0.9295111894607544
+    },
+    {
+      "start": 194.28,
+      "end": 194.34,
+      "text": "It",
+      "probability": 0.9884427189826965
+    },
+    {
+      "start": 194.34,
+      "end": 194.46,
+      "text": "is",
+      "probability": 0.9962747097015381
+    },
+    {
+      "start": 194.46,
+      "end": 194.6,
+      "text": "the",
+      "probability": 0.9985791444778442
+    },
+    {
+      "start": 194.6,
+      "end": 195.06,
+      "text": "answer.",
+      "probability": 0.9977085590362549
+    },
+    {
+      "start": 195.76,
+      "end": 195.84,
+      "text": "No",
+      "probability": 0.8705605864524841
+    },
+    {
+      "start": 195.84,
+      "end": 196.22,
+      "text": "verified",
+      "probability": 0.9942395687103271
+    },
+    {
+      "start": 196.22,
+      "end": 196.86,
+      "text": "match",
+      "probability": 0.9964839220046997
+    },
+    {
+      "start": 196.86,
+      "end": 197.12,
+      "text": "means",
+      "probability": 0.996944010257721
+    },
+    {
+      "start": 197.12,
+      "end": 197.5,
+      "text": "no",
+      "probability": 0.9841821789741516
+    },
+    {
+      "start": 197.5,
+      "end": 197.9,
+      "text": "action",
+      "probability": 0.9991023540496826
+    },
+    {
+      "start": 197.9,
+      "end": 198.2,
+      "text": "from",
+      "probability": 0.9948299527168274
+    },
+    {
+      "start": 198.2,
+      "end": 198.38,
+      "text": "this",
+      "probability": 0.9983586668968201
+    },
+    {
+      "start": 198.38,
+      "end": 198.6,
+      "text": "row.",
+      "probability": 0.9943398833274841
+    },
+    {
+      "start": 199.76,
+      "end": 199.96,
+      "text": "On",
+      "probability": 0.9759978652000427
+    },
+    {
+      "start": 199.96,
+      "end": 200.26,
+      "text": "mobile",
+      "probability": 0.9180075526237488
+    },
+    {
+      "start": 200.26,
+      "end": 200.66,
+      "text": "follow",
+      "probability": 0.5951352715492249
+    },
+    {
+      "start": 200.66,
+      "end": 201.0,
+      "text": "the",
+      "probability": 0.998117208480835
+    },
+    {
+      "start": 201.0,
+      "end": 201.24,
+      "text": "same",
+      "probability": 0.9995630383491516
+    },
+    {
+      "start": 201.24,
+      "end": 201.62,
+      "text": "order.",
+      "probability": 0.9986473917961121
+    },
+    {
+      "start": 202.3,
+      "end": 202.66,
+      "text": "Confirm",
+      "probability": 0.9971840083599091
+    },
+    {
+      "start": 202.66,
+      "end": 202.84,
+      "text": "the",
+      "probability": 0.9957311749458313
+    },
+    {
+      "start": 202.84,
+      "end": 203.08,
+      "text": "date,",
+      "probability": 0.949975311756134
+    },
+    {
+      "start": 203.4,
+      "end": 203.58,
+      "text": "player,",
+      "probability": 0.9506148099899292
+    },
+    {
+      "start": 203.94,
+      "end": 204.16,
+      "text": "stat",
+      "probability": 0.9472301006317139
+    },
+    {
+      "start": 204.16,
+      "end": 204.42,
+      "text": "and",
+      "probability": 0.5055187940597534
+    },
+    {
+      "start": 204.42,
+      "end": 204.68,
+      "text": "line.",
+      "probability": 0.9989621639251709
+    },
+    {
+      "start": 205.42,
+      "end": 205.48,
+      "text": "Read",
+      "probability": 0.9914433360099792
+    },
+    {
+      "start": 205.48,
+      "end": 205.72,
+      "text": "the",
+      "probability": 0.9972280859947205
+    },
+    {
+      "start": 205.72,
+      "end": 206.06,
+      "text": "direction",
+      "probability": 0.986415445804596
+    },
+    {
+      "start": 206.06,
+      "end": 206.38,
+      "text": "and",
+      "probability": 0.9240756630897522
+    },
+    {
+      "start": 206.38,
+      "end": 206.8,
+      "text": "confidence.",
+      "probability": 0.9986617565155029
+    },
+    {
+      "start": 207.62,
+      "end": 207.84,
+      "text": "Open",
+      "probability": 0.9981434345245361
+    },
+    {
+      "start": 207.84,
+      "end": 208.02,
+      "text": "the",
+      "probability": 0.9951767921447754
+    },
+    {
+      "start": 208.02,
+      "end": 208.4,
+      "text": "detailed",
+      "probability": 0.981599748134613
+    },
+    {
+      "start": 208.4,
+      "end": 208.88,
+      "text": "evidence.",
+      "probability": 0.9929351210594177
+    },
+    {
+      "start": 209.92,
+      "end": 209.94,
+      "text": "Check",
+      "probability": 0.9939504861831665
+    },
+    {
+      "start": 209.94,
+      "end": 210.22,
+      "text": "missing",
+      "probability": 0.9421132802963257
+    },
+    {
+      "start": 210.22,
+      "end": 210.84,
+      "text": "inputs",
+      "probability": 0.992872953414917
+    },
+    {
+      "start": 210.84,
+      "end": 211.24,
+      "text": "and",
+      "probability": 0.9452636241912842
+    },
+    {
+      "start": 211.24,
+      "end": 211.36,
+      "text": "the",
+      "probability": 0.9884235262870789
+    },
+    {
+      "start": 211.36,
+      "end": 211.76,
+      "text": "analysis",
+      "probability": 0.994175374507904
+    },
+    {
+      "start": 211.76,
+      "end": 212.16,
+      "text": "time.",
+      "probability": 0.9932175278663635
+    },
+    {
+      "start": 212.16,
+      "end": 212.96,
+      "text": "Then",
+      "probability": 0.19387874007225037
+    },
+    {
+      "start": 212.96,
+      "end": 213.3,
+      "text": "compare",
+      "probability": 0.96635502576828
+    },
+    {
+      "start": 213.3,
+      "end": 213.6,
+      "text": "the",
+      "probability": 0.996780514717102
+    },
+    {
+      "start": 213.6,
+      "end": 214.02,
+      "text": "actual",
+      "probability": 0.9940710663795471
+    },
+    {
+      "start": 214.02,
+      "end": 214.42,
+      "text": "prize",
+      "probability": 0.2768247127532959
+    },
+    {
+      "start": 214.42,
+      "end": 214.72,
+      "text": "picks",
+      "probability": 0.37094390392303467
+    },
+    {
+      "start": 214.72,
+      "end": 215.14,
+      "text": "projection",
+      "probability": 0.9951474070549011
+    },
+    {
+      "start": 215.14,
+      "end": 215.54,
+      "text": "on",
+      "probability": 0.9967888593673706
+    },
+    {
+      "start": 215.54,
+      "end": 215.64,
+      "text": "the",
+      "probability": 0.9981985688209534
+    },
+    {
+      "start": 215.64,
+      "end": 215.98,
+      "text": "final",
+      "probability": 0.9982813596725464
+    },
+    {
+      "start": 215.98,
+      "end": 216.38,
+      "text": "screen.",
+      "probability": 0.9987426400184631
+    },
+    {
+      "start": 217.74,
+      "end": 217.8,
+      "text": "If",
+      "probability": 0.9334621429443359
+    },
+    {
+      "start": 217.8,
+      "end": 217.94,
+      "text": "the",
+      "probability": 0.9980512857437134
+    },
+    {
+      "start": 217.94,
+      "end": 218.24,
+      "text": "line",
+      "probability": 0.9971565008163452
+    },
+    {
+      "start": 218.24,
+      "end": 218.6,
+      "text": "moves",
+      "probability": 0.9979230761528015
+    },
+    {
+      "start": 218.6,
+      "end": 218.94,
+      "text": "from",
+      "probability": 0.9966514706611633
+    },
+    {
+      "start": 218.94,
+      "end": 219.28,
+      "text": "0",
+      "probability": 0.9523762464523315
+    },
+    {
+      "start": 219.28,
+      "end": 220.08,
+      "text": ".5,",
+      "probability": 0.9959973990917206
+    },
+    {
+      "start": 220.42,
+      "end": 220.72,
+      "text": "if",
+      "probability": 0.948095440864563
+    },
+    {
+      "start": 220.72,
+      "end": 220.84,
+      "text": "the",
+      "probability": 0.99714595079422
+    },
+    {
+      "start": 220.84,
+      "end": 221.02,
+      "text": "stat",
+      "probability": 0.9738161563873291
+    },
+    {
+      "start": 221.02,
+      "end": 221.34,
+      "text": "type",
+      "probability": 0.9787740111351013
+    },
+    {
+      "start": 221.34,
+      "end": 221.68,
+      "text": "differs,",
+      "probability": 0.9896748661994934
+    },
+    {
+      "start": 222.3,
+      "end": 222.42,
+      "text": "if",
+      "probability": 0.9924024343490601
+    },
+    {
+      "start": 222.42,
+      "end": 222.54,
+      "text": "the",
+      "probability": 0.9959338307380676
+    },
+    {
+      "start": 222.54,
+      "end": 222.94,
+      "text": "player",
+      "probability": 0.9966314435005188
+    },
+    {
+      "start": 222.94,
+      "end": 223.18,
+      "text": "is",
+      "probability": 0.9990851879119873
+    },
+    {
+      "start": 223.18,
+      "end": 223.56,
+      "text": "unavailable,",
+      "probability": 0.9842055439949036
+    },
+    {
+      "start": 224.36,
+      "end": 224.5,
+      "text": "or",
+      "probability": 0.997577965259552
+    },
+    {
+      "start": 224.5,
+      "end": 224.66,
+      "text": "if",
+      "probability": 0.9961627721786499
+    },
+    {
+      "start": 224.66,
+      "end": 224.8,
+      "text": "the",
+      "probability": 0.9979094862937927
+    },
+    {
+      "start": 224.8,
+      "end": 225.16,
+      "text": "projection",
+      "probability": 0.9964700937271118
+    },
+    {
+      "start": 225.16,
+      "end": 225.46,
+      "text": "is",
+      "probability": 0.9992817044258118
+    },
+    {
+      "start": 225.46,
+      "end": 225.72,
+      "text": "missing,",
+      "probability": 0.9996403455734253
+    },
+    {
+      "start": 226.44,
+      "end": 226.52,
+      "text": "the",
+      "probability": 0.9968534111976624
+    },
+    {
+      "start": 226.52,
+      "end": 226.88,
+      "text": "original",
+      "probability": 0.997032880783081
+    },
+    {
+      "start": 226.88,
+      "end": 227.38,
+      "text": "research",
+      "probability": 0.9878518581390381
+    },
+    {
+      "start": 227.38,
+      "end": 227.78,
+      "text": "question",
+      "probability": 0.9878952503204346
+    },
+    {
+      "start": 227.78,
+      "end": 228.26,
+      "text": "no",
+      "probability": 0.9980701804161072
+    },
+    {
+      "start": 228.26,
+      "end": 228.7,
+      "text": "longer",
+      "probability": 0.9993994235992432
+    },
+    {
+      "start": 228.7,
+      "end": 229.12,
+      "text": "matches.",
+      "probability": 0.998727023601532
+    },
+    {
+      "start": 229.98,
+      "end": 230.32,
+      "text": "Refresh",
+      "probability": 0.9319267272949219
+    },
+    {
+      "start": 230.32,
+      "end": 231.06,
+      "text": "Propeller",
+      "probability": 0.7446886698404948
+    },
+    {
+      "start": 231.06,
+      "end": 231.32,
+      "text": "or",
+      "probability": 0.8323262333869934
+    },
+    {
+      "start": 231.32,
+      "end": 231.58,
+      "text": "choose",
+      "probability": 0.9642801880836487
+    },
+    {
+      "start": 231.58,
+      "end": 232.16,
+      "text": "another",
+      "probability": 0.9959446787834167
+    },
+    {
+      "start": 232.16,
+      "end": 232.5,
+      "text": "current",
+      "probability": 0.994880199432373
+    },
+    {
+      "start": 232.5,
+      "end": 232.92,
+      "text": "row.",
+      "probability": 0.9865450263023376
+    },
+    {
+      "start": 234.08,
+      "end": 234.2,
+      "text": "The",
+      "probability": 0.986218273639679
+    },
+    {
+      "start": 234.2,
+      "end": 234.48,
+      "text": "page",
+      "probability": 0.9741762280464172
+    },
+    {
+      "start": 234.48,
+      "end": 234.76,
+      "text": "is",
+      "probability": 0.9984534978866577
+    },
+    {
+      "start": 234.76,
+      "end": 234.86,
+      "text": "a",
+      "probability": 0.9878960847854614
+    },
+    {
+      "start": 234.86,
+      "end": 235.2,
+      "text": "starting",
+      "probability": 0.9977394342422485
+    },
+    {
+      "start": 235.2,
+      "end": 235.58,
+      "text": "point",
+      "probability": 0.9972614049911499
+    },
+    {
+      "start": 235.58,
+      "end": 235.78,
+      "text": "for",
+      "probability": 0.9983237385749817
+    },
+    {
+      "start": 235.78,
+      "end": 236.04,
+      "text": "research,",
+      "probability": 0.991040050983429
+    },
+    {
+      "start": 236.66,
+      "end": 236.86,
+      "text": "not",
+      "probability": 0.998932421207428
+    },
+    {
+      "start": 236.86,
+      "end": 236.96,
+      "text": "a",
+      "probability": 0.995933473110199
+    },
+    {
+      "start": 236.96,
+      "end": 237.26,
+      "text": "shortcut",
+      "probability": 0.9795183539390564
+    },
+    {
+      "start": 237.26,
+      "end": 237.72,
+      "text": "around",
+      "probability": 0.9823353886604309
+    },
+    {
+      "start": 237.72,
+      "end": 238.22,
+      "text": "verification.",
+      "probability": 0.9792105555534363
+    },
+    {
+      "start": 239.06,
+      "end": 239.78,
+      "text": "Propeller",
+      "probability": 0.6493415671090285
+    },
+    {
+      "start": 239.78,
+      "end": 240.02,
+      "text": "is",
+      "probability": 0.9926089644432068
+    },
+    {
+      "start": 240.02,
+      "end": 240.46,
+      "text": "independent,",
+      "probability": 0.9914695620536804
+    },
+    {
+      "start": 240.98,
+      "end": 241.06,
+      "text": "does",
+      "probability": 0.990393340587616
+    },
+    {
+      "start": 241.06,
+      "end": 241.26,
+      "text": "not",
+      "probability": 0.9992883801460266
+    },
+    {
+      "start": 241.26,
+      "end": 241.7,
+      "text": "submit",
+      "probability": 0.984916090965271
+    },
+    {
+      "start": 241.7,
+      "end": 242.12,
+      "text": "entries",
+      "probability": 0.9907417297363281
+    },
+    {
+      "start": 242.12,
+      "end": 242.5,
+      "text": "and",
+      "probability": 0.505614697933197
+    },
+    {
+      "start": 242.5,
+      "end": 242.64,
+      "text": "does",
+      "probability": 0.9919965863227844
+    },
+    {
+      "start": 242.64,
+      "end": 242.86,
+      "text": "not",
+      "probability": 0.9987534284591675
+    },
+    {
+      "start": 242.86,
+      "end": 243.22,
+      "text": "guarantee",
+      "probability": 0.9986231327056885
+    },
+    {
+      "start": 243.22,
+      "end": 244.06,
+      "text": "outcomes.",
+      "probability": 0.9843632578849792
+    },
+    {
+      "start": 244.96,
+      "end": 245.04,
+      "text": "The",
+      "probability": 0.9869694709777832
+    },
+    {
+      "start": 245.04,
+      "end": 245.36,
+      "text": "safest",
+      "probability": 0.9897664189338684
+    },
+    {
+      "start": 245.36,
+      "end": 245.96,
+      "text": "workflow",
+      "probability": 0.9702329635620117
+    },
+    {
+      "start": 245.96,
+      "end": 246.28,
+      "text": "is",
+      "probability": 0.998027503490448
+    },
+    {
+      "start": 246.28,
+      "end": 246.58,
+      "text": "simple.",
+      "probability": 0.9904623627662659
+    },
+    {
+      "start": 247.22,
+      "end": 247.6,
+      "text": "Exact",
+      "probability": 0.9776066541671753
+    },
+    {
+      "start": 247.6,
+      "end": 247.9,
+      "text": "row,",
+      "probability": 0.8337485790252686
+    },
+    {
+      "start": 248.3,
+      "end": 248.98,
+      "text": "inspectable",
+      "probability": 0.8896497189998627
+    },
+    {
+      "start": 248.98,
+      "end": 249.34,
+      "text": "evidence,",
+      "probability": 0.9759162068367004
+    },
+    {
+      "start": 249.92,
+      "end": 250.08,
+      "text": "honest",
+      "probability": 0.9901741743087769
+    },
+    {
+      "start": 250.08,
+      "end": 250.74,
+      "text": "freshness,",
+      "probability": 0.9795929789543152
+    },
+    {
+      "start": 251.04,
+      "end": 251.34,
+      "text": "actual",
+      "probability": 0.9841821789741516
+    },
+    {
+      "start": 251.34,
+      "end": 251.8,
+      "text": "platform",
+      "probability": 0.9918203353881836
+    },
+    {
+      "start": 251.8,
+      "end": 252.22,
+      "text": "check,",
+      "probability": 0.9828583002090454
+    },
+    {
+      "start": 252.78,
+      "end": 252.88,
+      "text": "and",
+      "probability": 0.9976280331611633
+    },
+    {
+      "start": 252.88,
+      "end": 253.18,
+      "text": "stop",
+      "probability": 0.9965019226074219
+    },
+    {
+      "start": 253.18,
+      "end": 253.44,
+      "text": "when",
+      "probability": 0.9965702295303345
+    },
+    {
+      "start": 253.44,
+      "end": 253.6,
+      "text": "they",
+      "probability": 0.9981001019477844
+    },
+    {
+      "start": 253.6,
+      "end": 253.74,
+      "text": "do",
+      "probability": 0.9955171942710876
+    },
+    {
+      "start": 253.74,
+      "end": 253.92,
+      "text": "not",
+      "probability": 0.9991891980171204
+    },
+    {
+      "start": 253.92,
+      "end": 254.26,
+      "text": "agree.",
+      "probability": 0.9968026876449585
+    }
+  ],
+  "exact_words": [
+    {
+      "start": 0.0,
+      "end": 0.54,
+      "text": "Here",
+      "probability": null
+    },
+    {
+      "start": 0.54,
+      "end": 0.74,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 0.74,
+      "end": 0.88,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 0.88,
+      "end": 1.12,
+      "text": "safe",
+      "probability": null
+    },
+    {
+      "start": 1.12,
+      "end": 1.36,
+      "text": "way",
+      "probability": null
+    },
+    {
+      "start": 1.36,
+      "end": 1.56,
+      "text": "to",
+      "probability": null
+    },
+    {
+      "start": 1.56,
+      "end": 1.74,
+      "text": "use",
+      "probability": null
+    },
+    {
+      "start": 1.74,
+      "end": 2.38,
+      "text": "Propeller's",
+      "probability": null
+    },
+    {
+      "start": 2.38,
+      "end": 2.94,
+      "text": "PrizePicks",
+      "probability": null
+    },
+    {
+      "start": 2.94,
+      "end": 3.16,
+      "text": "research",
+      "probability": null
+    },
+    {
+      "start": 3.16,
+      "end": 3.74,
+      "text": "page:",
+      "probability": null
+    },
+    {
+      "start": 4.44,
+      "end": 4.64,
+      "text": "find",
+      "probability": null
+    },
+    {
+      "start": 4.64,
+      "end": 4.8,
+      "text": "a",
+      "probability": null
+    },
+    {
+      "start": 4.8,
+      "end": 5.0,
+      "text": "current",
+      "probability": null
+    },
+    {
+      "start": 5.0,
+      "end": 5.42,
+      "text": "row,",
+      "probability": null
+    },
+    {
+      "start": 5.98,
+      "end": 6.16,
+      "text": "match",
+      "probability": null
+    },
+    {
+      "start": 6.16,
+      "end": 6.42,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 6.42,
+      "end": 6.8,
+      "text": "player,",
+      "probability": null
+    },
+    {
+      "start": 7.1,
+      "end": 7.3,
+      "text": "stat,",
+      "probability": null
+    },
+    {
+      "start": 7.3,
+      "end": 7.66,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 7.66,
+      "end": 7.82,
+      "text": "exact",
+      "probability": null
+    },
+    {
+      "start": 7.82,
+      "end": 8.46,
+      "text": "line,",
+      "probability": null
+    },
+    {
+      "start": 8.46,
+      "end": 9.02,
+      "text": "read",
+      "probability": null
+    },
+    {
+      "start": 9.02,
+      "end": 9.48,
+      "text": "direction",
+      "probability": null
+    },
+    {
+      "start": 9.48,
+      "end": 9.8,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 9.8,
+      "end": 10.24,
+      "text": "confidence,",
+      "probability": null
+    },
+    {
+      "start": 10.8,
+      "end": 11.24,
+      "text": "inspect",
+      "probability": null
+    },
+    {
+      "start": 11.24,
+      "end": 11.54,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 11.54,
+      "end": 11.92,
+      "text": "supporting",
+      "probability": null
+    },
+    {
+      "start": 11.92,
+      "end": 12.3,
+      "text": "evidence",
+      "probability": null
+    },
+    {
+      "start": 12.3,
+      "end": 12.68,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 12.68,
+      "end": 12.96,
+      "text": "timestamp,",
+      "probability": null
+    },
+    {
+      "start": 13.88,
+      "end": 13.98,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 13.98,
+      "end": 14.12,
+      "text": "then",
+      "probability": null
+    },
+    {
+      "start": 14.12,
+      "end": 14.44,
+      "text": "verify",
+      "probability": null
+    },
+    {
+      "start": 14.44,
+      "end": 14.86,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 14.86,
+      "end": 15.14,
+      "text": "same",
+      "probability": null
+    },
+    {
+      "start": 15.14,
+      "end": 15.5,
+      "text": "projection",
+      "probability": null
+    },
+    {
+      "start": 15.5,
+      "end": 16.06,
+      "text": "inside",
+      "probability": null
+    },
+    {
+      "start": 16.06,
+      "end": 17.72,
+      "text": "PrizePicks.",
+      "probability": null
+    },
+    {
+      "start": 17.72,
+      "end": 17.86,
+      "text": "If",
+      "probability": null
+    },
+    {
+      "start": 17.86,
+      "end": 18.0,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 18.0,
+      "end": 18.36,
+      "text": "final",
+      "probability": null
+    },
+    {
+      "start": 18.36,
+      "end": 18.62,
+      "text": "match",
+      "probability": null
+    },
+    {
+      "start": 18.62,
+      "end": 19.14,
+      "text": "fails,",
+      "probability": null
+    },
+    {
+      "start": 19.72,
+      "end": 19.72,
+      "text": "stop.",
+      "probability": null
+    },
+    {
+      "start": 20.58,
+      "end": 20.94,
+      "text": "We",
+      "probability": null
+    },
+    {
+      "start": 20.94,
+      "end": 21.08,
+      "text": "will",
+      "probability": null
+    },
+    {
+      "start": 21.08,
+      "end": 21.28,
+      "text": "use",
+      "probability": null
+    },
+    {
+      "start": 21.28,
+      "end": 21.58,
+      "text": "one",
+      "probability": null
+    },
+    {
+      "start": 21.58,
+      "end": 22.04,
+      "text": "real,",
+      "probability": null
+    },
+    {
+      "start": 22.3,
+      "end": 22.5,
+      "text": "dated",
+      "probability": null
+    },
+    {
+      "start": 22.5,
+      "end": 22.98,
+      "text": "example",
+      "probability": null
+    },
+    {
+      "start": 22.98,
+      "end": 23.56,
+      "text": "captured",
+      "probability": null
+    },
+    {
+      "start": 23.56,
+      "end": 23.82,
+      "text": "on",
+      "probability": null
+    },
+    {
+      "start": 23.82,
+      "end": 24.2,
+      "text": "August",
+      "probability": null
+    },
+    {
+      "start": 24.2,
+      "end": 24.82,
+      "text": "seventeenth,",
+      "probability": null
+    },
+    {
+      "start": 24.82,
+      "end": 25.439999999999998,
+      "text": "twenty",
+      "probability": null
+    },
+    {
+      "start": 25.439999999999998,
+      "end": 26.06,
+      "text": "twenty-six.",
+      "probability": null
+    },
+    {
+      "start": 26.06,
+      "end": 27.3,
+      "text": "This",
+      "probability": null
+    },
+    {
+      "start": 27.3,
+      "end": 27.5,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 27.5,
+      "end": 27.82,
+      "text": "current",
+      "probability": null
+    },
+    {
+      "start": 27.82,
+      "end": 28.36,
+      "text": "Propeller",
+      "probability": null
+    },
+    {
+      "start": 28.36,
+      "end": 28.64,
+      "text": "analysis,",
+      "probability": null
+    },
+    {
+      "start": 29.4,
+      "end": 29.66,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 29.66,
+      "end": 29.72,
+      "text": "a",
+      "probability": null
+    },
+    {
+      "start": 29.72,
+      "end": 30.04,
+      "text": "claim",
+      "probability": null
+    },
+    {
+      "start": 30.04,
+      "end": 30.34,
+      "text": "that",
+      "probability": null
+    },
+    {
+      "start": 30.34,
+      "end": 31.04,
+      "text": "PrizePicks",
+      "probability": null
+    },
+    {
+      "start": 31.04,
+      "end": 31.44,
+      "text": "offers",
+      "probability": null
+    },
+    {
+      "start": 31.44,
+      "end": 31.7,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 31.7,
+      "end": 31.96,
+      "text": "same",
+      "probability": null
+    },
+    {
+      "start": 31.96,
+      "end": 32.32,
+      "text": "line.",
+      "probability": null
+    },
+    {
+      "start": 33.48,
+      "end": 33.7,
+      "text": "First,",
+      "probability": null
+    },
+    {
+      "start": 33.96,
+      "end": 34.24,
+      "text": "open",
+      "probability": null
+    },
+    {
+      "start": 34.24,
+      "end": 34.34,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 34.34,
+      "end": 34.86,
+      "text": "PrizePicks",
+      "probability": null
+    },
+    {
+      "start": 34.86,
+      "end": 35.02,
+      "text": "research",
+      "probability": null
+    },
+    {
+      "start": 35.02,
+      "end": 35.56,
+      "text": "page",
+      "probability": null
+    },
+    {
+      "start": 35.56,
+      "end": 35.96,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 35.96,
+      "end": 36.16,
+      "text": "check",
+      "probability": null
+    },
+    {
+      "start": 36.16,
+      "end": 36.36,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 36.36,
+      "end": 36.56,
+      "text": "visible",
+      "probability": null
+    },
+    {
+      "start": 36.56,
+      "end": 36.98,
+      "text": "date.",
+      "probability": null
+    },
+    {
+      "start": 37.72,
+      "end": 37.8,
+      "text": "The",
+      "probability": null
+    },
+    {
+      "start": 37.8,
+      "end": 38.04,
+      "text": "page",
+      "probability": null
+    },
+    {
+      "start": 38.04,
+      "end": 38.5,
+      "text": "requests",
+      "probability": null
+    },
+    {
+      "start": 38.5,
+      "end": 39.04,
+      "text": "current",
+      "probability": null
+    },
+    {
+      "start": 39.04,
+      "end": 39.34,
+      "text": "public",
+      "probability": null
+    },
+    {
+      "start": 39.34,
+      "end": 39.74,
+      "text": "preview",
+      "probability": null
+    },
+    {
+      "start": 39.74,
+      "end": 40.12,
+      "text": "data",
+      "probability": null
+    },
+    {
+      "start": 40.12,
+      "end": 40.4,
+      "text": "for",
+      "probability": null
+    },
+    {
+      "start": 40.4,
+      "end": 40.64,
+      "text": "NBA,",
+      "probability": null
+    },
+    {
+      "start": 41.94,
+      "end": 41.94,
+      "text": "MLB,",
+      "probability": null
+    },
+    {
+      "start": 41.94,
+      "end": 42.8,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 42.8,
+      "end": 43.08,
+      "text": "NHL.",
+      "probability": null
+    },
+    {
+      "start": 44.08,
+      "end": 44.32,
+      "text": "On",
+      "probability": null
+    },
+    {
+      "start": 44.32,
+      "end": 44.46,
+      "text": "this",
+      "probability": null
+    },
+    {
+      "start": 44.46,
+      "end": 44.76,
+      "text": "capture,",
+      "probability": null
+    },
+    {
+      "start": 45.38,
+      "end": 45.78,
+      "text": "MLB",
+      "probability": null
+    },
+    {
+      "start": 45.78,
+      "end": 46.2,
+      "text": "had",
+      "probability": null
+    },
+    {
+      "start": 46.2,
+      "end": 46.52,
+      "text": "five",
+      "probability": null
+    },
+    {
+      "start": 46.52,
+      "end": 47.16,
+      "text": "Propeller",
+      "probability": null
+    },
+    {
+      "start": 47.16,
+      "end": 47.56,
+      "text": "research",
+      "probability": null
+    },
+    {
+      "start": 47.56,
+      "end": 47.82,
+      "text": "rows",
+      "probability": null
+    },
+    {
+      "start": 47.82,
+      "end": 48.18,
+      "text": "while",
+      "probability": null
+    },
+    {
+      "start": 48.18,
+      "end": 48.52,
+      "text": "NBA",
+      "probability": null
+    },
+    {
+      "start": 48.52,
+      "end": 49.22,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 49.22,
+      "end": 49.58,
+      "text": "NHL",
+      "probability": null
+    },
+    {
+      "start": 49.58,
+      "end": 50.16,
+      "text": "returned",
+      "probability": null
+    },
+    {
+      "start": 50.16,
+      "end": 50.62,
+      "text": "no",
+      "probability": null
+    },
+    {
+      "start": 50.62,
+      "end": 50.86,
+      "text": "rows.",
+      "probability": null
+    },
+    {
+      "start": 51.8,
+      "end": 52.44,
+      "text": "Desktop",
+      "probability": null
+    },
+    {
+      "start": 52.44,
+      "end": 52.96,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 52.96,
+      "end": 53.14,
+      "text": "mobile",
+      "probability": null
+    },
+    {
+      "start": 53.14,
+      "end": 53.52,
+      "text": "show",
+      "probability": null
+    },
+    {
+      "start": 53.52,
+      "end": 53.72,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 53.72,
+      "end": 53.98,
+      "text": "same",
+      "probability": null
+    },
+    {
+      "start": 53.98,
+      "end": 54.32,
+      "text": "first",
+      "probability": null
+    },
+    {
+      "start": 54.32,
+      "end": 54.62,
+      "text": "row:",
+      "probability": null
+    },
+    {
+      "start": 55.24,
+      "end": 55.54,
+      "text": "Christian",
+      "probability": null
+    },
+    {
+      "start": 55.54,
+      "end": 55.86,
+      "text": "Franklin,",
+      "probability": null
+    },
+    {
+      "start": 56.82,
+      "end": 56.82,
+      "text": "Baltimore,",
+      "probability": null
+    },
+    {
+      "start": 57.18,
+      "end": 57.46,
+      "text": "runs",
+      "probability": null
+    },
+    {
+      "start": 57.46,
+      "end": 57.9,
+      "text": "batted",
+      "probability": null
+    },
+    {
+      "start": 57.9,
+      "end": 58.22,
+      "text": "in,",
+      "probability": null
+    },
+    {
+      "start": 58.22,
+      "end": 58.96,
+      "text": "zero",
+      "probability": null
+    },
+    {
+      "start": 58.96,
+      "end": 59.699999999999996,
+      "text": "point",
+      "probability": null
+    },
+    {
+      "start": 59.699999999999996,
+      "end": 60.44,
+      "text": "five.",
+      "probability": null
+    },
+    {
+      "start": 60.44,
+      "end": 60.6,
+      "text": "The",
+      "probability": null
+    },
+    {
+      "start": 60.6,
+      "end": 60.9,
+      "text": "displayed",
+      "probability": null
+    },
+    {
+      "start": 60.9,
+      "end": 61.42,
+      "text": "direction",
+      "probability": null
+    },
+    {
+      "start": 61.42,
+      "end": 61.76,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 61.76,
+      "end": 62.1,
+      "text": "under",
+      "probability": null
+    },
+    {
+      "start": 62.1,
+      "end": 62.34,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 62.34,
+      "end": 62.46,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 62.46,
+      "end": 63.22,
+      "text": "model-confidence",
+      "probability": null
+    },
+    {
+      "start": 63.22,
+      "end": 63.7,
+      "text": "score",
+      "probability": null
+    },
+    {
+      "start": 63.7,
+      "end": 64.0,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 64.0,
+      "end": 65.76,
+      "text": "seventy-nine.",
+      "probability": null
+    },
+    {
+      "start": 65.76,
+      "end": 66.08,
+      "text": "Before",
+      "probability": null
+    },
+    {
+      "start": 66.08,
+      "end": 66.4,
+      "text": "reading",
+      "probability": null
+    },
+    {
+      "start": 66.4,
+      "end": 66.74,
+      "text": "anything",
+      "probability": null
+    },
+    {
+      "start": 66.74,
+      "end": 67.1,
+      "text": "else,",
+      "probability": null
+    },
+    {
+      "start": 67.24,
+      "end": 67.46,
+      "text": "pause",
+      "probability": null
+    },
+    {
+      "start": 67.46,
+      "end": 67.82,
+      "text": "on",
+      "probability": null
+    },
+    {
+      "start": 67.82,
+      "end": 67.98,
+      "text": "those",
+      "probability": null
+    },
+    {
+      "start": 67.98,
+      "end": 68.26,
+      "text": "three",
+      "probability": null
+    },
+    {
+      "start": 68.26,
+      "end": 68.74,
+      "text": "fields:",
+      "probability": null
+    },
+    {
+      "start": 69.22,
+      "end": 69.48,
+      "text": "player,",
+      "probability": null
+    },
+    {
+      "start": 69.84,
+      "end": 70.0,
+      "text": "stat,",
+      "probability": null
+    },
+    {
+      "start": 70.0,
+      "end": 70.3,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 70.3,
+      "end": 70.58,
+      "text": "line.",
+      "probability": null
+    },
+    {
+      "start": 71.32,
+      "end": 71.44,
+      "text": "They",
+      "probability": null
+    },
+    {
+      "start": 71.44,
+      "end": 71.7,
+      "text": "define",
+      "probability": null
+    },
+    {
+      "start": 71.7,
+      "end": 72.02,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 72.02,
+      "end": 72.34,
+      "text": "research",
+      "probability": null
+    },
+    {
+      "start": 72.34,
+      "end": 72.7,
+      "text": "question.",
+      "probability": null
+    },
+    {
+      "start": 73.56,
+      "end": 73.58,
+      "text": "A",
+      "probability": null
+    },
+    {
+      "start": 73.58,
+      "end": 73.82,
+      "text": "different",
+      "probability": null
+    },
+    {
+      "start": 73.82,
+      "end": 74.14,
+      "text": "player,",
+      "probability": null
+    },
+    {
+      "start": 74.5,
+      "end": 74.7,
+      "text": "different",
+      "probability": null
+    },
+    {
+      "start": 74.7,
+      "end": 75.0,
+      "text": "stat,",
+      "probability": null
+    },
+    {
+      "start": 75.0,
+      "end": 75.44,
+      "text": "or",
+      "probability": null
+    },
+    {
+      "start": 75.44,
+      "end": 75.76,
+      "text": "different",
+      "probability": null
+    },
+    {
+      "start": 75.76,
+      "end": 76.1,
+      "text": "number",
+      "probability": null
+    },
+    {
+      "start": 76.1,
+      "end": 76.32,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 76.32,
+      "end": 76.54,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 76.54,
+      "end": 76.66,
+      "text": "a",
+      "probability": null
+    },
+    {
+      "start": 76.66,
+      "end": 76.92,
+      "text": "match.",
+      "probability": null
+    },
+    {
+      "start": 77.92,
+      "end": 78.4,
+      "text": "Next,",
+      "probability": null
+    },
+    {
+      "start": 78.84,
+      "end": 78.9,
+      "text": "read",
+      "probability": null
+    },
+    {
+      "start": 78.9,
+      "end": 79.38,
+      "text": "direction",
+      "probability": null
+    },
+    {
+      "start": 79.38,
+      "end": 79.78,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 79.78,
+      "end": 80.2,
+      "text": "confidence",
+      "probability": null
+    },
+    {
+      "start": 80.2,
+      "end": 80.86,
+      "text": "separately.",
+      "probability": null
+    },
+    {
+      "start": 81.64,
+      "end": 81.86,
+      "text": "Under",
+      "probability": null
+    },
+    {
+      "start": 81.86,
+      "end": 82.06,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 82.06,
+      "end": 82.2,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 82.2,
+      "end": 82.58,
+      "text": "side",
+      "probability": null
+    },
+    {
+      "start": 82.58,
+      "end": 82.96,
+      "text": "supported",
+      "probability": null
+    },
+    {
+      "start": 82.96,
+      "end": 83.4,
+      "text": "by",
+      "probability": null
+    },
+    {
+      "start": 83.4,
+      "end": 83.52,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 83.52,
+      "end": 83.9,
+      "text": "combined",
+      "probability": null
+    },
+    {
+      "start": 83.9,
+      "end": 84.48,
+      "text": "analysis.",
+      "probability": null
+    },
+    {
+      "start": 84.48,
+      "end": 85.82,
+      "text": "Seventy-nine",
+      "probability": null
+    },
+    {
+      "start": 85.82,
+      "end": 86.5,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 86.5,
+      "end": 86.64,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 86.64,
+      "end": 86.98,
+      "text": "strength",
+      "probability": null
+    },
+    {
+      "start": 86.98,
+      "end": 87.2,
+      "text": "of",
+      "probability": null
+    },
+    {
+      "start": 87.2,
+      "end": 87.36,
+      "text": "that",
+      "probability": null
+    },
+    {
+      "start": 87.36,
+      "end": 87.8,
+      "text": "directional",
+      "probability": null
+    },
+    {
+      "start": 87.8,
+      "end": 88.32,
+      "text": "signal",
+      "probability": null
+    },
+    {
+      "start": 88.32,
+      "end": 88.7,
+      "text": "for",
+      "probability": null
+    },
+    {
+      "start": 88.7,
+      "end": 88.82,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 88.82,
+      "end": 89.14,
+      "text": "displayed",
+      "probability": null
+    },
+    {
+      "start": 89.14,
+      "end": 89.58,
+      "text": "line.",
+      "probability": null
+    },
+    {
+      "start": 90.3,
+      "end": 90.38,
+      "text": "It",
+      "probability": null
+    },
+    {
+      "start": 90.38,
+      "end": 90.48,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 90.48,
+      "end": 90.72,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 90.72,
+      "end": 90.9,
+      "text": "a",
+      "probability": null
+    },
+    {
+      "start": 90.9,
+      "end": 91.58000000000001,
+      "text": "seventy-nine",
+      "probability": null
+    },
+    {
+      "start": 91.58000000000001,
+      "end": 92.26,
+      "text": "percent",
+      "probability": null
+    },
+    {
+      "start": 92.26,
+      "end": 92.44,
+      "text": "win",
+      "probability": null
+    },
+    {
+      "start": 92.44,
+      "end": 92.92,
+      "text": "probability.",
+      "probability": null
+    },
+    {
+      "start": 94.32,
+      "end": 94.54,
+      "text": "Now",
+      "probability": null
+    },
+    {
+      "start": 94.54,
+      "end": 94.98,
+      "text": "inspect",
+      "probability": null
+    },
+    {
+      "start": 94.98,
+      "end": 95.28,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 95.28,
+      "end": 95.6,
+      "text": "evidence",
+      "probability": null
+    },
+    {
+      "start": 95.6,
+      "end": 95.94,
+      "text": "behind",
+      "probability": null
+    },
+    {
+      "start": 95.94,
+      "end": 96.28,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 96.28,
+      "end": 96.48,
+      "text": "row.",
+      "probability": null
+    },
+    {
+      "start": 97.18,
+      "end": 97.2,
+      "text": "The",
+      "probability": null
+    },
+    {
+      "start": 97.2,
+      "end": 97.5,
+      "text": "dated",
+      "probability": null
+    },
+    {
+      "start": 97.5,
+      "end": 97.98,
+      "text": "analysis",
+      "probability": null
+    },
+    {
+      "start": 97.98,
+      "end": 98.44,
+      "text": "detail",
+      "probability": null
+    },
+    {
+      "start": 98.44,
+      "end": 98.82,
+      "text": "included",
+      "probability": null
+    },
+    {
+      "start": 98.82,
+      "end": 99.46,
+      "text": "five",
+      "probability": null
+    },
+    {
+      "start": 99.46,
+      "end": 99.96,
+      "text": "agents.",
+      "probability": null
+    },
+    {
+      "start": 99.96,
+      "end": 100.96,
+      "text": "Hit-rate",
+      "probability": null
+    },
+    {
+      "start": 100.96,
+      "end": 101.3,
+      "text": "evidence",
+      "probability": null
+    },
+    {
+      "start": 101.3,
+      "end": 101.78,
+      "text": "noted",
+      "probability": null
+    },
+    {
+      "start": 101.78,
+      "end": 102.08,
+      "text": "a",
+      "probability": null
+    },
+    {
+      "start": 102.08,
+      "end": 102.36,
+      "text": "long",
+      "probability": null
+    },
+    {
+      "start": 102.36,
+      "end": 102.7,
+      "text": "run",
+      "probability": null
+    },
+    {
+      "start": 102.7,
+      "end": 102.86,
+      "text": "of",
+      "probability": null
+    },
+    {
+      "start": 102.86,
+      "end": 103.1,
+      "text": "games",
+      "probability": null
+    },
+    {
+      "start": 103.1,
+      "end": 103.5,
+      "text": "below",
+      "probability": null
+    },
+    {
+      "start": 103.5,
+      "end": 103.8,
+      "text": "this",
+      "probability": null
+    },
+    {
+      "start": 103.8,
+      "end": 104.2,
+      "text": "threshold.",
+      "probability": null
+    },
+    {
+      "start": 104.92,
+      "end": 105.44,
+      "text": "Ballpark",
+      "probability": null
+    },
+    {
+      "start": 105.44,
+      "end": 105.94,
+      "text": "context",
+      "probability": null
+    },
+    {
+      "start": 105.94,
+      "end": 106.38,
+      "text": "leaned",
+      "probability": null
+    },
+    {
+      "start": 106.38,
+      "end": 106.88,
+      "text": "under.",
+      "probability": null
+    },
+    {
+      "start": 107.46,
+      "end": 107.8,
+      "text": "Usage",
+      "probability": null
+    },
+    {
+      "start": 107.8,
+      "end": 108.24,
+      "text": "produced",
+      "probability": null
+    },
+    {
+      "start": 108.24,
+      "end": 108.6,
+      "text": "an",
+      "probability": null
+    },
+    {
+      "start": 108.6,
+      "end": 108.84,
+      "text": "under",
+      "probability": null
+    },
+    {
+      "start": 108.84,
+      "end": 109.2,
+      "text": "projection.",
+      "probability": null
+    },
+    {
+      "start": 110.06,
+      "end": 110.38,
+      "text": "Market",
+      "probability": null
+    },
+    {
+      "start": 110.38,
+      "end": 110.82,
+      "text": "context",
+      "probability": null
+    },
+    {
+      "start": 110.82,
+      "end": 111.28,
+      "text": "was",
+      "probability": null
+    },
+    {
+      "start": 111.28,
+      "end": 111.58,
+      "text": "neutral.",
+      "probability": null
+    },
+    {
+      "start": 112.38,
+      "end": 112.42,
+      "text": "The",
+      "probability": null
+    },
+    {
+      "start": 112.42,
+      "end": 112.74,
+      "text": "injury",
+      "probability": null
+    },
+    {
+      "start": 112.74,
+      "end": 113.24,
+      "text": "agent",
+      "probability": null
+    },
+    {
+      "start": 113.24,
+      "end": 113.72,
+      "text": "reported",
+      "probability": null
+    },
+    {
+      "start": 113.72,
+      "end": 114.12,
+      "text": "that",
+      "probability": null
+    },
+    {
+      "start": 114.12,
+      "end": 114.42,
+      "text": "no",
+      "probability": null
+    },
+    {
+      "start": 114.42,
+      "end": 114.92,
+      "text": "injury",
+      "probability": null
+    },
+    {
+      "start": 114.92,
+      "end": 115.42,
+      "text": "data",
+      "probability": null
+    },
+    {
+      "start": 115.42,
+      "end": 115.64,
+      "text": "was",
+      "probability": null
+    },
+    {
+      "start": 115.64,
+      "end": 116.0,
+      "text": "available.",
+      "probability": null
+    },
+    {
+      "start": 117.3,
+      "end": 117.54,
+      "text": "That",
+      "probability": null
+    },
+    {
+      "start": 117.54,
+      "end": 117.74,
+      "text": "missing",
+      "probability": null
+    },
+    {
+      "start": 117.74,
+      "end": 118.4,
+      "text": "injury",
+      "probability": null
+    },
+    {
+      "start": 118.4,
+      "end": 118.8,
+      "text": "input",
+      "probability": null
+    },
+    {
+      "start": 118.8,
+      "end": 119.38,
+      "text": "matters.",
+      "probability": null
+    },
+    {
+      "start": 120.02,
+      "end": 120.16,
+      "text": "It",
+      "probability": null
+    },
+    {
+      "start": 120.16,
+      "end": 120.38,
+      "text": "tells",
+      "probability": null
+    },
+    {
+      "start": 120.38,
+      "end": 120.66,
+      "text": "you",
+      "probability": null
+    },
+    {
+      "start": 120.66,
+      "end": 120.8,
+      "text": "to",
+      "probability": null
+    },
+    {
+      "start": 120.8,
+      "end": 121.06,
+      "text": "check",
+      "probability": null
+    },
+    {
+      "start": 121.06,
+      "end": 121.34,
+      "text": "late",
+      "probability": null
+    },
+    {
+      "start": 121.34,
+      "end": 121.7,
+      "text": "news",
+      "probability": null
+    },
+    {
+      "start": 121.7,
+      "end": 122.26,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 122.26,
+      "end": 122.38,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 122.38,
+      "end": 122.76,
+      "text": "expected",
+      "probability": null
+    },
+    {
+      "start": 122.76,
+      "end": 123.22,
+      "text": "lineup",
+      "probability": null
+    },
+    {
+      "start": 123.22,
+      "end": 123.76,
+      "text": "yourself.",
+      "probability": null
+    },
+    {
+      "start": 124.54,
+      "end": 124.9,
+      "text": "Agent",
+      "probability": null
+    },
+    {
+      "start": 124.9,
+      "end": 125.24,
+      "text": "evidence",
+      "probability": null
+    },
+    {
+      "start": 125.24,
+      "end": 125.84,
+      "text": "explains",
+      "probability": null
+    },
+    {
+      "start": 125.84,
+      "end": 126.4,
+      "text": "why",
+      "probability": null
+    },
+    {
+      "start": 126.4,
+      "end": 126.58,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 126.58,
+      "end": 126.86,
+      "text": "model",
+      "probability": null
+    },
+    {
+      "start": 126.86,
+      "end": 127.22,
+      "text": "leaned",
+      "probability": null
+    },
+    {
+      "start": 127.22,
+      "end": 127.64,
+      "text": "one",
+      "probability": null
+    },
+    {
+      "start": 127.64,
+      "end": 128.02,
+      "text": "way;",
+      "probability": null
+    },
+    {
+      "start": 128.02,
+      "end": 128.64,
+      "text": "it",
+      "probability": null
+    },
+    {
+      "start": 128.64,
+      "end": 128.76,
+      "text": "does",
+      "probability": null
+    },
+    {
+      "start": 128.76,
+      "end": 128.96,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 128.96,
+      "end": 129.32,
+      "text": "remove",
+      "probability": null
+    },
+    {
+      "start": 129.32,
+      "end": 129.66,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 129.66,
+      "end": 129.86,
+      "text": "need",
+      "probability": null
+    },
+    {
+      "start": 129.86,
+      "end": 130.04,
+      "text": "to",
+      "probability": null
+    },
+    {
+      "start": 130.04,
+      "end": 130.3,
+      "text": "verify",
+      "probability": null
+    },
+    {
+      "start": 130.3,
+      "end": 130.88,
+      "text": "what",
+      "probability": null
+    },
+    {
+      "start": 130.88,
+      "end": 131.28,
+      "text": "changed",
+      "probability": null
+    },
+    {
+      "start": 131.28,
+      "end": 131.88,
+      "text": "after",
+      "probability": null
+    },
+    {
+      "start": 131.88,
+      "end": 132.0,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 132.0,
+      "end": 132.44,
+      "text": "analysis",
+      "probability": null
+    },
+    {
+      "start": 132.44,
+      "end": 132.84,
+      "text": "ran.",
+      "probability": null
+    },
+    {
+      "start": 133.88,
+      "end": 134.32,
+      "text": "Then",
+      "probability": null
+    },
+    {
+      "start": 134.32,
+      "end": 134.6,
+      "text": "check",
+      "probability": null
+    },
+    {
+      "start": 134.6,
+      "end": 135.2,
+      "text": "freshness.",
+      "probability": null
+    },
+    {
+      "start": 135.9,
+      "end": 135.98,
+      "text": "The",
+      "probability": null
+    },
+    {
+      "start": 135.98,
+      "end": 136.2,
+      "text": "source",
+      "probability": null
+    },
+    {
+      "start": 136.2,
+      "end": 136.62,
+      "text": "analysis",
+      "probability": null
+    },
+    {
+      "start": 136.62,
+      "end": 137.14,
+      "text": "timestamp",
+      "probability": null
+    },
+    {
+      "start": 137.14,
+      "end": 137.72,
+      "text": "for",
+      "probability": null
+    },
+    {
+      "start": 137.72,
+      "end": 137.86,
+      "text": "this",
+      "probability": null
+    },
+    {
+      "start": 137.86,
+      "end": 138.14,
+      "text": "row",
+      "probability": null
+    },
+    {
+      "start": 138.14,
+      "end": 138.42,
+      "text": "was",
+      "probability": null
+    },
+    {
+      "start": 138.42,
+      "end": 138.76,
+      "text": "August",
+      "probability": null
+    },
+    {
+      "start": 138.76,
+      "end": 139.78,
+      "text": "seventeenth",
+      "probability": null
+    },
+    {
+      "start": 139.78,
+      "end": 139.8,
+      "text": "at",
+      "probability": null
+    },
+    {
+      "start": 139.8,
+      "end": 139.98000000000002,
+      "text": "twenty",
+      "probability": null
+    },
+    {
+      "start": 139.98000000000002,
+      "end": 140.16,
+      "text": "thirty",
+      "probability": null
+    },
+    {
+      "start": 140.16,
+      "end": 141.0,
+      "text": "UTC.",
+      "probability": null
+    },
+    {
+      "start": 141.88,
+      "end": 142.06,
+      "text": "The",
+      "probability": null
+    },
+    {
+      "start": 142.06,
+      "end": 142.32,
+      "text": "public",
+      "probability": null
+    },
+    {
+      "start": 142.32,
+      "end": 142.76,
+      "text": "page",
+      "probability": null
+    },
+    {
+      "start": 142.76,
+      "end": 143.06,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 143.06,
+      "end": 143.26,
+      "text": "both",
+      "probability": null
+    },
+    {
+      "start": 143.26,
+      "end": 143.7,
+      "text": "captures",
+      "probability": null
+    },
+    {
+      "start": 143.7,
+      "end": 144.14,
+      "text": "used",
+      "probability": null
+    },
+    {
+      "start": 144.14,
+      "end": 144.42,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 144.42,
+      "end": 144.72,
+      "text": "same",
+      "probability": null
+    },
+    {
+      "start": 144.72,
+      "end": 145.1,
+      "text": "dated",
+      "probability": null
+    },
+    {
+      "start": 145.1,
+      "end": 145.46,
+      "text": "row.",
+      "probability": null
+    },
+    {
+      "start": 146.24,
+      "end": 146.32,
+      "text": "A",
+      "probability": null
+    },
+    {
+      "start": 146.32,
+      "end": 146.66,
+      "text": "response",
+      "probability": null
+    },
+    {
+      "start": 146.66,
+      "end": 147.16,
+      "text": "generated",
+      "probability": null
+    },
+    {
+      "start": 147.16,
+      "end": 147.82,
+      "text": "later",
+      "probability": null
+    },
+    {
+      "start": 147.82,
+      "end": 148.2,
+      "text": "does",
+      "probability": null
+    },
+    {
+      "start": 148.2,
+      "end": 148.42,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 148.42,
+      "end": 148.68,
+      "text": "make",
+      "probability": null
+    },
+    {
+      "start": 148.68,
+      "end": 148.86,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 148.86,
+      "end": 149.26,
+      "text": "underlying",
+      "probability": null
+    },
+    {
+      "start": 149.26,
+      "end": 149.94,
+      "text": "analysis",
+      "probability": null
+    },
+    {
+      "start": 149.94,
+      "end": 150.4,
+      "text": "newer,",
+      "probability": null
+    },
+    {
+      "start": 151.0,
+      "end": 151.1,
+      "text": "so",
+      "probability": null
+    },
+    {
+      "start": 151.1,
+      "end": 151.38,
+      "text": "use",
+      "probability": null
+    },
+    {
+      "start": 151.38,
+      "end": 151.64,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 151.64,
+      "end": 151.98,
+      "text": "analysis",
+      "probability": null
+    },
+    {
+      "start": 151.98,
+      "end": 152.52,
+      "text": "timestamp,",
+      "probability": null
+    },
+    {
+      "start": 153.18,
+      "end": 153.46,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 153.46,
+      "end": 153.64,
+      "text": "just",
+      "probability": null
+    },
+    {
+      "start": 153.64,
+      "end": 153.82,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 153.82,
+      "end": 154.3,
+      "text": "page-load",
+      "probability": null
+    },
+    {
+      "start": 154.3,
+      "end": 154.64,
+      "text": "time.",
+      "probability": null
+    },
+    {
+      "start": 155.38,
+      "end": 156.06,
+      "text": "Now",
+      "probability": null
+    },
+    {
+      "start": 156.06,
+      "end": 156.4,
+      "text": "perform",
+      "probability": null
+    },
+    {
+      "start": 156.4,
+      "end": 156.7,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 156.7,
+      "end": 157.18,
+      "text": "PrizePicks",
+      "probability": null
+    },
+    {
+      "start": 157.18,
+      "end": 157.56,
+      "text": "line",
+      "probability": null
+    },
+    {
+      "start": 157.56,
+      "end": 157.88,
+      "text": "check.",
+      "probability": null
+    },
+    {
+      "start": 158.44,
+      "end": 158.84,
+      "text": "Open",
+      "probability": null
+    },
+    {
+      "start": 158.84,
+      "end": 159.02,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 159.02,
+      "end": 159.24,
+      "text": "current",
+      "probability": null
+    },
+    {
+      "start": 159.24,
+      "end": 159.62,
+      "text": "Player",
+      "probability": null
+    },
+    {
+      "start": 159.62,
+      "end": 159.96,
+      "text": "Picks",
+      "probability": null
+    },
+    {
+      "start": 159.96,
+      "end": 160.38,
+      "text": "board",
+      "probability": null
+    },
+    {
+      "start": 160.38,
+      "end": 160.68,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 160.68,
+      "end": 160.9,
+      "text": "search",
+      "probability": null
+    },
+    {
+      "start": 160.9,
+      "end": 161.2,
+      "text": "for",
+      "probability": null
+    },
+    {
+      "start": 161.2,
+      "end": 161.32,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 161.32,
+      "end": 161.56,
+      "text": "same",
+      "probability": null
+    },
+    {
+      "start": 161.56,
+      "end": 161.96,
+      "text": "player",
+      "probability": null
+    },
+    {
+      "start": 161.96,
+      "end": 162.26,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 162.26,
+      "end": 162.54,
+      "text": "stat.",
+      "probability": null
+    },
+    {
+      "start": 163.18,
+      "end": 163.54,
+      "text": "Compare",
+      "probability": null
+    },
+    {
+      "start": 163.54,
+      "end": 164.02,
+      "text": "Christian",
+      "probability": null
+    },
+    {
+      "start": 164.02,
+      "end": 164.42,
+      "text": "Franklin,",
+      "probability": null
+    },
+    {
+      "start": 164.42,
+      "end": 165.12,
+      "text": "runs",
+      "probability": null
+    },
+    {
+      "start": 165.12,
+      "end": 165.64,
+      "text": "batted",
+      "probability": null
+    },
+    {
+      "start": 165.64,
+      "end": 165.98,
+      "text": "in,",
+      "probability": null
+    },
+    {
+      "start": 165.98,
+      "end": 166.7,
+      "text": "zero",
+      "probability": null
+    },
+    {
+      "start": 166.7,
+      "end": 167.42,
+      "text": "point",
+      "probability": null
+    },
+    {
+      "start": 167.42,
+      "end": 168.14,
+      "text": "five.",
+      "probability": null
+    },
+    {
+      "start": 168.14,
+      "end": 168.26,
+      "text": "Do",
+      "probability": null
+    },
+    {
+      "start": 168.26,
+      "end": 168.42,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 168.42,
+      "end": 168.72,
+      "text": "match",
+      "probability": null
+    },
+    {
+      "start": 168.72,
+      "end": 168.98,
+      "text": "by",
+      "probability": null
+    },
+    {
+      "start": 168.98,
+      "end": 169.4,
+      "text": "player",
+      "probability": null
+    },
+    {
+      "start": 169.4,
+      "end": 169.58,
+      "text": "name",
+      "probability": null
+    },
+    {
+      "start": 169.58,
+      "end": 169.98,
+      "text": "alone.",
+      "probability": null
+    },
+    {
+      "start": 171.12,
+      "end": 171.32,
+      "text": "For",
+      "probability": null
+    },
+    {
+      "start": 171.32,
+      "end": 171.5,
+      "text": "this",
+      "probability": null
+    },
+    {
+      "start": 171.5,
+      "end": 171.72,
+      "text": "production",
+      "probability": null
+    },
+    {
+      "start": 171.72,
+      "end": 172.44,
+      "text": "capture,",
+      "probability": null
+    },
+    {
+      "start": 172.9,
+      "end": 173.54,
+      "text": "Propeller's",
+      "probability": null
+    },
+    {
+      "start": 173.54,
+      "end": 174.22666666666666,
+      "text": "platform-backed",
+      "probability": null
+    },
+    {
+      "start": 174.22666666666666,
+      "end": 174.91333333333333,
+      "text": "PrizePicks",
+      "probability": null
+    },
+    {
+      "start": 174.91333333333333,
+      "end": 175.6,
+      "text": "endpoint",
+      "probability": null
+    },
+    {
+      "start": 175.6,
+      "end": 175.92,
+      "text": "returned",
+      "probability": null
+    },
+    {
+      "start": 175.92,
+      "end": 176.42,
+      "text": "no",
+      "probability": null
+    },
+    {
+      "start": 176.42,
+      "end": 176.78,
+      "text": "records.",
+      "probability": null
+    },
+    {
+      "start": 177.72,
+      "end": 177.82,
+      "text": "The",
+      "probability": null
+    },
+    {
+      "start": 177.82,
+      "end": 178.14,
+      "text": "analysis",
+      "probability": null
+    },
+    {
+      "start": 178.14,
+      "end": 178.62,
+      "text": "record",
+      "probability": null
+    },
+    {
+      "start": 178.62,
+      "end": 179.04,
+      "text": "also",
+      "probability": null
+    },
+    {
+      "start": 179.04,
+      "end": 179.68,
+      "text": "identified",
+      "probability": null
+    },
+    {
+      "start": 179.68,
+      "end": 180.26,
+      "text": "its",
+      "probability": null
+    },
+    {
+      "start": 180.26,
+      "end": 180.54,
+      "text": "market",
+      "probability": null
+    },
+    {
+      "start": 180.54,
+      "end": 180.9,
+      "text": "source",
+      "probability": null
+    },
+    {
+      "start": 180.9,
+      "end": 181.22,
+      "text": "as",
+      "probability": null
+    },
+    {
+      "start": 181.22,
+      "end": 181.52,
+      "text": "Underdog,",
+      "probability": null
+    },
+    {
+      "start": 182.34,
+      "end": 182.5,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 182.5,
+      "end": 183.1,
+      "text": "PrizePicks.",
+      "probability": null
+    },
+    {
+      "start": 183.1,
+      "end": 183.92,
+      "text": "So",
+      "probability": null
+    },
+    {
+      "start": 183.92,
+      "end": 184.12,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 184.12,
+      "end": 184.38,
+      "text": "exact",
+      "probability": null
+    },
+    {
+      "start": 184.38,
+      "end": 185.18,
+      "text": "projection",
+      "probability": null
+    },
+    {
+      "start": 185.18,
+      "end": 185.4,
+      "text": "could",
+      "probability": null
+    },
+    {
+      "start": 185.4,
+      "end": 185.64,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 185.64,
+      "end": 185.82,
+      "text": "be",
+      "probability": null
+    },
+    {
+      "start": 185.82,
+      "end": 186.14,
+      "text": "verified",
+      "probability": null
+    },
+    {
+      "start": 186.14,
+      "end": 186.64,
+      "text": "in",
+      "probability": null
+    },
+    {
+      "start": 186.64,
+      "end": 188.38,
+      "text": "PrizePicks.",
+      "probability": null
+    },
+    {
+      "start": 188.38,
+      "end": 188.58,
+      "text": "That",
+      "probability": null
+    },
+    {
+      "start": 188.58,
+      "end": 188.68,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 188.68,
+      "end": 188.9,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 188.9,
+      "end": 189.06,
+      "text": "a",
+      "probability": null
+    },
+    {
+      "start": 189.06,
+      "end": 189.4,
+      "text": "reason",
+      "probability": null
+    },
+    {
+      "start": 189.4,
+      "end": 189.62,
+      "text": "to",
+      "probability": null
+    },
+    {
+      "start": 189.62,
+      "end": 190.12,
+      "text": "substitute",
+      "probability": null
+    },
+    {
+      "start": 190.12,
+      "end": 190.38,
+      "text": "a",
+      "probability": null
+    },
+    {
+      "start": 190.38,
+      "end": 190.62,
+      "text": "similar",
+      "probability": null
+    },
+    {
+      "start": 190.62,
+      "end": 191.18,
+      "text": "line",
+      "probability": null
+    },
+    {
+      "start": 191.18,
+      "end": 191.72,
+      "text": "or",
+      "probability": null
+    },
+    {
+      "start": 191.72,
+      "end": 192.06,
+      "text": "reuse",
+      "probability": null
+    },
+    {
+      "start": 192.06,
+      "end": 192.42,
+      "text": "an",
+      "probability": null
+    },
+    {
+      "start": 192.42,
+      "end": 192.68,
+      "text": "older",
+      "probability": null
+    },
+    {
+      "start": 192.68,
+      "end": 193.3,
+      "text": "screenshot.",
+      "probability": null
+    },
+    {
+      "start": 194.28,
+      "end": 194.34,
+      "text": "It",
+      "probability": null
+    },
+    {
+      "start": 194.34,
+      "end": 194.46,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 194.46,
+      "end": 194.6,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 194.6,
+      "end": 195.06,
+      "text": "answer.",
+      "probability": null
+    },
+    {
+      "start": 195.76,
+      "end": 195.84,
+      "text": "No",
+      "probability": null
+    },
+    {
+      "start": 195.84,
+      "end": 196.22,
+      "text": "verified",
+      "probability": null
+    },
+    {
+      "start": 196.22,
+      "end": 196.86,
+      "text": "match",
+      "probability": null
+    },
+    {
+      "start": 196.86,
+      "end": 197.12,
+      "text": "means",
+      "probability": null
+    },
+    {
+      "start": 197.12,
+      "end": 197.5,
+      "text": "no",
+      "probability": null
+    },
+    {
+      "start": 197.5,
+      "end": 197.9,
+      "text": "action",
+      "probability": null
+    },
+    {
+      "start": 197.9,
+      "end": 198.2,
+      "text": "from",
+      "probability": null
+    },
+    {
+      "start": 198.2,
+      "end": 198.38,
+      "text": "this",
+      "probability": null
+    },
+    {
+      "start": 198.38,
+      "end": 198.6,
+      "text": "row.",
+      "probability": null
+    },
+    {
+      "start": 199.76,
+      "end": 199.96,
+      "text": "On",
+      "probability": null
+    },
+    {
+      "start": 199.96,
+      "end": 200.26,
+      "text": "mobile,",
+      "probability": null
+    },
+    {
+      "start": 200.26,
+      "end": 200.66,
+      "text": "follow",
+      "probability": null
+    },
+    {
+      "start": 200.66,
+      "end": 201.0,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 201.0,
+      "end": 201.24,
+      "text": "same",
+      "probability": null
+    },
+    {
+      "start": 201.24,
+      "end": 201.62,
+      "text": "order.",
+      "probability": null
+    },
+    {
+      "start": 202.3,
+      "end": 202.66,
+      "text": "Confirm",
+      "probability": null
+    },
+    {
+      "start": 202.66,
+      "end": 202.84,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 202.84,
+      "end": 203.08,
+      "text": "date,",
+      "probability": null
+    },
+    {
+      "start": 203.4,
+      "end": 203.58,
+      "text": "player,",
+      "probability": null
+    },
+    {
+      "start": 203.94,
+      "end": 204.16,
+      "text": "stat,",
+      "probability": null
+    },
+    {
+      "start": 204.16,
+      "end": 204.42,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 204.42,
+      "end": 204.68,
+      "text": "line.",
+      "probability": null
+    },
+    {
+      "start": 205.42,
+      "end": 205.48,
+      "text": "Read",
+      "probability": null
+    },
+    {
+      "start": 205.48,
+      "end": 205.72,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 205.72,
+      "end": 206.06,
+      "text": "direction",
+      "probability": null
+    },
+    {
+      "start": 206.06,
+      "end": 206.38,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 206.38,
+      "end": 206.8,
+      "text": "confidence.",
+      "probability": null
+    },
+    {
+      "start": 207.62,
+      "end": 207.84,
+      "text": "Open",
+      "probability": null
+    },
+    {
+      "start": 207.84,
+      "end": 208.02,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 208.02,
+      "end": 208.4,
+      "text": "detailed",
+      "probability": null
+    },
+    {
+      "start": 208.4,
+      "end": 208.88,
+      "text": "evidence.",
+      "probability": null
+    },
+    {
+      "start": 209.92,
+      "end": 209.94,
+      "text": "Check",
+      "probability": null
+    },
+    {
+      "start": 209.94,
+      "end": 210.22,
+      "text": "missing",
+      "probability": null
+    },
+    {
+      "start": 210.22,
+      "end": 210.84,
+      "text": "inputs",
+      "probability": null
+    },
+    {
+      "start": 210.84,
+      "end": 211.24,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 211.24,
+      "end": 211.36,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 211.36,
+      "end": 211.76,
+      "text": "analysis",
+      "probability": null
+    },
+    {
+      "start": 211.76,
+      "end": 212.16,
+      "text": "time.",
+      "probability": null
+    },
+    {
+      "start": 212.16,
+      "end": 212.96,
+      "text": "Then",
+      "probability": null
+    },
+    {
+      "start": 212.96,
+      "end": 213.3,
+      "text": "compare",
+      "probability": null
+    },
+    {
+      "start": 213.3,
+      "end": 213.6,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 213.6,
+      "end": 214.02,
+      "text": "actual",
+      "probability": null
+    },
+    {
+      "start": 214.02,
+      "end": 214.72,
+      "text": "PrizePicks",
+      "probability": null
+    },
+    {
+      "start": 214.72,
+      "end": 215.14,
+      "text": "projection",
+      "probability": null
+    },
+    {
+      "start": 215.14,
+      "end": 215.54,
+      "text": "on",
+      "probability": null
+    },
+    {
+      "start": 215.54,
+      "end": 215.64,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 215.64,
+      "end": 215.98,
+      "text": "final",
+      "probability": null
+    },
+    {
+      "start": 215.98,
+      "end": 216.38,
+      "text": "screen.",
+      "probability": null
+    },
+    {
+      "start": 217.74,
+      "end": 217.8,
+      "text": "If",
+      "probability": null
+    },
+    {
+      "start": 217.8,
+      "end": 217.94,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 217.94,
+      "end": 218.24,
+      "text": "line",
+      "probability": null
+    },
+    {
+      "start": 218.24,
+      "end": 218.6,
+      "text": "moves",
+      "probability": null
+    },
+    {
+      "start": 218.6,
+      "end": 218.94,
+      "text": "from",
+      "probability": null
+    },
+    {
+      "start": 218.94,
+      "end": 219.43333333333334,
+      "text": "zero",
+      "probability": null
+    },
+    {
+      "start": 219.43333333333334,
+      "end": 219.92666666666665,
+      "text": "point",
+      "probability": null
+    },
+    {
+      "start": 219.92666666666665,
+      "end": 220.42,
+      "text": "five,",
+      "probability": null
+    },
+    {
+      "start": 220.42,
+      "end": 220.72,
+      "text": "if",
+      "probability": null
+    },
+    {
+      "start": 220.72,
+      "end": 220.84,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 220.84,
+      "end": 221.02,
+      "text": "stat",
+      "probability": null
+    },
+    {
+      "start": 221.02,
+      "end": 221.34,
+      "text": "type",
+      "probability": null
+    },
+    {
+      "start": 221.34,
+      "end": 221.68,
+      "text": "differs,",
+      "probability": null
+    },
+    {
+      "start": 222.3,
+      "end": 222.42,
+      "text": "if",
+      "probability": null
+    },
+    {
+      "start": 222.42,
+      "end": 222.54,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 222.54,
+      "end": 222.94,
+      "text": "player",
+      "probability": null
+    },
+    {
+      "start": 222.94,
+      "end": 223.18,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 223.18,
+      "end": 223.56,
+      "text": "unavailable,",
+      "probability": null
+    },
+    {
+      "start": 224.36,
+      "end": 224.5,
+      "text": "or",
+      "probability": null
+    },
+    {
+      "start": 224.5,
+      "end": 224.66,
+      "text": "if",
+      "probability": null
+    },
+    {
+      "start": 224.66,
+      "end": 224.8,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 224.8,
+      "end": 225.16,
+      "text": "projection",
+      "probability": null
+    },
+    {
+      "start": 225.16,
+      "end": 225.46,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 225.46,
+      "end": 225.72,
+      "text": "missing,",
+      "probability": null
+    },
+    {
+      "start": 226.44,
+      "end": 226.52,
+      "text": "the",
+      "probability": null
+    },
+    {
+      "start": 226.52,
+      "end": 226.88,
+      "text": "original",
+      "probability": null
+    },
+    {
+      "start": 226.88,
+      "end": 227.38,
+      "text": "research",
+      "probability": null
+    },
+    {
+      "start": 227.38,
+      "end": 227.78,
+      "text": "question",
+      "probability": null
+    },
+    {
+      "start": 227.78,
+      "end": 228.26,
+      "text": "no",
+      "probability": null
+    },
+    {
+      "start": 228.26,
+      "end": 228.7,
+      "text": "longer",
+      "probability": null
+    },
+    {
+      "start": 228.7,
+      "end": 229.12,
+      "text": "matches.",
+      "probability": null
+    },
+    {
+      "start": 229.98,
+      "end": 230.32,
+      "text": "Refresh",
+      "probability": null
+    },
+    {
+      "start": 230.32,
+      "end": 231.06,
+      "text": "Propeller",
+      "probability": null
+    },
+    {
+      "start": 231.06,
+      "end": 231.32,
+      "text": "or",
+      "probability": null
+    },
+    {
+      "start": 231.32,
+      "end": 231.58,
+      "text": "choose",
+      "probability": null
+    },
+    {
+      "start": 231.58,
+      "end": 232.16,
+      "text": "another",
+      "probability": null
+    },
+    {
+      "start": 232.16,
+      "end": 232.5,
+      "text": "current",
+      "probability": null
+    },
+    {
+      "start": 232.5,
+      "end": 232.92,
+      "text": "row.",
+      "probability": null
+    },
+    {
+      "start": 234.08,
+      "end": 234.2,
+      "text": "The",
+      "probability": null
+    },
+    {
+      "start": 234.2,
+      "end": 234.48,
+      "text": "page",
+      "probability": null
+    },
+    {
+      "start": 234.48,
+      "end": 234.76,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 234.76,
+      "end": 234.86,
+      "text": "a",
+      "probability": null
+    },
+    {
+      "start": 234.86,
+      "end": 235.2,
+      "text": "starting",
+      "probability": null
+    },
+    {
+      "start": 235.2,
+      "end": 235.58,
+      "text": "point",
+      "probability": null
+    },
+    {
+      "start": 235.58,
+      "end": 235.78,
+      "text": "for",
+      "probability": null
+    },
+    {
+      "start": 235.78,
+      "end": 236.04,
+      "text": "research,",
+      "probability": null
+    },
+    {
+      "start": 236.66,
+      "end": 236.86,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 236.86,
+      "end": 236.96,
+      "text": "a",
+      "probability": null
+    },
+    {
+      "start": 236.96,
+      "end": 237.26,
+      "text": "shortcut",
+      "probability": null
+    },
+    {
+      "start": 237.26,
+      "end": 237.72,
+      "text": "around",
+      "probability": null
+    },
+    {
+      "start": 237.72,
+      "end": 238.22,
+      "text": "verification.",
+      "probability": null
+    },
+    {
+      "start": 239.06,
+      "end": 239.78,
+      "text": "Propeller",
+      "probability": null
+    },
+    {
+      "start": 239.78,
+      "end": 240.02,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 240.02,
+      "end": 240.46,
+      "text": "independent,",
+      "probability": null
+    },
+    {
+      "start": 240.98,
+      "end": 241.06,
+      "text": "does",
+      "probability": null
+    },
+    {
+      "start": 241.06,
+      "end": 241.26,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 241.26,
+      "end": 241.7,
+      "text": "submit",
+      "probability": null
+    },
+    {
+      "start": 241.7,
+      "end": 242.12,
+      "text": "entries,",
+      "probability": null
+    },
+    {
+      "start": 242.12,
+      "end": 242.5,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 242.5,
+      "end": 242.64,
+      "text": "does",
+      "probability": null
+    },
+    {
+      "start": 242.64,
+      "end": 242.86,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 242.86,
+      "end": 243.22,
+      "text": "guarantee",
+      "probability": null
+    },
+    {
+      "start": 243.22,
+      "end": 244.06,
+      "text": "outcomes.",
+      "probability": null
+    },
+    {
+      "start": 244.96,
+      "end": 245.04,
+      "text": "The",
+      "probability": null
+    },
+    {
+      "start": 245.04,
+      "end": 245.36,
+      "text": "safest",
+      "probability": null
+    },
+    {
+      "start": 245.36,
+      "end": 245.96,
+      "text": "workflow",
+      "probability": null
+    },
+    {
+      "start": 245.96,
+      "end": 246.28,
+      "text": "is",
+      "probability": null
+    },
+    {
+      "start": 246.28,
+      "end": 246.58,
+      "text": "simple:",
+      "probability": null
+    },
+    {
+      "start": 247.22,
+      "end": 247.6,
+      "text": "exact",
+      "probability": null
+    },
+    {
+      "start": 247.6,
+      "end": 247.9,
+      "text": "row,",
+      "probability": null
+    },
+    {
+      "start": 248.3,
+      "end": 248.98,
+      "text": "inspectable",
+      "probability": null
+    },
+    {
+      "start": 248.98,
+      "end": 249.34,
+      "text": "evidence,",
+      "probability": null
+    },
+    {
+      "start": 249.92,
+      "end": 250.08,
+      "text": "honest",
+      "probability": null
+    },
+    {
+      "start": 250.08,
+      "end": 250.74,
+      "text": "freshness,",
+      "probability": null
+    },
+    {
+      "start": 251.04,
+      "end": 251.34,
+      "text": "actual",
+      "probability": null
+    },
+    {
+      "start": 251.34,
+      "end": 251.8,
+      "text": "platform",
+      "probability": null
+    },
+    {
+      "start": 251.8,
+      "end": 252.22,
+      "text": "check,",
+      "probability": null
+    },
+    {
+      "start": 252.78,
+      "end": 252.88,
+      "text": "and",
+      "probability": null
+    },
+    {
+      "start": 252.88,
+      "end": 253.18,
+      "text": "stop",
+      "probability": null
+    },
+    {
+      "start": 253.18,
+      "end": 253.44,
+      "text": "when",
+      "probability": null
+    },
+    {
+      "start": 253.44,
+      "end": 253.6,
+      "text": "they",
+      "probability": null
+    },
+    {
+      "start": 253.6,
+      "end": 253.74,
+      "text": "do",
+      "probability": null
+    },
+    {
+      "start": 253.74,
+      "end": 253.92,
+      "text": "not",
+      "probability": null
+    },
+    {
+      "start": 253.92,
+      "end": 254.26,
+      "text": "agree.",
+      "probability": null
+    }
+  ]
+}
