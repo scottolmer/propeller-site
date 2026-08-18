@@ -1,6 +1,6 @@
 # Wave B release gate
 
-The two approved review packages are Public and externally verified. Their real IDs are applied to the companion pages; deployment and live webpage verification remain.
+The two approved review packages are Public and externally verified. Their real IDs are deployed and live-verified on the companion pages.
 
 - Cheat-sheet explainer: `z-IRp7LxgXc` — Public, embeddable, 1080p, 12 chapters, en-US captions, approved pinned comment, thumbnail and checks passed.
 - Research-page walkthrough: `yO6gWjmH_5w` — Public, embeddable, 1080p, 15 chapters, en-US captions, approved pinned comment, thumbnail and checks passed.
@@ -21,6 +21,6 @@ After Scott approves the exact review packages and explicitly chooses the visibi
      --walkthrough-upload-date 2026-08-18
    ```
 
-6. Run the website tests and verify each live lazy player, analytics placement, internal link, transcript, and `VideoObject` against the public video.
+6. Completed August 18, 2026: passed the website tests, merged PR #68, completed GitHub Pages runs `32188584256` and `32188895040`, matched the final live bytes to `origin/master` at `9d1761dbe`, and verified each live lazy player, analytics placement, internal link, transcript, and `VideoObject` against the public video.
 
-The script refuses placeholder IDs. The companion pages now contain the public lazy players and `VideoObject` schema; deployment verification is the remaining gate.
+The script refuses placeholder IDs. Both Public videos and companion pages are released; no publication or deployment gates remain.

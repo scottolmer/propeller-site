@@ -51,7 +51,7 @@
     },
     "website": {
       "status": "pass",
-      "result": "3 Wave B integration tests, 8 schema/SEO tests, 3,125-page consistency scan, 3,124-page structured-data scan, product-fact scan, and generated sitemap check passed."
+      "result": "3 Wave B integration tests, schema/SEO tests, 3,126-file consistency scan, 3,125-page structured-data scan, 3,132-page product-fact scan, and generated sitemap check passed."
     },
     "independent_code_review": {
       "status": "pass",
@@ -64,6 +64,10 @@
     "public_youtube_release": {
       "status": "pass",
       "result": "Video yO6gWjmH_5w is externally Public and embeddable; the public watch page, 1080p playback, 1280x720 custom thumbnail, 15 chapters, approved metadata links, en-US uploaded captions, and approved pinned source-boundary comment were verified."
+    },
+    "web_release": {
+      "status": "pass",
+      "result": "GitHub Pages run 32188895040 deployed the companion page from 9d1761dbe; production bytes matched origin/master, and the public lazy player resolved to yO6gWjmH_5w through youtube-nocookie.com."
     }
   },
   "release_gates": {
@@ -72,6 +76,6 @@
     "uploaded": true,
     "youtube_video_id": "yO6gWjmH_5w",
     "web_embed_activated": true,
-    "deployed": false
+    "deployed": true
   }
 }

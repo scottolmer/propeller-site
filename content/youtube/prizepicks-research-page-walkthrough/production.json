@@ -81,7 +81,11 @@
     "chapters_verified": 15,
     "pinned_comment_posted": true,
     "pinned_comment_id": "UgyhwgSUYC_8VuPUaMN4AaABAg",
-    "pinned_comment_url": "https://www.youtube.com/watch?v=yO6gWjmH_5w&lc=UgyhwgSUYC_8VuPUaMN4AaABAg"
+    "pinned_comment_url": "https://www.youtube.com/watch?v=yO6gWjmH_5w&lc=UgyhwgSUYC_8VuPUaMN4AaABAg",
+    "webpage_deployed": true,
+    "webpage_url": "https://propellerpicks.com/picks/prizepicks/",
+    "webpage_deployed_at": "2026-08-18T21:40:25Z",
+    "webpage_deploy_sha": "9d1761dbe00f20d8a7106ddc4a091d8d23a8c4bc"
   },
   "checkpoints": [
     {
@@ -123,6 +127,11 @@
       "phase": "public_release",
       "at": "2026-08-18T21:26:51Z",
       "note": "Published yO6gWjmH_5w as Public with embedding enabled; external yt-dlp verification confirmed public availability, 255-second duration, 15 chapters, en-US uploaded captions, public 1280x720 custom thumbnail, owner watch-page 1080p playback, and the approved source-boundary comment pinned"
+    },
+    {
+      "phase": "web_release",
+      "at": "2026-08-18T21:40:25Z",
+      "note": "Deployed the companion page through GitHub Pages run 32188895040 at 9d1761dbe; live bytes matched origin/master and the public lazy player resolved to yO6gWjmH_5w through youtube-nocookie.com"
     }
   ]
 }
