@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generated_at": "2026-08-17T22:51:51Z",
+  "generated_at": "2026-08-18T21:27:44Z",
   "overall": "pass",
   "package": "prizepicks-research-page-walkthrough",
   "checks": {
@@ -60,14 +60,18 @@
     "private_youtube_upload": {
       "status": "pass",
       "result": "Video yO6gWjmH_5w is Private and owner-playable at 1080p with the approved title, description, thumbnail, chapters, and English (United States) timed caption track; copyright and Community Guidelines checks found no issues; embedding is disabled."
+    },
+    "public_youtube_release": {
+      "status": "pass",
+      "result": "Video yO6gWjmH_5w is externally Public and embeddable; the public watch page, 1080p playback, 1280x720 custom thumbnail, 15 chapters, approved metadata links, en-US uploaded captions, and approved pinned source-boundary comment were verified."
     }
   },
   "release_gates": {
     "exact_review_package_approved": true,
-    "requested_visibility": "private",
+    "requested_visibility": "public",
     "uploaded": true,
     "youtube_video_id": "yO6gWjmH_5w",
-    "web_embed_activated": false,
+    "web_embed_activated": true,
     "deployed": false
   }
 }

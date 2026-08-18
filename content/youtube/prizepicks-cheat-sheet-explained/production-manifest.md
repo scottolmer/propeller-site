@@ -4,9 +4,9 @@
 
 - Slug: `prizepicks-cheat-sheet-explained`
 - Concept: “What Is in a PrizePicks Cheat Sheet?”
-- Production state: private-uploaded; exact review package approved.
+- Production state: public-published; exact review package and Public visibility approved.
 - Built: August 17, 2026 on branch `codex/youtube-five-video-batch`.
-- YouTube: uploaded and owner-verified as Private at `https://youtu.be/z-IRp7LxgXc`; public publication intentionally not performed.
+- YouTube: Public and externally verified at `https://youtu.be/z-IRp7LxgXc` on August 18, 2026.
 
 ## Current versions
 
@@ -23,7 +23,7 @@
 - Master QA sheet and frames: `final/qa/master-contact-sheet.jpg`, `final/qa/`
 - YouTube metadata: `youtube-package.md`
 - State/provenance: `production.json`
-- Private YouTube entry: `z-IRp7LxgXc`; approved metadata, thumbnail, chapters, and English (United States) timed captions applied; embedding disabled pending public-release approval.
+- Public YouTube entry: `z-IRp7LxgXc`; approved metadata, public 1280×720 thumbnail, 12 chapters, English (United States) timed captions, 1080p playback, embedding, and approved pinned comment verified.
 
 ## Provenance and source boundary
 
@@ -56,5 +56,4 @@ Full sourced notes and URLs are recorded in `production-notes.md` and `productio
 
 ## Pending gates
 
-- Explicit public-visibility approval.
-- Real-ID lazy embed, `VideoObject`, analytics placement, coordinated webpage deployment, and live verification.
+- Coordinated webpage deployment and live lazy-player, analytics, internal-link, transcript, and `VideoObject` verification.

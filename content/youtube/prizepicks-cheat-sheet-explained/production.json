@@ -1,7 +1,7 @@
 {
   "version": 1,
   "slug": "prizepicks-cheat-sheet-explained",
-  "state": "private_uploaded",
+  "state": "public_published",
   "brief": {
     "concept": "What Is in a PrizePicks Cheat Sheet?",
     "primary_question": "What information belongs in a trustworthy PrizePicks cheat sheet, and what can it not establish?",
@@ -28,9 +28,9 @@
       "evidence": "User approved the exact review packages and explicitly instructed private YouTube upload"
     },
     "publication": {
-      "approved": false,
-      "at": null,
-      "evidence": ""
+      "approved": true,
+      "at": "2026-08-18T21:26:36Z",
+      "evidence": "User explicitly instructed: make the videos public and deploy the webpages using the do it and ship it skills"
     }
   },
   "settings": {
@@ -66,13 +66,21 @@
     {"url": "https://www.prizepicks.com/help-center/player-picks", "captured_at": "2026-08-17T20:40:00Z", "use": "Official Player Picks terminology only"}
   ],
   "publishing": {
-    "requested_visibility": "private",
+    "requested_visibility": "public",
     "video_id": "z-IRp7LxgXc",
     "url": "https://youtu.be/z-IRp7LxgXc",
     "uploaded": true,
     "hd_processed": true,
-    "published_at": null,
-    "verified": true
+    "published_at": "2026-08-18T21:26:36Z",
+    "verified": true,
+    "embedding_allowed": true,
+    "external_availability_verified": true,
+    "thumbnail_public": true,
+    "captions_uploaded": true,
+    "chapters_verified": 12,
+    "pinned_comment_posted": true,
+    "pinned_comment_id": "Ugz5QIx2DYF3F2EJzHh4AaABAg",
+    "pinned_comment_url": "https://www.youtube.com/watch?v=z-IRp7LxgXc&lc=Ugz5QIx2DYF3F2EJzHh4AaABAg"
   },
   "checkpoints": [
     {
@@ -109,6 +117,11 @@
       "phase": "private_upload",
       "at": "2026-08-17T22:51:51Z",
       "note": "Uploaded approved master to YouTube as Private (z-IRp7LxgXc); approved metadata, thumbnail, chapters, and English (United States) timed captions applied; 1080p owner playback, caption track, Private visibility, copyright, and Community Guidelines checks verified; embedding remains disabled"
+    },
+    {
+      "phase": "public_release",
+      "at": "2026-08-18T21:26:36Z",
+      "note": "Published z-IRp7LxgXc as Public with embedding enabled; external yt-dlp verification confirmed public availability, 233-second duration, 12 chapters, en-US uploaded captions, public 1280x720 custom thumbnail, owner watch-page 1080p playback, and the approved source-boundary comment pinned"
     }
   ]
 }
