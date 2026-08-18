@@ -16,37 +16,37 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "37dad0deb2f54d89371798c8ba3b52bc4c87625e8e25ffe9fa9676c033bca6e5",
+      "fingerprint": "5c8d624570dfb05e75a318910a432a907620b1e31dcc6833e39dec82c9d1b6f6",
       "lastmod": "2026-08-18",
       "source": "analyzer/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/christopher-morel/": {
-      "fingerprint": "f7d08fb30c97cfcaa136c9a0edbafea110a7ab58f5f26ab75d594e3eb25e50a9",
+      "fingerprint": "f9514e2ff8d32c67168366a6679002af89f2026a030a6ee7ed9e859f380803cf",
       "lastmod": "2026-08-18",
       "source": "analyzer/mlb/christopher-morel/index.html"
     },
+    "https://propellerpicks.com/analyzer/mlb/darell-hernaiz/": {
+      "fingerprint": "4211c64513623539fab74035eb807f0c484e82427c6e09d87fb00996d0aa94f6",
+      "lastmod": "2026-08-18",
+      "source": "analyzer/mlb/darell-hernaiz/index.html"
+    },
     "https://propellerpicks.com/analyzer/mlb/jose-fernandez/": {
-      "fingerprint": "5a7dde29651681f64a327fa5327d51420e26f13176f838ce1929d3de39c7ced8",
+      "fingerprint": "b99d488931eaf92389e787117a77f41326963a961db42a4d2c101ddf8d5e2869",
       "lastmod": "2026-08-18",
       "source": "analyzer/mlb/jose-fernandez/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/josh-smith/": {
-      "fingerprint": "cc19d27d791fcf56c606acadfb98f9a73016954e1941d216aafbeafbc0ba1aa4",
+      "fingerprint": "f83f57d24ec36890bafd7a774b6bba7b05deb4bfe644119b0acddbdbe39d7c9a",
       "lastmod": "2026-08-18",
       "source": "analyzer/mlb/josh-smith/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/kyle-harrison/": {
-      "fingerprint": "3cbee74a354be073dea4fad9b954fd4e2e739544294be7b5b12b5151b41cc0f4",
+      "fingerprint": "bc0245958bd902dabe6c6cefc753d6a8abeb5567ce18ed62195ebceacda1b432",
       "lastmod": "2026-08-18",
       "source": "analyzer/mlb/kyle-harrison/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/maikel-garcia/": {
-      "fingerprint": "2c3e0d249835ce9a75f194a51550194e077ba44bcf5d5282664ff90455a068d3",
-      "lastmod": "2026-08-18",
-      "source": "analyzer/mlb/maikel-garcia/index.html"
-    },
     "https://propellerpicks.com/analyzer/mlb/pedro-pages/": {
-      "fingerprint": "ef1defb6cba8e16b8b94890d3836d05c2d6bd719ec0fc9e0b8b57a25eb17627e",
+      "fingerprint": "0b8093c7b5c0bdbd8a587fe3e41013182b286a5f9d6ee136aeb110e4a1ba10f3",
       "lastmod": "2026-08-18",
       "source": "analyzer/mlb/pedro-pages/index.html"
     },
@@ -261,7 +261,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "3de052fe56175735a7eae02becedaf3f92d73b74c1fc80f4d7ba991b5904b21e",
+      "fingerprint": "956f1d71a25ced1293921bf7827fb5cecb0493fde4868307404229de5de344a7",
       "lastmod": "2026-08-18",
       "source": "picks/mlb/index.html"
     },
