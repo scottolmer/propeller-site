@@ -1,0 +1,297 @@
+1
+00:00:00,000 --> 00:00:03,350
+A useful PrizePicks cheat sheet is not a
+list of guaranteed
+
+2
+00:00:03,360 --> 00:00:07,810
+picks. It is a dated research snapshot
+that tells you exactly
+
+3
+00:00:07,820 --> 00:00:12,560
+who, what stat, which line, what direction
+the evidence supports,
+
+4
+00:00:12,960 --> 00:00:16,490
+how strong that signal is, and what still
+needs to be
+
+5
+00:00:16,500 --> 00:00:19,820
+checked. Start with the identity of the
+question.
+
+6
+00:00:20,380 --> 00:00:23,080
+You need the player, team, stat type,
+
+7
+00:00:23,260 --> 00:00:26,370
+and exact number. A lean on more than
+eight and a
+
+8
+00:00:26,380 --> 00:00:29,610
+half rebounds is not the same question as
+more than nine
+
+9
+00:00:29,620 --> 00:00:31,880
+and a half. If the number changes,
+
+10
+00:00:32,380 --> 00:00:34,400
+the research may no longer apply.
+
+11
+00:00:35,440 --> 00:00:39,450
+Next comes freshness. A trustworthy sheet
+should show when the analysis
+
+12
+00:00:39,460 --> 00:00:43,220
+was produced and whether the underlying
+line is still available.
+
+13
+00:00:44,020 --> 00:00:46,640
+A page title that says current is not
+enough.
+
+14
+00:00:47,280 --> 00:00:50,800
+The row, its source, and its timestamp all
+have to agree.
+
+15
+00:00:51,630 --> 00:00:55,483
+This capture is a real Propeller example
+from August seventeenth,
+
+16
+00:00:55,493 --> 00:01:00,020
+twenty twenty-six. It shows Christian
+Franklin, runs batted in,
+
+17
+00:01:00,400 --> 00:01:02,970
+a zero point five line, an under
+direction,
+
+18
+00:01:02,980 --> 00:01:05,440
+and seventy-nine percent model confidence.
+
+19
+00:01:06,200 --> 00:01:08,660
+Desktop and mobile show the same player,
+
+20
+00:01:09,120 --> 00:01:11,620
+stat, line, direction, and confidence.
+
+21
+00:01:12,240 --> 00:01:17,390
+That confidence score means the available
+signals strongly support the displayed
+
+22
+00:01:17,400 --> 00:01:21,420
+direction. It is not a seventy-nine
+percent chance of winning,
+
+23
+00:01:21,860 --> 00:01:23,080
+and it is not a guarantee.
+
+24
+00:01:24,140 --> 00:01:26,140
+Now inspect the supporting data.
+
+25
+00:01:26,620 --> 00:01:30,920
+For this dated example, the analysis
+included recent hit-rate evidence,
+
+26
+00:01:31,320 --> 00:01:35,980
+park context, usage, market context, and
+an injury check.
+
+27
+00:01:36,600 --> 00:01:40,820
+The injury signal specifically said no
+injury report data was available.
+
+28
+00:01:41,520 --> 00:01:43,550
+That missing data is part of the answer.
+
+29
+00:01:43,560 --> 00:01:47,740
+A good cheat sheet shows limitations
+instead of hiding them.
+
+30
+00:01:48,640 --> 00:01:50,280
+The evidence also needs context.
+
+31
+00:01:51,140 --> 00:01:53,360
+A recent trend can describe what happened,
+
+32
+00:01:53,420 --> 00:01:55,380
+but it cannot promise what happens next.
+
+33
+00:01:55,900 --> 00:01:58,780
+Park and matchup information may change
+the environment,
+
+34
+00:01:59,080 --> 00:02:00,550
+but not the final outcome.
+
+35
+00:02:00,560 --> 00:02:03,960
+Market-implied context is not true
+probability.
+
+36
+00:02:04,500 --> 00:02:07,710
+And one strong signal should not erase
+late lineup news,
+
+37
+00:02:07,720 --> 00:02:11,200
+role changes, weather, or a moved line.
+
+38
+00:02:11,960 --> 00:02:14,220
+Then separate direction from confidence.
+
+39
+00:02:14,780 --> 00:02:18,200
+Direction answers which side the combined
+evidence supports.
+
+40
+00:02:18,800 --> 00:02:22,750
+Confidence answers how strongly the model
+supports that side for the
+
+41
+00:02:22,760 --> 00:02:26,140
+displayed line. Neither one tells you the
+payout,
+
+42
+00:02:26,560 --> 00:02:31,380
+entry correlation, or whether PrizePicks
+currently offers that exact projection.
+
+43
+00:02:32,640 --> 00:02:35,360
+That last point is the required platform
+check.
+
+44
+00:02:35,920 --> 00:02:40,050
+Propeller is independent and its public
+page is not a PrizePicks-native
+
+45
+00:02:40,060 --> 00:02:42,340
+feed. At the time of this capture,
+
+46
+00:02:42,700 --> 00:02:47,190
+Propeller's current analysis existed, but
+the platform-backed PrizePicks line
+
+47
+00:02:47,200 --> 00:02:49,760
+endpoint returned no matching records.
+
+48
+00:02:50,380 --> 00:02:53,860
+So this row cannot be presented as a
+current PrizePicks projection.
+
+49
+00:02:54,640 --> 00:02:57,160
+The correct result is stop, not assume.
+
+50
+00:02:58,180 --> 00:03:01,420
+A cheat sheet cannot establish that the
+player is active,
+
+51
+00:03:01,940 --> 00:03:06,140
+the line is unchanged, the projection is
+available in your location,
+
+52
+00:03:06,800 --> 00:03:10,160
+the entry terms are favorable, or the
+outcome will hit.
+
+53
+00:03:10,800 --> 00:03:15,490
+It also cannot replace the final screen
+inside PrizePicks.
+
+54
+00:03:15,500 --> 00:03:16,620
+So use this checklist.
+
+55
+00:03:17,340 --> 00:03:19,720
+Confirm the player. Confirm the stat.
+
+56
+00:03:20,300 --> 00:03:21,680
+Read the exact line.
+
+57
+00:03:22,040 --> 00:03:26,420
+Check the timestamp. Inspect the
+supporting evidence and missing inputs.
+
+58
+00:03:26,920 --> 00:03:29,160
+Read direction and confidence separately.
+
+59
+00:03:29,720 --> 00:03:34,200
+Then verify the actual PrizePicks
+projection before making your own
+decision.
+
+60
+00:03:35,300 --> 00:03:37,940
+That is what belongs in a trustworthy
+cheat sheet:
+
+61
+00:03:38,340 --> 00:03:42,550
+a clear research question, inspectable
+evidence, visible limits,
+
+62
+00:03:42,560 --> 00:03:44,280
+and an honest line check.
+
+63
+00:03:44,880 --> 00:03:47,740
+Propeller is a research and analytics
+platform,
+
+64
+00:03:48,200 --> 00:03:52,020
+not a sportsbook, and no model signal
+guarantees an outcome.

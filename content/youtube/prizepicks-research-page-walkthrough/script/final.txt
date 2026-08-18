@@ -1,0 +1,29 @@
+Here is the safe way to use Propeller's PrizePicks research page: find a current row, match the player, stat, and exact line, read direction and confidence, inspect the supporting evidence and timestamp, and then verify the same projection inside PrizePicks. If the final match fails, stop.
+
+We will use one real, dated example captured on August seventeenth, twenty twenty-six. This is current Propeller analysis, not a claim that PrizePicks offers the same line.
+
+First, open the PrizePicks research page and check the visible date. The page requests current public preview data for NBA, MLB, and NHL. On this capture, MLB had five Propeller research rows while NBA and NHL returned no rows.
+
+Desktop and mobile show the same first row: Christian Franklin, Baltimore, runs batted in, zero point five. The displayed direction is under and the model-confidence score is seventy-nine.
+
+Before reading anything else, pause on those three fields: player, stat, and line. They define the research question. A different player, different stat, or different number is not a match.
+
+Next, read direction and confidence separately. Under is the side supported by the combined analysis. Seventy-nine is the strength of that directional signal for the displayed line. It is not a seventy-nine percent win probability.
+
+Now inspect the evidence behind the row. The dated analysis detail included five agents. Hit-rate evidence noted a long run of games below this threshold. Ballpark context leaned under. Usage produced an under projection. Market context was neutral. The injury agent reported that no injury data was available.
+
+That missing injury input matters. It tells you to check late news and the expected lineup yourself. Agent evidence explains why the model leaned one way; it does not remove the need to verify what changed after the analysis ran.
+
+Then check freshness. The source analysis timestamp for this row was August seventeenth at twenty thirty UTC. The public page and both captures used the same dated row. A response generated later does not make the underlying analysis newer, so use the analysis timestamp, not just the page-load time.
+
+Now perform the PrizePicks line check. Open the current Player Picks board and search for the same player and stat. Compare Christian Franklin, runs batted in, zero point five. Do not match by player name alone.
+
+For this production capture, Propeller's platform-backed PrizePicks endpoint returned no records. The analysis record also identified its market source as Underdog, not PrizePicks. So the exact projection could not be verified in PrizePicks.
+
+That is not a reason to substitute a similar line or reuse an older screenshot. It is the answer. No verified match means no action from this row.
+
+On mobile, follow the same order. Confirm the date, player, stat, and line. Read the direction and confidence. Open the detailed evidence. Check missing inputs and the analysis time. Then compare the actual PrizePicks projection on the final screen.
+
+If the line moves from zero point five, if the stat type differs, if the player is unavailable, or if the projection is missing, the original research question no longer matches. Refresh Propeller or choose another current row.
+
+The page is a starting point for research, not a shortcut around verification. Propeller is independent, does not submit entries, and does not guarantee outcomes. The safest workflow is simple: exact row, inspectable evidence, honest freshness, actual platform check, and stop when they do not agree.

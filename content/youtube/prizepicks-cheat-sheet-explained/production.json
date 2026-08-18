@@ -1,0 +1,114 @@
+{
+  "version": 1,
+  "slug": "prizepicks-cheat-sheet-explained",
+  "state": "private_uploaded",
+  "brief": {
+    "concept": "What Is in a PrizePicks Cheat Sheet?",
+    "primary_question": "What information belongs in a trustworthy PrizePicks cheat sheet, and what can it not establish?",
+    "audience": "Casual PrizePicks and pick'em researchers seeking a plain-language evergreen checklist",
+    "learning_outcome": "Separate identity, exact line, freshness, evidence, direction, confidence, limitations, and the final platform check",
+    "cta": "Read /guides/prizepicks-cheat-sheet/ and use /picks/prizepicks/ for currently available Propeller research",
+    "target_duration_seconds": 225,
+    "freshness_requirements": "Evergreen claims; dated August 17, 2026 example; never imply the current Propeller row is a verified PrizePicks-native projection"
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-08-17T20:40:21.337667+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-08-17T20:44:49Z",
+      "evidence": "User explicitly authorized autonomous script finalization in the Wave B request"
+    },
+    "review": {
+      "approved": true,
+      "at": "2026-08-17T22:51:51Z",
+      "evidence": "User approved the exact review packages and explicitly instructed private YouTube upload"
+    },
+    "publication": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "production_notes": "production-notes.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "validation_results": "validation-results.json",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {"url": "https://propellerpicks.com/picks/prizepicks/", "captured_at": "2026-08-17T20:40:00Z", "use": "Current dated desktop and mobile Propeller public-research captures"},
+    {"url": "https://web-production-3c1c4.up.railway.app/api/mlb/props/by-game-date/2026-08-17", "captured_at": "2026-08-17T20:43:00Z", "use": "Current analysis timestamp and agent evidence for the dated example"},
+    {"url": "https://web-production-3c1c4.up.railway.app/api/dfs/lines?sport=mlb&game_date=2026-08-17&platform=prizepicks", "captured_at": "2026-08-17T20:43:00Z", "use": "Empty platform-backed PrizePicks line check"},
+    {"url": "https://www.prizepicks.com/help-center/player-picks", "captured_at": "2026-08-17T20:40:00Z", "use": "Official Player Picks terminology only"}
+  ],
+  "publishing": {
+    "requested_visibility": "private",
+    "video_id": "z-IRp7LxgXc",
+    "url": "https://youtu.be/z-IRp7LxgXc",
+    "uploaded": true,
+    "hd_processed": true,
+    "published_at": null,
+    "verified": true
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-08-17T20:40:21.337667+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "freshness_audit",
+      "at": "2026-08-17T20:44:49Z",
+      "note": "Current Propeller row verified; platform-backed PrizePicks endpoint empty, so production uses a truthful no-match stop condition"
+    },
+    {
+      "phase": "script",
+      "at": "2026-08-17T20:44:49Z",
+      "note": "Final script approved autonomously under the user's explicit authorization"
+    },
+    {
+      "phase": "narration_and_alignment",
+      "at": "2026-08-17T20:51:00Z",
+      "note": "Local Kokoro am_michael narration aligned to all 532 script words; 64 timed SRT cues generated"
+    },
+    {
+      "phase": "render_and_qa",
+      "at": "2026-08-17T22:13:47Z",
+      "note": "Corrected v4 review and 1080p master rendered, loudness-normalized, fully decoded, visually inspected, and independently approved for review handoff"
+    },
+    {
+      "phase": "review_ready",
+      "at": "2026-08-17T22:13:47Z",
+      "note": "Complete review package ready; upload, YouTube ID, public visibility, embed activation, and deployment remain approval-gated"
+    },
+    {
+      "phase": "private_upload",
+      "at": "2026-08-17T22:51:51Z",
+      "note": "Uploaded approved master to YouTube as Private (z-IRp7LxgXc); approved metadata, thumbnail, chapters, and English (United States) timed captions applied; 1080p owner playback, caption track, Private visibility, copyright, and Community Guidelines checks verified; embedding remains disabled"
+    }
+  ]
+}

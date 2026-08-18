@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "slug": "prizepicks-research-page-walkthrough",
+  "state": "private_uploaded",
+  "brief": {
+    "concept": "How to Use the PrizePicks Research Page: From Cheat Sheet to Line Check",
+    "primary_question": "How do I use the PrizePicks research page from current row through the final platform line check?",
+    "audience": "New Propeller users who research PrizePicks and pick'em player projections on desktop or mobile",
+    "learning_outcome": "Find the current row, match player/stat/line, read direction and confidence, inspect agent evidence, check freshness, and stop on a failed PrizePicks match",
+    "cta": "Use /picks/prizepicks/ as the current public preview and /guides/prizepicks-cheat-sheet/ as the permanent explainer",
+    "target_duration_seconds": 240,
+    "freshness_requirements": "Dated August 17, 2026 matching desktop/mobile captures; analysis timestamp controls freshness; no current PrizePicks projection claim without a platform-backed record"
+  },
+  "approvals": {
+    "concept": {
+      "approved": true,
+      "at": "2026-08-17T20:40:21.419974+00:00",
+      "evidence": "User supplied approved concept"
+    },
+    "script": {
+      "approved": true,
+      "at": "2026-08-17T20:44:49Z",
+      "evidence": "User explicitly authorized autonomous script finalization in the Wave B request"
+    },
+    "review": {
+      "approved": true,
+      "at": "2026-08-17T22:51:51Z",
+      "evidence": "User approved the exact review packages and explicitly instructed private YouTube upload"
+    },
+    "publication": {
+      "approved": false,
+      "at": null,
+      "evidence": ""
+    }
+  },
+  "settings": {
+    "brand": "Propeller Picks",
+    "tts_provider": "Kokoro",
+    "voice": "am_michael",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "caption_language": "en"
+  },
+  "deliverables": {
+    "script": "script/final.txt",
+    "script_notes": "script/script.md",
+    "production_notes": "production-notes.md",
+    "narration": "audio/narration.mp3",
+    "alignment": "audio/alignment.json",
+    "captions": "captions/upload-en.srt",
+    "captions_json": "captions/captions.json",
+    "thumbnail": "thumbnail/thumbnail.png",
+    "review": "review/review.mp4",
+    "contact_sheet": "review/contact-sheet.jpg",
+    "master": "final/master-1080p.mp4",
+    "youtube_package": "youtube-package.md",
+    "production_manifest": "production-manifest.md",
+    "validation_results": "validation-results.json",
+    "checksums": "checksums.sha256"
+  },
+  "sources": [
+    {"url": "https://propellerpicks.com/picks/prizepicks/", "captured_at": "2026-08-17T20:40:00Z", "use": "Current matching desktop/mobile public-research flow"},
+    {"url": "https://web-production-3c1c4.up.railway.app/api/social/picks/mlb?game_date=2026-08-17&limit=5", "captured_at": "2026-08-17T20:40:00Z", "use": "Current public-preview row values"},
+    {"url": "https://web-production-3c1c4.up.railway.app/api/mlb/props/by-game-date/2026-08-17", "captured_at": "2026-08-17T20:43:00Z", "use": "Current agent evidence and source-analysis timestamp"},
+    {"url": "https://web-production-3c1c4.up.railway.app/api/dfs/lines?sport=mlb&game_date=2026-08-17&platform=prizepicks", "captured_at": "2026-08-17T20:43:00Z", "use": "Empty final PrizePicks platform check"},
+    {"url": "https://www.prizepicks.com/help-center/player-picks", "captured_at": "2026-08-17T20:40:00Z", "use": "Official Player Picks terminology and final-board authority"}
+  ],
+  "publishing": {
+    "requested_visibility": "private",
+    "video_id": "yO6gWjmH_5w",
+    "url": "https://youtu.be/yO6gWjmH_5w",
+    "uploaded": true,
+    "hd_processed": true,
+    "published_at": null,
+    "verified": true
+  },
+  "checkpoints": [
+    {
+      "phase": "concept",
+      "at": "2026-08-17T20:40:21.419974+00:00",
+      "note": "Project initialized"
+    },
+    {
+      "phase": "freshness_audit",
+      "at": "2026-08-17T20:44:49Z",
+      "note": "Current Propeller row verified; platform-backed PrizePicks endpoint empty, so the walkthrough ends at the no-match gate"
+    },
+    {
+      "phase": "script",
+      "at": "2026-08-17T20:44:49Z",
+      "note": "Final script approved autonomously under the user's explicit authorization"
+    },
+    {
+      "phase": "narration_and_alignment",
+      "at": "2026-08-17T20:52:00Z",
+      "note": "Local Kokoro am_michael narration aligned to all 562 script words; 69 timed SRT cues generated"
+    },
+    {
+      "phase": "render_and_qa",
+      "at": "2026-08-17T22:13:47Z",
+      "note": "Corrected v4 review and 1080p master rendered, loudness-normalized, fully decoded, and independently approved across desktop, mobile, evidence, freshness, illustrative line-check, and stop-gate scenes"
+    },
+    {
+      "phase": "review_ready",
+      "at": "2026-08-17T22:13:47Z",
+      "note": "Complete review package ready; upload, YouTube ID, public visibility, embed activation, and deployment remain approval-gated"
+    },
+    {
+      "phase": "private_upload",
+      "at": "2026-08-17T22:51:51Z",
+      "note": "Uploaded approved master to YouTube as Private (yO6gWjmH_5w); approved metadata, thumbnail, chapters, and English (United States) timed captions applied; 1080p owner playback, caption track, Private visibility, copyright, and Community Guidelines checks verified; embedding remains disabled"
+    }
+  ]
+}
