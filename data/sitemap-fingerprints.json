@@ -16,23 +16,23 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "d01fd0fb4ce2cdd09a09931e3f1e4bab15d08c8ced7e0bd4532e7279cf19285b",
+      "fingerprint": "20eb8263f8a63f6e563cf7856cfa254b76923c7dc7c861055d749856374697f4",
       "lastmod": "2026-08-20",
       "source": "analyzer/index.html"
     },
     "https://propellerpicks.com/analyzer/mlb/kyle-bradish/": {
-      "fingerprint": "9a56e8548c0b01cfbc2dcbb9e5346678cf6b365d931aa1f4258351be8610c61a",
+      "fingerprint": "5e404b1149e400729345bbe87b193a6f1f487aafff3e1eb3dc69593f86ad0b9b",
       "lastmod": "2026-08-20",
       "source": "analyzer/mlb/kyle-bradish/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/robert-gasser/": {
-      "fingerprint": "f0a3d0c6176b57f65f2c7347b238842dfec973cc0542f7a2e32a10ea13eba0ab",
+    "https://propellerpicks.com/analyzer/mlb/maikel-garcia/": {
+      "fingerprint": "6519e483236372bf1ab6ae356dbd84e879cb97ed41d36aeb87c444c9ff395e8f",
       "lastmod": "2026-08-20",
-      "source": "analyzer/mlb/robert-gasser/index.html"
+      "source": "analyzer/mlb/maikel-garcia/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "03fbf99ce6d307815350c48e2ddeb7d1b2d2611adaa6b0cbb4d9336a69ec3fed",
-      "lastmod": "2026-08-19",
+      "fingerprint": "ac56fbc81930d3f205ff15198339b5b688a641bc44e2577d22852df6481f4679",
+      "lastmod": "2026-08-20",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -241,7 +241,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "4327e8006a2b473f7c75b10d1bc2da7998098ae93c45d51a9fa998728ebccbbe",
+      "fingerprint": "a25b846b04043aebaf86a6e336dfd2e08904dff7efc38d7e63c3235870e9c363",
       "lastmod": "2026-08-20",
       "source": "picks/mlb/index.html"
     },
