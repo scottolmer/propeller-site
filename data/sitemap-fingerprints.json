@@ -16,19 +16,9 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "abe3fc9250f33b332906f168eb54bf672a56b5e71d2b91eaeeab497d48f96373",
+      "fingerprint": "bb8be8268811a9d030619017eb30a4e97f0ce0350c9ab9aa8648a5f088e32d30",
       "lastmod": "2026-08-21",
       "source": "analyzer/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/connor-norby/": {
-      "fingerprint": "ab99026cf58c64e08f594bf0356c6a52f63a18aad3818b476df870922e1b2d1e",
-      "lastmod": "2026-08-21",
-      "source": "analyzer/mlb/connor-norby/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/jose-fernandez/": {
-      "fingerprint": "0360d049a7c94b380b6d9f54394135830af3ee36524aadae3e05831d91c4c58e",
-      "lastmod": "2026-08-21",
-      "source": "analyzer/mlb/jose-fernandez/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "5928e927c1d5058a106e38f0229cbec3d4894bd815efde303b0a7e826062f944",
@@ -241,7 +231,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "3740803ffdffcf692af77d29140b91b32160ebc52495ebc02fbb7bf09c072962",
+      "fingerprint": "ac63bc0f4139c9f36ce754b6b09b728cb79be255a1462fd424d33e1b99d22e39",
       "lastmod": "2026-08-21",
       "source": "picks/mlb/index.html"
     },
