@@ -108,6 +108,17 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m "chore: refresh content, archive evidence, and sitemap"
-          # The content pipeline may push while we run; rebase then push.
-          git pull --rebase origin master
-          git push origin master
+          # Another workflow or PR may update master between our pull and push.
+          # Retry that race without force-pushing or hiding real rebase failures.
+          for attempt in 1 2 3; do
+            git pull --rebase origin master
+            if git push origin HEAD:master; then
+              exit 0
+            fi
+            if [ "$attempt" -eq 3 ]; then
+              echo "Push failed after $attempt attempts."
+              exit 1
+            fi
+            echo "Master advanced during push; retrying ($attempt/3)."
+            sleep "$attempt"
+          done
