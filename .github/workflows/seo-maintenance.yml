@@ -93,6 +93,7 @@ jobs:
           python3 -m unittest scripts/test_seo_audit_remediation.py
           node --test scripts/test_nfl_slate_state.mjs
           node --test scripts/test_analyzer_sport_query.mjs
+          node --test scripts/test_analyzer_webmcp.mjs
           python3 -m unittest scripts/test_nfl_launch_readiness.py
           python3 -m unittest scripts/test_lighthouse_delivery.py
           python3 -m unittest scripts/test_aeo_measurement.py
