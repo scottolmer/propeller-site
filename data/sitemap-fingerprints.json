@@ -16,19 +16,9 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "688f83a546b0d2c06166b09f73f61df7c653d770276c91a50d814380ae13e50d",
+      "fingerprint": "bb8be8268811a9d030619017eb30a4e97f0ce0350c9ab9aa8648a5f088e32d30",
       "lastmod": "2026-08-27",
       "source": "analyzer/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/enrique-hernandez/": {
-      "fingerprint": "8d40602c35fcaed5d909390f27118622aed99d262a7cb3e7e931b8b8f2ce2125",
-      "lastmod": "2026-08-27",
-      "source": "analyzer/mlb/enrique-hernandez/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/pedro-pages/": {
-      "fingerprint": "3401aac84dbacf68a871692d239ee7c3962ea1c0d6882d324f26774cd39c62a3",
-      "lastmod": "2026-08-27",
-      "source": "analyzer/mlb/pedro-pages/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "984cbfd3b3b55dfeddf04ba89893755d92d6702fba9d0169cf98e9bd41fdd2cf",
@@ -241,7 +231,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "e3dd57785b5142dde7ff668197d749dc7c99c76a5a3f8b1cc1d0aee85be3782d",
+      "fingerprint": "ec63d1f05cd09f49f79cd8f58ef8c4d0bcb8e564fff95f09075236cab232b43e",
       "lastmod": "2026-08-27",
       "source": "picks/mlb/index.html"
     },
