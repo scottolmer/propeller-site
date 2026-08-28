@@ -16,19 +16,9 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "ca19d381edfc4430b0c8bc1e81a9dd985900c6dfb8df0f6ff5b4a1e4b3ad8680",
+      "fingerprint": "bb8be8268811a9d030619017eb30a4e97f0ce0350c9ab9aa8648a5f088e32d30",
       "lastmod": "2026-08-28",
       "source": "analyzer/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/alek-thomas/": {
-      "fingerprint": "af4015c38bdce80cadb78a122b4a17beefe6122ff8690fe5b00a854549d15216",
-      "lastmod": "2026-08-28",
-      "source": "analyzer/mlb/alek-thomas/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/christopher-morel/": {
-      "fingerprint": "63db38cfb5285135eda5c4eacd5f11ea72266d74ff7f2a3fc0c1dd36a5e0d56c",
-      "lastmod": "2026-08-28",
-      "source": "analyzer/mlb/christopher-morel/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "b4225bc7cc7ed458da8f09146aab1fbc7f1ba605bea4ce0419d162f3423abc24",
@@ -241,7 +231,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "5ccba256f53af20270a4e5bb490af823b40da6c62803f710625dac7dc396e74e",
+      "fingerprint": "1b6aaf918939343f756f3d1363c9d157087281637a5eadd0709cdd3f9f663df4",
       "lastmod": "2026-08-28",
       "source": "picks/mlb/index.html"
     },
