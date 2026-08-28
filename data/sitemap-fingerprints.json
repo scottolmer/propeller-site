@@ -16,9 +16,14 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "bb8be8268811a9d030619017eb30a4e97f0ce0350c9ab9aa8648a5f088e32d30",
+      "fingerprint": "34dfe7b411af8b6f0fe5b5365a02ba6839929c4d809d6a57945fbd41805d2ce5",
       "lastmod": "2026-08-28",
       "source": "analyzer/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/leo-jimenez/": {
+      "fingerprint": "746a133f67c9a563ae8828d3f7a48ce6b53a1287b7afe807c905146462ec48d1",
+      "lastmod": "2026-08-28",
+      "source": "analyzer/mlb/leo-jimenez/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "b4225bc7cc7ed458da8f09146aab1fbc7f1ba605bea4ce0419d162f3423abc24",
@@ -231,7 +236,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "1b6aaf918939343f756f3d1363c9d157087281637a5eadd0709cdd3f9f663df4",
+      "fingerprint": "861b9b1644138394215034be144f2aca7a3b35d9a18c6aa8c5281c20a378a8b9",
       "lastmod": "2026-08-28",
       "source": "picks/mlb/index.html"
     },
