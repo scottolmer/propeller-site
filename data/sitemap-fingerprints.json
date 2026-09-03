@@ -16,14 +16,9 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "1ea7b12d28a3b334cd13cc9252f17f6a62d42c2ef1b2eb52ae6673dec2c36af8",
-      "lastmod": "2026-09-02",
-      "source": "analyzer/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/blaze-alexander/": {
-      "fingerprint": "9f163d14045c2110c8ee297895e7f25f6592d70a58211c52bf4f2443a94ca0da",
+      "fingerprint": "bb8be8268811a9d030619017eb30a4e97f0ce0350c9ab9aa8648a5f088e32d30",
       "lastmod": "2026-09-03",
-      "source": "analyzer/mlb/blaze-alexander/index.html"
+      "source": "analyzer/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "c8ac23fdabbeab72b35bde0410141e89a010a16a14d31bf538081b85e57cb171",
@@ -236,7 +231,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "fc57468062109e2758baffe4e14d4317ad5e0b270a8eaaff788fc5f4a9e04200",
+      "fingerprint": "673988ffdd5ed5c89535de82e13a01127d3f1cd811a6144bffd28a6c30a23392",
       "lastmod": "2026-09-03",
       "source": "picks/mlb/index.html"
     },
