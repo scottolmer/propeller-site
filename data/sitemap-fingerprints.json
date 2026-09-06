@@ -16,13 +16,23 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "bb8be8268811a9d030619017eb30a4e97f0ce0350c9ab9aa8648a5f088e32d30",
+      "fingerprint": "33083097b5cb8faa7a9fad8a9c4f7cab5bfa998f4d34ccda4eb06d3deee3ee97",
       "lastmod": "2026-09-06",
       "source": "analyzer/index.html"
     },
+    "https://propellerpicks.com/analyzer/mlb/alex-call/": {
+      "fingerprint": "bf46da7c024c8aa6a48d6d2ea89bdde729907e677e3f080a5ac4b6329d503864",
+      "lastmod": "2026-09-06",
+      "source": "analyzer/mlb/alex-call/index.html"
+    },
+    "https://propellerpicks.com/analyzer/mlb/garrett-stubbs/": {
+      "fingerprint": "edd171e15df2a21411ea75564514a8baf35a05147679a58465e7a75702a90fc4",
+      "lastmod": "2026-09-06",
+      "source": "analyzer/mlb/garrett-stubbs/index.html"
+    },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "8d3d367c5de2131c3dc6ae86833ea8ef36e6a22626e41b42ea89ea07538bf118",
-      "lastmod": "2026-09-05",
+      "fingerprint": "9c58d00af887d691a21380de07ca3a9625527fd76c525ae5c7217554c84ccc00",
+      "lastmod": "2026-09-06",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -231,7 +241,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "55949e9e460c1b9b95b5ee233fb2580030512b9cc0106cb80a726a0e6281943f",
+      "fingerprint": "cbdab8e510360d4e3b1e7cf53c11cd46e1e2cd9ffad8e72a217430d038d3b8fd",
       "lastmod": "2026-09-06",
       "source": "picks/mlb/index.html"
     },
