@@ -16,24 +16,9 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "94df4d2ebbdd9b466d34367e7061fb1428fd9ddfc9a6876658adc23dc94e489e",
+      "fingerprint": "bb8be8268811a9d030619017eb30a4e97f0ce0350c9ab9aa8648a5f088e32d30",
       "lastmod": "2026-09-07",
       "source": "analyzer/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/alex-freeland/": {
-      "fingerprint": "f34609a8efa9b319b3949b85b8e54036ff3563c2d3b41d5fda3ae487c1919380",
-      "lastmod": "2026-09-07",
-      "source": "analyzer/mlb/alex-freeland/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/david-fry/": {
-      "fingerprint": "96b2801babb2e4972a1303192c1eb23ef4f101405988275d7366305a8f39da2b",
-      "lastmod": "2026-09-07",
-      "source": "analyzer/mlb/david-fry/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/rece-hinds/": {
-      "fingerprint": "a976acb21f66bdfacb5f7e0d407c09c198f9d0d5108ecb8b690d16bf6254f0fd",
-      "lastmod": "2026-09-07",
-      "source": "analyzer/mlb/rece-hinds/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "9ebb55e71b275601d319965f7adab9de1d73e183fa7ec0710fd039f5e8ec2fd1",
@@ -246,7 +231,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "c5f9ddb0c132fc208d0ed46ffc6228d22400df91ba3cf3354c6217050ab858f3",
+      "fingerprint": "f93de18c6a7b64e7bb3875fb08178c49e708a62d260347417f1ce921f4655dd2",
       "lastmod": "2026-09-07",
       "source": "picks/mlb/index.html"
     },
