@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-06T15:06:08Z",
+  "generated_at": "2026-09-07T14:32:25Z",
   "latest_sample_game_date": "2026-09-11",
   "canonical_report": "https://propellerpicks.com/results/",
   "historical_database": {
     "unit": "raw graded analysis rows",
-    "total": 3028650,
-    "wins": 2038992,
-    "losses": 989570,
+    "total": 3052627,
+    "wins": 2055803,
+    "losses": 996736,
     "pushes": 88,
     "historical_outcome_rate": 67.3,
     "rate_formula": "wins / (wins + losses); pushes excluded",
@@ -15,13 +15,13 @@
   },
   "deduplicated_public_ledger": {
     "unit": "prop-result entries after the current public API collapse rules",
-    "total": 395348,
-    "wins": 269145,
-    "losses": 126180,
+    "total": 398250,
+    "wins": 271185,
+    "losses": 127042,
     "pushes": 23,
     "historical_outcome_rate": 68.1,
     "rate_formula": "wins / (wins + losses); pushes excluded",
-    "raw_to_ledger_ratio": 7.66,
+    "raw_to_ledger_ratio": 7.67,
     "source": "https://web-production-3c1c4.up.railway.app/api/public/results?days=3650&min_confidence=0&limit=20&offset=0"
   },
   "coverage": {
@@ -77,9 +77,9 @@
     {
       "key": "mlb",
       "label": "MLB",
-      "total": 2882692,
-      "wins": 1942321,
-      "losses": 940283,
+      "total": 2906669,
+      "wins": 1959132,
+      "losses": 947449,
       "pushes": 88,
       "win_rate": 67.4,
       "published": true
@@ -113,25 +113,25 @@
       "min": 75,
       "max": null,
       "all": {
-        "total": 198522,
-        "wins": 176019,
-        "losses": 22493,
+        "total": 201123,
+        "wins": 178469,
+        "losses": 22644,
         "pushes": 10,
         "win_rate": 88.7
       },
       "over": {
-        "total": 1955,
-        "wins": 1185,
-        "losses": 770,
+        "total": 1998,
+        "wins": 1216,
+        "losses": 782,
         "pushes": 0,
-        "win_rate": 60.6
+        "win_rate": 60.9
       },
       "under": {
-        "total": 196567,
-        "wins": 174834,
-        "losses": 21723,
+        "total": 199125,
+        "wins": 177253,
+        "losses": 21862,
         "pushes": 10,
-        "win_rate": 88.9
+        "win_rate": 89.0
       }
     },
     {
@@ -141,23 +141,23 @@
       "min": 65,
       "max": 74,
       "all": {
-        "total": 896632,
-        "wins": 702531,
-        "losses": 194079,
+        "total": 904000,
+        "wins": 708441,
+        "losses": 195537,
         "pushes": 22,
         "win_rate": 78.4
       },
       "over": {
-        "total": 22565,
-        "wins": 13933,
-        "losses": 8632,
+        "total": 22937,
+        "wins": 14161,
+        "losses": 8776,
         "pushes": 0,
         "win_rate": 61.7
       },
       "under": {
-        "total": 874067,
-        "wins": 688598,
-        "losses": 185447,
+        "total": 881063,
+        "wins": 694280,
+        "losses": 186761,
         "pushes": 22,
         "win_rate": 78.8
       }
@@ -169,23 +169,23 @@
       "min": 55,
       "max": 64,
       "all": {
-        "total": 1295602,
-        "wins": 820694,
-        "losses": 474874,
+        "total": 1304712,
+        "wins": 826574,
+        "losses": 478104,
         "pushes": 34,
-        "win_rate": 63.3
+        "win_rate": 63.4
       },
       "over": {
-        "total": 253159,
-        "wins": 141984,
-        "losses": 111158,
+        "total": 255771,
+        "wins": 143483,
+        "losses": 112271,
         "pushes": 17,
         "win_rate": 56.1
       },
       "under": {
-        "total": 1042443,
-        "wins": 678710,
-        "losses": 363716,
+        "total": 1048941,
+        "wins": 683091,
+        "losses": 365833,
         "pushes": 17,
         "win_rate": 65.1
       }
@@ -197,23 +197,23 @@
       "min": null,
       "max": 54,
       "all": {
-        "total": 637894,
-        "wins": 339748,
-        "losses": 298124,
+        "total": 642792,
+        "wins": 342319,
+        "losses": 300451,
         "pushes": 22,
         "win_rate": 53.3
       },
       "over": {
-        "total": 276261,
-        "wins": 136982,
-        "losses": 139263,
+        "total": 278725,
+        "wins": 138238,
+        "losses": 140471,
         "pushes": 16,
         "win_rate": 49.6
       },
       "under": {
-        "total": 361633,
-        "wins": 202766,
-        "losses": 158861,
+        "total": 364067,
+        "wins": 204081,
+        "losses": 159980,
         "pushes": 6,
         "win_rate": 56.1
       }
