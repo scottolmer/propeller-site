@@ -16,19 +16,9 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "f18ceab93d9b3eb7b6106a23e3f201c5688280e2b69ab6552eb9b55fb0ddf61d",
+      "fingerprint": "bb8be8268811a9d030619017eb30a4e97f0ce0350c9ab9aa8648a5f088e32d30",
       "lastmod": "2026-09-08",
       "source": "analyzer/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/aaron-judge/": {
-      "fingerprint": "055d8c739aa0f659ef511e6cce04d0c01fd5a087798daf066d4e43a369a385ab",
-      "lastmod": "2026-09-08",
-      "source": "analyzer/mlb/aaron-judge/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/jahmai-jones/": {
-      "fingerprint": "aab042f77dd468318c616709c390941e10bfdaabc45c5f1b1753e4bc5f28f6a9",
-      "lastmod": "2026-09-08",
-      "source": "analyzer/mlb/jahmai-jones/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "7216d1119a0d68c5e6953f6c2be3c7316f1abdeeacaa49f7e2bb5c0f7717b6d4",
@@ -241,7 +231,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "8f7993844ab5233d76b034f7edcdd758cbe439d7b95e0ffb8e66b921a722a6e3",
+      "fingerprint": "6ab16ec5f8d063b4915c85c019abdbcc5ecfe6aed5af6f0dba18af23a0b8c15c",
       "lastmod": "2026-09-08",
       "source": "picks/mlb/index.html"
     },
