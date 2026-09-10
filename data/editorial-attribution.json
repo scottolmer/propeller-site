@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Propeller Picks",
+    "url": "https://propellerpicks.com"
+  },
+  "authors": [
+    {
+      "id": "scott-olmer",
+      "@type": "Person",
+      "name": "Scott Olmer",
+      "role": "Founder and editorial owner",
+      "url": "https://propellerpicks.com/about/",
+      "byline_authorized": true,
+      "authorization": {
+        "id": "scott-standing-byline-20260910",
+        "recorded_on": "2026-09-10",
+        "scope": "All Propeller Picks articles, including AI-assisted articles without personal involvement."
+      },
+      "human_review_default": false,
+      "personal_drafting_default": false,
+      "firsthand_experience_default": false,
+      "limitations": "Standing byline authorization is not evidence of personal drafting, review, or firsthand experience."
+    }
+  ]
+}

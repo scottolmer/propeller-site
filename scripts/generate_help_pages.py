@@ -15,6 +15,42 @@ except ModuleNotFoundError:
 ROOT = Path(__file__).resolve().parent.parent
 BASE_URL = "https://propellerpicks.com"
 UPDATED = "2026-07-15"
+ATTRIBUTION_REGISTRY = ROOT / "data/editorial-attribution.json"
+
+
+def load_designated_author() -> tuple[dict, dict]:
+    registry = json.loads(ATTRIBUTION_REGISTRY.read_text(encoding="utf-8"))
+    publisher = registry.get("publisher")
+    author = next(
+        (candidate for candidate in registry.get("authors", []) if candidate.get("id") == "scott-olmer"),
+        None,
+    )
+    if not isinstance(publisher, dict) or not isinstance(author, dict) or not author.get("byline_authorized"):
+        raise ValueError("editorial attribution registry lacks the designated author")
+    return publisher, author
+
+
+def designated_author_attribution() -> dict:
+    """Return the recorded sitewide attribution for automated help articles.
+
+    A designated byline is an editorial ownership assignment.  It is deliberately
+    separate from a claim that the named person drafted, observed, contributed to,
+    or reviewed the individual article.
+    """
+    publisher, author = load_designated_author()
+    return {
+        "author": {key: author[key] for key in ("@type", "name", "url")},
+        "publisher": publisher.copy(),
+        "authorized_byline": {
+            "authority": author["name"],
+            "recorded_on": author["authorization"]["recorded_on"],
+            "scope": author["authorization"]["scope"],
+            "authorization_id": author["authorization"]["id"],
+        },
+        "production_disclosure": "Produced and reviewed through automated AI workflows.",
+        "contributors": [],
+        "reviewer": None,
+    }
 
 
 PAGES = [
@@ -269,6 +305,64 @@ PAGES = [
 ]
 
 
+# Each generated page owns an attribution record, even when it starts from the
+# same standing designation.  Future pages can replace one record without
+# changing any other page's visible credit or structured data.
+for _page in PAGES:
+    _page["attribution"] = designated_author_attribution()
+
+
+def validate_person_credit(person: object, context: str) -> dict:
+    if not isinstance(person, dict) or person.get("@type") != "Person":
+        raise ValueError(f"{context} must identify a Person")
+    if not isinstance(person.get("name"), str) or not person["name"].strip():
+        raise ValueError(f"{context} needs a person name")
+    if not isinstance(person.get("url"), str) or not person["url"].strip():
+        raise ValueError(f"{context} needs a verified bio URL")
+    return person
+
+
+def validate_attribution(attribution: object) -> dict:
+    """Reject unsupported person credits before a page can be generated."""
+    if not isinstance(attribution, dict):
+        raise ValueError("attribution must be an object")
+    author = attribution.get("author")
+    if not isinstance(author, dict) or author.get("@type") not in {"Organization", "Person"}:
+        raise ValueError("attribution needs an Organization or Person author")
+    if not isinstance(author.get("name"), str) or not author["name"].strip():
+        raise ValueError("attribution author needs a name")
+    if author["@type"] == "Person":
+        validate_person_credit(author, "person author")
+        authorization = attribution.get("authorized_byline")
+        if not isinstance(authorization, dict) or not all(
+            isinstance(authorization.get(field), str) and authorization[field].strip()
+            for field in ("authority", "recorded_on", "scope")
+        ):
+            raise ValueError("person author needs recorded authorized_byline")
+        if authorization["authority"].strip() != author["name"].strip():
+            raise ValueError("authorized_byline authority must match the person author")
+    publisher = attribution.get("publisher")
+    if not isinstance(publisher, dict) or publisher.get("@type") != "Organization":
+        raise ValueError("attribution needs an Organization publisher")
+    if not isinstance(attribution.get("production_disclosure"), str) or not attribution["production_disclosure"].strip():
+        raise ValueError("attribution needs a production disclosure")
+    contributors = attribution.get("contributors", [])
+    if not isinstance(contributors, list):
+        raise ValueError("contributors must be a list")
+    for contributor in contributors:
+        validate_person_credit(contributor, "contributor")
+        if not isinstance(contributor.get("role"), str) or not contributor["role"].strip():
+            raise ValueError("contributor needs a real role")
+        if not isinstance(contributor.get("contribution_proof"), str) or not contributor["contribution_proof"].strip():
+            raise ValueError("contributor needs contribution_proof")
+    reviewer = attribution.get("reviewer")
+    if reviewer is not None:
+        validate_person_credit(reviewer, "reviewer")
+        if not isinstance(reviewer.get("review_proof"), str) or not reviewer["review_proof"].strip():
+            raise ValueError("reviewer needs review_proof")
+    return attribution
+
+
 def esc(value: str) -> str:
     return html.escape(value, quote=True)
 
@@ -347,6 +441,7 @@ def render_video(page: dict) -> tuple[str, str, str]:
 
 def page_schema(page: dict) -> tuple[dict, dict, dict]:
     url = f"{BASE_URL}/help/{page['slug']}/"
+    attribution = validate_attribution(page["attribution"])
     webpage = {
         "@context": "https://schema.org",
         "@type": "WebPage",
@@ -356,9 +451,18 @@ def page_schema(page: dict) -> tuple[dict, dict, dict]:
         "dateModified": page.get("updated", UPDATED),
         "inLanguage": "en-US",
         "isPartOf": {"@type": "WebSite", "name": "Propeller Picks", "url": BASE_URL},
-        "publisher": {"@type": "Organization", "name": "Propeller Picks", "url": BASE_URL},
-        "author": {"@type": "Person", "name": "Scott Olmer", "url": f"{BASE_URL}/about/"},
+        "publisher": attribution["publisher"],
+        "author": attribution["author"],
     }
+    if attribution["contributors"]:
+        webpage["contributor"] = [
+            {key: value for key, value in contributor.items() if key not in {"role", "contribution_proof"}}
+            for contributor in attribution["contributors"]
+        ]
+    if attribution["reviewer"] is not None:
+        webpage["reviewedBy"] = {
+            key: value for key, value in attribution["reviewer"].items() if key != "review_proof"
+        }
     breadcrumb = {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -381,6 +485,32 @@ def page_schema(page: dict) -> tuple[dict, dict, dict]:
         ],
     }
     return webpage, breadcrumb, faq
+
+
+def render_attribution(attribution: dict) -> str:
+    """Render the same attribution record used by author meta and JSON-LD."""
+    author = attribution["author"]
+    author_name = esc(author["name"])
+    author_url = esc(author.get("url", ""))
+    if author["@type"] == "Person":
+        author_credit = f'By <a href="{author_url}">{author_name}</a>, designated author and editorial owner.'
+    else:
+        author_credit = f"Published by {author_name}."
+    contributor_credit = ""
+    if attribution["contributors"]:
+        contributor_credit = " " + " ".join(
+            f'Contributor: <a href="{esc(contributor["url"])}">{esc(contributor["name"])}</a> ({esc(contributor["role"])}).'
+            for contributor in attribution["contributors"]
+        )
+    reviewer_credit = ""
+    if attribution["reviewer"] is not None:
+        reviewer = attribution["reviewer"]
+        reviewer_credit = f' Reviewed by <a href="{esc(reviewer["url"])}">{esc(reviewer["name"])}</a>.'
+    return (
+        f'<p class="attribution">{author_credit} {esc(attribution["production_disclosure"])} '
+        '<a href="/editorial-policy/">Editorial policy</a>.'
+        f"{contributor_credit}{reviewer_credit}</p>"
+    )
 
 
 BASE_CSS = """
@@ -420,10 +550,16 @@ h3 { margin-bottom: 10px; font-size: 21px; }
 @media (max-width: 820px) { .container { width: min(100% - 32px, 1100px); } .hero { padding: 64px 0 40px; } .grid, .content-grid { grid-template-columns: 1fr; } .related { position: static; } .cta { align-items: flex-start; flex-direction: column; } }
 """
 
+ATTRIBUTION_CSS = """
+.attribution { max-width: 850px; margin: 12px 0 0; color: var(--pp-sub, #59615b); font-size: 14px; }
+.attribution a { color: var(--pp-orange-dark, #dd3d16); font-weight: 700; }
+"""
+
 
 def render_page(page: dict) -> str:
     url = f"{BASE_URL}/help/{page['slug']}/"
     webpage, breadcrumb, faq = page_schema(page)
+    attribution = validate_attribution(page["attribution"])
     sections = "\n".join(
         f"""        <section class="section-card">
           <h2>{esc(title)}</h2>
@@ -476,7 +612,7 @@ def render_page(page: dict) -> str:
 <meta name="twitter:title" content="{esc(page['title'])}">
 <meta name="twitter:description" content="{esc(page['description'])}">
 <meta name="twitter:image" content="{BASE_URL}/images/og-image.png">
-<meta name="author" content="Scott Olmer">
+<meta name="author" content="{esc(attribution['author']['name'])}">
 <meta name="theme-color" content="#f2efe8">{video_head}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -490,7 +626,7 @@ def render_page(page: dict) -> str:
 <script type="application/ld+json">
 {json_ld(faq)}
 </script>
-<style>{BASE_CSS}</style>
+<style>{BASE_CSS}{ATTRIBUTION_CSS}</style>
 </head>
 <body>
 <div class="page">
@@ -514,6 +650,7 @@ def render_page(page: dict) -> str:
         <h1>{esc(page['h1'])}</h1>
         <p class="summary">{esc(page['summary'])}</p>
         <p class="updated">Last updated: {updated}</p>
+        {render_attribution(attribution)}
         <div class="answer-box"><p><strong>Direct answer:</strong> {esc(page['summary'])}</p></div>{evidence}
       </div>
     </header>
