@@ -24,10 +24,12 @@ class ResearchMyPickPageTests(unittest.TestCase):
         self.assertIn('href="/tools/research-my-pick/"', self.hub)
         self.assertIn(url, (ROOT / "sitemap.xml").read_text(encoding="utf-8"))
 
-    def test_page_links_to_the_guest_capable_app_tool(self) -> None:
-        self.assertGreaterEqual(self.page.count('https://app.propellerpicks.com/research/my-pick'), 2)
-        self.assertIn("one complete guest analysis", self.page.lower())
-        self.assertIn("save and track", self.page.lower())
+    def test_page_is_honest_while_research_is_in_validation(self) -> None:
+        self.assertNotIn("https://app.propellerpicks.com/research/my-pick", self.page)
+        self.assertGreaterEqual(self.page.lower().count("being validated"), 2)
+        self.assertEqual(self.page.count('aria-disabled="true"'), 2)
+        self.assertIn("Research is not available yet", self.page)
+        self.assertIn("being validated before public availability", self.hub)
 
     def test_supported_markets_are_explicit_and_defensive_markets_are_not_advertised(self) -> None:
         for market in ("Passing Yards", "Rushing Yards", "Receiving Yards", "Receptions", "Points", "Rebounds", "Assists", "Made Three-Pointers", "Hits", "Total Bases", "Pitcher Strikeouts"):
@@ -39,12 +41,12 @@ class ResearchMyPickPageTests(unittest.TestCase):
         self.assertIn("not a win probability, payout estimate, or guarantee", self.page)
         self.assertIn("Win, Loss, Push, or Void", self.page)
 
-    def test_software_application_schema_is_valid(self) -> None:
+    def test_validation_page_schema_does_not_advertise_an_available_application(self) -> None:
         blocks = re.findall(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', self.page, re.S)
         schemas = [json.loads(block) for block in blocks]
-        schema = next(item for item in schemas if item.get("@type") == "SoftwareApplication")
+        schema = next(item for item in schemas if item.get("@type") == "WebPage")
         self.assertEqual(schema["url"], "https://propellerpicks.com/tools/research-my-pick/")
-        self.assertEqual(schema["offers"]["price"], "0")
+        self.assertNotIn("offers", schema)
 
 
 if __name__ == "__main__":
