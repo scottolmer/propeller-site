@@ -24,29 +24,36 @@ class ResearchMyPickPageTests(unittest.TestCase):
         self.assertIn('href="/tools/research-my-pick/"', self.hub)
         self.assertIn(url, (ROOT / "sitemap.xml").read_text(encoding="utf-8"))
 
-    def test_page_is_honest_while_research_is_in_validation(self) -> None:
-        self.assertNotIn("https://app.propellerpicks.com/research/my-pick", self.page)
-        self.assertGreaterEqual(self.page.lower().count("being validated"), 2)
-        self.assertEqual(self.page.count('aria-disabled="true"'), 2)
-        self.assertIn("Research is not available yet", self.page)
-        self.assertIn("being validated before public availability", self.hub)
+    def test_page_links_to_the_live_tool(self) -> None:
+        app_url = "https://app.propellerpicks.com/research/my-pick"
+        self.assertGreaterEqual(self.page.count(f'href="{app_url}"'), 2)
+        self.assertNotIn('aria-disabled="true"', self.page)
+        self.assertIn("Research my pick", self.page)
+        self.assertIn("Research one upcoming NFL passing-yards pick", self.hub)
 
-    def test_supported_markets_are_explicit_and_defensive_markets_are_not_advertised(self) -> None:
-        for market in ("Passing Yards", "Rushing Yards", "Receiving Yards", "Receptions", "Points", "Rebounds", "Assists", "Made Three-Pointers", "Hits", "Total Bases", "Pitcher Strikeouts"):
-            self.assertIn(market, self.page)
+    def test_only_initial_nfl_passing_yards_market_is_advertised(self) -> None:
+        self.assertIn("Passing yards", self.page)
+        self.assertIn("NBA, MLB, and other NFL stats are not enabled", self.page)
+        for market in ("Rushing Yards", "Receiving Yards", "Receptions", "Points", "Rebounds", "Assists", "Made Three-Pointers", "Hits", "Total Bases", "Pitcher Strikeouts"):
+            self.assertNotIn(market, self.page)
         self.assertNotIn("Tackles", self.page)
         self.assertNotIn("defensive sacks", self.page.lower())
 
     def test_score_is_not_presented_as_win_probability_or_payout(self) -> None:
-        self.assertIn("not a win probability, payout estimate, or guarantee", self.page)
+        self.assertIn("Historical support", self.page)
+        self.assertIn("Past results are compared with your line", self.page)
+        self.assertIn("Recent games count more; small samples pull support toward 50", self.page)
+        self.assertIn("Research notes add context; Historical support is not a win probability", self.page)
+        self.assertIn("not a payout estimate or guarantee", self.page)
         self.assertIn("Win, Loss, Push, or Void", self.page)
 
-    def test_validation_page_schema_does_not_advertise_an_available_application(self) -> None:
+    def test_available_application_schema_matches_current_scope(self) -> None:
         blocks = re.findall(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', self.page, re.S)
         schemas = [json.loads(block) for block in blocks]
-        schema = next(item for item in schemas if item.get("@type") == "WebPage")
+        schema = next(item for item in schemas if item.get("@type") == "WebApplication")
         self.assertEqual(schema["url"], "https://propellerpicks.com/tools/research-my-pick/")
-        self.assertNotIn("offers", schema)
+        self.assertTrue(schema["isAccessibleForFree"])
+        self.assertIn("NFL passing-yards", schema["description"])
 
 
 if __name__ == "__main__":
