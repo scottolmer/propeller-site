@@ -29,15 +29,20 @@ class ResearchMyPickPageTests(unittest.TestCase):
         self.assertGreaterEqual(self.page.count(f'href="{app_url}"'), 2)
         self.assertNotIn('aria-disabled="true"', self.page)
         self.assertIn("Research my pick", self.page)
-        self.assertIn("Research one upcoming NFL passing-yards pick", self.hub)
+        self.assertIn("Research an upcoming NFL player prop across six offensive markets", self.hub)
 
-    def test_only_initial_nfl_passing_yards_market_is_advertised(self) -> None:
-        self.assertIn("Passing yards", self.page)
-        self.assertIn("NBA, MLB, and other NFL stats are not enabled", self.page)
-        for market in ("Rushing Yards", "Receiving Yards", "Receptions", "Points", "Rebounds", "Assists", "Made Three-Pointers", "Hits", "Total Bases", "Pitcher Strikeouts"):
-            self.assertNotIn(market, self.page)
+    def test_six_current_nfl_offensive_markets_are_advertised(self) -> None:
+        for market in ("passing yards", "passing touchdowns", "rushing yards", "rushing attempts", "receiving yards", "receptions"):
+            self.assertIn(market, self.page.lower())
+        self.assertIn("Search the NFL roster", self.page)
+        self.assertIn("Current DFS prop options can appear when available", self.page)
+        self.assertIn("a board listing is not required", self.page)
         self.assertNotIn("Tackles", self.page)
         self.assertNotIn("defensive sacks", self.page.lower())
+
+    def test_copy_does_not_promise_a_result_for_every_player(self) -> None:
+        self.assertIn("A result can still be withheld", self.page)
+        self.assertIn("does not provide enough support for research", self.page)
 
     def test_score_is_not_presented_as_win_probability_or_payout(self) -> None:
         self.assertIn("Historical support", self.page)
@@ -53,7 +58,7 @@ class ResearchMyPickPageTests(unittest.TestCase):
         schema = next(item for item in schemas if item.get("@type") == "WebApplication")
         self.assertEqual(schema["url"], "https://propellerpicks.com/tools/research-my-pick/")
         self.assertTrue(schema["isAccessibleForFree"])
-        self.assertIn("NFL passing-yards", schema["description"])
+        self.assertIn("six offensive markets", schema["description"])
 
 
 if __name__ == "__main__":
