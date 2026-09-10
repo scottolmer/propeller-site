@@ -29,10 +29,10 @@ class ResearchMyPickPageTests(unittest.TestCase):
         self.assertGreaterEqual(self.page.count(f'href="{app_url}"'), 2)
         self.assertNotIn('aria-disabled="true"', self.page)
         self.assertIn("Research my pick", self.page)
-        self.assertIn("Research an upcoming NFL player prop across six offensive markets", self.hub)
+        self.assertIn("Research an upcoming NFL player prop across eight offensive markets", self.hub)
 
-    def test_six_current_nfl_offensive_markets_are_advertised(self) -> None:
-        for market in ("passing yards", "passing touchdowns", "rushing yards", "rushing attempts", "receiving yards", "receptions"):
+    def test_eight_current_nfl_offensive_markets_are_advertised(self) -> None:
+        for market in ("passing yards", "passing touchdowns", "passing completions", "passing interceptions", "rushing yards", "rushing attempts", "receiving yards", "receptions"):
             self.assertIn(market, self.page.lower())
         self.assertIn("Search the NFL roster", self.page)
         self.assertIn("Current DFS prop options can appear when available", self.page)
@@ -58,7 +58,7 @@ class ResearchMyPickPageTests(unittest.TestCase):
         schema = next(item for item in schemas if item.get("@type") == "WebApplication")
         self.assertEqual(schema["url"], "https://propellerpicks.com/tools/research-my-pick/")
         self.assertTrue(schema["isAccessibleForFree"])
-        self.assertIn("six offensive markets", schema["description"])
+        self.assertIn("eight offensive markets", schema["description"])
 
 
 if __name__ == "__main__":
