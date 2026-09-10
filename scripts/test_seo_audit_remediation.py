@@ -81,6 +81,14 @@ def local_path(url: str) -> Path:
     return ROOT / (path or ".") / "index.html"
 
 
+def designated_author() -> dict:
+    registry = json.loads((ROOT / "data/editorial-attribution.json").read_text(encoding="utf-8"))
+    author = next(candidate for candidate in registry["authors"] if candidate.get("id") == "scott-olmer")
+    if not author.get("byline_authorized"):
+        raise AssertionError("Scott's designated byline must be authorized")
+    return author
+
+
 class SeoAuditRemediationTests(unittest.TestCase):
     def test_legacy_sport_aliases_are_minimal_noindex_redirects(self) -> None:
         for sport, target in SPORT_ALIASES.items():
@@ -139,8 +147,18 @@ class SeoAuditRemediationTests(unittest.TestCase):
         self.assertIn("produces a 50%/50% no-vig estimate", nba)
 
     def assert_truthful_article_attribution(self, article: dict, source: str) -> None:
-        self.assertEqual(article.get("author", {}).get("@type"), "Organization")
-        self.assertEqual(article.get("author", {}).get("name"), "Propeller Picks")
+        author = article.get("author", {})
+        self.assertIn(author.get("@type"), {"Organization", "Person"})
+        if author.get("@type") == "Organization":
+            self.assertEqual(author.get("name"), "Propeller Picks")
+        else:
+            designated = designated_author()
+            self.assertEqual(author.get("name"), designated["name"])
+            self.assertEqual(author.get("url"), designated["url"])
+            visible = re.sub(r"<(script|style)\b[^>]*>.*?</\1>", " ", source, flags=re.S | re.I)
+            visible = " ".join(unescape(re.sub(r"<[^>]+>", " ", visible)).split())
+            self.assertRegex(visible, r"\bBy\s+Scott Olmer\b")
+            self.assertIn("AI-assisted production and automated review", visible)
         # A named reviewer is optional. If claimed, a founder link or a name
         # present only in JSON-LD is not visible evidence of that review.
         if "reviewedBy" in article:
@@ -171,7 +189,12 @@ class SeoAuditRemediationTests(unittest.TestCase):
             with self.subTest(source=source), self.assertRaises(AssertionError):
                 self.assert_truthful_article_attribution(reviewed, source)
         with self.assertRaises(AssertionError):
-            self.assert_truthful_article_attribution({"author": {"@type": "Person", "name": "Scott Olmer"}}, "")
+            self.assert_truthful_article_attribution({"author": {"@type": "Person", "name": "Jordan Example"}}, "")
+        with self.assertRaises(AssertionError):
+            self.assert_truthful_article_attribution(
+                {"author": {"@type": "Person", "name": "Scott Olmer", "url": "https://propellerpicks.com/about/"}},
+                "",
+            )
 
     def test_strategy_guides_expose_truthful_editorial_attribution(self) -> None:
         methodology = json.loads((ROOT / "data/methodology-version.json").read_text(encoding="utf-8"))
@@ -186,6 +209,9 @@ class SeoAuditRemediationTests(unittest.TestCase):
                 if payload.get("@type") == "Article"
             )
             self.assert_truthful_article_attribution(article, source)
+            author_meta = re.search(r'<meta name="author" content="([^"]+)">', source)
+            self.assertIsNotNone(author_meta, rel)
+            self.assertEqual(author_meta.group(1), article["author"]["name"], rel)
             self.assertIn('href="/editorial-policy/"', source)
             source_note = re.search(r'<p\b[^>]*data-editorial-sources="true"[^>]*>(.*?)</p>', source, flags=re.S)
             self.assertIsNotNone(source_note, rel)
