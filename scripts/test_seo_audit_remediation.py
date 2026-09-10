@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import json
+from html import unescape
 import re
 import unittest
 import xml.etree.ElementTree as ET
@@ -137,7 +138,42 @@ class SeoAuditRemediationTests(unittest.TestCase):
         self.assertIn("raw implied probability is approximately 52.38%", nba)
         self.assertIn("produces a 50%/50% no-vig estimate", nba)
 
-    def test_strategy_guides_expose_truthful_named_review(self) -> None:
+    def assert_truthful_article_attribution(self, article: dict, source: str) -> None:
+        self.assertEqual(article.get("author", {}).get("@type"), "Organization")
+        self.assertEqual(article.get("author", {}).get("name"), "Propeller Picks")
+        # A named reviewer is optional. If claimed, a founder link or a name
+        # present only in JSON-LD is not visible evidence of that review.
+        if "reviewedBy" in article:
+            reviewer = article["reviewedBy"]
+            self.assertIsInstance(reviewer, dict)
+            self.assertEqual(reviewer.get("@type"), "Person")
+            name = reviewer.get("name", "")
+            self.assertIsInstance(name, str)
+            self.assertTrue(name.strip())
+            visible = re.sub(r"<(script|style)\b[^>]*>.*?</\1>", " ", source, flags=re.S | re.I)
+            visible = re.sub(r"<!--.*?-->", " ", visible, flags=re.S)
+            visible = " ".join(unescape(re.sub(r"<[^>]+>", " ", visible)).split())
+            self.assertRegex(visible, r"\bReviewed by\s+" + re.escape(name.strip()) + r"(?=\W|$)")
+
+    def test_attribution_requires_visible_evidence_only_when_review_is_claimed(self) -> None:
+        article = {"author": {"@type": "Organization", "name": "Propeller Picks"}}
+        self.assert_truthful_article_attribution(article, "<p>By Propeller Picks.</p>")
+        reviewed = {**article, "reviewedBy": {"@type": "Person", "name": "Scott Olmer"}}
+        self.assert_truthful_article_attribution(
+            reviewed, '<p>Reviewed by <a href="/about/">Scott Olmer</a>.</p>'
+        )
+        for source in (
+            '<p>Founder: <a href="/about/">Scott Olmer</a>.</p>',
+            '<script type="application/ld+json">"Reviewed by Scott Olmer"</script>',
+            "<p>Reviewed by Someone Else.</p>",
+            "<!-- Reviewed by Scott Olmer -->",
+        ):
+            with self.subTest(source=source), self.assertRaises(AssertionError):
+                self.assert_truthful_article_attribution(reviewed, source)
+        with self.assertRaises(AssertionError):
+            self.assert_truthful_article_attribution({"author": {"@type": "Person", "name": "Scott Olmer"}}, "")
+
+    def test_strategy_guides_expose_truthful_editorial_attribution(self) -> None:
         methodology = json.loads((ROOT / "data/methodology-version.json").read_text(encoding="utf-8"))
         for rel in GUIDES:
             source = (ROOT / rel).read_text(encoding="utf-8")
@@ -149,13 +185,20 @@ class SeoAuditRemediationTests(unittest.TestCase):
                 for payload in (json.loads(block) for block in blocks)
                 if payload.get("@type") == "Article"
             )
-            self.assertEqual(article.get("reviewedBy", {}).get("name"), "Scott Olmer")
-            self.assertIn('href="/about/">Scott Olmer', source)
+            self.assert_truthful_article_attribution(article, source)
             self.assertIn('href="/editorial-policy/"', source)
-            self.assertIn('data-editorial-sources="true"', source)
+            source_note = re.search(r'<p\b[^>]*data-editorial-sources="true"[^>]*>(.*?)</p>', source, flags=re.S)
+            self.assertIsNotNone(source_note, rel)
+            self.assertTrue(unescape(re.sub(r"<[^>]+>", "", source_note.group(1))).strip(), rel)
             self.assertIn('href="/how-it-works/"', source)
-            self.assertIn(f'version {methodology["current_version"]}', source)
-            self.assertIn('href="/data/methodology-version.json"', source)
+            if rel == "guides/prizepicks-strategy/index.html":
+                self.assertIn('href="/data/product-facts.json"', source)
+            elif rel == "guides/pick6-strategy/index.html":
+                self.assertIn('href="https://pick6.draftkings.com/pick6-rules-and-scoring"', source_note.group(1))
+            else:
+                self.assertIn('href="/data/methodology-version.json"', source)
+            if 'href="/data/methodology-version.json"' in source:
+                self.assertIn(f'version {methodology["current_version"]}', source)
 
 
 if __name__ == "__main__":
