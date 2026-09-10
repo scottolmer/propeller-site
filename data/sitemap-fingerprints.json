@@ -316,8 +316,8 @@
       "source": "terms/index.html"
     },
     "https://propellerpicks.com/tools/": {
-      "fingerprint": "fa35ebf0be6065b0e6509763e4fa8f23f9a8483ebe20349e752498e323e63359",
-      "lastmod": "2026-07-16",
+      "fingerprint": "b37e80a266a38bfcd9a4103432f0503309b440a8f96f004e4b700cc0c0b3e470",
+      "lastmod": "2026-09-10",
       "source": "tools/index.html"
     },
     "https://propellerpicks.com/tools/ai-betting-prompt-builder/": {
@@ -334,6 +334,11 @@
       "fingerprint": "9f5828e0f2a6daab6f75d3d7141c2793dc417f9be2df909f79102977bc47a6ff",
       "lastmod": "2026-09-09",
       "source": "tools/prizepicks-payout-calculator/index.html"
+    },
+    "https://propellerpicks.com/tools/research-my-pick/": {
+      "fingerprint": "9bde814ffbf923ceed8bee7edebd4cc6ccb6fd7d3a7c3ffc5ddd490aa14c540d",
+      "lastmod": "2026-09-10",
+      "source": "tools/research-my-pick/index.html"
     },
     "https://propellerpicks.com/tools/underdog-payout-calculator/": {
       "fingerprint": "878d32b84e695d8973d75a809a96ebb91d3dc0ff964e73c1c853bae28649a1b2",
