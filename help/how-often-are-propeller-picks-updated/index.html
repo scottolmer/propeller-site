@@ -37,7 +37,7 @@
   "name": "How Often Are Propeller Picks Updated?",
   "url": "https://propellerpicks.com/help/how-often-are-propeller-picks-updated/",
   "description": "How often Propeller public picks, previews, and results data can change.",
-  "dateModified": "2026-07-15",
+  "dateModified": "2026-09-12",
   "inLanguage": "en-US",
   "isPartOf": {
     "@type": "WebSite",
@@ -89,26 +89,18 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "How often are Propeller picks updated?",
+      "name": "Does today's date mean every source is current?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller pick previews can update when new slates, lines, injuries, and model outputs are available. Check the current picks pages for the latest public preview."
+        "text": "No. A page or slate date does not establish when its underlying line or analysis was captured. Read any available timestamp in context: what was timed, for which player and event, and whether it answers your freshness question."
       }
     },
     {
       "@type": "Question",
-      "name": "Where do I see current Propeller picks?",
+      "name": "Where do settled outcomes appear?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Current public pick previews are available from the picks hub at /picks/ and sport or platform-specific picks pages where available."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Where do I see settled Propeller results?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Settled results are available on /results/ and /track-record/, with machine-readable sources linked from /data/index.json."
+        "text": "Use Results for settled outcomes. Current research answers what is available to inspect before an event; settled results answer what happened afterward. If an outcome remains ungraded or unresolved, wait for its status rather than counting it yourself as settled."
       }
     }
   ]
@@ -152,6 +144,16 @@ h3 { margin-bottom: 10px; font-size: 21px; }
 
 .attribution { max-width: 850px; margin: 12px 0 0; color: var(--pp-sub, #59615b); font-size: 14px; }
 .attribution a { color: var(--pp-orange-dark, #dd3d16); font-weight: 700; }
+
+.table-scroll { max-width: 100%; overflow-x: auto; margin-top: 20px; }
+.table-scroll:focus-visible { outline: 3px solid var(--pp-orange-dark, #dd3d16); outline-offset: 4px; }
+.help-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.6; }
+.help-table caption { text-align: left; font-weight: 700; margin-bottom: 12px; }
+.help-table th, .help-table td { text-align: left; vertical-align: top; padding: 12px; border-bottom: 1px solid #c9cec8; overflow-wrap: anywhere; }
+.help-table thead th { background: #e7e9e2; }
+.section-links { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 16px; }
+.section-links a { color: var(--pp-orange-dark, #dd3d16); font-weight: 700; }
+@media (max-width: 600px) { .help-table { min-width: 570px; } .content-grid > article { min-width: 0; } }
 </style>
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -195,50 +197,39 @@ h3 { margin-bottom: 10px; font-size: 21px; }
       <div class="container">
         <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/help/">Help</a><span>/</span><span>How Often Are Propeller Picks Updated?</span></div>
         <h1>How often are Propeller picks updated?</h1>
-        <p class="summary">Propeller public pick previews and results data can update as new slates, lines, injuries, and grading results become available. For current picks, use the picks pages. For settled outcomes and record totals, use the public results ledger and data catalog.</p>
-        <p class="updated">Last updated: 2026-07-15</p>
+
+        <p class="updated">Last updated: 2026-09-12</p>
         <p class="attribution">By <a href="https://propellerpicks.com/about/">Scott Olmer</a>, designated author and editorial owner. Produced and reviewed through automated AI workflows. <a href="/editorial-policy/">Editorial policy</a>.</p>
-        <div class="answer-box"><p><strong>Direct answer:</strong> Propeller public pick previews and results data can update as new slates, lines, injuries, and grading results become available. For current picks, use the picks pages. For settled outcomes and record totals, use the public results ledger and data catalog.</p></div>
+        <div class="answer-box"><p><strong>Direct answer:</strong> Propeller&#x27;s public research can change as new slates, lines, player news and available data change. Check the current research page, then recheck the exact line and any news that affects the player&#x27;s participation or role. A page dated today does not establish when every underlying input was captured. Settled outcomes belong in Results.</p></div>
       </div>
     </header>
 
     <div class="container content-grid">
       <article>
-        <section class="section-card">
-          <h2>Current Picks</h2>
-          <p>Current pick availability depends on sport, slate timing, public publishing rules, and upstream data availability.</p>
-        </section>
-        <section class="section-card">
-          <h2>Results Updates</h2>
-          <p>Results update after outcomes are graded. The results page and public summary API are the canonical places to check current totals.</p>
-        </section>
-        <section class="section-card">
-          <h2>Why A Pick Can Change</h2>
-          <p>Props can change when lines move, players are ruled in or out, projected roles shift, or a slate locks.</p>
-        </section>
+<section class="section-card"><h2>What did our freshness check actually show?</h2><p>An AI-operated check on September 10, 2026 found three different clocks: this help article&#x27;s documentation date was July 15; the analyzer heading said September 10; and the public response was generated at 15:17:05 UTC on September 10. The same response left its line-observation and analysis times unknown.</p><p>Those last fields came from inspection of the public response, not labels on the player card. The response time therefore could not establish how old the underlying line or analysis was. This is a dated historical check, not today&#x27;s availability report.</p><div class="table-scroll" role="region" tabindex="0" aria-label="September 10, 2026 clock audit: three observed times, two unknowns. Scroll horizontally on small screens."><table class="help-table"><caption>September 10, 2026 clock audit: three observed times, two unknowns</caption><thead><tr><th scope="col">Clock</th><th scope="col">Observed value</th><th scope="col">What it tells you</th></tr></thead><tbody><tr><th scope="row">Documentation update</th><td>July 15, 2026</td><td>When this article was marked updated in that observation; not a data clock.</td></tr><tr><th scope="row">Analyzer calendar heading</th><td>September 10, 2026</td><td>The date shown by the page; not proof of input capture.</td></tr><tr><th scope="row">Public response generated</th><td>September 10, 2026 at 15:17:05 UTC</td><td>When that response was produced; not when its line was observed.</td></tr><tr><th scope="row">Line observed</th><td>Unknown (marketObservedAt: null)</td><td>The inspected response supplied no line-observation time.</td></tr><tr><th scope="row">Analysis time</th><td>Unknown (analysisAt: null)</td><td>The inspected response supplied no analysis time.</td></tr></tbody></table></div></section>
+<section class="section-card"><h2>What should I recheck when something changes?</h2><p>New player-status information, a different expected role, a moved line or a new slate can change the question you are researching. Start with the change that matters to your player. These are reader actions, not promises that an internal update runs whenever one of these events occurs.</p><div class="table-scroll" role="region" tabindex="0" aria-label="A practical event-to-action checklist. Scroll horizontally on small screens."><table class="help-table"><caption>A practical event-to-action checklist</caption><thead><tr><th scope="col">What changed</th><th scope="col">What to inspect</th><th scope="col">When to wait</th></tr></thead><tbody><tr><th scope="row">Player status changed</th><td>Current official status; the player and event; available research</td><td>Availability or participation remains unresolved.</td></tr><tr><th scope="row">Expected role changed</th><td>Evidence for minutes, lineup or opportunity; which assumptions used the old role</td><td>The new role remains unconfirmed.</td></tr><tr><th scope="row">Posted line changed</th><td>Current exact stat, number and direction; earlier notes using another number</td><td>The current research cannot be matched to that line.</td></tr><tr><th scope="row">Current slate has no rows</th><td>Selected sport, slate date and published availability message</td><td>No current research is available; an empty screen is not enough to diagnose why.</td></tr><tr><th scope="row">Event finished</th><td>Settled outcomes at Results, with their own definitions</td><td>A result remains ungraded or unresolved.</td></tr></tbody></table></div></section>
+<section class="section-card"><h2>Can I still use research I read this morning?</h2><p>Reopen the current research and check whether the information you relied on still applies. For a hypothetical example, suppose you read a note at 10 AM and player news arrives at noon. The earlier note cannot certify that the noon change has been incorporated. Look for research that addresses the changed participation or role before relying on that assumption.</p><p>A changed number also deserves a fresh look. Match the player, event, stat, number and direction to the exact line you are evaluating. Research about another number does not automatically answer the same question. If you cannot match them, wait.</p><div class="section-links"><a href="/picks/">Check current public research</a><a href="/analyzer/">Open the public analyzer</a></div></section>
+<section class="section-card"><h2>Why might no current research appear?</h2><p>If no current research appears, check the selected sport and the page&#x27;s availability message. An empty public view alone does not tell you whether no rows were returned, the feed could not be reached, or another publishing constraint applies. Wait for usable current research rather than treating an older slate as current.</p><p>Coverage also varies with sport, season, slate and available data. Use the supported-sports help page to understand coverage, then inspect the current page for availability. A general coverage list cannot confirm that a particular player or event has current research.</p><div class="section-links"><a href="/help/what-sports-does-propeller-support/">See supported sports and coverage</a></div></section>
+<section class="section-card"><h2>How should I read an unknown timestamp?</h2><p>Unknown means the inspected response did not supply that time. It does not by itself mean old, failed or zero. Keep the unanswered question visible: when was this line observed, or when was this analysis made? A fresh page heading cannot fill in either missing answer.</p><div class="section-links"><a href="/results/">Check settled outcomes in Results</a></div></section>
         <section class="section">
           <h2>Frequently Asked Questions</h2>
           <div class="faq-list">
         <div class="faq-item">
-          <h3>How often are Propeller picks updated?</h3>
-          <p>Propeller pick previews can update when new slates, lines, injuries, and model outputs are available. Check the current picks pages for the latest public preview.</p>
+          <h3>Does today&#x27;s date mean every source is current?</h3>
+          <p>No. A page or slate date does not establish when its underlying line or analysis was captured. Read any available timestamp in context: what was timed, for which player and event, and whether it answers your freshness question.</p>
         </div>
         <div class="faq-item">
-          <h3>Where do I see current Propeller picks?</h3>
-          <p>Current public pick previews are available from the picks hub at /picks/ and sport or platform-specific picks pages where available.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Where do I see settled Propeller results?</h3>
-          <p>Settled results are available on /results/ and /track-record/, with machine-readable sources linked from /data/index.json.</p>
+          <h3>Where do settled outcomes appear?</h3>
+          <p>Use Results for settled outcomes. Current research answers what is available to inspect before an event; settled results answer what happened afterward. If an outcome remains ungraded or unresolved, wait for its status rather than counting it yourself as settled.</p>
         </div>
           </div>
         </section>
       </article>
       <aside class="related" aria-label="Related pages">
           <a href="/picks/">Picks Hub</a>
+          <a href="/analyzer/">Prop Analyzer</a>
+          <a href="/help/what-sports-does-propeller-support/">/help/what-sports-does-propeller-support/</a>
           <a href="/results/">Results</a>
-          <a href="/track-record/">Track Record</a>
-          <a href="/data/index.json">Data Catalog</a>
       </aside>
     </div>
 
@@ -248,7 +239,7 @@ h3 { margin-bottom: 10px; font-size: 21px; }
           <h2>Research today's props</h2>
           <p>Use Propeller's public tools, results, and analyzer pages before making your own platform decisions.</p>
         </div>
-        <a class="button" href="https://app.propellerpicks.com/signup" rel="noopener">Get Free Access</a>
+        <a class="button" href="/picks/" rel="noopener">Check current public research</a>
       </section>
     </div>
   </main>
