@@ -258,24 +258,116 @@ PAGES = [
         ],
         "related": ["/guides/how-to-analyze-player-props/", "/analyzer/", "/how-it-works/", "/tools/"],
     },
-    {
-        "slug": "how-often-are-propeller-picks-updated",
-        "title": "How Often Are Propeller Picks Updated?",
-        "description": "How often Propeller public picks, previews, and results data can change.",
-        "h1": "How often are Propeller picks updated?",
-        "summary": "Propeller public pick previews and results data can update as new slates, lines, injuries, and grading results become available. For current picks, use the picks pages. For settled outcomes and record totals, use the public results ledger and data catalog.",
-        "sections": [
-            ("Current Picks", "Current pick availability depends on sport, slate timing, public publishing rules, and upstream data availability."),
-            ("Results Updates", "Results update after outcomes are graded. The results page and public summary API are the canonical places to check current totals."),
-            ("Why A Pick Can Change", "Props can change when lines move, players are ruled in or out, projected roles shift, or a slate locks."),
-        ],
-        "faqs": [
-            ("How often are Propeller picks updated?", "Propeller pick previews can update when new slates, lines, injuries, and model outputs are available. Check the current picks pages for the latest public preview."),
-            ("Where do I see current Propeller picks?", "Current public pick previews are available from the picks hub at /picks/ and sport or platform-specific picks pages where available."),
-            ("Where do I see settled Propeller results?", "Settled results are available on /results/ and /track-record/, with machine-readable sources linked from /data/index.json."),
-        ],
-        "related": ["/picks/", "/results/", "/track-record/", "/data/index.json"],
-    },
+    {'slug': 'how-often-are-propeller-picks-updated',
+     'title': 'How Often Are Propeller Picks Updated?',
+     'description': 'How often Propeller public picks, previews, and results data can change.',
+     'h1': 'How often are Propeller picks updated?',
+     'updated': '2026-09-12',
+     'summary': "Propeller's public research can change as new slates, lines, player news and available data "
+                'change. Check the current research page, then recheck the exact line and any news that affects '
+                "the player's participation or role. A page dated today does not establish when every underlying "
+                'input was captured. Settled outcomes belong in Results.',
+     'sections': [],
+     'content_sections': [{'title': 'What did our freshness check actually show?',
+                           'paragraphs': ['An AI-operated check on September 10, 2026 found three different '
+                                          "clocks: this help article's documentation date was July 15; the "
+                                          'analyzer heading said September 10; and the public response was '
+                                          'generated at 15:17:05 UTC on September 10. The same response left its '
+                                          'line-observation and analysis times unknown.',
+                                          'Those last fields came from inspection of the public response, not '
+                                          'labels on the player card. The response time therefore could not '
+                                          'establish how old the underlying line or analysis was. This is a '
+                                          "dated historical check, not today's availability report."],
+                           'table': {'caption': 'September 10, 2026 clock audit: three observed times, two '
+                                                'unknowns',
+                                     'headers': ['Clock', 'Observed value', 'What it tells you'],
+                                     'rows': [['Documentation update',
+                                               'July 15, 2026',
+                                               'When this article was marked updated in that observation; not a '
+                                               'data clock.'],
+                                              ['Analyzer calendar heading',
+                                               'September 10, 2026',
+                                               'The date shown by the page; not proof of input capture.'],
+                                              ['Public response generated',
+                                               'September 10, 2026 at 15:17:05 UTC',
+                                               'When that response was produced; not when its line was '
+                                               'observed.'],
+                                              ['Line observed',
+                                               'Unknown (marketObservedAt: null)',
+                                               'The inspected response supplied no line-observation time.'],
+                                              ['Analysis time',
+                                               'Unknown (analysisAt: null)',
+                                               'The inspected response supplied no analysis time.']]}},
+                          {'title': 'What should I recheck when something changes?',
+                           'paragraphs': ['New player-status information, a different expected role, a moved '
+                                          'line or a new slate can change the question you are researching. '
+                                          'Start with the change that matters to your player. These are reader '
+                                          'actions, not promises that an internal update runs whenever one of '
+                                          'these events occurs.'],
+                           'table': {'caption': 'A practical event-to-action checklist',
+                                     'headers': ['What changed', 'What to inspect', 'When to wait'],
+                                     'rows': [['Player status changed',
+                                               'Current official status; the player and event; available '
+                                               'research',
+                                               'Availability or participation remains unresolved.'],
+                                              ['Expected role changed',
+                                               'Evidence for minutes, lineup or opportunity; which assumptions '
+                                               'used the old role',
+                                               'The new role remains unconfirmed.'],
+                                              ['Posted line changed',
+                                               'Current exact stat, number and direction; earlier notes using '
+                                               'another number',
+                                               'The current research cannot be matched to that line.'],
+                                              ['Current slate has no rows',
+                                               'Selected sport, slate date and published availability message',
+                                               'No current research is available; an empty screen is not enough '
+                                               'to diagnose why.'],
+                                              ['Event finished',
+                                               'Settled outcomes at Results, with their own definitions',
+                                               'A result remains ungraded or unresolved.']]}},
+                          {'title': 'Can I still use research I read this morning?',
+                           'paragraphs': ['Reopen the current research and check whether the information you '
+                                          'relied on still applies. For a hypothetical example, suppose you read '
+                                          'a note at 10 AM and player news arrives at noon. The earlier note '
+                                          'cannot certify that the noon change has been incorporated. Look for '
+                                          'research that addresses the changed participation or role before '
+                                          'relying on that assumption.',
+                                          'A changed number also deserves a fresh look. Match the player, event, '
+                                          'stat, number and direction to the exact line you are evaluating. '
+                                          'Research about another number does not automatically answer the same '
+                                          'question. If you cannot match them, wait.'],
+                           'links': [('Check current public research', '/picks/'),
+                                     ('Open the public analyzer', '/analyzer/')]},
+                          {'title': 'Why might no current research appear?',
+                           'paragraphs': ['If no current research appears, check the selected sport and the '
+                                          "page's availability message. An empty public view alone does not tell "
+                                          'you whether no rows were returned, the feed could not be reached, or '
+                                          'another publishing constraint applies. Wait for usable current '
+                                          'research rather than treating an older slate as current.',
+                                          'Coverage also varies with sport, season, slate and available data. '
+                                          'Use the supported-sports help page to understand coverage, then '
+                                          'inspect the current page for availability. A general coverage list '
+                                          'cannot confirm that a particular player or event has current '
+                                          'research.'],
+                           'links': [('See supported sports and coverage',
+                                      '/help/what-sports-does-propeller-support/')]},
+                          {'title': 'How should I read an unknown timestamp?',
+                           'paragraphs': ['Unknown means the inspected response did not supply that time. It '
+                                          'does not by itself mean old, failed or zero. Keep the unanswered '
+                                          'question visible: when was this line observed, or when was this '
+                                          'analysis made? A fresh page heading cannot fill in either missing '
+                                          'answer.'],
+                           'links': [('Check settled outcomes in Results', '/results/')]}],
+     'faqs': [("Does today's date mean every source is current?",
+               'No. A page or slate date does not establish when its underlying line or analysis was captured. '
+               'Read any available timestamp in context: what was timed, for which player and event, and whether '
+               'it answers your freshness question.'),
+              ('Where do settled outcomes appear?',
+               'Use Results for settled outcomes. Current research answers what is available to inspect before '
+               'an event; settled results answer what happened afterward. If an outcome remains ungraded or '
+               'unresolved, wait for its status rather than counting it yourself as settled.')],
+     'related': ['/picks/', '/analyzer/', '/help/what-sports-does-propeller-support/', '/results/'],
+     'cta': {'label': 'Check current public research', 'href': '/picks/'}},
     {
         "slug": "how-do-propeller-fantasy-projections-work",
         "title": "How Do Propeller Fantasy Projections Work?",
@@ -556,6 +648,36 @@ ATTRIBUTION_CSS = """
 """
 
 
+TABLE_CSS = """
+.table-scroll { max-width: 100%; overflow-x: auto; margin-top: 20px; }
+.table-scroll:focus-visible { outline: 3px solid var(--pp-orange-dark, #dd3d16); outline-offset: 4px; }
+.help-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.6; }
+.help-table caption { text-align: left; font-weight: 700; margin-bottom: 12px; }
+.help-table th, .help-table td { text-align: left; vertical-align: top; padding: 12px; border-bottom: 1px solid #c9cec8; overflow-wrap: anywhere; }
+.help-table thead th { background: #e7e9e2; }
+.section-links { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 16px; }
+.section-links a { color: var(--pp-orange-dark, #dd3d16); font-weight: 700; }
+@media (max-width: 600px) { .help-table { min-width: 570px; } .content-grid > article { min-width: 0; } }
+"""
+
+
+def render_content_section(section: dict) -> str:
+    body = "".join(f"<p>{esc(text)}</p>" for text in section["paragraphs"])
+    if section.get("table"):
+        table = section["table"]
+        headers = "".join(f'<th scope="col">{esc(label)}</th>' for label in table["headers"])
+        rows = []
+        for row in table["rows"]:
+            if len(row) != len(table["headers"]):
+                raise ValueError("Table row width must match its headings")
+            cells = f'<th scope="row">{esc(row[0])}</th>' + "".join(f"<td>{esc(cell)}</td>" for cell in row[1:])
+            rows.append(f"<tr>{cells}</tr>")
+        body += f'<div class="table-scroll" role="region" tabindex="0" aria-label="{esc(table["caption"])}. Scroll horizontally on small screens."><table class="help-table"><caption>{esc(table["caption"])}</caption><thead><tr>{headers}</tr></thead><tbody>{"".join(rows)}</tbody></table></div>'
+    if section.get("links"):
+        body += '<div class="section-links">' + "".join(f'<a href="{esc(path)}">{esc(label)}</a>' for label, path in section["links"]) + '</div>'
+    return f'<section class="section-card"><h2>{esc(section["title"])}</h2>{body}</section>'
+
+
 def render_page(page: dict) -> str:
     url = f"{BASE_URL}/help/{page['slug']}/"
     webpage, breadcrumb, faq = page_schema(page)
@@ -567,6 +689,8 @@ def render_page(page: dict) -> str:
         </section>"""
         for title, text in page["sections"]
     )
+    if page.get("content_sections"):
+        sections = "\n".join(render_content_section(section) for section in page["content_sections"])
     faqs = "\n".join(
         f"""        <div class="faq-item">
           <h3>{esc(question)}</h3>
@@ -626,7 +750,7 @@ def render_page(page: dict) -> str:
 <script type="application/ld+json">
 {json_ld(faq)}
 </script>
-<style>{BASE_CSS}{ATTRIBUTION_CSS}</style>
+<style>{BASE_CSS}{ATTRIBUTION_CSS}{TABLE_CSS if page.get("content_sections") else ""}</style>
 </head>
 <body>
 <div class="page">
@@ -648,7 +772,7 @@ def render_page(page: dict) -> str:
       <div class="container">
         <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/help/">Help</a><span>/</span><span>{esc(page['title'])}</span></div>
         <h1>{esc(page['h1'])}</h1>
-        <p class="summary">{esc(page['summary'])}</p>
+{f'        <p class="summary">{esc(page["summary"])}</p>' if not page.get("content_sections") else ""}
         <p class="updated">Last updated: {updated}</p>
         {render_attribution(attribution)}
         <div class="answer-box"><p><strong>Direct answer:</strong> {esc(page['summary'])}</p></div>{evidence}
@@ -676,7 +800,7 @@ def render_page(page: dict) -> str:
           <h2>Research today's props</h2>
           <p>Use Propeller's public tools, results, and analyzer pages before making your own platform decisions.</p>
         </div>
-        <a class="button" href="https://app.propellerpicks.com/signup" rel="noopener">Get Free Access</a>
+        <a class="button" href="{esc(page.get("cta", {}).get("href", "https://app.propellerpicks.com/signup"))}" rel="noopener">{esc(page.get("cta", {}).get("label", "Get Free Access"))}</a>
       </section>
     </div>
   </main>
