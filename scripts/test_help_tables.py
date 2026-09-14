@@ -35,6 +35,17 @@ class HelpTableTests(unittest.TestCase):
         self.assertEqual(html.count('class="answer-box"'), 1)
         self.assertNotIn('class="summary"', html)
         for other in help_pages.PAGES:
+            if other['slug'] == 'what-sports-does-propeller-support':
+                coverage = help_pages.render_page(other)
+                self.assertEqual(coverage.count('<table '), 1)
+                self.assertEqual(coverage.count('scope="row"'), 6)
+                self.assertIn('Signed-in documented scope', coverage)
+                self.assertIn('No public analyzer tab listed', coverage)
+                self.assertIn('September 10, 2026', coverage)
+                self.assertIn('Last updated: 2026-09-14', coverage)
+                self.assertEqual(coverage.count('class="answer-box"'), 1)
+                self.assertNotIn('class="summary"', coverage)
+                continue
             if other is page:
                 continue
             output = help_pages.render_page(other)
