@@ -21,6 +21,11 @@ class NormalizeCoverageClaimsTests(unittest.TestCase):
 
         self.assertEqual(normalize(source), expected)
 
+    def test_retired_pga_is_not_restored_as_current_coverage(self) -> None:
+        source = "Signed-in coverage: NFL, NBA, MLB, NHL, soccer, and PGA"
+        self.assertEqual(normalize(source), "Signed-in coverage: NFL, NBA, MLB, NHL, and soccer")
+        self.assertEqual(normalize("PGA is no longer supported."), "PGA is no longer supported.")
+
     def test_normalization_is_idempotent(self) -> None:
         source = "Analysis details. Powered by 8 agents. Updated daily."
         normalized = normalize(source)

@@ -30,7 +30,8 @@ Mobile acquisition and use are a strategic priority, not a secondary companion p
 
 ## Capabilities and Constraints
 
-- The signed-in product supports NFL, NBA, MLB, NHL, soccer, and PGA, with availability varying by season, slate, and data.
+- Coverage corrected September 14, 2026 by Scott Olmer: PGA is no longer supported. This supersedes the prior six-sport list; other facts retain their existing verification dates.
+- The signed-in product supports NFL, NBA, MLB, NHL, and soccer, with availability varying by season, slate, and data.
 - The public analyzer supports NBA, NHL, MLB, NFL, and soccer and is free to use without an account.
 - Propeller displays a 50–100 directional model-confidence score. It is not a calibrated win probability or a guarantee.
 - Only available signals contribute to a listed prop's score; signal availability and weighting vary by sport, prop, model version, and production calibration.

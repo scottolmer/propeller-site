@@ -12,6 +12,9 @@ ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED = {".git", "analytics-dashboard", "docs", "mockups", "node_modules"}
 
 REPLACEMENTS = {
+    "NFL, NBA, MLB, NHL, soccer, and PGA": "NFL, NBA, MLB, NHL, and soccer",
+    "NFL, NBA, MLB, NHL, soccer and PGA": "NFL, NBA, MLB, NHL and soccer",
+    "The signed-in product also supports PGA.": "PGA is no longer supported.",
     "AI-powered sports analysis platform using sport-specific analysis signals per sport":
         "AI-assisted player-prop research workspace using sport-specific analysis signals",
     "every available player prop": "the player props currently available",

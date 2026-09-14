@@ -120,7 +120,8 @@ PAGES = [
      'title': 'What Sports Does Propeller Support?',
      'description': 'Current Propeller sports coverage for player prop analysis, public results, and daily pick previews.',
      'h1': 'What sports does Propeller support?',
-     'summary': 'Propeller Picks documents NFL, NBA, MLB, NHL, soccer and PGA for its signed-in product. The '
+     'visual_system': 'replay-room',
+     'summary': 'Propeller Picks supports NFL, NBA, MLB, NHL and soccer. PGA is no longer supported. The '
                 'free public analyzer has NBA, NHL, MLB, NFL and Soccer tabs, checked September 14, 2026. A '
                 'listed sport or tab does not guarantee current props: availability depends on the season, '
                 'slate, supported stats and available data.',
@@ -131,10 +132,10 @@ PAGES = [
                                           'column records documented scope; the public column records the '
                                           'analyzer’s sport tabs. Neither column confirms a particular player, '
                                           'game, stat or platform is available today.',
-                                          'Source check: September 14, 2026, using Propeller’s product facts and '
-                                          'public analyzer. The product-facts file retains its own July 15 '
-                                          'verification date. Signed-in access and current PGA research were not '
-                                          'tested.'],
+                                          'Coverage correction: September 14, 2026. Scott Olmer confirmed that PGA is no longer supported, '
+                                          'superseding the earlier six-sport list. The product-facts coverage field records this correction '
+                                          'separately from the file’s July 15 general verification date. Public tabs were checked '
+                                          'September 14; signed-in slate availability was not tested.'],
                            'table': {'caption': 'Sports coverage by product surface — checked September 14, 2026',
                                      'headers': ['Sport', 'Signed-in documented scope', 'Public analyzer tabs'],
                                      'rows': [['NFL',
@@ -151,10 +152,7 @@ PAGES = [
                                                'Tab available; props depend on slate and data'],
                                               ['Soccer',
                                                'Listed in product documentation',
-                                               'Tab available; props depend on slate and data'],
-                                              ['PGA',
-                                               'Listed in product documentation',
-                                               'No public analyzer tab listed']]},
+                                               'Tab available; props depend on slate and data']]},
                            'links': [('Product facts and documented scope', '/data/product-facts.json'),
                                      ('See the current public analyzer', '/analyzer/')]},
                           {'title': 'What did the public analyzer actually show?',
@@ -200,10 +198,8 @@ PAGES = [
                            'links': [('See the current public analyzer', '/analyzer/'),
                                      ('Check available public slates', '/picks/'),
                                      ('Understand updates', '/help/how-often-are-propeller-picks-updated/')]}],
-     'faqs': [('Can I research PGA in the free public analyzer?',
-               'PGA is listed in Propeller’s signed-in product documentation, but no PGA tab was listed in the '
-               'public analyzer checked September 14, 2026. This documentation check did not verify current '
-               'signed-in PGA availability.'),
+     'faqs': [('Does Propeller still support PGA?',
+               'No. PGA is no longer supported. This September 14, 2026 correction supersedes the earlier six-sport coverage list.'),
               ('Does the Soccer tab mean every competition is covered?',
                'No. Soccer is the product category. EPL and MLS are documented historical result buckets; they '
                'do not establish today’s competition coverage. Check the current tab for available public '
@@ -816,7 +812,7 @@ def render_page(page: dict) -> str:
 <meta name="twitter:description" content="{esc(page['description'])}">
 <meta name="twitter:image" content="{BASE_URL}/images/og-image.png">
 <meta name="author" content="{esc(attribution['author']['name'])}">
-<meta name="theme-color" content="#f2efe8">{video_head}
+<meta name="theme-color" content="{'#031a2c' if page.get("visual_system") == "replay-room" else '#f2efe8'}">{video_head}{chr(10) + '<link rel="stylesheet" href="/assets/css/coverage-article.css?v=20260914">' if page.get("visual_system") == "replay-room" else ""}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -831,7 +827,7 @@ def render_page(page: dict) -> str:
 </script>
 <style>{BASE_CSS}{ATTRIBUTION_CSS}{TABLE_CSS if page.get("content_sections") else ""}</style>
 </head>
-<body>
+<body{chr(32) + chr(99) + 'lass="pp-replay-room pp-wave-a-page pp-coverage-page"' if page.get("visual_system") == "replay-room" else ""}>
 <div class="page">
   <nav class="nav">
     <div class="container nav-inner">

@@ -38,9 +38,11 @@ class HelpTableTests(unittest.TestCase):
             if other['slug'] == 'what-sports-does-propeller-support':
                 coverage = help_pages.render_page(other)
                 self.assertEqual(coverage.count('<table '), 1)
-                self.assertEqual(coverage.count('scope="row"'), 6)
+                self.assertEqual(coverage.count('scope="row"'), 5)
                 self.assertIn('Signed-in documented scope', coverage)
-                self.assertIn('No public analyzer tab listed', coverage)
+                self.assertIn('PGA is no longer supported', coverage)
+                self.assertIn('pp-coverage-page', coverage)
+                self.assertIn('/assets/css/coverage-article.css', coverage)
                 self.assertIn('September 10, 2026', coverage)
                 self.assertIn('Last updated: 2026-09-14', coverage)
                 self.assertEqual(coverage.count('class="answer-box"'), 1)

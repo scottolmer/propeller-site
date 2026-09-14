@@ -40,7 +40,7 @@ def main() -> int:
     require(facts.get("accepts_wagers") is False, "accepts_wagers must be false", errors)
     require(facts.get("places_wagers") is False, "places_wagers must be false", errors)
     require(facts.get("sportsbook") is False, "sportsbook must be false", errors)
-    require(len(facts.get("signed_in_product_sports", [])) == 6, "signed-in sport count must be six", errors)
+    require(facts.get("signed_in_product_sports") == ["nfl", "nba", "mlb", "nhl", "soccer"], "signed-in sports must match the five supported sports; PGA was removed", errors)
     require(len(facts.get("public_analyzer_sports", [])) == 5, "public analyzer sport count must be five", errors)
     require(len(facts.get("public_result_buckets", [])) == 6, "public result bucket count must be six", errors)
     require(
