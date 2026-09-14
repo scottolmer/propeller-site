@@ -12,8 +12,7 @@
     "nba",
     "mlb",
     "nhl",
-    "soccer",
-    "pga"
+    "soccer"
   ],
   "public_analyzer_sports": [
     "nba",
@@ -52,7 +51,11 @@
     "status": "live",
     "public_scope": "MLB hitters only",
     "scoring_label": "DraftKings MLB",
-    "outputs": ["floor", "point projection", "ceiling"],
+    "outputs": [
+      "floor",
+      "point projection",
+      "ceiling"
+    ],
     "canonical_facts": "https://propellerpicks.com/data/fantasy-product-facts.json"
   },
   "sportsbook_market_context_examples": [
@@ -87,6 +90,14 @@
       "requires_visitor_entered_final_screen_multiplier": true,
       "pick_count_alone_determines_multiplier": false,
       "final_contest_winnings_can_include_extra_winnings": true
+    }
+  },
+  "field_provenance": {
+    "signed_in_product_sports": {
+      "verified_on": "2026-09-14",
+      "authority": "Scott Olmer, product owner",
+      "source": "Direct user correction on September 14, 2026: PGA is no longer supported.",
+      "supersedes": "Earlier six-sport list including PGA. Other fields retain their existing verification dates."
     }
   }
 }

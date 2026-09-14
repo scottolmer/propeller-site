@@ -13,7 +13,7 @@ Curated public OpenAPI: https://web-production-3c1c4.up.railway.app/api/public/a
 ## What Propeller Provides
 
 - AI-assisted player prop research for NBA, NFL, NHL, MLB, and soccer.
-- The signed-in product also supports PGA. The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer; availability varies by slate and data.
+- The signed-in product supports NFL, NBA, MLB, NHL, and soccer. PGA is no longer supported (owner correction September 14, 2026). The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer; availability varies by slate and data.
 - Core platform-fit workflows are PrizePicks, Underdog Fantasy, and DraftKings Pick6. Sportsbook lines such as FanDuel may appear only as market context.
 - Sport-specific analysis signals contribute when available; Propeller does not publish a universal agent count.
 - Confidence is a 50-100 directional model-confidence score, not a calibrated win probability or guarantee.

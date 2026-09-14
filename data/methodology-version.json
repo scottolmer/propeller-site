@@ -15,8 +15,7 @@
     "nba",
     "mlb",
     "nhl",
-    "soccer",
-    "pga"
+    "soccer"
   ],
   "versions": [
     {
@@ -24,5 +23,13 @@
       "date": "2026-07-14",
       "summary": "Initial public model card and machine-readable confidence definition."
     }
-  ]
+  ],
+  "field_provenance": {
+    "signed_in_product_sports": {
+      "verified_on": "2026-09-14",
+      "authority": "Scott Olmer, product owner",
+      "source": "Direct user correction on September 14, 2026: PGA is no longer supported.",
+      "supersedes": "Earlier six-sport list including PGA. Other fields retain their existing verification dates."
+    }
+  }
 }
