@@ -37,7 +37,7 @@
   "name": "What Sports Does Propeller Support?",
   "url": "https://propellerpicks.com/help/what-sports-does-propeller-support/",
   "description": "Current Propeller sports coverage for player prop analysis, public results, and daily pick previews.",
-  "dateModified": "2026-07-15",
+  "dateModified": "2026-09-14",
   "inLanguage": "en-US",
   "isPartOf": {
     "@type": "WebSite",
@@ -89,26 +89,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What sports does Propeller support?",
+      "name": "Can I research PGA in the free public analyzer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The signed-in product supports NFL, NBA, MLB, NHL, soccer, and PGA. The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer. Public result buckets include NFL, NBA, NHL, MLB, EPL, and MLS."
+        "text": "PGA is listed in Propeller’s signed-in product documentation, but no PGA tab was listed in the public analyzer checked September 14, 2026. This documentation check did not verify current signed-in PGA availability."
       }
     },
     {
       "@type": "Question",
-      "name": "Does Propeller support soccer props?",
+      "name": "Does the Soccer tab mean every competition is covered?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Propeller includes soccer coverage, with public result buckets for EPL and MLS where available."
+        "text": "No. Soccer is the product category. EPL and MLS are documented historical result buckets; they do not establish today’s competition coverage. Check the current tab for available public research."
       }
     },
     {
       "@type": "Question",
-      "name": "Does sport coverage change?",
+      "name": "Does an empty tab mean a sport was removed?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Sport and stat coverage can vary by season, platform, data availability, and public publishing rules."
+        "text": "An empty tab alone does not establish permanent removal. It shows that research is unavailable there at that moment. Season, slate, supported stats and available data can limit what appears."
       }
     }
   ]
@@ -152,6 +152,16 @@ h3 { margin-bottom: 10px; font-size: 21px; }
 
 .attribution { max-width: 850px; margin: 12px 0 0; color: var(--pp-sub, #59615b); font-size: 14px; }
 .attribution a { color: var(--pp-orange-dark, #dd3d16); font-weight: 700; }
+
+.table-scroll { max-width: 100%; overflow-x: auto; margin-top: 20px; }
+.table-scroll:focus-visible { outline: 3px solid var(--pp-orange-dark, #dd3d16); outline-offset: 4px; }
+.help-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.6; }
+.help-table caption { text-align: left; font-weight: 700; margin-bottom: 12px; }
+.help-table th, .help-table td { text-align: left; vertical-align: top; padding: 12px; border-bottom: 1px solid #c9cec8; overflow-wrap: anywhere; }
+.help-table thead th { background: #e7e9e2; }
+.section-links { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 16px; }
+.section-links a { color: var(--pp-orange-dark, #dd3d16); font-weight: 700; }
+@media (max-width: 600px) { .help-table { min-width: 570px; } .content-grid > article { min-width: 0; } }
 </style>
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -195,45 +205,34 @@ h3 { margin-bottom: 10px; font-size: 21px; }
       <div class="container">
         <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/help/">Help</a><span>/</span><span>What Sports Does Propeller Support?</span></div>
         <h1>What sports does Propeller support?</h1>
-        <p class="summary">Propeller&#x27;s signed-in product supports NFL, NBA, MLB, NHL, soccer, and PGA. The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer. Soccer is represented in public results through EPL and MLS buckets.</p>
-        <p class="updated">Last updated: 2026-07-15</p>
+
+        <p class="updated">Last updated: 2026-09-14</p>
         <p class="attribution">By <a href="https://propellerpicks.com/about/">Scott Olmer</a>, designated author and editorial owner. Produced and reviewed through automated AI workflows. <a href="/editorial-policy/">Editorial policy</a>.</p>
-        <div class="answer-box"><p><strong>Direct answer:</strong> Propeller&#x27;s signed-in product supports NFL, NBA, MLB, NHL, soccer, and PGA. The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer. Soccer is represented in public results through EPL and MLS buckets.</p></div>
+        <div class="answer-box"><p><strong>Direct answer:</strong> Propeller Picks documents NFL, NBA, MLB, NHL, soccer and PGA for its signed-in product. The free public analyzer has NBA, NHL, MLB, NFL and Soccer tabs, checked September 14, 2026. A listed sport or tab does not guarantee current props: availability depends on the season, slate, supported stats and available data.</p></div>
       </div>
     </header>
 
     <div class="container content-grid">
       <article>
-        <section class="section-card">
-          <h2>Signed-In Product Sports</h2>
-          <p>The signed-in product supports NFL, NBA, MLB, NHL, soccer, and PGA. Availability varies by season, slate, and data.</p>
-        </section>
-        <section class="section-card">
-          <h2>Free Public Analyzer Sports</h2>
-          <p>The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer. Soccer is represented in public results through EPL and MLS buckets.</p>
-        </section>
-        <section class="section-card">
-          <h2>Platform Coverage</h2>
-          <p>Coverage can vary by platform because Pick6, PrizePicks, Underdog, and sportsbooks may offer different sports, stat types, and slates.</p>
-        </section>
-        <section class="section-card">
-          <h2>Where To Check</h2>
-          <p>Use the picks hub, analyzer, and public data catalog to confirm current sport coverage before relying on any specific slate.</p>
-        </section>
+<section class="section-card"><h2>Which sports are listed in each product?</h2><p>Use the matrix to check the product you plan to use. The signed-in column records documented scope; the public column records the analyzer’s sport tabs. Neither column confirms a particular player, game, stat or platform is available today.</p><p>Source check: September 14, 2026, using Propeller’s product facts and public analyzer. The product-facts file retains its own July 15 verification date. Signed-in access and current PGA research were not tested.</p><div class="table-scroll" role="region" tabindex="0" aria-label="Sports coverage by product surface — checked September 14, 2026. Scroll horizontally on small screens."><table class="help-table"><caption>Sports coverage by product surface — checked September 14, 2026</caption><thead><tr><th scope="col">Sport</th><th scope="col">Signed-in documented scope</th><th scope="col">Public analyzer tabs</th></tr></thead><tbody><tr><th scope="row">NFL</th><td>Listed in product documentation</td><td>Tab available; props depend on slate and data</td></tr><tr><th scope="row">NBA</th><td>Listed in product documentation</td><td>Tab available; props depend on slate and data</td></tr><tr><th scope="row">MLB</th><td>Listed in product documentation</td><td>Tab available; props depend on slate and data</td></tr><tr><th scope="row">NHL</th><td>Listed in product documentation</td><td>Tab available; props depend on slate and data</td></tr><tr><th scope="row">Soccer</th><td>Listed in product documentation</td><td>Tab available; props depend on slate and data</td></tr><tr><th scope="row">PGA</th><td>Listed in product documentation</td><td>No public analyzer tab listed</td></tr></tbody></table></div><div class="section-links"><a href="/data/product-facts.json">Product facts and documented scope</a><a href="/analyzer/">See the current public analyzer</a></div></section>
+<section class="section-card"><h2>What did the public analyzer actually show?</h2><p>In an AI-operated September 10, 2026 check, MLB displayed a message saying current MLB props were available. NBA displayed “No current NBA props available.” Both sport tabs were present, but their availability messages differed.</p><p>The NBA message allowed two possibilities: no rows were returned, or the feed could not be reached. That observation did not establish which occurred. It also did not test signed-in coverage. These are historical observations from September 10; the September 14 tab check did not retest those slate states.</p><p>The practical distinction is between finding a sport in the menu and finding usable research for your chosen player. Check the selected tab’s actual contents before assuming a listed sport has a populated slate.</p></section>
+<section class="section-card"><h2>How does soccer relate to EPL and MLS results?</h2><p>Soccer is one product category and one public analyzer tab. EPL and MLS appear as historical result buckets in Propeller’s documented public results. They are not two additional sports in the coverage matrix.</p><p>A historical bucket describes how results are grouped. It does not establish which competitions, fixtures or players are available now. Use the current Soccer tab for public availability and the Results page for historical context.</p><div class="section-links"><a href="/results/">Understand the historical results archive</a></div></section>
+<section class="section-card"><h2>Why can’t I find a player or game?</h2><p>Availability can vary with the season, the slate, supported stat types and the data available to the product. A supported sport does not promise every player, market or platform line. An empty tab alone cannot identify the reason a specific player is missing.</p><p>First confirm that you are viewing the intended sport and slate. Then check whether the player and stat you want are actually shown. Treat a missing row as unavailable research at that moment; do not substitute an old result or assume another product surface contains it.</p></section>
+<section class="section-card"><h2>Where should I check next?</h2><p>Start with the current public analyzer to inspect its tabs and availability messages. Use the picks hub to find existing public sport pages and available slate previews. For questions about timestamps and refreshes, read the separate update guide; this article’s update date describes the coverage explanation.</p><div class="section-links"><a href="/analyzer/">See the current public analyzer</a><a href="/picks/">Check available public slates</a><a href="/help/how-often-are-propeller-picks-updated/">Understand updates</a></div></section>
         <section class="section">
           <h2>Frequently Asked Questions</h2>
           <div class="faq-list">
         <div class="faq-item">
-          <h3>What sports does Propeller support?</h3>
-          <p>The signed-in product supports NFL, NBA, MLB, NHL, soccer, and PGA. The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer. Public result buckets include NFL, NBA, NHL, MLB, EPL, and MLS.</p>
+          <h3>Can I research PGA in the free public analyzer?</h3>
+          <p>PGA is listed in Propeller’s signed-in product documentation, but no PGA tab was listed in the public analyzer checked September 14, 2026. This documentation check did not verify current signed-in PGA availability.</p>
         </div>
         <div class="faq-item">
-          <h3>Does Propeller support soccer props?</h3>
-          <p>Yes. Propeller includes soccer coverage, with public result buckets for EPL and MLS where available.</p>
+          <h3>Does the Soccer tab mean every competition is covered?</h3>
+          <p>No. Soccer is the product category. EPL and MLS are documented historical result buckets; they do not establish today’s competition coverage. Check the current tab for available public research.</p>
         </div>
         <div class="faq-item">
-          <h3>Does sport coverage change?</h3>
-          <p>Yes. Sport and stat coverage can vary by season, platform, data availability, and public publishing rules.</p>
+          <h3>Does an empty tab mean a sport was removed?</h3>
+          <p>An empty tab alone does not establish permanent removal. It shows that research is unavailable there at that moment. Season, slate, supported stats and available data can limit what appears.</p>
         </div>
           </div>
         </section>
@@ -252,7 +251,7 @@ h3 { margin-bottom: 10px; font-size: 21px; }
           <h2>Research today's props</h2>
           <p>Use Propeller's public tools, results, and analyzer pages before making your own platform decisions.</p>
         </div>
-        <a class="button" href="https://app.propellerpicks.com/signup" rel="noopener">Get Free Access</a>
+        <a class="button" href="/analyzer/" rel="noopener">See the current public analyzer</a>
       </section>
     </div>
   </main>
