@@ -5,7 +5,7 @@ import vm from "node:vm";
 
 const source = readFileSync(new URL("../assets/js/analytics-loader.js", import.meta.url), "utf8");
 
-test("configures the reporting stream once and exposes an idempotent loader", () => {
+test("configures the shared Google tag once and exposes an idempotent loader", () => {
   const listeners = new Map();
   const appended = [];
   const window = {
@@ -18,11 +18,12 @@ test("configures the reporting stream once and exposes an idempotent loader", ()
   vm.runInNewContext(source, { window, document });
   vm.runInNewContext(source, { window, document });
 
-  const reportingConfigs = window.dataLayer.filter(([command, measurementId]) => (
-    command === "config" && measurementId === "G-2Z7JMN1JTL"
+  const tagConfigs = window.dataLayer.filter(([command, tagId]) => (
+    command === "config" && tagId === "GT-57326MMH"
   ));
-  assert.equal(reportingConfigs.length, 1);
-  assert.equal(reportingConfigs[0][2].cookie_domain, "auto");
+  assert.equal(tagConfigs.length, 1);
+  assert.equal(tagConfigs[0][2].cookie_domain, "auto");
+  assert.equal(window.dataLayer.filter(([command]) => command === "config").length, 1);
   const linkerCommands = window.dataLayer.filter(([command, field]) => (
     command === "set" && field === "linker"
   ));
@@ -32,13 +33,8 @@ test("configures the reporting stream once and exposes an idempotent loader", ()
     "app.propellerpicks.com",
   ]);
 
-  // The inline legacy bootstrap and later custom events use the same queue,
-  // so existing page tracking continues to reach both configured streams.
-  window.gtag("config", "G-NLXM4C2G7D");
+  // Custom events share the same queue and reach the tag's linked destinations.
   window.gtag("event", "signup_click", { cta_surface: "hero" });
-  assert.ok(window.dataLayer.some(([command, measurementId]) => (
-    command === "config" && measurementId === "G-NLXM4C2G7D"
-  )));
   assert.ok(window.dataLayer.some(([command, eventName]) => (
     command === "event" && eventName === "signup_click"
   )));
