@@ -18,6 +18,12 @@ STATIC_REDIRECT_RE = re.compile(
     r'<meta\s+http-equiv=["\']refresh["\']\s+content=["\']0;\s*url=/[^"\']+["\']',
     re.IGNORECASE,
 )
+ANALYTICS_LOADER_RE = re.compile(
+    r"\s*<script\b[^>]+src=[\"']/assets/js/analytics-loader\.js[^\"']*[\"'][^>]*>\s*</script>\s*",
+    re.IGNORECASE,
+)
+LEGACY_ANALYTICS_ID = "G-NLXM4C2G7D"
+ANALYTICS_LOADER = '  <script src="/assets/js/analytics-loader.js?v=20260915"></script>\n'
 
 HEAD_BLOCK = """  <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -230,8 +236,21 @@ def ensure_script(html: str) -> str:
     return html[: closing.start()] + script + html[closing.start() :]
 
 
+def ensure_analytics_loader(html: str) -> str:
+    """Place one shared loader before each page's preserved legacy bootstrap."""
+    if LEGACY_ANALYTICS_ID not in html:
+        return html
+    html = ANALYTICS_LOADER_RE.sub("\n", html)
+    scripts = re.finditer(r"<script\b[^>]*>.*?</script\s*>", html, re.IGNORECASE | re.DOTALL)
+    for match in scripts:
+        if LEGACY_ANALYTICS_ID in match.group(0):
+            return html[: match.start()] + ANALYTICS_LOADER + html[match.start() :]
+    raise ValueError("Legacy analytics ID must appear inside a script tag")
+
+
 def migrate_html(original: str, path: Path, home: bool) -> str:
     html = remove_managed_head(original)
+    html = ensure_analytics_loader(html)
     compat = "" if home else '<link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">\n  '
     page_styles = ""
     if "pp-wave-a-page" in original:

@@ -157,7 +157,7 @@ test("all calculator pages use the single completion contract and result signup 
     assert.doesNotMatch(page, /trackCalculatorResult/);
     assert.match(page, /Continue your research free/);
     assert.match(page, /data-cta-surface="calculator_result"/);
-    assert.match(page, /analytics-loader\.js\?v=20260817/);
+    assert.match(page, /analytics-loader\.js\?v=\d{8}/);
     assert.match(page, /paid-search-events\.js\?v=20260817/);
   }
 });
