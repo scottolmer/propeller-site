@@ -1,6 +1,8 @@
 /* Queue analytics immediately, then load gtag after the critical render. */
 (function () {
   'use strict';
+  // This reporting stream is a destination of the shared Google tag.
+  const googleTagId = 'GT-57326MMH';
   const reportingMeasurementId = 'G-2Z7JMN1JTL';
   const crossDomainLinker = { domains: ['propellerpicks.com', 'app.propellerpicks.com'] };
 
@@ -33,7 +35,7 @@
     window.ppAnalyticsLoadStarted = true;
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + reportingMeasurementId;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + googleTagId;
     document.head.appendChild(script);
   }
 

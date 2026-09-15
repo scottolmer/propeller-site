@@ -48,7 +48,7 @@ test("configures the reporting stream once and exposes an idempotent loader", ()
   window.ppLoadAnalytics();
   assert.equal(appended.length, 1);
   assert.equal(appended[0].async, true);
-  assert.match(appended[0].src, /gtag\/js\?id=G-2Z7JMN1JTL/);
+  assert.match(appended[0].src, /gtag\/js\?id=GT-57326MMH/);
   assert.equal(typeof window.gtag, "function");
   assert.ok(listeners.has("pointerdown"));
 });
