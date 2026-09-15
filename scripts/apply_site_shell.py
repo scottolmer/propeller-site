@@ -24,6 +24,10 @@ ANALYTICS_LOADER_RE = re.compile(
 )
 LEGACY_ANALYTICS_ID = "G-NLXM4C2G7D"
 ANALYTICS_LOADER = '  <script src="/assets/js/analytics-loader.js?v=20260915"></script>\n'
+LEGACY_ANALYTICS_CONFIG_RE = re.compile(
+    r"\s*gtag\(\s*(['\"])config\1\s*,\s*(['\"])G-NLXM4C2G7D\2\s*(?:,\s*\{.*?\})?\s*\)\s*;?",
+    re.IGNORECASE | re.DOTALL,
+)
 
 HEAD_BLOCK = """  <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -237,19 +241,30 @@ def ensure_script(html: str) -> str:
 
 
 def ensure_analytics_loader(html: str) -> str:
-    """Place one shared loader before each page's preserved legacy bootstrap."""
-    if LEGACY_ANALYTICS_ID not in html:
-        return html
+    """Place one shared loader on every production page.
+
+    Legacy remote sources remain valid and are reused by the loader, but the
+    shared Google tag owns the sole ``config`` command for a page.
+    """
     html = ANALYTICS_LOADER_RE.sub("\n", html)
     scripts = re.finditer(r"<script\b[^>]*>.*?</script\s*>", html, re.IGNORECASE | re.DOTALL)
     for match in scripts:
         if LEGACY_ANALYTICS_ID in match.group(0):
             return html[: match.start()] + ANALYTICS_LOADER + html[match.start() :]
-    raise ValueError("Legacy analytics ID must appear inside a script tag")
+    closing = re.search(r"</head>", html, flags=re.IGNORECASE)
+    if not closing:
+        raise ValueError("No </head> tag")
+    return html[: closing.start()] + ANALYTICS_LOADER + html[closing.start() :]
+
+
+def remove_legacy_analytics_config(html: str) -> str:
+    """Remove legacy page configs; the shared Google tag config is canonical."""
+    return LEGACY_ANALYTICS_CONFIG_RE.sub("", html)
 
 
 def migrate_html(original: str, path: Path, home: bool) -> str:
     html = remove_managed_head(original)
+    html = remove_legacy_analytics_config(html)
     html = ensure_analytics_loader(html)
     compat = "" if home else '<link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">\n  '
     page_styles = ""

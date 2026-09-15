@@ -1,20 +1,21 @@
 /* Queue analytics immediately, then load gtag after the critical render. */
 (function () {
   'use strict';
-  const reportingMeasurementId = 'G-2Z7JMN1JTL';
+  // This reporting stream is a destination of the shared Google tag.
+  const googleTagId = 'GT-57326MMH';
   const crossDomainLinker = { domains: ['propellerpicks.com', 'app.propellerpicks.com'] };
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
 
-  // Generated pages still configure the legacy stream inline. Configure the
-  // reporting stream here so every page that uses this shared loader sends one
-  // page view and its existing custom events to both configured destinations.
-  if (!window.ppReportingAnalyticsConfigured) {
-    window.ppReportingAnalyticsConfigured = true;
+  // This is the page's only Google-tag configuration. The provider links both
+  // GA destinations to this tag, so a second destination config would create
+  // another automatic page view.
+  if (!window.ppAnalyticsConfigured) {
+    window.ppAnalyticsConfigured = true;
     window.gtag('js', new Date());
     window.gtag('set', 'linker', crossDomainLinker);
-    window.gtag('config', reportingMeasurementId, {
+    window.gtag('config', googleTagId, {
       cookie_domain: 'auto'
     });
   }
@@ -33,7 +34,7 @@
     window.ppAnalyticsLoadStarted = true;
     const script = document.createElement('script');
     script.async = true;
-    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + reportingMeasurementId;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + googleTagId;
     document.head.appendChild(script);
   }
 
