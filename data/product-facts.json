@@ -63,12 +63,24 @@
   ],
   "platform_relationship": "Propeller is independent, does not submit entries, and is not affiliated with the platforms it references.",
   "access": {
-    "global_cta": "Get Free Access",
+    "global_cta": "See pricing",
     "public_analyzer": "Free to use without an account.",
-    "founder_500_offer": "During the current Founder 500 launch, the first 500 eligible accounts receive free lifetime core access while spots remain.",
-    "availability_note": "Current feature availability, eligibility, exclusions, and terms are shown at signup.",
-    "pricing_url": "https://propellerpicks.com/pricing.md",
-    "signup_url": "https://app.propellerpicks.com/signup"
+    "existing_free_access": "Existing free accounts keep their access unless they choose a paid plan.",
+    "founder_500_offer": "Existing Founder 500 lifetime core entitlements remain honored.",
+    "availability_note": "The new subscriber offer starts September 29, 2026 at 3:00 p.m. America/Chicago. Checkout availability and eligibility are decided by the app.",
+    "pricing_url": "https://propellerpicks.com/pricing/",
+    "signup_url": "https://app.propellerpicks.com/signup",
+    "subscription_offer": {
+      "offer_id": "monthly-2026-09-29",
+      "starts_at": "2026-09-29T20:00:00Z",
+      "timezone": "America/Chicago",
+      "currency": "USD",
+      "monthly_price": "9.99",
+      "trial_days": 14,
+      "card_required": true,
+      "annual_plan": false,
+      "checkout_authority": "The app verifies offer phase and eligibility before starting Checkout."
+    }
   },
   "payout_calculators": {
     "last_verified": "2026-07-25",

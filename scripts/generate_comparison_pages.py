@@ -197,7 +197,7 @@ def render(page: dict[str, object], checked_date: str) -> str:
 
   <section class="section" id="faq" aria-labelledby="faq-heading"><div class="container"><p class="label section-label fade-in">Common Questions</p><h2 class="section-title fade-in" id="faq-heading">Frequently Asked Questions</h2><div class="faq-list">{faq_html}</div></div></section>
 
-  <section class="final-cta" id="get-started" aria-labelledby="cta-heading"><div class="container"><div class="fade-in"><p class="label section-label" style="margin-bottom:16px">Get Free Access</p><h2 id="cta-heading">Player-prop research<br><span>without the jargon.</span></h2><p>Propeller was designed to be used with DFS and pick'em platforms. Inspect the evidence behind available player lines, then make your own decision.</p><div class="cta-actions"><a href="/analyzer/" class="btn btn-primary">Try the Free Analyzer</a><p style="font-size:14px;color:var(--text-tertiary);margin:0">Independent research tool. No wager placement or platform affiliation.</p></div></div></div></section>
+  <section class="final-cta" id="get-started" aria-labelledby="cta-heading"><div class="container"><div class="fade-in"><p class="label section-label" style="margin-bottom:16px">Public research tools</p><h2 id="cta-heading">Player-prop research<br><span>without the jargon.</span></h2><p>Propeller was designed to be used with DFS and pick'em platforms. Inspect the evidence behind available player lines, then make your own decision.</p><div class="cta-actions"><a href="/analyzer/" class="btn btn-primary">Try the Free Analyzer</a><p style="font-size:14px;color:var(--text-tertiary);margin:0">Independent research tool. No wager placement or platform affiliation.</p></div></div></div></section>
 </main>
 {FOOTER}
 <script>
