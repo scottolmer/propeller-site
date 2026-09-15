@@ -1,6 +1,6 @@
 # Paid subscription changeover — audit and PRD
 
-Status: audit and implementation complete; review-ready release packages prepared. Changes are locally verified and available for review. Production rollout remains pending.
+Status: audit, implementation, production deployment, and test-mode acceptance are complete. The offer remains deliberately time-gated until September 29, 2026 at 20:00 UTC. Processed GA4 reporting and verification of the final configuration-restoration redeploy remain pending.
 
 ## Approved outcome
 
@@ -52,7 +52,7 @@ Inventory counts are repository audit snapshots, not traffic metrics. Sources: m
 3. Update marketing facts, generators, Pricing, shared navigation, relevant offer copy and policy explanations.
 4. Integrate; run clock-boundary, account-state, signup/OAuth, checkout retry, webhook, promo and analytics tests.
 5. Review rendered desktop and mobile web journeys, including failure/recovery states. Prepare PRs and local review URLs.
-6. Production rollout must apply additive schema/config first, retain the paid start date, verify Stripe mode/price and repeat a test-mode subscription without a real charge.
+6. Production rollout applied additive schema/config, retained the paid start date, verified Stripe mode/price, and completed a test-mode subscription/replay without a customer charge.
 
 ## Open owner decisions
 
@@ -72,7 +72,7 @@ Inventory counts are repository audit snapshots, not traffic metrics. Sources: m
 
 ## Explicit limits
 
-No native app release, advertising launch, tax configuration change, new price, real payment, unsolicited customer email or blanket revocation of free access is authorized by this work. Public tool pricing remains free where it is free today. Production rollout and user communications must use the reviewed artifacts and confirmed policy.
+No native app release, advertising launch, tax configuration change, new price, customer charge, unsolicited customer email or blanket revocation of free access is authorized by this work. Public tool pricing remains free where it is free today. The completed test-mode acceptance did not send customer email or change the authorized access policy.
 
 ## Implementation evidence
 
@@ -83,11 +83,20 @@ No native app release, advertising launch, tax configuration change, new price, 
 - Upstream daily/weekly/monthly article generators now route pricing CTAs to `/pricing/` and no longer advertise a trial starting before launch.
 - Stripe's [webhook guidance](https://docs.stripe.com/webhooks#event-ordering) confirms delivery can be duplicated or out of order and timestamps can tie. The implementation must retrieve current subscription state and serialize account updates rather than rely on timestamps alone.
 
+## Production deployment and acceptance evidence
+
+- Marketing PR [#90](https://github.com/scottolmer/propeller-site/pull/90) released the offer copy, pricing route, shared navigation/footer links, and analytics contract. Marketing PR [#91](https://github.com/scottolmer/propeller-site/pull/91) then aligned `/pricing/` with the current homepage visual system. The live page was checked at 390×844 with no horizontal overflow (`pageWidth` 380).
+- Application/API PR [#194](https://github.com/scottolmer/nfl-betting-system/pull/194) merged at `bbd5f23ce4efc30ba2c911b6a10a35ba166abdc9`. Both Railway services reported successful deployment. The migration applied 11 additive columns and the subscription index without altering existing grants.
+- The authenticated live checkout boundary returns HTTP 503 with “Subscription checkout is not open yet” before launch. The live offer remains `2026-09-29T20:00:00Z`, USD 9.99, and a 14-day trial.
+- Stripe test-mode acceptance created subscription `sub_1UG2mIASfLoN8zqEb8Tw4L5N` with a 1,209,600-second trial and invoice `in_1UG2mPASfLoN8zqE41CuACyJ` for USD 9.99, paid at 20:16:37Z. The test account was then canceled back to free access with `trial_used=true`, `legacy=false`, and zero emails sent.
+- A signed replay delivered `purchase` and `start_trial` to the ledger with HTTP 204 on the first attempt. GA4 Realtime recorded exactly one of each at 20:16:59.273Z, approximately 22.27 seconds later. The `purchase` event is verified as a GA key event for the current day.
+- `GA4_ALLOW_TEST_EVENTS` was restored to `false`. The follow-up API redeploy `9bccb773-371e-41c6-9fc9-29d360ec6499` was still in progress when this record was updated, so restoration verification remains open. The standard processed GA report had no rows yet, which is expected reporting delay; this record does not claim recognized revenue in that processed report.
+
 ### Local review surfaces
 
 - Marketing: http://127.0.0.1:8086/pricing/
 - Backend offer: http://127.0.0.1:8016/api/public/subscription-offer (disposable local SQLite; no scheduled jobs)
-- Web application: http://127.0.0.1:3006/pricing. The local test clock was advanced for postlaunch verification and reset to the real prelaunch date for handoff. No production rollout has occurred for this changeover.
+- Web application: http://127.0.0.1:3006/pricing. The local test clock was advanced for postlaunch verification and reset to the real prelaunch date for handoff. Production rollout and test-mode acceptance are recorded above.
 
 ## Resolution register
 
@@ -115,4 +124,4 @@ No native app release, advertising launch, tax configuration change, new price, 
 
 The implementation uses the user's existing-access instruction conservatively: preserve current full access until an explicit subscription choice, and retain existing cancellation/refund handling. The earlier optional full/preview and refund-policy questions have not authorized any narrower access or new refund promise.
 
-No real charge, new production rollout, native release, campaign or customer message was performed. Stripe/GA4 test-mode acceptance from the earlier paid-tracking release remains documented; the new release still needs a deployed test-mode subscription/replay check after configuration and rollout. The release runbook in the app repository is `docs/billing/paid-launch-2026-09-29.md`.
+No customer charge, native release, campaign or customer message was performed. Production deployment and deployed Stripe/GA4 test-mode subscription/replay acceptance are complete. The remaining nonblocking evidence is verification of the configuration-restoration redeploy and appearance of the already-confirmed events in the delayed processed GA report. The release runbook in the app repository is `docs/billing/paid-launch-2026-09-29.md`.
