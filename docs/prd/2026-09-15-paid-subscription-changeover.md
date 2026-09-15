@@ -1,6 +1,6 @@
 # Paid subscription changeover — audit and PRD
 
-Status: audit, implementation, production deployment, and test-mode acceptance are complete. The offer remains deliberately time-gated until September 29, 2026 at 20:00 UTC. Processed GA4 reporting and verification of the final configuration-restoration redeploy remain pending.
+Status: audit, implementation, production deployment, test-mode acceptance, and configuration restoration are complete. The offer remains deliberately time-gated until September 29, 2026 at 20:00 UTC. Processed GA4 reporting remains pending.
 
 ## Approved outcome
 
@@ -90,7 +90,7 @@ No native app release, advertising launch, tax configuration change, new price, 
 - The authenticated live checkout boundary returns HTTP 503 with “Subscription checkout is not open yet” before launch. The live offer remains `2026-09-29T20:00:00Z`, USD 9.99, and a 14-day trial.
 - Stripe test-mode acceptance created subscription `sub_1UG2mIASfLoN8zqEb8Tw4L5N` with a 1,209,600-second trial and invoice `in_1UG2mPASfLoN8zqE41CuACyJ` for USD 9.99, paid at 20:16:37Z. The test account was then canceled back to free access with `trial_used=true`, `legacy=false`, and zero emails sent.
 - A signed replay delivered `purchase` and `start_trial` to the ledger with HTTP 204 on the first attempt. GA4 Realtime recorded exactly one of each at 20:16:59.273Z, approximately 22.27 seconds later. The `purchase` event is verified as a GA key event for the current day.
-- `GA4_ALLOW_TEST_EVENTS` was restored to `false`. The follow-up API redeploy `9bccb773-371e-41c6-9fc9-29d360ec6499` was still in progress when this record was updated, so restoration verification remains open. The standard processed GA report had no rows yet, which is expected reporting delay; this record does not claim recognized revenue in that processed report.
+- The follow-up API redeploy `9bccb773-371e-41c6-9fc9-29d360ec6499` completed successfully on `bbd5f23c`; its health check passed and `GA4_ALLOW_TEST_EVENTS` is confirmed `false`. The standard processed GA report had no rows yet, which is expected reporting delay; this record does not claim recognized revenue in that processed report.
 
 ### Local review surfaces
 
@@ -124,4 +124,4 @@ No native app release, advertising launch, tax configuration change, new price, 
 
 The implementation uses the user's existing-access instruction conservatively: preserve current full access until an explicit subscription choice, and retain existing cancellation/refund handling. The earlier optional full/preview and refund-policy questions have not authorized any narrower access or new refund promise.
 
-No customer charge, native release, campaign or customer message was performed. Production deployment and deployed Stripe/GA4 test-mode subscription/replay acceptance are complete. The remaining nonblocking evidence is verification of the configuration-restoration redeploy and appearance of the already-confirmed events in the delayed processed GA report. The release runbook in the app repository is `docs/billing/paid-launch-2026-09-29.md`.
+No customer charge, native release, campaign or customer message was performed. Production deployment, deployed Stripe/GA4 test-mode subscription/replay acceptance, and configuration restoration are complete. The remaining nonblocking evidence is appearance of the already-confirmed events in the delayed processed GA report. The release runbook in the app repository is `docs/billing/paid-launch-2026-09-29.md`.
