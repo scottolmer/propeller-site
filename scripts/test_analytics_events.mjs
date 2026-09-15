@@ -73,7 +73,8 @@ test("preserves destination-based fallback classification for untagged legacy li
 
 test("homepage and high-intent pages load the canonical CTA tracker with stable CTA IDs", () => {
   const homepageIds = homepage.match(/data-cta-id="home-/g) ?? [];
-  assert.equal(homepageIds.length, 11);
+  assert.equal(homepageIds.length, 10);
+  assert.match(homepage, /data-cta-id="site-nav-pricing"/);
   assert.match(homepage, /data-analytics-event="analyzer_cta_click"/);
   assert.match(homepage, /analytics-events\.js\?v=20260817/);
   assert.match(analyzer, /analytics-events\.js\?v=20260817/);

@@ -37,7 +37,7 @@ Mobile acquisition and use are a strategic priority, not a secondary companion p
 - Only available signals contribute to a listed prop's score; signal availability and weighting vary by sport, prop, model version, and production calibration.
 - Propeller supports player-line research workflows associated with PrizePicks, Underdog Fantasy, and DraftKings Pick6 but is independent of and unaffiliated with those platforms.
 - Propeller does not accept wagers, place wagers, or submit DFS/pick'em entries.
-- The current Founder 500 offer gives the first 500 eligible accounts free lifetime core access while spots remain. Current availability and terms shown at signup control.
+- Existing free accounts keep their access unless they choose a paid plan. Existing Founder 500 lifetime core entitlements remain honored. The new subscriber offer starts September 29, 2026 at 3:00 p.m. America/Chicago: 14 days free, then $9.99 USD per month.
 - Marketing must not promise outcomes, profitability, ROI, calibrated probabilities, or unsupported product capabilities.
 - Technical methodology and limitations must remain available, but the primary marketing experience should explain the product in plain English.
 

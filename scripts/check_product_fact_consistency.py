@@ -56,7 +56,14 @@ def main() -> int:
     require(catalog.get("product_facts", "").endswith("/data/product-facts.json"), "catalog product-facts link missing", errors)
     require("does not publish a universal agent count" in llms, "llms agent-count policy missing", errors)
     require("not a calibrated win probability or guarantee" in llms, "llms confidence limitation missing", errors)
-    require(facts["access"]["founder_500_offer"] in pricing, "pricing offer differs from fact ledger", errors)
+    access = facts["access"]
+    offer = access.get("subscription_offer", {})
+    require(access.get("global_cta") == "See pricing", "global CTA must route to pricing", errors)
+    require(access.get("existing_free_access") in pricing, "existing-free policy differs from pricing", errors)
+    require(access.get("founder_500_offer") in pricing, "Founder policy differs from pricing", errors)
+    require(offer.get("monthly_price") == "9.99", "monthly offer price drifted", errors)
+    require(offer.get("trial_days") == 14, "trial duration drifted", errors)
+    require(offer.get("starts_at") == "2026-09-29T20:00:00Z", "offer start drifted", errors)
 
     checked = 0
     for path in ROOT.rglob("*.html"):
@@ -70,8 +77,12 @@ def main() -> int:
             errors.append(f"{rel}: unversioned agent-count claim {match.group(0)!r}")
         if COUNTED_AGENT_CARD_RE.search(source):
             errors.append(f"{rel}: unversioned agent-count card")
-        if "Get Free Lifetime Access" in source:
-            errors.append(f"{rel}: unqualified lifetime-access CTA")
+        if "Get Free Lifetime Access" in source or "Get Free Access" in source:
+            errors.append(f"{rel}: obsolete free-access CTA")
+        if 'href="/#pricing"' in source:
+            errors.append(f"{rel}: broken pricing anchor")
+        if "Start Free Trial" in source:
+            errors.append(f"{rel}: obsolete trial CTA")
         if re.search(r"confidence score from 20 to 80|confidence score of 20 to 80", source, re.I):
             errors.append(f"{rel}: obsolete confidence display range")
         if re.search(r"scores? (?:below 50|below 35|35 and below|38 and below)", source, re.I):

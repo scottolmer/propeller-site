@@ -1,11 +1,13 @@
 # Propeller Picks Pricing
 
-Last verified: 2026-07-15
+Last verified: 2026-09-15
 Canonical signup: https://app.propellerpicks.com/signup
 
 ## Current Public Offer
 
-During the current Founder 500 launch, the first 500 eligible accounts receive free lifetime core access while spots remain. Current feature availability, eligibility, exclusions, and terms are shown at signup.
+The subscriber offer starts September 29, 2026 at 3:00 p.m. America/Chicago: 14 days free, then $9.99 USD per month. A payment card is required to begin the trial, and the subscription renews monthly unless canceled. Checkout availability and eligibility are decided in the app.
+
+Existing free accounts keep their access unless they choose a paid plan. Existing Founder 500 lifetime core entitlements remain honored. Public tools and research previews remain free where offered.
 
 Included core access:
 

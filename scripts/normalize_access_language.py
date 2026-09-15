@@ -11,7 +11,13 @@ ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED = {".git", "analytics-dashboard", "docs", "mockups"}
 
 REPLACEMENTS = (
-    ("Get Free Lifetime Access", "Get Free Access"),
+    ("Get Free Lifetime Access", "Get started"),
+    ("Get Free Access", "Get started"),
+    ("Get free access", "Get started"),
+    ("get free access", "get started"),
+    ("Start Free Trial", "See pricing"),
+    ("Start Free", "See pricing"),
+    ('href="/#pricing"', 'href="/pricing/"'),
     ("Free tier includes 5 analyzed props per day. No credit card required.", "Current access and availability are shown at signup."),
     ("5 fully analyzed picks per day. No credit card. See exactly why each prop is scored the way it is - before you enter.", "Open the workspace to inspect the reasoning behind available props. Current access terms are shown at signup."),
     ("with premium access available through the Propeller app.", "with current access details shown in the Propeller app."),
@@ -21,6 +27,12 @@ REPLACEMENTS = (
     ("Unlock Premium", "Open Full Slate"),
     ("Premium pick — unlock to view", "Full app pick — open to view"),
     ("Premium Pick", "Full App Pick"),
+    ("Founder 500 members get free lifetime core access while launch spots remain.", "Founder 500 lifetime core entitlements remain honored. Existing free accounts keep their access unless they choose a paid plan."),
+    ("Free lifetime core access while launch spots remain.", "Founder 500 lifetime core entitlements remain honored. Existing free accounts keep their access unless they choose a paid plan."),
+    ("Founder 500 free lifetime core access while launch spots remain", "Founder 500 lifetime core entitlements remain honored"),
+    ("Founder 500 core access is free while launch spots remain.", "Founder 500 lifetime core entitlements remain honored."),
+    ("Free core access while spots remain", "Existing free access is preserved"),
+    ("Propeller Picks is a free AI-assisted player-prop research tool designed for DFS and pick'em platforms.", "Propeller Picks offers a free public AI-assisted player-prop analyzer designed for DFS and pick'em research. The public tool is separate from the subscriber workspace."),
 )
 
 
