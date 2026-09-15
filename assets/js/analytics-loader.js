@@ -22,6 +22,13 @@
   let started = Boolean(window.ppAnalyticsLoadStarted);
   function loadAnalytics() {
     if (started) return;
+    // Older generated pages retain their legacy gtag source. Reuse it instead
+    // of inserting a second remote script when this shared loader runs there.
+    if (document.querySelector && document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+      started = true;
+      window.ppAnalyticsLoadStarted = true;
+      return;
+    }
     started = true;
     window.ppAnalyticsLoadStarted = true;
     const script = document.createElement('script');

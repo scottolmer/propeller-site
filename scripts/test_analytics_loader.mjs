@@ -52,3 +52,17 @@ test("configures the reporting stream once and exposes an idempotent loader", ()
   assert.equal(typeof window.gtag, "function");
   assert.ok(listeners.has("pointerdown"));
 });
+
+test("does not insert a second remote script when a preserved legacy source exists", () => {
+  const appended = [];
+  const window = { addEventListener: () => {} };
+  const document = {
+    createElement: () => ({}),
+    head: { appendChild: (node) => appended.push(node) },
+    querySelector: () => ({ src: "https://www.googletagmanager.com/gtag/js?id=G-NLXM4C2G7D" }),
+  };
+  vm.runInNewContext(source, { window, document });
+  window.ppLoadAnalytics();
+  assert.equal(appended.length, 0);
+  assert.equal(window.ppAnalyticsLoadStarted, true);
+});
