@@ -52,19 +52,35 @@ class ContentMaintenanceCompositionTests(unittest.TestCase):
         from scripts.normalize_coverage_claims import normalize as coverage
         from scripts.normalize_access_language import normalize as access
         from scripts.sync_faq_schema import sync
-        slugs = ('joey-loperfido', 'nick-madrigal', 'tommy-pham')
+        from scripts.optimize_lighthouse_delivery import GTM
+        # Keep these inputs independent of the daily player-page generator.
+        # Cover all three supported refresh insertion points with dated cards.
+        cards = {
+            'legacy-card': '<!-- TODAY_PROPS_START -->old slate<!-- TODAY_PROPS_END -->',
+            'current-card': '<!-- CURRENT_PLAYER_CARD_START -->old slate<!-- CURRENT_PLAYER_CARD_END -->',
+            'stats-only': '<div class="stats-grid"><div>150 graded picks</div>\n</div>',
+        }
+        slugs = tuple(cards)
         with tempfile.TemporaryDirectory() as directory:
             temp = Path(directory)
             (temp / 'scripts').mkdir()
             for slug in slugs:
-                path = ROOT / 'analyzer/mlb' / slug / 'index.html'
-                source = path.read_text()
-                # Fixture keeps the legacy source even after a future refresh
-                # updates the repository page, reproducing its archived state.
-                from scripts.optimize_lighthouse_delivery import GTM
-                if GTM not in source:
-                    source = source.replace('</head>', GTM + '\n</head>')
-                source = source.replace(indexing.INDEX, indexing.NOINDEX)
+                source = f'''<!doctype html>
+<html><head>
+<title>Player Historical Prop Analysis</title>
+<meta name="description" content="Historical outcome rate across 150 graded analysis rows.">
+{indexing.NOINDEX}
+{GTM}
+</head>
+<body>
+<nav></nav>
+<main>
+<h1>Player historical analysis</h1>
+{cards[slug]}
+</main>
+<footer></footer>
+</body>
+</html>'''
                 refreshed = replace_block(source, current_block('mlb', '2026-09-17', '2026-09-17T13:00:00Z',
                     [{'stat_type': 'hits', 'line': 0.5, 'final_direction': 'OVER', 'confidence': 60}]))
                 target = temp / 'analyzer/mlb' / slug / 'index.html'
@@ -83,6 +99,8 @@ class ContentMaintenanceCompositionTests(unittest.TestCase):
                 source = access(source)
                 source, _ = sync(source, path)
                 source = optimize(source)
+                self.assertIn(indexing.INDEX, source, slug)
+                self.assertIn('data-current-props="true"', source, slug)
                 self.assertNotIn('googletagmanager.com/gtag/js', source, slug)
                 self.assertEqual(source.count('/assets/js/analytics-loader.js'), 1, slug)
                 self.assertIn('/assets/js/analytics-loader.js?v=20260915', source, slug)
