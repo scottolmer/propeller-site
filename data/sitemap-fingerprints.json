@@ -16,29 +16,14 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "363aaa3d6d1c647bd1c0646233cae36ca497517f6669d6a2eaf5091538187aa1",
+      "fingerprint": "ebdd18b5323504c0817256989095b88ac291913091119a9c9afcc74b894ce7b4",
       "lastmod": "2026-09-17",
       "source": "analyzer/index.html"
     },
-    "https://propellerpicks.com/analyzer/mlb/joey-loperfido/": {
-      "fingerprint": "9cdfff0841ee9f59fd884fbe7ec933f5582689a13195fd53e666d049ae737578",
+    "https://propellerpicks.com/analyzer/mlb/bo-naylor/": {
+      "fingerprint": "0b4565df1e59c59d7ba5f004e5041f12d836cf6630e8b8c0b0ab714a95089dd0",
       "lastmod": "2026-09-17",
-      "source": "analyzer/mlb/joey-loperfido/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/nick-madrigal/": {
-      "fingerprint": "d0ef8fbdc07aa669ab647ff716ff72fe33058575b2f6c529b23a55eb9e079dfa",
-      "lastmod": "2026-09-17",
-      "source": "analyzer/mlb/nick-madrigal/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/tommy-pham/": {
-      "fingerprint": "1e20f1cdc17e11df9b8de1d12c1a70dd7602a1e26379500ccc03ab2bc7260166",
-      "lastmod": "2026-09-17",
-      "source": "analyzer/mlb/tommy-pham/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/walbert-urena/": {
-      "fingerprint": "62a308427c6577c9dff43cd099250044f220c71e4d703dae1d1c58b3af63edf7",
-      "lastmod": "2026-09-17",
-      "source": "analyzer/mlb/walbert-urena/index.html"
+      "source": "analyzer/mlb/bo-naylor/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "05bf2abbb4a8152ff0ad3f661a5c7cc50e06d409835ce450fccf625d7f0d6935",
@@ -266,7 +251,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "e739358d720767f302dfd84946ae07bc572d7c994931c824c5d0661b466f3491",
+      "fingerprint": "13e258ceafc071b16c8de48132a36b676a20c84c48efbf9769ff1cdb6385f207",
       "lastmod": "2026-09-17",
       "source": "picks/mlb/index.html"
     },
