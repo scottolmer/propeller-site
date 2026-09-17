@@ -97,6 +97,8 @@ jobs:
           node --test scripts/test_analyzer_webmcp.mjs
           python3 -m unittest scripts/test_nfl_launch_readiness.py
           python3 -m unittest scripts/test_lighthouse_delivery.py
+          python3 -m unittest scripts/test_content_maintenance_composition.py
+          node --test scripts/test_analytics_loader.mjs scripts/test_prompt_analytics_privacy.mjs
           python3 -m unittest scripts/test_aeo_measurement.py
           python3 scripts/generate_sitemap.py --check
 

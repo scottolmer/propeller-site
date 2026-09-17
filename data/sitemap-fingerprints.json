@@ -21,8 +21,8 @@
       "source": "analyzer/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "d753f95dff121a65faf903b25f3d93e8a6fcec9e5edb1748c7d4f0d743ce8a4e",
-      "lastmod": "2026-09-15",
+      "fingerprint": "194ec735fdf378c141ad97bf4a50f1b8e3aef621f881c7ac96e53b20bf8d54fc",
+      "lastmod": "2026-09-17",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -96,8 +96,8 @@
       "source": "fantasy/mlb/index.html"
     },
     "https://propellerpicks.com/guides/": {
-      "fingerprint": "466dbf8ef1e138335f6ec5e22177702227a1c44c8b1a0ad412626096e11f0568",
-      "lastmod": "2026-09-09",
+      "fingerprint": "3a480b2f5d219d2584c5ebdef082ea43dd1c8aa1a39e513045d4534ba4beb9c4",
+      "lastmod": "2026-09-17",
       "source": "guides/index.html"
     },
     "https://propellerpicks.com/guides/ai-player-prop-analyzer-vs-dfs-optimizer/": {
@@ -139,6 +139,11 @@
       "fingerprint": "210722860d7907cfae9eddd27e2230fcdab8c00cc3c5c63bc93589be29b58f21",
       "lastmod": "2026-09-09",
       "source": "guides/pick6-strategy/index.html"
+    },
+    "https://propellerpicks.com/guides/player-prop-research-log/": {
+      "fingerprint": "e526311787a12b3c7aa1df1bfe2572aa863cc0ad1dcf8b7441d04eb1af41b283",
+      "lastmod": "2026-09-17",
+      "source": "guides/player-prop-research-log/index.html"
     },
     "https://propellerpicks.com/guides/prizepicks-cheat-sheet/": {
       "fingerprint": "c20c710b08a9564aa8bf623c14a25104eaa61298b362c67fdf58a2591c7d79b6",

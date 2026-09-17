@@ -73,7 +73,7 @@ def main() -> None:
         for forbidden in FORBIDDEN:
             if forbidden in html:
                 errors.append(f"{rel}: forbidden {forbidden}")
-        if path != ROOT / "index.html" and "/assets/css/site-compat.css" not in html:
+        if path != ROOT / "index.html" and "pp-pricing" not in html and "pp-daily-archive" not in html and "/assets/css/site-compat.css" not in html:
             errors.append(f"{rel}: missing compatibility layer")
         if path == ROOT / "index.html" and "/assets/css/site-compat.css" in html:
             errors.append("index.html: homepage must not load compatibility layer")

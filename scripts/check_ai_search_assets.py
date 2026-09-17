@@ -96,12 +96,17 @@ def main() -> int:
         "prompt_copied",
     ):
         require(phrase in prompt_js, f"prompt builder missing requirement: {phrase}", errors)
+    require('page_location: window.location.href.split("?")[0]' in prompt_js,
+            "prompt builder analytics must omit query context from page_location", errors)
+    analytics_loader = (ROOT / "assets/js/analytics-loader.js").read_text(encoding="utf-8")
+    require("window.location.pathname === '/tools/ai-betting-prompt-builder/'" in analytics_loader
+            and "config.page_location = window.location.origin + window.location.pathname" in analytics_loader,
+            "prompt builder automatic page view must omit research query context", errors)
     prompt_page = (ROOT / "tools/ai-betting-prompt-builder/index.html").read_text(encoding="utf-8")
     for phrase in (
         '"@type":"WebApplication"',
         '"@type":"FAQPage"',
         "analytics-loader.js",
-        "page_location:location.origin+location.pathname",
     ):
         require(phrase in prompt_page, f"prompt builder missing research contract: {phrase}", errors)
 

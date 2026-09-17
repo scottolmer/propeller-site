@@ -15,9 +15,12 @@
     window.ppAnalyticsConfigured = true;
     window.gtag('js', new Date());
     window.gtag('set', 'linker', crossDomainLinker);
-    window.gtag('config', googleTagId, {
-      cookie_domain: 'auto'
-    });
+    const config = { cookie_domain: 'auto' };
+    // Research query values belong to the worksheet, not the automatic page view.
+    if (window.location && window.location.pathname === '/tools/ai-betting-prompt-builder/') {
+      config.page_location = window.location.origin + window.location.pathname;
+    }
+    window.gtag('config', googleTagId, config);
   }
 
   let started = Boolean(window.ppAnalyticsLoadStarted);
