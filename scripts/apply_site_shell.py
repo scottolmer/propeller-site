@@ -253,10 +253,15 @@ def ensure_analytics_loader(html: str) -> str:
     for match in scripts:
         if LEGACY_ANALYTICS_ID in match.group(0):
             return html[: match.start()] + ANALYTICS_LOADER + html[match.start() :]
-    closing = re.search(r"</head>", html, flags=re.IGNORECASE)
+    # Optimizer calls may retain the managed head; shell calls remove it first.
+    # Both paths must place analytics before that block for a stable composition.
+    closing = re.search(r"[ \t]*<!-- PP_SITE_HEAD_START -->|</head>", html, flags=re.IGNORECASE)
     if not closing:
         raise ValueError("No </head> tag")
-    return html[: closing.start()] + ANALYTICS_LOADER + html[closing.start() :]
+    tail = html[closing.start() :]
+    if "PP_SITE_HEAD_START" in closing.group(0):
+        tail = "  <!-- PP_SITE_HEAD_START -->" + html[closing.end() :]
+    return html[: closing.start()] + ANALYTICS_LOADER + tail
 
 
 def remove_legacy_analytics_config(html: str) -> str:
