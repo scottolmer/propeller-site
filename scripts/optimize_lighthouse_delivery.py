@@ -7,18 +7,27 @@ import argparse
 import re
 from pathlib import Path
 
+try:
+    from scripts.apply_site_shell import ensure_analytics_loader
+except ModuleNotFoundError:
+    from apply_site_shell import ensure_analytics_loader
+
 
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED = {".git", "analytics-dashboard", "content", "docs", "mockups", "node_modules"}
 GTM = '<script async src="https://www.googletagmanager.com/gtag/js?id=G-NLXM4C2G7D"></script>'
-ANALYTICS = '<script src="/assets/js/analytics-loader.js?v=20260716"></script>'
 LUCIDE = '<script src="https://unpkg.com/lucide@0.344.0"></script>'
 LUCIDE_SUBSET = '<script src="/assets/js/lucide-subset.js?v=20260716" defer></script>'
 CRITICAL_HERO = '<style id="pp-critical-hero">.hero .fade-in{opacity:1;transform:none;transition:none}</style>'
 
 
 def optimize(source: str) -> str:
-    source = source.replace(GTM, ANALYTICS).replace(LUCIDE, LUCIDE_SUBSET)
+    if GTM in source:
+        # Newly indexable archive pages can already have the shared loader.
+        # Removing legacy gtag changes its canonical location; normalize now
+        # so the subsequent shell check sees one current loader in that place.
+        source = ensure_analytics_loader(source.replace(GTM, ""))
+    source = source.replace(LUCIDE, LUCIDE_SUBSET)
     if 'class="hero' in source and 'class="fade-in' in source:
         # Keep critical CSS before the shared loader, matching the shell renderer.
         # Preserve existing whitespace when the pair is already canonical.

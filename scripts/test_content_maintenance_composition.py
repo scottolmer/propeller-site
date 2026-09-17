@@ -41,6 +41,61 @@ class ContentMaintenanceCompositionTests(unittest.TestCase):
             rendered = optimize(migrate_html(source, path, False))
             self.assertEqual(rendered, optimize(migrate_html(rendered, path, False)), str(path))
 
+    def test_refreshed_archive_indexing_survives_later_maintenance(self):
+        import tempfile
+        from unittest.mock import patch
+        from scripts import apply_analyzer_indexing as indexing
+        from scripts.refresh_player_cards import current_block, replace_block
+        from scripts.normalize_entity_metadata import normalize as entity
+        from scripts.normalize_platform_intent_links import normalize as platform
+        from scripts.normalize_analyzer_archive_language import normalize as archive
+        from scripts.normalize_coverage_claims import normalize as coverage
+        from scripts.normalize_access_language import normalize as access
+        from scripts.sync_faq_schema import sync
+        slugs = ('joey-loperfido', 'nick-madrigal', 'tommy-pham')
+        with tempfile.TemporaryDirectory() as directory:
+            temp = Path(directory)
+            (temp / 'scripts').mkdir()
+            for slug in slugs:
+                path = ROOT / 'analyzer/mlb' / slug / 'index.html'
+                source = path.read_text()
+                # Fixture keeps the legacy source even after a future refresh
+                # updates the repository page, reproducing its archived state.
+                from scripts.optimize_lighthouse_delivery import GTM
+                if GTM not in source:
+                    source = source.replace('</head>', GTM + '\n</head>')
+                source = source.replace(indexing.INDEX, indexing.NOINDEX)
+                refreshed = replace_block(source, current_block('mlb', '2026-09-17', '2026-09-17T13:00:00Z',
+                    [{'stat_type': 'hits', 'line': 0.5, 'final_direction': 'OVER', 'confidence': 60}]))
+                target = temp / 'analyzer/mlb' / slug / 'index.html'
+                target.parent.mkdir(parents=True)
+                target.write_text(refreshed)
+            # Run the real index selection, not a hand-edited robots marker.
+            with patch.object(indexing, 'ROOT', temp), patch('sys.argv', ['indexing', '--date', '2026-09-17']):
+                indexing.main()
+            for slug in slugs:
+                path = ROOT / 'analyzer/mlb' / slug / 'index.html'
+                source = (temp / 'analyzer/mlb' / slug / 'index.html').read_text()
+                self.assertIn(indexing.INDEX, source, slug)
+                source = migrate_html(source, path, False)
+                for normalizer in (entity, platform, archive, coverage):
+                    source = normalizer(source)
+                source = access(source)
+                source, _ = sync(source, path)
+                source = optimize(source)
+                self.assertNotIn('googletagmanager.com/gtag/js', source, slug)
+                self.assertEqual(source.count('/assets/js/analytics-loader.js'), 1, slug)
+                self.assertIn('/assets/js/analytics-loader.js?v=20260915', source, slug)
+                self.assertEqual(source, migrate_html(source, path, False), slug)
+                self.assertEqual(source, optimize(source), slug)
+                # Also cover an already-normalized input where removal of the
+                # adjacent loader consumes whitespace before the managed head.
+                reintroduced = source.replace('</head>', GTM + '\n</head>')
+                repeated = optimize(migrate_html(reintroduced, path, False))
+                self.assertEqual(repeated.count('/assets/js/analytics-loader.js'), 1, slug)
+                self.assertEqual(repeated, migrate_html(repeated, path, False), slug)
+                self.assertEqual(repeated, optimize(repeated), slug)
+
     def test_help_generation_does_not_reintroduce_unqualified_free_access(self):
         for page in PAGES:
             self.assertNotIn('>Get Free Access</a>', render_page(page))
