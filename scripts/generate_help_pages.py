@@ -875,7 +875,7 @@ def render_page(page: dict) -> str:
           <h2>Research today's props</h2>
           <p>Use Propeller's public tools, results, and analyzer pages before making your own platform decisions.</p>
         </div>
-        <a class="button" href="{esc(page.get("cta", {}).get("href", "https://app.propellerpicks.com/signup"))}" rel="noopener">{esc(page.get("cta", {}).get("label", "Get Free Access"))}</a>
+        <a class="button" href="{esc(page.get("cta", {}).get("href", "https://app.propellerpicks.com/signup"))}" rel="noopener">{esc(page.get("cta", {}).get("label", "Get started"))}</a>
       </section>
     </div>
   </main>

@@ -20,11 +20,19 @@ CRITICAL_HERO = '<style id="pp-critical-hero">.hero .fade-in{opacity:1;transform
 def optimize(source: str) -> str:
     source = source.replace(GTM, ANALYTICS).replace(LUCIDE, LUCIDE_SUBSET)
     if 'class="hero' in source and 'class="fade-in' in source:
+        # Keep critical CSS before the shared loader, matching the shell renderer.
+        # Preserve existing whitespace when the pair is already canonical.
+        loader = r'<script\s+src="/assets/js/analytics-loader\.js[^"\n]*"\s*></script>'
+        if re.search(re.escape(CRITICAL_HERO) + r"\s*" + loader, source):
+            return source
         source = re.sub(
             rf"[ \t]*{re.escape(CRITICAL_HERO)}[ \t]*\n?",
             "",
             source,
         )
+        loader_match = re.search(loader, source)
+        if loader_match:
+            return source[:loader_match.start()] + CRITICAL_HERO + "\n  " + source[loader_match.start():]
         marker = "<!-- PP_SITE_HEAD_START -->"
         if marker in source:
             source = re.sub(
