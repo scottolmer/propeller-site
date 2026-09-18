@@ -22,6 +22,13 @@ ANALYTICS_LOADER_RE = re.compile(
     r"\s*<script\b[^>]+src=[\"']/assets/js/analytics-loader\.js[^\"']*[\"'][^>]*>\s*</script>\s*",
     re.IGNORECASE,
 )
+# Primary navigation destinations inherit the current homepage visual system.
+# Match routes, not generated body classes, so regeneration cannot drop styling.
+NAVIGATION_PAGES = frozenset({
+    "picks/index.html", "results/index.html", "track-record/index.html",
+    "how-it-works/index.html", "guides/index.html", "tools/index.html",
+    "analyzer/index.html",
+})
 LEGACY_ANALYTICS_ID = "G-NLXM4C2G7D"
 ANALYTICS_LOADER = '  <script src="/assets/js/analytics-loader.js?v=20260915"></script>\n'
 LEGACY_ANALYTICS_CONFIG_RE = re.compile(
@@ -270,23 +277,38 @@ def remove_legacy_analytics_config(html: str) -> str:
 
 
 def migrate_html(original: str, path: Path, home: bool) -> str:
+    navigation_page = path.relative_to(ROOT).as_posix() in NAVIGATION_PAGES
     html = remove_managed_head(original)
+    if navigation_page:
+        html = re.sub(
+            r'<meta\s+name=["\']color-scheme["\'][^>]*>',
+            '<meta name="color-scheme" content="dark">', html, flags=re.IGNORECASE,
+        )
+        html = re.sub(
+            r'\s*<link\b[^>]+href=["\']/assets/css/(?:site-white-overrides|site-compat|navigation-pages)\.css[^"\']*["\'][^>]*>\s*',
+            "\n", html, flags=re.IGNORECASE,
+        )
     html = remove_legacy_analytics_config(html)
     html = ensure_analytics_loader(html)
-    compat = "" if home or "pp-pricing" in original or "pp-daily-archive" in original else '<link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">\n  '
+    compat = "" if navigation_page or home or "pp-pricing" in original or "pp-daily-archive" in original else '<link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">\n  '
     page_styles = ""
     if "pp-wave-a-page" in original:
         page_styles = (
             '<link rel="stylesheet" href="/assets/css/home-ai.css?v=20260815">\n  '
             '<link rel="stylesheet" href="/assets/css/wave-a-companion-pages.css?v=20260817c">\n  '
         )
+    if navigation_page:
+        page_styles += '<link rel="stylesheet" href="/assets/css/navigation-pages.css?v=20260918">\n  '
     block = HEAD_BLOCK.format(compat=compat, page_styles=page_styles)
     # These pages declare a fully dark surface; retain it during maintenance.
-    if "pp-compare-lines" in original or "pp-research-log" in original or "pp-pricing" in original or "pp-daily-archive" in original:
+    if navigation_page or "pp-compare-lines" in original or "pp-research-log" in original or "pp-pricing" in original or "pp-daily-archive" in original:
         html = re.sub(r'<meta\s+name=["\']theme-color["\'][^>]*>\s*', "", html, flags=re.IGNORECASE)
         block = block.replace('content="#f2efe8"', 'content="#031a2c"')
     html = re.sub(r"</head>", block + "\n</head>", html, count=1, flags=re.IGNORECASE)
     html = add_body_class(html, home, family_class(path, home))
+    if navigation_page:
+        html = add_body_class(html, False, "pp-nav-page")
+        html = add_body_class(html, False, "pp-nav-" + path.parent.name)
     html = replace_primary_nav(html)
     html = replace_footer(html)
     html = ensure_script(html)
