@@ -27,6 +27,15 @@ class ContentMaintenanceCompositionTests(unittest.TestCase):
         self.assertEqual(rendered.count('name="theme-color"'), 1)
         self.assertIn('name="theme-color" content="#031a2c"', rendered)
 
+    def test_comparison_guide_keeps_dark_theme_after_shell(self):
+        path = ROOT / 'guides/compare-player-prop-lines/index.html'
+        source = '<html><head></head><body class="pp-compare-lines"><nav></nav><main>Question</main><footer></footer></body></html>'
+        rendered = migrate_html(source, path, False)
+        self.assertEqual(rendered.count('name="theme-color"'), 1)
+        self.assertIn('name="theme-color" content="#031a2c"', rendered)
+        stable = optimize(migrate_html(rendered, path, False))
+        self.assertEqual(stable, optimize(migrate_html(stable, path, False)))
+
     def test_pricing_keeps_its_custom_dark_style_without_legacy_compat(self):
         path = ROOT / 'pricing/index.html'
         rendered = migrate_html(path.read_text(), path, False)
