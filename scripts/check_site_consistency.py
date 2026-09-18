@@ -73,7 +73,12 @@ def main() -> None:
         for forbidden in FORBIDDEN:
             if forbidden in html:
                 errors.append(f"{rel}: forbidden {forbidden}")
-        if path != ROOT / "index.html" and "pp-pricing" not in html and "pp-daily-archive" not in html and "/assets/css/site-compat.css" not in html:
+        if "pp-nav-page" in html:
+            if "/assets/css/navigation-pages.css" not in html:
+                errors.append(f"{rel}: missing current navigation-page style")
+            if "/assets/css/site-compat.css" in html or "/assets/css/site-white-overrides.css" in html:
+                errors.append(f"{rel}: current navigation page loads legacy light styling")
+        if path != ROOT / "index.html" and "pp-nav-page" not in html and "pp-pricing" not in html and "pp-daily-archive" not in html and "/assets/css/site-compat.css" not in html:
             errors.append(f"{rel}: missing compatibility layer")
         if path == ROOT / "index.html" and "/assets/css/site-compat.css" in html:
             errors.append("index.html: homepage must not load compatibility layer")

@@ -212,3 +212,13 @@ The base form is an outlined broadcast panel: `14px` corners, one-pixel blue bor
 - **Don't** turn the Confidence Score or historical rows into ROI, accuracy, or future-outcome claims.
 - **Don't** reintroduce a standalone homepage record strip; keep the detailed record evidence in the fourth FAQ disclosure.
 - **Don't** bury mobile acquisition behind a web-only primary path.
+
+## Navigation Page Adoption
+
+- The public destinations `picks`, `results`, `track-record`, `how-it-works`, `guides`, `tools`, and `analyzer` adopt the existing Replay Room identity while preserving their route-specific content.
+- `apply_site_shell.py` assigns each route-managed page `pp-nav-page` and loads `navigation-pages.css` last, so the shared visual layer remains explicit and bounded.
+- Those seven pages remove the old white override and compatibility styles; pricing remains a separate dark page treatment.
+- This is an adoption of the existing system, with no new identity and no broad layout drift repair; the homepage design remains unchanged.
+- At `760px` and below, page content stacks for readable mobile flow. Navigation opens into the Studio Navy treatment at `1080px` and below.
+- Semantic success and loss colors remain meaningful, and selected tabs, sort controls, and other active states retain readable contrast.
+- Review status: all 14 screenshots returned `SHIP`; no material fixes were required.

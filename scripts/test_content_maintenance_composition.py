@@ -1,7 +1,7 @@
 """Protect content maintenance from renderer/optimizer and access-copy drift."""
 import unittest
 from pathlib import Path
-from scripts.apply_site_shell import migrate_html, ROOT
+from scripts.apply_site_shell import migrate_html, ROOT, NAVIGATION_PAGES
 from scripts.optimize_lighthouse_delivery import optimize, CRITICAL_HERO
 from scripts.generate_help_pages import render_page, PAGES
 import sys
@@ -41,6 +41,32 @@ class ContentMaintenanceCompositionTests(unittest.TestCase):
         rendered = migrate_html(path.read_text(), path, False)
         self.assertNotIn('/assets/css/site-compat.css', rendered)
         self.assertIn('name="theme-color" content="#031a2c"', rendered)
+
+    def test_navigation_regeneration_keeps_current_style_and_content(self):
+        # Generators may emit legacy head links and no design body class.
+        # The route must restore the current theme without rewriting behavior.
+        content = '<main><h1>Research</h1><button id="filter">Filter</button><p>Verified facts.</p></main>'
+        source = ('<html><head>\n<link rel="stylesheet" href="/assets/css/site-white-overrides.css?v=old">\n'
+                  '<style>.page-layout{display:grid}</style>\n</head>\n<body>\n<nav></nav>\n'
+                  + content + '\n<footer></footer>\n<script src="/page-controls.js"></script>\n</body></html>')
+        for relative in NAVIGATION_PAGES:
+            with self.subTest(route=relative):
+                path = ROOT / relative
+                rendered = optimize(migrate_html(source, path, False))
+                self.assertIn(content, rendered)
+                self.assertIn('/page-controls.js', rendered)
+                self.assertIn('.page-layout{display:grid}', rendered)
+                self.assertIn('pp-nav-page', rendered)
+                self.assertIn('name="theme-color" content="#031a2c"', rendered)
+                self.assertNotIn('site-white-overrides.css', rendered)
+                self.assertNotIn('site-compat.css', rendered)
+                self.assertEqual(rendered.count('/assets/css/navigation-pages.css'), 1)
+                self.assertLess(rendered.index('site-system.css'), rendered.index('navigation-pages.css'))
+                self.assertEqual(rendered, optimize(migrate_html(rendered, path, False)))
+        # The migration is confined to top-level navigation destinations.
+        other = migrate_html(source, ROOT / 'guides/example/index.html', False)
+        self.assertNotIn('pp-nav-page', other)
+        self.assertIn('site-compat.css', other)
 
     def test_real_help_and_comparison_composition_is_stable(self):
         payload = json.loads((ROOT / 'data/comparison-pages.json').read_text())
