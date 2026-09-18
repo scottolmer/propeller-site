@@ -16,19 +16,9 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "c4c34c6944e29444e309a7b7783ffbe5c87b01e0b772311f172f851790729b9e",
+      "fingerprint": "bb8be8268811a9d030619017eb30a4e97f0ce0350c9ab9aa8648a5f088e32d30",
       "lastmod": "2026-09-18",
       "source": "analyzer/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/kumar-rocker/": {
-      "fingerprint": "07f76c948f158d9395fca49b90a718e8b85bf2eb4c0d1e1e86cd2a0ca74c7f65",
-      "lastmod": "2026-09-18",
-      "source": "analyzer/mlb/kumar-rocker/index.html"
-    },
-    "https://propellerpicks.com/analyzer/mlb/tyler-glasnow/": {
-      "fingerprint": "ea010cc02857bf83fecc4d1ae406030c20c2b708da49f48a116e705b53c40682",
-      "lastmod": "2026-09-18",
-      "source": "analyzer/mlb/tyler-glasnow/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "e0ac621659f727911d30d908b12e78b48f424eea462b38f4bc1a5fe3e5f7f084",
@@ -256,7 +246,7 @@
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "5655518b2f0406eb1b31c61b6653641879e43777192b99124f941e8a5a536f32",
+      "fingerprint": "ac52418874e9d3e3a0dc6c48ebb0a0ba6286686daf59b3358483f4977dc9039d",
       "lastmod": "2026-09-18",
       "source": "picks/mlb/index.html"
     },
@@ -296,8 +286,8 @@
       "source": "picks/underdog/index.html"
     },
     "https://propellerpicks.com/pricing/": {
-      "fingerprint": "156b00d8065f73748b1efeb107acdb4cb5a60c089baebea47bcaab4550ed52b8",
-      "lastmod": "2026-09-15",
+      "fingerprint": "fd27f66dc3d52efdc60439d9fac98cac2df0b37ba10a93ce8e51ba24d4af8bf2",
+      "lastmod": "2026-09-18",
       "source": "pricing/index.html"
     },
     "https://propellerpicks.com/privacy/": {
