@@ -301,7 +301,7 @@ def migrate_html(original: str, path: Path, home: bool) -> str:
         page_styles += '<link rel="stylesheet" href="/assets/css/navigation-pages.css?v=20260918">\n  '
     block = HEAD_BLOCK.format(compat=compat, page_styles=page_styles)
     # These pages declare a fully dark surface; retain it during maintenance.
-    if navigation_page or "pp-compare-lines" in original or "pp-research-log" in original or "pp-pricing" in original or "pp-daily-archive" in original:
+    if navigation_page or "pp-compare-lines" in original or "pp-ai-source-audit" in original or "pp-research-log" in original or "pp-pricing" in original or "pp-daily-archive" in original:
         html = re.sub(r'<meta\s+name=["\']theme-color["\'][^>]*>\s*', "", html, flags=re.IGNORECASE)
         block = block.replace('content="#f2efe8"', 'content="#031a2c"')
     html = re.sub(r"</head>", block + "\n</head>", html, count=1, flags=re.IGNORECASE)
