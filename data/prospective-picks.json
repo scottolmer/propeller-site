@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-21T15:16:58Z",
+  "generated_at": "2026-09-21T15:32:18Z",
   "publication_definition": "First observed in the Propeller public picks preview. Event-start ordering and outcome timing are not verified because the public preview does not expose event start time.",
   "before_event_start_verified": false,
   "records": [
@@ -186302,6 +186302,23 @@
       "direction": "UNDER",
       "model_score": 42.8,
       "confidence": 57,
+      "status": "open",
+      "settled_at": null,
+      "actual_value": null,
+      "result_id": null
+    },
+    {
+      "publication_id": "pub_1c78bf50232938eb0ee5",
+      "published_at": "2026-09-21T15:32:16Z",
+      "captured_at": "2026-09-21T15:32:16Z",
+      "sport": "mlb",
+      "game_date": "2026-09-21",
+      "player_name": "John Peck",
+      "stat_type": "rbis",
+      "line": 0.5,
+      "direction": "UNDER",
+      "model_score": 28.2,
+      "confidence": 72,
       "status": "open",
       "settled_at": null,
       "actual_value": null,
