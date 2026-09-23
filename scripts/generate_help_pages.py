@@ -90,32 +90,177 @@ PAGES = [
         ],
         "related": ["/terms/", "/privacy/", "/how-it-works/", "/results/"],
     },
-    {
-        "slug": "how-does-propeller-grade-picks",
-        "title": "How Does Propeller Grade Picks?",
-        "description": "How Propeller grades public prop results, tracks wins/losses/pushes, and keeps a transparent results ledger.",
-        "h1": "How does Propeller grade picks?",
-        "summary": "Propeller Picks grades historical prop outcomes as wins, losses, or pushes after results are available. The Results page defines the archive's two counting units, links the source APIs, and explains why legacy rows are not a uniquely published forward-test or ROI record.",
-        "updated": "2026-07-16",
-        "evidence_links": [
-            ("Results archive and limitations", "/results/"),
-            ("Grading methodology", "/track-record/"),
-            ("Public data catalog", "/data/index.json"),
-            ("Forward publication record", "/research/prospective-record/"),
-            ("Permanent grading URL", "https://propellerpicks.com/help/how-does-propeller-grade-picks/"),
-        ],
-        "sections": [
-            ("Grading Outcomes", "A graded prop is marked as a win when the analyzed side beats the listed line, a loss when it does not, and a push when the result lands exactly on the line or is otherwise graded neutral."),
-            ("Canonical Archive Source", "The Results page is the canonical explanation. It separates raw graded analysis rows from entries retained after the current public API collapse rules and links each machine-readable source."),
-            ("Why Totals Change", "Totals change as historical rows are added, graded, corrected, or collapsed under current API rules. Always quote the unit and snapshot date, and do not treat either total as a forward-tested ROI record."),
-        ],
-        "faqs": [
-            ("How does Propeller grade picks?", "Propeller grades historical prop outcomes as wins, losses, or pushes after final results are available. The Results page explains the units, sources, and limitations of that archive."),
-            ("Where can I inspect Propeller results?", "Use /results/ for the canonical archive explanation and /track-record/ for grading methodology. Machine-readable sources are linked from /data/index.json."),
-            ("Do past Propeller results guarantee future performance?", "No. The historical archive includes repeated analysis snapshots and legacy retrospective data. It is research context, not a forward-tested ROI claim, and past performance does not guarantee future results."),
-        ],
-        "related": ["/results/", "/track-record/", "/data/index.json", "/llms.txt"],
-    },
+    {'slug': 'how-does-propeller-grade-picks',
+ 'title': 'How Does Propeller Grade Picks? Wins, Losses and Pushes',
+ 'h1': 'How does Propeller grade picks?',
+ 'description': 'See how Propeller grades wins, losses and pushes, compare fictional examples, and use five '
+                'checks to understand what a historical player-prop record counts.',
+ 'visual_system': 'replay-room',
+ 'body_class': 'pp-grading-page',
+ 'updated': '2026-09-23',
+ 'summary': 'Propeller grades an analyzed side against its stored line after the final result is available. '
+            'An Over wins above the line, an Under wins below it, and an exact tie is a push. To interpret a '
+            'record, also check what its total counts: the historical archive separates raw analysis rows '
+            'from entries retained under current collapse rules. Neither total alone proves unique '
+            'recommendations, pre-event publication or profit. Start by matching the stored question to the '
+            'final stat, then read the archive’s definitions before quoting a result. The examples below '
+            'show the comparison; the checklist helps you evaluate the evidence around it.',
+ 'sections': [],
+ 'hero_image': {'src': '/help/how-does-propeller-grade-picks/cover.png',
+                'width': 1200,
+                'height': 630,
+                'alt': 'A grading checklist connects the line, final stat and outcome, then asks what the '
+                       'record counted and when it was recorded.',
+                'caption': 'Read the line, the final stat, and what the record counts.'},
+ 'cta': {'heading': 'Read the record with its definitions',
+         'body': 'Open the archive, identify its counting unit, and keep its limitations beside any result '
+                 'you quote.',
+         'label': 'Inspect the archive’s definitions',
+         'href': '/results/'},
+ 'content_sections': [{'title': 'What does one grading comparison look like?',
+                       'paragraphs': ['Take fictional Player C in fictional Cedar–Birch, with a line of 5 '
+                                      'rebounds. Each row below is a different possible scenario, not six '
+                                      'real performances. The question stays specific: did that player '
+                                      'finish above, below or exactly at 5 rebounds? The direction '
+                                      'determines which side wins.',
+                                      'With 6 final rebounds, Over wins and Under loses. With 4, the '
+                                      'outcomes reverse. With 5, both directions meet the exact line, so the '
+                                      'comparison is a push. A push is kept separate from wins and losses in '
+                                      'Propeller’s published grading definitions.',
+                                      'That arithmetic is not a complete settlement policy for every '
+                                      'platform. If you are interpreting an actual entry, check the relevant '
+                                      'platform’s settlement rules. A pending or unresolved event has no '
+                                      'final value for this illustration. Leave that value unknown; do not '
+                                      'fill it with 0 or automatically call it a loss or push.'],
+                       'table': {'caption': 'Fictional grading examples: line 5 rebounds.',
+                                 'headers': ['Side', 'Exact line', 'Final rebounds', 'Outcome'],
+                                 'rows': [['Over', '5', '6', 'Win — above 5'],
+                                          ['Over', '5', '4', 'Loss — below 5'],
+                                          ['Over', '5', '5', 'Push — equal to 5'],
+                                          ['Under', '5', '6', 'Loss — above 5'],
+                                          ['Under', '5', '4', 'Win — below 5'],
+                                          ['Under', '5', '5', 'Push — equal to 5']]},
+                       'links': [('Read the documented grading method', '/track-record/')]},
+                      {'title': 'Did you match the same player, event and line?',
+                       'paragraphs': ['A correct comparison needs the same player, sport and event, stat, '
+                                      'direction, exact line, and source or book. Write those details '
+                                      'together before looking up the final result. “Player C rebounds” is '
+                                      'incomplete: 5 rebounds against one opponent cannot grade a different '
+                                      'event, and a different line asks a different question.',
+                                      'The Results sample presents player, market, line and book alongside '
+                                      'date and sport. Those fields help a reader inspect the record, but '
+                                      'they do not independently establish full event identity. A final stat '
+                                      'from another game cannot grade this question. If you cannot connect '
+                                      'the row and result to the same event, leave that match unresolved.',
+                                      'This is a method for checking evidence, not a claim that the '
+                                      'historical feed validates every field. Keep the stored line attached '
+                                      'to its outcome; replacing it with a later line changes the comparison '
+                                      'you are describing.'],
+                       'links': [('Inspect the sample and its limitations', '/results/')]},
+                      {'title': 'What did our Results-page check show?',
+                       'paragraphs': ['An AI-operated inspection on September 10, 2026 observed separate '
+                                      'raw-row and collapsed-ledger labels on the Results page. The sample '
+                                      'columns were Date, Sport, Player, Market, Line, Conf, Actual, Result '
+                                      'and Book. The page also warned that the sample did not prove '
+                                      'pre-event publication.',
+                                      'That is a historical interface observation, not an audit of the '
+                                      'listed athlete outcomes. The capture included graded rows dated after '
+                                      'the capture date; individual results, chronology, totals and rates '
+                                      'were not verified. We do not use those rows as performance evidence '
+                                      'here.',
+                                      'A separate September 23, 2026 documentation/source recheck confirmed '
+                                      'the published grading definitions and counting limitations. It did '
+                                      'not repeat the original browser observation or establish when those '
+                                      'historical rows were published.'],
+                       'links': [('Results definitions', '/results/'),
+                                 ('How we describe evidence and AI assistance', '/editorial-policy/')]},
+                      {'title': 'What does each record count?',
+                       'paragraphs': ['The historical archive distinguishes raw analysis rows from entries '
+                                      'retained under the current public API collapse rules. A stored '
+                                      'observation and a collapsed entry are different counting units. Keep '
+                                      'the exact unit beside any figure so another reader can tell what you '
+                                      'counted.',
+                                      'Repeated snapshots, books, lines and runs may appear in historical '
+                                      'data, alongside legacy retrospective records. A larger row count '
+                                      'therefore does not establish more independent recommendations. Nor '
+                                      'does the collapsed count, by itself, prove that every retained entry '
+                                      'is a uniquely published recommendation.',
+                                      'The archive also lacks consistent price and payout evidence. Its '
+                                      'descriptive outcomes cannot establish a defensible return or profit '
+                                      'claim, and its rows are not customer wagers. A result label answers '
+                                      'the stored grading question; it does not supply the missing financial '
+                                      'evidence.',
+                                      'The forward record has its own eligibility and settlement '
+                                      'definitions. Read that page separately; it does not turn the '
+                                      'historical archive into a forward test. Before comparing records, '
+                                      'check whether their units and inclusion rules actually match.'],
+                       'table': {'caption': 'Three record units and their limits',
+                                 'headers': ['Record',
+                                             'What one unit represents',
+                                             'What the unit alone cannot prove'],
+                                 'rows': [['Raw historical analysis row',
+                                           'A stored analysis observation; repeated snapshots may appear',
+                                           'One independent recommendation, pre-event publication or a '
+                                           'customer wager'],
+                                          ['Collapsed public ledger entry',
+                                           'An entry retained under current API collapse rules',
+                                           'Complete deduplication into uniquely published recommendations '
+                                           'or profit'],
+                                          ['Separate forward record',
+                                           'An eligible published record under that page’s definitions',
+                                           'That the mixed historical archive qualifies for the same '
+                                           'record']]},
+                       'links': [('Archive counting units', '/results/'),
+                                 ('Separate forward-record definitions', '/research/prospective-record/'),
+                                 ('Machine-readable source catalog', '/data/index.json')]},
+                      {'title': 'Five checks before quoting a record',
+                       'paragraphs': ['1. What was counted? Find the raw-row and collapsed-entry definitions '
+                                      'in Results. Record the exact unit with any figure; do not shorten '
+                                      'both to “picks.” That small wording choice preserves what the '
+                                      'evidence actually describes.',
+                                      '2. When was it recorded or published? The sample Date column does not '
+                                      'establish pre-event publication. Look for separately defined '
+                                      'publication and event clocks. If either is absent, mark it unknown '
+                                      'instead of treating a displayed date as proof.',
+                                      '3. Is it the same event and line? Match player, sport/event, stat, '
+                                      'direction, exact line and source/book. The visible sample offers '
+                                      'useful fields, but it does not independently establish full event '
+                                      'identity. Document any missing match.',
+                                      '4. How are push and unresolved outcomes treated? Read the definitions '
+                                      'and inspect the supplied final stat. Propeller keeps pushes separate; '
+                                      'an unresolved event is not a final outcome. Do not assign a result '
+                                      'simply to complete a row.',
+                                      '5. Which rows and evidence are excluded or missing? Check repeated '
+                                      'snapshots, missing publication times, and price/payout gaps in the '
+                                      'archive limitations. Read the forward page’s separate eligibility '
+                                      'rules before comparing it with historical data.',
+                                      'Use the printable checklist to keep the page URL, date checked, '
+                                      'counting unit and unanswered questions together. It asks for '
+                                      'evidence, not a wager or account details.'],
+                       'links': [('Download the five-question evidence checklist (PDF)',
+                                  '/help/how-does-propeller-grade-picks/evidence-checklist.pdf'),
+                                 ('Inspect archive definitions and omissions', '/results/')]}],
+ 'faqs': [('How does Propeller grade picks?',
+           'Propeller compares the stored side and exact line with the final stat after results are '
+           'available. Over wins above the line, Under wins below it, and equality is a push. First confirm '
+           'that the player, event and stat match the stored question.'),
+          ('Is a push a win or a loss?',
+           'Neither. In the published grading definitions, an exact tie with the line is a push and remains '
+           'separate from wins and losses. That comparison does not define how every platform settles an '
+           'actual entry; consult its rules for that question.'),
+          ('Are repeated snapshots separate recommendations?',
+           'A repeated historical analysis snapshot does not, by itself, establish a separate '
+           'recommendation. Results distinguishes raw rows from collapsed public entries. Neither unit alone '
+           'proves that each item was a unique recommendation published before its event.'),
+          ('Do historical results guarantee future outcomes?',
+           'No. Past results do not guarantee future outcomes. The historical archive includes mixed records '
+           'and documented timing and price limitations. Use it as research context, preserve its counting '
+           'units, and avoid treating a descriptive outcome record as proof of profit.')],
+ 'evidence_links': [('Grading methodology', '/track-record/'),
+                    ('Archive and limitations', '/results/'),
+                    ('Editorial evidence policy', '/editorial-policy/'),
+                    ('Public data catalog', '/data/index.json')],
+ 'related': ['/results/', '/track-record/', '/research/prospective-record/', '/editorial-policy/']},
     {'slug': 'what-sports-does-propeller-support',
      'title': 'What Sports Does Propeller Support?',
      'description': 'Current Propeller sports coverage for player prop analysis, public results, and daily pick previews.',
@@ -551,6 +696,8 @@ def render_related(paths: list[str]) -> str:
         "/how-it-works/": "How It Works",
         "/results/": "Results",
         "/track-record/": "Track Record",
+        "/research/prospective-record/": "Forward record",
+        "/editorial-policy/": "Editorial policy",
         "/terms/": "Terms",
         "/privacy/": "Privacy",
         "/data/index.json": "Data Catalog",
@@ -776,6 +923,11 @@ def render_page(page: dict) -> str:
     related = render_related(page["related"])
     updated = page.get("updated", UPDATED)
     video_head, video_body, video_script = render_video(page)
+    hero = page.get("hero_image", {})
+    image_url = BASE_URL + hero["src"] if hero.get("src", "").startswith("/") else hero.get("src", BASE_URL + "/images/og-image.png")
+    hero_html = ""
+    if hero:
+        hero_html = f'<figure class="help-hero-media"><img src="{esc(hero["src"])}" alt="{esc(hero["alt"])}" width="{int(hero["width"])}" height="{int(hero["height"])}"><figcaption>{esc(hero.get("caption", ""))}</figcaption></figure>'
     evidence = ""
     if page.get("evidence_links"):
         links = "\n          ".join(
@@ -803,17 +955,17 @@ def render_page(page: dict) -> str:
 <meta property="og:url" content="{url}">
 <meta property="og:title" content="{esc(page['title'])}">
 <meta property="og:description" content="{esc(page['description'])}">
-<meta property="og:image" content="{BASE_URL}/images/og-image.png">
-<meta property="og:image:width" content="3000">
-<meta property="og:image:height" content="1000">
+<meta property="og:image" content="{esc(image_url)}">
+<meta property="og:image:width" content="{int(hero.get("width", 3000))}">
+<meta property="og:image:height" content="{int(hero.get("height", 1000))}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@propellerpicks">
 <meta name="twitter:title" content="{esc(page['title'])}">
 <meta name="twitter:description" content="{esc(page['description'])}">
-<meta name="twitter:image" content="{BASE_URL}/images/og-image.png">
+<meta name="twitter:image" content="{esc(image_url)}">
 <meta name="author" content="{esc(attribution['author']['name'])}">
 <meta name="theme-color" content="{'#031a2c' if page.get("visual_system") == "replay-room" else '#f2efe8'}">{video_head}{chr(10) + '<link rel="stylesheet" href="/assets/css/coverage-article.css?v=20260914">' if page.get("visual_system") == "replay-room" else ""}
-<link rel="preconnect" href="https://fonts.googleapis.com">
+{('<link rel="stylesheet" href="/assets/css/grading-help.css?v=20260923">' + chr(10)) if page.get("body_class") == "pp-grading-page" else ""}<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
@@ -827,7 +979,7 @@ def render_page(page: dict) -> str:
 </script>
 <style>{BASE_CSS}{ATTRIBUTION_CSS}{TABLE_CSS if page.get("content_sections") else ""}</style>
 </head>
-<body{chr(32) + chr(99) + 'lass="pp-replay-room pp-wave-a-page pp-coverage-page"' if page.get("visual_system") == "replay-room" else ""}>
+<body{chr(32) + chr(99) + 'lass="pp-replay-room pp-wave-a-page pp-coverage-page' + (' ' + esc(page['body_class']) if page.get('body_class') else '') + '"' if page.get("visual_system") == "replay-room" else ""}>
 <div class="page">
   <nav class="nav">
     <div class="container nav-inner">
@@ -856,7 +1008,7 @@ def render_page(page: dict) -> str:
 
     <div class="container content-grid">
       <article>
-{video_body}{sections}
+{hero_html}{video_body}{sections}
         <section class="section">
           <h2>Frequently Asked Questions</h2>
           <div class="faq-list">
@@ -872,8 +1024,8 @@ def render_page(page: dict) -> str:
     <div class="container">
       <section class="cta">
         <div>
-          <h2>Research today's props</h2>
-          <p>Use Propeller's public tools, results, and analyzer pages before making your own platform decisions.</p>
+          <h2>{esc(page["cta"]["heading"]) if page.get("cta", {}).get("heading") else "Research today's props"}</h2>
+          <p>{esc(page["cta"]["body"]) if page.get("cta", {}).get("body") else "Use Propeller's public tools, results, and analyzer pages before making your own platform decisions."}</p>
         </div>
         <a class="button" href="{esc(page.get("cta", {}).get("href", "https://app.propellerpicks.com/signup"))}" rel="noopener">{esc(page.get("cta", {}).get("label", "Get started"))}</a>
       </section>

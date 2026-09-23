@@ -1,0 +1,22 @@
+/* Grading help only: preserve the managed shell and Replay Room palette. */
+body.pp-site-system.pp-grading-page { background:#031a2c!important; color:#f7f1e7; }
+body.pp-site-system.pp-grading-page .pp-site-nav,
+body.pp-site-system.pp-grading-page .pp-site-footer,
+body.pp-site-system.pp-grading-page .pp-site-nav__links.is-open { background:#06243a!important; color:#f7f1e7!important; }
+body.pp-site-system.pp-grading-page .pp-brand,
+body.pp-site-system.pp-grading-page .pp-site-nav__links > a:not(.pp-site-nav__cta),
+body.pp-site-system.pp-grading-page .pp-site-footer a { color:#f7f1e7!important; }
+body.pp-site-system.pp-grading-page .pp-site-nav__menu { color:#f7f1e7!important; background:#06243a!important; border-color:#54c8ff!important; }
+body.pp-site-system.pp-grading-page .pp-site-footer__copy,
+body.pp-site-system.pp-grading-page .pp-site-footer__legal,
+body.pp-site-system.pp-grading-page .pp-site-footer__column h2 { color:#b8d3df!important; }
+body.pp-site-system.pp-grading-page main .content-grid { grid-template-columns:minmax(0,780px) minmax(0,220px);gap:48px; }
+body.pp-site-system.pp-grading-page main .help-hero-media { margin:0 0 48px; }
+body.pp-site-system.pp-grading-page main .help-hero-media img { display:block;width:100%;height:auto;border:1px solid var(--pp-line);border-radius:14px; }
+body.pp-site-system.pp-grading-page main .help-hero-media figcaption { margin-top:10px;font-size:14px;color:#b8d3df; }
+body.pp-site-system.pp-grading-page main .section-card p { font-size:18px;line-height:1.7; }
+body.pp-site-system.pp-grading-page main .answer-box { max-width:900px; }
+body.pp-site-system.pp-grading-page main .crumbs { overflow-wrap:anywhere; }
+body.pp-site-system.pp-grading-page .pp-site-nav__links.is-open { box-shadow:0 12px 24px #021522; border-color:#54c8ff; }
+@media(max-width:820px) { body.pp-site-system.pp-grading-page main .content-grid { grid-template-columns:minmax(0,1fr);gap:16px; } }
+@media(max-width:480px) { body.pp-site-system.pp-grading-page main h1 { font-size:44px; } body.pp-site-system.pp-grading-page main .section-card p { font-size:16px; } }
