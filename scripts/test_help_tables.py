@@ -48,12 +48,45 @@ class HelpTableTests(unittest.TestCase):
                 self.assertEqual(coverage.count('class="answer-box"'), 1)
                 self.assertNotIn('class="summary"', coverage)
                 continue
+            if other['slug'] == 'how-does-propeller-grade-picks':
+                grading = help_pages.render_page(other)
+                self.assertEqual(grading.count('<table '), 2)
+                self.assertEqual(grading.count('scope="row"'), 9)
+                self.assertIn('Fictional grading examples: line 5 rebounds.', grading)
+                self.assertIn('Last updated: 2026-09-23', grading)
+                self.assertIn('pp-grading-page', grading)
+                self.assertIn('pp-replay-room', grading)
+                self.assertEqual(grading.count('class="answer-box"'), 1)
+                self.assertNotIn('class="summary"', grading)
+                self.assertIn('href="/results/" rel="noopener">Inspect the archive', grading)
+                self.assertIn('width="1200" height="630"', grading)
+                self.assertIn('Read the record with its definitions', grading)
+                continue
             if other is page:
                 continue
             output = help_pages.render_page(other)
             self.assertNotIn('.table-scroll', output)
             self.assertIn('class="summary"', output)
-            self.assertIn('>Get Free Access</a>', output)
+            self.assertIn('>Get started</a>', output)
+
+    def test_optional_media_and_cta_escape_text_and_preserve_defaults(self):
+        page = copy.deepcopy(help_pages.PAGES[0])
+        default = help_pages.render_page(page)
+        self.assertIn('content="https://propellerpicks.com/images/og-image.png"', default)
+        self.assertIn('content="3000"', default)
+        self.assertIn("Research today's props", default)
+        self.assertNotIn('help-hero-media', default)
+        page['hero_image'] = {'src': '/test.png?x="bad"', 'alt': '<script>bad</script>',
+                              'width': 1200, 'height': 630, 'caption': '<b>Caption</b>'}
+        page['cta'] = {'heading': '<script>Title</script>', 'body': '<b>Body</b>',
+                       'href': '/results/', 'label': 'Inspect'}
+        output = help_pages.render_page(page)
+        self.assertIn('&lt;script&gt;bad&lt;/script&gt;', output)
+        self.assertIn('&lt;b&gt;Caption&lt;/b&gt;', output)
+        self.assertIn('&lt;script&gt;Title&lt;/script&gt;', output)
+        self.assertIn('&lt;b&gt;Body&lt;/b&gt;', output)
+        self.assertIn('/test.png?x=&quot;bad&quot;', output)
+        self.assertIn('content="1200"', output)
 
 
 if __name__ == '__main__':

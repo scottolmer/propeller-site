@@ -8,34 +8,36 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 </script>
-<title>How Does Propeller Grade Picks? | Propeller Help</title>
-<meta name="description" content="How Propeller grades public prop results, tracks wins/losses/pushes, and keeps a transparent results ledger.">
+<title>How Does Propeller Grade Picks? Wins, Losses and Pushes | Propeller Help</title>
+<meta name="description" content="See how Propeller grades wins, losses and pushes, compare fictional examples, and use five checks to understand what a historical player-prop record counts.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://propellerpicks.com/help/how-does-propeller-grade-picks/">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://propellerpicks.com/help/how-does-propeller-grade-picks/">
-<meta property="og:title" content="How Does Propeller Grade Picks?">
-<meta property="og:description" content="How Propeller grades public prop results, tracks wins/losses/pushes, and keeps a transparent results ledger.">
-<meta property="og:image" content="https://propellerpicks.com/images/og-image.png">
-<meta property="og:image:width" content="3000">
-<meta property="og:image:height" content="1000">
+<meta property="og:title" content="How Does Propeller Grade Picks? Wins, Losses and Pushes">
+<meta property="og:description" content="See how Propeller grades wins, losses and pushes, compare fictional examples, and use five checks to understand what a historical player-prop record counts.">
+<meta property="og:image" content="https://propellerpicks.com/help/how-does-propeller-grade-picks/cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@propellerpicks">
-<meta name="twitter:title" content="How Does Propeller Grade Picks?">
-<meta name="twitter:description" content="How Propeller grades public prop results, tracks wins/losses/pushes, and keeps a transparent results ledger.">
-<meta name="twitter:image" content="https://propellerpicks.com/images/og-image.png">
+<meta name="twitter:title" content="How Does Propeller Grade Picks? Wins, Losses and Pushes">
+<meta name="twitter:description" content="See how Propeller grades wins, losses and pushes, compare fictional examples, and use five checks to understand what a historical player-prop record counts.">
+<meta name="twitter:image" content="https://propellerpicks.com/help/how-does-propeller-grade-picks/cover.png">
 <meta name="author" content="Scott Olmer">
-<meta name="theme-color" content="#f2efe8">
+<meta name="theme-color" content="#031a2c">
+<link rel="stylesheet" href="/assets/css/coverage-article.css?v=20260914">
+<link rel="stylesheet" href="/assets/css/grading-help.css?v=20260923">
 
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "How Does Propeller Grade Picks?",
+  "name": "How Does Propeller Grade Picks? Wins, Losses and Pushes",
   "url": "https://propellerpicks.com/help/how-does-propeller-grade-picks/",
-  "description": "How Propeller grades public prop results, tracks wins/losses/pushes, and keeps a transparent results ledger.",
-  "dateModified": "2026-07-16",
+  "description": "See how Propeller grades wins, losses and pushes, compare fictional examples, and use five checks to understand what a historical player-prop record counts.",
+  "dateModified": "2026-09-23",
   "inLanguage": "en-US",
   "isPartOf": {
     "@type": "WebSite",
@@ -74,7 +76,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "How Does Propeller Grade Picks?",
+      "name": "How Does Propeller Grade Picks? Wins, Losses and Pushes",
       "item": "https://propellerpicks.com/help/how-does-propeller-grade-picks/"
     }
   ]
@@ -90,23 +92,31 @@
       "name": "How does Propeller grade picks?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller grades historical prop outcomes as wins, losses, or pushes after final results are available. The Results page explains the units, sources, and limitations of that archive."
+        "text": "Propeller compares the stored side and exact line with the final stat after results are available. Over wins above the line, Under wins below it, and equality is a push. First confirm that the player, event and stat match the stored question."
       }
     },
     {
       "@type": "Question",
-      "name": "Where can I inspect Propeller results?",
+      "name": "Is a push a win or a loss?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Use /results/ for the canonical archive explanation and /track-record/ for grading methodology. Machine-readable sources are linked from /data/index.json."
+        "text": "Neither. In the published grading definitions, an exact tie with the line is a push and remains separate from wins and losses. That comparison does not define how every platform settles an actual entry; consult its rules for that question."
       }
     },
     {
       "@type": "Question",
-      "name": "Do past Propeller results guarantee future performance?",
+      "name": "Are repeated snapshots separate recommendations?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. The historical archive includes repeated analysis snapshots and legacy retrospective data. It is research context, not a forward-tested ROI claim, and past performance does not guarantee future results."
+        "text": "A repeated historical analysis snapshot does not, by itself, establish a separate recommendation. Results distinguishes raw rows from collapsed public entries. Neither unit alone proves that each item was a unique recommendation published before its event."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do historical results guarantee future outcomes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Past results do not guarantee future outcomes. The historical archive includes mixed records and documented timing and price limitations. Use it as research context, preserve its counting units, and avoid treating a descriptive outcome record as proof of profit."
       }
     }
   ]
@@ -150,6 +160,16 @@ h3 { margin-bottom: 10px; font-size: 21px; }
 
 .attribution { max-width: 850px; margin: 12px 0 0; color: var(--pp-sub, #59615b); font-size: 14px; }
 .attribution a { color: var(--pp-orange-dark, #dd3d16); font-weight: 700; }
+
+.table-scroll { max-width: 100%; overflow-x: auto; margin-top: 20px; }
+.table-scroll:focus-visible { outline: 3px solid var(--pp-orange-dark, #dd3d16); outline-offset: 4px; }
+.help-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.6; }
+.help-table caption { text-align: left; font-weight: 700; margin-bottom: 12px; }
+.help-table th, .help-table td { text-align: left; vertical-align: top; padding: 12px; border-bottom: 1px solid #c9cec8; overflow-wrap: anywhere; }
+.help-table thead th { background: #e7e9e2; }
+.section-links { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 16px; }
+.section-links a { color: var(--pp-orange-dark, #dd3d16); font-weight: 700; }
+@media (max-width: 600px) { .help-table { min-width: 570px; } .content-grid > article { min-width: 0; } }
 </style>
   <script src="/assets/js/analytics-loader.js?v=20260915"></script>
   <!-- PP_SITE_HEAD_START -->
@@ -160,9 +180,11 @@ h3 { margin-bottom: 10px; font-size: 21px; }
   <meta name="theme-color" content="#f2efe8">
   <link rel="stylesheet" href="/assets/css/site-system.css?v=20260712">
   <link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">
+  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260815">
+  <link rel="stylesheet" href="/assets/css/wave-a-companion-pages.css?v=20260817c">
   <!-- PP_SITE_HEAD_END -->
 </head>
-<body class="pp-site-system pp-family-help">
+<body class="pp-replay-room pp-wave-a-page pp-coverage-page pp-grading-page pp-site-system pp-family-help">
 <div class="page">
   <!-- PP_SITE_NAV_START -->
 <nav class="pp-site-nav" aria-label="Primary navigation">
@@ -192,50 +214,46 @@ h3 { margin-bottom: 10px; font-size: 21px; }
   <main>
     <header class="hero">
       <div class="container">
-        <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/help/">Help</a><span>/</span><span>How Does Propeller Grade Picks?</span></div>
+        <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/help/">Help</a><span>/</span><span>How Does Propeller Grade Picks? Wins, Losses and Pushes</span></div>
         <h1>How does Propeller grade picks?</h1>
-        <p class="summary">Propeller Picks grades historical prop outcomes as wins, losses, or pushes after results are available. The Results page defines the archive&#x27;s two counting units, links the source APIs, and explains why legacy rows are not a uniquely published forward-test or ROI record.</p>
-        <p class="updated">Last updated: 2026-07-16</p>
+
+        <p class="updated">Last updated: 2026-09-23</p>
         <p class="attribution">By <a href="https://propellerpicks.com/about/">Scott Olmer</a>, designated author and editorial owner. Produced and reviewed through automated AI workflows. <a href="/editorial-policy/">Editorial policy</a>.</p>
-        <div class="answer-box"><p><strong>Direct answer:</strong> Propeller Picks grades historical prop outcomes as wins, losses, or pushes after results are available. The Results page defines the archive&#x27;s two counting units, links the source APIs, and explains why legacy rows are not a uniquely published forward-test or ROI record.</p></div>
+        <div class="answer-box"><p><strong>Direct answer:</strong> Propeller grades an analyzed side against its stored line after the final result is available. An Over wins above the line, an Under wins below it, and an exact tie is a push. To interpret a record, also check what its total counts: the historical archive separates raw analysis rows from entries retained under current collapse rules. Neither total alone proves unique recommendations, pre-event publication or profit. Start by matching the stored question to the final stat, then read the archive’s definitions before quoting a result. The examples below show the comparison; the checklist helps you evaluate the evidence around it.</p></div>
         <div class="evidence-links" aria-label="Evidence and permanent URL" style="display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:16px;color:var(--pp-muted,#626a64);font-size:13px"><strong style="color:var(--pp-ink,#101311)">Evidence:</strong>
-          <a href="/results/" style="color:var(--pp-orange-dark,#dd3d16);font-weight:700">Results archive and limitations</a>
           <a href="/track-record/" style="color:var(--pp-orange-dark,#dd3d16);font-weight:700">Grading methodology</a>
+          <a href="/results/" style="color:var(--pp-orange-dark,#dd3d16);font-weight:700">Archive and limitations</a>
+          <a href="/editorial-policy/" style="color:var(--pp-orange-dark,#dd3d16);font-weight:700">Editorial evidence policy</a>
           <a href="/data/index.json" style="color:var(--pp-orange-dark,#dd3d16);font-weight:700">Public data catalog</a>
-          <a href="/research/prospective-record/" style="color:var(--pp-orange-dark,#dd3d16);font-weight:700">Forward publication record</a>
-          <a href="https://propellerpicks.com/help/how-does-propeller-grade-picks/" style="color:var(--pp-orange-dark,#dd3d16);font-weight:700">Permanent grading URL</a>
         </div>
       </div>
     </header>
 
     <div class="container content-grid">
       <article>
-        <section class="section-card">
-          <h2>Grading Outcomes</h2>
-          <p>A graded prop is marked as a win when the analyzed side beats the listed line, a loss when it does not, and a push when the result lands exactly on the line or is otherwise graded neutral.</p>
-        </section>
-        <section class="section-card">
-          <h2>Canonical Archive Source</h2>
-          <p>The Results page is the canonical explanation. It separates raw graded analysis rows from entries retained after the current public API collapse rules and links each machine-readable source.</p>
-        </section>
-        <section class="section-card">
-          <h2>Why Totals Change</h2>
-          <p>Totals change as historical rows are added, graded, corrected, or collapsed under current API rules. Always quote the unit and snapshot date, and do not treat either total as a forward-tested ROI record.</p>
-        </section>
+<figure class="help-hero-media"><img src="/help/how-does-propeller-grade-picks/cover.png" alt="A grading checklist connects the line, final stat and outcome, then asks what the record counted and when it was recorded." width="1200" height="630"><figcaption>Read the line, the final stat, and what the record counts.</figcaption></figure><section class="section-card"><h2>What does one grading comparison look like?</h2><p>Take fictional Player C in fictional Cedar–Birch, with a line of 5 rebounds. Each row below is a different possible scenario, not six real performances. The question stays specific: did that player finish above, below or exactly at 5 rebounds? The direction determines which side wins.</p><p>With 6 final rebounds, Over wins and Under loses. With 4, the outcomes reverse. With 5, both directions meet the exact line, so the comparison is a push. A push is kept separate from wins and losses in Propeller’s published grading definitions.</p><p>That arithmetic is not a complete settlement policy for every platform. If you are interpreting an actual entry, check the relevant platform’s settlement rules. A pending or unresolved event has no final value for this illustration. Leave that value unknown; do not fill it with 0 or automatically call it a loss or push.</p><div class="table-scroll" role="region" tabindex="0" aria-label="Fictional grading examples: line 5 rebounds.. Scroll horizontally on small screens."><table class="help-table"><caption>Fictional grading examples: line 5 rebounds.</caption><thead><tr><th scope="col">Side</th><th scope="col">Exact line</th><th scope="col">Final rebounds</th><th scope="col">Outcome</th></tr></thead><tbody><tr><th scope="row">Over</th><td>5</td><td>6</td><td>Win — above 5</td></tr><tr><th scope="row">Over</th><td>5</td><td>4</td><td>Loss — below 5</td></tr><tr><th scope="row">Over</th><td>5</td><td>5</td><td>Push — equal to 5</td></tr><tr><th scope="row">Under</th><td>5</td><td>6</td><td>Loss — above 5</td></tr><tr><th scope="row">Under</th><td>5</td><td>4</td><td>Win — below 5</td></tr><tr><th scope="row">Under</th><td>5</td><td>5</td><td>Push — equal to 5</td></tr></tbody></table></div><div class="section-links"><a href="/track-record/">Read the documented grading method</a></div></section>
+<section class="section-card"><h2>Did you match the same player, event and line?</h2><p>A correct comparison needs the same player, sport and event, stat, direction, exact line, and source or book. Write those details together before looking up the final result. “Player C rebounds” is incomplete: 5 rebounds against one opponent cannot grade a different event, and a different line asks a different question.</p><p>The Results sample presents player, market, line and book alongside date and sport. Those fields help a reader inspect the record, but they do not independently establish full event identity. A final stat from another game cannot grade this question. If you cannot connect the row and result to the same event, leave that match unresolved.</p><p>This is a method for checking evidence, not a claim that the historical feed validates every field. Keep the stored line attached to its outcome; replacing it with a later line changes the comparison you are describing.</p><div class="section-links"><a href="/results/">Inspect the sample and its limitations</a></div></section>
+<section class="section-card"><h2>What did our Results-page check show?</h2><p>An AI-operated inspection on September 10, 2026 observed separate raw-row and collapsed-ledger labels on the Results page. The sample columns were Date, Sport, Player, Market, Line, Conf, Actual, Result and Book. The page also warned that the sample did not prove pre-event publication.</p><p>That is a historical interface observation, not an audit of the listed athlete outcomes. The capture included graded rows dated after the capture date; individual results, chronology, totals and rates were not verified. We do not use those rows as performance evidence here.</p><p>A separate September 23, 2026 documentation/source recheck confirmed the published grading definitions and counting limitations. It did not repeat the original browser observation or establish when those historical rows were published.</p><div class="section-links"><a href="/results/">Results definitions</a><a href="/editorial-policy/">How we describe evidence and AI assistance</a></div></section>
+<section class="section-card"><h2>What does each record count?</h2><p>The historical archive distinguishes raw analysis rows from entries retained under the current public API collapse rules. A stored observation and a collapsed entry are different counting units. Keep the exact unit beside any figure so another reader can tell what you counted.</p><p>Repeated snapshots, books, lines and runs may appear in historical data, alongside legacy retrospective records. A larger row count therefore does not establish more independent recommendations. Nor does the collapsed count, by itself, prove that every retained entry is a uniquely published recommendation.</p><p>The archive also lacks consistent price and payout evidence. Its descriptive outcomes cannot establish a defensible return or profit claim, and its rows are not customer wagers. A result label answers the stored grading question; it does not supply the missing financial evidence.</p><p>The forward record has its own eligibility and settlement definitions. Read that page separately; it does not turn the historical archive into a forward test. Before comparing records, check whether their units and inclusion rules actually match.</p><div class="table-scroll" role="region" tabindex="0" aria-label="Three record units and their limits. Scroll horizontally on small screens."><table class="help-table"><caption>Three record units and their limits</caption><thead><tr><th scope="col">Record</th><th scope="col">What one unit represents</th><th scope="col">What the unit alone cannot prove</th></tr></thead><tbody><tr><th scope="row">Raw historical analysis row</th><td>A stored analysis observation; repeated snapshots may appear</td><td>One independent recommendation, pre-event publication or a customer wager</td></tr><tr><th scope="row">Collapsed public ledger entry</th><td>An entry retained under current API collapse rules</td><td>Complete deduplication into uniquely published recommendations or profit</td></tr><tr><th scope="row">Separate forward record</th><td>An eligible published record under that page’s definitions</td><td>That the mixed historical archive qualifies for the same record</td></tr></tbody></table></div><div class="section-links"><a href="/results/">Archive counting units</a><a href="/research/prospective-record/">Separate forward-record definitions</a><a href="/data/index.json">Machine-readable source catalog</a></div></section>
+<section class="section-card"><h2>Five checks before quoting a record</h2><p>1. What was counted? Find the raw-row and collapsed-entry definitions in Results. Record the exact unit with any figure; do not shorten both to “picks.” That small wording choice preserves what the evidence actually describes.</p><p>2. When was it recorded or published? The sample Date column does not establish pre-event publication. Look for separately defined publication and event clocks. If either is absent, mark it unknown instead of treating a displayed date as proof.</p><p>3. Is it the same event and line? Match player, sport/event, stat, direction, exact line and source/book. The visible sample offers useful fields, but it does not independently establish full event identity. Document any missing match.</p><p>4. How are push and unresolved outcomes treated? Read the definitions and inspect the supplied final stat. Propeller keeps pushes separate; an unresolved event is not a final outcome. Do not assign a result simply to complete a row.</p><p>5. Which rows and evidence are excluded or missing? Check repeated snapshots, missing publication times, and price/payout gaps in the archive limitations. Read the forward page’s separate eligibility rules before comparing it with historical data.</p><p>Use the printable checklist to keep the page URL, date checked, counting unit and unanswered questions together. It asks for evidence, not a wager or account details.</p><div class="section-links"><a href="/help/how-does-propeller-grade-picks/evidence-checklist.pdf">Download the five-question evidence checklist (PDF)</a><a href="/results/">Inspect archive definitions and omissions</a></div></section>
         <section class="section">
           <h2>Frequently Asked Questions</h2>
           <div class="faq-list">
         <div class="faq-item">
           <h3>How does Propeller grade picks?</h3>
-          <p>Propeller grades historical prop outcomes as wins, losses, or pushes after final results are available. The Results page explains the units, sources, and limitations of that archive.</p>
+          <p>Propeller compares the stored side and exact line with the final stat after results are available. Over wins above the line, Under wins below it, and equality is a push. First confirm that the player, event and stat match the stored question.</p>
         </div>
         <div class="faq-item">
-          <h3>Where can I inspect Propeller results?</h3>
-          <p>Use /results/ for the canonical archive explanation and /track-record/ for grading methodology. Machine-readable sources are linked from /data/index.json.</p>
+          <h3>Is a push a win or a loss?</h3>
+          <p>Neither. In the published grading definitions, an exact tie with the line is a push and remains separate from wins and losses. That comparison does not define how every platform settles an actual entry; consult its rules for that question.</p>
         </div>
         <div class="faq-item">
-          <h3>Do past Propeller results guarantee future performance?</h3>
-          <p>No. The historical archive includes repeated analysis snapshots and legacy retrospective data. It is research context, not a forward-tested ROI claim, and past performance does not guarantee future results.</p>
+          <h3>Are repeated snapshots separate recommendations?</h3>
+          <p>A repeated historical analysis snapshot does not, by itself, establish a separate recommendation. Results distinguishes raw rows from collapsed public entries. Neither unit alone proves that each item was a unique recommendation published before its event.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do historical results guarantee future outcomes?</h3>
+          <p>No. Past results do not guarantee future outcomes. The historical archive includes mixed records and documented timing and price limitations. Use it as research context, preserve its counting units, and avoid treating a descriptive outcome record as proof of profit.</p>
         </div>
           </div>
         </section>
@@ -243,18 +261,18 @@ h3 { margin-bottom: 10px; font-size: 21px; }
       <aside class="related" aria-label="Related pages">
           <a href="/results/">Results</a>
           <a href="/track-record/">Track Record</a>
-          <a href="/data/index.json">Data Catalog</a>
-          <a href="/llms.txt">llms.txt</a>
+          <a href="/research/prospective-record/">Forward record</a>
+          <a href="/editorial-policy/">Editorial policy</a>
       </aside>
     </div>
 
     <div class="container">
       <section class="cta">
         <div>
-          <h2>Research today's props</h2>
-          <p>Use Propeller's public tools, results, and analyzer pages before making your own platform decisions.</p>
+          <h2>Read the record with its definitions</h2>
+          <p>Open the archive, identify its counting unit, and keep its limitations beside any result you quote.</p>
         </div>
-        <a class="button" href="https://app.propellerpicks.com/signup" rel="noopener">Get started</a>
+        <a class="button" href="/results/" rel="noopener">Inspect the archive’s definitions</a>
       </section>
     </div>
   </main>
