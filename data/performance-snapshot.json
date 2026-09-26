@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-25T15:26:00Z",
-  "latest_sample_game_date": "2026-09-24",
+  "generated_at": "2026-09-26T14:39:05Z",
+  "latest_sample_game_date": "2026-09-25",
   "canonical_report": "https://propellerpicks.com/results/",
   "historical_database": {
     "unit": "raw graded analysis rows",
-    "total": 3416896,
-    "wins": 2277514,
-    "losses": 1138564,
+    "total": 3432879,
+    "wins": 2288442,
+    "losses": 1143619,
     "pushes": 818,
     "historical_outcome_rate": 66.7,
     "rate_formula": "wins / (wins + losses); pushes excluded",
@@ -15,9 +15,9 @@
   },
   "deduplicated_public_ledger": {
     "unit": "prop-result entries after the current public API collapse rules",
-    "total": 439337,
-    "wins": 296679,
-    "losses": 142585,
+    "total": 441022,
+    "wins": 297811,
+    "losses": 143138,
     "pushes": 73,
     "historical_outcome_rate": 67.5,
     "rate_formula": "wins / (wins + losses); pushes excluded",
@@ -41,7 +41,7 @@
       "MLS"
     ],
     "top_raw_bucket": "MLB",
-    "top_raw_bucket_share": 92.5
+    "top_raw_bucket_share": 92.6
   },
   "raw_sport_buckets": [
     {
@@ -77,9 +77,9 @@
     {
       "key": "mlb",
       "label": "MLB",
-      "total": 3161197,
-      "wins": 2129526,
-      "losses": 1031579,
+      "total": 3177180,
+      "wins": 2140454,
+      "losses": 1036634,
       "pushes": 92,
       "win_rate": 67.4,
       "published": true
@@ -113,9 +113,9 @@
       "min": 75,
       "max": null,
       "all": {
-        "total": 223250,
-        "wins": 198716,
-        "losses": 24524,
+        "total": 225525,
+        "wins": 200787,
+        "losses": 24728,
         "pushes": 10,
         "win_rate": 89.0
       },
@@ -127,9 +127,9 @@
         "win_rate": 63.8
       },
       "under": {
-        "total": 220880,
-        "wins": 197203,
-        "losses": 23667,
+        "total": 223155,
+        "wins": 199274,
+        "losses": 23871,
         "pushes": 10,
         "win_rate": 89.3
       }
@@ -141,23 +141,23 @@
       "min": 65,
       "max": 74,
       "all": {
-        "total": 979937,
-        "wins": 766829,
-        "losses": 213086,
+        "total": 984563,
+        "wins": 770485,
+        "losses": 214056,
         "pushes": 22,
         "win_rate": 78.3
       },
       "over": {
-        "total": 27043,
-        "wins": 16913,
-        "losses": 10130,
+        "total": 27177,
+        "wins": 16990,
+        "losses": 10187,
         "pushes": 0,
         "win_rate": 62.5
       },
       "under": {
-        "total": 952894,
-        "wins": 749916,
-        "losses": 202956,
+        "total": 957386,
+        "wins": 753495,
+        "losses": 203869,
         "pushes": 22,
         "win_rate": 78.7
       }
@@ -169,23 +169,23 @@
       "min": 55,
       "max": 64,
       "all": {
-        "total": 1460664,
-        "wins": 916962,
-        "losses": 543405,
+        "total": 1466694,
+        "wins": 920524,
+        "losses": 545873,
         "pushes": 297,
         "win_rate": 62.8
       },
       "over": {
-        "total": 304821,
-        "wins": 170492,
-        "losses": 134269,
+        "total": 306672,
+        "wins": 171577,
+        "losses": 135035,
         "pushes": 60,
-        "win_rate": 55.9
+        "win_rate": 56.0
       },
       "under": {
-        "total": 1155843,
-        "wins": 746470,
-        "losses": 409136,
+        "total": 1160022,
+        "wins": 748947,
+        "losses": 410838,
         "pushes": 237,
         "win_rate": 64.6
       }
@@ -197,23 +197,23 @@
       "min": null,
       "max": 54,
       "all": {
-        "total": 753045,
-        "wins": 395007,
-        "losses": 357549,
+        "total": 756097,
+        "wins": 396646,
+        "losses": 358962,
         "pushes": 489,
         "win_rate": 52.5
       },
       "over": {
-        "total": 335495,
-        "wins": 164049,
-        "losses": 171058,
+        "total": 337168,
+        "wins": 164989,
+        "losses": 171791,
         "pushes": 388,
         "win_rate": 49.0
       },
       "under": {
-        "total": 417550,
-        "wins": 230958,
-        "losses": 186491,
+        "total": 418929,
+        "wins": 231657,
+        "losses": 187171,
         "pushes": 101,
         "win_rate": 55.3
       }
@@ -221,9 +221,9 @@
   ],
   "recent_ledger_sample": [
     {
-      "result_id": "pr_d5118c8df6c4e56adacd",
+      "result_id": "pr_4825ac8af3a5ec4e4184",
       "sport": "mlb",
-      "player_name": "Justin Crawford",
+      "player_name": "Jake Burger",
       "stat_type": "stolen_bases",
       "line": 0.5,
       "predicted_direction": "UNDER",
@@ -231,25 +231,11 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-09-24",
+      "game_date": "2026-09-25",
       "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_4df18f8a3b6f7df7c901",
-      "sport": "mlb",
-      "player_name": "Masyn Winn",
-      "stat_type": "stolen_bases",
-      "line": 0.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "win",
-      "actual_value": 0.0,
-      "game_date": "2026-09-24",
-      "bookmaker": "draftkings"
-    },
-    {
-      "result_id": "pr_bb95bba2e5869f9486f6",
+      "result_id": "pr_9584511e8e5501a0516b",
       "sport": "mlb",
       "player_name": "Joey Ortiz",
       "stat_type": "stolen_bases",
@@ -259,13 +245,13 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-09-24",
+      "game_date": "2026-09-25",
       "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_f52d96a9f0508aa9571a",
+      "result_id": "pr_02842248af545c4e0dc2",
       "sport": "mlb",
-      "player_name": "J.T. Realmuto",
+      "player_name": "Heliot Ramos",
       "stat_type": "stolen_bases",
       "line": 0.5,
       "predicted_direction": "UNDER",
@@ -273,41 +259,13 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-09-24",
-      "bookmaker": "draftkings"
+      "game_date": "2026-09-25",
+      "bookmaker": "draftkings_pick6"
     },
     {
-      "result_id": "pr_268ca4552951d80d5355",
+      "result_id": "pr_2faf82d12f92921b0051",
       "sport": "mlb",
-      "player_name": "Kyle Isbel",
-      "stat_type": "stolen_bases",
-      "line": 0.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "win",
-      "actual_value": 0.0,
-      "game_date": "2026-09-24",
-      "bookmaker": "betmgm"
-    },
-    {
-      "result_id": "pr_2938ca3e9d2c2936d0d3",
-      "sport": "mlb",
-      "player_name": "Marcus Semien",
-      "stat_type": "stolen_bases",
-      "line": 0.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "win",
-      "actual_value": 0.0,
-      "game_date": "2026-09-24",
-      "bookmaker": "betmgm"
-    },
-    {
-      "result_id": "pr_4e6a2eb53d5ff04281f5",
-      "sport": "mlb",
-      "player_name": "Isaac Collins",
+      "player_name": "Jacob Young",
       "stat_type": "home_runs",
       "line": 0.5,
       "predicted_direction": "UNDER",
@@ -315,13 +273,13 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-09-24",
+      "game_date": "2026-09-25",
       "bookmaker": "draftkings_pick6"
     },
     {
-      "result_id": "pr_81ced488bfced38e7291",
+      "result_id": "pr_6a6ccc8a6f2b5864b2d6",
       "sport": "mlb",
-      "player_name": "Jo Adell",
+      "player_name": "Jeremiah Jackson",
       "stat_type": "stolen_bases",
       "line": 0.5,
       "predicted_direction": "UNDER",
@@ -329,11 +287,81 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-09-24",
+      "game_date": "2026-09-25",
+      "bookmaker": "draftkings_pick6"
+    },
+    {
+      "result_id": "pr_1d9f251c31a2104b9a39",
+      "sport": "mlb",
+      "player_name": "JJ Bleday",
+      "stat_type": "stolen_bases",
+      "line": 0.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 0.0,
+      "game_date": "2026-09-25",
+      "bookmaker": "draftkings"
+    },
+    {
+      "result_id": "pr_9e2a8d951e844c44ce9d",
+      "sport": "mlb",
+      "player_name": "Evan Carter",
+      "stat_type": "doubles",
+      "line": 0.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 0.0,
+      "game_date": "2026-09-25",
       "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_469ef4c7ada3da1d4042",
+      "result_id": "pr_2a95d77c02ebcce4a954",
+      "sport": "mlb",
+      "player_name": "Hao-Yu Lee",
+      "stat_type": "stolen_bases",
+      "line": 0.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "loss",
+      "actual_value": 1.0,
+      "game_date": "2026-09-25",
+      "bookmaker": "draftkings_pick6"
+    },
+    {
+      "result_id": "pr_294c7b444c32f9817ea1",
+      "sport": "mlb",
+      "player_name": "Hunter Goodman",
+      "stat_type": "stolen_bases",
+      "line": 0.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 0.0,
+      "game_date": "2026-09-25",
+      "bookmaker": "draftkings_pick6"
+    },
+    {
+      "result_id": "pr_7dbf629ede202f73b875",
+      "sport": "mlb",
+      "player_name": "Austin Riley",
+      "stat_type": "stolen_bases",
+      "line": 0.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 0.0,
+      "game_date": "2026-09-25",
+      "bookmaker": "betmgm"
+    },
+    {
+      "result_id": "pr_6460b25559b047f45f13",
       "sport": "mlb",
       "player_name": "Deyvison De Los Santos",
       "stat_type": "rbis",
@@ -343,13 +371,13 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-09-24",
+      "game_date": "2026-09-25",
       "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_0d62bcc39b3f302ad54d",
+      "result_id": "pr_ed5d056d72cbbb88429d",
       "sport": "mlb",
-      "player_name": "Francisco Lindor",
+      "player_name": "Danny Jansen",
       "stat_type": "stolen_bases",
       "line": 0.5,
       "predicted_direction": "UNDER",
@@ -357,67 +385,25 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-09-24",
+      "game_date": "2026-09-25",
+      "bookmaker": "draftkings_pick6"
+    },
+    {
+      "result_id": "pr_c601fdc28c0ee410bfdc",
+      "sport": "mlb",
+      "player_name": "Christian Yelich",
+      "stat_type": "stolen_bases",
+      "line": 0.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 0.0,
+      "game_date": "2026-09-25",
       "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_b616879343b230c9d977",
-      "sport": "mlb",
-      "player_name": "Ian Happ",
-      "stat_type": "stolen_bases",
-      "line": 0.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "win",
-      "actual_value": 0.0,
-      "game_date": "2026-09-24",
-      "bookmaker": "draftkings"
-    },
-    {
-      "result_id": "pr_f1a76650c31137ae3287",
-      "sport": "mlb",
-      "player_name": "Ketel Marte",
-      "stat_type": "stolen_bases",
-      "line": 0.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "win",
-      "actual_value": 0.0,
-      "game_date": "2026-09-24",
-      "bookmaker": "betmgm"
-    },
-    {
-      "result_id": "pr_e0290b73d78c5cd42bfb",
-      "sport": "mlb",
-      "player_name": "Agustín Ramírez",
-      "stat_type": "stolen_bases",
-      "line": 0.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "win",
-      "actual_value": 0.0,
-      "game_date": "2026-09-24",
-      "bookmaker": "betmgm"
-    },
-    {
-      "result_id": "pr_008b19d44142bd85d92f",
-      "sport": "mlb",
-      "player_name": "Luis Arraez",
-      "stat_type": "stolen_bases",
-      "line": 0.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 20.0,
-      "confidence_pct": 80.0,
-      "result": "win",
-      "actual_value": 0.0,
-      "game_date": "2026-09-24",
-      "bookmaker": "draftkings"
-    },
-    {
-      "result_id": "pr_d9d2cf84f15610811cfc",
+      "result_id": "pr_ec32b06cab9cb3a354a6",
       "sport": "mlb",
       "player_name": "Brandon Marsh",
       "stat_type": "stolen_bases",
@@ -427,27 +413,27 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-09-24",
+      "game_date": "2026-09-25",
       "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_4f679a0440d0abe5271a",
+      "result_id": "pr_28e206668f7ca7f85e3d",
       "sport": "mlb",
-      "player_name": "Griffin Conine",
-      "stat_type": "stolen_bases",
+      "player_name": "Brandon Nimmo",
+      "stat_type": "home_runs",
       "line": 0.5,
       "predicted_direction": "UNDER",
       "predicted_score": 20.0,
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-09-24",
+      "game_date": "2026-09-25",
       "bookmaker": "draftkings_pick6"
     },
     {
-      "result_id": "pr_5bb44baabfcafb9987fe",
+      "result_id": "pr_c8c176f20823ffb3621c",
       "sport": "mlb",
-      "player_name": "JJ Wetherholt",
+      "player_name": "Bryan Reynolds",
       "stat_type": "stolen_bases",
       "line": 0.5,
       "predicted_direction": "UNDER",
@@ -455,13 +441,13 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-09-24",
-      "bookmaker": "draftkings"
+      "game_date": "2026-09-25",
+      "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_19948096dae9ceefdf83",
+      "result_id": "pr_b879cfee45b2523db651",
       "sport": "mlb",
-      "player_name": "Bryce Harper",
+      "player_name": "Francisco Lindor",
       "stat_type": "stolen_bases",
       "line": 0.5,
       "predicted_direction": "UNDER",
@@ -469,13 +455,13 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-09-24",
-      "bookmaker": "draftkings"
+      "game_date": "2026-09-25",
+      "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_ad67895b046b81eb9b90",
+      "result_id": "pr_8eabd2d037ca9fa88e42",
       "sport": "mlb",
-      "player_name": "Bryan De La Cruz",
+      "player_name": "Gunnar Henderson",
       "stat_type": "stolen_bases",
       "line": 0.5,
       "predicted_direction": "UNDER",
@@ -483,13 +469,13 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-09-24",
-      "bookmaker": "draftkings"
+      "game_date": "2026-09-25",
+      "bookmaker": "draftkings_pick6"
     },
     {
-      "result_id": "pr_9f195099e8fddecc7c87",
+      "result_id": "pr_549985c427e9a37c123e",
       "sport": "mlb",
-      "player_name": "Nathan Church",
+      "player_name": "Brandon Nimmo",
       "stat_type": "stolen_bases",
       "line": 0.5,
       "predicted_direction": "UNDER",
@@ -497,8 +483,22 @@
       "confidence_pct": 80.0,
       "result": "win",
       "actual_value": 0.0,
-      "game_date": "2026-09-24",
-      "bookmaker": "draftkings"
+      "game_date": "2026-09-25",
+      "bookmaker": "betmgm"
+    },
+    {
+      "result_id": "pr_0a0005384d94a63a9c9c",
+      "sport": "mlb",
+      "player_name": "Jorbit Vivas",
+      "stat_type": "home_runs",
+      "line": 0.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 20.0,
+      "confidence_pct": 80.0,
+      "result": "win",
+      "actual_value": 0.0,
+      "game_date": "2026-09-25",
+      "bookmaker": "draftkings_pick6"
     }
   ],
   "definitions": {
