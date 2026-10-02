@@ -65,21 +65,26 @@
   "access": {
     "global_cta": "See pricing",
     "public_analyzer": "Free to use without an account.",
-    "existing_free_access": "Existing free accounts keep their access unless they choose a paid plan.",
+    "existing_free_access": "Existing free accounts keep their access.",
     "founder_500_offer": "Existing Founder 500 lifetime core entitlements remain honored.",
-    "availability_note": "The new subscriber offer starts September 29, 2026 at 3:00 p.m. America/Chicago. Checkout availability and eligibility are decided by the app.",
+    "availability_note": "Free lifetime core access is currently available while Founder 500 launch spots remain. No payment card is required. A paid subscription offer has not launched.",
     "pricing_url": "https://propellerpicks.com/pricing/",
     "signup_url": "https://app.propellerpicks.com/signup",
     "subscription_offer": {
-      "offer_id": "monthly-2026-09-29",
-      "starts_at": "2026-09-29T20:00:00Z",
-      "timezone": "America/Chicago",
+      "offer_id": "monthly-rally-15",
+      "status": "not_launched",
+      "status_verified_on": "2026-10-01",
       "currency": "USD",
-      "monthly_price": "9.99",
-      "trial_days": 14,
-      "card_required": true,
-      "annual_plan": false,
-      "checkout_authority": "The app verifies offer phase and eligibility before starting Checkout."
+      "monthly_price": "15.00",
+      "billing_period": "month",
+      "included_products": [
+        "Propeller Picks",
+        "Rally"
+      ],
+      "launch_date": null,
+      "trial_days": null,
+      "card_required": null,
+      "checkout_authority": "The configured offer is inactive. The app must not start paid Checkout while status is not_launched."
     }
   },
   "payout_calculators": {

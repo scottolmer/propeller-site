@@ -231,6 +231,15 @@ input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
 .copy-btn:hover { border-color: var(--accent); color: var(--text-1); }
 .result-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
 .result-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 16px; border: 1px solid var(--border-accent); border-radius: 10px; color: var(--text-1); font-size: 14px; font-weight: 700; }
+.trial-invite { margin-top: 22px; padding: 22px; border: 1px solid var(--border-accent); border-radius: 16px; background: linear-gradient(135deg, rgba(249,115,22,.12), rgba(249,115,22,.03)); text-align: left; }
+.trial-invite__eyebrow { margin-bottom: 6px; color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+.trial-invite h3 { margin-bottom: 7px; font-size: clamp(18px,3vw,22px); }
+.trial-invite p { margin: 0; color: var(--text-2); font-size: 14px; line-height: 1.65; }
+.trial-invite__actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-top: 16px; }
+.trial-invite__primary { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 11px 18px; border-radius: 10px; background: var(--accent); color: #111; font-weight: 800; }
+.trial-invite__primary:hover { color: #111; opacity: .92; }
+.trial-invite__secondary { color: var(--text-1); font-size: 14px; font-weight: 700; }
+.trial-invite--static { margin: -24px 0 48px; }
 .result-link:hover, .result-link:focus-visible { border-color: var(--accent); color: var(--accent); opacity: 1; }
 .result-link:focus-visible, .source-note a:focus-visible { outline: 3px solid rgba(249,115,22,0.35); outline-offset: 3px; }
 
@@ -252,6 +261,8 @@ input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
   .answer-grid { grid-template-columns: 1fr; }
   .result-actions { align-items: stretch; }
   .result-link { width: 100%; }
+  .trial-invite__actions { align-items: stretch; flex-direction: column; }
+  .trial-invite__primary, .trial-invite__secondary { width: 100%; text-align: center; }
 }
 
 /* Payout Table */
@@ -394,8 +405,16 @@ footer a:hover { color: var(--text-2); }
       <div class="result-actions" aria-label="Next research steps">
         <a class="result-link" href="/picks/prizepicks/" data-cta-id="calculator-prizepicks-result-research" data-cta-surface="calculator_result">Review PrizePicks research</a>
         <a class="result-link" href="/analyzer/" data-cta-id="calculator-prizepicks-result-analyzer" data-cta-surface="calculator_result">Free AI player prop analyzer</a>
-        <a class="result-link" href="https://app.propellerpicks.com/signup" data-cta-id="calculator-prizepicks-result-signup" data-cta-surface="calculator_result">Continue your research free</a>
       </div>
+      <aside class="trial-invite" aria-label="Propeller Picks free account">
+        <p class="trial-invite__eyebrow">Take the next research step</p>
+        <h3>Get lifetime-free core access to the full research workspace.</h3>
+        <p>Launch spots remain. Save your research and put this payout math beside confidence, line value, movement, and supporting context. No card is required. This public calculator stays free and separate.</p>
+        <div class="trial-invite__actions">
+          <a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-prizepicks-result-signup" data-cta-surface="calculator_result" data-cta-destination="signup">Get lifetime-free access</a>
+          <a class="trial-invite__secondary" href="/analyzer/">Keep using the free analyzer</a>
+        </div>
+      </aside>
       <div style="margin-top:16px;text-align:center;">
         <button type="button" class="copy-btn" onclick="copyResults()">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
@@ -404,6 +423,16 @@ footer a:hover { color: var(--text-2); }
       </div>
     </div>
   </div>
+
+  <aside class="trial-invite trial-invite--static" aria-label="Propeller Picks free account">
+    <p class="trial-invite__eyebrow">Beyond payout math</p>
+    <h3>Research the props behind the entry with lifetime-free core access.</h3>
+    <p>Launch spots remain. Create an account to save your research and use the full workspace. No card is required. This calculator remains free.</p>
+    <div class="trial-invite__actions">
+      <a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-prizepicks-static-signup" data-cta-surface="calculator_static" data-cta-destination="signup">Get lifetime-free access</a>
+      <a class="trial-invite__secondary" href="/picks/prizepicks/">Review PrizePicks research</a>
+    </div>
+  </aside>
 
   <section class="answer-block" aria-labelledby="calculator-answer-heading">
     <h2 id="calculator-answer-heading">How this PrizePicks payout calculator works</h2>

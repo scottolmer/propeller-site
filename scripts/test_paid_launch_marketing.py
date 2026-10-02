@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Static contract checks for the future-dated paid marketing launch."""
+"""Static contract checks for lifetime-free access before a paid launch."""
 
 from __future__ import annotations
 
@@ -19,17 +19,15 @@ def main() -> int:
     terms = (ROOT / "terms" / "index.html").read_text(encoding="utf-8")
     deletion = (ROOT / "delete-account" / "index.html").read_text(encoding="utf-8")
 
-    expected = {"offer_id": "monthly-2026-09-29", "starts_at": "2026-09-29T20:00:00Z", "timezone": "America/Chicago", "currency": "USD", "monthly_price": "9.99", "trial_days": 14, "card_required": True, "annual_plan": False}
+    expected = {"offer_id": "monthly-rally-15", "status": "not_launched", "status_verified_on": "2026-10-01", "currency": "USD", "monthly_price": "15.00", "billing_period": "month", "included_products": ["Propeller Picks", "Rally"], "launch_date": None, "trial_days": None, "card_required": None}
     for key, value in expected.items():
         if offer.get(key) != value:
             errors.append(f"offer {key} drifted: {offer.get(key)!r}")
-    for phrase in ("September 29, 2026", "14 days", "$9.99", "payment card", "renews monthly", "Existing free accounts keep their access unless they choose a paid plan.", "Founder 500 lifetime core entitlements remain honored."):
+    for phrase in ("Create a free account", "Lifetime-free access. No card required.", "Free lifetime core access is currently available while Founder 500 launch spots remain.", "Existing free accounts keep their access.", "Existing Founder 500 lifetime core entitlements remain honored.", "Planned · Not launched", "$15", "Propeller Picks + Rally"):
         if phrase not in pricing:
             errors.append(f"pricing missing {phrase!r}")
-    if "annual" in pricing.lower() and "No annual plan is offered." not in pricing:
-        errors.append("pricing must state that no annual plan is offered")
     for source_name, source in (("terms", terms), ("delete account", deletion)):
-        for phrase in ("14-day trial", "$9.99", "Existing free accounts keep their access unless they choose a paid plan."):
+        for phrase in ("lifetime", "No payment card is required", "Existing free accounts keep their access."):
             if phrase not in source:
                 errors.append(f"{source_name} missing {phrase!r}")
     for phrase in ('https://propellerpicks.com/pricing/">Pricing', 'mailto:support@propellerpicks.com">Support', 'site-nav-pricing'):
@@ -39,7 +37,7 @@ def main() -> int:
         if any(part in {".git", "docs", "reports", "mockups", "analytics-dashboard"} for part in path.relative_to(ROOT).parts):
             continue
         source = path.read_text(encoding="utf-8")
-        for forbidden in ('href="/#pricing"', "Start Free Trial", "Get Free Access", "Get Free Lifetime Access"):
+        for forbidden in ('href="/#pricing"', "Start Free Trial", "Start 14-day free trial", "Card required. Then $9.99/month unless canceled.", "Launch Propeller Free"):
             if forbidden.casefold() in source.casefold():
                 errors.append(f"{path.relative_to(ROOT)} retains {forbidden!r}")
                 break

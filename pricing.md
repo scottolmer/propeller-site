@@ -1,13 +1,17 @@
 # Propeller Picks Pricing
 
-Last verified: 2026-09-15
+Last verified: 2026-10-01
 Canonical signup: https://app.propellerpicks.com/signup
 
-## Current Public Offer
+## Current Public Access
 
-The subscriber offer starts September 29, 2026 at 3:00 p.m. America/Chicago: 14 days free, then $9.99 USD per month. A payment card is required to begin the trial, and the subscription renews monthly unless canceled. Checkout availability and eligibility are decided in the app.
+Free lifetime core access is currently available while Founder 500 launch spots remain. No payment card is required. A paid subscription offer has not launched, and no paid start date is announced.
 
-Existing free accounts keep their access unless they choose a paid plan. Existing Founder 500 lifetime core entitlements remain honored. Public tools and research previews remain free where offered.
+Existing free accounts keep their access. Existing Founder 500 lifetime core entitlements remain honored. Public tools and research previews remain free where offered. The site does not publish a remaining-spots count; availability is decided at signup.
+
+## Planned Paid Tier
+
+A planned paid tier is $15 USD per month and includes Propeller Picks and Rally. It has not launched, has no announced launch date, and does not change current lifetime-free access. Rally's inclusion describes the planned product bundle; it does not claim that Rally is integrated or available inside Propeller Picks today.
 
 Included core access:
 
