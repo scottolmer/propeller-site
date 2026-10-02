@@ -442,24 +442,113 @@ PAGES = [
         ],
         "related": ["/how-it-works/", "/analyzer/", "/guides/how-to-analyze-player-props/", "/track-record/"],
     },
-    {
-        "slug": "how-do-i-use-propeller-for-nba-pra-props",
-        "title": "How Do I Use Propeller for NBA PRA Props?",
-        "description": "How to use Propeller when evaluating NBA points + rebounds + assists props.",
-        "h1": "How do I use Propeller for NBA PRA props?",
-        "summary": "To use Propeller for NBA PRA props, start with the listed PRA line, check the confidence direction, then review minutes, usage, matchup, injury cascade, pace, and role context. PRA combines points, rebounds, and assists, so role stability matters more than one isolated box-score trend.",
-        "sections": [
-            ("What PRA Means", "PRA stands for points plus rebounds plus assists. It is a combined stat prop that rewards all-around involvement instead of one single stat category."),
-            ("What To Check First", "Start with expected minutes and usage. A player with stable minutes, ball-handling duties, and rebounding opportunity has more paths to clear a PRA line."),
-            ("Where Propeller Helps", "Propeller helps surface whether multiple signals agree on the same direction, which is useful for combined-stat props that can hit in several ways."),
-        ],
-        "faqs": [
-            ("How do I use Propeller for NBA PRA props?", "Use Propeller by checking the PRA line, confidence direction, expected minutes, usage, injury cascade, pace, and matchup context before deciding whether the over or under has value."),
-            ("What is an NBA PRA prop?", "An NBA PRA prop combines a player's points, rebounds, and assists into one total. The pick wins if the combined total clears the listed line for the selected direction."),
-            ("What matters most for PRA props?", "Minutes, usage, role stability, matchup, pace, and injury-driven opportunity matter most because PRA can be reached through scoring, rebounding, or passing volume."),
-        ],
-        "related": ["/guides/nba-prop-betting/", "/picks/nba/", "/analyzer/", "/guides/how-to-analyze-player-props/"],
-    },
+    {'slug': 'how-do-i-use-propeller-for-nba-pra-props',
+ 'title': 'NBA PRA Props Explained: Points, Rebounds and Assists',
+     'html_title': 'NBA PRA Props Explained: Points, Rebounds and Assists | Propeller',
+ 'description': 'See how NBA PRA adds points, rebounds and assists. Three fictional box scores show why the same '
+                'total can call for different research.',
+ 'h1': 'NBA PRA props: add the stats, then inspect the role',
+ 'updated': '2026-10-02',
+ 'visual_system': 'replay-room',
+ 'body_class': 'pp-pra-page',
+     'author_role': 'Founder',
+ 'summary': 'PRA adds a player’s points, rebounds, and assists into one total. Compare that sum with the exact '
+            'listed line, then inspect which contributions produced it and whether the player’s next role '
+            'supports similar opportunities. More points alone need not mean more PRA. Propeller’s directional '
+            'confidence is research support, not a probability or guarantee.',
+ 'sections': [],
+ 'content_sections': [{'title': 'What does PRA add up?',
+                       'paragraphs': ['PRA means points + rebounds + assists for the same player and the relevant '
+                                      'game period. Name that period before comparing: a full-game total belongs '
+                                      'with a full-game line, not a quarter or half. Add the three numbers '
+                                      'without fantasy-scoring weights.',
+                                      'A PRA line is one combined total. The player does not need to beat '
+                                      'separate points, rebounds and assists lines. Those individual markets ask '
+                                      'different questions.']},
+                      {'title': 'Same PRA, different contributions',
+                       'id': 'pra-components-example',
+                       'paragraphs': [],
+                       'table': {'caption': 'Fictional full-game box scores; illustrative line 33.5 PRA.',
+                                 'headers': ['Example', 'Points', 'Reb', 'Ast', 'PRA'],
+                                 'rows': [['A', '24', '5', '5', '34'],
+                                          ['B', '14', '12', '8', '34'],
+                                          ['C', '25', '4', '3', '32']]},
+                       'after_paragraphs': ['Reb = rebounds; Ast = assists; PRA = points + rebounds + assists. A, '
+                                            'B and C are independent fictional illustrations, not consecutive '
+                                            'games, real players, predictions or recommended selections.',
+                                            'A: 24 + 5 + 5 = 34. B: 14 + 12 + 8 = 34. C: 25 + 4 + 3 = 32.',
+                                            'A and B reach the same 34 PRA with different contributions. B has '
+                                            'ten fewer points than A, but seven more rebounds and three more '
+                                            'assists. C has the most points, 25, yet the lowest PRA, 32. Compared '
+                                            'with A, C adds one point but loses three combined rebounds and '
+                                            'assists.',
+                                            'These rows establish the arithmetic only. They do not show which '
+                                            'profile is more repeatable, how often any total occurs, or which '
+                                            'direction to choose next.']},
+                      {'title': 'What should you research next?',
+                       'paragraphs': ['First, what is known about the player’s next playing time? Look for '
+                                      'evidence supporting expected minutes; the fictional totals provide none. A '
+                                      'past total cannot tell you whether the next opportunity will be similar.',
+                                      'Second, what supports each contribution separately? Inspect scoring '
+                                      'opportunities, ball-handling responsibilities and rebounding role. Treat '
+                                      'these as questions to verify, not facts supplied by the table. A role '
+                                      'change does not guarantee that one component rises or falls.',
+                                      'Third, which responsibility remains uncertain? Identify the missing '
+                                      'information before carrying a combined total forward. If the case depends '
+                                      'on a role you cannot establish, waiting or passing remains a reasonable '
+                                      'next step.'],
+                       'links': [('How to analyze player props', '/guides/how-to-analyze-player-props/')]},
+                      {'title': 'Above or below is arithmetic, not settlement',
+                       'paragraphs': ['More/Over compares the combined total above the exact line; Less/Under '
+                                      'compares it below, subject to the named platform’s applicable rules. '
+                                      'Against illustrative 33.5 PRA, A and B’s 34 are above and C’s 32 is below. '
+                                      'These labels do not describe settled entries or payouts.',
+                                      'Check the player, stat, period and exact line together. For a whole-number '
+                                      'tie, DNP, shortened game or period mismatch, consult the selected '
+                                      'platform’s rules. Do not infer those rules from this table.'],
+                       'links': [('Compare exact player-prop lines', '/guides/compare-player-prop-lines/'),
+                                 ('How Propeller grades picks', '/help/how-does-propeller-grade-picks/')]},
+                      {'title': 'Use Propeller’s direction without turning it into a probability',
+                       'paragraphs': ['Propeller shows a direction plus a 50–100 confidence score based on '
+                                      'available signals. A higher score means stronger support for the displayed '
+                                      'side. It is not a calibrated probability or a guarantee, and missing '
+                                      'coverage is not a promise that a score will appear.',
+                                      'In an AI-operated check on September 10, 2026, Propeller’s public NBA view '
+                                      'showed no current props and said older slate data was not being shown as '
+                                      'current. That dated observation does not establish availability today or '
+                                      'explain the missing rows. No live PRA card or component projection was '
+                                      'observed.',
+                                      'The practical distinction: you can learn PRA arithmetic without a current '
+                                      'market to inspect. When a PRA line is available, check its exact details '
+                                      'and the supporting role information. Otherwise, wait for that information '
+                                      'or pass.'],
+                       'links': [('How confidence scores work', '/help/how-do-confidence-scores-work/')]},
+                      {'title': 'Sources and scope',
+                       'paragraphs': ['Checked October 2, 2026: DraftKings’ NBA Pick6 “Available Pick Stats” '
+                                      'defines PRA as the combined points, rebounds and assists total. That '
+                                      'definition does not supply universal settlement rules. Propeller’s '
+                                      'product-facts confidence fields support the direction and 50–100 '
+                                      'explanation; this targeted check does not refresh unrelated product facts. '
+                                      'The availability observation above remains dated September 10.'],
+                       'links': [('Official NBA Pick6 stat definition',
+                                  'https://pick6.draftkings.com/pick6-rules-and-scoring-nba'),
+                                 ('Propeller product facts', '/data/product-facts.json')]}],
+ 'faqs': [('What does PRA mean?',
+           'PRA means points + rebounds + assists: add the player’s three totals for the relevant game period.'),
+          ('Do all three stats have to beat separate lines?',
+           'No. A PRA line is compared with the combined total, not three separate points, rebounds and assists '
+           'lines.'),
+          ('Does scoring more points always mean more PRA?',
+           'No. Fictional C scores 25 points but totals 32 PRA; A scores 24 points but totals 34 PRA because '
+           'rebounds and assists also count.'),
+          ('Does a higher confidence score guarantee the PRA result?',
+           'No. A higher score supports the displayed side more strongly. It is not a calibrated probability and '
+           'does not guarantee the result.')],
+ 'related': ['/guides/nba-prop-betting/'],
+ 'cta': {'heading': 'Choose your next research step',
+         'body': 'Inspect an available PRA line, wait for role information, or pass.',
+         'label': 'Inspect an available player line',
+         'href': '/analyzer/'}},
     {
         "slug": "does-propeller-show-no-vig-odds",
         "title": "Does Propeller Show No-Vig Odds?",
@@ -801,7 +890,7 @@ def page_schema(page: dict) -> tuple[dict, dict, dict]:
     return webpage, breadcrumb, faq
 
 
-def render_attribution(attribution: dict) -> str:
+def render_attribution(attribution: dict, author_role: str = "") -> str:
     """Render the same attribution record used by author meta and JSON-LD."""
     author = attribution["author"]
     author_name = esc(author["name"])
@@ -810,6 +899,8 @@ def render_attribution(attribution: dict) -> str:
         author_credit = f'By <a href="{author_url}">{author_name}</a>, designated author and editorial owner.'
     else:
         author_credit = f"Published by {author_name}."
+    if author_role and author["@type"] == "Person":
+        author_credit = f'By <a href="{author_url}">{author_name}</a>, {esc(author_role)}; designated author and editorial owner.'
     contributor_credit = ""
     if attribution["contributors"]:
         contributor_credit = " " + " ".join(
@@ -883,6 +974,21 @@ TABLE_CSS = """
 """
 
 
+PRA_CSS = """
+body.pp-site-system.pp-pra-page main .section-card { padding:24px; border:1px solid var(--pp-line); border-radius:14px; }
+body.pp-site-system.pp-pra-page main .section-card[id] { scroll-margin-top:112px; }
+body.pp-site-system.pp-pra-page main .answer-box { border-left-color:#54c8ff; }
+body.pp-site-system.pp-pra-page main .help-table { min-width:0!important; width:100%; font-size:15px!important; }
+body.pp-site-system.pp-pra-page main .help-table th, body.pp-site-system.pp-pra-page main .help-table td { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+body.pp-site-system.pp-pra-page main .help-table th:first-child { text-align:left; }
+body.pp-site-system.pp-pra-page main .table-scroll+p { margin-top:16px; }
+@media(max-width:600px) {
+ body.pp-site-system.pp-pra-page main .section-card { padding:20px 12px; }
+ body.pp-site-system.pp-pra-page main .help-table th, body.pp-site-system.pp-pra-page main .help-table td { padding:12px 5px; font-size:14px!important; }
+ body.pp-site-system.pp-pra-page main .help-table caption { font-size:14px; }
+}
+"""
+
 def render_content_section(section: dict) -> str:
     body = "".join(f"<p>{esc(text)}</p>" for text in section["paragraphs"])
     if section.get("table"):
@@ -895,9 +1001,11 @@ def render_content_section(section: dict) -> str:
             cells = f'<th scope="row">{esc(row[0])}</th>' + "".join(f"<td>{esc(cell)}</td>" for cell in row[1:])
             rows.append(f"<tr>{cells}</tr>")
         body += f'<div class="table-scroll" role="region" tabindex="0" aria-label="{esc(table["caption"])}. Scroll horizontally on small screens."><table class="help-table"><caption>{esc(table["caption"])}</caption><thead><tr>{headers}</tr></thead><tbody>{"".join(rows)}</tbody></table></div>'
+    body += "".join(f"<p>{esc(text)}</p>" for text in section.get("after_paragraphs", []))
     if section.get("links"):
         body += '<div class="section-links">' + "".join(f'<a href="{esc(path)}">{esc(label)}</a>' for label, path in section["links"]) + '</div>'
-    return f'<section class="section-card"><h2>{esc(section["title"])}</h2>{body}</section>'
+    section_id = f' id="{esc(section["id"])}"' if section.get("id") else ""
+    return f'<section class="section-card"{section_id}><h2>{esc(section["title"])}</h2>{body}</section>'
 
 
 def render_page(page: dict) -> str:
@@ -947,7 +1055,7 @@ def render_page(page: dict) -> str:
   gtag('js', new Date());
   gtag('config', 'G-NLXM4C2G7D');
 </script>
-<title>{esc(page['title'])} | Propeller Help</title>
+<title>{esc(page.get('html_title', page['title'] + ' | Propeller Help'))}</title>
 <meta name="description" content="{esc(page['description'])}">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="{url}">
@@ -977,7 +1085,7 @@ def render_page(page: dict) -> str:
 <script type="application/ld+json">
 {json_ld(faq)}
 </script>
-<style>{BASE_CSS}{ATTRIBUTION_CSS}{TABLE_CSS if page.get("content_sections") else ""}</style>
+<style>{BASE_CSS}{ATTRIBUTION_CSS}{TABLE_CSS if page.get("content_sections") else ""}{PRA_CSS if page.get("body_class") == "pp-pra-page" else ""}</style>
 </head>
 <body{chr(32) + chr(99) + 'lass="pp-replay-room pp-wave-a-page pp-coverage-page' + (' ' + esc(page['body_class']) if page.get('body_class') else '') + '"' if page.get("visual_system") == "replay-room" else ""}>
 <div class="page">
@@ -1001,7 +1109,7 @@ def render_page(page: dict) -> str:
         <h1>{esc(page['h1'])}</h1>
 {f'        <p class="summary">{esc(page["summary"])}</p>' if not page.get("content_sections") else ""}
         <p class="updated">Last updated: {updated}</p>
-        {render_attribution(attribution)}
+        {render_attribution(attribution, page.get("author_role", ""))}
         <div class="answer-box"><p><strong>Direct answer:</strong> {esc(page['summary'])}</p></div>{evidence}
       </div>
     </header>
