@@ -62,12 +62,47 @@ class HelpTableTests(unittest.TestCase):
                 self.assertIn('width="1200" height="630"', grading)
                 self.assertIn('Read the record with its definitions', grading)
                 continue
+            if other['slug'] == 'how-do-i-use-propeller-for-nba-pra-props':
+                pra = help_pages.render_page(other)
+                self.assertEqual(pra.count('<table '), 1)
+                self.assertEqual(pra.count('scope="row"'), 3)
+                self.assertIn('id="pra-components-example"', pra)
+                self.assertIn('pp-pra-page', pra)
+                self.assertNotIn('class="summary"', pra)
+                self.assertIn('>Inspect an available player line</a>', pra)
+                continue
             if other is page:
                 continue
             output = help_pages.render_page(other)
             self.assertNotIn('.table-scroll', output)
             self.assertIn('class="summary"', output)
             self.assertIn('>Get started</a>', output)
+
+    def test_pra_example_keeps_combined_arithmetic_and_faq_parity(self):
+        page = next(p for p in help_pages.PAGES if p['slug'] == 'how-do-i-use-propeller-for-nba-pra-props')
+        example = next(s for s in page['content_sections'] if s.get('id') == 'pra-components-example')
+        self.assertEqual(example['table']['rows'], [['A','24','5','5','34'], ['B','14','12','8','34'], ['C','25','4','3','32']])
+        for label, points, rebounds, assists, total in example['table']['rows']:
+            self.assertEqual(sum(map(int, (points, rebounds, assists))), int(total))
+        output = help_pages.render_page(page)
+        schema = help_pages.page_schema(page)[2]['mainEntity']
+        self.assertEqual(len(schema), 4)
+        for (question, answer), entity in zip(page['faqs'], schema):
+            self.assertEqual(entity['name'], question)
+            self.assertEqual(entity['acceptedAnswer']['text'], answer)
+            self.assertIn('<h3>' + help_pages.esc(question) + '</h3>', output)
+            self.assertIn('<p>' + help_pages.esc(answer) + '</p>', output)
+        self.assertIn('33.5 PRA', output)
+        self.assertIn('scroll-margin-top:112px', output)
+        self.assertNotIn('reviewedBy', output)
+        self.assertNotIn('more paths to clear', output)
+
+    def test_optional_section_id_and_after_paragraph_are_escaped(self):
+        output = help_pages.render_content_section({'title':'Safe', 'id':'x" onclick="bad',
+            'paragraphs':[], 'after_paragraphs':['<script>bad</script>']})
+        self.assertIn('id="x&quot; onclick=&quot;bad"', output)
+        self.assertNotIn('<script>', output)
+        self.assertIn('&lt;script&gt;', output)
 
     def test_optional_media_and_cta_escape_text_and_preserve_defaults(self):
         page = copy.deepcopy(help_pages.PAGES[0])
