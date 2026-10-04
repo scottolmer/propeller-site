@@ -16,39 +16,9 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "bd7725182eece7ee1a83570a8a9e5add07497245ee7c5ba3a7c137d08d70ba2c",
+      "fingerprint": "7b96c4e27dbe2be6963614e209e602ff4b57d5467e57c8a5a169bb0ce0396800",
       "lastmod": "2026-10-04",
       "source": "analyzer/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/brady-tkachuk/": {
-      "fingerprint": "375afa6deb2b6af37e95a3b9b06539945256e555f3f8a723d51c9482f93143bc",
-      "lastmod": "2026-10-04",
-      "source": "analyzer/nhl/brady-tkachuk/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/clayton-keller/": {
-      "fingerprint": "a12e71d58d8cd2527de8ca1c19ec1fa06c1a1ffacf837691520de786f5c158a7",
-      "lastmod": "2026-10-04",
-      "source": "analyzer/nhl/clayton-keller/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/dylan-guenther/": {
-      "fingerprint": "0abb316fa6a2701063d04caf99abdd0bda98513e0f83b4af6c65db50882e036e",
-      "lastmod": "2026-10-04",
-      "source": "analyzer/nhl/dylan-guenther/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/logan-cooley/": {
-      "fingerprint": "b166a8136a8c468e8ed35be12cbd64a9bea7a8b89ccbb368b0430307a1501eda",
-      "lastmod": "2026-10-04",
-      "source": "analyzer/nhl/logan-cooley/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/nick-schmaltz/": {
-      "fingerprint": "37fb68ef400608f319cceda9fc945db404d1de9467166e581a556f53abf90d1c",
-      "lastmod": "2026-10-04",
-      "source": "analyzer/nhl/nick-schmaltz/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/ryan-poehling/": {
-      "fingerprint": "b4103c55e83d1d2ce817a0bb0815505f733da5fe958f08c81d1ef8f63cac7b45",
-      "lastmod": "2026-10-04",
-      "source": "analyzer/nhl/ryan-poehling/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "b912ed732cf95c624b95bee855d129665686506a97438870e6163a22cdb69c3e",
@@ -291,7 +261,7 @@
       "source": "picks/nfl/index.html"
     },
     "https://propellerpicks.com/picks/nhl/": {
-      "fingerprint": "6043600657e260c2522ecf1a724edf03f691ae242f04d2a9b4fb352e96c1697e",
+      "fingerprint": "f57ab8d793c83e085d701fc6e9f501b79cad166ee505983416d96ae5d27cd82a",
       "lastmod": "2026-10-04",
       "source": "picks/nhl/index.html"
     },
