@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-05T15:08:32Z",
+  "generated_at": "2026-10-05T15:18:22Z",
   "publication_definition": "First observed in the Propeller public picks preview. Event-start ordering and outcome timing are not verified because the public preview does not expose event start time.",
   "before_event_start_verified": false,
   "records": [
@@ -235925,6 +235925,23 @@
       "direction": "UNDER",
       "model_score": 39.8,
       "confidence": 60,
+      "status": "open",
+      "settled_at": null,
+      "actual_value": null,
+      "result_id": null
+    },
+    {
+      "publication_id": "pub_627bfabd2e6f8acb7e2f",
+      "published_at": "2026-10-05T15:18:20Z",
+      "captured_at": "2026-10-05T15:18:22Z",
+      "sport": "nfl",
+      "game_date": "2026-10-05",
+      "player_name": "Juwan Johnson",
+      "stat_type": "rec_yds",
+      "line": 44.5,
+      "direction": "OVER",
+      "model_score": 56.4,
+      "confidence": 56,
       "status": "open",
       "settled_at": null,
       "actual_value": null,
