@@ -4,10 +4,10 @@
   <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());</script>
   <title>Fantasy Projection Methodology & Limitations | Propeller</title>
-  <meta name="description" content="How Propeller creates MLB hitter fantasy projections, floors, and ceilings from market components and recent form—plus scoring, freshness, and limitations.">
+  <meta name="description" content="How Propeller builds MLB hitter fantasy projections and ranges, why the estimate can differ from the endpoint midpoint, and what the method cannot promise.">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large"><meta name="author" content="Scott Olmer"><link rel="canonical" href="https://propellerpicks.com/fantasy/methodology/">
-  <meta property="og:type" content="article"><meta property="og:url" content="https://propellerpicks.com/fantasy/methodology/"><meta property="og:title" content="Fantasy Projection Methodology & Limitations"><meta property="og:description" content="How Propeller estimates MLB hitter fantasy-point ranges."><meta property="og:image" content="https://propellerpicks.com/images/og-image.png"><meta property="og:site_name" content="Propeller Picks"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@propellerpicks">
-  <link rel="stylesheet" href="/assets/css/fantasy.css?v=20260717">
+  <meta property="og:type" content="article"><meta property="og:url" content="https://propellerpicks.com/fantasy/methodology/"><meta property="og:title" content="Fantasy Projection Methodology & Limitations"><meta property="og:description" content="How Propeller builds MLB hitter fantasy projections and ranges, why the estimate can differ from the endpoint midpoint, and what the method cannot promise."><meta property="og:image" content="https://propellerpicks.com/images/og-image.png"><meta property="og:site_name" content="Propeller Picks"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@propellerpicks">
+  <meta name="color-scheme" content="dark">
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -15,13 +15,14 @@
     {
       "@type": "Article",
       "headline": "Fantasy Projection Methodology and Limitations",
-      "description": "How Propeller creates MLB hitter fantasy projections and ranges.",
+      "description": "How Propeller builds MLB hitter fantasy projections and ranges, why the estimate can differ from the endpoint midpoint, and what the method cannot promise.",
       "url": "https://propellerpicks.com/fantasy/methodology/",
       "datePublished": "2026-07-17",
-      "dateModified": "2026-07-17",
+      "dateModified": "2026-10-05",
       "author": {
         "@type": "Person",
-        "name": "Scott Olmer"
+        "name": "Scott Olmer",
+        "url": "https://propellerpicks.com/about/"
       },
       "publisher": {
         "@type": "Organization",
@@ -74,6 +75,14 @@
         },
         {
           "@type": "Question",
+          "name": "Should I average the floor and ceiling to get the projection?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Use the supplied projection. Averaging the endpoints gives their midpoint, which can differ from the method's central estimate when the lower and upper distances are unequal."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Does Propeller publish fantasy projection accuracy?",
           "acceptedAnswer": {
             "@type": "Answer",
@@ -99,12 +108,14 @@
   <link rel="alternate icon" href="/favicon.ico">
   <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#f2efe8">
+  <meta name="theme-color" content="#031a2c">
   <link rel="stylesheet" href="/assets/css/site-system.css?v=20260712">
-  <link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">
+  <link rel="stylesheet" href="/assets/css/fantasy.css?v=20260717">
+  <link rel="stylesheet" href="/assets/css/fantasy-methodology.css?v=20261008">
+  <link rel="stylesheet" href="/assets/css/navigation-pages.css?v=20260918">
   <!-- PP_SITE_HEAD_END -->
 </head>
-<body class="pp-fantasy-page pp-site-system pp-family-core">
+<body class="pp-fantasy-page pp-site-system pp-family-core pp-nav-page pp-fantasy-methodology pp-nav-methodology">
 <!-- PP_SITE_NAV_START -->
 <nav class="pp-site-nav" aria-label="Primary navigation">
   <div class="pp-site-nav__inner">
@@ -131,7 +142,7 @@
 <!-- PP_SITE_NAV_END -->
   <a class="fp-skip" href="#main">Skip to content</a>
   <main id="main">
-    <section class="fp-hero"><div class="fp-wrap fp-hero__grid"><div><p class="fp-kicker">Method card · Fantasy v1</p><h1>How the estimate <em>earns its range.</em></h1><p class="fp-deck">A public account of what enters the MLB hitter projection, how floor and ceiling are formed, what freshness means, and where the method stops.</p><div class="fp-actions"><a class="fp-button" href="/fantasy/mlb/">Open the MLB board</a><a class="fp-button fp-button--ghost" href="/data/fantasy-methodology-version.json">View machine-readable version</a></div><div class="fp-meta"><span class="fp-byline">By Scott Olmer</span><span>Published July 17, 2026</span><span>Method version fantasy-mlb-hitter-v1</span></div></div><aside class="fp-range-card"><span class="fp-range-card__label">Method identity</span><div class="fp-range-card__player">Market + recent form</div><span class="fp-range-card__team">DraftKings MLB fantasy points</span><div class="fp-spine"><i></i></div><div class="fp-range-values"><span>Lower<b>P20</b></span><span>Center<b>EST</b></span><span>Upper<b>P80</b></span></div></aside></div></section>
+    <section class="fp-hero"><div class="fp-wrap fp-hero__grid"><div><p class="fp-kicker">Method card · Fantasy v1</p><h1>How the estimate <em>earns its range.</em></h1><p class="fp-deck">A public account of what enters the MLB hitter projection, how floor and ceiling are formed, what freshness means, and where the method stops.</p><div class="fp-actions"><a class="fp-button" href="/fantasy/mlb/">Inspect the current MLB fantasy board</a><a class="fp-button fp-button--ghost" href="/data/fantasy-methodology-version.json">View machine-readable version</a></div><div class="fp-meta"><span class="fp-byline">By <a href="/about/">Scott Olmer</a></span><span>Published July 17, 2026</span><span>Updated October 5, 2026</span><span>Method version fantasy-mlb-hitter-v1</span></div><p class="fp-disclosure">Produced through an automated AI workflow. Scott Olmer is the designated author; this byline does not imply personal drafting or human review. <a href="/editorial-policy/">Read our editorial policy</a>.</p></div><aside class="fp-range-card"><span class="fp-range-card__label">Method identity</span><div class="fp-range-card__player">Market + recent form</div><span class="fp-range-card__team">DraftKings MLB fantasy points</span><div class="fp-spine"><i></i></div><div class="fp-range-values"><span>Lower<b>P20</b></span><span>Center<b>EST</b></span><span>Upper<b>P80</b></span></div></aside></div></section>
 
     <section class="fp-section"><div class="fp-wrap"><div class="fp-section-head"><span class="fp-label">Direct answer</span><h2>How does Propeller project MLB fantasy points?</h2></div><p class="fp-direct">Propeller converts available current hitter-stat market components into DraftKings MLB fantasy points, then uses recent game form for scoring components without current market coverage. The central estimate is surrounded by a lower and upper range derived from recent outcome variation. The range expresses uncertainty; it does not guarantee coverage.</p></div></section>
 
@@ -146,16 +157,33 @@
       <article class="fp-card"><h3>The interval is deliberately wider</h3><p>A fixed 1.25 widening multiplier is applied to the recent-variation distances. This is intended to reduce false precision, but it is not a guarantee of nominal coverage.</p></article>
     </div><div class="fp-note" style="margin-top:24px">“P20/P80-style” describes how the historical distances are constructed. It does not mean exactly 60% of future scores will fall inside every published interval.</div></div></section>
 
+    <section class="fp-section" id="projection-midpoint"><div class="fp-wrap">
+      <div class="fp-section-head"><span class="fp-label">Reading the range</span><h2>Why isn't the projection halfway between floor and ceiling?</h2></div>
+      <p>Propeller's fantasy projection is the central estimate supplied by its method; it is not calculated by averaging the displayed floor and ceiling. The lower and upper ranges can extend different distances from that estimate. Read all three numbers together, and do not replace the projection with their midpoint or treat either endpoint as a guaranteed score.</p>
+      <p>In an AI-operated inspection of Propeller's public fantasy response on <strong>September 12, 2026</strong>, a Jackson Merrill row listed a <strong>7.1 floor, 11.5 projection and 32.1 ceiling</strong> in DraftKings MLB fantasy points. The response was labeled <strong>stale</strong>. We use that dated output only to examine how the three numbers relate, not as a current player recommendation.</p>
+      <dl class="fp-case-values"><div><dt>Floor</dt><dd>7.1</dd></div><div><dt>Supplied projection</dt><dd>11.5</dd></div><div><dt>Ceiling</dt><dd>32.1</dd></div></dl>
+      <figure class="fp-range-figure"><div class="fp-diagram-scroll" tabindex="0" role="region" aria-label="Proportional range diagram; scroll horizontally on small screens"><img src="/images/content/PP-20260922/fantasy-range-asymmetry.svg?v=20261008" width="1200" height="400" alt="September 12 historical stale response: floor 7.1, supplied projection 11.5 and ceiling 32.1 fantasy points. The endpoints' midpoint is 19.6, not the projection."></div><figcaption>Historical public-response audit · September 12, 2026 · source marked stale. Distances are proportional; the dotted marker is an endpoint midpoint, not a projection.</figcaption></figure>
+      <div class="fp-table-wrap" tabindex="0" role="region" aria-label="Range calculation table"><table class="fp-plain-table"><caption>Arithmetic on the historical response, in DraftKings MLB fantasy points</caption><thead><tr><th scope="col">Calculation</th><th scope="col">Arithmetic</th><th scope="col">Meaning</th></tr></thead><tbody>
+        <tr><th scope="row">Distance below estimate</th><td>11.5 − 7.1 = <strong>4.4</strong></td><td>Lower side of this published range</td></tr>
+        <tr><th scope="row">Distance above estimate</th><td>32.1 − 11.5 = <strong>20.6</strong></td><td>Upper side of this published range</td></tr>
+        <tr><th scope="row">Endpoint midpoint</th><td>(7.1 + 32.1) / 2 = <strong>19.6</strong></td><td>A calculated midpoint, not the supplied 11.5 projection</td></tr>
+      </tbody></table></div>
+      <p>The endpoints' midpoint is <strong>19.6</strong>, but the supplied projection is <strong>11.5</strong>. We calculated 19.6 for this explanation; it is not a supplied projection field or a forecast. Averaging the endpoints answers a different question: where is the middle of the displayed interval?</p>
+      <p>The published method combines available market components with recent form to produce its central estimate. It applies separate recent-variation distances around that estimate, so the two sides can differ. This arithmetic is consistent with that description; it does not reproduce the internal model or establish how often future scores will fall within the range.</p>
+      <p>Keep the supplied estimate and inspect both endpoints on the same scoring basis. A larger upper distance neither erases the lower scenario nor proves a more likely high score. Actual scores can fall outside the range. <a href="/fantasy/mlb/">Inspect the current MLB fantasy board</a> for current research, checking its freshness label before using a row.</p>
+      <p class="fp-source">Historical source: <a href="https://web-production-3c1c4.up.railway.app/api/public/agent/v1/fantasy/mlb">public fantasy response endpoint</a>, inspected September 12, 2026. The endpoint may now return different data; this case preserves the dated stale response.</p>
+    </div></section>
+
     <section class="fp-section fp-section--blue"><div class="fp-wrap"><div class="fp-section-head"><span class="fp-label">Scoring</span><h2>One label must mean one formula.</h2></div><div class="fp-table-wrap"><table class="fp-plain-table"><thead><tr><th>MLB hitter event</th><th>DraftKings points</th></tr></thead><tbody>
       <tr><td>Single</td><td>3</td></tr><tr><td>Double</td><td>5</td></tr><tr><td>Triple</td><td>8</td></tr><tr><td>Home run</td><td>10</td></tr><tr><td>Run batted in / run scored</td><td>2 each</td></tr><tr><td>Walk or hit by pitch</td><td>2</td></tr><tr><td>Stolen base</td><td>5</td></tr>
-    </tbody></table></div><p class="fp-source" style="color:#e7e9ff">The feature labels this identity “DraftKings MLB.” Confirm current contest scoring on the platform where you play; platform rules can change.</p></div></section>
+    </tbody></table></div><p class="fp-source">The feature labels this identity “DraftKings MLB.” Confirm current contest scoring on the platform where you play; platform rules can change.</p></div></section>
 
     <section class="fp-section"><div class="fp-wrap"><div class="fp-section-head"><span class="fp-label">Freshness</span><h2>Current, latest available, or unavailable.</h2></div><div class="fp-grid">
       <article class="fp-card"><h3>Current</h3><p>The source has eligible projections and its update timestamp is no more than 60 minutes old.</p></article><article class="fp-card"><h3>Latest available</h3><p>Eligible rows exist, but the source update is older than 60 minutes. The page labels that state rather than calling it live.</p></article><article class="fp-card"><h3>Unavailable</h3><p>No eligible rows or no readable source response. The page retains only explicitly labelled examples and does not relabel them as today's projections.</p></article>
     </div></div></section>
 
     <section class="fp-section fp-section--ink"><div class="fp-wrap"><div class="fp-section-head"><span class="fp-label">Limitations</span><h2>What v1 does not know.</h2></div><div class="fp-grid fp-grid--2">
-      <article class="fp-card"><h3>Scope limitations</h3><p>Public v1 covers MLB hitters only. It does not publish pitcher, NFL, NBA, NHL, soccer, or PGA fantasy projections and does not model a user's salary cap, league settings, roster, or exposure.</p></article>
+      <article class="fp-card"><h3>Scope limitations</h3><p>Public v1 covers MLB hitters only. It does not publish pitcher or non-MLB fantasy projections and does not model a user's salary cap, league settings, roster, or exposure.</p></article>
       <article class="fp-card"><h3>Input limitations</h3><p>Market components can be missing, stale, or revised. Recent form may not represent a new role, injury, lineup spot, weather change, or unusual matchup.</p></article>
       <article class="fp-card"><h3>Outcome limitations</h3><p>Fantasy scoring is volatile. Actual scores may fall below the floor or above the ceiling. A higher ceiling is not automatically a better decision.</p></article>
       <article class="fp-card"><h3>Evidence limitations</h3><p>No public accuracy or calibration claim is made in v1. Such claims require a reproducible, time-ordered evaluation with documented exclusions and scoring sources.</p></article>
@@ -164,9 +192,11 @@
     <section class="fp-section fp-faq"><div class="fp-wrap"><div class="fp-section-head"><span class="fp-label">Questions</span><h2>Method details in plain language.</h2></div>
       <details class="faq-item"><summary>How does Propeller project MLB fantasy points?</summary><p>Propeller converts available current hitter-stat market components into DraftKings MLB fantasy points and uses recent form for scoring components without current market coverage. It then estimates a lower and upper range from recent outcome variation.</p></details>
       <details class="faq-item"><summary>Are floor and ceiling guaranteed percentiles?</summary><p>No. They are P20/P80-style range estimates, not guaranteed bounds or a claim that exactly 60% of future outcomes will land inside the interval.</p></details>
+      <details class="faq-item"><summary>Should I average the floor and ceiling to get the projection?</summary><p>No. Use the supplied projection. Averaging the endpoints gives their midpoint, which can differ from the method's central estimate when the lower and upper distances are unequal.</p></details>
       <details class="faq-item"><summary>Does Propeller publish fantasy projection accuracy?</summary><p>Not yet on this page. Propeller will publish calibration or accuracy claims only after the evaluation cohort, timing, exclusions, scoring source, and reproducible calculation are documented for public review.</p></details>
       <details class="faq-item"><summary>Can I reproduce the current feature exactly?</summary><p>The public method and scoring identity are documented, but raw market inventory and all internal processing are not exposed. The machine-readable method file identifies the current version and public inputs, outputs, and limitations.</p></details>
     </div></section>
+    <section class="fp-section"><div class="fp-wrap"><p>For a shorter explanation, read <a href="/help/how-do-propeller-fantasy-projections-work/">how Propeller fantasy projections work</a>. Explore the <a href="/fantasy/">fantasy feature overview</a> for scope and available research tools.</p></div></section>
   </main>
   <script src="/assets/js/fantasy.js?v=20260717" defer></script>
 <!-- PP_SITE_FOOTER_START -->

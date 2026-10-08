@@ -1,0 +1,69 @@
+/* Methodology layout built on the shared Replay Room navigation-page system. */
+body.pp-fantasy-page.pp-fantasy-methodology {background:var(--pp-nav-night);color:var(--pp-nav-cream);}
+.pp-fantasy-methodology main {font-size:19px;line-height:1.65;}
+.pp-fantasy-methodology .fp-wrap {width:min(1180px,calc(100% - 40px));margin-inline:auto;}
+.pp-fantasy-methodology .fp-hero {padding:72px 0;border-bottom:1px solid var(--pp-nav-line);}
+.pp-fantasy-methodology .fp-hero::after {display:none;}
+.pp-fantasy-methodology .fp-hero__grid {display:grid;grid-template-columns:1.5fr 1fr;gap:56px;align-items:center;}
+.pp-fantasy-methodology h1 {font-size:clamp(52px,6.5vw,88px);line-height:.95;letter-spacing:-.04em;margin:18px 0 24px;}
+.pp-fantasy-methodology h1 em {font-style:normal;color:var(--pp-nav-orange);}
+.pp-fantasy-methodology h2 {font-size:clamp(34px,4.2vw,54px);line-height:1.06;letter-spacing:-.025em;max-width:850px;margin:12px 0 28px;}
+.pp-fantasy-methodology h3 {font-size:27px;line-height:1.2;margin:12px 0;}
+.pp-fantasy-methodology p {max-width:760px;margin:0 0 22px;}
+.pp-fantasy-methodology .fp-kicker,.pp-fantasy-methodology .fp-label,.pp-fantasy-methodology .fp-range-card__label {font:600 13px/1.4 var(--pp-mono);letter-spacing:.04em;text-transform:uppercase;color:var(--pp-nav-blue)!important;}
+.pp-fantasy-methodology .fp-section {padding:72px 0;border-bottom:1px solid var(--pp-nav-line);}
+.pp-fantasy-methodology .fp-section--ink,.pp-fantasy-methodology .fp-section--blue {background:var(--pp-nav-studio);color:var(--pp-nav-cream);}
+.pp-fantasy-methodology .fp-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;}
+.pp-fantasy-methodology .fp-grid--2 {grid-template-columns:repeat(2,minmax(0,1fr));}
+.pp-fantasy-methodology .fp-card,.pp-fantasy-methodology .fp-range-card {border:1px solid var(--pp-nav-line);border-radius:14px;background:rgba(2,21,34,.6);padding:28px;}
+.pp-fantasy-methodology .fp-range-card {box-shadow:0 18px 44px rgba(0,0,0,.24);}
+.pp-fantasy-methodology .fp-card p {margin-bottom:0;font-size:18px;color:var(--pp-nav-night);}
+.pp-fantasy-methodology .fp-number {font:600 15px var(--pp-mono);color:var(--pp-nav-blue);}
+.pp-fantasy-methodology .fp-range-card__player {font:700 38px/1.1 var(--pp-display);margin:20px 0 12px;}
+.pp-fantasy-methodology .fp-range-card__team {font-size:16px;color:var(--pp-nav-muted);}
+.pp-fantasy-methodology .fp-spine {height:1px;background:var(--pp-nav-blue);margin:32px 0;}
+.pp-fantasy-methodology .fp-spine::before {inset:0 18% 0 12%;background:var(--pp-nav-orange);}
+.pp-fantasy-methodology .fp-spine i {border-color:var(--pp-nav-night);background:var(--pp-nav-orange);}
+.pp-fantasy-methodology .fp-range-values {display:flex;justify-content:space-between;gap:12px;font:500 13px var(--pp-mono);}
+.pp-fantasy-methodology .fp-range-values span {color:var(--pp-nav-muted);}
+.pp-fantasy-methodology .fp-range-values b {display:block;font:700 30px var(--pp-display);margin-top:10px;color:var(--pp-nav-cream);}
+.pp-fantasy-methodology .fp-range-values span:nth-child(2) b {color:var(--pp-nav-orange);}
+.pp-fantasy-methodology .fp-actions {display:flex;gap:14px;flex-wrap:wrap;margin:28px 0;}
+.pp-fantasy-methodology .fp-button {display:inline-flex;align-items:center;min-height:58px;padding:12px 22px;border-radius:10px;background:var(--pp-nav-orange);color:#fff!important;text-decoration:none;font:700 20px/1.2 var(--pp-display);}
+.pp-fantasy-methodology .fp-button--ghost {background:#021522;border:1px solid var(--pp-nav-blue);}
+.pp-fantasy-methodology .fp-meta {display:flex;flex-wrap:wrap;gap:8px 20px;font-size:14px;color:var(--pp-nav-muted);}
+.pp-fantasy-methodology .fp-deck {color:var(--pp-nav-muted);}
+.pp-fantasy-methodology .fp-disclosure {font-size:14px;margin-top:20px;}
+.pp-fantasy-methodology .fp-note {border-left:3px solid var(--pp-nav-blue);padding:16px 22px;max-width:850px;background:var(--pp-nav-studio);color:var(--pp-nav-cream);}
+.pp-fantasy-methodology .fp-case-values {display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:32px 0;}
+.pp-fantasy-methodology .fp-case-values div {border-top:1px solid var(--pp-nav-line);padding-top:14px;}
+.pp-fantasy-methodology .fp-case-values dt {font:500 14px var(--pp-mono);color:var(--pp-nav-muted);}
+.pp-fantasy-methodology .fp-case-values dd {margin:8px 0 0;font:700 42px var(--pp-display);}
+.pp-fantasy-methodology .fp-case-values div:nth-child(2) dd {color:var(--pp-nav-orange)!important;}
+.pp-fantasy-methodology figure {margin:28px 0;}
+.pp-fantasy-methodology .fp-diagram-scroll {overflow-x:auto;border:1px solid var(--pp-nav-line);border-radius:14px;background:#021522;}
+.pp-fantasy-methodology .fp-diagram-scroll img {display:block;width:100%;min-width:900px;height:auto;max-width:none;}
+.pp-fantasy-methodology figcaption,.pp-fantasy-methodology .fp-source {font-size:15px;color:var(--pp-nav-muted);margin-top:12px;}
+.pp-fantasy-methodology .fp-table-wrap {overflow-x:auto;margin:28px 0;border:1px solid var(--pp-nav-line);background:var(--pp-nav-night);}
+.pp-fantasy-methodology table {width:100%;border-collapse:collapse;font-size:17px;}
+.pp-fantasy-methodology caption {text-align:left;margin:0;padding:14px 16px;background:var(--pp-nav-studio);color:var(--pp-nav-cream);font-size:15px;border-bottom:1px solid var(--pp-nav-line);}
+.pp-fantasy-methodology th,.pp-fantasy-methodology td {padding:16px;text-align:left;border:1px solid var(--pp-nav-line);vertical-align:top;}
+.pp-fantasy-methodology .faq-item {border-bottom:1px solid var(--pp-nav-line);padding:22px 0;}
+.pp-fantasy-methodology summary {cursor:pointer;font:700 26px/1.25 var(--pp-display);color:var(--pp-nav-cream);}
+.pp-fantasy-methodology summary::marker {color:var(--pp-nav-orange);}
+.pp-fantasy-methodology details p {margin-top:18px;}
+.pp-fantasy-methodology :focus-visible {outline:3px solid var(--pp-nav-orange);outline-offset:4px;}
+.pp-fantasy-methodology .fp-skip {position:absolute;left:16px;top:-80px;z-index:1000;background:#021522;padding:12px;}
+.pp-fantasy-methodology .fp-skip:focus {top:12px;}
+@media(max-width:760px){
+.pp-fantasy-methodology .fp-wrap {width:calc(100% - 28px);}
+.pp-fantasy-methodology .fp-hero,.pp-fantasy-methodology .fp-section {padding:44px 0;}
+.pp-fantasy-methodology .fp-hero__grid,.pp-fantasy-methodology .fp-grid,.pp-fantasy-methodology .fp-grid--2 {grid-template-columns:1fr;gap:22px;}
+.pp-fantasy-methodology main {font-size:18px;}
+.pp-fantasy-methodology .fp-case-values {grid-template-columns:1fr;gap:12px;}
+.pp-fantasy-methodology .fp-case-values div {display:flex;align-items:center;justify-content:space-between;gap:20px;}
+.pp-fantasy-methodology .fp-case-values dd {margin:0;}
+.pp-fantasy-methodology .fp-plain-table {min-width:620px;}
+.pp-fantasy-methodology .fp-actions {flex-direction:column;}
+.pp-fantasy-methodology .fp-button {justify-content:center;}
+}

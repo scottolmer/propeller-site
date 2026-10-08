@@ -27,7 +27,7 @@ ANALYTICS_LOADER_RE = re.compile(
 NAVIGATION_PAGES = frozenset({
     "picks/index.html", "results/index.html", "track-record/index.html",
     "how-it-works/index.html", "guides/index.html", "tools/index.html",
-    "analyzer/index.html",
+    "analyzer/index.html", "fantasy/methodology/index.html",
 })
 LEGACY_ANALYTICS_ID = "G-NLXM4C2G7D"
 ANALYTICS_LOADER = '  <script src="/assets/js/analytics-loader.js?v=20260915"></script>\n'
@@ -292,6 +292,11 @@ def migrate_html(original: str, path: Path, home: bool) -> str:
     html = ensure_analytics_loader(html)
     compat = "" if navigation_page or home or "pp-pricing" in original or "pp-daily-archive" in original else '<link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">\n  '
     page_styles = ""
+    if path.relative_to(ROOT).as_posix() == "fantasy/methodology/index.html":
+        page_styles += (
+            '<link rel="stylesheet" href="/assets/css/fantasy.css?v=20260717">\n  '
+            '<link rel="stylesheet" href="/assets/css/fantasy-methodology.css?v=20261008">\n  '
+        )
     if "pp-wave-a-page" in original:
         page_styles = (
             '<link rel="stylesheet" href="/assets/css/home-ai.css?v=20260815">\n  '
