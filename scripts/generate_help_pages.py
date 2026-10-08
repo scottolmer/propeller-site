@@ -72,24 +72,96 @@ PAGES = [
         ],
         "related": ["/analyzer/", "/how-it-works/", "/results/", "/track-record/"],
     },
-    {
-        "slug": "is-propeller-a-sportsbook",
-        "title": "Is Propeller Picks a Sportsbook?",
-        "description": "Propeller Picks is not a sportsbook. It is a player prop research and analytics product.",
-        "h1": "Is Propeller Picks a sportsbook?",
-        "summary": "No. Propeller Picks is not a sportsbook and does not accept wagers. Propeller provides analytics, confidence scores, public results, calculators, and research workflows so users can evaluate player props independently.",
-        "sections": [
-            ("What Propeller Does", "Propeller organizes player prop research and gives each analyzed prop a confidence score based on multiple data signals."),
-            ("What Propeller Does Not Do", "Propeller does not set betting lines, hold balances, process deposits, accept entries, pay winnings, or act as a sportsbook."),
-            ("User Responsibility", "Users are responsible for following local laws, platform rules, and responsible-gaming practices. Past performance does not guarantee future results."),
-        ],
-        "faqs": [
-            ("Is Propeller Picks a sportsbook?", "No. Propeller Picks is a sports analytics and information service. It does not accept wagers, place bets, or pay out winnings."),
-            ("Can I bet inside Propeller Picks?", "No. Propeller does not offer wagering. It provides research tools and links to public information so users can evaluate props themselves."),
-            ("Is Propeller betting advice?", "No. Propeller provides analytics and informational context. It should not be treated as financial, legal, or betting advice."),
-        ],
-        "related": ["/terms/", "/privacy/", "/how-it-works/", "/results/"],
-    },
+    {'slug': 'is-propeller-a-sportsbook',
+ 'title': 'Is Propeller Picks a Sportsbook?',
+ 'description': 'Propeller Picks is not a sportsbook. It is a player prop research and analytics product.',
+ 'h1': 'Is Propeller Picks a sportsbook?',
+ 'summary': 'No. Propeller Picks provides player-prop research; it does not accept wagers or submit entries. '
+            'Its public card can open a prefilled research-prompt form, and Generate research prompt creates '
+            'text for further investigation. A displayed line, direction or platform name is research '
+            'context, not an entry confirmation. You still decide what to do after checking current '
+            'information.',
+ 'sections': [],
+ 'faqs': [('Can I place an entry in Propeller?',
+           'No. Propeller provides research and does not submit entries. Opening a card or generating a '
+           'prompt does not place an entry.'),
+          ('Does Generate research prompt send my question to an AI assistant?',
+           'The inspected public builder generates text on the page. Using that text in another assistant is '
+           'a separate action; generating it does not produce a researched answer.'),
+          ('Does a platform name mean my account is connected?',
+           'No. In the inspected public builder, that field labels the research source. A name in it is not '
+           'proof of connection or submission.')],
+ 'related': ['/tools/ai-betting-prompt-builder/',
+             '/guides/how-ai-sports-betting-works/',
+             '/guides/compare-player-prop-lines/'],
+ 'updated': '2026-10-08',
+ 'visual_system': 'replay-room',
+ 'body_class': 'pp-entry-boundaries-page',
+ 'author_role': 'Founder',
+ 'content_sections': [{'title': 'What happens when I use a research button?',
+                       'paragraphs': ['The public workflow carries a research question from a card into a '
+                                      'prompt. Each action has a narrower result than completing research or '
+                                      'submitting an entry. Use this map to identify what you have in front '
+                                      'of you.'],
+                       'table': {'caption': 'Public research actions and their limits',
+                                 'headers': ['Action',
+                                             'Observed or documented output',
+                                             'What it does not establish'],
+                                 'rows': [['Open a public card’s Build AI Research Prompt link',
+                                           'A builder form prefilled with player, stat, line and snapshot '
+                                           'context',
+                                           'A verified current platform line or submitted entry'],
+                                          ['Choose Generate research prompt',
+                                           'Research text appears on the page; Copy becomes available',
+                                           'Completed source research or an answer from another AI '
+                                           'assistant'],
+                                          ['Use the Source or platform field',
+                                           'A label included in the research question',
+                                           'A linked platform account or entry confirmation']]},
+                       'after_paragraphs': ['The card handoff and generated output were observed in an '
+                                            'AI-operated September 10, 2026 walkthrough. An October 8, 2026 '
+                                            'check of the public builder and its source code confirmed the '
+                                            'documented controls. These checks did not test platform-account '
+                                            'connections or signed-in features.'],
+                       'links': [('Inspect the public prompt builder', '/tools/ai-betting-prompt-builder/')]},
+                      {'title': 'What did an actual public walkthrough produce?',
+                       'paragraphs': ['The September 10 walkthrough followed a Ben Rice public research card '
+                                      'into the builder. It retained MLB, Stolen Bases, line 0.5 and the '
+                                      'source label Propeller public analyzer snapshot. The research goal '
+                                      'was Evaluate both sides, even though the card displayed Under.',
+                                      'Generate produced research text and enabled Copy. The prompt required '
+                                      'current source verification and allowed taking no action. The '
+                                      'walkthrough stopped there: it did not use an external AI assistant, '
+                                      'verify a later live line or submit an entry. This historical 0.5 line '
+                                      'is not a current recommendation.']},
+                      {'title': 'Does a platform name connect an account?',
+                       'paragraphs': ['In the inspected public builder, Source or platform is a text field '
+                                      'that labels the research source. Entering a platform name is not '
+                                      'evidence of an account connection, affiliation or submission. The '
+                                      'field helps describe the question; it is not an entry receipt.',
+                                      'Propeller’s published product facts state that it is independent and '
+                                      'does not submit entries or accept or place wagers. That is the '
+                                      'documented product boundary, not a legal classification or an audit '
+                                      'of every account feature.'],
+                       'links': [('Read the published product facts', '/data/product-facts.json')]},
+                      {'title': 'What should I do next?',
+                       'paragraphs': ['1. Inspect the research context. Check the player, stat, line and '
+                                      'source carried into the form. Keep any snapshot warning attached to '
+                                      'those details.',
+                                      '2. Verify the exact current line and relevant source facts. A '
+                                      'generated prompt asks for that work; it does not prove the work has '
+                                      'happened.',
+                                      '3. Decide whether to continue researching or take no action. Copying '
+                                      'the prompt into another tool is a separate step, and an answer still '
+                                      'needs checking.'],
+                       'links': [('How to check AI-assisted research',
+                                  '/guides/how-ai-sports-betting-works/'),
+                                 ('How to compare player-prop lines',
+                                  '/guides/compare-player-prop-lines/')]}],
+ 'cta': {'heading': 'Check what your research action produces',
+         'body': 'Start with the public research context and keep its limits in view.',
+         'label': 'Explore the public research tools',
+         'href': '/analyzer/'}},
     {'slug': 'how-does-propeller-grade-picks',
  'title': 'How Does Propeller Grade Picks? Wins, Losses and Pushes',
  'h1': 'How does Propeller grade picks?',
@@ -974,6 +1046,32 @@ TABLE_CSS = """
 """
 
 
+ENTRY_BOUNDARIES_CSS = """
+body.pp-site-system.pp-entry-boundaries-page main .help-table { table-layout:fixed; }
+body.pp-site-system.pp-entry-boundaries-page main .help-table th,
+body.pp-site-system.pp-entry-boundaries-page main .help-table td { width:33.333%; white-space:normal!important; overflow-wrap:break-word!important; word-break:normal!important; }
+body.pp-site-system.pp-entry-boundaries-page main .table-scroll { overflow-x:scroll; scrollbar-width:auto; scrollbar-color:auto; }
+body.pp-site-system.pp-entry-boundaries-page main .table-scroll::-webkit-scrollbar { height:12px; }
+body.pp-site-system.pp-entry-boundaries-page main .table-scroll::-webkit-scrollbar-track { background:#031a2c; }
+body.pp-site-system.pp-entry-boundaries-page main .table-scroll::-webkit-scrollbar-thumb { background:#54c8ff; border:2px solid #031a2c; border-radius:6px; }
+@media(max-width:600px) {
+ body.pp-site-system.pp-entry-boundaries-page main .table-scroll { overflow-x:visible; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table { min-width:0!important; display:block; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table caption { display:block; margin-bottom:16px; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table tbody { display:block; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table tr { display:block; margin-bottom:18px; border:1px solid #54c8ff; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table th,
+ body.pp-site-system.pp-entry-boundaries-page main .help-table td { display:block; width:auto; padding:12px!important; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table tbody th:before { content:"Action"; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table td:nth-child(2):before { content:"Observed or documented output"; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table td:nth-child(3):before { content:"What it does not establish"; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table th:before,
+ body.pp-site-system.pp-entry-boundaries-page main .help-table td:before { display:block; color:#f7f1e7; font-family:inherit; font-weight:700; margin-bottom:6px; }
+}
+
+"""
+
 PRA_CSS = """
 body.pp-site-system.pp-pra-page main .section-card { padding:24px; border:1px solid var(--pp-line); border-radius:14px; }
 body.pp-site-system.pp-pra-page main .section-card[id] { scroll-margin-top:112px; }
@@ -1085,7 +1183,7 @@ def render_page(page: dict) -> str:
 <script type="application/ld+json">
 {json_ld(faq)}
 </script>
-<style>{BASE_CSS}{ATTRIBUTION_CSS}{TABLE_CSS if page.get("content_sections") else ""}{PRA_CSS if page.get("body_class") == "pp-pra-page" else ""}</style>
+<style>{BASE_CSS}{ATTRIBUTION_CSS}{TABLE_CSS if page.get("content_sections") else ""}{PRA_CSS if page.get("body_class") == "pp-pra-page" else ""}{ENTRY_BOUNDARIES_CSS if page.get("body_class") == "pp-entry-boundaries-page" else ""}</style>
 </head>
 <body{chr(32) + chr(99) + 'lass="pp-replay-room pp-wave-a-page pp-coverage-page' + (' ' + esc(page['body_class']) if page.get('body_class') else '') + '"' if page.get("visual_system") == "replay-room" else ""}>
 <div class="page">

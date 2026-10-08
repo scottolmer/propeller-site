@@ -71,6 +71,15 @@ class HelpTableTests(unittest.TestCase):
                 self.assertNotIn('class="summary"', pra)
                 self.assertIn('>Inspect an available player line</a>', pra)
                 continue
+            if other['slug'] == 'is-propeller-a-sportsbook':
+                boundaries = help_pages.render_page(other)
+                self.assertEqual(boundaries.count('<table '), 1)
+                self.assertEqual(boundaries.count('scope="row"'), 3)
+                self.assertIn('Public research actions and their limits', boundaries)
+                self.assertIn('Last updated: 2026-10-08', boundaries)
+                self.assertIn('pp-replay-room', boundaries)
+                self.assertIn('>Explore the public research tools</a>', boundaries)
+                continue
             if other is page:
                 continue
             output = help_pages.render_page(other)
