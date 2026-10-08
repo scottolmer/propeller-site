@@ -25,7 +25,8 @@
 <meta name="twitter:description" content="Propeller Picks is not a sportsbook. It is a player prop research and analytics product.">
 <meta name="twitter:image" content="https://propellerpicks.com/images/og-image.png">
 <meta name="author" content="Scott Olmer">
-<meta name="theme-color" content="#f2efe8">
+<meta name="theme-color" content="#031a2c">
+<link rel="stylesheet" href="/assets/css/coverage-article.css?v=20260914">
 
 
 <script type="application/ld+json">
@@ -35,7 +36,7 @@
   "name": "Is Propeller Picks a Sportsbook?",
   "url": "https://propellerpicks.com/help/is-propeller-a-sportsbook/",
   "description": "Propeller Picks is not a sportsbook. It is a player prop research and analytics product.",
-  "dateModified": "2026-07-15",
+  "dateModified": "2026-10-08",
   "inLanguage": "en-US",
   "isPartOf": {
     "@type": "WebSite",
@@ -87,26 +88,26 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Is Propeller Picks a sportsbook?",
+      "name": "Can I place an entry in Propeller?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Propeller Picks is a sports analytics and information service. It does not accept wagers, place bets, or pay out winnings."
+        "text": "No. Propeller provides research and does not submit entries. Opening a card or generating a prompt does not place an entry."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I bet inside Propeller Picks?",
+      "name": "Does Generate research prompt send my question to an AI assistant?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Propeller does not offer wagering. It provides research tools and links to public information so users can evaluate props themselves."
+        "text": "The inspected public builder generates text on the page. Using that text in another assistant is a separate action; generating it does not produce a researched answer."
       }
     },
     {
       "@type": "Question",
-      "name": "Is Propeller betting advice?",
+      "name": "Does a platform name mean my account is connected?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Propeller provides analytics and informational context. It should not be treated as financial, legal, or betting advice."
+        "text": "No. In the inspected public builder, that field labels the research source. A name in it is not proof of connection or submission."
       }
     }
   ]
@@ -150,6 +151,40 @@ h3 { margin-bottom: 10px; font-size: 21px; }
 
 .attribution { max-width: 850px; margin: 12px 0 0; color: var(--pp-sub, #59615b); font-size: 14px; }
 .attribution a { color: var(--pp-orange-dark, #dd3d16); font-weight: 700; }
+
+.table-scroll { max-width: 100%; overflow-x: auto; margin-top: 20px; }
+.table-scroll:focus-visible { outline: 3px solid var(--pp-orange-dark, #dd3d16); outline-offset: 4px; }
+.help-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.6; }
+.help-table caption { text-align: left; font-weight: 700; margin-bottom: 12px; }
+.help-table th, .help-table td { text-align: left; vertical-align: top; padding: 12px; border-bottom: 1px solid #c9cec8; overflow-wrap: anywhere; }
+.help-table thead th { background: #e7e9e2; }
+.section-links { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 16px; }
+.section-links a { color: var(--pp-orange-dark, #dd3d16); font-weight: 700; }
+@media (max-width: 600px) { .help-table { min-width: 570px; } .content-grid > article { min-width: 0; } }
+
+body.pp-site-system.pp-entry-boundaries-page main .help-table { table-layout:fixed; }
+body.pp-site-system.pp-entry-boundaries-page main .help-table th,
+body.pp-site-system.pp-entry-boundaries-page main .help-table td { width:33.333%; white-space:normal!important; overflow-wrap:break-word!important; word-break:normal!important; }
+body.pp-site-system.pp-entry-boundaries-page main .table-scroll { overflow-x:scroll; scrollbar-width:auto; scrollbar-color:auto; }
+body.pp-site-system.pp-entry-boundaries-page main .table-scroll::-webkit-scrollbar { height:12px; }
+body.pp-site-system.pp-entry-boundaries-page main .table-scroll::-webkit-scrollbar-track { background:#031a2c; }
+body.pp-site-system.pp-entry-boundaries-page main .table-scroll::-webkit-scrollbar-thumb { background:#54c8ff; border:2px solid #031a2c; border-radius:6px; }
+@media(max-width:600px) {
+ body.pp-site-system.pp-entry-boundaries-page main .table-scroll { overflow-x:visible; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table { min-width:0!important; display:block; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table caption { display:block; margin-bottom:16px; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table tbody { display:block; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table tr { display:block; margin-bottom:18px; border:1px solid #54c8ff; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table th,
+ body.pp-site-system.pp-entry-boundaries-page main .help-table td { display:block; width:auto; padding:12px!important; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table tbody th:before { content:"Action"; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table td:nth-child(2):before { content:"Observed or documented output"; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table td:nth-child(3):before { content:"What it does not establish"; }
+ body.pp-site-system.pp-entry-boundaries-page main .help-table th:before,
+ body.pp-site-system.pp-entry-boundaries-page main .help-table td:before { display:block; color:#f7f1e7; font-family:inherit; font-weight:700; margin-bottom:6px; }
+}
+
 </style>
   <script src="/assets/js/analytics-loader.js?v=20260915"></script>
   <!-- PP_SITE_HEAD_START -->
@@ -160,9 +195,11 @@ h3 { margin-bottom: 10px; font-size: 21px; }
   <meta name="theme-color" content="#f2efe8">
   <link rel="stylesheet" href="/assets/css/site-system.css?v=20260712">
   <link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">
+  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260815">
+  <link rel="stylesheet" href="/assets/css/wave-a-companion-pages.css?v=20260817c">
   <!-- PP_SITE_HEAD_END -->
 </head>
-<body class="pp-site-system pp-family-help">
+<body class="pp-replay-room pp-wave-a-page pp-coverage-page pp-entry-boundaries-page pp-site-system pp-family-help">
 <div class="page">
   <!-- PP_SITE_NAV_START -->
 <nav class="pp-site-nav" aria-label="Primary navigation">
@@ -194,60 +231,51 @@ h3 { margin-bottom: 10px; font-size: 21px; }
       <div class="container">
         <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/help/">Help</a><span>/</span><span>Is Propeller Picks a Sportsbook?</span></div>
         <h1>Is Propeller Picks a sportsbook?</h1>
-        <p class="summary">No. Propeller Picks is not a sportsbook and does not accept wagers. Propeller provides analytics, confidence scores, public results, calculators, and research workflows so users can evaluate player props independently.</p>
-        <p class="updated">Last updated: 2026-07-15</p>
-        <p class="attribution">By <a href="https://propellerpicks.com/about/">Scott Olmer</a>, designated author and editorial owner. Produced and reviewed through automated AI workflows. <a href="/editorial-policy/">Editorial policy</a>.</p>
-        <div class="answer-box"><p><strong>Direct answer:</strong> No. Propeller Picks is not a sportsbook and does not accept wagers. Propeller provides analytics, confidence scores, public results, calculators, and research workflows so users can evaluate player props independently.</p></div>
+
+        <p class="updated">Last updated: 2026-10-08</p>
+        <p class="attribution">By <a href="https://propellerpicks.com/about/">Scott Olmer</a>, Founder; designated author and editorial owner. Produced and reviewed through automated AI workflows. <a href="/editorial-policy/">Editorial policy</a>.</p>
+        <div class="answer-box"><p><strong>Direct answer:</strong> No. Propeller Picks provides player-prop research; it does not accept wagers or submit entries. Its public card can open a prefilled research-prompt form, and Generate research prompt creates text for further investigation. A displayed line, direction or platform name is research context, not an entry confirmation. You still decide what to do after checking current information.</p></div>
       </div>
     </header>
 
     <div class="container content-grid">
       <article>
-        <section class="section-card">
-          <h2>What Propeller Does</h2>
-          <p>Propeller organizes player prop research and gives each analyzed prop a confidence score based on multiple data signals.</p>
-        </section>
-        <section class="section-card">
-          <h2>What Propeller Does Not Do</h2>
-          <p>Propeller does not set betting lines, hold balances, process deposits, accept entries, pay winnings, or act as a sportsbook.</p>
-        </section>
-        <section class="section-card">
-          <h2>User Responsibility</h2>
-          <p>Users are responsible for following local laws, platform rules, and responsible-gaming practices. Past performance does not guarantee future results.</p>
-        </section>
+<section class="section-card"><h2>What happens when I use a research button?</h2><p>The public workflow carries a research question from a card into a prompt. Each action has a narrower result than completing research or submitting an entry. Use this map to identify what you have in front of you.</p><div class="table-scroll" role="region" tabindex="0" aria-label="Public research actions and their limits. Scroll horizontally on small screens."><table class="help-table"><caption>Public research actions and their limits</caption><thead><tr><th scope="col">Action</th><th scope="col">Observed or documented output</th><th scope="col">What it does not establish</th></tr></thead><tbody><tr><th scope="row">Open a public card’s Build AI Research Prompt link</th><td>A builder form prefilled with player, stat, line and snapshot context</td><td>A verified current platform line or submitted entry</td></tr><tr><th scope="row">Choose Generate research prompt</th><td>Research text appears on the page; Copy becomes available</td><td>Completed source research or an answer from another AI assistant</td></tr><tr><th scope="row">Use the Source or platform field</th><td>A label included in the research question</td><td>A linked platform account or entry confirmation</td></tr></tbody></table></div><p>The card handoff and generated output were observed in an AI-operated September 10, 2026 walkthrough. An October 8, 2026 check of the public builder and its source code confirmed the documented controls. These checks did not test platform-account connections or signed-in features.</p><div class="section-links"><a href="/tools/ai-betting-prompt-builder/">Inspect the public prompt builder</a></div></section>
+<section class="section-card"><h2>What did an actual public walkthrough produce?</h2><p>The September 10 walkthrough followed a Ben Rice public research card into the builder. It retained MLB, Stolen Bases, line 0.5 and the source label Propeller public analyzer snapshot. The research goal was Evaluate both sides, even though the card displayed Under.</p><p>Generate produced research text and enabled Copy. The prompt required current source verification and allowed taking no action. The walkthrough stopped there: it did not use an external AI assistant, verify a later live line or submit an entry. This historical 0.5 line is not a current recommendation.</p></section>
+<section class="section-card"><h2>Does a platform name connect an account?</h2><p>In the inspected public builder, Source or platform is a text field that labels the research source. Entering a platform name is not evidence of an account connection, affiliation or submission. The field helps describe the question; it is not an entry receipt.</p><p>Propeller’s published product facts state that it is independent and does not submit entries or accept or place wagers. That is the documented product boundary, not a legal classification or an audit of every account feature.</p><div class="section-links"><a href="/data/product-facts.json">Read the published product facts</a></div></section>
+<section class="section-card"><h2>What should I do next?</h2><p>1. Inspect the research context. Check the player, stat, line and source carried into the form. Keep any snapshot warning attached to those details.</p><p>2. Verify the exact current line and relevant source facts. A generated prompt asks for that work; it does not prove the work has happened.</p><p>3. Decide whether to continue researching or take no action. Copying the prompt into another tool is a separate step, and an answer still needs checking.</p><div class="section-links"><a href="/guides/how-ai-sports-betting-works/">How to check AI-assisted research</a><a href="/guides/compare-player-prop-lines/">How to compare player-prop lines</a></div></section>
         <section class="section">
           <h2>Frequently Asked Questions</h2>
           <div class="faq-list">
         <div class="faq-item">
-          <h3>Is Propeller Picks a sportsbook?</h3>
-          <p>No. Propeller Picks is a sports analytics and information service. It does not accept wagers, place bets, or pay out winnings.</p>
+          <h3>Can I place an entry in Propeller?</h3>
+          <p>No. Propeller provides research and does not submit entries. Opening a card or generating a prompt does not place an entry.</p>
         </div>
         <div class="faq-item">
-          <h3>Can I bet inside Propeller Picks?</h3>
-          <p>No. Propeller does not offer wagering. It provides research tools and links to public information so users can evaluate props themselves.</p>
+          <h3>Does Generate research prompt send my question to an AI assistant?</h3>
+          <p>The inspected public builder generates text on the page. Using that text in another assistant is a separate action; generating it does not produce a researched answer.</p>
         </div>
         <div class="faq-item">
-          <h3>Is Propeller betting advice?</h3>
-          <p>No. Propeller provides analytics and informational context. It should not be treated as financial, legal, or betting advice.</p>
+          <h3>Does a platform name mean my account is connected?</h3>
+          <p>No. In the inspected public builder, that field labels the research source. A name in it is not proof of connection or submission.</p>
         </div>
           </div>
         </section>
       </article>
       <aside class="related" aria-label="Related pages">
-          <a href="/terms/">Terms</a>
-          <a href="/privacy/">Privacy</a>
-          <a href="/how-it-works/">How It Works</a>
-          <a href="/results/">Results</a>
+          <a href="/tools/ai-betting-prompt-builder/">/tools/ai-betting-prompt-builder/</a>
+          <a href="/guides/how-ai-sports-betting-works/">/guides/how-ai-sports-betting-works/</a>
+          <a href="/guides/compare-player-prop-lines/">/guides/compare-player-prop-lines/</a>
       </aside>
     </div>
 
     <div class="container">
       <section class="cta">
         <div>
-          <h2>Research today's props</h2>
-          <p>Use Propeller's public tools, results, and analyzer pages before making your own platform decisions.</p>
+          <h2>Check what your research action produces</h2>
+          <p>Start with the public research context and keep its limits in view.</p>
         </div>
-        <a class="button" href="https://app.propellerpicks.com/signup" rel="noopener">Get started</a>
+        <a class="button" href="/analyzer/" rel="noopener">Explore the public research tools</a>
       </section>
     </div>
   </main>
