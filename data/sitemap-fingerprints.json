@@ -16,54 +16,9 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "73ae7b0802f047ab09ca2a3d68294a51d0a058630ca660960663d2c9e62c1962",
+      "fingerprint": "7b96c4e27dbe2be6963614e209e602ff4b57d5467e57c8a5a169bb0ce0396800",
       "lastmod": "2026-10-09",
       "source": "analyzer/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/alex-killorn/": {
-      "fingerprint": "c68555194f98f0f0bbc988a9b3ce1e91a2099bdcee7b4f768192a79606a73b39",
-      "lastmod": "2026-10-09",
-      "source": "analyzer/nhl/alex-killorn/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/beckett-sennecke/": {
-      "fingerprint": "afaf08b3b0252ba577aacb7e6871ad5b94b24a5a813659178d97b1039ca8c8f6",
-      "lastmod": "2026-10-09",
-      "source": "analyzer/nhl/beckett-sennecke/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/ben-kindel/": {
-      "fingerprint": "3e702421ce571848d3df5b3f3a21cf5a387e389399b14c322ac3a857c7e52628",
-      "lastmod": "2026-10-09",
-      "source": "analyzer/nhl/ben-kindel/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/bryan-rust/": {
-      "fingerprint": "88ff18faae54ab8190576aee72080c2767248f44b614503d1bf349c548bace82",
-      "lastmod": "2026-10-09",
-      "source": "analyzer/nhl/bryan-rust/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/cutter-gauthier/": {
-      "fingerprint": "f18f690f635d8f994003e92c0708007a51bffc873faacf51cee28db266d42a43",
-      "lastmod": "2026-10-09",
-      "source": "analyzer/nhl/cutter-gauthier/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/jackson-lacombe/": {
-      "fingerprint": "16408139a33616e35f1bc1357699c44beb23682f68311fbb9a073e0d09b81ee3",
-      "lastmod": "2026-10-09",
-      "source": "analyzer/nhl/jackson-lacombe/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/leo-carlsson/": {
-      "fingerprint": "52fe9b1255df250b6670e686e465120f1a6d91d2d04c51e96c5fe4c67789920c",
-      "lastmod": "2026-10-09",
-      "source": "analyzer/nhl/leo-carlsson/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/mikael-granlund/": {
-      "fingerprint": "817d9f2563651a48c54b2427c372a27866f64fa06ea88c4b072348a6136e9552",
-      "lastmod": "2026-10-09",
-      "source": "analyzer/nhl/mikael-granlund/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/valeri-nichushkin/": {
-      "fingerprint": "b798acb4f8b30b25f6e21836f4a1507de0f69bb4583b9b646104a75c17c24981",
-      "lastmod": "2026-10-09",
-      "source": "analyzer/nhl/valeri-nichushkin/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "fd533539c06c740370dffa093d6aaf2f6838a75afd440932d5da2e31cc571743",
@@ -306,7 +261,7 @@
       "source": "picks/nfl/index.html"
     },
     "https://propellerpicks.com/picks/nhl/": {
-      "fingerprint": "4d1501fc425519822af0f490fd825d83bbf66b5534e6949c187e68ab008a0fb9",
+      "fingerprint": "cacd94d5895d98ea5372e125d82a1d64aa803b89a4e558d60061c245ea65b1af",
       "lastmod": "2026-10-09",
       "source": "picks/nhl/index.html"
     },
