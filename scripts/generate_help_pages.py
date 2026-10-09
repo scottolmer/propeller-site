@@ -481,39 +481,157 @@ PAGES = [
         ],
         "related": ["/picks/underdog/", "/tools/underdog-payout-calculator/", "/guides/underdog-strategy/", "/picks/"],
     },
-    {
-        "slug": "how-do-confidence-scores-work",
-        "title": "How Do Propeller Confidence Scores Work?",
-        "description": "What Propeller's 50–100 directional confidence score means and why it is not a win probability.",
-        "h1": "How do Propeller confidence scores work?",
-        "updated": "2026-07-20",
-        "summary": "Propeller displays a More/Over or Less/Under direction plus a 50–100 model-confidence score. Higher values show stronger support for the displayed side. The score is not a calibrated win probability or guarantee.",
-        "video": {
-            "id": "FtkX3AuujJk",
-            "title": "What Does a 72 Confidence Score Mean? | Propeller Picks",
-            "short_title": "What Does a 72 Confidence Score Mean?",
-            "description": "Learn why a Propeller confidence score measures directional model strength rather than an exact chance that a player prop will hit.",
-            "upload_date": "2026-07-17",
-            "duration": "PT5M33S",
-            "duration_label": "5:33",
-            "heading": "What does a score like 72 actually tell you?",
-            "intro": "Follow the same historical prop across desktop and mobile to separate direction, confidence, and estimated chance to hit—and see what evidence to inspect next.",
-            "prompt": "Direction answers which side. Confidence answers how strong.",
-            "takeaway": "A score of 72 is a comparatively strong directional signal for the displayed side. It is not a 72% win probability and never guarantees the result.",
-            "placement": "confidence_help_after_answer",
-        },
-        "sections": [
-            ("How To Read The Score", "Read the displayed direction first, then the 50–100 confidence value. A value near 50 is closer to neutral; a higher value means stronger support for that displayed side."),
-            ("What Goes Into A Score", "Signals can include matchup quality, role and minutes, injury cascade effects, game environment, recent form, hit-rate context, and market probability."),
-            ("How To Use Scores Responsibly", "Confidence is not certainty. Use scores as one input alongside current line, payout format, injury news, and your own risk rules."),
-        ],
-        "faqs": [
-            ("How do Propeller confidence scores work?", "Propeller displays a direction plus a 50–100 confidence score. Higher values show stronger support for the displayed More/Over or Less/Under side; they are not win probabilities."),
-            ("Is a high Propeller score guaranteed to win?", "No. A high score indicates stronger model confidence, not certainty. Sports outcomes are inherently uncertain."),
-            ("What signals affect Propeller confidence?", "Signals can include matchup, role, injuries, game environment, recent form, historical hit rates, market probability, and platform line context."),
-        ],
-        "related": ["/how-it-works/", "/analyzer/", "/guides/how-to-analyze-player-props/", "/track-record/"],
-    },
+    {'slug': 'how-do-confidence-scores-work',
+     'title': 'How Do Propeller Confidence Scores Work?',
+     'description': 'Read Propeller’s displayed side and confidence score separately. Compare fictional '
+                    'examples and a dated public-card observation without mistaking confidence for win '
+                    'probability.',
+     'h1': 'How do Propeller confidence scores work?',
+     'updated': '2026-10-09',
+     'summary': 'Read the displayed side first, then the confidence number. Propeller’s 50–100 score '
+                'describes how strongly the available signals support More/Over or Less/Under. A higher '
+                'score can support either direction. It is not a calibrated win probability, a prediction of '
+                'how many picks will win, or a reason to skip checking the line.',
+     'video': {'id': 'FtkX3AuujJk',
+               'title': 'What Does a 72 Confidence Score Mean? | Propeller Picks',
+               'short_title': 'What Does a 72 Confidence Score Mean?',
+               'description': 'Learn why a Propeller confidence score measures directional model strength '
+                              'rather than an exact chance that a player prop will hit.',
+               'upload_date': '2026-07-17',
+               'duration': 'PT5M33S',
+               'duration_label': '5:33',
+               'heading': 'What does a score like 72 actually tell you?',
+               'intro': 'Follow the same historical prop across desktop and mobile to separate direction, '
+                        'confidence, and estimated chance to hit—and see what evidence to inspect next.',
+               'prompt': 'Direction answers which side. Confidence answers how strong.',
+               'takeaway': 'A score of 72 is a comparatively strong directional signal for the displayed '
+                           'side. It is not a 72% win probability and never guarantees the result.',
+               'placement': 'confidence_help_after_answer'},
+     'sections': [],
+     'faqs': [('Does a higher confidence score mean Over?',
+               'No. Higher confidence supports the displayed side, which can be More/Over or Less/Under. '
+               'Read the side before the number.'),
+              ('Can an Under and an Over both show 80?',
+               'Yes. They can share the same displayed confidence value while supporting opposite '
+               'directions. That does not establish equal true win probabilities.'),
+              ('Does a confidence score of 55 mean Under?',
+               'No. Read the displayed side. A score near 50 is closer to neutral; it does not reverse the '
+               'direction.'),
+              ('Is an 80 confidence score an 80% win probability?',
+               'No. Propeller’s directional model-confidence score is not a calibrated win probability or a '
+               'guarantee.')],
+     'related': ['/how-it-works/',
+                 '/analyzer/',
+                 '/guides/compare-player-prop-lines/',
+                 '/guides/how-ai-sports-betting-works/'],
+     'visual_system': 'replay-room',
+     'body_class': 'pp-confidence-page',
+     'content_sections': [{'title': 'Can two 80 scores point in opposite directions?',
+                           'paragraphs': ['Yes. Direction and confidence answer different questions. The '
+                                          'side tells you which outcome the model supports relative to the '
+                                          'listed line. The number describes the strength of that support on '
+                                          'Propeller’s displayed scale. Reading only the number drops half '
+                                          'the message.',
+                                          'Use these three separate teaching examples to practice that '
+                                          'distinction. They are not opposing recommendations for one '
+                                          'market, and they contain no real player, line or predicted '
+                                          'result. Read across each row before comparing the numbers.'],
+                           'table': {'caption': 'Fictional reading exercise — scores and sides are invented, '
+                                                'not current Propeller picks.',
+                                     'headers': ['Example',
+                                                 'Displayed side',
+                                                 'Confidence score',
+                                                 'Correct reading'],
+                                     'rows': [['A',
+                                               'Less/Under',
+                                               '80',
+                                               'Stronger model support for the displayed Under side.'],
+                                              ['B',
+                                               'More/Over',
+                                               '80',
+                                               'The same displayed confidence value, supporting the opposite '
+                                               'side.'],
+                                              ['C',
+                                               'More/Over',
+                                               '55',
+                                               'Closer to neutral than B on the displayed confidence '
+                                               'scale.']]},
+                           'after_paragraphs': ['A and B both display 80, but A supports Under and B '
+                                                'supports Over. Equal numbers do not make their directions '
+                                                'interchangeable. B and C both support Over, while B’s 80 '
+                                                'sits above C’s 55 on the displayed scale. That comparison '
+                                                'does not say B is 25% more likely to win.',
+                                                'The exercise explains how to read two fields. It does not '
+                                                'establish equal true chances for A and B, expected returns, '
+                                                'or which real sport or model is more reliable. Keep those '
+                                                'questions separate from the simple comparison shown here.']},
+                          {'title': 'What did the actual public card show?',
+                           'paragraphs': ['In an AI-operated check of Propeller’s public analyzer on '
+                                          'September 10, 2026, searching MLB player Ben Rice displayed an '
+                                          'UNDER direction, a Stolen Bases 0.5 line and a separate '
+                                          '“CONFIDENCE 80% STRONG” label. This is a historical research '
+                                          'snapshot, not a current pick or Scott Olmer’s personal use.',
+                                          'That observed card makes the distinction concrete: the large '
+                                          'number alone would not tell you the side. Reading “Under, '
+                                          'confidence 80” preserves both fields. The percent sign was part '
+                                          'of the historical interface label; it did not establish an 80% '
+                                          'chance of winning.',
+                                          'The check did not verify an upcoming appearance, a later platform '
+                                          'line or a statistical result. Its value here is narrower: it '
+                                          'shows an actual instance of a high confidence label appearing '
+                                          'beside Under. Today’s documentation still defines confidence as '
+                                          'directional model support.'],
+                           'links': [('See the public analyzer', '/analyzer/')]},
+                          {'title': 'Does 55 mean Under?',
+                           'paragraphs': ['No. In example C, the displayed side is More/Over, so 55 supports '
+                                          'that side. A value near 50 is closer to neutral on the confidence '
+                                          'scale. It does not instruct you to reverse the displayed '
+                                          'direction, subtract from 100 or reinterpret 55 as a 45% Under '
+                                          'chance.',
+                                          'If the side is missing from something you saved or shared, find '
+                                          'the original card before interpreting the number. A cropped score '
+                                          'or a note that says only “55” leaves out information needed to '
+                                          'understand the research lean.'],
+                           'links': [('Read the scoring methodology', '/how-it-works/')]},
+                          {'title': 'Does 80 mean eight wins in ten?',
+                           'paragraphs': ['No. A directional confidence score is not a calibrated win '
+                                          'probability. Calling a score calibrated would require outcome '
+                                          'evidence showing how predictions match observed results in a '
+                                          'defined, relevant sample. The displayed number and this reading '
+                                          'exercise do not supply that evidence.',
+                                          'An 80 therefore cannot establish that eight of your next ten '
+                                          'choices will win. It also cannot establish profit or justify '
+                                          'combining several scores into an entry’s chance of success. Those '
+                                          'conclusions require information beyond the confidence field.',
+                                          'Only available signals contribute to the score, and availability '
+                                          'and weighting vary by sport, prop and model version. You can use '
+                                          'the score to understand the model’s stated support while still '
+                                          'inspecting what evidence is actually present.'],
+                           'links': [('Understand available and missing evidence',
+                                      '/guides/how-ai-sports-betting-works/')]},
+                          {'title': 'What should I check next?',
+                           'paragraphs': ['Start with the exact player or event, stat and line you are '
+                                          'researching. Confirm that the side and score belong to that same '
+                                          'context. If the line on your platform differs, do not assume a '
+                                          'saved confidence value describes the new question.',
+                                          'Then inspect the reasons and source information available to you. '
+                                          'Identify what supports the direction and what remains unknown. A '
+                                          'clear side and a high number make the card readable; they do not '
+                                          'complete those checks for you.',
+                                          'You may continue researching, wait for better information or '
+                                          'pass. If no current card is available, there is no need to '
+                                          'substitute an older snapshot. The useful habit is simple: read '
+                                          'side, read score, check the exact line, then examine the '
+                                          'available reasons.'],
+                           'links': [('Compare the exact player-prop line',
+                                      '/guides/compare-player-prop-lines/')]}],
+     'cta': {'heading': 'Put the two fields together',
+             'body': 'Use an available card to identify its side, score and exact line before inspecting the '
+                     'reasons. Current availability can vary.',
+             'href': '/analyzer/',
+             'label': 'Read an available card’s side and score'},
+     'related_labels': {'/guides/compare-player-prop-lines/': 'Compare player-prop lines',
+                        '/guides/how-ai-sports-betting-works/': 'Available and missing evidence'}},
     {'slug': 'how-do-i-use-propeller-for-nba-pra-props',
  'title': 'NBA PRA Props Explained: Points, Rebounds and Assists',
      'html_title': 'NBA PRA Props Explained: Points, Rebounds and Assists | Propeller',
@@ -850,7 +968,7 @@ def json_ld(data: dict) -> str:
     return json.dumps(data, indent=2, ensure_ascii=False)
 
 
-def render_related(paths: list[str]) -> str:
+def render_related(paths: list[str], label_overrides: dict | None = None) -> str:
     items = []
     labels = {
         "/analyzer/": "Prop Analyzer",
@@ -879,6 +997,7 @@ def render_related(paths: list[str]) -> str:
         "/guides/how-to-analyze-player-props/": "Player Prop Guide",
         "/compare/pick6-vs-prizepicks/": "Pick6 vs PrizePicks",
     }
+    labels.update(label_overrides or {})
     for path in paths:
         items.append(f'<a href="{esc(path)}">{esc(labels.get(path, path))}</a>')
     return "\n          ".join(items)
@@ -1087,6 +1206,17 @@ body.pp-site-system.pp-pra-page main .table-scroll+p { margin-top:16px; }
 }
 """
 
+CONFIDENCE_CSS = """
+body.pp-site-system.pp-confidence-page main .content-grid > article { min-width:0; }
+body.pp-site-system.pp-confidence-page main .help-table { min-width:620px!important; font-size:15px!important; }
+body.pp-site-system.pp-confidence-page main .help-table th, body.pp-site-system.pp-confidence-page main .help-table td { font-size:15px!important; }
+body.pp-site-system.pp-confidence-page main .table-scroll+p { margin-top:18px; }
+body.pp-site-system.pp-confidence-page main .help-table caption { white-space:normal; }
+body.pp-site-system.pp-confidence-page main .answer-box { border-left-color:#54c8ff; }
+body.pp-site-system.pp-confidence-page .pp-site-footer__column h2 { color:#b8d3df!important; }
+body.pp-site-system.pp-confidence-page .pp-site-footer__legal, body.pp-site-system.pp-confidence-page .pp-site-footer__copy { color:#b8d3df!important; }
+"""
+
 def render_content_section(section: dict) -> str:
     body = "".join(f"<p>{esc(text)}</p>" for text in section["paragraphs"])
     if section.get("table"):
@@ -1126,7 +1256,7 @@ def render_page(page: dict) -> str:
         </div>"""
         for question, answer in page["faqs"]
     )
-    related = render_related(page["related"])
+    related = render_related(page["related"], page.get("related_labels"))
     updated = page.get("updated", UPDATED)
     video_head, video_body, video_script = render_video(page)
     hero = page.get("hero_image", {})
@@ -1183,7 +1313,7 @@ def render_page(page: dict) -> str:
 <script type="application/ld+json">
 {json_ld(faq)}
 </script>
-<style>{BASE_CSS}{ATTRIBUTION_CSS}{TABLE_CSS if page.get("content_sections") else ""}{PRA_CSS if page.get("body_class") == "pp-pra-page" else ""}{ENTRY_BOUNDARIES_CSS if page.get("body_class") == "pp-entry-boundaries-page" else ""}</style>
+<style>{BASE_CSS}{ATTRIBUTION_CSS}{TABLE_CSS if page.get("content_sections") else ""}{PRA_CSS if page.get("body_class") == "pp-pra-page" else ""}{CONFIDENCE_CSS if page.get("body_class") == "pp-confidence-page" else ""}{ENTRY_BOUNDARIES_CSS if page.get("body_class") == "pp-entry-boundaries-page" else ""}</style>
 </head>
 <body{chr(32) + chr(99) + 'lass="pp-replay-room pp-wave-a-page pp-coverage-page' + (' ' + esc(page['body_class']) if page.get('body_class') else '') + '"' if page.get("visual_system") == "replay-room" else ""}>
 <div class="page">
