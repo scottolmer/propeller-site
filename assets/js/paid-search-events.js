@@ -130,7 +130,8 @@
     var absoluteHref = link.href || href;
     var isSignup = /app\.propellerpicks\.com\/signup/.test(absoluteHref);
     var isApp = /app\.propellerpicks\.com/.test(absoluteHref);
-    var isProductCta = link.classList.contains("cta-btn") || /^\/picks\//.test(href);
+    var isResearchHandoff = link.getAttribute("data-cta-destination") === "research_my_pick";
+    var isProductCta = isResearchHandoff || link.classList.contains("cta-btn") || /^\/picks\//.test(href);
 
     if (!isSignup && !isApp && !isProductCta) return;
 
@@ -142,7 +143,12 @@
       cta_surface: clean(link.getAttribute("data-cta-surface"), 80) || "calculator"
     };
 
-    if (isSignup && !preservesBrowserNavigation(event, link) && typeof event.preventDefault === "function") {
+    var researchSource = link.getAttribute("data-research-source");
+    if (isResearchHandoff && (researchSource === "prizepicks_calculator" || researchSource === "underdog_calculator")) {
+      common.research_source = researchSource;
+    }
+
+    if ((isSignup || isResearchHandoff) && !preservesBrowserNavigation(event, link) && typeof event.preventDefault === "function") {
       event.preventDefault();
       var navigate = navigateOnce(absoluteHref);
       var timeout = window.setTimeout(navigate, 250);
@@ -151,7 +157,7 @@
         window.clearTimeout(timeout);
         navigate();
       };
-      track("signup_click", common);
+      track(isSignup ? "signup_click" : "research_cta_click", common);
       return;
     }
 
