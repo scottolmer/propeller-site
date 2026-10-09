@@ -71,6 +71,16 @@ class HelpTableTests(unittest.TestCase):
                 self.assertNotIn('class="summary"', pra)
                 self.assertIn('>Inspect an available player line</a>', pra)
                 continue
+            if other['slug'] == 'how-do-confidence-scores-work':
+                confidence = help_pages.render_page(other)
+                self.assertEqual(confidence.count('<table '), 1)
+                self.assertEqual(confidence.count('scope="row"'), 3)
+                self.assertIn('Fictional reading exercise', confidence)
+                self.assertIn('pp-confidence-page', confidence)
+                self.assertIn('FtkX3AuujJk', confidence)
+                self.assertNotIn('class="summary"', confidence)
+                self.assertIn('September 10, 2026', confidence)
+                continue
             if other['slug'] == 'is-propeller-a-sportsbook':
                 boundaries = help_pages.render_page(other)
                 self.assertEqual(boundaries.count('<table '), 1)
