@@ -52,6 +52,9 @@ def files() -> list[Path]:
 
 def main() -> None:
     errors: list[str] = []
+    private_strategy = ROOT / "docs/seo/competitor-seo-aeo-paid-search-strategy-2026-07-15.html"
+    if private_strategy.exists():
+        errors.append("internal SEO strategy must stay outside the public Pages source")
     html_files = files()
     for path in html_files:
         html = path.read_text(encoding="utf-8")

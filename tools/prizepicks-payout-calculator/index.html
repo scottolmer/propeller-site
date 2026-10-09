@@ -240,6 +240,7 @@ input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
 .trial-invite__primary:hover { color: #111; opacity: .92; }
 .trial-invite__secondary { color: var(--text-1); font-size: 14px; font-weight: 700; }
 .trial-invite--static { margin: -24px 0 48px; }
+.result-link.primary { border-color: var(--accent); color: var(--accent); }
 .result-link:hover, .result-link:focus-visible { border-color: var(--accent); color: var(--accent); opacity: 1; }
 .result-link:focus-visible, .source-note a:focus-visible { outline: 3px solid rgba(249,115,22,0.35); outline-offset: 3px; }
 
@@ -402,8 +403,9 @@ footer a:hover { color: var(--text-2); }
       <div id="flexBreakdown"></div>
       <div class="prob-bar" id="probBar"></div>
       <p class="scenario-note">Scenario probabilities and expected returns use only the hit rate you entered. They are mathematical illustrations, not Propeller predictions.</p>
+      <p class="scenario-note">Choose NFL, MLB, or NBA, then select a player, upcoming game, market, and your line. Start with one complete guest result; account limits are shown in the tool. For other sports or unavailable research, use the free analyzer.</p>
       <div class="result-actions" aria-label="Next research steps">
-        <a class="result-link" href="/picks/prizepicks/" data-cta-id="calculator-prizepicks-result-research" data-cta-surface="calculator_result">Review PrizePicks research</a>
+        <a class="result-link primary" href="/tools/research-my-pick/?research_source=prizepicks_calculator" data-cta-id="calculator-prizepicks-result-my-pick" data-cta-surface="calculator_result" data-cta-destination="research_my_pick" data-research-source="prizepicks_calculator">Research a player prop</a>
         <a class="result-link" href="/analyzer/" data-cta-id="calculator-prizepicks-result-analyzer" data-cta-surface="calculator_result">Free AI player prop analyzer</a>
       </div>
       <aside class="trial-invite" aria-label="Propeller Picks free account">
@@ -860,7 +862,7 @@ function toggleFaq(el) {
 updateUI();
 </script>
 <script src="/assets/js/mobile-nav.js?v=20260624-nav3" defer></script>
-<script src="/assets/js/paid-search-events.js?v=20260817" defer></script>
+<script src="/assets/js/paid-search-events.js?v=20261009" defer></script>
 <script src="/assets/js/video-embeds.js?v=20260720" defer></script>
   <script src="/assets/js/site-nav.js?v=20260712" defer></script>
 </body>

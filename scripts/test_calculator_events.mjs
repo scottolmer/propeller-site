@@ -158,6 +158,33 @@ test("all calculator pages use the single completion contract and result signup 
     assert.match(page, /Get lifetime-free access/);
     assert.match(page, /data-cta-surface="calculator_result"/);
     assert.match(page, /analytics-loader\.js\?v=\d{8}/);
-    assert.match(page, /paid-search-events\.js\?v=20260817/);
+    assert.match(page, /paid-search-events\.js\?v=\d{8}/);
   }
+});
+
+
+test("new result research handoff emits one source-scoped event and navigates once", () => {
+  const {events, click, timers, navigations} = load();
+  const attrs = {
+    "data-cta-id": "calculator-underdog-result-my-pick",
+    "data-cta-surface": "calculator_result",
+    "data-cta-destination": "research_my_pick",
+    "data-research-source": "underdog_calculator",
+    href: "/tools/research-my-pick/?research_source=underdog_calculator",
+  };
+  const link = {
+    href: "https://propellerpicks.com" + attrs.href,
+    textContent: "Research a player prop",
+    getAttribute: name => attrs[name] ?? null,
+    closest: () => null,
+    classList: {contains: () => false},
+  };
+  let prevented = false;
+  click({target: {closest: () => link}, button: 0, preventDefault: () => {prevented = true;}});
+  assert.equal(prevented, true);
+  assert.equal(events.length, 1);
+  assert.equal(events[0][1], "research_cta_click");
+  assert.equal(events[0][2].research_source, "underdog_calculator");
+  events[0][2].event_callback(); timers[0].fn();
+  assert.deepEqual(navigations, [link.href]);
 });

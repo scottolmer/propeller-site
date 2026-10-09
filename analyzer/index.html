@@ -1329,6 +1329,24 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
   line-height: 1.7;
 }
 
+.results-empty-action {
+  display: inline-flex;
+  margin-top: 2px;
+}
+
+.results-empty .results-empty-availability-status {
+  min-height: 20px;
+  margin: 14px auto 0;
+  font-size: 13px;
+}
+
+.confidence-note {
+  margin: 8px 0 0;
+  color: var(--text-tertiary);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
 /* ---- HOW IT WORKS SECTION ---- */
 .how-section {
   padding: 80px 0;
@@ -2714,12 +2732,14 @@ const SPORT_CONFIG = [
 // ============================================================
 let cache       = {};       // { nba: [...], nhl: [...], ... }
 let generatedAtBySport = {}; // API snapshot timestamps, kept separate from pick data
+let feedStatusBySport = {}; // successful feed checks: "available" or "empty"
 let activeSport = 'nba';
 let activeGeneratedAt = '';
 let allPicks    = [];
 let filteredPicks = [];
 let activeSort  = 'confidence';
 let searchQuery = '';
+let selectionVersion = 0;
 
 // ============================================================
 // UTILITIES
@@ -2905,10 +2925,11 @@ function buildPickCard(prop, locked) {
       <div class="confidence-row">
         <span class="confidence-label">Confidence</span>
         <div class="confidence-right">
-          <span class="confidence-value">${confidence}%</span>
+          <span class="confidence-value" aria-label="Directional confidence score ${confidence} out of 100">${confidence}/100</span>
           <span class="tier-badge ${tierClass}">${tier}</span>
         </div>
       </div>
+      <p class="confidence-note">${isOver ? 'OVER' : 'UNDER'} directional score · not a win probability</p>
       <div class="confidence-bar-track" role="none">
         <div class="confidence-bar-fill" data-width="${barWidth}" style="background:${barBg};" role="progressbar" aria-valuenow="${confidence}" aria-valuemin="50" aria-valuemax="100"></div>
       </div>
@@ -2982,20 +3003,28 @@ function renderPicks(picks) {
   // Hide results until user searches
   if (!searchQuery) {
     const hasCurrent = allPicks.length > 0;
+    const findSportAction = !hasCurrent
+      ? `<button class="btn btn-secondary results-empty-action" type="button" data-find-current-sport>Find a sport with current props</button>
+         <p class="results-empty-availability-status" role="status" aria-live="polite"></p>`
+      : '';
     grid.innerHTML = `
       <div class="results-empty">
         <div class="results-empty-icon" style="background:${sportCfg.muted}; color:${sportCfg.color};" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
         <h3>${hasCurrent ? `${allPicks.length} current ${sportCfg.label} props available` : `No current ${sportCfg.label} props available`}</h3>
-        <p>${hasCurrent ? 'Start typing a player name to inspect the current public slate.' : 'The current public feed returned no rows or could not be reached. No older slate is being shown as current.'}</p>
+        <p>${hasCurrent ? 'Start typing a player name to inspect the current public slate.' : 'The current public feed returned no props or could not be reached. This does not tell us whether games are scheduled, and no older slate is being shown as current.'}</p>
+        ${findSportAction}
       </div>
     `;
     grid.style.display = 'grid';
     controls.style.display = 'none';
     meta.innerHTML = allPicks.length > 0
       ? `<span style="color:var(--text-tertiary)">${allPicks.length} ${sportCfg.label} props available today — start typing to search</span>`
-      : `<span style="color:var(--text-tertiary)">No ${sportCfg.label} games scheduled today</span>`;
+      : `<span style="color:var(--text-tertiary)">No current ${sportCfg.label} props in the public feed</span>`;
+    grid.querySelector('[data-find-current-sport]')?.addEventListener('click', event => {
+      findAndShowSportWithCurrentProps(event.currentTarget);
+    });
     return;
   }
 
@@ -3003,14 +3032,14 @@ function renderPicks(picks) {
     const isSearch = searchQuery.length > 0;
     const msg = isSearch
       ? `No props found for "<strong>${escHtml(searchQuery)}</strong>" today. Try a different name or check another sport.`
-      : `No ${sportCfg.label} games scheduled today. Check back on game days.`;
+      : `No current ${sportCfg.label} props are available in the public feed.`;
 
     grid.innerHTML = `
       <div class="results-empty">
         <div class="results-empty-icon" style="background:${sportCfg.muted}; color:${sportCfg.color};" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
-        <h3>${isSearch ? 'No Results' : 'No Games Today'}</h3>
+        <h3>${isSearch ? 'No Results' : `No current ${sportCfg.label} props available`}</h3>
         <p>${msg}</p>
       </div>
     `;
@@ -3068,7 +3097,92 @@ function hideSkeleton() {
 // ============================================================
 // FETCH
 // ============================================================
+function isValidCurrentProp(prop) {
+  const line = prop?.line;
+  return prop
+    && typeof prop.player_name === 'string'
+    && prop.player_name.trim().length > 0
+    && typeof prop.stat_type === 'string'
+    && prop.stat_type.trim().length > 0
+    && line != null
+    && (typeof line === 'number' || typeof line === 'string')
+    && String(line).trim().length > 0
+    && Number.isFinite(Number(line))
+    && ['OVER', 'UNDER'].includes(String(prop.final_direction || '').toUpperCase());
+}
+
+async function requestSportFeed(sport) {
+  const today = getETDate();
+  const res = await fetch(`${API_BASE}/${sport}?game_date=${today}&limit=100`, {
+    signal: AbortSignal.timeout(10000)
+  });
+
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const data = await res.json();
+  const props = Array.isArray(data.props) ? data.props.filter(isValidCurrentProp) : [];
+  cache[sport] = props;
+  generatedAtBySport[sport] = typeof data.generated_at === 'string' ? data.generated_at : '';
+  feedStatusBySport[sport] = props.length > 0 ? 'available' : 'empty';
+  return props;
+}
+
+async function findFirstSportWithCurrentProps(originSport, isCurrent) {
+  const empty = [];
+  const unreachable = [];
+
+  for (const sport of SPORT_CONFIG.filter(candidate => candidate.key !== originSport).slice(0, 4)) {
+    if (!isCurrent()) return { status: 'stale' };
+    try {
+      const props = await requestSportFeed(sport.key);
+      if (!isCurrent()) return { status: 'stale' };
+      if (props.length > 0) return { status: 'found', sport: sport.key, label: sport.label };
+      empty.push(sport.label);
+    } catch (err) {
+      if (!isCurrent()) return { status: 'stale' };
+      unreachable.push(sport.label);
+    }
+  }
+
+  return { status: 'none', empty, unreachable };
+}
+
+async function findAndShowSportWithCurrentProps(button) {
+  const originSport = activeSport;
+  const findVersion = ++selectionVersion;
+  const status = button.parentElement.querySelector('.results-empty-availability-status');
+  button.disabled = true;
+  button.textContent = 'Checking current feeds…';
+  status.textContent = 'Checking up to four other sports. This may take a moment.';
+
+  const result = await findFirstSportWithCurrentProps(
+    originSport,
+    () => selectionVersion === findVersion && activeSport === originSport
+  );
+  if (result.status === 'stale') return;
+
+  if (result.status === 'found') {
+    const tab = document.querySelector(`.sport-tab[data-sport="${result.sport}"]`);
+    if (tab) activateSportTab(tab);
+    const url = new URL(window.location.href);
+    url.searchParams.set('sport', result.sport);
+    window.history.replaceState({}, '', url);
+    loadSport(result.sport);
+    return;
+  }
+
+  button.disabled = false;
+  button.textContent = 'Check current feeds again';
+  const emptyText = result.empty.length
+    ? `No current props were found for ${result.empty.join(', ')}.`
+    : '';
+  const unreachableText = result.unreachable.length
+    ? ` ${result.unreachable.join(', ')} could not be reached.`
+    : '';
+  status.textContent = `${emptyText}${unreachableText}`.trim() || 'No other sport feed could be checked.';
+}
+
 async function loadSport(sport) {
+  const loadVersion = ++selectionVersion;
   activeSport = sport;
   applySportTheme(sport);
 
@@ -3079,7 +3193,7 @@ async function loadSport(sport) {
   searchQuery       = '';
   clearBtn.classList.remove('visible');
 
-  if (cache[sport]) {
+  if (feedStatusBySport[sport]) {
     hideSkeleton();
     activeGeneratedAt = generatedAtBySport[sport] || '';
     allPicks      = cache[sport];
@@ -3090,25 +3204,18 @@ async function loadSport(sport) {
 
   showSkeleton();
 
-  const today = getETDate();
   try {
-    const res = await fetch(`${API_BASE}/${sport}?game_date=${today}&limit=100`, {
-      signal: AbortSignal.timeout(10000)
-    });
-
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    cache[sport]  = Array.isArray(data.props) ? data.props : [];
-    generatedAtBySport[sport] = typeof data.generated_at === 'string' ? data.generated_at : '';
-    if (sport !== activeSport) return;
+    await requestSportFeed(sport);
+    if (loadVersion !== selectionVersion || sport !== activeSport) return;
     activeGeneratedAt = generatedAtBySport[sport];
     allPicks      = cache[sport];
     filteredPicks = allPicks;
   } catch (err) {
     console.warn('Fetch error:', err);
-    cache[sport]  = [];
+    delete cache[sport];
+    delete feedStatusBySport[sport];
     generatedAtBySport[sport] = '';
-    if (sport !== activeSport) return;
+    if (loadVersion !== selectionVersion || sport !== activeSport) return;
     activeGeneratedAt = '';
     allPicks      = [];
     filteredPicks = [];
@@ -3326,9 +3433,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---- Lucide icons then initial load ----
+  // ---- Lucide icons ----
   if (window.lucide) { lucide.createIcons(); }
-  loadSport('nba');
 });
 </script>
   <script src="/assets/js/analytics-events.js?v=20260817" defer></script>

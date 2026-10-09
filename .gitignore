@@ -34,3 +34,6 @@ analytics-dashboard/data/*.json
 
 # Raster export; the adjacent SVG remains the reusable source.
 /images/propeller-youtube-banner-2048x1152.png
+
+# Internal strategy is archived outside this public repository.
+/docs/seo/competitor-seo-aeo-paid-search-strategy-2026-07-15.html
