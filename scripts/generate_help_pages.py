@@ -892,7 +892,7 @@ PAGES = [
           ['Can I use a pick’em payout multiplier instead?',
            'No. An entry-level payout multiplier is not a pair of side prices for this two-outcome market. '
            'Do not substitute it into the formulas.'],
-          ['Is no-vig probability the Confidence Score?',
+          ['Is a no-vig market estimate the Confidence Score?',
            'No. No-vig probability here comes from market prices. Propeller’s Confidence Score describes '
            'model support for a direction and is not a calibrated win probability.']],
  'related': ['/guides/compare-player-prop-lines/',
