@@ -76,6 +76,16 @@ class ContentMaintenanceCompositionTests(unittest.TestCase):
             rendered = optimize(migrate_html(source, path, False))
             self.assertEqual(rendered, optimize(migrate_html(rendered, path, False)), str(path))
 
+    def test_generated_help_survives_coverage_normalization(self):
+        from scripts.normalize_coverage_claims import normalize as coverage
+        # Maintenance runs this normalizer after help generation. A rewrite of
+        # either visible FAQ copy or schema makes the later generator check fail.
+        for page in PAGES:
+            with self.subTest(slug=page['slug']):
+                path = ROOT / 'help' / page['slug'] / 'index.html'
+                generated = migrate_html(render_page(page), path, False)
+                self.assertEqual(generated, coverage(generated))
+
     def test_refreshed_archive_indexing_survives_later_maintenance(self):
         import tempfile
         from unittest.mock import patch
