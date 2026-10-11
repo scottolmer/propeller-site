@@ -739,24 +739,184 @@ PAGES = [
          'body': 'Inspect an available PRA line, wait for role information, or pass.',
          'label': 'Inspect an available player line',
          'href': '/analyzer/'}},
-    {
-        "slug": "does-propeller-show-no-vig-odds",
-        "title": "Does Propeller Show No-Vig Odds?",
-        "description": "How Propeller uses no-vig market probability as part of player prop analysis.",
-        "h1": "Does Propeller show no-vig odds?",
-        "summary": "Propeller uses no-vig market probability as one of several player prop analysis signals where data is available. No-vig analysis removes the bookmaker margin from odds to estimate a cleaner implied probability, then compares that market signal with matchup, role, injury, and form context.",
-        "sections": [
-            ("What No-Vig Means", "No-vig probability normalizes both sides of a market after removing the sportsbook margin. It is a market-implied estimate, not the true probability of an outcome."),
-            ("How Propeller Uses It", "No-vig analysis can help identify when a platform line or price disagrees with broader market expectations, but it is only one signal inside the larger confidence score."),
-            ("Why It Is Not Enough Alone", "Market probability can be useful, but player prop decisions also depend on minutes, usage, matchup, injury news, and payout structure."),
-        ],
-        "faqs": [
-            ("Does Propeller show no-vig odds?", "Propeller uses no-vig market probability as part of its analysis where data is available. It should be read alongside matchup, role, injury, and game-context signals."),
-            ("What is no-vig analysis?", "No-vig analysis removes the sportsbook's built-in margin from odds to estimate a cleaner implied probability for each side of a market."),
-            ("Can no-vig odds guarantee an edge?", "No. No-vig probability is a useful market signal, but it does not guarantee an edge or a winning outcome."),
-        ],
-        "related": ["/guides/how-to-analyze-player-props/", "/analyzer/", "/how-it-works/", "/tools/"],
-    },
+    {'slug': 'does-propeller-show-no-vig-odds',
+ 'title': 'No-Vig Odds Explained: A Worked Example',
+ 'html_title': 'No-Vig Odds Explained: A Worked Example | Propeller Picks',
+ 'description': 'See how no-vig odds turn a matched pair of prices into a market estimate. Work through a '
+                'fictional example and learn what the number cannot tell you.',
+ 'h1': 'What no-vig odds actually tell you about a player prop',
+ 'updated': '2026-10-11',
+ 'visual_system': 'replay-room',
+ 'body_class': 'pp-no-vig-page',
+ 'author_role': 'Founder',
+ 'summary': 'No-vig probability is an estimate derived from a complete set of market prices after '
+            'adjusting for the excess in their implied probabilities. It is not the true chance of a '
+            'result or Propeller’s Confidence Score. Start by checking that both prices describe the same '
+            'player, event, stat, line, source and market snapshot.',
+ 'sections': [],
+ 'content_sections': [{'title': 'Check the pair before calculating',
+                       'paragraphs': ['A player-prop line and a price answer different questions. The line '
+                                      'names the statistical threshold: 25.5 points, for example. A price '
+                                      'such as -120 describes the quoted return for one side. Knowing the '
+                                      'threshold and an Under direction does not tell you that price.',
+                                      'For this two-sided calculation, collect the Over and Under quotes '
+                                      'for the same player, game, stat, half-point line, source and '
+                                      'snapshot. Check that settlement terms match. An Over at one book '
+                                      'and an Under from a different time do not establish the single '
+                                      'matched market used here.',
+                                      'If either quote is missing, stop: “Cannot normalize this two-sided '
+                                      'example.” Do not fill the gap with zero, 50%, a confidence score or '
+                                      'an older quote. Save the missing field so you know what to obtain '
+                                      'next. A precise-looking answer made from mismatched inputs still '
+                                      'describes the wrong question.'],
+                       'links': [['Use the six-field line comparison guide',
+                                  '/guides/compare-player-prop-lines/'],
+                                 ['Record the inputs in a research log',
+                                  '/guides/player-prop-research-log/']]},
+                      {'title': 'A fictional example, with every input named',
+                       'paragraphs': ['Example Player C has a 25.5-point line for Fictional Game A on '
+                                      'Fictional Board B: Over -120 and Under +100. Both quotes belong to '
+                                      'the same invented snapshot, September 5, 2026 at 10:00 '
+                                      'America/Chicago. The player, event, source, prices and timestamp '
+                                      'are all fictional teaching inputs.',
+                                      'Assume two exhaustive outcomes with matching settlement terms and '
+                                      'no push, void or exchange commission. These assumptions keep this '
+                                      'exercise to one complete two-sided market. They are not a statement '
+                                      'about any platform’s actual rules.']},
+                      {'title': 'Convert the quotes, then remove the excess',
+                       'paragraphs': ['With negative American odds -A, A is the positive magnitude: the '
+                                      'amount risked to win 100. Convert using A ÷ (A + 100). For -120, '
+                                      'that is 120 ÷ 220 = 6/11, or 54.55%. With positive odds +B, B is '
+                                      'the profit quoted for risking 100. Convert using 100 ÷ (B + 100). '
+                                      'For +100, that is 100 ÷ 200 = 1/2, or 50.00%.',
+                                      'Add those raw implied probabilities. Their exact sum is 23/22, '
+                                      'displayed as 104.55%. The excess above 100% is 4.55 percentage '
+                                      'points, called the overround. It describes the price pair; it is '
+                                      'not a prediction of your personal loss or return.',
+                                      'Our stated teaching method is proportional normalization: divide '
+                                      'each raw probability by their sum. Over becomes (6/11) ÷ (23/22) = '
+                                      '12/23 = 52.17%. Under becomes (1/2) ÷ (23/22) = 11/23 = 47.83%.'],
+                       'id': 'worked-example',
+                       'table': {'caption': 'Fictional Example Player C, 25.5 points — one matched '
+                                            'two-sided market',
+                                 'headers': ['Side',
+                                             'Price',
+                                             'Raw implied probability',
+                                             'Normalized share'],
+                                 'rows': [['Fictional Over', '-120', '54.55%', '52.17%'],
+                                          ['Fictional Under', '+100', '50.00%', '47.83%']],
+                                 'reflows': True},
+                       'after_paragraphs': ['The exact normalized shares total 100%. Keep full precision '
+                                            'until displaying results. Do not average the raw percentages '
+                                            'or subtract 4.55 points from each side: neither operation is '
+                                            'this proportional method. The result is a market estimate, '
+                                            'not a forecast.']},
+                      {'title': 'Do we have the inputs in a real Propeller record?',
+                       'paragraphs': ['An AI-operated inspection of Propeller’s public analyzer on '
+                                      'September 10, 2026 recorded Ben Rice, Stolen Bases 0.5, Under and '
+                                      'an “80% STRONG” confidence display. The retained observation and '
+                                      'public response establish those fields. They do not establish a '
+                                      'matching Over/Under price pair.',
+                                      'This is a historical input audit, not a current line, '
+                                      'recommendation or account of Scott’s personal use. Comparing its '
+                                      'fields with the fictional exercise shows exactly where the '
+                                      'calculation must stop.'],
+                       'id': 'input-audit',
+                       'table': {'caption': 'September 10, 2026 retained Propeller record: input '
+                                            'completeness',
+                                 'headers': ['Field', 'Retained information', 'Can it supply a price?'],
+                                 'rows': [['Player, stat and line',
+                                           'Ben Rice; Stolen Bases 0.5',
+                                           'Identifies the question, not its quoted return.'],
+                                          ['Direction', 'Under', 'No. A side is not a price.'],
+                                          ['Confidence display',
+                                           '80% STRONG',
+                                           'No. Confidence is not an odds quote.'],
+                                          ['Matched side-price pair',
+                                           'Not established in this retained record',
+                                           'No. The two-sided calculation cannot proceed.']],
+                                 'reflows': True},
+                       'after_paragraphs': ['The useful boundary is the saved evidence. This audit does '
+                                            'not prove that every public or signed-in screen lacks prices, '
+                                            'or that the product cannot use market information. It '
+                                            'establishes that this retained record cannot supply the two '
+                                            'quotes required for our example.']},
+                      {'title': 'What does Propeller document?',
+                       'paragraphs': ['Propeller documents no-vig market context as one available research '
+                                      'signal. Its public wording was checked on October 11, 2026. That '
+                                      'documentation does not verify a particular backend method, price '
+                                      'feed, signal weight or price display on every card. The calculation '
+                                      'above teaches a named method; it does not reproduce verified '
+                                      'Propeller production math.',
+                                      'Propeller’s Confidence Score expresses model support for the '
+                                      'displayed direction from available signals. It is not a calibrated '
+                                      'win probability, and it cannot replace either price in this '
+                                      'calculation. Read the confidence explanation separately when '
+                                      'interpreting that field.'],
+                       'links': [['How confidence scores work', '/help/how-do-confidence-scores-work/'],
+                                 ['How Propeller research works', '/how-it-works/']]},
+                      {'title': 'What can the result tell you?',
+                       'paragraphs': ['Within the fictional pair and chosen method, Over receives 52.17% '
+                                      'of the normalized total and Under 47.83%. That is a reproducible '
+                                      'summary of those prices. It does not prove that the player’s true '
+                                      'chance is 52.17%, that a selection has an edge or that it will win.',
+                                      'Removing the excess does not validate the market’s underlying '
+                                      'judgment or refresh an old snapshot. Proportional normalization '
+                                      'states how we allocate that excess; naming the method keeps its '
+                                      'assumption visible. Before using the number as research context, '
+                                      'check whether its inputs still describe the event and line you are '
+                                      'examining.']},
+                      {'title': 'Sources and a final input check',
+                       'paragraphs': ['Smarkets’ explanations of implied probability and betting margins '
+                                      'support the odds conversions and raw-sum concept; they were '
+                                      'consulted September 17, 2026. The fractions above are independently '
+                                      'reproducible. The historical Propeller observation remains dated '
+                                      'September 10; its retained evidence was rechecked October 11 '
+                                      'without treating it as a new product inspection.',
+                                      'Before recording a result, confirm player and event; stat and exact '
+                                      'line; both side prices; source and snapshot; matching settlement '
+                                      'terms; and the named calculation method. Keep missing fields '
+                                      'visible. If the pair is incomplete, save the limitation and wait '
+                                      'for the required quotes.'],
+                       'links': [['Smarkets: implied probability',
+                                  'https://help.smarkets.com/hc/en-gb/articles/214058369-How-to-calculate-implied-probability-in-betting'],
+                                 ['Smarkets: betting margins',
+                                  'https://help.smarkets.com/hc/en-gb/articles/214180145-How-to-calculate-betting-margins'],
+                                 ['Propeller product facts', '/data/product-facts.json']]}],
+ 'faqs': [['Can I calculate this with just one side?',
+           'No. You can convert one quote to its raw implied probability, but this normalization requires '
+           'the complete matched pair. Missing one side means “Cannot normalize this two-sided example.”'],
+          ['Does 52.17% mean the true chance of winning?',
+           'No. It is the fictional Over price’s share after proportional normalization. Prices and a '
+           'margin-removal method do not establish the true chance of an outcome.'],
+          ['Can I use a pick’em payout multiplier instead?',
+           'No. An entry-level payout multiplier is not a pair of side prices for this two-outcome market. '
+           'Do not substitute it into the formulas.'],
+          ['Is no-vig probability the Confidence Score?',
+           'No. No-vig probability here comes from market prices. Propeller’s Confidence Score describes '
+           'model support for a direction and is not a calibrated win probability.']],
+ 'related': ['/guides/compare-player-prop-lines/',
+             '/guides/player-prop-research-log/',
+             '/help/how-do-confidence-scores-work/',
+             '/how-it-works/'],
+ 'cta': {'heading': 'Check the inputs before the number',
+         'body': 'Inspect the fields available for a prop and identify any missing quote before '
+                 'calculating.',
+         'label': 'Check the inputs before the number',
+         'href': '/analyzer/'},
+ 'social_image': {'src': '/images/content/PP-20260925/cover.png', 'width': 1200, 'height': 630},
+ 'hero_image': {'src': '/images/content/PP-20260925/no-vig-example.svg',
+                'alt': 'Fictional Over -120 converts from 54.55% raw implied probability to 52.17% '
+                       'normalized share; fictional Under +100 converts from 50.00% to 47.83%. A market '
+                       'estimate, not a forecast.',
+                'width': 1200,
+                'height': 800,
+                'caption': 'Fictional teaching example. Both rows describe the same 25.5-point market; the '
+                           'table below repeats the calculation in text.'},
+ 'related_labels': {'/guides/compare-player-prop-lines/': 'Compare exact player-prop lines',
+                    '/guides/player-prop-research-log/': 'Keep a player-prop research log',
+                    '/help/how-do-confidence-scores-work/': 'Read confidence scores',
+                    '/how-it-works/': 'How Propeller research works'}},
     {'slug': 'how-often-are-propeller-picks-updated',
      'title': 'How Often Are Propeller Picks Updated?',
      'description': 'How often Propeller public picks, previews, and results data can change.',
@@ -1217,6 +1377,34 @@ body.pp-site-system.pp-confidence-page .pp-site-footer__column h2 { color:#b8d3d
 body.pp-site-system.pp-confidence-page .pp-site-footer__legal, body.pp-site-system.pp-confidence-page .pp-site-footer__copy { color:#b8d3df!important; }
 """
 
+
+NO_VIG_CSS = """
+body.pp-site-system.pp-no-vig-page main .content-grid > article { min-width:0; }
+body.pp-site-system.pp-no-vig-page main .section-card p, body.pp-site-system.pp-no-vig-page main .faq-item p { font-size:18px!important; line-height:1.65; }
+body.pp-site-system.pp-no-vig-page main .help-hero-media { margin:0 0 36px; }
+body.pp-site-system.pp-no-vig-page main .help-hero-media img { display:block; width:100%; height:auto; }
+body.pp-site-system.pp-no-vig-page main .help-hero-media figcaption { margin-top:12px; color:#b8d3df; font-size:16px; }
+body.pp-site-system.pp-no-vig-page main .help-table { font-size:16px!important; }
+body.pp-site-system.pp-no-vig-page main #worked-example .help-table { font-family:var(--pp-mono,monospace); }
+body.pp-site-system.pp-no-vig-page main .table-scroll+p { margin-top:20px; }
+body.pp-site-system.pp-no-vig-page .pp-site-footer__column h2, body.pp-site-system.pp-no-vig-page .pp-site-footer__legal, body.pp-site-system.pp-no-vig-page .pp-site-footer__copy { color:#b8d3df!important; }
+@media(max-width:600px) {
+body.pp-site-system.pp-no-vig-page main .table-scroll { overflow:visible; }
+body.pp-site-system.pp-no-vig-page main .help-table { min-width:0!important; display:block; }
+body.pp-site-system.pp-no-vig-page main .help-table caption { display:block; margin-bottom:16px; }
+body.pp-site-system.pp-no-vig-page main .help-table thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+body.pp-site-system.pp-no-vig-page main .help-table tbody { display:block; }
+body.pp-site-system.pp-no-vig-page main .help-table tr { display:block; margin-bottom:18px; border:1px solid #54c8ff; }
+body.pp-site-system.pp-no-vig-page main .help-table th, body.pp-site-system.pp-no-vig-page main .help-table td { display:block; width:auto; padding:12px!important; font-size:16px!important; white-space:normal!important; overflow-wrap:break-word!important; }
+body.pp-site-system.pp-no-vig-page main .help-table td:before { display:block; color:#f7f1e7; font-weight:700; margin-bottom:6px; }
+body.pp-site-system.pp-no-vig-page main #worked-example td:nth-child(2):before { content:"Price"; }
+body.pp-site-system.pp-no-vig-page main #worked-example td:nth-child(3):before { content:"Raw implied probability"; }
+body.pp-site-system.pp-no-vig-page main #worked-example td:nth-child(4):before { content:"Normalized share"; }
+body.pp-site-system.pp-no-vig-page main #input-audit td:nth-child(2):before { content:"Retained information"; }
+body.pp-site-system.pp-no-vig-page main #input-audit td:nth-child(3):before { content:"Can it supply a price?"; }
+}
+"""
+
 def render_content_section(section: dict) -> str:
     body = "".join(f"<p>{esc(text)}</p>" for text in section["paragraphs"])
     if section.get("table"):
@@ -1228,7 +1416,8 @@ def render_content_section(section: dict) -> str:
                 raise ValueError("Table row width must match its headings")
             cells = f'<th scope="row">{esc(row[0])}</th>' + "".join(f"<td>{esc(cell)}</td>" for cell in row[1:])
             rows.append(f"<tr>{cells}</tr>")
-        body += f'<div class="table-scroll" role="region" tabindex="0" aria-label="{esc(table["caption"])}. Scroll horizontally on small screens."><table class="help-table"><caption>{esc(table["caption"])}</caption><thead><tr>{headers}</tr></thead><tbody>{"".join(rows)}</tbody></table></div>'
+        table_hint = "Rows stack on small screens." if table.get("reflows") else "Scroll horizontally on small screens."
+        body += f'<div class="table-scroll" role="region" tabindex="0" aria-label="{esc(table["caption"])}. {table_hint}"><table class="help-table"><caption>{esc(table["caption"])}</caption><thead><tr>{headers}</tr></thead><tbody>{"".join(rows)}</tbody></table></div>'
     body += "".join(f"<p>{esc(text)}</p>" for text in section.get("after_paragraphs", []))
     if section.get("links"):
         body += '<div class="section-links">' + "".join(f'<a href="{esc(path)}">{esc(label)}</a>' for label, path in section["links"]) + '</div>'
@@ -1260,7 +1449,8 @@ def render_page(page: dict) -> str:
     updated = page.get("updated", UPDATED)
     video_head, video_body, video_script = render_video(page)
     hero = page.get("hero_image", {})
-    image_url = BASE_URL + hero["src"] if hero.get("src", "").startswith("/") else hero.get("src", BASE_URL + "/images/og-image.png")
+    social_image = page.get("social_image", hero)
+    image_url = BASE_URL + social_image["src"] if social_image.get("src", "").startswith("/") else social_image.get("src", BASE_URL + "/images/og-image.png")
     hero_html = ""
     if hero:
         hero_html = f'<figure class="help-hero-media"><img src="{esc(hero["src"])}" alt="{esc(hero["alt"])}" width="{int(hero["width"])}" height="{int(hero["height"])}"><figcaption>{esc(hero.get("caption", ""))}</figcaption></figure>'
@@ -1292,8 +1482,8 @@ def render_page(page: dict) -> str:
 <meta property="og:title" content="{esc(page['title'])}">
 <meta property="og:description" content="{esc(page['description'])}">
 <meta property="og:image" content="{esc(image_url)}">
-<meta property="og:image:width" content="{int(hero.get("width", 3000))}">
-<meta property="og:image:height" content="{int(hero.get("height", 1000))}">
+<meta property="og:image:width" content="{int(social_image.get("width", 3000))}">
+<meta property="og:image:height" content="{int(social_image.get("height", 1000))}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@propellerpicks">
 <meta name="twitter:title" content="{esc(page['title'])}">
@@ -1313,7 +1503,7 @@ def render_page(page: dict) -> str:
 <script type="application/ld+json">
 {json_ld(faq)}
 </script>
-<style>{BASE_CSS}{ATTRIBUTION_CSS}{TABLE_CSS if page.get("content_sections") else ""}{PRA_CSS if page.get("body_class") == "pp-pra-page" else ""}{CONFIDENCE_CSS if page.get("body_class") == "pp-confidence-page" else ""}{ENTRY_BOUNDARIES_CSS if page.get("body_class") == "pp-entry-boundaries-page" else ""}</style>
+<style>{BASE_CSS}{ATTRIBUTION_CSS}{NO_VIG_CSS if page.get("body_class") == "pp-no-vig-page" else ""}{TABLE_CSS if page.get("content_sections") else ""}{PRA_CSS if page.get("body_class") == "pp-pra-page" else ""}{CONFIDENCE_CSS if page.get("body_class") == "pp-confidence-page" else ""}{ENTRY_BOUNDARIES_CSS if page.get("body_class") == "pp-entry-boundaries-page" else ""}</style>
 </head>
 <body{chr(32) + chr(99) + 'lass="pp-replay-room pp-wave-a-page pp-coverage-page' + (' ' + esc(page['body_class']) if page.get('body_class') else '') + '"' if page.get("visual_system") == "replay-room" else ""}>
 <div class="page">
