@@ -90,6 +90,18 @@ class HelpTableTests(unittest.TestCase):
                 self.assertIn('pp-replay-room', boundaries)
                 self.assertIn('>Explore the public research tools</a>', boundaries)
                 continue
+            if other['slug'] == 'does-propeller-show-no-vig-odds':
+                no_vig = help_pages.render_page(other)
+                self.assertEqual(no_vig.count('<table '), 2)
+                self.assertEqual(no_vig.count('scope="row"'), 6)
+                self.assertIn('52.17%', no_vig)
+                self.assertIn('47.83%', no_vig)
+                self.assertIn('Cannot normalize this two-sided example', no_vig)
+                self.assertIn('Rows stack on small screens.', no_vig)
+                self.assertIn('Last updated: 2026-10-11', no_vig)
+                self.assertNotIn('datePublished', no_vig)
+                self.assertIn('pp-no-vig-page', no_vig)
+                continue
             if other is page:
                 continue
             output = help_pages.render_page(other)
