@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-12T15:19:54Z",
+  "generated_at": "2026-10-12T15:33:40Z",
   "latest_sample_game_date": "2026-10-11",
   "canonical_report": "https://propellerpicks.com/results/",
   "historical_database": {
@@ -221,25 +221,25 @@
   ],
   "recent_ledger_sample": [
     {
+      "result_id": "pr_dbef5a5c32796870b3b5",
+      "sport": "nfl",
+      "player_name": "Jordan Love",
+      "stat_type": "pass_completions",
+      "line": 19.5,
+      "predicted_direction": "OVER",
+      "predicted_score": 64.3,
+      "confidence_pct": 64.30000305175781,
+      "result": "win",
+      "actual_value": 25.0,
+      "game_date": "2026-10-11",
+      "bookmaker": "prizepicks"
+    },
+    {
       "result_id": "pr_4253bbeebcf42206d0ec",
       "sport": "nfl",
       "player_name": "Jordan Love",
       "stat_type": "pass_yds",
       "line": 174.5,
-      "predicted_direction": "OVER",
-      "predicted_score": 64.3,
-      "confidence_pct": 64.30000305175781,
-      "result": "win",
-      "actual_value": 367.0,
-      "game_date": "2026-10-11",
-      "bookmaker": "prizepicks"
-    },
-    {
-      "result_id": "pr_1b2ebece1692d9f40ec0",
-      "sport": "nfl",
-      "player_name": "Jordan Love",
-      "stat_type": "pass_yds",
-      "line": 179.5,
       "predicted_direction": "OVER",
       "predicted_score": 64.3,
       "confidence_pct": 64.30000305175781,
@@ -277,16 +277,16 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_dbef5a5c32796870b3b5",
+      "result_id": "pr_1b2ebece1692d9f40ec0",
       "sport": "nfl",
       "player_name": "Jordan Love",
-      "stat_type": "pass_completions",
-      "line": 19.5,
+      "stat_type": "pass_yds",
+      "line": 179.5,
       "predicted_direction": "OVER",
       "predicted_score": 64.3,
       "confidence_pct": 64.30000305175781,
       "result": "win",
-      "actual_value": 25.0,
+      "actual_value": 367.0,
       "game_date": "2026-10-11",
       "bookmaker": "prizepicks"
     },
@@ -347,25 +347,11 @@
       "bookmaker": "draftkings"
     },
     {
-      "result_id": "pr_b72b0b512b0ffb97002b",
-      "sport": "nfl",
-      "player_name": "Cam Ward",
-      "stat_type": "pass_completions",
-      "line": 15.5,
-      "predicted_direction": "OVER",
-      "predicted_score": 63.9,
-      "confidence_pct": 63.900001525878906,
-      "result": "win",
-      "actual_value": 23.0,
-      "game_date": "2026-10-11",
-      "bookmaker": "prizepicks"
-    },
-    {
-      "result_id": "pr_48b9c87ab7e50d923d92",
+      "result_id": "pr_d28f2389ce43d7865dfb",
       "sport": "nfl",
       "player_name": "Cam Ward",
       "stat_type": "pass_yds",
-      "line": 159.5,
+      "line": 169.5,
       "predicted_direction": "OVER",
       "predicted_score": 63.9,
       "confidence_pct": 63.900001525878906,
@@ -389,6 +375,20 @@
       "bookmaker": "underdog"
     },
     {
+      "result_id": "pr_48b9c87ab7e50d923d92",
+      "sport": "nfl",
+      "player_name": "Cam Ward",
+      "stat_type": "pass_yds",
+      "line": 159.5,
+      "predicted_direction": "OVER",
+      "predicted_score": 63.9,
+      "confidence_pct": 63.900001525878906,
+      "result": "win",
+      "actual_value": 170.0,
+      "game_date": "2026-10-11",
+      "bookmaker": "prizepicks"
+    },
+    {
       "result_id": "pr_8ffb5558e54d2b44491c",
       "sport": "nfl",
       "player_name": "Cam Ward",
@@ -403,18 +403,18 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_dd26cae18b41732ef811",
+      "result_id": "pr_b72b0b512b0ffb97002b",
       "sport": "nfl",
       "player_name": "Cam Ward",
-      "stat_type": "rush_yds",
-      "line": 10.5,
+      "stat_type": "pass_completions",
+      "line": 15.5,
       "predicted_direction": "OVER",
       "predicted_score": 63.9,
       "confidence_pct": 63.900001525878906,
-      "result": "loss",
-      "actual_value": 2.0,
+      "result": "win",
+      "actual_value": 23.0,
       "game_date": "2026-10-11",
-      "bookmaker": "draftkings_pick6"
+      "bookmaker": "prizepicks"
     },
     {
       "result_id": "pr_0128c8617bc2cec55dde",
@@ -445,16 +445,16 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_fc94e095be54fc8bae09",
+      "result_id": "pr_8921ea63716f224b687e",
       "sport": "nfl",
       "player_name": "Cam Ward",
-      "stat_type": "pass_yds",
-      "line": 180.5,
+      "stat_type": "pass_completions",
+      "line": 14.5,
       "predicted_direction": "OVER",
       "predicted_score": 63.9,
       "confidence_pct": 63.900001525878906,
-      "result": "loss",
-      "actual_value": 170.0,
+      "result": "win",
+      "actual_value": 23.0,
       "game_date": "2026-10-11",
       "bookmaker": "prizepicks"
     },
@@ -473,16 +473,16 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_8921ea63716f224b687e",
+      "result_id": "pr_fc94e095be54fc8bae09",
       "sport": "nfl",
       "player_name": "Cam Ward",
-      "stat_type": "pass_completions",
-      "line": 14.5,
+      "stat_type": "pass_yds",
+      "line": 180.5,
       "predicted_direction": "OVER",
       "predicted_score": 63.9,
       "confidence_pct": 63.900001525878906,
-      "result": "win",
-      "actual_value": 23.0,
+      "result": "loss",
+      "actual_value": 170.0,
       "game_date": "2026-10-11",
       "bookmaker": "prizepicks"
     },
