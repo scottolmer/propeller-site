@@ -30,8 +30,8 @@ class HelpTableTests(unittest.TestCase):
         self.assertIn('marketObservedAt: null', html)
         self.assertIn('analysisAt: null', html)
         self.assertIn('15:17:05 UTC', html)
-        self.assertIn('Last updated: 2026-09-12', html)
-        self.assertIn('href="/picks/" rel="noopener">Check current public research', html)
+        self.assertIn('Last updated: 2026-10-13', html)
+        self.assertIn('href="/guides/player-prop-research-log/" rel="noopener">Name the missing clock', html)
         self.assertEqual(html.count('class="answer-box"'), 1)
         self.assertNotIn('class="summary"', html)
         for other in help_pages.PAGES:
@@ -108,6 +108,26 @@ class HelpTableTests(unittest.TestCase):
             self.assertNotIn('.table-scroll', output)
             self.assertIn('class="summary"', output)
             self.assertIn('>Get started</a>', output)
+
+    def test_freshness_visual_survives_generation_and_normalization(self):
+        from normalize_coverage_claims import normalize
+        page = next(p for p in help_pages.PAGES if p['slug'] == 'how-often-are-propeller-picks-updated')
+        path = help_pages.ROOT / 'help' / page['slug'] / 'index.html'
+        generated = help_pages.migrate_html(help_pages.render_page(page), path, False)
+        normalized = normalize(generated)
+        self.assertEqual(normalized, generated)
+        self.assertEqual(normalize(normalized), normalized)
+        self.assertEqual(normalized.count('<figure class="help-hero-media">'), 1)
+        self.assertEqual(normalized.count('<table '), 2)
+        self.assertEqual(normalized.count('scope="row"'), 10)
+        self.assertIn('id="timestamp-key"', normalized)
+        self.assertIn('Rows stack on small screens.', normalized)
+        self.assertIn('#clock-audit td:nth-child(2):before { content:"Observed value"', normalized)
+        self.assertIn('#change-checklist td:nth-child(3):before { content:"When to wait"', normalized)
+        self.assertNotIn('datePublished', normalized)
+        for other in help_pages.PAGES:
+            if other is not page:
+                self.assertNotIn('pp-freshness-page', help_pages.render_page(other))
 
     def test_pra_example_keeps_combined_arithmetic_and_faq_parity(self):
         page = next(p for p in help_pages.PAGES if p['slug'] == 'how-do-i-use-propeller-for-nba-pra-props')

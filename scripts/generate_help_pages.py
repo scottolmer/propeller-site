@@ -918,115 +918,180 @@ PAGES = [
                     '/help/how-do-confidence-scores-work/': 'Read confidence scores',
                     '/how-it-works/': 'How Propeller research works'}},
     {'slug': 'how-often-are-propeller-picks-updated',
-     'title': 'How Often Are Propeller Picks Updated?',
-     'description': 'How often Propeller public picks, previews, and results data can change.',
-     'h1': 'How often are Propeller picks updated?',
-     'updated': '2026-09-12',
-     'summary': "Propeller's public research can change as new slates, lines, player news and available data "
-                'change. Check the current research page, then recheck the exact line and any news that affects '
-                "the player's participation or role. A page dated today does not establish when every underlying "
-                'input was captured. Settled outcomes belong in Results.',
-     'sections': [],
-     'content_sections': [{'title': 'What did our freshness check actually show?',
-                           'paragraphs': ['An AI-operated check on September 10, 2026 found three different '
-                                          "clocks: this help article's documentation date was July 15; the "
-                                          'analyzer heading said September 10; and the public response was '
-                                          'generated at 15:17:05 UTC on September 10. The same response left its '
-                                          'line-observation and analysis times unknown.',
-                                          'Those last fields came from inspection of the public response, not '
-                                          'labels on the player card. The response time therefore could not '
-                                          'establish how old the underlying line or analysis was. This is a '
-                                          "dated historical check, not today's availability report."],
-                           'table': {'caption': 'September 10, 2026 clock audit: three observed times, two '
-                                                'unknowns',
-                                     'headers': ['Clock', 'Observed value', 'What it tells you'],
-                                     'rows': [['Documentation update',
-                                               'July 15, 2026',
-                                               'When this article was marked updated in that observation; not a '
-                                               'data clock.'],
-                                              ['Analyzer calendar heading',
-                                               'September 10, 2026',
-                                               'The date shown by the page; not proof of input capture.'],
-                                              ['Public response generated',
-                                               'September 10, 2026 at 15:17:05 UTC',
-                                               'When that response was produced; not when its line was '
-                                               'observed.'],
-                                              ['Line observed',
-                                               'Unknown (marketObservedAt: null)',
-                                               'The inspected response supplied no line-observation time.'],
-                                              ['Analysis time',
-                                               'Unknown (analysisAt: null)',
-                                               'The inspected response supplied no analysis time.']]}},
-                          {'title': 'What should I recheck when something changes?',
-                           'paragraphs': ['New player-status information, a different expected role, a moved '
-                                          'line or a new slate can change the question you are researching. '
-                                          'Start with the change that matters to your player. These are reader '
-                                          'actions, not promises that an internal update runs whenever one of '
-                                          'these events occurs.'],
-                           'table': {'caption': 'A practical event-to-action checklist',
-                                     'headers': ['What changed', 'What to inspect', 'When to wait'],
-                                     'rows': [['Player status changed',
-                                               'Current official status; the player and event; available '
-                                               'research',
-                                               'Availability or participation remains unresolved.'],
-                                              ['Expected role changed',
-                                               'Evidence for minutes, lineup or opportunity; which assumptions '
-                                               'used the old role',
-                                               'The new role remains unconfirmed.'],
-                                              ['Posted line changed',
-                                               'Current exact stat, number and direction; earlier notes using '
-                                               'another number',
-                                               'The current research cannot be matched to that line.'],
-                                              ['Current slate has no rows',
-                                               'Selected sport, slate date and published availability message',
-                                               'No current research is available; an empty screen is not enough '
-                                               'to diagnose why.'],
-                                              ['Event finished',
-                                               'Settled outcomes at Results, with their own definitions',
-                                               'A result remains ungraded or unresolved.']]}},
-                          {'title': 'Can I still use research I read this morning?',
-                           'paragraphs': ['Reopen the current research and check whether the information you '
-                                          'relied on still applies. For a hypothetical example, suppose you read '
-                                          'a note at 10 AM and player news arrives at noon. The earlier note '
-                                          'cannot certify that the noon change has been incorporated. Look for '
-                                          'research that addresses the changed participation or role before '
-                                          'relying on that assumption.',
-                                          'A changed number also deserves a fresh look. Match the player, event, '
-                                          'stat, number and direction to the exact line you are evaluating. '
-                                          'Research about another number does not automatically answer the same '
-                                          'question. If you cannot match them, wait.'],
-                           'links': [('Check current public research', '/picks/'),
-                                     ('Open the public analyzer', '/analyzer/')]},
-                          {'title': 'Why might no current research appear?',
-                           'paragraphs': ['If no current research appears, check the selected sport and the '
-                                          "page's availability message. An empty public view alone does not tell "
-                                          'you whether no rows were returned, the feed could not be reached, or '
-                                          'another publishing constraint applies. Wait for usable current '
-                                          'research rather than treating an older slate as current.',
-                                          'Coverage also varies with sport, season, slate and available data. '
-                                          'Use the supported-sports help page to understand coverage, then '
-                                          'inspect the current page for availability. A general coverage list '
-                                          'cannot confirm that a particular player or event has current '
-                                          'research.'],
-                           'links': [('See supported sports and coverage',
-                                      '/help/what-sports-does-propeller-support/')]},
-                          {'title': 'How should I read an unknown timestamp?',
-                           'paragraphs': ['Unknown means the inspected response did not supply that time. It '
-                                          'does not by itself mean old, failed or zero. Keep the unanswered '
-                                          'question visible: when was this line observed, or when was this '
-                                          'analysis made? A fresh page heading cannot fill in either missing '
-                                          'answer.'],
-                           'links': [('Check settled outcomes in Results', '/results/')]}],
-     'faqs': [("Does today's date mean every source is current?",
-               'No. A page or slate date does not establish when its underlying line or analysis was captured. '
-               'Read any available timestamp in context: what was timed, for which player and event, and whether '
-               'it answers your freshness question.'),
-              ('Where do settled outcomes appear?',
-               'Use Results for settled outcomes. Current research answers what is available to inspect before '
-               'an event; settled results answer what happened afterward. If an outcome remains ungraded or '
-               'unresolved, wait for its status rather than counting it yourself as settled.')],
-     'related': ['/picks/', '/analyzer/', '/help/what-sports-does-propeller-support/', '/results/'],
-     'cta': {'label': 'Check current public research', 'href': '/picks/'}},
+ 'title': 'How Often Are Propeller Picks Updated?',
+ 'description': 'Use a visual timestamp key to separate article dates, page headings and response times from '
+                'source freshness. Keep missing line and analysis times unknown.',
+ 'h1': 'How often are Propeller picks updated?',
+ 'updated': '2026-10-13',
+ 'summary': "Propeller's public research can change as new slates, lines, player news and available data "
+            'change. Check the current research page, then recheck the exact line and any news that affects '
+            "the player's participation or role. A page dated today does not establish when every underlying "
+            'input was captured. Settled outcomes belong in Results.',
+ 'sections': [],
+ 'content_sections': [{'id': 'timestamp-key',
+                       'title': 'Which timestamp answers your question?',
+                       'paragraphs': ['A recent date answers only the question that its label describes. An '
+                                      'article date, a page heading and a response-generation time do not '
+                                      'establish when the underlying line was observed or the analysis was '
+                                      'made. Look for that specific evidence; keep Unknown if it is absent.',
+                                      'When was this explanation updated? Look for the documentation date. '
+                                      "It describes the article, so use it to understand the explanation's "
+                                      'revision history. It does not date the research inputs.',
+                                      'When was this response produced? Look for the response-generation '
+                                      'time. That clock tells you when the inspected response was produced, '
+                                      'even if the response does not supply the ages of its inputs.',
+                                      'How old are the inputs? Seek the line-observation and analysis times '
+                                      'for the exact research question. Match the player, event, stat, '
+                                      'number and direction before treating a timestamp as relevant to your '
+                                      'note.',
+                                      'The diagram uses a historical AI-operated check from September 10, '
+                                      '2026. The two missing input clocks came from the inspected public '
+                                      'response, not labels on a player card. The detailed audit below '
+                                      "retains all five values; it does not establish today's source age or "
+                                      'a refresh interval.',
+                                      'Name the missing clock in your research note. Write Unknown when its '
+                                      'evidence is absent, then return to the available research to inspect '
+                                      'what it actually supplies. Missing evidence does not prove old, '
+                                      'failed or zero.'],
+                       'links': [('Name the missing clock', '/guides/player-prop-research-log/'),
+                                 ('Inspect available research', '/analyzer/'),
+                                 ('Match the exact research question',
+                                  '/guides/compare-player-prop-lines/')]},
+                      {'title': 'What did our freshness check actually show?',
+                       'paragraphs': ['An AI-operated check on September 10, 2026 found three different '
+                                      "clocks: this help article's documentation date was July 15; the "
+                                      'analyzer heading said September 10; and the public response was '
+                                      'generated at 15:17:05 UTC on September 10. The same response left its '
+                                      'line-observation and analysis times unknown.',
+                                      'Those last fields came from inspection of the public response, not '
+                                      'labels on the player card. The response time therefore could not '
+                                      'establish how old the underlying line or analysis was. This is a '
+                                      "dated historical check, not today's availability report."],
+                       'table': {'caption': 'September 10, 2026 clock audit: three observed times, two '
+                                            'unknowns',
+                                 'headers': ['Clock', 'Observed value', 'What it tells you'],
+                                 'rows': [['Documentation update',
+                                           'July 15, 2026',
+                                           'When this article was marked updated in that observation; not a '
+                                           'data clock.'],
+                                          ['Analyzer calendar heading',
+                                           'September 10, 2026',
+                                           'The date shown by the page; not proof of input capture.'],
+                                          ['Public response generated',
+                                           'September 10, 2026 at 15:17:05 UTC',
+                                           'When that response was produced; not when its line was '
+                                           'observed.'],
+                                          ['Line observed',
+                                           'Unknown (marketObservedAt: null)',
+                                           'The inspected response supplied no line-observation time.'],
+                                          ['Analysis time',
+                                           'Unknown (analysisAt: null)',
+                                           'The inspected response supplied no analysis time.']],
+                                 'reflows': True},
+                       'id': 'clock-audit'},
+                      {'title': 'What should I recheck when something changes?',
+                       'paragraphs': ['New player-status information, a different expected role, a moved '
+                                      'line or a new slate can change the question you are researching. '
+                                      'Start with the change that matters to your player. These are reader '
+                                      'actions, not promises that an internal update runs whenever one of '
+                                      'these events occurs.'],
+                       'table': {'caption': 'A practical event-to-action checklist',
+                                 'headers': ['What changed', 'What to inspect', 'When to wait'],
+                                 'rows': [['Player status changed',
+                                           'Current official status; the player and event; available '
+                                           'research',
+                                           'Availability or participation remains unresolved.'],
+                                          ['Expected role changed',
+                                           'Evidence for minutes, lineup or opportunity; which assumptions '
+                                           'used the old role',
+                                           'The new role remains unconfirmed.'],
+                                          ['Posted line changed',
+                                           'Current exact stat, number and direction; earlier notes using '
+                                           'another number',
+                                           'The current research cannot be matched to that line.'],
+                                          ['Current slate has no rows',
+                                           'Selected sport, slate date and published availability message',
+                                           'No current research is available; an empty screen is not enough '
+                                           'to diagnose why.'],
+                                          ['Event finished',
+                                           'Settled outcomes at Results, with their own definitions',
+                                           'A result remains ungraded or unresolved.']],
+                                 'reflows': True},
+                       'id': 'change-checklist'},
+                      {'title': 'Can I still use research I read this morning?',
+                       'paragraphs': ['Reopen the current research and check whether the information you '
+                                      'relied on still applies. For a hypothetical example, suppose you read '
+                                      'a note at 10 AM and player news arrives at noon. The earlier note '
+                                      'cannot certify that the noon change has been incorporated. Look for '
+                                      'research that addresses the changed participation or role before '
+                                      'relying on that assumption.',
+                                      'A changed number also deserves a fresh look. Match the player, event, '
+                                      'stat, number and direction to the exact line you are evaluating. '
+                                      'Research about another number does not automatically answer the same '
+                                      'question. If you cannot match them, wait.'],
+                       'links': [('Check current public research', '/picks/'),
+                                 ('Open the public analyzer', '/analyzer/')]},
+                      {'title': 'Why might no current research appear?',
+                       'paragraphs': ['If no current research appears, check the selected sport and the '
+                                      "page's availability message. An empty public view alone does not tell "
+                                      'you whether no rows were returned, the feed could not be reached, or '
+                                      'another publishing constraint applies. Wait for usable current '
+                                      'research rather than treating an older slate as current.',
+                                      'Coverage also varies with sport, season, slate and available data. '
+                                      'Use the supported-sports help page to understand coverage, then '
+                                      'inspect the current page for availability. A general coverage list '
+                                      'cannot confirm that a particular player or event has current '
+                                      'research.'],
+                       'links': [('See supported sports and coverage',
+                                  '/help/what-sports-does-propeller-support/')]},
+                      {'title': 'How should I read an unknown timestamp?',
+                       'paragraphs': ['Unknown means the inspected response did not supply that time. It '
+                                      'does not by itself mean old, failed or zero. Keep the unanswered '
+                                      'question visible: when was this line observed, or when was this '
+                                      'analysis made? A fresh page heading cannot fill in either missing '
+                                      'answer.'],
+                       'links': [('Check settled outcomes in Results', '/results/')]}],
+ 'faqs': [("Does today's date mean every source is current?",
+           'No. A page or slate date does not establish when its underlying line or analysis was captured. '
+           'Read any available timestamp in context: what was timed, for which player and event, and whether '
+           'it answers your freshness question.'),
+          ('Where do settled outcomes appear?',
+           'Use Results for settled outcomes. Current research answers what is available to inspect before '
+           'an event; settled results answer what happened afterward. If an outcome remains ungraded or '
+           'unresolved, wait for its status rather than counting it yourself as settled.')],
+ 'related': ['/picks/', '/analyzer/', '/help/what-sports-does-propeller-support/', '/results/'],
+ 'cta': {'label': 'Name the missing clock',
+         'href': '/guides/player-prop-research-log/',
+         'heading': 'Keep the unanswered question visible',
+         'body': 'Record which clock is missing, then inspect the available research before relying on an '
+                 'assumption.'},
+ 'attribution': {'author': {'@type': 'Person',
+                            'name': 'Scott Olmer',
+                            'url': 'https://propellerpicks.com/about/'},
+                 'publisher': {'@type': 'Organization',
+                               'name': 'Propeller Picks',
+                               'url': 'https://propellerpicks.com'},
+                 'authorized_byline': {'authority': 'Scott Olmer',
+                                       'recorded_on': '2026-09-10',
+                                       'scope': 'All Propeller Picks articles, including AI-assisted '
+                                                'articles without personal involvement.',
+                                       'authorization_id': 'scott-standing-byline-20260910'},
+                 'production_disclosure': 'Produced and reviewed through automated AI workflows.',
+                 'contributors': [],
+                 'reviewer': None},
+ 'visual_system': 'replay-room',
+ 'body_class': 'pp-freshness-page',
+ 'hero_image': {'src': '/help/how-often-are-propeller-picks-updated/freshness-key.svg',
+                'width': 1600,
+                'height': 1200,
+                'alt': 'Three questions route to documentation date, response-generation time, or '
+                       'line-observation and analysis times; the September 10 historical check left both '
+                       'input clocks unknown.',
+                'caption': 'Different timestamps answer different questions; this September 10 check did not '
+                           'supply the two input clocks.'},
+ 'social_image': {'src': '/help/how-often-are-propeller-picks-updated/cover.png',
+                  'width': 1200,
+                  'height': 630}},
     {
         "slug": "how-do-propeller-fantasy-projections-work",
         "title": "How Do Propeller Fantasy Projections Work?",
@@ -1405,6 +1470,8 @@ body.pp-site-system.pp-no-vig-page main #input-audit td:nth-child(3):before { co
 }
 """
 
+FRESHNESS_CSS = '\nbody.pp-site-system.pp-freshness-page main .content-grid > article { min-width:0; }\nbody.pp-site-system.pp-freshness-page main .section-card p, body.pp-site-system.pp-freshness-page main .faq-item p { font-size:18px!important; line-height:1.65; }\nbody.pp-site-system.pp-freshness-page main .help-hero-media { margin:0 0 36px; }\nbody.pp-site-system.pp-freshness-page main .help-hero-media img { display:block; width:100%; height:auto; }\nbody.pp-site-system.pp-freshness-page main .help-hero-media figcaption { margin-top:12px; color:#b8d3df; font-size:16px; }\nbody.pp-site-system.pp-freshness-page main .help-table { font-size:16px!important; }\nbody.pp-site-system.pp-freshness-page main .table-scroll+p { margin-top:20px; }\nbody.pp-site-system.pp-freshness-page .pp-site-footer__column h2, body.pp-site-system.pp-freshness-page .pp-site-footer__legal, body.pp-site-system.pp-freshness-page .pp-site-footer__copy { color:#b8d3df!important; }\n@media(max-width:600px) {\nbody.pp-site-system.pp-freshness-page main .table-scroll { overflow:visible; }\nbody.pp-site-system.pp-freshness-page main .help-table { min-width:0!important; display:block; }\nbody.pp-site-system.pp-freshness-page main .help-table caption { display:block; margin-bottom:16px; }\nbody.pp-site-system.pp-freshness-page main .help-table thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }\nbody.pp-site-system.pp-freshness-page main .help-table tbody { display:block; }\nbody.pp-site-system.pp-freshness-page main .help-table tr { display:block; margin-bottom:18px; border:1px solid #54c8ff; }\nbody.pp-site-system.pp-freshness-page main .help-table th, body.pp-site-system.pp-freshness-page main .help-table td { display:block; width:auto; padding:12px!important; font-size:16px!important; white-space:normal!important; overflow-wrap:break-word!important; }\nbody.pp-site-system.pp-freshness-page main .help-table td:before { display:block; color:#f7f1e7; font-weight:700; margin-bottom:6px; }\nbody.pp-site-system.pp-freshness-page main #clock-audit td:nth-child(2):before { content:"Observed value"; }\nbody.pp-site-system.pp-freshness-page main #clock-audit td:nth-child(3):before { content:"What it tells you"; }\nbody.pp-site-system.pp-freshness-page main #change-checklist td:nth-child(2):before { content:"What to inspect"; }\nbody.pp-site-system.pp-freshness-page main #change-checklist td:nth-child(3):before { content:"When to wait"; }\n}'
+
 def render_content_section(section: dict) -> str:
     body = "".join(f"<p>{esc(text)}</p>" for text in section["paragraphs"])
     if section.get("table"):
@@ -1503,7 +1570,7 @@ def render_page(page: dict) -> str:
 <script type="application/ld+json">
 {json_ld(faq)}
 </script>
-<style>{BASE_CSS}{ATTRIBUTION_CSS}{NO_VIG_CSS if page.get("body_class") == "pp-no-vig-page" else ""}{TABLE_CSS if page.get("content_sections") else ""}{PRA_CSS if page.get("body_class") == "pp-pra-page" else ""}{CONFIDENCE_CSS if page.get("body_class") == "pp-confidence-page" else ""}{ENTRY_BOUNDARIES_CSS if page.get("body_class") == "pp-entry-boundaries-page" else ""}</style>
+<style>{BASE_CSS}{ATTRIBUTION_CSS}{FRESHNESS_CSS if page.get("body_class") == "pp-freshness-page" else ""}{NO_VIG_CSS if page.get("body_class") == "pp-no-vig-page" else ""}{TABLE_CSS if page.get("content_sections") else ""}{PRA_CSS if page.get("body_class") == "pp-pra-page" else ""}{CONFIDENCE_CSS if page.get("body_class") == "pp-confidence-page" else ""}{ENTRY_BOUNDARIES_CSS if page.get("body_class") == "pp-entry-boundaries-page" else ""}</style>
 </head>
 <body{chr(32) + chr(99) + 'lass="pp-replay-room pp-wave-a-page pp-coverage-page' + (' ' + esc(page['body_class']) if page.get('body_class') else '') + '"' if page.get("visual_system") == "replay-room" else ""}>
 <div class="page">
