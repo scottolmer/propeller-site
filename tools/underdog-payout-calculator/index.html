@@ -29,7 +29,8 @@
 <meta name="theme-color" content="#f7f9fc">
 
 <link rel="stylesheet" href="/assets/css/video-embeds.css?v=20260720">
-<style>body.pp-site-system main .pp-video-card .pp-video-card__prompt strong{color:#fff!important}body.pp-site-system main .pp-video-card .pp-video-card__takeaway{color:rgba(255,255,255,.76)!important}body.pp-site-system main .pp-video-card .pp-video-card__takeaway strong{color:#fff!important}</style>
+<style>body.pp-site-system main .pp-video-card .pp-video-card__prompt strong{color:#fff!important}body.pp-site-system main .pp-video-card .pp-video-card__takeaway{color:rgba(255,255,255,.76)!important}body.pp-site-system main .pp-video-card .pp-video-card__takeaway strong{color:#fff!important}.calculator-intro{margin:0 0 12px;color:var(--text-2);font-size:14px}.calc-card>.result-link{margin-bottom:20px;min-height:44px}.scenario-details{margin:20px 0}.scenario-details summary{cursor:pointer;color:var(--text-1);font-weight:600;padding:12px 0;min-height:44px}.scenario-details .hit-rate-control{margin-top:12px}.result-actions a{min-height:44px}
+</style>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"VideoObject","name":"How Much Does Underdog Pay? Standard & Flex Payout Calculator Walkthrough","description":"Learn the Underdog payout formula, a five-pick Standard scenario, six-pick Flex result rows, and why the final entry screen controls.","thumbnailUrl":"https://i.ytimg.com/vi/eDEo1qPA2xQ/maxresdefault.jpg","uploadDate":"2026-08-17","duration":"PT3M22S","embedUrl":"https://www.youtube.com/embed/eDEo1qPA2xQ","contentUrl":"https://www.youtube.com/watch?v=eDEo1qPA2xQ"}
@@ -188,7 +189,10 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
     <p>Estimate Underdog Standard and Flex base payouts for 2-8 picks, then test a visitor-supplied hit-rate scenario without treating it as a prediction.</p>
   </section>
 
-  <div class="calc-card">
+  <div class="calc-card" id="calculator" aria-label="Underdog payout calculator">
+    <p class="calculator-intro">Choose your entry type, pick count, and amount to see the base payout. No account needed.</p>
+    <button class="result-link" type="button" data-calculator-example onclick="showExample()">Try a $10, five-pick Standard example</button>
+    <p id="exampleNote" class="scenario-note" hidden>Worked example only. Replace the inputs with your own entry; confirm the final multiplier in Underdog.</p>
     <div class="form-row">
       <div class="form-group">
         <label class="form-label" for="entryType">Entry Type</label>
@@ -199,7 +203,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
       </div>
       <div class="form-group">
         <label class="form-label" for="numPicks">Number of Picks</label>
-        <select id="numPicks">
+        <select id="numPicks" onchange="refreshIfVisible()">
           <option value="2">2 Picks</option>
           <option value="3">3 Picks</option>
           <option value="4" selected>4 Picks</option>
@@ -221,6 +225,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
       <div style="display:flex;align-items:center;gap:4px"><span style="color:var(--text-3);font-size:18px;font-weight:700" aria-hidden="true">$</span><input type="number" id="customAmt" aria-label="Custom entry amount" placeholder="Custom" min="1" max="1000" style="width:100px" oninput="setCustom()"></div>
     </div>
 
+    <details class="scenario-details"><summary>Optional: explore a hit-rate scenario</summary>
     <div class="hit-rate-control">
       <div>
         <label class="form-label" for="hitRate">Your Scenario Hit Rate</label>
@@ -232,21 +237,23 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
       </div>
     </div>
 
+    </details>
+
     <button class="calc-btn" type="button" onclick="calculate()">Calculate Payout</button>
 
-    <div class="results" id="results" aria-live="polite">
+    <div class="results" id="results" aria-live="polite" tabindex="-1">
       <div class="result-grid" id="resultGrid"></div>
       <div id="flexBreakdown"></div>
       <div id="scenarioNote"></div>
       <p class="result-sub" style="margin-top:16px;text-align:center">Base-table estimate only. Confirm the final multiplier and grading in Underdog.</p>
       <p class="scenario-note">Choose NFL, MLB, or NBA, then select a player, upcoming game, market, and your line. Start with one complete guest result; account limits are shown in the tool. For other sports or unavailable research, use the free analyzer.</p>
       <div class="result-actions" aria-label="Next research steps"><a class="result-link primary" href="/tools/research-my-pick/?research_source=underdog_calculator" data-cta-id="calculator-underdog-result-my-pick" data-cta-surface="calculator_result" data-cta-destination="research_my_pick" data-research-source="underdog_calculator">Research a player prop</a><a class="result-link" href="/analyzer/" data-cta-id="calculator-underdog-result-analyzer" data-cta-surface="calculator_result">Free AI player prop analyzer</a></div>
-      <aside class="trial-invite" aria-label="Propeller Picks free account"><p class="trial-invite__eyebrow">Take the next research step</p><h3>Get lifetime-free core access to the full research workspace.</h3><p>Launch spots remain. Save your research and put this payout math beside confidence, line value, movement, and supporting context. No card is required. This public calculator stays free and separate.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-underdog-result-signup" data-cta-surface="calculator_result" data-cta-destination="signup">Get lifetime-free access</a><a class="trial-invite__secondary" href="/analyzer/">Keep using the free analyzer</a></div></aside>
+      <aside class="trial-invite" aria-label="Propeller Picks free account"><p class="trial-invite__eyebrow">Take the next research step</p><h3>Keep your research in one workspace.</h3><p>Put this payout math beside player research, line context, and supporting evidence. Explore the account workspace and review its current access terms. This public calculator stays free.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-underdog-result-signup" data-cta-surface="calculator_result" data-cta-destination="signup">Explore Propeller</a><a class="trial-invite__secondary" href="/analyzer/">Keep using the free analyzer</a></div></aside>
       <div style="margin-top:16px;text-align:center"><button class="copy-btn" type="button" onclick="copyResults()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy Results</button></div>
     </div>
   </div>
 
-  <aside class="trial-invite trial-invite--static" aria-label="Propeller Picks free account"><p class="trial-invite__eyebrow">Beyond payout math</p><h3>Research the props behind the entry with lifetime-free core access.</h3><p>Launch spots remain. Create an account to save your research and use the full workspace. No card is required. This calculator remains free.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-underdog-static-signup" data-cta-surface="calculator_static" data-cta-destination="signup">Get lifetime-free access</a><a class="trial-invite__secondary" href="/picks/underdog/">Review Underdog research</a></div></aside>
+  <aside class="trial-invite trial-invite--static" aria-label="Propeller Picks free account"><p class="trial-invite__eyebrow">Beyond payout math</p><h3>Research the props behind the entry.</h3><p>Explore the account workspace and review its current access terms. This calculator remains free without an account.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-underdog-static-signup" data-cta-surface="calculator_static" data-cta-destination="signup">Explore Propeller</a><a class="trial-invite__secondary" href="/picks/underdog/">Review Underdog research</a></div></aside>
 
   <section class="answer-block" aria-labelledby="calculator-answer-heading">
     <h2 id="calculator-answer-heading">How this Underdog payout calculator works</h2>
@@ -392,7 +399,7 @@ const FLEX={
 };
 let amount=20;
 
-function setAmt(v,button){amount=v;document.getElementById('customAmt').value='';document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));button?.classList.add('active')}
+function setAmt(v,button){amount=v;document.getElementById('customAmt').value='';document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));button?.classList.add('active');refreshIfVisible()}
 function setCustom(){const input=document.getElementById('customAmt');const raw=Number(input.value);if(!Number.isFinite(raw)||raw<=0){amount=20;input.value='';document.querySelectorAll('.pill').forEach(p=>p.classList.toggle('active',p.textContent.trim()==='$20'));refreshIfVisible();return}amount=Math.min(1000,raw);if(raw>1000)input.value=1000;document.querySelectorAll('.pill').forEach(p=>p.classList.remove('active'));refreshIfVisible()}
 
 function getHitRate(){const input=document.getElementById('hitRate');const raw=Number(input?.value||55);const clamped=Math.max(1,Math.min(99,raw));if(input&&Number(input.value)!==clamped)input.value=clamped;return clamped/100}
@@ -411,7 +418,19 @@ function updateUI(){
 function binomial(n,k){if(k>n)return 0;let r=1;for(let i=0;i<k;i++)r=r*(n-i)/(i+1);return r}
 function binomProb(n,k,p){return binomial(n,k)*Math.pow(p,k)*Math.pow(1-p,n-k)}
 
-function calculate(){
+function showExample(){
+  document.getElementById('entryType').value='standard';
+  document.getElementById('numPicks').value='5';
+  updateUI();
+  setAmt(10,Array.from(document.querySelectorAll('.pill')).find(p=>p.textContent.trim()==='$10'));
+  calculate(true);
+  document.getElementById('exampleNote').hidden=false;
+  document.getElementById('results').focus({preventScroll:true});
+  document.getElementById('results').scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+function calculate(example=false){
+  document.getElementById('exampleNote').hidden= !example;
   const type=document.getElementById('entryType').value;
   const n=parseInt(document.getElementById('numPicks').value);
   const grid=document.getElementById('resultGrid');
@@ -443,7 +462,7 @@ function calculate(){
     scenarioNote.innerHTML=`<div class="prob-label" style="margin-top:16px"><span>Probability scenario only</span><span style="font-size:12px;color:var(--text-3)">Based on your ${wrText} per-pick assumption; no ROI or profitability estimate</span></div>`;
   }
   document.getElementById('results').classList.add('show');
-  window.ppPaidSearchEvents?.trackCalculatorCompletion({entry_type:type,num_picks:n});
+  if(!example) window.ppPaidSearchEvents?.trackCalculatorCompletion({entry_type:type,num_picks:n});
 }
 
 function copyResults(){
@@ -459,7 +478,7 @@ function toggleFaq(el){const open=el.classList.toggle('open');el.nextElementSibl
 updateUI();
 </script>
 <script src="/assets/js/mobile-nav.js?v=20260624-nav3" defer></script>
-<script src="/assets/js/paid-search-events.js?v=20261009" defer></script>
+<script src="/assets/js/paid-search-events.js?v=20261014" defer></script>
 <script src="/assets/js/video-embeds.js?v=20260720" defer></script>
   <script src="/assets/js/site-nav.js?v=20260712" defer></script>
 </body>

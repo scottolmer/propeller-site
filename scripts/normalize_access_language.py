@@ -9,6 +9,23 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 EXCLUDED = {".git", "analytics-dashboard", "docs", "mockups"}
+GROWTH_ENTRY_PAGES = {
+    "analyzer/index.html", "picks/prizepicks/index.html",
+    "tools/prizepicks-payout-calculator/index.html",
+    "tools/underdog-payout-calculator/index.html",
+    "tools/pick6-payout-calculator/index.html",
+}
+
+# Public acquisition tools stay free. Their account CTAs must survive the
+# prospective launch without promising a new permanent full-workspace grant.
+ENTRY_REPLACEMENTS = (
+    ("Get lifetime-free access", "Explore Propeller"),
+    ("Get lifetime-free core access to the full research workspace.", "Keep your research in one workspace."),
+    ("Research the props behind the entry with lifetime-free core access.", "Research the props behind the entry."),
+    ("Launch spots remain. Save your research and put this payout math beside confidence, line value, movement, and supporting context. No card is required. This public calculator stays free and separate.", "Put this payout math beside player research, line context, and supporting evidence. Explore the account workspace and review its current access terms. This public calculator stays free."),
+    ("Launch spots remain. Create an account to save your research and use the full workspace. No card is required. This calculator remains free.", "Explore the account workspace and review its current access terms. This calculator remains free without an account."),
+    ("No card required.", "Public tools stay free. Account access terms are shown in the app."),
+)
 
 REPLACEMENTS = (
     ("Get Free Lifetime Access", "Get lifetime-free access"),
@@ -43,9 +60,12 @@ REPLACEMENTS = (
 )
 
 
-def normalize(source: str) -> str:
+def normalize(source: str, *, growth_entry: bool = False) -> str:
     for old, new in REPLACEMENTS:
         source = source.replace(old, new)
+    if growth_entry:
+        for old, new in ENTRY_REPLACEMENTS:
+            source = source.replace(old, new)
     return source
 
 
@@ -60,7 +80,7 @@ def main() -> None:
     changed = []
     for path in sorted(files):
         source = path.read_text(encoding="utf-8")
-        updated = normalize(source)
+        updated = normalize(source, growth_entry=path.relative_to(ROOT).as_posix() in GROWTH_ENTRY_PAGES)
         if updated != source:
             changed.append(path)
             if not args.check:
