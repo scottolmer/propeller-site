@@ -1,11 +1,26 @@
 import unittest
+import datetime
+import re
 from pathlib import Path
 from scripts.normalize_access_language import GROWTH_ENTRY_PAGES, normalize
+from scripts.update_picks_freshness import stamp
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 class GrowthEntryCopy(unittest.TestCase):
+    def test_daily_prizepicks_title_retains_intent_and_length_after_date_stamping(self):
+        source = (ROOT / 'picks/prizepicks/index.html').read_text()
+        for month in range(1, 13):
+            with self.subTest(month=month):
+                day = datetime.date(2026, month, 28)
+                generated = stamp(source, day)
+                title = re.search(r'<title>(.*?)</title>', generated).group(1)
+                self.assertLessEqual(len(title), 60)
+                self.assertIn('picks today', title.lower())
+                self.assertIn('cheat sheet', title.lower())
+                self.assertEqual(stamp(generated, day), generated)
+
     def test_generated_entry_copy_remains_neutral_after_repeated_maintenance(self):
         legacy = '<a>Start Free Trial</a><h3>Get lifetime-free core access to the full research workspace.</h3><p>No card required.</p>'
         result = normalize(legacy, growth_entry=True)
