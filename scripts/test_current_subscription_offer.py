@@ -65,12 +65,12 @@ def main() -> int:
                 errors.append(f"{relative}: missing neutral entry CTA and access disclosure")
             if CTA in source or "Launch spots remain" in source:
                 errors.append(f"{relative}: promises new permanent access")
-            continue
-        accepted_cta = CTA in source or (relative == "pricing/index.html" and "Create a free account" in source)
-        if not accepted_cta:
-            errors.append(f"{relative}: missing current lifetime-free CTA")
-        if TERMS not in source:
-            errors.append(f"{relative}: missing no-card disclosure")
+        else:
+            accepted_cta = CTA in source or (relative == "pricing/index.html" and "Create a free account" in source)
+            if not accepted_cta:
+                errors.append(f"{relative}: missing current lifetime-free CTA")
+            if TERMS not in source:
+                errors.append(f"{relative}: missing no-card disclosure")
         cursor = 0
         while (cta_at := source.find(CTA, cursor)) >= 0:
             terms_at = source.find(TERMS, cta_at)
