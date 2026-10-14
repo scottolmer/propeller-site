@@ -12,6 +12,9 @@
     if (source !== "direct") url.searchParams.set("research_source", source);
     link.href = url.href;
     link.setAttribute("data-analytics-event", "research_cta_click");
+    // This handler owns the sanitized payload and navigation callback. Do not
+    // also let the shared capture listener emit the same click with raw URLs.
+    link.setAttribute("data-analytics-managed", "research-handoff");
     link.setAttribute("data-cta-id", "research-my-pick-" + (url.searchParams.get("sport") || (index === 0 ? "hero" : "footer")));
     link.addEventListener("click", function (event) {
       if (typeof window.ppLoadAnalytics === "function") window.ppLoadAnalytics();

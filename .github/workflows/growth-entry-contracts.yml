@@ -5,6 +5,8 @@ on:
     paths:
       - 'analyzer/index.html'
       - 'picks/prizepicks/index.html'
+      - 'picks/underdog/index.html'
+      - 'compare/propeller-vs-bettingpros/index.html'
       - 'tools/**'
       - 'assets/js/**'
       - 'scripts/**'
@@ -26,7 +28,7 @@ jobs:
           python-version: '3.11'
       - name: Verify public tool and entry behavior
         run: |
-          node --test scripts/test_growth_entries.mjs scripts/test_calculator_events.mjs scripts/test_research_handoff.mjs scripts/test_analyzer_availability.mjs scripts/test_analyzer_sport_query.mjs scripts/test_analyzer_events.mjs scripts/test_analytics_loader.mjs scripts/test_analytics_events.mjs
+          node --test scripts/test_growth_entries.mjs scripts/test_calculator_events.mjs scripts/test_research_handoff.mjs scripts/test_analyzer_availability.mjs scripts/test_analyzer_sport_query.mjs scripts/test_analyzer_events.mjs scripts/test_analytics_loader.mjs scripts/test_analytics_events.mjs scripts/test_openseo_repairs.mjs
           python3 -m unittest scripts/test_growth_entry_copy.py scripts/test_payout_calculators.py
           python3 scripts/test_current_subscription_offer.py
           python3 scripts/normalize_access_language.py --check
