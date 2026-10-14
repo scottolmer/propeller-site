@@ -1,0 +1,113 @@
+/* Replay Room treatment, scoped to the three audited long-form guides. */
+body.pp-site-system.pp-family-core.pp-editorial-replay {
+  color-scheme: dark;
+  --pp-paper: #031a2c;
+  --pp-paper-light: #06243a;
+  --pp-ink: #f7f1e7;
+  --pp-text: #f7f1e7;
+  --pp-sub: #b8d3df;
+  --pp-muted: #b8d3df;
+  --pp-line: rgba(84, 200, 255, .35);
+  --pp-orange: #ff5b23;
+  --pp-orange-dark: #ff5b23;
+  --pp-lime: #54c8ff;
+  --bg: #031a2c;
+  --card: #06243a;
+  --glass-border: rgba(84, 200, 255, .35);
+  --glass-border-active: #54c8ff;
+  --accent: #ff5b23;
+  --accent-muted: rgba(255, 91, 35, .12);
+  --text-primary: #f7f1e7;
+  --text-secondary: #b8d3df;
+  --text-tertiary: #b8d3df;
+  --font-display: 'Familjen Grotesk', 'Arial Narrow', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+  background: #031a2c !important;
+  color: #f7f1e7 !important;
+  font-family: var(--font-body) !important;
+}
+body.pp-site-system.pp-family-core.pp-editorial-replay::before,
+body.pp-site-system.pp-family-core.pp-editorial-replay .bg-orbs { display: none !important; }
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(h1, h2, h3, h4, h5, h6) {
+  color: #f7f1e7 !important;
+  font-family: var(--font-display) !important;
+  text-shadow: none !important;
+}
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(p, li, .hero-subtitle, .faq-answer, .breadcrumb, .breadcrumb a) {
+  color: #b8d3df !important;
+}
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(strong, th) { color: #f7f1e7 !important; }
+body.pp-site-system.pp-family-core.pp-editorial-replay .breadcrumb { background: transparent !important; }
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(.article-content, .faq-answer) a { color: #54c8ff !important; }
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(.hero, .article-section, .faq-section, .final-cta) {
+  background: #031a2c !important;
+  border-color: rgba(84, 200, 255, .35) !important;
+}
+body.pp-site-system.pp-family-core.pp-editorial-replay .hero::before { background: rgba(84, 200, 255, .12) !important; }
+body.pp-site-system.pp-family-core.pp-editorial-replay .hero h1 { font-size: clamp(40px, 6vw, 76px); line-height: 1.02; }
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(.hero h1 span, .final-cta h2 span) { color: #ff5b23 !important; }
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(.label, .highlight-box-label, .sidebar-card-title, .factor-icon, .step-num) {
+  color: #54c8ff !important;
+  font-family: var(--font-mono) !important;
+}
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(.highlight-box, .sidebar-card, .sidebar-cta, .factor-card, .step-card, .agent-list, .faq-item, .payout-strip) {
+  background: #06243a !important;
+  border-color: rgba(84, 200, 255, .35) !important;
+  box-shadow: none !important;
+  border-radius: 14px;
+}
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(.highlight-box, .sidebar-card, .sidebar-cta) { border: 1px solid rgba(84, 200, 255, .35); }
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(.toc-list a, .faq-question, .ps-items) { color: #f7f1e7 !important; }
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(.toc-list a:hover, .faq-question:hover) { color: #54c8ff !important; }
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(table, .payout-table, .stat-table) {
+  background: #06243a !important;
+  color: #f7f1e7 !important;
+  border-color: rgba(84, 200, 255, .35) !important;
+}
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(th, td) {
+  background: #06243a !important;
+  color: #f7f1e7 !important;
+  border-color: rgba(84, 200, 255, .25) !important;
+}
+body.pp-site-system.pp-family-core.pp-editorial-replay th { background: #021522 !important; color: #9bddff !important; }
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(.pp-site-nav, .pp-site-footer) {
+  background: #021522 !important;
+  color: #f7f1e7 !important;
+  border-color: rgba(84, 200, 255, .35) !important;
+}
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(.pp-brand, .pp-site-nav__links, .pp-site-nav__links > a, .pp-site-footer__column a) { color: #f7f1e7 !important; }
+body.pp-site-system.pp-family-core.pp-editorial-replay .pp-site-nav__links { background: #021522 !important; }
+body.pp-site-system.pp-family-core.pp-editorial-replay .pp-site-nav__menu {
+  color: #f7f1e7 !important;
+  background: #06243a !important;
+  border-color: #54c8ff !important;
+}
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(.btn-primary, .pp-site-nav__links > .pp-site-nav__cta) {
+  background: #ff5b23 !important;
+  border-color: #ff5b23 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+body.pp-site-system.pp-family-core.pp-editorial-replay .btn-secondary {
+  background: #021522 !important;
+  color: #f7f1e7 !important;
+  border-color: #54c8ff !important;
+}
+body.pp-site-system.pp-family-core.pp-editorial-replay .article-layout > * { min-width: 0; }
+body.pp-site-system.pp-family-core.pp-editorial-replay .article-content { font-size: 18px; line-height: 1.75; }
+body.pp-site-system.pp-family-core.pp-editorial-replay :is(.article-content, .faq-list, .hero) { overflow-wrap: break-word; }
+body.pp-site-system.pp-family-core.pp-editorial-replay .article-content table { display: block; max-width: 100%; overflow-x: auto; }
+@media (max-width: 900px) {
+  body.pp-site-system.pp-family-core.pp-editorial-replay .article-sidebar { position: static; }
+}
+@media (max-width: 600px) {
+  body.pp-site-system.pp-family-core.pp-editorial-replay .container { width: min(100% - 32px, 1180px); padding-left: 0; padding-right: 0; }
+  body.pp-site-system.pp-family-core.pp-editorial-replay .hero { padding-top: 44px; padding-bottom: 36px; }
+  body.pp-site-system.pp-family-core.pp-editorial-replay .hero h1 { font-size: clamp(36px, 10vw, 52px); }
+  body.pp-site-system.pp-family-core.pp-editorial-replay .article-layout { gap: 32px; }
+  body.pp-site-system.pp-family-core.pp-editorial-replay :is(.highlight-box, .sidebar-card, .sidebar-cta, .factor-card) { padding: 20px; }
+  body.pp-site-system.pp-family-core.pp-editorial-replay .article-content { font-size: 17px; }
+  body.pp-site-system.pp-family-core.pp-editorial-replay .hero-buttons { flex-wrap: wrap; }
+  body.pp-site-system.pp-family-core.pp-editorial-replay .hero-buttons .btn { max-width: 100%; white-space: normal; text-align: center; }
+}

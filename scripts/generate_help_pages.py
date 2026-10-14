@@ -59,9 +59,9 @@ PAGES = [
         "title": "What Is Propeller Picks?",
         "description": "Propeller Picks is an AI-assisted player-prop research workspace designed for DFS and pick'em platforms.",
         "h1": "What is Propeller Picks?",
-        "summary": "Propeller Picks is an AI-assisted player-prop research workspace for web and mobile. It uses sport-specific analysis signals, publishes a documented historical results archive, and helps users compare prop context before making their own decisions. Propeller is not a sportsbook and does not accept or place wagers.",
+        "summary": 'Propeller Picks helps you research player props on web and mobile with AI-assisted analysis tailored to each sport. You can compare the information behind a prop and read a documented archive of historical results before making your own decision. Propeller is not a sportsbook and does not accept or place wagers.',
         "sections": [
-            ("What Propeller Helps With", "Propeller helps users research player props by combining matchup context, injury and role changes, historical hit rates, market probability, recent form, and confidence scoring in one workflow."),
+            ("What Propeller Helps With", 'Propeller brings together matchup information, injuries, role changes, historical hit rates, market probability, recent form and confidence scores to help you research a player prop.'),
             ("Who It Is For", "Propeller was designed for people researching player lines used on PrizePicks, Underdog Fantasy, and DraftKings Pick6. Sportsbook lines such as FanDuel may appear only as market context."),
             ("What Propeller Is Not", "Propeller is not a sportsbook, does not set lines, does not submit entries or place wagers, and does not pay out entries. It is independent and is not affiliated with the platforms it references."),
         ],
@@ -99,10 +99,7 @@ PAGES = [
  'body_class': 'pp-entry-boundaries-page',
  'author_role': 'Founder',
  'content_sections': [{'title': 'What happens when I use a research button?',
-                       'paragraphs': ['The public workflow carries a research question from a card into a '
-                                      'prompt. Each action has a narrower result than completing research or '
-                                      'submitting an entry. Use this map to identify what you have in front '
-                                      'of you.'],
+                       'paragraphs': ['A public card can pass its research details into a prompt. The table shows what each button produces and what still needs checking before research is complete. None of these actions submits an entry.'],
                        'table': {'caption': 'Public research actions and their limits',
                                  'headers': ['Action',
                                              'Observed or documented output',
@@ -135,14 +132,8 @@ PAGES = [
                                       'verify a later live line or submit an entry. This historical 0.5 line '
                                       'is not a current recommendation.']},
                       {'title': 'Does a platform name connect an account?',
-                       'paragraphs': ['In the inspected public builder, Source or platform is a text field '
-                                      'that labels the research source. Entering a platform name is not '
-                                      'evidence of an account connection, affiliation or submission. The '
-                                      'field helps describe the question; it is not an entry receipt.',
-                                      'Propeller’s published product facts state that it is independent and '
-                                      'does not submit entries or accept or place wagers. That is the '
-                                      'documented product boundary, not a legal classification or an audit '
-                                      'of every account feature.'],
+                       'paragraphs': ['In the inspected public builder, Source or platform is a text field for naming the research source. Entering a platform name does not show that an account is connected, that Propeller is affiliated with it, or that an entry was submitted.',
+                                      'Propeller’s product facts say it is independent and does not submit entries or accept or place wagers. This describes its documented role; it is not a legal classification or a check of every account feature.'],
                        'links': [('Read the published product facts', '/data/product-facts.json')]},
                       {'title': 'What should I do next?',
                        'paragraphs': ['1. Inspect the research context. Check the player, stat, line and '
@@ -170,13 +161,7 @@ PAGES = [
  'visual_system': 'replay-room',
  'body_class': 'pp-grading-page',
  'updated': '2026-09-23',
- 'summary': 'Propeller grades an analyzed side against its stored line after the final result is available. '
-            'An Over wins above the line, an Under wins below it, and an exact tie is a push. To interpret a '
-            'record, also check what its total counts: the historical archive separates raw analysis rows '
-            'from entries retained under current collapse rules. Neither total alone proves unique '
-            'recommendations, pre-event publication or profit. Start by matching the stored question to the '
-            'final stat, then read the archive’s definitions before quoting a result. The examples below '
-            'show the comparison; the checklist helps you evaluate the evidence around it.',
+ 'summary': 'Once the final result is available, Propeller compares it with the stored line and direction. Over wins above the line, Under wins below it, and an exact tie is a push. Match the player, event and stat first. When quoting the historical archive, say whether you mean raw analysis rows or entries retained under current collapse rules. Neither total alone proves unique recommendations, pre-event publication or profit.',
  'sections': [],
  'hero_image': {'src': '/help/how-does-propeller-grade-picks/cover.png',
                 'width': 1200,
@@ -214,16 +199,8 @@ PAGES = [
                                           ['Under', '5', '5', 'Push — equal to 5']]},
                        'links': [('Read the documented grading method', '/track-record/')]},
                       {'title': 'Did you match the same player, event and line?',
-                       'paragraphs': ['A correct comparison needs the same player, sport and event, stat, '
-                                      'direction, exact line, and source or book. Write those details '
-                                      'together before looking up the final result. “Player C rebounds” is '
-                                      'incomplete: 5 rebounds against one opponent cannot grade a different '
-                                      'event, and a different line asks a different question.',
-                                      'The Results sample presents player, market, line and book alongside '
-                                      'date and sport. Those fields help a reader inspect the record, but '
-                                      'they do not independently establish full event identity. A final stat '
-                                      'from another game cannot grade this question. If you cannot connect '
-                                      'the row and result to the same event, leave that match unresolved.',
+                       'paragraphs': ['Before looking up the final stat, record the player, sport and event, stat, direction, exact line, and source or book. “Player C rebounds” is not enough: 5 rebounds against one opponent cannot be used to grade another game, and changing the line changes the comparison.',
+                                      'The Results sample lists date, sport, player, market, line and book, but those fields alone do not fully identify the event. Confirm that the row and final stat belong to the same game; otherwise, leave the match unresolved.',
                                       'This is a method for checking evidence, not a claim that the '
                                       'historical feed validates every field. Keep the stored line attached '
                                       'to its outcome; replacing it with a later line changes the comparison '
@@ -247,21 +224,13 @@ PAGES = [
                        'links': [('Results definitions', '/results/'),
                                  ('How we describe evidence and AI assistance', '/editorial-policy/')]},
                       {'title': 'What does each record count?',
-                       'paragraphs': ['The historical archive distinguishes raw analysis rows from entries '
-                                      'retained under the current public API collapse rules. A stored '
-                                      'observation and a collapsed entry are different counting units. Keep '
-                                      'the exact unit beside any figure so another reader can tell what you '
-                                      'counted.',
+                       'paragraphs': ['The historical archive counts both raw analysis rows and entries retained under the current public API collapse rules. These are different units, so name the one you are using beside any figure you quote.',
                                       'Repeated snapshots, books, lines and runs may appear in historical '
                                       'data, alongside legacy retrospective records. A larger row count '
                                       'therefore does not establish more independent recommendations. Nor '
                                       'does the collapsed count, by itself, prove that every retained entry '
                                       'is a uniquely published recommendation.',
-                                      'The archive also lacks consistent price and payout evidence. Its '
-                                      'descriptive outcomes cannot establish a defensible return or profit '
-                                      'claim, and its rows are not customer wagers. A result label answers '
-                                      'the stored grading question; it does not supply the missing financial '
-                                      'evidence.',
+                                      'The archive’s price and payout evidence is incomplete, so its outcomes cannot support a defensible return or profit claim. The rows are not customer wagers. A result label only tells you how the stored comparison was graded.',
                                       'The forward record has its own eligibility and settlement '
                                       'definitions. Read that page separately; it does not turn the '
                                       'historical archive into a forward test. Before comparing records, '
@@ -345,10 +314,7 @@ PAGES = [
      'updated': '2026-09-14',
      'sections': [],
      'content_sections': [{'title': 'Which sports are listed in each product?',
-                           'paragraphs': ['Use the matrix to check the product you plan to use. The signed-in '
-                                          'column records documented scope; the public column records the '
-                                          'analyzer’s sport tabs. Neither column confirms a particular player, '
-                                          'game, stat or platform is available today.',
+                           'paragraphs': ['Check the table for the product you plan to use. The signed-in column lists documented coverage; the public column lists the analyzer’s sport tabs. Neither confirms that a particular player, game, stat or platform is available today.',
                                           'Coverage correction: September 14, 2026. Scott Olmer confirmed that PGA is no longer supported, '
                                           'superseding the earlier six-sport list. The product-facts coverage field records this correction '
                                           'separately from the file’s July 15 general verification date. Public tabs were checked '
@@ -382,10 +348,7 @@ PAGES = [
                                           'which occurred. It also did not test signed-in coverage. These are '
                                           'historical observations from September 10; the September 14 tab check '
                                           'did not retest those slate states.',
-                                          'The practical distinction is between finding a sport in the menu and '
-                                          'finding usable research for your chosen player. Check the selected '
-                                          'tab’s actual contents before assuming a listed sport has a populated '
-                                          'slate.']},
+                                          'A sport can appear in the menu without research for your chosen player. Open its tab and check what is available.']},
                           {'title': 'How does soccer relate to EPL and MLS results?',
                            'paragraphs': ['Soccer is one product category and one public analyzer tab. EPL and '
                                           'MLS appear as historical result buckets in Propeller’s documented '
@@ -407,11 +370,7 @@ PAGES = [
                                           'substitute an old result or assume another product surface contains '
                                           'it.']},
                           {'title': 'Where should I check next?',
-                           'paragraphs': ['Start with the current public analyzer to inspect its tabs and '
-                                          'availability messages. Use the picks hub to find existing public '
-                                          'sport pages and available slate previews. For questions about '
-                                          'timestamps and refreshes, read the separate update guide; this '
-                                          'article’s update date describes the coverage explanation.'],
+                           'paragraphs': ['Open the public analyzer to check its sport tabs and availability messages. The picks hub links to public sport pages and available slate previews. For timestamps and refreshes, see the update guide; this article’s date only tells you when the coverage explanation changed.'],
                            'links': [('See the current public analyzer', '/analyzer/'),
                                      ('Check available public slates', '/picks/'),
                                      ('Understand updates', '/help/how-often-are-propeller-picks-updated/')]}],
@@ -432,14 +391,14 @@ PAGES = [
         "title": "Does Propeller Support PrizePicks?",
         "description": "How Propeller supports PrizePicks More/Less prop research, payout calculators, and strategy pages.",
         "h1": "Does Propeller support PrizePicks?",
-        "summary": "Yes. Propeller supports PrizePicks research by analyzing over/under style player props, surfacing confidence scores, and linking users to PrizePicks-specific picks, payout calculators, and strategy content.",
+        "summary": 'Yes. You can use Propeller to research PrizePicks More/Less player props, read confidence scores, and find PrizePicks pick pages, payout calculators and strategy guides.',
         "sections": [
             ("How It Maps To PrizePicks", "PrizePicks uses More/Less choices on player projections. Propeller analyzes the same directional question: whether a player is more likely to go over or under a listed line."),
             ("PrizePicks Tools", "The PrizePicks payout calculator shows Power Play and Flex Play payout math, while the PrizePicks strategy guide explains entry sizing, Flex vs Power, and common mistakes."),
             ("Important Limits", "Propeller does not submit PrizePicks entries or guarantee outcomes. Always confirm final lines, payouts, and rules inside PrizePicks before entering."),
         ],
         "faqs": [
-            ("Does Propeller support PrizePicks?", "Yes. Propeller supports PrizePicks-style player prop research by analyzing More/Less decisions with confidence scores and related context."),
+            ("Does Propeller support PrizePicks?", 'Yes. Propeller helps you research PrizePicks More/Less choices with confidence scores and information about the player and line.'),
             ("Does Propeller have PrizePicks picks today?", "Propeller publishes PrizePicks-focused pages and public pick previews where available. Check /picks/prizepicks/ for the current public page."),
             ("Does Propeller calculate PrizePicks payouts?", "Yes. The PrizePicks payout calculator at /tools/prizepicks-payout-calculator/ estimates Power Play and Flex Play returns from entry size and pick count."),
         ],
@@ -450,10 +409,10 @@ PAGES = [
         "title": "Does Propeller Support DraftKings Pick6?",
         "description": "How Propeller supports DraftKings Pick6 player prop research and Pick6 strategy.",
         "h1": "Does Propeller support Pick6?",
-        "summary": "Yes. Propeller supports Pick6 research by scoring over/under player props, highlighting confidence direction, and linking users to Pick6-specific pick pages, payout calculators, and strategy guides.",
+        "summary": 'Yes. You can use Propeller to research Pick6 over/under player props, read the direction and confidence score, and find Pick6 pick pages, payout calculators and strategy guides.',
         "sections": [
             ("How It Maps To Pick6", "Pick6 entries ask users to choose over or under on player props. Propeller's confidence score is built around that same directional decision."),
-            ("Pick6 Tools", "Propeller includes a Pick6 payout calculator, a Pick6 strategy guide, and Pick6-focused pick pages for public research workflows."),
+            ("Pick6 Tools", 'For Pick6 research, Propeller has a payout calculator, a strategy guide and public pick pages.'),
             ("Line Differences", "Pick6 and other platforms can post different lines for the same player and stat. Propeller users should compare the final platform line before making a decision."),
         ],
         "faqs": [
@@ -468,9 +427,9 @@ PAGES = [
         "title": "Does Propeller Support Underdog Fantasy?",
         "description": "How Propeller supports Underdog Fantasy prop research, payouts, and strategy content.",
         "h1": "Does Propeller support Underdog Fantasy?",
-        "summary": "Yes. Propeller supports Underdog Fantasy research by analyzing over/under player props, surfacing confidence direction, and linking to Underdog-focused public picks, payout calculators, and strategy content.",
+        "summary": 'Yes. You can use Propeller to research Underdog Fantasy over/under player props, read the direction and confidence score, and find public Underdog pick pages, payout calculators and strategy guides.',
         "sections": [
-            ("How It Maps To Underdog", "Underdog entries use player prop choices with payout structures that vary by entry type. Propeller helps evaluate the player-stat side of the decision."),
+            ("How It Maps To Underdog", 'Underdog entries involve player-prop choices, with payouts that vary by entry type. Propeller helps you research the player and stat before making that choice.'),
             ("Underdog Tools", "Propeller includes Underdog pick pages, an Underdog payout calculator, and an Underdog strategy guide for public research."),
             ("Check Final Rules", "Underdog payout rules and available entry types can vary. Confirm final payout and rules inside Underdog before entering."),
         ],
@@ -532,10 +491,7 @@ PAGES = [
                                           'listed line. The number describes the strength of that support on '
                                           'Propeller’s displayed scale. Reading only the number drops half '
                                           'the message.',
-                                          'Use these three separate teaching examples to practice that '
-                                          'distinction. They are not opposing recommendations for one '
-                                          'market, and they contain no real player, line or predicted '
-                                          'result. Read across each row before comparing the numbers.'],
+                                          'The three fictional examples below show how to read the side and score together. They contain no real player, line or predicted result, and they are not opposing recommendations for the same market. Read each row before comparing scores.'],
                            'table': {'caption': 'Fictional reading exercise — scores and sides are invented, '
                                                 'not current Propeller picks.',
                                      'headers': ['Example',
@@ -561,21 +517,14 @@ PAGES = [
                                                 'interchangeable. B and C both support Over, while B’s 80 '
                                                 'sits above C’s 55 on the displayed scale. That comparison '
                                                 'does not say B is 25% more likely to win.',
-                                                'The exercise explains how to read two fields. It does not '
-                                                'establish equal true chances for A and B, expected returns, '
-                                                'or which real sport or model is more reliable. Keep those '
-                                                'questions separate from the simple comparison shown here.']},
+                                                'These examples show how to read the side and score. They do not tell you whether A and B have the same chance of winning, what returns to expect, or which sport or model is more reliable.']},
                           {'title': 'What did the actual public card show?',
                            'paragraphs': ['In an AI-operated check of Propeller’s public analyzer on '
                                           'September 10, 2026, searching MLB player Ben Rice displayed an '
                                           'UNDER direction, a Stolen Bases 0.5 line and a separate '
                                           '“CONFIDENCE 80% STRONG” label. This is a historical research '
                                           'snapshot, not a current pick or Scott Olmer’s personal use.',
-                                          'That observed card makes the distinction concrete: the large '
-                                          'number alone would not tell you the side. Reading “Under, '
-                                          'confidence 80” preserves both fields. The percent sign was part '
-                                          'of the historical interface label; it did not establish an 80% '
-                                          'chance of winning.',
+                                          'Read the card as “Under, confidence 80.” The number alone leaves out the side. The historical interface included a percent sign, but that did not establish an 80% chance of winning.',
                                           'The check did not verify an upcoming appearance, a later platform '
                                           'line or a statistical result. Its value here is narrower: it '
                                           'shows an actual instance of a high confidence label appearing '
@@ -676,17 +625,9 @@ PAGES = [
                                             'profile is more repeatable, how often any total occurs, or which '
                                             'direction to choose next.']},
                       {'title': 'What should you research next?',
-                       'paragraphs': ['First, what is known about the player’s next playing time? Look for '
-                                      'evidence supporting expected minutes; the fictional totals provide none. A '
-                                      'past total cannot tell you whether the next opportunity will be similar.',
-                                      'Second, what supports each contribution separately? Inspect scoring '
-                                      'opportunities, ball-handling responsibilities and rebounding role. Treat '
-                                      'these as questions to verify, not facts supplied by the table. A role '
-                                      'change does not guarantee that one component rises or falls.',
-                                      'Third, which responsibility remains uncertain? Identify the missing '
-                                      'information before carrying a combined total forward. If the case depends '
-                                      'on a role you cannot establish, waiting or passing remains a reasonable '
-                                      'next step.'],
+                       'paragraphs': ['Start with the player’s expected minutes in the next game. Look for evidence that supports them; the fictional totals cannot tell you how much the player will play next.',
+                                      'Check scoring opportunities, ball-handling responsibilities and rebounding role separately. The table does not establish any of these, and a role change does not guarantee that a particular stat will rise or fall.',
+                                      'Note what you still do not know about the player’s role. If your case depends on an unconfirmed responsibility, you can wait for more information or pass.'],
                        'links': [('How to analyze player props', '/guides/how-to-analyze-player-props/')]},
                       {'title': 'Above or below is arithmetic, not settlement',
                        'paragraphs': ['More/Over compares the combined total above the exact line; Less/Under '
@@ -793,9 +734,7 @@ PAGES = [
                                       'displayed as 104.55%. The excess above 100% is 4.55 percentage '
                                       'points, called the overround. It describes the price pair; it is '
                                       'not a prediction of your personal loss or return.',
-                                      'Our stated teaching method is proportional normalization: divide '
-                                      'each raw probability by their sum. Over becomes (6/11) ÷ (23/22) = '
-                                      '12/23 = 52.17%. Under becomes (1/2) ÷ (23/22) = 11/23 = 47.83%.'],
+                                      'This example uses proportional normalization: divide each raw probability by their sum. Over becomes (6/11) ÷ (23/22) = 12/23 = 52.17%. Under becomes (1/2) ÷ (23/22) = 11/23 = 47.83%.'],
                        'id': 'worked-example',
                        'table': {'caption': 'Fictional Example Player C, 25.5 points — one matched '
                                             'two-sided market',
@@ -836,11 +775,7 @@ PAGES = [
                                            'Not established in this retained record',
                                            'No. The two-sided calculation cannot proceed.']],
                                  'reflows': True},
-                       'after_paragraphs': ['The useful boundary is the saved evidence. This audit does '
-                                            'not prove that every public or signed-in screen lacks prices, '
-                                            'or that the product cannot use market information. It '
-                                            'establishes that this retained record cannot supply the two '
-                                            'quotes required for our example.']},
+                       'after_paragraphs': ['This saved record does not establish the two quotes needed for the example. That does not tell us whether other public or signed-in screens show prices, or whether Propeller uses market information.']},
                       {'title': 'What does Propeller document?',
                        'paragraphs': ['Propeller documents no-vig market context as one available research '
                                       'signal. Its public wording was checked on October 11, 2026. That '
@@ -860,12 +795,7 @@ PAGES = [
                                       'of the normalized total and Under 47.83%. That is a reproducible '
                                       'summary of those prices. It does not prove that the player’s true '
                                       'chance is 52.17%, that a selection has an edge or that it will win.',
-                                      'Removing the excess does not validate the market’s underlying '
-                                      'judgment or refresh an old snapshot. Proportional normalization '
-                                      'states how we allocate that excess; naming the method keeps its '
-                                      'assumption visible. Before using the number as research context, '
-                                      'check whether its inputs still describe the event and line you are '
-                                      'examining.']},
+                                      'Removing the excess does not make the market’s judgment correct or an old snapshot current. Proportional normalization is the method used here to allocate the excess. Before using the result, check that the inputs still match the event and line you are researching.']},
                       {'title': 'Sources and a final input check',
                        'paragraphs': ['Smarkets’ explanations of implied probability and betting margins '
                                       'support the odds conversions and raw-sum concept; they were '
@@ -930,16 +860,9 @@ PAGES = [
  'sections': [],
  'content_sections': [{'id': 'timestamp-key',
                        'title': 'Which timestamp answers your question?',
-                       'paragraphs': ['A recent date answers only the question that its label describes. An '
-                                      'article date, a page heading and a response-generation time do not '
-                                      'establish when the underlying line was observed or the analysis was '
-                                      'made. Look for that specific evidence; keep Unknown if it is absent.',
-                                      'When was this explanation updated? Look for the documentation date. '
-                                      "It describes the article, so use it to understand the explanation's "
-                                      'revision history. It does not date the research inputs.',
-                                      'When was this response produced? Look for the response-generation '
-                                      'time. That clock tells you when the inspected response was produced, '
-                                      'even if the response does not supply the ages of its inputs.',
+                       'paragraphs': ['Check what each date refers to. An article date, page heading or response-generation time does not tell you when the line was observed or the analysis was made. Look for those specific times and record Unknown when they are missing.',
+                                      'Documentation date: when the article was marked updated. Use it to check the explanation’s revision history, not the age of the research inputs.',
+                                      'Response-generation time: when that response was produced. Its line and analysis may be older; this timestamp does not supply their ages.',
                                       'How old are the inputs? Seek the line-observation and analysis times '
                                       'for the exact research question. Match the player, event, stat, '
                                       'number and direction before treating a timestamp as relevant to your '
@@ -949,10 +872,7 @@ PAGES = [
                                       'response, not labels on a player card. The detailed audit below '
                                       "retains all five values; it does not establish today's source age or "
                                       'a refresh interval.',
-                                      'Name the missing clock in your research note. Write Unknown when its '
-                                      'evidence is absent, then return to the available research to inspect '
-                                      'what it actually supplies. Missing evidence does not prove old, '
-                                      'failed or zero.'],
+                                      'In your research note, record which time is missing as Unknown. Check whether the available research supplies it before relying on the input. A missing timestamp does not prove the data is old, failed or zero.'],
                        'links': [('Name the missing clock', '/guides/player-prop-research-log/'),
                                  ('Inspect available research', '/analyzer/'),
                                  ('Match the exact research question',
@@ -990,11 +910,7 @@ PAGES = [
                                  'reflows': True},
                        'id': 'clock-audit'},
                       {'title': 'What should I recheck when something changes?',
-                       'paragraphs': ['New player-status information, a different expected role, a moved '
-                                      'line or a new slate can change the question you are researching. '
-                                      'Start with the change that matters to your player. These are reader '
-                                      'actions, not promises that an internal update runs whenever one of '
-                                      'these events occurs.'],
+                       'paragraphs': ['Recheck your research when player status, expected role, the posted line or the slate changes. The checklist below tells you what to look for; it does not promise that Propeller updates automatically after each change.'],
                        'table': {'caption': 'A practical event-to-action checklist',
                                  'headers': ['What changed', 'What to inspect', 'When to wait'],
                                  'rows': [['Player status changed',
@@ -1045,11 +961,7 @@ PAGES = [
                        'links': [('See supported sports and coverage',
                                   '/help/what-sports-does-propeller-support/')]},
                       {'title': 'How should I read an unknown timestamp?',
-                       'paragraphs': ['Unknown means the inspected response did not supply that time. It '
-                                      'does not by itself mean old, failed or zero. Keep the unanswered '
-                                      'question visible: when was this line observed, or when was this '
-                                      'analysis made? A fresh page heading cannot fill in either missing '
-                                      'answer.'],
+                       'paragraphs': ['Record missing line-observation or analysis times as Unknown. A missing timestamp does not show whether an input is old, failed or zero, and a fresh page heading cannot supply it.'],
                        'links': [('Check settled outcomes in Results', '/results/')]}],
  'faqs': [("Does today's date mean every source is current?",
            'No. A page or slate date does not establish when its underlying line or analysis was captured. '
@@ -1098,10 +1010,7 @@ PAGES = [
                 'what the order cannot tell you about a lineup decision.',
  'h1': 'How do Propeller fantasy projections work?',
  'updated': '2026-10-14',
- 'summary': 'The first row answers the question selected by the sort. Point projection orders central '
-            'estimates; Floor orders lower scenarios; Ceiling orders upper scenarios. None is a guarantee or '
-            'a complete starting-lineup decision. Read the other two numbers, keep the scoring system and '
-            'slate consistent, and check the source’s status before using the order.',
+ 'summary': 'The sort you choose determines which player appears first: Point projection uses the central estimate, Floor the lower scenario, and Ceiling the upper scenario. None guarantees a result or settles a starting-lineup decision. Read all three values, compare the same scoring system and slate, and check the source status.',
  'visual_system': 'replay-room',
  'body_class': 'pp-fantasy-sort-page',
  'sections': [],
@@ -1141,11 +1050,7 @@ PAGES = [
                                  'rows': [['Pete Crow-Armstrong', '0.7', '11.9', '36.4'],
                                           ['Jake McCarthy', '7.8', '10.4', '20.3']],
                                  'reflows': True},
-                       'after_paragraphs': ['The projection difference is 1.5 points in Crow-Armstrong’s '
-                                            'favor; the floor difference is 7.1 points in McCarthy’s favor. '
-                                            'Neither comparison supplies a “best overall” answer. Each '
-                                            'selects a different field. The other values stay relevant even '
-                                            'when they are not the field controlling the order.',
+                       'after_paragraphs': ['Crow-Armstrong’s point projection is 1.5 points higher; McCarthy’s floor is 7.1 points higher. Neither makes one player the best overall choice. Check the rest of each row as well as the value you sorted by.',
                                             'These orders are calculations from captured fields, not '
                                             'observed clicks on a live board. They establish neither '
                                             'player’s current availability, complete-board rank, result nor '
@@ -1176,11 +1081,7 @@ PAGES = [
                                             '20.0 → A 16.0 → B 12.0. C moves from last by central estimate '
                                             'to first by upper scenario. That is a change of question, not '
                                             'evidence that C’s projection improved.',
-                                            'The current public board’s sort handler reorders the loaded '
-                                            'values by the selected field. Changing that control does not '
-                                            'recalculate those three values. This describes the public MLB '
-                                            'board, not every signed-in interface. Do not average the three '
-                                            'ranks into an invented overall recommendation.']},
+                                            'On the public MLB board, changing the sort reorders the loaded rows without recalculating their three values. This describes that board, not every signed-in screen. Averaging the three ranks would not produce a supported overall recommendation.']},
                       {'id': 'before-you-sort',
                        'title': 'What should I check before using the order?',
                        'paragraphs': ['First, name the question: central estimate, lower scenario or upper '
@@ -1723,7 +1624,7 @@ def render_page(page: dict) -> str:
       <div class="container">
         <div class="crumbs"><a href="/">Home</a><span>/</span><a href="/help/">Help</a><span>/</span><span>{esc(page['title'])}</span></div>
         <h1>{esc(page['h1'])}</h1>
-{f'        <p class="summary">{esc(page["summary"])}</p>' if not page.get("content_sections") else ""}
+
         <p class="updated">Last updated: {updated}</p>
         {render_attribution(attribution, page.get("author_role", ""))}
         <div class="answer-box"><p><strong>Direct answer:</strong> {esc(page['summary'])}</p></div>{evidence}
