@@ -1,0 +1,114 @@
+{
+  "content_id": "PP-20260927",
+  "scope": "Historical stale public response. Not current players, results or recommendations.",
+  "capture_utc": "2026-09-19T13:26:13.017772+00:00",
+  "observer": "Codex Astra High, AI-operated read-only public-response inspection",
+  "response": {
+    "schema_version": "1.0",
+    "sport": "mlb",
+    "scope": "eligible_hitters",
+    "slate_date": "2026-09-19",
+    "slate_relation": "today",
+    "scoring_label": "DraftKings MLB",
+    "status": "stale",
+    "generated_at": "2026-09-19T13:26:12Z",
+    "data_updated_at": "2026-09-18T20:09:00.058632Z",
+    "is_stale": true,
+    "stale_after_minutes": 60,
+    "refresh_cadence_seconds": 60,
+    "method": {
+      "version": "fantasy-mlb-hitter-v1",
+      "projection": "market_components_plus_recent_form",
+      "range": "market_projection_plus_widened_recent_variance",
+      "range_low_percentile": 20,
+      "range_high_percentile": 80,
+      "minimum_history_games": 5
+    },
+    "total_eligible": 212,
+    "preview_count": 5,
+    "projections": [
+      {
+        "rank": 1,
+        "player_name": "Pete Crow-Armstrong",
+        "team": "CHC",
+        "position_group": "Hitter",
+        "projected_points": 11.9,
+        "floor_points": 0.7,
+        "ceiling_points": 36.4,
+        "input_count": 7
+      },
+      {
+        "rank": 2,
+        "player_name": "Dominic Canzone",
+        "team": "SEA",
+        "position_group": "Hitter",
+        "projected_points": 10.5,
+        "floor_points": 5.6,
+        "ceiling_points": 16.4,
+        "input_count": 7
+      },
+      {
+        "rank": 3,
+        "player_name": "Cal Raleigh",
+        "team": "SEA",
+        "position_group": "Hitter",
+        "projected_points": 10.4,
+        "floor_points": 6.8,
+        "ceiling_points": 20.8,
+        "input_count": 6
+      },
+      {
+        "rank": 4,
+        "player_name": "Elly De La Cruz",
+        "team": "CIN",
+        "position_group": "Hitter",
+        "projected_points": 10.4,
+        "floor_points": 2.7,
+        "ceiling_points": 16.9,
+        "input_count": 8
+      },
+      {
+        "rank": 5,
+        "player_name": "Jake McCarthy",
+        "team": "COL",
+        "position_group": "Hitter",
+        "projected_points": 10.4,
+        "floor_points": 7.8,
+        "ceiling_points": 20.3,
+        "input_count": 7
+      }
+    ],
+    "canonical_page": "https://propellerpicks.com/fantasy/mlb/",
+    "attribution": {
+      "source": "Propeller Picks",
+      "url": "https://propellerpicks.com/fantasy/mlb/"
+    },
+    "usage_note": "For informational sports research only. Cite the canonical page when referencing this preview.",
+    "data_note": "Curated Propeller projections only. Raw market inventory, model weights, confidence components, and agent breakdowns are excluded."
+  },
+  "receipt": {
+    "source": "https://web-production-3c1c4.up.railway.app/api/public/agent/v1/fantasy/mlb",
+    "captured_at": "2026-09-19T13:26:13.017772+00:00",
+    "status": 200,
+    "sha256": "805a87f107070670fcdde0f2934aba18cfc73b31906ff5a256724cf1cbe8712d",
+    "observer": "Codex Astra High, AI-operated read-only public response inspection"
+  },
+  "revalidation": {
+    "checked_on": "2026-10-14",
+    "observer": "Codex Astra High",
+    "checks": {
+      "historical_sha256_verified": true,
+      "historical_stale_date_and_five_rows": true,
+      "real_pair_matches_saved_calculation": true,
+      "real_pair_orders_and_decimal_differences": true,
+      "fictional_orders_exact": true,
+      "assets/js/fantasy.js_live_matches_source": true,
+      "data/fantasy-product-facts.json_live_matches_source": true,
+      "data/platform-intent-map.json_live_matches_source": true,
+      "existing_schema_dateModified_only_2026_07_17": true
+    },
+    "historical_capture_unchanged": true,
+    "provenance_recheck_due": "2026-11-13",
+    "meaning_of_expiry": "Re-review saved historical evidence integrity and limits; never a freshness claim about players."
+  }
+}

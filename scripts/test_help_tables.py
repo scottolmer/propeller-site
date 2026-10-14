@@ -102,6 +102,8 @@ class HelpTableTests(unittest.TestCase):
                 self.assertNotIn('datePublished', no_vig)
                 self.assertIn('pp-no-vig-page', no_vig)
                 continue
+            if other["slug"] == "how-do-propeller-fantasy-projections-work":
+                continue
             if other is page:
                 continue
             output = help_pages.render_page(other)
@@ -128,6 +130,45 @@ class HelpTableTests(unittest.TestCase):
         for other in help_pages.PAGES:
             if other is not page:
                 self.assertNotIn('pp-freshness-page', help_pages.render_page(other))
+
+    def test_fantasy_sort_preserves_data_mobile_labels_schema_and_normalization(self):
+        from normalize_coverage_claims import normalize
+        page = next(p for p in help_pages.PAGES if p['slug'] == 'how-do-propeller-fantasy-projections-work')
+        sections = {s.get('id'): s for s in page['content_sections']}
+        self.assertEqual(sections['historical-sort']['table']['rows'], [
+            ['Pete Crow-Armstrong','0.7','11.9','36.4'], ['Jake McCarthy','7.8','10.4','20.3']])
+        rows = sections['three-sort-example']['table']['rows']
+        self.assertEqual(rows, [['Example Hitter A','4.0','10.0','16.0'],
+                                ['Example Hitter B','6.0','9.0','12.0'],
+                                ['Example Hitter C','3.0','8.0','20.0']])
+        for index, expected in [(2, ['A','B','C']), (1, ['B','A','C']), (3, ['C','A','B'])]:
+            self.assertEqual([r[0][-1] for r in sorted(rows, key=lambda r: float(r[index]), reverse=True)], expected)
+        path = help_pages.ROOT / 'help' / page['slug'] / 'index.html'
+        output = help_pages.migrate_html(help_pages.render_page(page), path, False)
+        self.assertEqual(normalize(output), output)
+        self.assertEqual(normalize(normalize(output)), output)
+        self.assertEqual(output.count('<table '), 2)
+        self.assertEqual(output.count('scope="row"'), 5)
+        self.assertEqual(output.count('<figure class="help-hero-media">'), 1)
+        self.assertIn('source marked stale · two rows only', output)
+        self.assertIn('not model output or current players', output)
+        self.assertIn('width="1600" height="1000"', output)
+        self.assertIn('/images/content/PP-20260927/cover.png', output)
+        for index, label in [(2,'Floor'), (3,'Point projection'), (4,'Ceiling')]:
+            self.assertIn('td:nth-child('+str(index)+'):before { content:"'+label+'"', output)
+        self.assertNotIn('datePublished', output)
+        self.assertNotIn('reviewedBy', output)
+        webpage, _, faq = help_pages.page_schema(page)
+        self.assertEqual(webpage['author']['name'], 'Scott Olmer')
+        self.assertEqual(webpage['dateModified'], '2026-10-14')
+        for (question, answer), entity in zip(page['faqs'], faq['mainEntity']):
+            self.assertEqual(entity['name'], question)
+            self.assertEqual(entity['acceptedAnswer']['text'], answer)
+            self.assertIn('<h3>'+help_pages.esc(question)+'</h3>', output)
+            self.assertIn('<p>'+help_pages.esc(answer)+'</p>', output)
+        for other in help_pages.PAGES:
+            if other is not page:
+                self.assertNotIn('pp-fantasy-sort-page', help_pages.render_page(other))
 
     def test_pra_example_keeps_combined_arithmetic_and_faq_parity(self):
         page = next(p for p in help_pages.PAGES if p['slug'] == 'how-do-i-use-propeller-for-nba-pra-props')

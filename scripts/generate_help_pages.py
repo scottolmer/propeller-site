@@ -1092,32 +1092,161 @@ PAGES = [
  'social_image': {'src': '/help/how-often-are-propeller-picks-updated/cover.png',
                   'width': 1200,
                   'height': 630}},
-    {
-        "slug": "how-do-propeller-fantasy-projections-work",
-        "title": "How Do Propeller Fantasy Projections Work?",
-        "description": "How Propeller creates MLB hitter fantasy projections with floor, point estimate, and ceiling under DraftKings MLB scoring.",
-        "h1": "How do Propeller fantasy projections work?",
-        "updated": "2026-07-17",
-        "summary": "Propeller creates MLB hitter fantasy projections by converting available current market components to DraftKings MLB fantasy points and using recent form for scoring components without current market coverage. Each eligible hitter receives a floor, point estimate, and ceiling. The range describes uncertainty and is not a guarantee.",
-        "evidence_links": [
-            ("Fantasy projection methodology", "/fantasy/methodology/"),
-            ("Current MLB projection board", "/fantasy/mlb/"),
-            ("Machine-readable fantasy facts", "/data/fantasy-product-facts.json"),
-            ("Permanent help URL", "https://propellerpicks.com/help/how-do-propeller-fantasy-projections-work/"),
-        ],
-        "sections": [
-            ("What The Three Numbers Mean", "The point projection is the central estimate. The floor and ceiling are widened P20/P80-style range estimates based on recent outcome variation; they are downside and upside scenarios, not hard limits."),
-            ("Current Public Scope", "The public launch covers MLB hitters using DraftKings MLB fantasy scoring. It does not currently publish pitchers or fantasy projections for other sports."),
-            ("How Freshness Is Shown", "The MLB board displays the source update time. Data no more than 60 minutes old is labelled current; older rows are labelled latest available, and missing data is labelled unavailable."),
-            ("What The Feature Does Not Do", "Propeller does not optimize lineups, import salaries, manage exposure, submit contest entries, or guarantee outcomes. It is an independent research tool."),
-        ],
-        "faqs": [
-            ("How do Propeller fantasy projections work?", "Propeller combines available current hitter-stat market components with recent form for uncovered scoring events, converts the result to DraftKings MLB fantasy points, and surrounds the central estimate with a lower and upper range."),
-            ("What do floor and ceiling mean in fantasy projections?", "They are lower and upper scenarios around the central estimate. Actual results can finish below the floor or above the ceiling."),
-            ("Which players and sports are covered?", "The current public fantasy projection feature covers MLB hitters only. Pitchers and other sports are not part of the public launch."),
-        ],
-        "related": ["/fantasy/", "/fantasy/mlb/", "/fantasy/methodology/", "/analyzer/"],
-    },
+{'slug': 'how-do-propeller-fantasy-projections-work',
+ 'title': 'How Propeller Fantasy Projections Work: Read Each Sort',
+ 'description': 'See what sorting MLB fantasy projections by floor, point estimate or ceiling changes—and '
+                'what the order cannot tell you about a lineup decision.',
+ 'h1': 'How do Propeller fantasy projections work?',
+ 'updated': '2026-10-14',
+ 'summary': 'The first row answers the question selected by the sort. Point projection orders central '
+            'estimates; Floor orders lower scenarios; Ceiling orders upper scenarios. None is a guarantee or '
+            'a complete starting-lineup decision. Read the other two numbers, keep the scoring system and '
+            'slate consistent, and check the source’s status before using the order.',
+ 'visual_system': 'replay-room',
+ 'body_class': 'pp-fantasy-sort-page',
+ 'sections': [],
+ 'content_sections': [{'id': 'projection-method',
+                       'title': 'What goes into a fantasy projection?',
+                       'paragraphs': ['Propeller converts available current hitter-stat market components '
+                                      'into DraftKings MLB fantasy points. For scoring components without '
+                                      'current market coverage, it uses recent form. Each eligible hitter '
+                                      'receives a central point estimate and lower and upper scenarios. The '
+                                      'public feature covers MLB hitters; it does not publish pitcher '
+                                      'projections or fantasy projections for other sports.',
+                                      'The point projection is the central estimate. The floor and ceiling '
+                                      'use recent outcome variation to describe lower and upper scenarios '
+                                      'around it. They are widened P20/P80-style estimates, not hard limits '
+                                      'or calibrated probabilities. A player can finish below the floor or '
+                                      'above the ceiling. The methodology page explains how those ranges are '
+                                      'constructed.',
+                                      'All numbers in the examples below use DraftKings MLB fantasy-point '
+                                      'units and one decimal place. Compare rows on that same scoring basis '
+                                      'and slate. A similar-looking number from a different scoring system '
+                                      'answers a different question.'],
+                       'links': [['Read the fantasy projection methodology', '/fantasy/methodology/']]},
+                      {'id': 'historical-sort',
+                       'title': 'Why can the first player change when I sort?',
+                       'paragraphs': ['A saved public response from September 19, 2026 shows the '
+                                      'distinction. An AI-operated inspection by Codex Astra High captured '
+                                      'five rows; this table extracts only two. The source explicitly marked '
+                                      'the response stale. These historical values illustrate a sorting '
+                                      'question and recommend neither player.',
+                                      'Within this pair, Pete Crow-Armstrong has the higher point '
+                                      'projection: 11.9 versus Jake McCarthy’s 10.4. McCarthy has the higher '
+                                      'floor: 7.8 versus 0.7. Sorting by point projection puts '
+                                      'Crow-Armstrong first; sorting by floor puts McCarthy first.'],
+                       'table': {'caption': 'Historical response excerpt · September 19, 2026 · source '
+                                            'marked stale · two rows only. DraftKings MLB fantasy points.',
+                                 'headers': ['Historical hitter', 'Floor', 'Point projection', 'Ceiling'],
+                                 'rows': [['Pete Crow-Armstrong', '0.7', '11.9', '36.4'],
+                                          ['Jake McCarthy', '7.8', '10.4', '20.3']],
+                                 'reflows': True},
+                       'after_paragraphs': ['The projection difference is 1.5 points in Crow-Armstrong’s '
+                                            'favor; the floor difference is 7.1 points in McCarthy’s favor. '
+                                            'Neither comparison supplies a “best overall” answer. Each '
+                                            'selects a different field. The other values stay relevant even '
+                                            'when they are not the field controlling the order.',
+                                            'These orders are calculations from captured fields, not '
+                                            'observed clicks on a live board. They establish neither '
+                                            'player’s current availability, complete-board rank, result nor '
+                                            'suitability for a lineup. The September 19 response remains '
+                                            'historical and stale; this article’s update date does not make '
+                                            'it current.']},
+                      {'id': 'three-sort-example',
+                       'title': 'One table, three different questions',
+                       'paragraphs': ['The fictional rows below make all three orders different. They share '
+                                      'one invented slate and DraftKings MLB fantasy-point units. These are '
+                                      'author-created teaching estimates, not model output or current '
+                                      'players. Read one selected column from highest to lowest, then check '
+                                      'the other two columns.'],
+                       'table': {'caption': 'Fictional demonstration · one invented slate · DraftKings MLB '
+                                            'fantasy-point units · not current players.',
+                                 'headers': ['Fictional row', 'Floor', 'Point projection', 'Ceiling'],
+                                 'rows': [['Example Hitter A', '4.0', '10.0', '16.0'],
+                                          ['Example Hitter B', '6.0', '9.0', '12.0'],
+                                          ['Example Hitter C', '3.0', '8.0', '20.0']],
+                                 'reflows': True},
+                       'after_paragraphs': ['Point projection asks: which central estimate is highest? The '
+                                            'order is A 10.0 → B 9.0 → C 8.0. A leads on that question, '
+                                            'while B still has a higher floor and C a higher ceiling.',
+                                            'Floor asks: which lower scenario is highest? The order is B 6.0 '
+                                            '→ A 4.0 → C 3.0. That makes B first in this sort. It does not '
+                                            'promise that B will score at least 6.0 points.',
+                                            'Ceiling asks: which upper scenario is highest? The order is C '
+                                            '20.0 → A 16.0 → B 12.0. C moves from last by central estimate '
+                                            'to first by upper scenario. That is a change of question, not '
+                                            'evidence that C’s projection improved.',
+                                            'The current public board’s sort handler reorders the loaded '
+                                            'values by the selected field. Changing that control does not '
+                                            'recalculate those three values. This describes the public MLB '
+                                            'board, not every signed-in interface. Do not average the three '
+                                            'ranks into an invented overall recommendation.']},
+                      {'id': 'before-you-sort',
+                       'title': 'What should I check before using the order?',
+                       'paragraphs': ['First, name the question: central estimate, lower scenario or upper '
+                                      'scenario. Then read the selected player’s other two numbers. Keeping '
+                                      'the full row in view prevents a single high value from standing in '
+                                      'for everything you need to know.',
+                                      'Next, confirm the scoring label, slate and source status. The public '
+                                      'board shows the source update time and labels usable data “live data” '
+                                      'or “latest available data.” A stale source flag, missing update time '
+                                      'or age over 60 minutes triggers the latter. If the preview cannot '
+                                      'load usable rows, it says unavailable and keeps teaching examples '
+                                      'labelled. A fresh page visit does not by itself establish fresh '
+                                      'inputs.',
+                                      'Finally, check what the table cannot settle. Player availability and '
+                                      'role still matter. Salary, roster constraints and contest rules can '
+                                      'affect a lineup decision, but this feature does not import salaries, '
+                                      'optimize lineups, manage exposure or submit entries. Propeller is '
+                                      'independent of DraftKings and the other platforms it references.',
+                                      'A useful research note is simple: “I sorted by floor, compared all '
+                                      'three values on the same slate and scoring system, and checked the '
+                                      'source status.” Add any unresolved information before deciding what '
+                                      'to research next. The first row is a place to inspect, not an '
+                                      'instruction to start a player.'],
+                       'links': [['Choose the question before you sort', '/fantasy/mlb/#projections'],
+                                 ['Compare research tools and lineup optimizers',
+                                  '/guides/ai-player-prop-analyzer-vs-dfs-optimizer/']]}],
+ 'faqs': [['How do Propeller fantasy projections work?',
+           'Propeller combines available current hitter-stat market components with recent form for '
+           'uncovered scoring events, converts them to DraftKings MLB fantasy points, and supplies a central '
+           'estimate with lower and upper scenarios.'],
+          ['Which players and sports are covered?',
+           'The public fantasy projection feature covers MLB hitters only. Pitchers and other sports are not '
+           'part of the public launch.'],
+          ['Is the highest floor guaranteed?',
+           'No. Floor is a lower scenario, not a minimum result. Actual points can fall below it, just as '
+           'they can exceed the ceiling.'],
+          ['Does sorting recalculate the projections?',
+           'The public MLB board’s sort control reorders the loaded rows by point projection, floor or '
+           'ceiling. It does not recalculate the three values in that sort handler.'],
+          ['Is the first row a lineup recommendation?',
+           'No. It is the highest value for the selected sort within the displayed rows. Read all three '
+           'values and check scoring, slate, freshness and information the table cannot settle before making '
+           'your own decision.']],
+ 'evidence_links': [['Fantasy projection methodology', '/fantasy/methodology/'],
+                    ['Public board and sort control', '/fantasy/mlb/'],
+                    ['Documented fantasy facts', '/data/fantasy-product-facts.json'],
+                    ['Historical response and provenance',
+                     '/images/content/PP-20260927/historical-evidence.json']],
+ 'related': ['/fantasy/',
+             '/fantasy/mlb/',
+             '/fantasy/methodology/',
+             '/guides/ai-player-prop-analyzer-vs-dfs-optimizer/'],
+ 'hero_image': {'src': '/images/content/PP-20260927/sort-questions.svg',
+                'alt': 'Fictional DraftKings MLB example: point projection ranks A 10.0, B 9.0, C 8.0; floor '
+                       'ranks B 6.0, A 4.0, C 3.0; ceiling ranks C 20.0, A 16.0, B 12.0.',
+                'width': 1600,
+                'height': 1000,
+                'caption': 'One fictional table, three questions. Each lane sorts one field; no lane chooses '
+                           'a best overall player. Full values and explanation appear below.'},
+ 'social_image': {'src': '/images/content/PP-20260927/cover.png', 'width': 1200, 'height': 630},
+ 'author_role': 'Founder',
+ 'cta': {'heading': 'Choose the question before you sort',
+         'body': 'Read the other two values, confirm the scoring and slate, and check the source status.',
+         'href': '/fantasy/mlb/#projections',
+         'label': 'Explore MLB projections'}},
+
 ]
 
 
@@ -1472,6 +1601,8 @@ body.pp-site-system.pp-no-vig-page main #input-audit td:nth-child(3):before { co
 
 FRESHNESS_CSS = '\nbody.pp-site-system.pp-freshness-page main .content-grid > article { min-width:0; }\nbody.pp-site-system.pp-freshness-page main .section-card p, body.pp-site-system.pp-freshness-page main .faq-item p { font-size:18px!important; line-height:1.65; }\nbody.pp-site-system.pp-freshness-page main .help-hero-media { margin:0 0 36px; }\nbody.pp-site-system.pp-freshness-page main .help-hero-media img { display:block; width:100%; height:auto; }\nbody.pp-site-system.pp-freshness-page main .help-hero-media figcaption { margin-top:12px; color:#b8d3df; font-size:16px; }\nbody.pp-site-system.pp-freshness-page main .help-table { font-size:16px!important; }\nbody.pp-site-system.pp-freshness-page main .table-scroll+p { margin-top:20px; }\nbody.pp-site-system.pp-freshness-page .pp-site-footer__column h2, body.pp-site-system.pp-freshness-page .pp-site-footer__legal, body.pp-site-system.pp-freshness-page .pp-site-footer__copy { color:#b8d3df!important; }\n@media(max-width:600px) {\nbody.pp-site-system.pp-freshness-page main .table-scroll { overflow:visible; }\nbody.pp-site-system.pp-freshness-page main .help-table { min-width:0!important; display:block; }\nbody.pp-site-system.pp-freshness-page main .help-table caption { display:block; margin-bottom:16px; }\nbody.pp-site-system.pp-freshness-page main .help-table thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }\nbody.pp-site-system.pp-freshness-page main .help-table tbody { display:block; }\nbody.pp-site-system.pp-freshness-page main .help-table tr { display:block; margin-bottom:18px; border:1px solid #54c8ff; }\nbody.pp-site-system.pp-freshness-page main .help-table th, body.pp-site-system.pp-freshness-page main .help-table td { display:block; width:auto; padding:12px!important; font-size:16px!important; white-space:normal!important; overflow-wrap:break-word!important; }\nbody.pp-site-system.pp-freshness-page main .help-table td:before { display:block; color:#f7f1e7; font-weight:700; margin-bottom:6px; }\nbody.pp-site-system.pp-freshness-page main #clock-audit td:nth-child(2):before { content:"Observed value"; }\nbody.pp-site-system.pp-freshness-page main #clock-audit td:nth-child(3):before { content:"What it tells you"; }\nbody.pp-site-system.pp-freshness-page main #change-checklist td:nth-child(2):before { content:"What to inspect"; }\nbody.pp-site-system.pp-freshness-page main #change-checklist td:nth-child(3):before { content:"When to wait"; }\n}'
 
+FANTASY_SORT_CSS = '\nbody.pp-site-system.pp-fantasy-sort-page main .content-grid > article { min-width:0; }\nbody.pp-site-system.pp-fantasy-sort-page main .section-card p, body.pp-site-system.pp-fantasy-sort-page main .faq-item p { font-size:18px!important; line-height:1.65; }\nbody.pp-site-system.pp-fantasy-sort-page main .help-hero-media { margin:0 0 36px; }\nbody.pp-site-system.pp-fantasy-sort-page main .help-hero-media img { display:block; width:100%; height:auto; }\nbody.pp-site-system.pp-fantasy-sort-page main .help-hero-media figcaption { margin-top:12px; color:#b8d3df; font-size:16px; }\nbody.pp-site-system.pp-fantasy-sort-page main .help-table { font-size:16px!important; }\nbody.pp-site-system.pp-fantasy-sort-page main .table-scroll+p { margin-top:20px; }\nbody.pp-site-system.pp-fantasy-sort-page .pp-site-footer__column h2, body.pp-site-system.pp-fantasy-sort-page .pp-site-footer__legal, body.pp-site-system.pp-fantasy-sort-page .pp-site-footer__copy { color:#b8d3df!important; }\n@media(max-width:600px) {\nbody.pp-site-system.pp-fantasy-sort-page main .table-scroll { overflow:visible; }\nbody.pp-site-system.pp-fantasy-sort-page main .help-table { min-width:0!important; display:block; }\nbody.pp-site-system.pp-fantasy-sort-page main .help-table caption { display:block; margin-bottom:16px; }\nbody.pp-site-system.pp-fantasy-sort-page main .help-table thead { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }\nbody.pp-site-system.pp-fantasy-sort-page main .help-table tbody { display:block; }\nbody.pp-site-system.pp-fantasy-sort-page main .help-table tr { display:block; margin-bottom:18px; border:1px solid #54c8ff; }\nbody.pp-site-system.pp-fantasy-sort-page main .help-table th, body.pp-site-system.pp-fantasy-sort-page main .help-table td { display:block; width:auto; padding:12px!important; font-size:16px!important; white-space:normal!important; overflow-wrap:break-word!important; }\nbody.pp-site-system.pp-fantasy-sort-page main .help-table td:before { display:block; color:#f7f1e7; font-weight:700; margin-bottom:6px; }\nbody.pp-site-system.pp-fantasy-sort-page main .help-table td:nth-child(2):before { content:"Floor"; }\nbody.pp-site-system.pp-fantasy-sort-page main .help-table td:nth-child(3):before { content:"Point projection"; }\nbody.pp-site-system.pp-fantasy-sort-page main .help-table td:nth-child(4):before { content:"Ceiling"; }\n}\n'
+
 def render_content_section(section: dict) -> str:
     body = "".join(f"<p>{esc(text)}</p>" for text in section["paragraphs"])
     if section.get("table"):
@@ -1570,7 +1701,7 @@ def render_page(page: dict) -> str:
 <script type="application/ld+json">
 {json_ld(faq)}
 </script>
-<style>{BASE_CSS}{ATTRIBUTION_CSS}{FRESHNESS_CSS if page.get("body_class") == "pp-freshness-page" else ""}{NO_VIG_CSS if page.get("body_class") == "pp-no-vig-page" else ""}{TABLE_CSS if page.get("content_sections") else ""}{PRA_CSS if page.get("body_class") == "pp-pra-page" else ""}{CONFIDENCE_CSS if page.get("body_class") == "pp-confidence-page" else ""}{ENTRY_BOUNDARIES_CSS if page.get("body_class") == "pp-entry-boundaries-page" else ""}</style>
+<style>{BASE_CSS}{ATTRIBUTION_CSS}{FANTASY_SORT_CSS if page.get("body_class") == "pp-fantasy-sort-page" else ""}{FRESHNESS_CSS if page.get("body_class") == "pp-freshness-page" else ""}{NO_VIG_CSS if page.get("body_class") == "pp-no-vig-page" else ""}{TABLE_CSS if page.get("content_sections") else ""}{PRA_CSS if page.get("body_class") == "pp-pra-page" else ""}{CONFIDENCE_CSS if page.get("body_class") == "pp-confidence-page" else ""}{ENTRY_BOUNDARIES_CSS if page.get("body_class") == "pp-entry-boundaries-page" else ""}</style>
 </head>
 <body{chr(32) + chr(99) + 'lass="pp-replay-room pp-wave-a-page pp-coverage-page' + (' ' + esc(page['body_class']) if page.get('body_class') else '') + '"' if page.get("visual_system") == "replay-room" else ""}>
 <div class="page">
