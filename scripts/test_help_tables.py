@@ -108,7 +108,8 @@ class HelpTableTests(unittest.TestCase):
                 continue
             output = help_pages.render_page(other)
             self.assertNotIn('.table-scroll', output)
-            self.assertIn('class="summary"', output)
+            self.assertNotIn('class="summary"', output)
+            self.assertEqual(output.count(help_pages.esc(other["summary"])), 1)
             self.assertIn('>Get started</a>', output)
 
     def test_freshness_visual_survives_generation_and_normalization(self):

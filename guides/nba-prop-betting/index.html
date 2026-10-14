@@ -38,7 +38,7 @@
 <meta name="twitter:image" content="https://propellerpicks.com/images/og-image.png">
 
 <!-- Additional SEO -->
-<meta name="author" content="Propeller Picks">
+<meta name="author" content="Scott Olmer">
 <meta name="application-name" content="Propeller Picks">
 <meta name="apple-mobile-web-app-title" content="Propeller">
 <meta name="theme-color" content="#f7f9fc">
@@ -59,19 +59,12 @@
   "url": "https://propellerpicks.com/guides/nba-prop-betting/",
   "description": "A practical guide to researching NBA player props using minutes, usage, pace, injury context, and current posted lines. Propeller is a research tool, not a sportsbook.",
   "datePublished": "2026-01-15",
-  "dateModified": "2026-08-08",
+  "dateModified": "2026-10-14",
   "author": {
-    "@type": "Organization",
-    "name": "Propeller Picks",
-    "url": "https://propellerpicks.com/about/",
-    "description": "AI-assisted player-prop research workspace using sport-specific analysis signals to score player props with confidence ratings, matchup context, and transparent graded results."
-  },
-  "reviewedBy": {
     "@type": "Person",
     "name": "Scott Olmer",
     "url": "https://propellerpicks.com/about/"
   },
-
   "publisher": {
     "@type": "Organization",
     "name": "Propeller Picks",
@@ -88,13 +81,27 @@
   },
   "mainEntityOfPage": "https://propellerpicks.com/guides/nba-prop-betting/",
   "about": [
-    { "@type": "Thing", "name": "NBA player props" },
-    { "@type": "Thing", "name": "NBA player prop research" },
-    { "@type": "Thing", "name": "player prop odds analysis" }
+    {
+      "@type": "Thing",
+      "name": "NBA player props"
+    },
+    {
+      "@type": "Thing",
+      "name": "NBA player prop research"
+    },
+    {
+      "@type": "Thing",
+      "name": "player prop odds analysis"
+    }
   ],
   "speakable": {
     "@type": "SpeakableSpecification",
-    "cssSelector": [".hero h1", ".hero-sub", "#what-are-props + p", "#key-factors + p"]
+    "cssSelector": [
+      ".hero h1",
+      ".hero-sub",
+      "#what-are-props + p",
+      "#key-factors + p"
+    ]
   }
 }
 </script>
@@ -189,7 +196,7 @@
       "name": "How do you bet NBA player props?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You bet NBA player props by choosing the over or under on a player's posted stat line, then comparing that number against the player's expected minutes, usage, pace environment, matchup, and injury news. A documented NBA prop research process compares the posted line with expected minutes, usage, pace, matchup, and current injury context, while recognizing that none of those inputs guarantees the outcome."
+        "text": "Choose over or under on the posted player-stat line, then check expected minutes, usage, pace, matchup, and injuries. Those inputs help explain the research; none guarantees the result."
       }
     },
     {
@@ -205,7 +212,7 @@
       "name": "What are the easiest NBA player props to bet?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Points props for primary scorers and assists props for lead ball-handlers tend to have the most historical data and the tightest correlation with measurable inputs like usage rate and minutes. No stat category is inherently profitable. High-variance categories require wider uncertainty ranges, while higher-volume categories may have more stable inputs; evaluate the current line and evidence rather than assuming either group offers value."
+        "text": "No stat category is inherently profitable or automatically easy to forecast. Compare the current line with the player’s role and available evidence. Allow for uncertainty, especially when outcomes vary widely between games."
       }
     },
     {
@@ -221,7 +228,7 @@
       "name": "What is usage rate and why does it matter for props?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Usage rate (USG%) measures the percentage of team plays a player is involved in while on the court — through shots, free throws, or turnovers. It is the volume multiplier for virtually every counting stat. A player with a 32% usage rate who gets 34 minutes will almost always produce more points than a 22% usage player in the same minutes. When you are evaluating a points or PRA prop, usage rate tells you whether the player has the opportunity volume to hit the line."
+        "text": "Usage rate (USG%) estimates the share of team plays a player uses while on court through shots, free throws, or turnovers. Read it with expected minutes and the stat being researched. It does not set an outcome or describe every rebound and assist opportunity."
       }
     },
     {
@@ -245,7 +252,7 @@
       "name": "How does game pace affect NBA player props?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Game pace determines the total number of possessions in a game. A fast-paced team averaging 105 possessions per game creates 8-10 more statistical opportunities per game than a 95-pace team. When a fast-paced team plays another fast team, the resulting game pace can push the total above 220 — meaning every player in the game has more chances to accumulate stats. A player's per-game average was produced in their team's typical pace environment. When tonight's game pace differs significantly, the line may not fully account for the statistical inflation or deflation."
+        "text": "Game pace estimates possessions. Compare the expected pace with the player’s usual setting, then check minutes and role. A higher game total alone does not establish more possessions, and a pace difference does not prove the current line is mispriced."
       }
     },
     {
@@ -1355,6 +1362,7 @@ footer {
 }
 </style>
   <link rel="stylesheet" href="/assets/css/site-white-overrides.css?v=20260625-white-site">
+<link rel="stylesheet" href="/assets/css/editorial-replay.css?v=20261014">
   <style id="pp-critical-hero">.hero .fade-in{opacity:1;transform:none;transition:none}</style>
   <script src="/assets/js/analytics-loader.js?v=20260915"></script>
   <!-- PP_SITE_HEAD_START -->
@@ -1367,7 +1375,7 @@ footer {
   <link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">
   <!-- PP_SITE_HEAD_END -->
 </head>
-<body class="pp-site-system pp-family-core">
+<body class="pp-site-system pp-family-core pp-editorial-replay">
 <div class="bg-orbs" aria-hidden="true">
   <div class="bg-orb bg-orb-1"></div>
   <div class="bg-orb bg-orb-2"></div>
@@ -1437,7 +1445,7 @@ footer {
       <article class="article-content">
 
         <h2 id="what-are-props">What Are NBA Player Props and How Do They Work?</h2>
-        <p><strong>To bet NBA player props, you pick whether a player will go over or under a sportsbook line on an individual stat such as points, rebounds, assists, or PRA.</strong> The best NBA prop bets come from comparing that line against minutes, usage, pace, matchup, and injury news instead of betting raw season averages.</p>
+        <p>An NBA player prop asks whether a player will finish over or under a line for points, rebounds, assists, PRA, or another stat. Compare the line with expected minutes, role, matchup, pace, and injury news. A season average alone does not answer the question.</p>
         <p><strong>NBA player prop odds are the price attached to that over/under line.</strong> The line tells you the stat threshold, such as 24.5 points; the odds tell you what each side pays and imply a probability. A good prop decision compares both pieces: the number you must beat and the price you are paying to bet it.</p>
         <div class="highlight-box">
           <div class="highlight-box-label">Fast NBA Prop Checklist</div>
@@ -1448,7 +1456,7 @@ footer {
             <li><strong>Best value:</strong> look for stale lines after injury news, rotation changes, or pace/matchup mismatches.</li>
           </ul>
         </div>
-        <p>Sportsbooks post player props on virtually every measurable NBA stat. Rather than betting a side or total, you are betting on whether one player will finish above or below a posted number in tonight's game. That makes props more sensitive to role changes, late scratches, pace shifts, and matchup edges than traditional spread betting.</p>
+        <p>Sportsbooks offer props on individual player statistics. Check the player’s current role and availability rather than treating the line like a team spread or total.</p>
         <p>Player props are available on virtually every quantifiable NBA statistic. The most commonly wagered categories are:</p>
 
         <table class="stat-table">
@@ -1503,7 +1511,7 @@ footer {
 
         <h2 id="key-factors">What Factors Affect NBA Player Prop Outcomes?</h2>
         <p><strong>The six key factors that drive NBA player prop outcomes are: minutes and usage rate, game pace, injuries (including teammate cascade effects), defensive matchup quality, rest and schedule density, and recent performance trends.</strong> When multiple factors shift simultaneously—for example, a teammate injury in a fast-paced matchup—recalculate the player's role and compare it with the current posted line.</p>
-        <p>Every NBA player prop is the product of several interacting inputs. Understanding which inputs matter and where uncertainty remains is the foundation of a documented research process. High-variance stat types require more caution, not an assumption that they offer more opportunity than higher-volume markets.</p>
+        <p>Check the factors that matter for this player and stat, and record what remains uncertain. A stat that varies widely from game to game calls for more caution; that variation does not mean it offers more opportunity than a higher-volume market.</p>
 
         <div class="factor-grid">
           <div class="factor-card fade-in">
@@ -1511,7 +1519,7 @@ footer {
               <i data-lucide="clock" style="width:20px;height:20px;"></i>
             </div>
             <h3>Minutes and Usage Rate</h3>
-            <p>The volume multiplier. A player cannot produce stats they do not have opportunity to create. Minutes and usage rate (USG%) determine the ceiling and floor of almost every counting stat.</p>
+            <p>Minutes show time on the court; usage describes involvement in plays that end with a shot, free throws, or a turnover. Check the opportunities relevant to the stat you are researching. Neither measure sets a guaranteed floor or ceiling.</p>
           </div>
 
           <div class="factor-card fade-in delay-1">
@@ -1519,7 +1527,7 @@ footer {
               <i data-lucide="zap" style="width:20px;height:20px;"></i>
             </div>
             <h3>Pace and Game Environment</h3>
-            <p>Fast games generate more possessions, which means more statistical opportunities for every player. When two pace-friendly teams meet, counting stats inflate across the board.</p>
+            <p>A faster game can create more possessions. How that affects a player depends on minutes and role.</p>
           </div>
 
           <div class="factor-card fade-in">
@@ -1535,7 +1543,7 @@ footer {
               <i data-lucide="shield" style="width:20px;height:20px;"></i>
             </div>
             <h3>Matchup Quality</h3>
-            <p><a href="https://www.fantasypros.com/nba/defense-vs-position.php" target="_blank" rel="noopener">Defense vs. Position (DvP)</a> metrics measure how a specific defensive unit performs against players at a given position. A shooting guard drawing a weak perimeter defender has a structurally better prop environment.</p>
+            <p><a href="https://www.fantasypros.com/nba/defense-vs-position.php" target="_blank" rel="noopener">Defense vs. Position (DvP)</a> metrics measure how a specific defensive unit performs against players at a given position. Check the expected defender and player role alongside the historical matchup data.</p>
           </div>
 
           <div class="factor-card fade-in">
@@ -1543,7 +1551,7 @@ footer {
               <i data-lucide="moon" style="width:20px;height:20px;"></i>
             </div>
             <h3>Rest and Schedule Density</h3>
-            <p>Back-to-back games and compressed schedules carry documented performance penalties — particularly in minutes played, shooting efficiency, and explosive stats. The size and consistency of fatigue effects vary, and the current line may already reflect schedule context.</p>
+            <p>Check rest and schedule density alongside expected minutes and role. Any effect varies by player and team, and the current line may already reflect it.</p>
           </div>
 
           <div class="factor-card fade-in delay-1">
@@ -1555,55 +1563,55 @@ footer {
           </div>
         </div>
 
-        <h3>Minutes and Usage Rate: The Volume Multiplier</h3>
-        <p>Every counting stat in basketball is the product of opportunity. Minutes determine how long a player is on the court; <a href="https://www.basketball-reference.com/about/glossary.html#usg" target="_blank" rel="noopener">usage rate (USG%)</a> determines what fraction of team plays they are involved in while there. A player logging 36 minutes at 30% usage is in a fundamentally different statistical environment than a 24-minute, 22% usage player — even if their season averages look similar at a glance.</p>
-        <p>When evaluating any counting stat prop, the first question is: does this player have the minutes and usage volume to consistently reach this number? If a points line is set at 22.5 and the player has only cleared that mark when playing 34+ minutes, a situation where they are expected to play 30 minutes (due to pace, opponent strength, or blowout risk) materially changes the prop's expected value.</p>
+        <h3>Minutes and usage</h3>
+        <p>Minutes tell you how long a player is on court. <a href="https://www.basketball-reference.com/about/glossary.html#usg" target="_blank" rel="noopener">Usage rate</a> describes involvement in plays that end with shots, free throws, or turnovers. For example, 36 minutes at 30% usage and 24 minutes at 22% usage describe different opportunities, even if season averages look similar. They do not predict an outcome by themselves.</p>
+        <p>For a 22.5-point line, check the minutes in games when the player cleared it. If those games required 34+ minutes but the next game is expected to offer 30, revisit the comparison. Blowout risk, rest, and opponent context may affect that expectation; the difference alone does not establish expected value.</p>
 
-        <h3>Pace and Game Environment: Fast Games Inflate Stats</h3>
-        <p>Every basketball game has a pace — measured in <a href="https://www.nba.com/stats/teams/advanced" target="_blank" rel="noopener">possessions per 48 minutes</a> (tracked by the NBA's official stats portal). A high-pace game (105+ possessions) creates more opportunities for everyone compared to a slow, defensive game (92-95 possessions). The difference between a 93-pace game and a 105-pace game is roughly 12 additional possessions — which translates to 12 more chances for every player to accumulate stats.</p>
-        <p>When two pace-friendly teams meet, or when the Vegas game total is elevated (230+ points implies a fast, high-scoring game), all player props exist in an inflated statistical environment. A player averaging 18 points in a 100-pace team context may see their expected output shift meaningfully when both teams are running. Books set lines based on averages; analyzing the specific game environment adds context beyond a season average.</p>
+        <h3>Pace and game conditions</h3>
+        <p>Every basketball game has a pace — measured in <a href="https://www.nba.com/stats/teams/advanced" target="_blank" rel="noopener">possessions per 48 minutes</a> (tracked by the NBA's official stats portal). A game at 105+ possessions has more team possessions than one at 92–95; individual opportunities still depend on minutes and role. The difference between a 93-pace game and a 105-pace game is roughly 12 additional possessions — which means roughly 12 more team possessions, not 12 additional opportunities guaranteed to every player.</p>
+        <p>A 230+ game total indicates a high expected combined score, not pace by itself. To assess a player averaging 18 points in a 100-pace setting, check the expected pace, minutes, and role for this game. Do not assume every player’s output rises or that the current line omits this context.</p>
 
         <h3>Injuries and Cascade Effects: Recheck Roles and Lines</h3>
         <p>Injuries can materially change teammate roles, minutes, and usage, so related player projections should be recalculated after a status update. When a first-option scorer is ruled out, somebody else takes those shot attempts. When a primary ball-handler goes down, somebody else generates the assist opportunities. The size of any redistribution is player- and lineup-specific and should not be assumed from a generic range.</p>
         <p><strong>Recheck the current information.</strong> After an absence is announced, review the full rotation, current projections, and posted lines. Markets may update quickly or unevenly, but timing alone does not prove that a line is stale or favorable.</p>
 
         <h3>Matchup Quality: Defense vs. Position</h3>
-        <p>Not all opponents are equal. A point guard drawing a team that ranks in the bottom 10% of the league in defending that position is playing in a structurally different environment than the same player against a top defensive team. Defense vs. Position (DvP) metrics aggregate historical defensive performance against players at a specific position, giving you a quantified measure of how favorable tonight's matchup actually is.</p>
-        <p>The key is position-specificity. A team that defends power forwards well may have a weakness at point guard — and that differentiation is exactly what matchup analysis captures that raw team defensive rating does not.</p>
+        <p>Defense vs. Position (DvP) summarizes past results allowed to players at a position. A bottom-10% ranking and a strong defensive ranking describe different historical records, but neither settles this matchup. Check the actual opponent and player role.</p>
+        <p>A team’s results against point guards can differ from its results against power forwards. Compare that detail with overall team defense and the current matchup.</p>
 
-        <h3>Rest and Schedule Density: Fatigue Has a Documented Cost</h3>
-        <p>Back-to-back games reduce NBA player output in measurable ways. Star players on back-to-backs average fewer minutes, lower shooting efficiency, and reduced stat production compared to rested games. Three games in four nights and four games in five nights compound this effect further. The impact is most pronounced on explosive stat categories — three-pointers, steals, and blocks — and less significant on high-usage scorers who play through fatigue by design.</p>
+        <h3>Rest and schedule</h3>
+        <p>Rest and schedule density are useful context to check alongside expected minutes, role, and the current line. The effect can vary by player and team; this guide does not establish a fixed penalty or a ranking of which stat types are most affected.</p>
         <p>Rest is one input among many, and the effect of compressed schedules varies by player, role, and team; compare it with the current line without assuming the market omitted it. A team playing their fourth game in five nights in the second half of a season is in a meaningfully different fatigue context than a routine back-to-back in October.</p>
 <h2 id="step-by-step">How Do You Analyze an NBA Player Prop Step by Step?</h2>
-        <p>To make the framework concrete, here is a full analysis walkthrough using a sample prop: <strong>Jalen Brunson Over 24.5 Points</strong>. Treat it as a process example: the point is how to compare the line against context, not to reuse the sample pick.</p>
+        <p>The walkthrough below uses <strong>Jalen Brunson Over 24.5 Points</strong> to show how to check a line against its context. It is a process example, not a pick to reuse.</p>
 
         <div class="walkthrough fade-in">
           <div class="step-card">
             <div class="step-num">01</div>
             <div class="step-body">
               <h3>Check the baseline: minutes and usage context</h3>
-              <p>Brunson averages roughly 35-36 minutes per game as a featured scorer at 32-34% usage. His 24.5-point line reflects his established production volume. The first question is whether tonight's game context changes his expected minutes — blowout risk (large spread), back-to-back, or opponent pace.</p>
+              <p>For this sample 24.5-point line, look up Brunson’s minutes and usage in a dated source. Then check whether the next game changes those expectations. The guide does not supply a current verified baseline.</p>
             </div>
           </div>
           <div class="step-card">
             <div class="step-num">02</div>
             <div class="step-body">
               <h3>Evaluate the matchup quality</h3>
-              <p>Who guards Brunson, and how has that team performed against point guards this season? A matchup against a team allowing 28+ points per game to opposing point guards is favorable. A matchup against a team built around a shutdown point-of-attack defender is a red flag. Check the DvP data, not just the team's overall defensive rating.</p>
+              <p>Check who is likely to defend Brunson and how the opponent has performed against point guards. Review the current defensive lineup as well as DvP and overall team data. No one ranking establishes that the line is favorable.</p>
             </div>
           </div>
           <div class="step-card">
             <div class="step-num">03</div>
             <div class="step-body">
               <h3>Assess game pace and total</h3>
-              <p>If tonight's game total is posted at 225+, the market implies a fast-paced, high-scoring game — which increases Brunson's possession opportunities. A game total of 210 implies a slower, lower-scoring environment that may suppress counting stats for everyone involved.</p>
+              <p>Check both the expected game total and available pace information. A higher total does not by itself prove a faster game or a fixed increase in Brunson’s opportunities.</p>
             </div>
           </div>
           <div class="step-card">
             <div class="step-num">04</div>
             <div class="step-body">
               <h3>Review recent hit rate and trend direction</h3>
-              <p>Has Brunson been trending above or below 24.5 in recent games? Not just his season average, but his last 8-10 games weighted more heavily than earlier in the season. A player on an upward trend is a different bet than a player who has hit this line 55% of the season but missed four of the last five.</p>
+              <p>Compare recent results with the same 24.5 threshold, then check minutes, role, and opponents in those games. Give recent changes attention without assuming a short trend will continue.</p>
             </div>
           </div>
           <div class="step-card">
@@ -1622,7 +1630,7 @@ footer {
           </div>
         </div>
 
-        <h2 id="advanced-strategy">What Are the Best Advanced NBA Player Prop Betting Strategies?</h2>
+        <h2 id="advanced-strategy">Compare prices and recent results</h2>
         <p><strong>Useful advanced NBA player-prop research methods include line comparison, no-vig normalization, recency-aware trend analysis, and re-checking roles after news.</strong> These methods make assumptions visible, but they do not establish that a line is stale or profitable.</p>
 
         <h3>No-Vig Analysis: Normalizing the Market Estimate</h3>
@@ -1639,64 +1647,7 @@ footer {
         <h2 id="propedge">How Does Propeller's AI Analyze NBA Props?</h2>
         <p>Propeller runs the NBA player props currently available through sport-specific analysis signals, each analyzing a different dimension of the bet. The agents use sport-specific weights rather than a single generic configuration. The resulting score is a directional model signal, not a calibrated win probability.</p>
 
-        <div class="agent-list">
-          <div class="agent-row">
-            <div class="agent-row-weight">4.0x</div>
-            <div class="agent-row-text">
-              <h4>Injury Agent</h4>
-              <p>Highest-weighted signal. Models direct status plus cascade effects on all teammate props automatically.</p>
-            </div>
-          </div>
-          <div class="agent-row">
-            <div class="agent-row-weight">2.0x</div>
-            <div class="agent-row-text">
-              <h4>Pace Agent</h4>
-              <p>Pace-adjusts expected output using both team pace and Vegas game total as environment signals.</p>
-            </div>
-          </div>
-          <div class="agent-row">
-            <div class="agent-row-weight">2.0x</div>
-            <div class="agent-row-text">
-              <h4>Usage Agent</h4>
-              <p>Tracks USG%, per-minute rate, shot volume trends, and BDL tracking data (touches, drives, paint touches).</p>
-            </div>
-          </div>
-          <div class="agent-row">
-            <div class="agent-row-weight">2.0x</div>
-            <div class="agent-row-text">
-              <h4>Minutes Agent</h4>
-              <p>Monitors minutes trajectory, role change detection, and blowout-scenario adjustment.</p>
-            </div>
-          </div>
-          <div class="agent-row">
-            <div class="agent-row-weight">2.0x</div>
-            <div class="agent-row-text">
-              <h4>No-Vig Agent</h4>
-              <p>Multi-book bilateral no-vig calculation — strips margin and flags cross-book disagreement.</p>
-            </div>
-          </div>
-          <div class="agent-row">
-            <div class="agent-row-weight">1.5x</div>
-            <div class="agent-row-text">
-              <h4>Matchup Agent</h4>
-              <p>Defense vs. Position (DvP) differential — quantifies how favorable or unfavorable tonight's defensive matchup is.</p>
-            </div>
-          </div>
-          <div class="agent-row">
-            <div class="agent-row-weight">1.5x</div>
-            <div class="agent-row-text">
-              <h4>HitRate Agent</h4>
-              <p>Recency-weighted hit rate, trend direction, consistency score, streak detection, and hustle stats.</p>
-            </div>
-          </div>
-          <div class="agent-row">
-            <div class="agent-row-weight">0.8x</div>
-            <div class="agent-row-text">
-              <h4>Rest Agent</h4>
-              <p>Back-to-back, three-in-four, and four-in-five schedule density — fatigue penalty modeling.</p>
-            </div>
-          </div>
-        </div>
+        <div class="agent-list"><p>Available signals and weights vary by sport, prop, model version, and production calibration. Open a listed prop to see its current breakdown.</p><ul><li>Availability and role</li><li>Pace</li><li>Usage</li><li>Minutes</li><li>Market context</li><li>Matchup</li><li>Recent results</li><li>Rest</li></ul></div>
 
         <p>The available analysis signals combine into a displayed More/Over or Less/Under direction with a 50&ndash;100 model-confidence score. Higher values indicate stronger support for the displayed side; they are not win probabilities or guarantees. You can view today's available NBA analysis at <a href="/picks/nba/">our NBA props page</a> or run a listed prop through the <a href="/analyzer/">Prop Analyzer</a> for the signal breakdown.</p>
             <a href="/tools/prizepicks-payout-calculator/">PrizePicks Calculator</a>
@@ -1709,23 +1660,23 @@ footer {
         <h3>UNDER vs. OVER: Direction Matters</h3>
         <p>Direction matters because sportsbooks and DFS platforms do not price every market symmetrically. Recreational demand often leans toward overs, while injury news, role reductions, pace changes, and matchup context can make unders attractive. Do not force one side by rule; compare the posted line to the player's realistic median outcome.</p>
 
-        <h3 id="best-stat-types">Best NBA Prop Stat Types to Analyze First</h3>
+        <h3 id="best-stat-types">Account for how much the stat varies</h3>
         <p>High-variance categories such as blocks, threes, and steals require wider uncertainty ranges. Higher-volume markets such as points and PRA can have more stable inputs. Neither group should be assumed favorable; compare the current line with role, matchup, injury, and market context.</p>
 
         <h2 id="mistakes">What Are the Biggest NBA Prop Strategy Mistakes?</h2>
-        <p>The most common errors in NBA prop betting are not about finding picks — they are about disciplined process. These mistakes can compound uncertainty and exposure even when the underlying concepts are understood.</p>
+        <p>These mistakes can increase uncertainty and exposure even when you understand the research steps.</p>
 
         <ul>
-          <li><strong>Betting season averages without game context.</strong> A player's season average is a starting point, not a prediction. Minutes, matchup, pace, rest, and injury context can shift expected output by 20-30% in either direction for any given game.</li>
+          <li><strong>Betting season averages without game context.</strong> A player's season average is a starting point, not a prediction. Minutes, matchup, pace, rest, and injuries can change expected output. Check the current context instead of assuming a fixed percentage adjustment.</li>
           <li><strong>Ignoring late injury news.</strong> Status changes can alter minutes, usage, matchups, and the posted line. Re-check official reports and current prices before entries close rather than assuming an earlier analysis still applies.</li>
-          <li><strong>Stacking correlated props on the same player.</strong> Including a player's points and their PRA in the same parlay creates the illusion of two independent bets on a single statistical outcome. If the player has a bad game, both legs fail together. Build positions across independent players and games.</li>
-          <li><strong>Using a single book for all lines.</strong> Half-point differences in prop lines are meaningful over a sample. Having access to multiple books and always getting the best available number is a structural advantage that costs nothing beyond the account creation effort.</li>
+          <li><strong>Stacking correlated props on the same player.</strong> Including a player's points and their PRA in the same parlay creates the illusion of two independent bets on a single statistical outcome. The two results can be related, but one miss does not guarantee the other also misses. Build positions across independent players and games.</li>
+          <li><strong>Using a single book for all lines.</strong> Half-point differences in prop lines are meaningful over a sample. Compare the full line, price, and terms across available sources. A different number can change the terms, but does not establish a profitable outcome.</li>
           <li><strong>Forcing a selection on every game.</strong> A complete slate does not guarantee a well-supported research case. Track assumptions and uncertainty, and skip situations where the available evidence is incomplete or contradictory.</li>
         </ul>
 
         <div class="highlight-box" style="margin-top: 40px;">
           <div class="highlight-box-label">About This Guide</div>
-          <p>Reviewed by <a href="/about/">Scott Olmer, founder of Propeller Picks</a>. Substantively reviewed July 16, 2026 for probability language, no-vig math, sources, and limitations. See the <a href="/editorial-policy/">editorial and corrections policy</a>.</p>
+          <p>By <a href="/about/">Scott Olmer, founder of Propeller Picks</a>, designated author. AI-assisted production and automated review for this copy update took place on October 14, 2026. It does not establish personal review by Scott or a fresh verification of platform rules. See the <a href="/editorial-policy/">editorial and corrections policy</a>.</p>
           <p data-editorial-sources="true"><strong>Sources and method:</strong> <a href="https://www.nba.com/stats/teams/advanced" target="_blank" rel="noopener">NBA advanced stats</a>, <a href="https://www.basketball-reference.com/about/glossary.html#usg" target="_blank" rel="noopener">Basketball Reference usage glossary</a>, <a href="https://www.espn.com/nba/injuries" target="_blank" rel="noopener">ESPN injury reports</a>, the <a href="/results/">public results ledger</a>, and <a href="/how-it-works/">Propeller methodology</a> (<a href="/data/methodology-version.json">version 2026.07</a>, effective July 14, 2026).</p>
         </div>
 
@@ -1791,7 +1742,7 @@ footer {
 
       <div class="faq-item fade-in">
         <h3>How do you bet NBA player props?</h3>
-        <p>You bet NBA player props by choosing the over or under on a player's posted stat line, then comparing that number against the player's expected minutes, usage, pace environment, matchup, and injury news. A documented NBA prop research process compares the posted line with expected minutes, usage, pace, matchup, and current injury context, while recognizing that none of those inputs guarantees the outcome.</p>
+        <p>Choose over or under on the posted player-stat line, then check expected minutes, usage, pace, matchup, and injuries. Those inputs help explain the research; none guarantees the result.</p>
       </div>
 
       <div class="faq-item fade-in">
@@ -1801,7 +1752,7 @@ footer {
 
       <div class="faq-item fade-in">
         <h3>What are the easiest NBA player props to bet?</h3>
-        <p>Points props for primary scorers and assists props for lead ball-handlers tend to have the most historical data and the tightest correlation with measurable inputs like usage rate and minutes. No stat category is inherently profitable. High-variance categories require wider uncertainty ranges, while higher-volume categories may have more stable inputs; evaluate the current line and evidence rather than assuming either group offers value.</p>
+        <p>No stat category is inherently profitable or automatically easy to forecast. Compare the current line with the player’s role and available evidence. Allow for uncertainty, especially when outcomes vary widely between games.</p>
       </div>
 
       <div class="faq-item fade-in">
@@ -1811,7 +1762,7 @@ footer {
 
       <div class="faq-item fade-in">
         <h3>What is usage rate and why does it matter for props?</h3>
-        <p>Usage rate (USG%) measures the percentage of team plays a player is involved in while on the court — through shots, free throws, or turnovers. It is the volume multiplier for virtually every counting stat. A player with a 32% usage rate who gets 34 minutes will almost always produce more points than a 22% usage player in the same minutes. When you are evaluating a points or PRA prop, usage rate tells you whether the player has the opportunity volume to hit the line.</p>
+        <p>Usage rate (USG%) estimates the share of team plays a player uses while on court through shots, free throws, or turnovers. Read it with expected minutes and the stat being researched. It does not set an outcome or describe every rebound and assist opportunity.</p>
       </div>
 
       <div class="faq-item fade-in">
@@ -1826,7 +1777,7 @@ footer {
 
       <div class="faq-item fade-in">
         <h3>How does game pace affect NBA player props?</h3>
-        <p>Game pace determines the total number of possessions in a game. A fast-paced team averaging 105 possessions per game creates 8-10 more statistical opportunities per game than a 95-pace team. When a fast-paced team plays another fast team, the resulting game pace can push the total above 220 — meaning every player in the game has more chances to accumulate stats. A player's per-game average was produced in their team's typical pace environment. When tonight's game pace differs significantly, the line may not fully account for the statistical inflation or deflation.</p>
+        <p>Game pace estimates possessions. Compare the expected pace with the player’s usual setting, then check minutes and role. A higher game total alone does not establish more possessions, and a pace difference does not prove the current line is mispriced.</p>
       </div>
 
       <div class="faq-item fade-in">

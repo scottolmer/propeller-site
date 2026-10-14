@@ -158,7 +158,7 @@
       "name": "How do you research player props?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Research player props by starting with the posted line, then checking expected minutes, usage, matchup, injury news, pace or game environment, recent trend, and whether the odds imply a fair probability after removing vig. The best research process compares tonight's role against the baseline the market used to set the line."
+        "text": "Start with the posted line. Check playing time, role, matchup, injuries, game conditions, recent results, and market prices. Compare the expected role with your historical sample. Removing vig gives a market estimate, not the true probability; do not assume you know which baseline the market used."
       }
     },
     {
@@ -182,7 +182,7 @@
       "name": "What is the best tool for analyzing player props?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Propeller's Prop Analyzer runs sport-specific analysis signals across 5 sports, producing a single confidence score. The agents evaluate matchup, injury, pace, usage, no-vig, hit rate, minutes, and rest factors. Current performance context should be checked in the public results ledger ."
+        "text": "Propeller’s free analyzer shows available research for a listed line across NFL, NBA, MLB, NHL, and soccer. Available signals may include matchup, injuries, pace, usage, market context, recent results, minutes, and rest. Read the displayed direction and 50–100 confidence score together; confidence is not a calibrated win probability. Check the public results ledger for performance context."
       }
     },
     {
@@ -1415,11 +1415,11 @@ body.pp-site-system .context-table {width:100%;border-collapse:collapse;table-la
       <article class="article-content">
 
         <h2 id="what-are-props">What Are Player Props and Why Analyze Them?</h2>
-        <p><strong>Player props are over/under bets on individual player statistics in a single game — points, rebounds, assists, strikeouts, shots on goal, and dozens of other measurable categories across every major sport.</strong> Unlike team bets or point spreads, props isolate one player's performance, making them analyzable with specific, quantifiable inputs.</p>
+        <p>Player props ask whether one player will finish above or below a stat line in a game. Examples include points, rebounds, assists, strikeouts, and shots on goal. Research starts with that player’s opportunities and circumstances.</p>
         <p>Propeller's signed-in product supports <strong>NFL, NBA, MLB, NHL, and soccer</strong>. The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer. Propeller was designed for research used with <a href="/guides/prizepicks-strategy/">PrizePicks</a>, <a href="/guides/underdog-strategy/">Underdog Fantasy</a>, and <a href="/guides/pick6-strategy/">DraftKings Pick6</a>; sportsbook lines such as FanDuel may appear only as market context.</p>
-        <p>Why are props analyzable? Because each prop is influenced by measurable inputs: expected minutes, usage, matchup, injuries, and game environment. Evaluating those inputs systematically creates a more inspectable research process, but it does not establish that a posted line is mispriced.</p>
+        <p>Expected minutes, usage, matchup, injuries, and game environment give you specific things to check. Recording those checks makes your reasoning easier to review; it does not prove that a posted line is mispriced.</p>
 
-        <h2 id="six-signals">What Are the 6 Key Signals for Analyzing Any Player Prop?</h2>
+        <h2 id="six-signals">Six things to check</h2>
         <p><strong>Six useful player-prop research inputs are volume (minutes/usage), matchup quality, injury status, game environment (pace/total), recent form, and market pricing (no-vig market estimate).</strong> Reviewing them together makes the reasoning more complete and easier to audit. These are research categories, not a promise that every category contributes to every Propeller score.</p>
 
         <section class="pp-video-section" aria-labelledby="signals-video-title">
@@ -1460,7 +1460,7 @@ body.pp-site-system .context-table {width:100%;border-collapse:collapse;table-la
             <p>Convert both sides of a market to implied probability, then normalize them to remove the overround. Differences across books show that prices are not identical; they do not by themselves prove value. Use the <a href="/guides/compare-player-prop-lines/">six-field exact-line workflow</a> before treating two screens as a direct comparison.</p>
           </div>
         </div>
-<h2 id="step-by-step">How Do You Analyze a Player Prop Step by Step?</h2>
+<h2 id="step-by-step">A step-by-step research checklist</h2>
         <p><strong>Start with the exact player, stat, direction, and current line. Use these six steps to organize the evidence, then decide whether to continue researching, wait for confirmation, or pass.</strong></p>
 
         <div class="walkthrough fade-in">
@@ -1529,7 +1529,7 @@ body.pp-site-system .context-table {width:100%;border-collapse:collapse;table-la
         <p><strong>Next-game change:</strong> the teammate is cleared to return. <strong>Still unknown:</strong> Player A’s next-game minutes and responsibilities. The return creates a reason to revisit the expanded-role sample, but it does not establish a specific reduction in minutes or rebounds.</p>
         <!-- PP-20260913 enrichment -->
 <figure class="recent-context-figure"><picture><source media="(max-width:600px)" srcset="/images/guides/recent-games-context-mobile.svg" width="390" height="860"><img src="/images/guides/recent-games-context.svg" width="1600" height="1000" loading="lazy" decoding="async" alt="Fictional Player A rebound totals 9, 10, 7, 11, 9, with minutes 32, 34, 24, 35, 33. All five games had an expanded role while a teammate was absent. The teammate is cleared to return; next minutes and responsibilities are unknown."></picture><figcaption>Fictional teaching example. Outcomes and minutes are invented, not real player statistics or a current recommendation. The 8.5 line is an illustrative comparison threshold.</figcaption></figure>
-<div class="recent-context-reading"><h3>Read the pattern in three passes</h3><p>Start at the shared baseline. The bar heights show only rebound totals, ordered from oldest to newest. Then read the minutes directly underneath each game. Keeping the two rows aligned makes it easier to notice that Game 3 combines the lowest total with the shortest appearance. That pairing is an observation; it does not explain why either number was lower.</p><p>Next, separate the record from the assumption. The context note describes a condition shared by these five games: an expanded role while a teammate was absent. The orange note introduces a different condition for the next game. Neither the bars nor the minutes can tell you how the team will distribute responsibilities after that return. Reusing this sample without checking the role quietly carries an old assumption into a new situation.</p><p>Treat the blank future as a research task. Compare games with similar responsibilities if credible records are available, and keep that comparison separate from the absent-teammate sample. If next-game role information is still pending, leave the question open. Filling the gap with a guess would make the chart look more complete without making the evidence stronger.</p><h3>How this connects to Propeller</h3><p>An AI-operated September 10 check followed a public Propeller card into the <a href="/tools/ai-betting-prompt-builder/">research prompt builder</a>. Its instructions asked for a relevant longer sample and an evaluation of role and context; those requirements were rechecked September 15. This graphic shows where those checks begin. Its five invented results supply neither the longer comparison nor confirmed next-game responsibilities. Generating the prompt asks for that research; it does not perform or verify it.</p><p><a href="#step-by-step">Review the full context checklist</a>.</p></div>
+<div class="recent-context-reading"><h3>Read the pattern in three passes</h3><p>The bars show rebounds from oldest to newest; the row below shows minutes. Game 3 has both the fewest rebounds and the shortest appearance. The chart does not tell us why.</p><p>All five games came with an expanded role while a teammate was absent. The teammate returns for the next game. The chart cannot show how responsibilities will change, so check the role before reusing this sample.</p><p>If credible records are available, compare games where the player had similar responsibilities. Keep those games separate from the absent-teammate sample. If the next-game role is still unknown, leave it open rather than filling the chart with a guess.</p><h3>How this connects to Propeller</h3><p>An AI-operated September 10 check followed a public Propeller card into the <a href="/tools/ai-betting-prompt-builder/">research prompt builder</a>. It requested a longer relevant sample and checks on role and context; those instructions were rechecked September 15. The five invented results in this graphic do not supply that research or confirm the next-game role. Generating a prompt does not perform or verify its requested research.</p><p><a href="#step-by-step">Review the full context checklist</a>.</p></div>
 <!-- /PP-20260913 enrichment -->
         <h3>Were the opportunities comparable?</h3>
         <p>Not completely. Four appearances lasted 32–35 minutes; Game 3 lasted 24. We have not been given the reason for the shorter appearance. Do not label it an injury, foul problem, or coaching decision without evidence.</p>
@@ -1540,7 +1540,7 @@ body.pp-site-system .context-table {width:100%;border-collapse:collapse;table-la
         <p><strong>Choose the next research action:</strong> continue if useful context is available, wait if role information is pending, or pass if the uncertainty remains too large for your decision. A chart does not require you to make a selection.</p>
         </section>
 
-        <h2 id="finding-value">How Do You Find Value in Player Props?</h2>
+        <h2 id="finding-value">What would support a claim of value?</h2>
         <p><strong>Potential value requires a defensible probability estimate above the market-implied break-even probability.</strong> A model estimate is uncertain and should be compared with the normalized market estimate and current game context; neither number is the true probability.</p>
 
         <h3>High-Variance Stat Types</h3>
@@ -1549,8 +1549,8 @@ body.pp-site-system .context-table {width:100%;border-collapse:collapse;table-la
         <h3>Direction Bias</h3>
         <p>Research both directions before settling on a lean. Ask what would support More/Over and what would support Less/Under at the exact line. A strong recent game or a familiar player name is not enough to resolve that question.</p>
 
-        <h3>Injury Cascade Windows</h3>
-        <p>The period after a key player is ruled out is an important time to re-check teammate roles and posted lines. Markets may update quickly or unevenly, so confirm the current information instead of assuming a stale price.</p>
+        <h3>Recheck after injury news</h3>
+        <p>When a key player is ruled out, recheck teammate roles and posted lines. Markets may update quickly or unevenly; confirm the current information before calling a price stale.</p>
 
         <h3>Cross-Book Disagreement</h3>
         <p>When books publish meaningfully different normalized probabilities for the same prop, the market has not reached one price. The difference identifies a research question; it does not establish that either book is offering value.</p>
@@ -1560,7 +1560,7 @@ body.pp-site-system .context-table {width:100%;border-collapse:collapse;table-la
         <p>Signals can include injury and role changes, matchup, market pricing, pace, usage, minutes, recent results, and rest. Availability and weighting vary by sport, prop, model version, and production calibration.</p>
         <p>Read the displayed side first, then the score. A higher 50–100 score means stronger model support for that displayed More/Over or Less/Under side; a score near 50 is closer to neutral. See <a href="/help/how-do-confidence-scores-work/">how confidence scores work</a>, then inspect an available line with the <a href="/analyzer/">free AI player prop analyzer</a> or see today's available slate at <a href="/picks/nba/">NBA Picks</a>.</p>
 
-        <h2 id="common-mistakes">What Are the Most Common Prop Analysis Mistakes?</h2>
+        <h2 id="common-mistakes">Common research mistakes</h2>
         <div class="mistakes-qa">
           <div class="mistakes-qa-item">
             <h3>Is a season average enough to judge a player prop?</h3>
@@ -1651,7 +1651,7 @@ body.pp-site-system .context-table {width:100%;border-collapse:collapse;table-la
 
       <div class="faq-item fade-in">
         <h3>How do you research player props?</h3>
-        <p>Research player props by starting with the posted line, then checking expected minutes, usage, matchup, injury news, pace or game environment, recent trend, and whether the odds imply a fair probability after removing vig. The best research process compares tonight's role against the baseline the market used to set the line.</p>
+        <p>Start with the posted line. Check playing time, role, matchup, injuries, game conditions, recent results, and market prices. Compare the expected role with your historical sample. Removing vig gives a market estimate, not the true probability; do not assume you know which baseline the market used.</p>
       </div>
 
       <div class="faq-item fade-in">
@@ -1666,7 +1666,7 @@ body.pp-site-system .context-table {width:100%;border-collapse:collapse;table-la
 
       <div class="faq-item fade-in">
         <h3>What is the best tool for analyzing player props?</h3>
-        <p>Propeller's Prop Analyzer runs sport-specific analysis signals across 5 sports, producing a single confidence score. The agents evaluate matchup, injury, pace, usage, no-vig, hit rate, minutes, and rest factors. Current performance context should be checked in the public <a href="/results/">results ledger</a>.</p>
+        <p>Propeller’s free analyzer shows available research for a listed line across NFL, NBA, MLB, NHL, and soccer. Available signals may include matchup, injuries, pace, usage, market context, recent results, minutes, and rest. Read the displayed direction and 50–100 confidence score together; confidence is not a calibrated win probability. Check the public <a href="/results/">results ledger</a> for performance context.</p>
       </div>
       <div class="faq-item fade-in">
         <h3>How do you find value in player props?</h3>
