@@ -2322,11 +2322,11 @@ function buildPickCard(prop, locked, sport) {
       <span class="pick-line-label">line</span>
     </div>
     <div class="confidence-row">
-      <span class="confidence-label">Confidence</span>
-      <span class="confidence-value">${confidence}%</span>
+      <span class="confidence-label">Directional confidence</span>
+      <span class="confidence-value">${confidence}/100</span>
     </div>
     <div class="confidence-bar-track">
-      <div class="confidence-bar-fill ${barClass}" style="width:${barWidth}%;" role="progressbar" aria-valuenow="${confidence}" aria-valuemin="50" aria-valuemax="100"></div>
+      <div class="confidence-bar-fill ${barClass}" style="width:${barWidth}%;" role="progressbar" aria-label="Directional confidence; not a win probability" aria-valuenow="${confidence}" aria-valuemin="50" aria-valuemax="100"></div>
     </div>
   `;
 
