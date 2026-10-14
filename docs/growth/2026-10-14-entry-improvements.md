@@ -10,6 +10,8 @@ This change is limited to public entry pages, their maintenance copy guard, and 
 
 Overlap: subscription plan task 7 owns marketing facts and the access normalizer; task 9 owns funnel measurement. Reconcile this normalizer/test diff when implementing task 7. The product-fact ledger, pricing/legal pages, app signup, and billing policy remain unchanged here. These growth edits do not complete the full subscription plan.
 
+Release checks confirmed that live app signup and pricing still describe free accounts, no card, and paid subscriptions not launched. The app terms nevertheless advertised a retired $9.99/14-day trial. A separate presentation-only correction is prepared in [application draft PR 271](https://github.com/scottolmer/nfl-betting-system/pull/271); its terms derive from the existing server offer and do not activate billing. Publish that correction before or alongside these entries. The live API proxy was client-blocked in Chrome, so its response was not independently verified. The planned pricing page still mentions Rally; the standalone/no-trial launch changes remain task 7 work and must not be treated as already implemented.
+
 ## Live evidence that sharpened the changes
 
 GA4: **Propeller - Marketing Website**, account 385145456, **propellersite**, property 525454922. Reports were read October 14 for **September 16–October 13, 2026**, using 100% of available data. Latest-day processing completeness was not independently established.
@@ -43,10 +45,12 @@ GSC domain **sc-domain:propellerpicks.com**, Web search, **September 14–Octobe
 
 Focused Node/Python suites cover payouts, event deduplication, example completion exclusion, CTA navigation, stale/empty/malformed feeds, analyzer availability, and repeated access normalization. The current offer contract also passes; access normalization scanned 3,247 pages with zero changes. Independent review found and resolved an empty-state schedule claim.
 
+The neutral-entry exceptions in the current-offer test retain the common stale-copy checks. Independent negative checks reject inactive trial language on both the analyzer and PrizePicks entries. This keeps the scoped neutral copy compatible with the present offer guard while task 7 owns the later full-site transition.
+
 Rendered checks used an isolated local server. Its analytics-loader response was disabled so calculator QA did not emit completion events to production. Mobile width 390 verified the example payout and next research links. The PrizePicks preview loaded ten real current-slate public rows and explicitly distinguished response generation from source-analysis time. No prediction-feed fixtures were uploaded or changed.
 
 After a reviewed release, compare production-host mobile Underdog calculator starts/completions and onward research clicks; compare analyzer completion and account-entry clicks by landing cohort. Reconcile actual `sign_up`/paid events with the launch team's consent-aware, cross-host funnel before claiming signup or revenue lift. Query CTR/position/impressions should be reviewed together. No lift is promised or inferred from this implementation.
 
 ## Rollback
 
-Revert this growth commit on the marketing release branch and rerun the same focused suites/maintenance guard before publishing. No database, entitlement, checkout, or analytics settings need rollback. Reverse-patch applicability is checked against the exact candidate; the parent owns release and any deployment decision. Never roll back the subscription cutoff or protected access as part of this marketing rollback.
+Revert the growth implementation commit `8f4d4ad61` and guard follow-up `f3aaab06b` on the marketing release branch and rerun the same focused suites/maintenance guard before publishing. No database, entitlement, checkout, or analytics settings need rollback. Reverse-patch applicability is checked against the exact candidate; the parent owns release and any deployment decision. Never roll back the subscription cutoff or protected access as part of this marketing rollback.
