@@ -169,6 +169,7 @@
     if (!calculator) return;
 
     calculator.addEventListener("focusin", function (event) {
+      if (event.target.closest("[data-calculator-example]")) return;
       if (event.target.matches("input, select, button")) markCalculatorStarted("focus");
     });
     calculator.addEventListener("input", function (event) {
@@ -178,6 +179,7 @@
       if (event.target.matches("input, select")) markCalculatorStarted("change");
     });
     calculator.addEventListener("click", function (event) {
+      if (event.target.closest("[data-calculator-example]")) return;
       if (event.target.closest("button, input, select")) markCalculatorStarted("click");
     });
   }

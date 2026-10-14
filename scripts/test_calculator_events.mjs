@@ -155,7 +155,8 @@ test("all calculator pages use the single completion contract and result signup 
     assert.match(page, /trackCalculatorCompletion\(/);
     assert.doesNotMatch(page, /calculator_used/);
     assert.doesNotMatch(page, /trackCalculatorResult/);
-    assert.match(page, /Get lifetime-free access/);
+    assert.match(page, /Explore Propeller/);
+    assert.doesNotMatch(page, /Get lifetime-free access|Launch spots remain/);
     assert.match(page, /data-cta-surface="calculator_result"/);
     assert.match(page, /analytics-loader\.js\?v=\d{8}/);
     assert.match(page, /paid-search-events\.js\?v=\d{8}/);

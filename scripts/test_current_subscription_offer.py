@@ -59,11 +59,18 @@ def main() -> int:
 
     for relative in CURRENT_PAGES:
         source = (ROOT / relative).read_text(encoding="utf-8")
-        accepted_cta = CTA in source or (relative == "pricing/index.html" and "Create a free account" in source)
-        if not accepted_cta:
-            errors.append(f"{relative}: missing current lifetime-free CTA")
-        if TERMS not in source:
-            errors.append(f"{relative}: missing no-card disclosure")
+        growth_entry = relative in {"analyzer/index.html", "picks/prizepicks/index.html"}
+        if growth_entry:
+            if "Explore Propeller" not in source or "Public tools stay free." not in source:
+                errors.append(f"{relative}: missing neutral entry CTA and access disclosure")
+            if CTA in source or "Launch spots remain" in source:
+                errors.append(f"{relative}: promises new permanent access")
+        else:
+            accepted_cta = CTA in source or (relative == "pricing/index.html" and "Create a free account" in source)
+            if not accepted_cta:
+                errors.append(f"{relative}: missing current lifetime-free CTA")
+            if TERMS not in source:
+                errors.append(f"{relative}: missing no-card disclosure")
         cursor = 0
         while (cta_at := source.find(CTA, cursor)) >= 0:
             terms_at = source.find(TERMS, cta_at)
