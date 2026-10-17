@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-16T15:17:55Z",
+  "generated_at": "2026-10-17T10:35:37Z",
   "latest_sample_game_date": "2026-10-15",
   "canonical_report": "https://propellerpicks.com/results/",
   "historical_database": {
     "unit": "raw graded analysis rows",
-    "total": 3645951,
-    "wins": 2410064,
-    "losses": 1234901,
+    "total": 3649721,
+    "wins": 2412352,
+    "losses": 1236383,
     "pushes": 986,
     "historical_outcome_rate": 66.1,
     "rate_formula": "wins / (wins + losses); pushes excluded",
@@ -15,9 +15,9 @@
   },
   "deduplicated_public_ledger": {
     "unit": "prop-result entries after the current public API collapse rules",
-    "total": 466781,
-    "wins": 312351,
-    "losses": 154325,
+    "total": 467447,
+    "wins": 312765,
+    "losses": 154577,
     "pushes": 105,
     "historical_outcome_rate": 66.9,
     "rate_formula": "wins / (wins + losses); pushes excluded",
@@ -41,17 +41,17 @@
       "MLS"
     ],
     "top_raw_bucket": "MLB",
-    "top_raw_bucket_share": 88.8
+    "top_raw_bucket_share": 88.7
   },
   "raw_sport_buckets": [
     {
       "key": "nfl",
       "label": "NFL",
-      "total": 262716,
-      "wins": 132093,
-      "losses": 129735,
+      "total": 266486,
+      "wins": 134381,
+      "losses": 131217,
       "pushes": 888,
-      "win_rate": 50.5,
+      "win_rate": 50.6,
       "published": true
     },
     {
@@ -169,23 +169,23 @@
       "min": 55,
       "max": 64,
       "all": {
-        "total": 1561545,
-        "wins": 973362,
-        "losses": 587793,
+        "total": 1562969,
+        "wins": 974362,
+        "losses": 588217,
         "pushes": 390,
-        "win_rate": 62.3
+        "win_rate": 62.4
       },
       "over": {
-        "total": 355063,
-        "wins": 197486,
-        "losses": 157445,
+        "total": 355960,
+        "wins": 198040,
+        "losses": 157788,
         "pushes": 132,
-        "win_rate": 55.6
+        "win_rate": 55.7
       },
       "under": {
-        "total": 1206482,
-        "wins": 775876,
-        "losses": 430348,
+        "total": 1207009,
+        "wins": 776322,
+        "losses": 430429,
         "pushes": 258,
         "win_rate": 64.3
       }
@@ -197,23 +197,23 @@
       "min": null,
       "max": 54,
       "all": {
-        "total": 849946,
-        "wins": 445604,
-        "losses": 403784,
+        "total": 852292,
+        "wins": 446892,
+        "losses": 404842,
         "pushes": 558,
         "win_rate": 52.5
       },
       "over": {
-        "total": 384538,
-        "wins": 188841,
-        "losses": 195270,
+        "total": 385605,
+        "wins": 189378,
+        "losses": 195800,
         "pushes": 427,
         "win_rate": 49.2
       },
       "under": {
-        "total": 465408,
-        "wins": 256763,
-        "losses": 208514,
+        "total": 466687,
+        "wins": 257514,
+        "losses": 209042,
         "pushes": 131,
         "win_rate": 55.2
       }
@@ -347,10 +347,10 @@
       "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_875dbc034a50752f16b5",
+      "result_id": "pr_8e3e51d9a0022e0386c3",
       "sport": "mlb",
-      "player_name": "Travis Bazzana",
-      "stat_type": "stolen_bases",
+      "player_name": "Brayan Rocchio",
+      "stat_type": "doubles",
       "line": 0.5,
       "predicted_direction": "UNDER",
       "predicted_score": 21.1,
@@ -361,10 +361,10 @@
       "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_8e3e51d9a0022e0386c3",
+      "result_id": "pr_875dbc034a50752f16b5",
       "sport": "mlb",
-      "player_name": "Brayan Rocchio",
-      "stat_type": "doubles",
+      "player_name": "Travis Bazzana",
+      "stat_type": "stolen_bases",
       "line": 0.5,
       "predicted_direction": "UNDER",
       "predicted_score": 21.1,
@@ -431,20 +431,6 @@
       "bookmaker": "draftkings"
     },
     {
-      "result_id": "pr_7f13da876164f46b39c7",
-      "sport": "mlb",
-      "player_name": "Petey Halpin",
-      "stat_type": "rbis",
-      "line": 0.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 24.4,
-      "confidence_pct": 75.60000038146973,
-      "result": "loss",
-      "actual_value": 2.0,
-      "game_date": "2026-10-15",
-      "bookmaker": "betmgm"
-    },
-    {
       "result_id": "pr_1c508b38bc381be22642",
       "sport": "mlb",
       "player_name": "Jo Adell",
@@ -455,6 +441,20 @@
       "confidence_pct": 75.60000038146973,
       "result": "win",
       "actual_value": 0.0,
+      "game_date": "2026-10-15",
+      "bookmaker": "betmgm"
+    },
+    {
+      "result_id": "pr_7f13da876164f46b39c7",
+      "sport": "mlb",
+      "player_name": "Petey Halpin",
+      "stat_type": "rbis",
+      "line": 0.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 24.4,
+      "confidence_pct": 75.60000038146973,
+      "result": "loss",
+      "actual_value": 2.0,
       "game_date": "2026-10-15",
       "bookmaker": "betmgm"
     },
