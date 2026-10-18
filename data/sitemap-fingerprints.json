@@ -16,13 +16,18 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "b17c8dfd92212d5b3fb406cd5e4f92605618eb6f9f78ffe0c6da3f3e78a78943",
-      "lastmod": "2026-10-15",
+      "fingerprint": "a0879b28abacbe453d5473914bf29e803cb9f8cb001ff9149f09a5a4a89d14d4",
+      "lastmod": "2026-10-18",
       "source": "analyzer/index.html"
     },
+    "https://propellerpicks.com/analyzer/nhl/ryan-hartman/": {
+      "fingerprint": "7c41c284642f5d4f941bb0dbd53071ef3aac88813da284972fb68193592c3581",
+      "lastmod": "2026-10-18",
+      "source": "analyzer/nhl/ryan-hartman/index.html"
+    },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "147c306aa7591ad6dda33676addf9d0d9d593b2fd295cab7404ba6576ec0e1d9",
-      "lastmod": "2026-10-17",
+      "fingerprint": "aab76ee73f42829e47b62c01c558db9b273772add29336668f1d7297178d2b92",
+      "lastmod": "2026-10-18",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -261,7 +266,7 @@
       "source": "picks/nfl/index.html"
     },
     "https://propellerpicks.com/picks/nhl/": {
-      "fingerprint": "7e20b20f72131f9e830362dd142917ed2add2c7829d0556d2be084d23ea0aed3",
+      "fingerprint": "6848da775d71f38f374d04751397e79e474c9fe3fc330cf8a26e3818cb916c55",
       "lastmod": "2026-10-18",
       "source": "picks/nhl/index.html"
     },
