@@ -21,13 +21,16 @@ function anchor(attributes, text = "CTA", section = "main") {
   };
 }
 
-function load() {
+function load(attribution = null, href = "https://propellerpicks.com/") {
   const listeners = new Map();
   const events = [];
   const window = {
-    location: { href: "https://propellerpicks.com/" },
+    location: { href },
     gtag: (...args) => events.push(args),
   };
+  if (attribution) {
+    window.ppSignupAttribution = { capture: () => attribution };
+  }
   const document = {
     title: "Propeller Picks",
     addEventListener(name, handler) {
@@ -61,6 +64,42 @@ test("emits exactly one explicitly classified homepage CTA event with stable met
     cta_surface: "homepage_hero",
     cta_destination: "signup",
   }]]);
+});
+
+test("adds sanitized acquisition fields to signup and store clicks", () => {
+  const attribution = {
+    first_touch: { source: "meta", medium: "paid_social", campaign: "campaign-a", content: "visual-a", click_id: "private-click" },
+    last_touch: { source: "meta", medium: "paid_social", campaign: "campaign-b", content: "visual-b", click_id: "private-click" },
+  };
+  const { events, click } = load(
+    attribution,
+    "https://propellerpicks.com/?utm_source=meta&utm_campaign=campaign-b&fbclid=private-click",
+  );
+  const link = anchor({
+    href: "https://app.propellerpicks.com/signup?pp_ft_source=meta&pp_lt_campaign=campaign-b&pp_lt_click_id=private-click",
+    "data-analytics-event": "signup_click",
+  });
+
+  click({ target: link });
+  const params = events[0][2];
+  assert.equal(params.first_touch_source, "meta");
+  assert.equal(params.first_touch_medium, "paid_social");
+  assert.equal(params.first_touch_campaign, "campaign-a");
+  assert.equal(params.first_touch_content, "visual-a");
+  assert.equal(params.last_touch_campaign, "campaign-b");
+  assert.equal(params.last_touch_content, "visual-b");
+  assert.equal(params.page_location, "https://propellerpicks.com/?utm_source=meta&utm_campaign=campaign-b");
+  assert.equal(params.link_url, "https://app.propellerpicks.com/signup");
+  assert.doesNotMatch(JSON.stringify(params), /private-click|click_id|pp_ft|pp_lt|fbclid/);
+
+  const storeLink = anchor({
+    href: "https://apps.apple.com/app/id6760788202",
+    "data-analytics-event": "app_store_click",
+  });
+  click({ target: storeLink });
+  assert.equal(events[1][2].last_touch_campaign, "campaign-b");
+  assert.equal(events[1][2].last_touch_content, "visual-b");
+  assert.doesNotMatch(JSON.stringify(events[1][2]), /private-click|click_id|pp_ft|pp_lt|fbclid/);
 });
 
 test("preserves destination-based fallback classification for untagged legacy links", () => {

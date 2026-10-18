@@ -76,17 +76,46 @@
     return { source: "(direct)", medium: "(none)" };
   }
 
+  function hasExplicitAcquisition(params) {
+    return [
+      "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content",
+      "gclid", "gbraid", "wbraid", "msclkid", "fbclid"
+    ].some(function (key) { return Boolean(paramValue(params, key)); });
+  }
+
+  function hasAdvertisingClickId(params) {
+    return ["gclid", "gbraid", "wbraid", "msclkid", "fbclid"].some(function (key) {
+      return Boolean(paramValue(params, key));
+    });
+  }
+
+  function referrerType(referrer) {
+    if (!referrer) return "direct";
+    try {
+      var hostname = new URL(referrer).hostname.toLowerCase();
+      if (["propellerpicks.com", "www.propellerpicks.com", "app.propellerpicks.com"].includes(hostname)) {
+        return "first_party";
+      }
+      return "external";
+    } catch (error) {
+      return "direct";
+    }
+  }
+
   function currentTouch(stored) {
     var params = new URLSearchParams(window.location.search);
     var referrer = document.referrer || "";
     var attribution = sourceMedium(params, referrer);
-    var sameSiteNavigation = false;
-    try {
-      sameSiteNavigation = Boolean(referrer) && new URL(referrer).origin === window.location.origin;
-    } catch (error) {
-      sameSiteNavigation = false;
+    var explicitAcquisition = hasExplicitAcquisition(params);
+    var referrerState = referrerType(referrer);
+    var sameSiteNavigation = referrerState === "first_party";
+    // Internal navigation and direct returns are continuations of the stored
+    // acquisition. Keeping the original timestamp makes the 90-day TTL expire
+    // from the last real acquisition instead of extending on every page view.
+    if (!explicitAcquisition && stored && stored.last_touch && referrerState !== "external") {
+      return stored.last_touch;
     }
-    if (sameSiteNavigation && stored && stored.last_touch) {
+    if (sameSiteNavigation && stored && stored.last_touch && !hasAdvertisingClickId(params) && !paramValue(params, "utm_source") && !paramValue(params, "utm_medium")) {
       attribution = {
         source: stored.last_touch.source,
         medium: stored.last_touch.medium
@@ -96,9 +125,9 @@
     var touch = {
       source: attribution.source,
       medium: attribution.medium,
-      campaign: paramValue(params, "utm_campaign") || (sameSiteNavigation && stored ? stored.last_touch.campaign : ""),
-      term: paramValue(params, "utm_term") || (sameSiteNavigation && stored ? stored.last_touch.term : ""),
-      content: paramValue(params, "utm_content") || (sameSiteNavigation && stored ? stored.last_touch.content : ""),
+      campaign: paramValue(params, "utm_campaign"),
+      term: paramValue(params, "utm_term"),
+      content: paramValue(params, "utm_content"),
       page: window.location.pathname || "/",
       referrer: urlWithoutQuery(referrer),
       captured_at: new Date().toISOString()
@@ -110,10 +139,6 @@
       touch.click_id_type = key;
       return true;
     });
-    if (sameSiteNavigation && stored && stored.last_touch && !touch.click_id) {
-      touch.click_id = stored.last_touch.click_id || "";
-      touch.click_id_type = stored.last_touch.click_id_type || "";
-    }
     return touch;
   }
 
@@ -136,6 +161,9 @@
     try {
       var target = new URL(rawHref, window.location.href);
       if (target.hostname !== "app.propellerpicks.com" || target.pathname !== "/signup") return rawHref;
+      Array.from(target.searchParams.keys()).forEach(function (key) {
+        if (/^pp_(ft|lt)_/.test(key)) target.searchParams.delete(key);
+      });
       [["pp_ft", attribution.first_touch], ["pp_lt", attribution.last_touch]].forEach(function (entry) {
         var prefix = entry[0];
         var touch = entry[1];

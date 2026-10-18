@@ -23,11 +23,46 @@
     return section.tagName.toLowerCase();
   }
 
+  function sanitizedUrl(rawUrl) {
+    try {
+      var url = new URL(rawUrl, window.location.href);
+      Array.from(url.searchParams.keys()).forEach(function (key) {
+        if (/^pp_(ft|lt)_/.test(key) || /^(fbclid|gclid|gbraid|wbraid|msclkid)$/.test(key)) {
+          url.searchParams.delete(key);
+        }
+      });
+      return url.toString();
+    } catch (_) {
+      return "";
+    }
+  }
+
+  function acquisitionParams(eventName) {
+    if (!["signup_click", "app_store_click", "play_store_click"].includes(eventName)) return {};
+    if (!window.ppSignupAttribution || typeof window.ppSignupAttribution.capture !== "function") return {};
+    var attribution;
+    try {
+      attribution = window.ppSignupAttribution.capture();
+    } catch (_) {
+      return {};
+    }
+    var params = {};
+    [["first_touch", attribution && attribution.first_touch], ["last_touch", attribution && attribution.last_touch]].forEach(function (entry) {
+      var prefix = entry[0];
+      var touch = entry[1];
+      ["source", "medium", "campaign", "content"].forEach(function (field) {
+        var value = touch && cleanText(touch[field], 200);
+        if (value) params[prefix + "_" + field] = value;
+      });
+    });
+    return params;
+  }
+
   function sendEvent(name, params) {
     if (typeof window.gtag !== "function") return false;
     window.gtag("event", name, Object.assign({
       transport_type: "beacon",
-      page_location: window.location.href,
+      page_location: sanitizedUrl(window.location.href),
       page_title: document.title
     }, params || {}));
     return true;
@@ -68,14 +103,14 @@
 
     return {
       name: name,
-      params: {
-        link_url: url.href,
+      params: Object.assign({
+        link_url: sanitizedUrl(url.href),
         link_text: cleanText(anchor.getAttribute("aria-label") || anchor.textContent),
         link_location: linkLocation(anchor),
         cta_id: cleanText(anchor.getAttribute("data-cta-id"), 80) || "unlabeled",
         cta_surface: cleanText(anchor.getAttribute("data-cta-surface"), 80) || "unlabeled",
         cta_destination: cleanText(anchor.getAttribute("data-cta-destination"), 48) || (fallback && fallback.destination) || "internal"
-      }
+      }, acquisitionParams(name))
     };
   }
 
