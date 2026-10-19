@@ -16,49 +16,9 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "b966c76d47f273118f193568f48abe72d50685d3e317317a552f0f175c936b03",
+      "fingerprint": "b17c8dfd92212d5b3fb406cd5e4f92605618eb6f9f78ffe0c6da3f3e78a78943",
       "lastmod": "2026-10-19",
       "source": "analyzer/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/clayton-keller/": {
-      "fingerprint": "46b2f05a5b35ca81fd7b420839bc0b5bf273901fc65b449b8935787b9cfa3731",
-      "lastmod": "2026-10-19",
-      "source": "analyzer/nhl/clayton-keller/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/darren-raddysh/": {
-      "fingerprint": "2f9f7eeb409d50e320fabfb2f4ee5f1f5672d27b930041000ded0824236e2bc7",
-      "lastmod": "2026-10-19",
-      "source": "analyzer/nhl/darren-raddysh/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/dylan-guenther/": {
-      "fingerprint": "fb9e65f1d1001c7b755fa611099d461c25302969ff0f96a8a5a1cf46ebc13b51",
-      "lastmod": "2026-10-19",
-      "source": "analyzer/nhl/dylan-guenther/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/jack-roslovic/": {
-      "fingerprint": "f354bb4b1a05823042e5c206cd273cb8ab82e6fa62983d7383baf901c3acd348",
-      "lastmod": "2026-10-19",
-      "source": "analyzer/nhl/jack-roslovic/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/lawson-crouse/": {
-      "fingerprint": "96b5e18dcb7adf200bfcc723c79a4a887b1930b397be5da4981f3397ab44aa18",
-      "lastmod": "2026-10-19",
-      "source": "analyzer/nhl/lawson-crouse/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/logan-cooley/": {
-      "fingerprint": "22a6209f69ee05e8d14bbaf644a771172291abbe3be8999fc1e132684716b251",
-      "lastmod": "2026-10-19",
-      "source": "analyzer/nhl/logan-cooley/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/mikhail-sergachev/": {
-      "fingerprint": "21f83857bae7955ff1822c5f22cf319c04067cb0d73dd5d843a75c2609e9d136",
-      "lastmod": "2026-10-19",
-      "source": "analyzer/nhl/mikhail-sergachev/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/nick-schmaltz/": {
-      "fingerprint": "8a9db011cbfb0aa26e0d8e4642acf79519235ee5ed2fe9fa50c3bf4c2c33ac17",
-      "lastmod": "2026-10-19",
-      "source": "analyzer/nhl/nick-schmaltz/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "ee02ca06992c85df3a22526574706e0efac54144a429f5a35057f96fb1658396",
@@ -301,7 +261,7 @@
       "source": "picks/nfl/index.html"
     },
     "https://propellerpicks.com/picks/nhl/": {
-      "fingerprint": "f5c5cc4934505dbaa79d20b84e019b12418a1887232b428ebc5a50452a44bae0",
+      "fingerprint": "d9e5450912097165dd6f9d4dfdcbaab36235c29d236e563cd5ca789009905d6f",
       "lastmod": "2026-10-19",
       "source": "picks/nhl/index.html"
     },
