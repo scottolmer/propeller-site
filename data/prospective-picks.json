@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-19T15:18:26Z",
+  "generated_at": "2026-10-19T15:31:56Z",
   "publication_definition": "First observed in the Propeller public picks preview. Event-start ordering and outcome timing are not verified because the public preview does not expose event start time.",
   "before_event_start_verified": false,
   "records": [
@@ -281570,6 +281570,23 @@
       "direction": "UNDER",
       "model_score": 41.3,
       "confidence": 59,
+      "status": "open",
+      "settled_at": null,
+      "actual_value": null,
+      "result_id": null
+    },
+    {
+      "publication_id": "pub_fa14e2f8c5f42076b045",
+      "published_at": "2026-10-19T15:31:54Z",
+      "captured_at": "2026-10-19T15:31:54Z",
+      "sport": "mlb",
+      "game_date": "2026-10-19",
+      "player_name": "Freddy Peralta",
+      "stat_type": "strikeouts_pitcher",
+      "line": 2.5,
+      "direction": "OVER",
+      "model_score": 69.9,
+      "confidence": 70,
       "status": "open",
       "settled_at": null,
       "actual_value": null,
