@@ -19,7 +19,7 @@ GROWTH_ENTRY_PAGES = {
 # Public acquisition tools stay free. Their account CTAs must survive the
 # prospective launch without promising a new permanent full-workspace grant.
 ENTRY_REPLACEMENTS = (
-    ("Get lifetime-free access", "Explore Propeller"),
+    ("Explore Propeller free", "Explore Propeller"),
     ("Get lifetime-free core access to the full research workspace.", "Keep your research in one workspace."),
     ("Research the props behind the entry with lifetime-free core access.", "Research the props behind the entry."),
     ("Launch spots remain. Save your research and put this payout math beside confidence, line value, movement, and supporting context. No card is required. This public calculator stays free and separate.", "Put this payout math beside player research, line context, and supporting evidence. Explore the account workspace and review its current access terms. This public calculator stays free."),
@@ -28,17 +28,23 @@ ENTRY_REPLACEMENTS = (
 )
 
 REPLACEMENTS = (
-    ("Get Free Lifetime Access", "Get lifetime-free access"),
-    ("Get Free Access", "Get lifetime-free access"),
-    ("Get free access", "Get lifetime-free access"),
-    ("get free access", "get lifetime-free access"),
-    ("Start Free Trial", "Get lifetime-free access"),
-    ("Start Free", "Get lifetime-free access"),
-    ("Launch Propeller Free", "Get lifetime-free access"),
-    ("Start 14-day free trial", "Get lifetime-free access"),
+    ("Get lifetime-free access", "Explore Propeller free"),
+    ("get lifetime-free access", "explore Propeller free"),
+    ("Lifetime-free access. No card required.", "Explore free. No card required."),
+    ("Free lifetime core access is currently available while Founder 500 launch spots remain.", "Explore Propeller free. Existing accounts keep full access free. New accounts can explore a free preview."),
+    ("Free lifetime core access while Founder 500 launch spots remain", "Free preview access"),
+
+    ("Get Free Lifetime Access", "Explore Propeller free"),
+    ("Get Free Access", "Explore Propeller free"),
+    ("Get free access", "Explore Propeller free"),
+    ("get free access", "explore Propeller free"),
+    ("Start Free Trial", "Explore Propeller free"),
+    ("Start Free", "Explore Propeller free"),
+    ("Launch Propeller Free", "Explore Propeller free"),
+    ("Start 14-day free trial", "Explore Propeller free"),
     ("Card required. Then $9.99/month unless canceled.", "No card required."),
     ("Get All Picks Free", "Open the full research workspace"),
-    ("Get All ${allPicks.length} Picks Free\n        </a>", "Get lifetime-free access\n        </a>\n        <p style=\"font-size:13px; color:var(--text-tertiary); margin:10px 0 0;\">No card required.</p>"),
+    ("Get All ${allPicks.length} Picks Free\n        </a>", "Explore Propeller free\n        </a>\n        <p style=\"font-size:13px; color:var(--text-tertiary); margin:10px 0 0;\">No card required.</p>"),
     ("Get All ${totalAvailable} Picks Free\n        </a>", "Get lifetime-free access\n        </a>\n        <p style=\"font-size:13px; color:var(--text-tertiary); margin:10px 0 0;\">No card required.</p>"),
     ('href="/#pricing"', 'href="/pricing/"'),
     ("Free tier includes 5 analyzed props per day. No credit card required.", "Current access and availability are shown at signup."),
@@ -66,6 +72,10 @@ def normalize(source: str, *, growth_entry: bool = False) -> str:
     if growth_entry:
         for old, new in ENTRY_REPLACEMENTS:
             source = source.replace(old, new)
+    source = source.replace("Get lifetime-free access", "Explore Propeller free")
+    source = source.replace("get lifetime-free access", "explore Propeller free")
+    source = source.replace("Free lifetime core access is currently available while Founder 500 launch spots remain.", "Explore Propeller free. Existing accounts keep full access free. New accounts can explore a free preview.")
+    source = source.replace("Free lifetime core access while Founder 500 launch spots remain", "Free preview access")
     return source
 
 

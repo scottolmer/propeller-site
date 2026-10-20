@@ -67,25 +67,35 @@
     "public_analyzer": "Free to use without an account.",
     "existing_free_access": "Existing free accounts keep their access.",
     "founder_500_offer": "Existing Founder 500 lifetime core entitlements remain honored.",
-    "availability_note": "Free lifetime core access is currently available while Founder 500 launch spots remain. No payment card is required. A paid subscription offer has not launched.",
+    "availability_note": "Explore a free preview without a payment card. Eligible new accounts can subscribe to the full workspace for $15 total per month.",
     "pricing_url": "https://propellerpicks.com/pricing/",
     "signup_url": "https://app.propellerpicks.com/signup",
     "subscription_offer": {
-      "offer_id": "monthly-rally-15",
-      "status": "not_launched",
-      "status_verified_on": "2026-10-01",
+      "offer_id": "propeller-monthly-15",
+      "status": "pilot",
+      "status_verified_on": "2026-10-19",
       "currency": "USD",
       "monthly_price": "15.00",
       "billing_period": "month",
       "included_products": [
-        "Propeller Picks",
-        "Rally"
+        "Propeller Picks"
       ],
-      "launch_date": null,
-      "trial_days": null,
-      "card_required": null,
-      "checkout_authority": "The configured offer is inactive. The app must not start paid Checkout while status is not_launched."
-    }
+      "launch_date": "2026-10-19",
+      "trial_days": 0,
+      "card_required": true,
+      "checkout_authority": "The live app verifies current pilot availability and account eligibility before explicit purchase.",
+      "checkout_enabled": true,
+      "features": [
+        "Full player-prop research workspace",
+        "Mobile companion access",
+        "Saved picks and tracking",
+        "MCP access for compatible AI tools (coming soon)"
+      ],
+      "feature_availability_note": "MCP access is coming soon and is not currently available. No Rally access is included.",
+      "tax_behavior": "inclusive",
+      "customer_total": "15.00"
+    },
+    "future_preview": "New unpaid accounts can explore up to five current picks per supported sport with complete available details. Existing accounts retain their full free access."
   },
   "payout_calculators": {
     "last_verified": "2026-07-25",
