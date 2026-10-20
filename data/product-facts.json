@@ -89,11 +89,12 @@
         "Full player-prop research workspace",
         "Mobile companion access",
         "Saved picks and tracking",
-        "MCP access for compatible AI tools (coming soon)"
+        "MCP access for compatible AI tools"
       ],
-      "feature_availability_note": "MCP access is coming soon and is not currently available. No Rally access is included.",
+      "feature_availability_note": "MCP access is included with full workspace access, including protected existing free accounts. Your AI tool's own plan and usage limits still apply. No Rally access is included.",
       "tax_behavior": "inclusive",
-      "customer_total": "15.00"
+      "customer_total": "15.00",
+      "mcp_server_url": "https://mcp.propellerpicks.com/mcp"
     },
     "future_preview": "New unpaid accounts can explore up to five current picks per supported sport with complete available details. Existing accounts retain their full free access."
   },
