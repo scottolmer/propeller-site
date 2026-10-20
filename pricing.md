@@ -17,7 +17,7 @@ Included core access:
 
 - Web app prop board and research workspace
 - Mobile companion access
-- MCP access for compatible AI tools — included for existing free accounts
+- MCP access for compatible AI tools — included with full access
 - Saved props and tracking workflows
 - Daily digest and public verified record access
 - Player cards, confidence scores, public results, and calculators
