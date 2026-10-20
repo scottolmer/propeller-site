@@ -5,13 +5,13 @@ Canonical signup: https://app.propellerpicks.com/signup
 
 ## Current Public Access
 
-Current full access remains free before a future announced transition. No payment card is required. A paid subscription offer has not launched, and no paid start date is announced.
+New accounts can explore up to five current picks per supported sport for free. No payment card is required for signup. Eligible new accounts can explicitly purchase full access through the limited web subscription pilot.
 
 Existing free accounts keep their access. Existing Founder 500 lifetime core entitlements remain honored. Public tools and research previews remain free where offered. The site does not publish a remaining-spots count; availability is decided at signup.
 
-## Planned Paid Tier
+## Full Workspace Subscription
 
-The planned standalone Propeller Picks subscription is $15 USD total per month including applicable tax, billed monthly until canceled. It has not launched, has no announced launch date, and does not change current lifetime-free access. Rally is excluded. Free signup requires no card and never automatically converts to paid. Future users receive a useful preview of up to five current picks per supported sport with complete available details; no cutoff has been activated.
+The standalone Propeller Picks subscription is $15 USD total per month including applicable tax, charged immediately and renewed monthly until canceled. The limited web purchase pilot is for eligible new accounts. Existing accounts retain full free access. Rally is excluded. Free signup requires no card and never automatically converts to paid. New unpaid accounts receive a preview of up to five current picks per supported sport with complete available details.
 
 Included core access:
 

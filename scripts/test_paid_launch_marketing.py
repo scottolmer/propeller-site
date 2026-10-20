@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Guard the prepared standalone offer while public purchase stays disabled."""
+"""Guard the live standalone pilot offer and preserved free access."""
 import importlib.util
 import json
 from pathlib import Path
@@ -10,17 +10,17 @@ def main():
     errors = []
     facts = json.loads((ROOT / 'data/product-facts.json').read_text())
     offer = facts['access']['subscription_offer']
-    expected = dict(offer_id='propeller-monthly-15', status='not_launched', currency='USD',
+    expected = dict(offer_id='propeller-monthly-15', status='pilot', currency='USD',
                     monthly_price='15.00', billing_period='month', included_products=['Propeller Picks'],
-                    launch_date=None, trial_days=0, card_required=True, checkout_enabled=False,
+                    launch_date='2026-10-19', trial_days=0, card_required=True, checkout_enabled=True,
                     tax_behavior='inclusive', customer_total='15.00')
     for key, value in expected.items():
         if offer.get(key) != value: errors.append(f'offer {key} drifted')
     pricing = (ROOT / 'pricing/index.html').read_text()
     for phrase in ('Create a free account', 'No card required.', 'Existing free accounts keep their access.',
-                   'Existing Founder 500 lifetime core entitlements remain honored.', 'Planned · Not launched',
+                   'Existing Founder 500 lifetime core entitlements remain honored.', 'Monthly subscription · Limited pilot',
                    '$15', 'includes applicable tax', 'Full Propeller workspace.', 'MCP access for compatible AI tools',
-                   'not available for purchase', 'up to five current picks'):
+                   'Review subscription availability', 'up to five current picks'):
         if phrase not in pricing: errors.append(f'pricing missing {phrase!r}')
     for name in ('pricing.md', 'llms.txt', 'PRODUCT.md'):
         source = (ROOT / name).read_text()

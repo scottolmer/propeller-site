@@ -61,10 +61,10 @@ def main() -> int:
     require(access.get("global_cta") == "See pricing", "global CTA must route to pricing", errors)
     require(access.get("existing_free_access") in pricing, "existing-free policy differs from pricing", errors)
     require(access.get("founder_500_offer") in pricing, "Founder policy differs from pricing", errors)
-    require(offer.get("status") == "not_launched", "planned offer must remain inactive", errors)
+    require(offer.get("status") == "pilot" and offer.get("checkout_enabled") is True, "pilot offer availability drifted", errors)
     require(offer.get("monthly_price") == "15.00", "planned monthly offer price drifted", errors)
     require(offer.get("included_products") == ["Propeller Picks"], "standalone included product drifted", errors)
-    require(offer.get("launch_date") is None, "planned offer must not claim a launch date", errors)
+    require(offer.get("launch_date") == "2026-10-19", "pilot launch date drifted", errors)
     require(offer.get("trial_days") == 0, "automatic trial must be disabled", errors)
     require(offer.get("card_required") is True, "paid purchase requires explicit payment", errors)
 
