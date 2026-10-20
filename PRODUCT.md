@@ -37,7 +37,7 @@ Mobile acquisition and use are a strategic priority, not a secondary companion p
 - Only available signals contribute to a listed prop's score; signal availability and weighting vary by sport, prop, model version, and production calibration.
 - Propeller supports player-line research workflows associated with PrizePicks, Underdog Fantasy, and DraftKings Pick6 but is independent of and unaffiliated with those platforms.
 - Propeller does not accept wagers, place wagers, or submit DFS/pick'em entries.
-- Existing free accounts keep their full access free. Existing Founder 500 lifetime core entitlements remain honored. The standalone Propeller subscription is $15 USD/month total, including applicable tax, with no automatic trial, offered to eligible new accounts through the limited web purchase pilot. MCP access for compatible AI tools (coming soon) is not currently available.
+- Existing free accounts keep their full access free. Existing Founder 500 lifetime core entitlements remain honored. The standalone Propeller subscription is $15 USD/month total, including applicable tax, with no automatic trial, offered to eligible new accounts through the limited web purchase pilot. MCP access for compatible AI tools is included with full workspace access, including protected existing free accounts. Your AI tool's own plan and usage limits still apply.
 - Marketing must not promise outcomes, profitability, ROI, calibrated probabilities, or unsupported product capabilities.
 - Technical methodology and limitations must remain available, but the primary marketing experience should explain the product in plain English.
 

@@ -17,7 +17,7 @@ Included core access:
 
 - Web app prop board and research workspace
 - Mobile companion access
-- MCP access for compatible AI tools (coming soon)
+- MCP access for compatible AI tools — included for existing free accounts
 - Saved props and tracking workflows
 - Daily digest and public verified record access
 - Player cards, confidence scores, public results, and calculators
@@ -32,3 +32,7 @@ Exclusions:
 Propeller Picks is not a sportsbook and does not accept wagers.
 
 Email marketing is optional and unchecked by default at signup and checkout, with preferences and unsubscribe controls. Payment and access do not depend on consent.
+
+## Connect an AI tool
+
+MCP access is included with full workspace access, including protected existing free accounts. Add `https://mcp.propellerpicks.com/mcp` in a compatible AI tool, sign in to Propeller, and review the requested permissions. Your AI tool's own plan and usage limits still apply. Connections can be revoked at https://app.propellerpicks.com/research/oauth.
