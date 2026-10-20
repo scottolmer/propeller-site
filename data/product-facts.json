@@ -67,25 +67,35 @@
     "public_analyzer": "Free to use without an account.",
     "existing_free_access": "Existing free accounts keep their access.",
     "founder_500_offer": "Existing Founder 500 lifetime core entitlements remain honored.",
-    "availability_note": "Free lifetime core access is currently available while Founder 500 launch spots remain. No payment card is required. A paid subscription offer has not launched.",
+    "availability_note": "Explore Propeller free. No payment card is required. A paid subscription offer has not launched.",
     "pricing_url": "https://propellerpicks.com/pricing/",
     "signup_url": "https://app.propellerpicks.com/signup",
     "subscription_offer": {
-      "offer_id": "monthly-rally-15",
+      "offer_id": "propeller-monthly-15",
       "status": "not_launched",
-      "status_verified_on": "2026-10-01",
+      "status_verified_on": "2026-10-19",
       "currency": "USD",
       "monthly_price": "15.00",
       "billing_period": "month",
       "included_products": [
-        "Propeller Picks",
-        "Rally"
+        "Propeller Picks"
       ],
       "launch_date": null,
-      "trial_days": null,
-      "card_required": null,
-      "checkout_authority": "The configured offer is inactive. The app must not start paid Checkout while status is not_launched."
-    }
+      "trial_days": 0,
+      "card_required": true,
+      "checkout_authority": "The configured offer is inactive. The app must not start paid Checkout while status is not_launched.",
+      "checkout_enabled": false,
+      "features": [
+        "Full player-prop research workspace",
+        "Mobile companion access",
+        "Saved picks and tracking",
+        "MCP access for compatible AI tools (coming soon)"
+      ],
+      "feature_availability_note": "MCP connection availability must be verified before paid launch. No Rally access is included.",
+      "tax_behavior": "inclusive",
+      "customer_total": "15.00"
+    },
+    "future_preview": "Future users will be able to explore up to five current picks per supported sport with complete available details. Preview enforcement has not launched."
   },
   "payout_calculators": {
     "last_verified": "2026-07-25",

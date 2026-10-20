@@ -63,10 +63,10 @@ def main() -> int:
     require(access.get("founder_500_offer") in pricing, "Founder policy differs from pricing", errors)
     require(offer.get("status") == "not_launched", "planned offer must remain inactive", errors)
     require(offer.get("monthly_price") == "15.00", "planned monthly offer price drifted", errors)
-    require(offer.get("included_products") == ["Propeller Picks", "Rally"], "planned bundle products drifted", errors)
+    require(offer.get("included_products") == ["Propeller Picks"], "standalone included product drifted", errors)
     require(offer.get("launch_date") is None, "planned offer must not claim a launch date", errors)
-    require(offer.get("trial_days") is None, "planned trial terms are not announced", errors)
-    require(offer.get("card_required") is None, "planned payment-card terms are not announced", errors)
+    require(offer.get("trial_days") == 0, "automatic trial must be disabled", errors)
+    require(offer.get("card_required") is True, "paid purchase requires explicit payment", errors)
 
     checked = 0
     for path in ROOT.rglob("*.html"):
