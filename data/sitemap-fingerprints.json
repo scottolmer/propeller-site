@@ -16,29 +16,9 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "337d76703b98a560754508ac4b067d1ac23311eb98d50fa31c8412d1dc9818b7",
+      "fingerprint": "b17c8dfd92212d5b3fb406cd5e4f92605618eb6f9f78ffe0c6da3f3e78a78943",
       "lastmod": "2026-10-21",
       "source": "analyzer/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/austin-reaves/": {
-      "fingerprint": "ba846dbfe0cc0ac75e0e4c176f0f6baebcc889dfed76eeb676a3155518decb6c",
-      "lastmod": "2026-10-21",
-      "source": "analyzer/nba/austin-reaves/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/mattias-samuelsson/": {
-      "fingerprint": "5fcecf2cf1178188667ab19b4e92a9d870ae2f153986bd1b09ca546ad9a3c7ef",
-      "lastmod": "2026-10-21",
-      "source": "analyzer/nhl/mattias-samuelsson/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/ryan-mcleod/": {
-      "fingerprint": "a2402f60822a7f7b6567a05316eb2cd028460a4f4d526f7ab73cbfd5a95c0719",
-      "lastmod": "2026-10-21",
-      "source": "analyzer/nhl/ryan-mcleod/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/sean-couturier/": {
-      "fingerprint": "d6ddc858a58da20ee94846504ebb5fc00956c91d9946ad72c9db6feb032121a6",
-      "lastmod": "2026-10-21",
-      "source": "analyzer/nhl/sean-couturier/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "680026af5b75ab8c31e0a82fd4c48db1fa806bee359a7ef654b7967f32c7d870",
@@ -271,7 +251,7 @@
       "source": "picks/mlb/index.html"
     },
     "https://propellerpicks.com/picks/nba/": {
-      "fingerprint": "ee3db1528dec7d31d9f25c154a2ddc6efb5af638593ef720b70f6fba78932c38",
+      "fingerprint": "b7062be821f8004fb0ffe22787714cdef11b40275532dd471042973865c891b9",
       "lastmod": "2026-10-21",
       "source": "picks/nba/index.html"
     },
@@ -281,7 +261,7 @@
       "source": "picks/nfl/index.html"
     },
     "https://propellerpicks.com/picks/nhl/": {
-      "fingerprint": "3b1e1837767d7ac9d47599c500619feb28193c9967e64fb811d43ca307e4f120",
+      "fingerprint": "8f08deb90352a8295c9e0cdf4697237d9847673992c2abbcf16d924a69ec2e50",
       "lastmod": "2026-10-21",
       "source": "picks/nhl/index.html"
     },
