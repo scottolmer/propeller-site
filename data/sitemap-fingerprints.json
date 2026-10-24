@@ -1,8 +1,8 @@
 {
   "entries": {
     "https://propellerpicks.com/": {
-      "fingerprint": "d5560a3d2e47ea2d771d6fd41a6ad6e2a2375b73af4da2d4ea4c37aff59e7dc5",
-      "lastmod": "2026-10-23",
+      "fingerprint": "a758ed4dfcc990d08a73c54b85a4597d85ebec4e7070cff7f338b9181e8be208",
+      "lastmod": "2026-10-24",
       "source": "index.html"
     },
     "https://propellerpicks.com/about/": {
@@ -16,69 +16,24 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "0445230ae4c83f1db99794d210738905765d23b6db0947b3ca5c77667afb02eb",
-      "lastmod": "2026-10-23",
+      "fingerprint": "2dd96724f3cda9b4555fc74e3b32673be98679ddac80cf38915f17e3c7254233",
+      "lastmod": "2026-10-24",
       "source": "analyzer/index.html"
     },
-    "https://propellerpicks.com/analyzer/nba/desmond-bane/": {
-      "fingerprint": "23d4cfa9c40d7ec9315a6b939584ac9cbb766856281a9810d66822fb444d07fe",
-      "lastmod": "2026-10-23",
-      "source": "analyzer/nba/desmond-bane/index.html"
+    "https://propellerpicks.com/analyzer/nba/collin-gillespie/": {
+      "fingerprint": "255f088d26affaeaabd5caf940ef34199de3d1efc00525c3e0026b6d71719c55",
+      "lastmod": "2026-10-24",
+      "source": "analyzer/nba/collin-gillespie/index.html"
     },
-    "https://propellerpicks.com/analyzer/nba/dyson-daniels/": {
-      "fingerprint": "64cfc018d423c30ef23070f3bc69dce45296d773efe9f5c952b383829f4156ca",
-      "lastmod": "2026-10-23",
-      "source": "analyzer/nba/dyson-daniels/index.html"
+    "https://propellerpicks.com/analyzer/nba/devin-booker/": {
+      "fingerprint": "d86d6ff18a4fe4821052a4d935fa9e18216946a1cb0adc987b0c4ff69bca6ad9",
+      "lastmod": "2026-10-24",
+      "source": "analyzer/nba/devin-booker/index.html"
     },
-    "https://propellerpicks.com/analyzer/nba/immanuel-quickley/": {
-      "fingerprint": "fb1f34323de17671f456296f6c9dfbfc584b6bf8ebb92f2069b57cd31b68b196",
-      "lastmod": "2026-10-23",
-      "source": "analyzer/nba/immanuel-quickley/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/jalen-johnson/": {
-      "fingerprint": "771b889516336e27adc68fbfd03e99e77da9fea39d8797726da412e79e4d7ed1",
-      "lastmod": "2026-10-23",
-      "source": "analyzer/nba/jalen-johnson/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/kelly-oubre-jr/": {
-      "fingerprint": "33a2a5d11e86f45bb33ee082f2e4f76919a55d903d2944d1c35101fda8096bb3",
-      "lastmod": "2026-10-23",
-      "source": "analyzer/nba/kelly-oubre-jr/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/naz-reid/": {
-      "fingerprint": "28cab5ed014b7c3228aea210388f2df366aa43c16d6d2f1945ed7724dffc50a9",
-      "lastmod": "2026-10-23",
-      "source": "analyzer/nba/naz-reid/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/nickeil-alexander-walker/": {
-      "fingerprint": "23ec00cccecc2f8dc84d8faf5e2d9ccad3694dd324d64c90d47278884fe4c9a0",
-      "lastmod": "2026-10-23",
-      "source": "analyzer/nba/nickeil-alexander-walker/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/onyeka-okongwu/": {
-      "fingerprint": "bd03204bafcc0fe6291c1890e04f5910d85321cebbf94c47b8d8b9ab1c5a26e8",
-      "lastmod": "2026-10-23",
-      "source": "analyzer/nba/onyeka-okongwu/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/quentin-grimes/": {
-      "fingerprint": "de94d9d02e13ad2831033baaba380585bed05570a947f85435dac4925738679c",
-      "lastmod": "2026-10-23",
-      "source": "analyzer/nba/quentin-grimes/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/rj-barrett/": {
-      "fingerprint": "e890ed9683304020c3f5e5d33251d343b9d5f6f2db1689745f81ee796e34cc4f",
-      "lastmod": "2026-10-23",
-      "source": "analyzer/nba/rj-barrett/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/rui-hachimura/": {
-      "fingerprint": "4ed29f4ca8f7fca8b2f4a4b6748fe3d15c98d760df8947eb740ec73a27881e52",
-      "lastmod": "2026-10-23",
-      "source": "analyzer/nba/rui-hachimura/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/scottie-barnes/": {
-      "fingerprint": "9bb5d9c89ce6bd2d3ad4323d1c5889678a0a7a6862f5d0db9aa869c9e29485db",
-      "lastmod": "2026-10-23",
-      "source": "analyzer/nba/scottie-barnes/index.html"
+    "https://propellerpicks.com/analyzer/nba/jalen-green/": {
+      "fingerprint": "0fb1168747818cc8d0025110b52aa81638dc703c51d916b4bcf14c247160c2a4",
+      "lastmod": "2026-10-24",
+      "source": "analyzer/nba/jalen-green/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "680026af5b75ab8c31e0a82fd4c48db1fa806bee359a7ef654b7967f32c7d870",
@@ -301,18 +256,18 @@
       "source": "how-it-works/index.html"
     },
     "https://propellerpicks.com/picks/": {
-      "fingerprint": "a31f2ea9b93717c0bc73efe4622639837cb5a5718e073725a885052aa9c85971",
-      "lastmod": "2026-10-23",
+      "fingerprint": "3370d0d4b0554c76c0aa28bc1f91a92ee58aed3310bab04e4069d3a5b561cada",
+      "lastmod": "2026-10-24",
       "source": "picks/index.html"
     },
     "https://propellerpicks.com/picks/mlb/": {
-      "fingerprint": "7cf7bfe311f0730be95f00863e5ae533dd6ba0ec277ca0b4fb0b26b7c557ca79",
-      "lastmod": "2026-10-23",
+      "fingerprint": "7f4b9dff86a870571fad756844c3dc9aeb7e319d3f25559d952f8911fd0cdd28",
+      "lastmod": "2026-10-24",
       "source": "picks/mlb/index.html"
     },
     "https://propellerpicks.com/picks/nba/": {
-      "fingerprint": "fdeff80214c5d5118f30c070d34336cb42dd63eab2e09b32bfac67c66893c6f3",
-      "lastmod": "2026-10-23",
+      "fingerprint": "f782765cea846f9a679f70ae07df524bacd79598b6da310a5e991504b7cd87b5",
+      "lastmod": "2026-10-24",
       "source": "picks/nba/index.html"
     },
     "https://propellerpicks.com/picks/nfl/": {
@@ -321,28 +276,28 @@
       "source": "picks/nfl/index.html"
     },
     "https://propellerpicks.com/picks/nhl/": {
-      "fingerprint": "d16b08ba265eb153916fde8eb27b7f082928f986fe994ec1f009883a993ebb5a",
-      "lastmod": "2026-10-23",
+      "fingerprint": "50b12163dd7ff6238f9bf4b2120b0d7ff2f58de3d042033425d9fd06b8bb22f8",
+      "lastmod": "2026-10-24",
       "source": "picks/nhl/index.html"
     },
     "https://propellerpicks.com/picks/pick6/": {
-      "fingerprint": "8dfa5ba50a00ac592137138151b957c2aa607b5ee7e7c89c960c34d63bee35ff",
-      "lastmod": "2026-10-23",
+      "fingerprint": "9660a979224aafc170c15bf756e650f48cf6afff60dd85b5da3e312ec1bd65c8",
+      "lastmod": "2026-10-24",
       "source": "picks/pick6/index.html"
     },
     "https://propellerpicks.com/picks/prizepicks/": {
-      "fingerprint": "4e9fb3ff71bfd4825030a1fad4f5da4306c31323629bc3996f41ea9776eeaf3c",
-      "lastmod": "2026-10-23",
+      "fingerprint": "24b1dceb8269715e25bfc62f481f3fd39d900223fb8f35eb34db00876baf2f24",
+      "lastmod": "2026-10-24",
       "source": "picks/prizepicks/index.html"
     },
     "https://propellerpicks.com/picks/soccer/": {
-      "fingerprint": "1b5019d34ff1cdf9f75fbb55d696c9a1a8708704db10c27366308eaa094a55c7",
-      "lastmod": "2026-10-23",
+      "fingerprint": "055149bfbf773eb3bde300a7af385e51a6a5f87d5a6880acd4f24ff44744254b",
+      "lastmod": "2026-10-24",
       "source": "picks/soccer/index.html"
     },
     "https://propellerpicks.com/picks/underdog/": {
-      "fingerprint": "1c8688810af509fd3aade5241d7f72b176be4b760fc32ad9e0ecab1fb7b02ff6",
-      "lastmod": "2026-10-23",
+      "fingerprint": "eb89941ce732c224b70ba681f5d4262bc80fa3fbdd3e4144a7319b8a1d2a9ecf",
+      "lastmod": "2026-10-24",
       "source": "picks/underdog/index.html"
     },
     "https://propellerpicks.com/pricing/": {
@@ -376,8 +331,8 @@
       "source": "research/prospective-record/index.html"
     },
     "https://propellerpicks.com/results/": {
-      "fingerprint": "a87ded7e35c2919a3b07d6c15c8f462ed780aa0d4c8584aaab89167e57e83216",
-      "lastmod": "2026-10-23",
+      "fingerprint": "9ac3a236745c1d8298111c27943ca439e0900c92dc4bfed3f51bf3085d6b12fa",
+      "lastmod": "2026-10-24",
       "source": "results/index.html"
     },
     "https://propellerpicks.com/terms/": {
@@ -416,8 +371,8 @@
       "source": "tools/underdog-payout-calculator/index.html"
     },
     "https://propellerpicks.com/track-record/": {
-      "fingerprint": "8f678a37e77f96829028285a621bd5f53ffeb884ccd75d9b31611f108b726671",
-      "lastmod": "2026-10-23",
+      "fingerprint": "d3ea9d2d92ccfc1f9c8eedc74a82acbaa4f1fb3aecbe0c3944689c03e55953a7",
+      "lastmod": "2026-10-24",
       "source": "track-record/index.html"
     }
   },
