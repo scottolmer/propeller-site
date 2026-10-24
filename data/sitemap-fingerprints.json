@@ -16,28 +16,63 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "2dd96724f3cda9b4555fc74e3b32673be98679ddac80cf38915f17e3c7254233",
+      "fingerprint": "1a709c46e56596029ff2650c0ae3f70bf649d9ac5670db6b10d3de74d3acf1c5",
       "lastmod": "2026-10-24",
       "source": "analyzer/index.html"
     },
     "https://propellerpicks.com/analyzer/nba/collin-gillespie/": {
-      "fingerprint": "255f088d26affaeaabd5caf940ef34199de3d1efc00525c3e0026b6d71719c55",
+      "fingerprint": "4378a093758f0a58dcce1daceaa3f4c8d38b57c213c346ccbce39b0b21491e60",
       "lastmod": "2026-10-24",
       "source": "analyzer/nba/collin-gillespie/index.html"
     },
-    "https://propellerpicks.com/analyzer/nba/devin-booker/": {
-      "fingerprint": "d86d6ff18a4fe4821052a4d935fa9e18216946a1cb0adc987b0c4ff69bca6ad9",
+    "https://propellerpicks.com/analyzer/nba/donovan-mitchell/": {
+      "fingerprint": "860ecc6d057655bf697a08a6fc26d031d82ad2dd1ff1e6ea5a0580419a139f6b",
       "lastmod": "2026-10-24",
-      "source": "analyzer/nba/devin-booker/index.html"
+      "source": "analyzer/nba/donovan-mitchell/index.html"
     },
-    "https://propellerpicks.com/analyzer/nba/jalen-green/": {
-      "fingerprint": "0fb1168747818cc8d0025110b52aa81638dc703c51d916b4bcf14c247160c2a4",
+    "https://propellerpicks.com/analyzer/nba/evan-mobley/": {
+      "fingerprint": "39e00212fc36c669a98132e2b3f759ac57d58c7b7bef82439f4be656a0680dd4",
       "lastmod": "2026-10-24",
-      "source": "analyzer/nba/jalen-green/index.html"
+      "source": "analyzer/nba/evan-mobley/index.html"
+    },
+    "https://propellerpicks.com/analyzer/nba/james-harden/": {
+      "fingerprint": "ce7c9e5c190c7ac8c7e3803d314484b53269a672193a4c2d63427d6893f72714",
+      "lastmod": "2026-10-24",
+      "source": "analyzer/nba/james-harden/index.html"
+    },
+    "https://propellerpicks.com/analyzer/nba/jarrett-allen/": {
+      "fingerprint": "556f12e44eefc1e13faf29e64bda718d7a83281e7cd8c9e7a20ac1e107e0f80b",
+      "lastmod": "2026-10-24",
+      "source": "analyzer/nba/jarrett-allen/index.html"
+    },
+    "https://propellerpicks.com/analyzer/nba/jaylon-tyson/": {
+      "fingerprint": "652f153be9a35e830055a999d0c2e6d826e9c582f8fc1e90964132ea37230146",
+      "lastmod": "2026-10-24",
+      "source": "analyzer/nba/jaylon-tyson/index.html"
+    },
+    "https://propellerpicks.com/analyzer/nba/julius-randle/": {
+      "fingerprint": "e8d88bac2bac0e4c6c695e18dc887863056e5c641cbf1dce30049501d9460b44",
+      "lastmod": "2026-10-24",
+      "source": "analyzer/nba/julius-randle/index.html"
+    },
+    "https://propellerpicks.com/analyzer/nba/naz-reid/": {
+      "fingerprint": "7deaad693047a107ee7b8fb1fdce13b122c19daf708be609dbb342e1766f6a61",
+      "lastmod": "2026-10-24",
+      "source": "analyzer/nba/naz-reid/index.html"
+    },
+    "https://propellerpicks.com/analyzer/nba/onyeka-okongwu/": {
+      "fingerprint": "0ea4be2e305be29645923f78d44a4898e0e368cb1c86d93251639ed434ed095e",
+      "lastmod": "2026-10-24",
+      "source": "analyzer/nba/onyeka-okongwu/index.html"
+    },
+    "https://propellerpicks.com/analyzer/nba/sam-merrill/": {
+      "fingerprint": "98f525724ccbe80b70d1664f283416a6ac0f523d2b80da42908273f71a63e748",
+      "lastmod": "2026-10-24",
+      "source": "analyzer/nba/sam-merrill/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "680026af5b75ab8c31e0a82fd4c48db1fa806bee359a7ef654b7967f32c7d870",
-      "lastmod": "2026-10-21",
+      "fingerprint": "59eccf3bed7c83bec18737cb0b4389d1f0d0b0da1765fe4ce13965255229afd8",
+      "lastmod": "2026-10-24",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -266,7 +301,7 @@
       "source": "picks/mlb/index.html"
     },
     "https://propellerpicks.com/picks/nba/": {
-      "fingerprint": "f782765cea846f9a679f70ae07df524bacd79598b6da310a5e991504b7cd87b5",
+      "fingerprint": "a3d4e5b2434166a1eafca259d21e0b31833774c3d89dbaa5dea818c52aa85a12",
       "lastmod": "2026-10-24",
       "source": "picks/nba/index.html"
     },
