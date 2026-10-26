@@ -12,10 +12,16 @@ test('analyzer honors a supported sport query parameter before loading a slate',
   assert.equal((source.match(/loadSport\('nba'\)/g) || []).length, 0);
 });
 
-test('NFL research links can target the NFL analyzer tab', () => {
+test('NFL research links can target the NFL analyzer', () => {
   const nflPage = readFileSync(new URL('../picks/nfl/index.html', import.meta.url), 'utf8');
-  assert.match(nflPage, /href="\/analyzer\/\?sport=nfl"/);
+  assert.match(nflPage, /href="\/analyzer\/nfl\/"/);
   assert.match(source, /url\.searchParams\.set\('sport', sport\)/);
+});
+
+test('analyzer prefills a q search after the requested sport loads', () => {
+  assert.match(source, /get\('q'\)/);
+  assert.match(source, /loadSport\(initialSport\)\.then\(/);
+  assert.match(source, /handleSearch\(\);/);
 });
 
 test('late Analyzer responses cannot render into a newer sport selection', () => {

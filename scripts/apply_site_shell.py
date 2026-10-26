@@ -27,7 +27,8 @@ ANALYTICS_LOADER_RE = re.compile(
 NAVIGATION_PAGES = frozenset({
     "picks/index.html", "results/index.html", "track-record/index.html",
     "how-it-works/index.html", "guides/index.html", "tools/index.html",
-    "analyzer/index.html", "fantasy/methodology/index.html",
+    "analyzer/index.html", "analyzer/nfl/index.html", "analyzer/nba/index.html",
+    "fantasy/methodology/index.html",
 })
 LEGACY_ANALYTICS_ID = "G-NLXM4C2G7D"
 ANALYTICS_LOADER = '  <script src="/assets/js/analytics-loader.js?v=20260915"></script>\n'

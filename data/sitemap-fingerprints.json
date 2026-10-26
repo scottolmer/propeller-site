@@ -16,9 +16,19 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "b17c8dfd92212d5b3fb406cd5e4f92605618eb6f9f78ffe0c6da3f3e78a78943",
-      "lastmod": "2026-10-25",
+      "fingerprint": "0188a2d017da74648aaa5761e04108883f122afcdb16f237987bc920b7fa1b1e",
+      "lastmod": "2026-10-26",
       "source": "analyzer/index.html"
+    },
+    "https://propellerpicks.com/analyzer/nba/": {
+      "fingerprint": "d26ac75ba5b33de71ce77889bf3b803d7c267312af9fbc5ed39f58b64b2b0ffb",
+      "lastmod": "2026-10-26",
+      "source": "analyzer/nba/index.html"
+    },
+    "https://propellerpicks.com/analyzer/nfl/": {
+      "fingerprint": "584209c582cb126efbed95308702225b303edf3fca4fc29c4f786d3bed7b4438",
+      "lastmod": "2026-10-26",
+      "source": "analyzer/nfl/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "6e962eec24cc3f5bc10f160cddb0acc422b05631127ba801dc7d227ee0066d73",
@@ -126,8 +136,8 @@
       "source": "guides/how-to-analyze-player-props/index.html"
     },
     "https://propellerpicks.com/guides/nba-prop-betting/": {
-      "fingerprint": "a520b8a2d958bbfde32f52a2345d9b00c188b9485a62aeeec8c50f985b179c7e",
-      "lastmod": "2026-10-14",
+      "fingerprint": "7cfeb5b4d1c52d799856199a1f48bd01fb7343f3b209c96be166dc33985a4f1f",
+      "lastmod": "2026-10-26",
       "source": "guides/nba-prop-betting/index.html"
     },
     "https://propellerpicks.com/guides/nfl-player-prop-research/": {
@@ -156,8 +166,8 @@
       "source": "guides/prizepicks-demons-goblins/index.html"
     },
     "https://propellerpicks.com/guides/prizepicks-strategy/": {
-      "fingerprint": "b002f576fd0ff38c994dfea2a7db37e4163c2f92e16a3a6f0b6f5aed290c8d62",
-      "lastmod": "2026-10-14",
+      "fingerprint": "8843e824d0dff2ebe438796a797ef7b703bebf9347531dd003bde746c7793af7",
+      "lastmod": "2026-10-26",
       "source": "guides/prizepicks-strategy/index.html"
     },
     "https://propellerpicks.com/guides/underdog-strategy/": {
@@ -336,13 +346,13 @@
       "source": "tools/ai-betting-prompt-builder/index.html"
     },
     "https://propellerpicks.com/tools/pick6-payout-calculator/": {
-      "fingerprint": "3586b2cfc277fd48179cb8f83ed939087f877b868bd29e26b732faedd0464d76",
-      "lastmod": "2026-10-14",
+      "fingerprint": "1a9f8cf01fd759ef215533f6fa7c897686358f3aacd217031899887e869f8c6d",
+      "lastmod": "2026-10-26",
       "source": "tools/pick6-payout-calculator/index.html"
     },
     "https://propellerpicks.com/tools/prizepicks-payout-calculator/": {
-      "fingerprint": "638e09ffd287f211c707104d3eeffc011e99dcc2be035483179f93dcf467d35a",
-      "lastmod": "2026-10-14",
+      "fingerprint": "8b9c2cce66aca5459251d0818876a3695d2ac83c623248b4b7b08d7b07b7bfcc",
+      "lastmod": "2026-10-26",
       "source": "tools/prizepicks-payout-calculator/index.html"
     },
     "https://propellerpicks.com/tools/research-my-pick/": {
@@ -351,8 +361,8 @@
       "source": "tools/research-my-pick/index.html"
     },
     "https://propellerpicks.com/tools/underdog-payout-calculator/": {
-      "fingerprint": "3609c04e8ecc53e7fa0a5aefdffadb2eda604f64fa2b4f80baa58e7c295905a8",
-      "lastmod": "2026-10-14",
+      "fingerprint": "28ca7bd41f81dbf9add4b16611c57e28afe5da18d9515f009f125ae72447c110",
+      "lastmod": "2026-10-26",
       "source": "tools/underdog-payout-calculator/index.html"
     },
     "https://propellerpicks.com/track-record/": {
