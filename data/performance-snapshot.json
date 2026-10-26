@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-26T10:41:38Z",
+  "generated_at": "2026-10-26T15:03:43Z",
   "latest_sample_game_date": "2026-10-25",
   "canonical_report": "https://propellerpicks.com/results/",
   "historical_database": {
     "unit": "raw graded analysis rows",
-    "total": 3779817,
-    "wins": 2479358,
-    "losses": 1299420,
+    "total": 3780135,
+    "wins": 2479453,
+    "losses": 1299643,
     "pushes": 1039,
     "historical_outcome_rate": 65.6,
     "rate_formula": "wins / (wins + losses); pushes excluded",
@@ -15,11 +15,11 @@
   },
   "deduplicated_public_ledger": {
     "unit": "prop-result entries after the current public API collapse rules",
-    "total": 486936,
-    "wins": 323015,
-    "losses": 163802,
+    "total": 486994,
+    "wins": 323029,
+    "losses": 163846,
     "pushes": 119,
-    "historical_outcome_rate": 66.4,
+    "historical_outcome_rate": 66.3,
     "rate_formula": "wins / (wins + losses); pushes excluded",
     "raw_to_ledger_ratio": 7.76,
     "source": "https://web-production-3c1c4.up.railway.app/api/public/results?days=3650&min_confidence=0&limit=20&offset=0"
@@ -57,11 +57,11 @@
     {
       "key": "nba",
       "label": "NBA",
-      "total": 45342,
-      "wins": 26517,
-      "losses": 18825,
+      "total": 45660,
+      "wins": 26612,
+      "losses": 19048,
       "pushes": 0,
-      "win_rate": 58.5,
+      "win_rate": 58.3,
       "published": true
     },
     {
@@ -169,9 +169,9 @@
       "min": 55,
       "max": 64,
       "all": {
-        "total": 1625404,
-        "wins": 1007596,
-        "losses": 617392,
+        "total": 1625722,
+        "wins": 1007691,
+        "losses": 617615,
         "pushes": 416,
         "win_rate": 62.0
       },
@@ -183,11 +183,11 @@
         "win_rate": 55.5
       },
       "under": {
-        "total": 1235478,
-        "wins": 791221,
-        "losses": 443990,
+        "total": 1235796,
+        "wins": 791316,
+        "losses": 444213,
         "pushes": 267,
-        "win_rate": 64.1
+        "win_rate": 64.0
       }
     },
     {
@@ -249,24 +249,10 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_17f1c3e6a841d6e2c603",
+      "result_id": "pr_32b1b67622539e676c35",
       "sport": "nfl",
       "player_name": "Geno Smith",
-      "stat_type": "player_pass_yds",
-      "line": 220.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 36.6,
-      "confidence_pct": 63.400001525878906,
-      "result": "loss",
-      "actual_value": 287.0,
-      "game_date": "2026-10-25",
-      "bookmaker": "caesars"
-    },
-    {
-      "result_id": "pr_0796d4cfce8672eb6952",
-      "sport": "nfl",
-      "player_name": "Geno Smith",
-      "stat_type": "player_pass_yds",
+      "stat_type": "pass_yds",
       "line": 218.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.6,
@@ -274,7 +260,7 @@
       "result": "loss",
       "actual_value": 287.0,
       "game_date": "2026-10-25",
-      "bookmaker": "draftkings"
+      "bookmaker": "draftkings_pick6"
     },
     {
       "result_id": "pr_91702340e4a8458da4f7",
@@ -291,18 +277,18 @@
       "bookmaker": "draftkings"
     },
     {
-      "result_id": "pr_32b1b67622539e676c35",
+      "result_id": "pr_17f1c3e6a841d6e2c603",
       "sport": "nfl",
       "player_name": "Geno Smith",
-      "stat_type": "pass_yds",
-      "line": 218.5,
+      "stat_type": "player_pass_yds",
+      "line": 220.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.6,
       "confidence_pct": 63.400001525878906,
       "result": "loss",
       "actual_value": 287.0,
       "game_date": "2026-10-25",
-      "bookmaker": "draftkings_pick6"
+      "bookmaker": "caesars"
     },
     {
       "result_id": "pr_f6602f0bf209fd009c82",
@@ -319,18 +305,32 @@
       "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_cb339c57295a711768ac",
+      "result_id": "pr_0796d4cfce8672eb6952",
       "sport": "nfl",
       "player_name": "Geno Smith",
-      "stat_type": "pass_yds",
-      "line": 222.5,
+      "stat_type": "player_pass_yds",
+      "line": 218.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 36.6,
+      "confidence_pct": 63.400001525878906,
+      "result": "loss",
+      "actual_value": 287.0,
+      "game_date": "2026-10-25",
+      "bookmaker": "draftkings"
+    },
+    {
+      "result_id": "pr_b458d69356ea2457e259",
+      "sport": "nfl",
+      "player_name": "Deshaun Watson",
+      "stat_type": "interceptions",
+      "line": 0.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.7,
       "confidence_pct": 63.29999923706055,
       "result": "loss",
-      "actual_value": 287.0,
+      "actual_value": 1.0,
       "game_date": "2026-10-25",
-      "bookmaker": "sleeper"
+      "bookmaker": "prizepicks"
     },
     {
       "result_id": "pr_e77fad48a54d4237ad85",
@@ -361,6 +361,20 @@
       "bookmaker": "prizepicks"
     },
     {
+      "result_id": "pr_cb339c57295a711768ac",
+      "sport": "nfl",
+      "player_name": "Geno Smith",
+      "stat_type": "pass_yds",
+      "line": 222.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 36.7,
+      "confidence_pct": 63.29999923706055,
+      "result": "loss",
+      "actual_value": 287.0,
+      "game_date": "2026-10-25",
+      "bookmaker": "sleeper"
+    },
+    {
       "result_id": "pr_4d34650e5688e21439ac",
       "sport": "nfl",
       "player_name": "Geno Smith",
@@ -375,15 +389,15 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_f4f4a71f4cfd8c950b64",
+      "result_id": "pr_446e59b99d948a671e9e",
       "sport": "nfl",
       "player_name": "Geno Smith",
       "stat_type": "pass_yds",
-      "line": 225.5,
+      "line": 343.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.7,
       "confidence_pct": 63.29999923706055,
-      "result": "loss",
+      "result": "win",
       "actual_value": 287.0,
       "game_date": "2026-10-25",
       "bookmaker": "prizepicks"
@@ -403,11 +417,11 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_0c72e7b57d1e6d248e0d",
+      "result_id": "pr_51068bca1f7000c434ec",
       "sport": "nfl",
       "player_name": "Geno Smith",
       "stat_type": "rush_yds",
-      "line": 29.5,
+      "line": 39.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.7,
       "confidence_pct": 63.29999923706055,
@@ -417,15 +431,29 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_446e59b99d948a671e9e",
+      "result_id": "pr_f4f4a71f4cfd8c950b64",
       "sport": "nfl",
       "player_name": "Geno Smith",
       "stat_type": "pass_yds",
-      "line": 343.5,
+      "line": 225.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.7,
       "confidence_pct": 63.29999923706055,
-      "result": "win",
+      "result": "loss",
+      "actual_value": 287.0,
+      "game_date": "2026-10-25",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_c5d7d025fcf40327ee9a",
+      "sport": "nfl",
+      "player_name": "Geno Smith",
+      "stat_type": "pass_yds",
+      "line": 212.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 36.7,
+      "confidence_pct": 63.29999923706055,
+      "result": "loss",
       "actual_value": 287.0,
       "game_date": "2026-10-25",
       "bookmaker": "prizepicks"
@@ -445,39 +473,11 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_16afea204ba682205b66",
-      "sport": "nfl",
-      "player_name": "Geno Smith",
-      "stat_type": "pass_completions",
-      "line": 29.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 36.7,
-      "confidence_pct": 63.29999923706055,
-      "result": "win",
-      "actual_value": 23.0,
-      "game_date": "2026-10-25",
-      "bookmaker": "prizepicks"
-    },
-    {
-      "result_id": "pr_c1badf779c4e85bf0ef8",
-      "sport": "nfl",
-      "player_name": "Geno Smith",
-      "stat_type": "pass_yds",
-      "line": 216.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 36.7,
-      "confidence_pct": 63.29999923706055,
-      "result": "loss",
-      "actual_value": 287.0,
-      "game_date": "2026-10-25",
-      "bookmaker": "prizepicks"
-    },
-    {
-      "result_id": "pr_51068bca1f7000c434ec",
+      "result_id": "pr_0c72e7b57d1e6d248e0d",
       "sport": "nfl",
       "player_name": "Geno Smith",
       "stat_type": "rush_yds",
-      "line": 39.5,
+      "line": 29.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.7,
       "confidence_pct": 63.29999923706055,
@@ -487,11 +487,11 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_c5d7d025fcf40327ee9a",
+      "result_id": "pr_2b558654dd3b6ae88c84",
       "sport": "nfl",
       "player_name": "Geno Smith",
       "stat_type": "pass_yds",
-      "line": 212.5,
+      "line": 213.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.7,
       "confidence_pct": 63.29999923706055,
