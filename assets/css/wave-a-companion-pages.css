@@ -282,6 +282,135 @@ body.pp-wave-a-page .air-sample aside {
   background: #021522;
 }
 
+/* AI prompt builder */
+body.pp-wave-a-page .air-section--watch::before {
+  color: rgba(84, 200, 255, 0.16);
+}
+
+body.pp-wave-a-page .air-answer-layout .air-prose strong,
+body.pp-wave-a-page .air-sample aside > p:nth-child(2) {
+  color: var(--cream) !important;
+}
+
+body.pp-wave-a-page .air-answer-steps {
+  border: 1px solid var(--blue);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(84, 200, 255, 0.35);
+}
+
+body.pp-wave-a-page .air-answer-steps li {
+  background: #021522;
+}
+
+body.pp-wave-a-page .air-answer-steps span {
+  color: var(--orange);
+  font-family: var(--mono);
+}
+
+body.pp-wave-a-page .air-answer-steps strong {
+  color: var(--cream);
+  font-family: var(--display);
+}
+
+body.pp-wave-a-page .air-answer-steps small {
+  color: var(--muted);
+}
+
+body.pp-wave-a-page .air-template {
+  border: 1px solid var(--blue);
+  border-radius: 14px;
+  background: rgba(2, 21, 34, 0.7);
+  color: var(--cream);
+}
+
+body.pp-wave-a-page .air-template:hover,
+body.pp-wave-a-page .air-template:focus-visible {
+  background: #0b3552;
+  box-shadow: 6px 6px 0 var(--orange);
+}
+
+body.pp-wave-a-page .air-template span {
+  color: var(--blue);
+  font-family: var(--mono);
+}
+
+body.pp-wave-a-page .air-template strong {
+  font-family: var(--display);
+}
+
+body.pp-wave-a-page .air-template small {
+  color: var(--muted);
+}
+
+body.pp-wave-a-page .air-watch__intro {
+  border-left-color: var(--orange);
+}
+
+body.pp-site-system.pp-wave-a-page main .air-watch__link {
+  color: var(--cream) !important;
+  font-family: var(--mono);
+  text-decoration-color: var(--blue);
+}
+
+body.pp-wave-a-page .air-watch__link span {
+  color: var(--orange);
+}
+
+body.pp-wave-a-page .air-video {
+  border: 1px solid var(--blue);
+  border-radius: 14px;
+  background: #021522;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28);
+}
+
+body.pp-wave-a-page .air-field label {
+  color: var(--cream);
+  font-family: var(--mono);
+}
+
+body.pp-wave-a-page .air-field input,
+body.pp-wave-a-page .air-field select,
+body.pp-wave-a-page .air-field textarea {
+  border: 1px solid rgba(84, 200, 255, 0.55) !important;
+  border-radius: 10px;
+  background: #021522 !important;
+  color: var(--cream) !important;
+  font-family: var(--body);
+}
+
+body.pp-wave-a-page .air-field input::placeholder,
+body.pp-wave-a-page .air-field textarea::placeholder {
+  color: #83a9ba;
+}
+
+body.pp-wave-a-page .air-field input:focus,
+body.pp-wave-a-page .air-field select:focus,
+body.pp-wave-a-page .air-field textarea:focus {
+  border-color: var(--orange) !important;
+  outline: none;
+}
+
+body.pp-wave-a-page .air-output {
+  border: 1px solid var(--blue);
+  border-radius: 14px;
+  background: #021522;
+  color: var(--cream);
+  font-family: var(--mono);
+}
+
+body.pp-wave-a-page .air-status {
+  color: var(--blue-soft);
+}
+
+body.pp-wave-a-page .air-changelog {
+  color: var(--muted);
+}
+
+body.pp-wave-a-page .air-sample aside {
+  border-radius: 14px;
+}
+
 /* Payout calculator pages */
 body.pp-wave-a-page.tool-calculator-page .container {
   width: min(1000px, calc(100vw - 40px));
