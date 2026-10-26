@@ -1,0 +1,105 @@
+/* Calculator result: hand one player at a time to the free analyzer. */
+.pp-leg-check {
+  margin: 22px 0 6px;
+  padding: 22px 22px 20px;
+  border: 1px solid rgba(84, 200, 255, 0.72);
+  border-radius: 14px;
+  background: rgba(2, 21, 34, 0.72);
+  text-align: left;
+}
+
+.pp-leg-check__heading {
+  margin: 0;
+  font: 700 clamp(22px, 2.6vw, 28px)/1.05 var(--pp-display, "Familjen Grotesk", "Arial Narrow", sans-serif);
+  color: #f7f1e7;
+}
+
+.pp-leg-check__copy {
+  margin: 8px 0 16px;
+  font: 400 15px/1.55 var(--pp-body, "IBM Plex Sans", sans-serif);
+  color: #b8d3df;
+}
+
+.pp-leg-check__row {
+  display: grid;
+  grid-template-columns: 120px minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.pp-leg-check select,
+.pp-leg-check input {
+  min-height: 50px;
+  padding: 0 14px;
+  border: 1px solid rgba(84, 200, 255, 0.35);
+  border-radius: 10px;
+  background: #021522;
+  color: #f7f1e7;
+  font: 400 16px/1.2 var(--pp-body, "IBM Plex Sans", sans-serif);
+}
+
+.pp-leg-check input::placeholder { color: rgba(184, 211, 223, 0.7); }
+
+.pp-leg-check select:focus-visible,
+.pp-leg-check input:focus-visible,
+.pp-leg-check button:focus-visible {
+  outline: 3px solid #ff5b23;
+  outline-offset: 2px;
+}
+
+.pp-leg-check button {
+  min-height: 50px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 10px;
+  background: #ff5b23;
+  color: #fff;
+  font: 700 17px/1 var(--pp-display, "Familjen Grotesk", sans-serif);
+  cursor: pointer;
+}
+
+.pp-leg-check__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .pp-leg-check__row { grid-template-columns: 1fr; }
+}
+
+/* site-compat.css forces light-theme ink (dark headings, white fields) with
+   !important inside main. The leg-check form is always a dark panel, and on
+   the dark (pp-replay-room) calculators the existing account invites sit on
+   Replay Night too, so both need the dark-surface colors back. */
+body.pp-site-system form.pp-leg-check .pp-leg-check__heading { color: #f7f1e7 !important; }
+body.pp-site-system form.pp-leg-check .pp-leg-check__copy { color: #b8d3df !important; }
+body.pp-site-system form.pp-leg-check :is(select, input) {
+  background: #021522 !important;
+  color: #f7f1e7 !important;
+  border: 1px solid rgba(84, 200, 255, 0.35) !important;
+}
+body.pp-site-system form.pp-leg-check button { color: #fff !important; }
+
+body.pp-site-system.pp-replay-room .trial-invite h3 { color: #f7f1e7 !important; }
+body.pp-site-system.pp-replay-room .trial-invite p:not(.trial-invite__eyebrow) { color: #b8d3df !important; }
+body.pp-site-system.pp-replay-room .trial-invite .trial-invite__eyebrow { color: #54c8ff !important; }
+body.pp-site-system.pp-replay-room .trial-invite .trial-invite__primary { color: #fff !important; }
+body.pp-site-system.pp-replay-room .trial-invite .trial-invite__secondary { color: #54c8ff !important; }
+
+/* Light calculators (Pick6) keep the white-site theme: a paper panel with ink
+   text instead of the Replay Night panel. */
+body.pp-site-system:not(.pp-replay-room) form.pp-leg-check {
+  background: #fff !important;
+  border-color: rgba(3, 26, 44, 0.18) !important;
+}
+body.pp-site-system:not(.pp-replay-room) form.pp-leg-check .pp-leg-check__heading { color: #031a2c !important; }
+body.pp-site-system:not(.pp-replay-room) form.pp-leg-check .pp-leg-check__copy { color: #3d4f5c !important; }
+body.pp-site-system:not(.pp-replay-room) form.pp-leg-check :is(select, input) {
+  background: #fff !important;
+  color: #031a2c !important;
+  border: 1px solid rgba(3, 26, 44, 0.28) !important;
+}
+body.pp-site-system:not(.pp-replay-room) form.pp-leg-check input::placeholder { color: #6b7c88; }

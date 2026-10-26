@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());</script>
 
-<title>Underdog Payout Calculator 2026 | Flex &amp; 8-Pick Chart</title>
-<meta name="description" content="Free Underdog payout calculator for Standard and Flex entries. See how much Underdog pays for 2-8 picks, 8-pick cards, and Flex results.">
+<title>Underdog Payout Calculator &amp; Chart: Standard and Flex 2026</title>
+<meta name="description" content="Free Underdog payout calculator and chart for 2–8 pick Standard and Flex entries. See what each result pays and how ties, DNPs, and Rescue change it.">
 <meta name="keywords" content="underdog payout calculator, underdog fantasy multiplier, underdog payout chart, how much does underdog pay, underdog flex payout, underdog fantasy payout structure 2026">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://propellerpicks.com/tools/underdog-payout-calculator/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://propellerpicks.com/tools/underdog-payout-calculator/">
-<meta property="og:title" content="Underdog Payout Calculator 2026 | Flex &amp; 8-Pick Chart">
-<meta property="og:description" content="Free Underdog payout calculator for Standard and Flex entries. See how much Underdog pays for 2-8 picks, 8-pick cards, and Flex results.">
+<meta property="og:title" content="Underdog Payout Calculator &amp; Chart: Standard and Flex 2026">
+<meta property="og:description" content="Free Underdog payout calculator and chart for 2–8 pick Standard and Flex entries. See what each result pays and how ties, DNPs, and Rescue change it.">
 <meta property="og:image" content="https://propellerpicks.com/images/og-image.png">
 <meta property="og:image:width" content="3000">
 <meta property="og:image:height" content="1000">
@@ -22,8 +22,8 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@propellerpicks">
-<meta name="twitter:title" content="Underdog Payout Calculator 2026 | Flex &amp; 8-Pick Chart">
-<meta name="twitter:description" content="Free Underdog payout calculator for Standard and Flex entries. See how much Underdog pays for 2-8 picks, 8-pick cards, and Flex results.">
+<meta name="twitter:title" content="Underdog Payout Calculator &amp; Chart: Standard and Flex 2026">
+<meta name="twitter:description" content="Free Underdog payout calculator and chart for 2–8 pick Standard and Flex entries. See what each result pays and how ties, DNPs, and Rescue change it.">
 <meta name="twitter:image" content="https://propellerpicks.com/images/og-image.png">
 
 <meta name="theme-color" content="#f7f9fc">
@@ -140,6 +140,8 @@ select,input[type="number"]{background:var(--surface-2);border:1px solid var(--b
 .cta-box{text-align:center;padding:48px 24px;background:var(--surface);border:1px solid var(--border);border-radius:20px;margin:48px 0}.cta-box h2{margin-bottom:12px}.cta-box p{max-width:480px;margin:0 auto 24px}.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:linear-gradient(135deg,#F97316,#EA580C);color:#000;font-weight:800;font-size:16px;border-radius:12px;transition:transform .2s,box-shadow .2s}.cta-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px var(--accent-glow);opacity:1}
 footer{border-top:1px solid var(--border);padding:32px 0}footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}footer a,footer span{font-size:13px;color:var(--text-3)}footer a:hover{color:var(--text-2)}
 </style>
+<link rel="stylesheet" href="/assets/css/calculator-leg-check.css?v=20261026">
+<script src="/assets/js/calculator-leg-check.js?v=20261026" defer></script>
   <script src="/assets/js/analytics-loader.js?v=20260915"></script>
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -248,6 +250,17 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
       <p class="result-sub" style="margin-top:16px;text-align:center">Base-table estimate only. Confirm the final multiplier and grading in Underdog.</p>
       <p class="scenario-note">Choose NFL, MLB, or NBA, then select a player, upcoming game, market, and your line. Start with one complete guest result; account limits are shown in the tool. For other sports or unavailable research, use the free analyzer.</p>
       <div class="result-actions" aria-label="Next research steps"><a class="result-link primary" href="/tools/research-my-pick/?research_source=underdog_calculator" data-cta-id="calculator-underdog-result-my-pick" data-cta-surface="calculator_result" data-cta-destination="research_my_pick" data-research-source="underdog_calculator">Research a player prop</a><a class="result-link" href="/analyzer/" data-cta-id="calculator-underdog-result-analyzer" data-cta-surface="calculator_result">Free AI player prop analyzer</a></div>
+      <form class="pp-leg-check" data-calculator="underdog" action="/analyzer/" method="get" aria-labelledby="legCheckHeading">
+        <h3 class="pp-leg-check__heading" id="legCheckHeading" data-leg-check-heading>Check the players in this entry.</h3>
+        <p class="pp-leg-check__copy">Search one player at a time in the free analyzer to see which way the research leans on their line.</p>
+        <div class="pp-leg-check__row">
+          <label class="pp-leg-check__label" for="legCheckSport">Sport</label>
+          <select id="legCheckSport" name="sport"><option value="nfl">NFL</option><option value="nba">NBA</option><option value="nhl">NHL</option><option value="mlb">MLB</option><option value="soccer">Soccer</option></select>
+          <label class="pp-leg-check__label" for="legCheckPlayer">Player name</label>
+          <input id="legCheckPlayer" name="q" type="search" autocomplete="off" placeholder="Player name">
+          <button type="submit">Check player</button>
+        </div>
+      </form>
       <aside class="trial-invite" aria-label="Propeller Picks free account"><p class="trial-invite__eyebrow">Take the next research step</p><h3>Keep your research in one workspace.</h3><p>Put this payout math beside player research, line context, and supporting evidence. Explore the account workspace and review its current access terms. This public calculator stays free.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-underdog-result-signup" data-cta-surface="calculator_result" data-cta-destination="signup">Explore Propeller</a><a class="trial-invite__secondary" href="/analyzer/">Keep using the free analyzer</a></div></aside>
       <div style="margin-top:16px;text-align:center"><button class="copy-btn" type="button" onclick="copyResults()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy Results</button></div>
     </div>

@@ -12,10 +12,12 @@
   gtag('set', 'linker', { domains: ['propellerpicks.com', 'app.propellerpicks.com'] });
 </script>
 <script src="/assets/js/analyzer-events.js?v=20260715" defer></script>
+<script src="/assets/js/analyzer-save-panel.js?v=20261026" defer></script>
+<link rel="stylesheet" href="/assets/css/analyzer-save-panel.css?v=20261026">
 <script src="/assets/js/analyzer-webmcp.js?v=20260827" defer></script>
 
-<title>Free Player Prop Analyzer: AI Research Tool | Propeller</title>
-<meta name="description" content="Free player prop analyzer for current lines, AI confidence context, and DFS/pick'em research—no account, entry, or wager placement.">
+<title>Free Player Prop Analyzer &amp; Research Tool | Propeller</title>
+<meta name="description" content="Free player prop research tool with no account needed. Search today's NFL, NBA, NHL, MLB, and soccer lines and see the AI's over or under lean and why.">
 <meta name="keywords" content="free AI player prop analyzer, AI player prop analyzer, player prop analyzer free, DFS prop analyzer, pick'em research tool, player prop research tool">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://propellerpicks.com/analyzer/">
@@ -23,8 +25,8 @@
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://propellerpicks.com/analyzer/">
-<meta property="og:title" content="Free Player Prop Analyzer: AI Research Tool | Propeller">
-<meta property="og:description" content="Free player prop analyzer for current lines, AI confidence context, and DFS/pick'em research—no account, entry, or wager placement.">
+<meta property="og:title" content="Free Player Prop Analyzer &amp; Research Tool | Propeller">
+<meta property="og:description" content="Free player prop research tool with no account needed. Search today's NFL, NBA, NHL, MLB, and soccer lines and see the AI's over or under lean and why.">
 <meta property="og:image" content="https://propellerpicks.com/images/og-image.png">
 <meta property="og:image:width" content="3000">
 <meta property="og:image:height" content="1000">
@@ -35,8 +37,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@propellerpicks">
 <meta name="twitter:creator" content="@propellerpicks">
-<meta name="twitter:title" content="Free Player Prop Analyzer: AI Research Tool | Propeller">
-<meta name="twitter:description" content="Free player prop analyzer for current lines, AI confidence context, and DFS/pick'em research—no account, entry, or wager placement.">
+<meta name="twitter:title" content="Free Player Prop Analyzer &amp; Research Tool | Propeller">
+<meta name="twitter:description" content="Free player prop research tool with no account needed. Search today's NFL, NBA, NHL, MLB, and soccer lines and see the AI's over or under lean and why.">
 <meta name="twitter:image" content="https://propellerpicks.com/images/og-image.png">
 
 <!-- Additional SEO -->
@@ -56,9 +58,9 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Free Player Prop Analyzer: AI Research Tool",
+  "name": "Free Player Prop Analyzer & Research Tool",
   "url": "https://propellerpicks.com/analyzer/",
-  "description": "Free player prop analyzer for current lines, AI confidence context, and DFS/pick'em research—no account, entry, or wager placement.",
+  "description": "Free player prop research tool with no account needed. Search today's NFL, NBA, NHL, MLB, and soccer lines and see the AI's over or under lean and why.",
   "publisher": {
     "@type": "Organization",
     "name": "Propeller Picks",
@@ -2313,6 +2315,7 @@ footer {
     </div>
 
     <p style="text-align:center;margin:0 0 24px"><a class="search-help-jump" href="#find-player">Help finding a player</a></p>
+    <p class="analyzer-sport-pages">Sport pages with matchup notes: <a href="/analyzer/nfl/">NFL prop analyzer</a> <a href="/analyzer/nba/">NBA prop analyzer</a></p>
 
     <!-- Results Controls -->
     <div class="results-controls fade-in delay-2" id="resultsControls" style="display:none;">
@@ -2369,11 +2372,6 @@ footer {
 
       <!-- Picks grid (populated by JS) -->
       <div class="results-grid" id="picksGrid" style="display:none;" aria-live="polite" aria-label="Player prop results"></div>
-      <aside id="analyzerNextStep" hidden style="margin-top:20px;padding:20px;border:1px solid var(--glass-border);border-radius:16px">
-        <h3>Keep the research going</h3>
-        <p style="margin:8px 0 14px">Compare this player-line research with the current projection, then explore the account workspace. Public tools stay free; current account access terms are shown in the app.</p>
-        <a href="https://app.propellerpicks.com/signup" class="btn btn-primary" data-analytics-event="signup_click" data-cta-id="analyzer-completed-signup" data-cta-surface="analyzer_completed" data-cta-destination="signup">Explore Propeller</a>
-      </aside>
     </div>
 
   </div>
@@ -3075,8 +3073,6 @@ function sortPicks(picks) {
 // RENDER
 // ============================================================
 function renderPicks(picks) {
-  const nextStep = document.getElementById('analyzerNextStep');
-  if (nextStep) nextStep.hidden = true;
   const grid   = document.getElementById('picksGrid');
   const meta   = document.getElementById('resultsMeta');
   const controls = document.getElementById('resultsControls');
@@ -3143,9 +3139,24 @@ function renderPicks(picks) {
     return;
   }
 
-  if (nextStep) nextStep.hidden = false;
   const sorted = sortPicks(picks);
-  grid.innerHTML = sorted.map((p, i) => buildPickCard(p, i >= 5)).join('');
+  const openCount = Math.min(5, sorted.length);
+  const cards = sorted.map((p, i) => buildPickCard(p, i >= 5));
+  if (window.ppAnalyzerSavePanel) {
+    const panelOptions = {
+      sport: activeSport,
+      sportLabel: sportCfg.label,
+      query: searchQuery,
+      players: [...new Set(sorted.map(p => p.player_name))],
+      shownCount: openCount,
+      lockedCount: sorted.length - openCount,
+      topScore: Math.max(...sorted.map(calcConfidence)),
+      surface: 'analyzer'
+    };
+    cards.splice(openCount, 0, window.ppAnalyzerSavePanel.html(panelOptions));
+    window.ppAnalyzerSavePanel.trackView(panelOptions);
+  }
+  grid.innerHTML = cards.join('');
 
   window.ppAnalyzerEvents?.trackCompletion({
     sport: activeSport,
@@ -3278,8 +3289,6 @@ async function findAndShowSportWithCurrentProps(button) {
 }
 
 async function loadSport(sport) {
-  const nextStep = document.getElementById('analyzerNextStep');
-  if (nextStep) nextStep.hidden = true;
   const loadVersion = ++selectionVersion;
   activeSport = sport;
   applySportTheme(sport);
@@ -3370,9 +3379,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // The sport query parameter makes NFL entry points land on the intended board.
   const initTab = document.querySelector(`.sport-tab[data-sport="${initialSport}"]`);
+  const initialQuery = (new URLSearchParams(window.location.search).get('q') || '').trim().slice(0, 60);
   if (initTab) {
     activateSportTab(initTab);
-    loadSport(initialSport);
+    loadSport(initialSport).then(() => {
+      if (!initialQuery || activeSport !== initialSport) return;
+      document.getElementById('searchInput').value = initialQuery;
+      handleSearch();
+    });
   }
 
   // ---- Search ----

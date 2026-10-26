@@ -9,16 +9,16 @@
   gtag('js', new Date());
 </script>
 
-<title>PrizePicks Payout Calculator: Power vs. Flex Math | 2026</title>
-<meta name="description" content="Check standard PrizePicks Power and Flex payouts for 2–6 picks, including 5 of 6, DNP, Reboot, and tie decision paths. Confirm your details-screen payout.">
+<title>PrizePicks Payout Calculator &amp; Chart: Power and Flex 2026</title>
+<meta name="description" content="Free PrizePicks payout calculator and chart for 2–6 pick Power and Flex Plays. See what 5 of 6, 4 of 5, and 3 of 4 pay, plus DNP, Reboot, and tie rules.">
 <meta name="keywords" content="prizepicks payout calculator, prizepicks multiplier, prizepicks payout chart, how much does prizepicks pay, prizepicks flex play payout, prizepicks power play payout 2026">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://propellerpicks.com/tools/prizepicks-payout-calculator/">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://propellerpicks.com/tools/prizepicks-payout-calculator/">
-<meta property="og:title" content="PrizePicks Payout Calculator: Power vs. Flex Math | 2026">
-<meta property="og:description" content="Check standard PrizePicks Power and Flex payouts for 2–6 picks, including 5 of 6, DNP, Reboot, and tie decision paths. Confirm your details-screen payout.">
+<meta property="og:title" content="PrizePicks Payout Calculator &amp; Chart: Power and Flex 2026">
+<meta property="og:description" content="Free PrizePicks payout calculator and chart for 2–6 pick Power and Flex Plays. See what 5 of 6, 4 of 5, and 3 of 4 pay, plus DNP, Reboot, and tie rules.">
 <meta property="og:image" content="https://propellerpicks.com/images/og-image.png">
 <meta property="og:image:width" content="3000">
 <meta property="og:image:height" content="1000">
@@ -26,8 +26,8 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@propellerpicks">
-<meta name="twitter:title" content="PrizePicks Payout Calculator: Power vs. Flex Math | 2026">
-<meta name="twitter:description" content="Check standard PrizePicks Power and Flex payouts for 2–6 picks, including 5 of 6, DNP, Reboot, and tie decision paths. Confirm your details-screen payout.">
+<meta name="twitter:title" content="PrizePicks Payout Calculator &amp; Chart: Power and Flex 2026">
+<meta name="twitter:description" content="Free PrizePicks payout calculator and chart for 2–6 pick Power and Flex Plays. See what 5 of 6, 4 of 5, and 3 of 4 pay, plus DNP, Reboot, and tie rules.">
 <meta name="twitter:image" content="https://propellerpicks.com/images/og-image.png">
 
 <meta name="theme-color" content="#f7f9fc">
@@ -300,6 +300,8 @@ footer .container { display: flex; justify-content: space-between; align-items: 
 footer a, footer span { font-size: 13px; color: var(--text-3); }
 footer a:hover { color: var(--text-2); }
 </style>
+<link rel="stylesheet" href="/assets/css/calculator-leg-check.css?v=20261026">
+<script src="/assets/js/calculator-leg-check.js?v=20261026" defer></script>
   <script src="/assets/js/analytics-loader.js?v=20260915"></script>
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -408,6 +410,17 @@ footer a:hover { color: var(--text-2); }
         <a class="result-link primary" href="/tools/research-my-pick/?research_source=prizepicks_calculator" data-cta-id="calculator-prizepicks-result-my-pick" data-cta-surface="calculator_result" data-cta-destination="research_my_pick" data-research-source="prizepicks_calculator">Research a player prop</a>
         <a class="result-link" href="/analyzer/" data-cta-id="calculator-prizepicks-result-analyzer" data-cta-surface="calculator_result">Free AI player prop analyzer</a>
       </div>
+      <form class="pp-leg-check" data-calculator="prizepicks" action="/analyzer/" method="get" aria-labelledby="legCheckHeading">
+        <h3 class="pp-leg-check__heading" id="legCheckHeading" data-leg-check-heading>Check the players in this entry.</h3>
+        <p class="pp-leg-check__copy">Search one player at a time in the free analyzer to see which way the research leans on their line.</p>
+        <div class="pp-leg-check__row">
+          <label class="pp-leg-check__label" for="legCheckSport">Sport</label>
+          <select id="legCheckSport" name="sport"><option value="nfl">NFL</option><option value="nba">NBA</option><option value="nhl">NHL</option><option value="mlb">MLB</option><option value="soccer">Soccer</option></select>
+          <label class="pp-leg-check__label" for="legCheckPlayer">Player name</label>
+          <input id="legCheckPlayer" name="q" type="search" autocomplete="off" placeholder="Player name">
+          <button type="submit">Check player</button>
+        </div>
+      </form>
       <aside class="trial-invite" aria-label="Propeller Picks free account">
         <p class="trial-invite__eyebrow">Take the next research step</p>
         <h3>Keep your research in one workspace.</h3>

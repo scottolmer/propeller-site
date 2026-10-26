@@ -73,6 +73,8 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
 <link rel="stylesheet" href="/assets/css/home-redesign.css?v=20260624-nav3">
 <link rel="stylesheet" href="/assets/css/tools-redesign.css">
   <link rel="stylesheet" href="/assets/css/site-white-overrides.css?v=20260625-white-site">
+<link rel="stylesheet" href="/assets/css/calculator-leg-check.css?v=20261026">
+<script src="/assets/js/calculator-leg-check.js?v=20261026" defer></script>
   <script src="/assets/js/analytics-loader.js?v=20260915"></script>
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -173,6 +175,17 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
         <a class="result-link primary" href="/picks/pick6/" data-cta-id="calculator-pick6-result-research" data-cta-surface="calculator_result">Research DraftKings Pick6 props</a>
         <a class="result-link secondary" href="/analyzer/" data-cta-id="calculator-pick6-result-analyzer" data-cta-surface="calculator_result">Free AI player prop analyzer</a>
       </div>
+      <form class="pp-leg-check" data-calculator="pick6" action="/analyzer/" method="get" aria-labelledby="legCheckHeading">
+        <h3 class="pp-leg-check__heading" id="legCheckHeading" data-leg-check-heading>Check the players in this entry.</h3>
+        <p class="pp-leg-check__copy">Search one player at a time in the free analyzer to see which way the research leans on their line.</p>
+        <div class="pp-leg-check__row">
+          <label class="pp-leg-check__label" for="legCheckSport">Sport</label>
+          <select id="legCheckSport" name="sport"><option value="nfl">NFL</option><option value="nba">NBA</option><option value="nhl">NHL</option><option value="mlb">MLB</option><option value="soccer">Soccer</option></select>
+          <label class="pp-leg-check__label" for="legCheckPlayer">Player name</label>
+          <input id="legCheckPlayer" name="q" type="search" autocomplete="off" placeholder="Player name">
+          <button type="submit">Check player</button>
+        </div>
+      </form>
       <aside class="trial-invite" aria-label="Propeller Picks free account"><p class="trial-invite__eyebrow">Take the next research step</p><h3>Keep your research in one workspace.</h3><p>Put this payout math beside player research, line context, and supporting evidence. Explore the account workspace and review its current access terms. This public calculator stays free.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-pick6-result-signup" data-cta-surface="calculator_result" data-cta-destination="signup">Explore Propeller</a><a class="trial-invite__secondary" href="/analyzer/">Keep using the free analyzer</a></div></aside>
       <div style="margin-top:16px;text-align:center;"><button class="copy-btn" onclick="copyResults()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy Results</button></div>
     </div>

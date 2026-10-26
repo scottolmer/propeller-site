@@ -31,7 +31,7 @@ class NflLaunchReadinessTests(unittest.TestCase):
         picks = PICKS.read_text(encoding="utf-8")
         self.assertIn("function requestedSport()", analyzer)
         self.assertIn("loadSport(initialSport)", analyzer)
-        self.assertIn('href="/analyzer/?sport=nfl"', picks)
+        self.assertIn('href="/analyzer/nfl/"', picks)
 
     def test_public_discovery_surfaces_explain_nfl_slate_state(self) -> None:
         catalog = json.loads((ROOT / "data" / "index.json").read_text(encoding="utf-8"))
