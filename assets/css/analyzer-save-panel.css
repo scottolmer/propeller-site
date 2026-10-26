@@ -199,7 +199,8 @@
 
 .analyzer-sport-pages a:focus-visible { outline: 3px solid #ff5b23; outline-offset: 4px; }
 
-/* Navigation pages force muted dd text with !important; the ticket values are
-   the readout, so they keep cream and the earned orange score. */
-.pp-save-panel .pp-save-panel__rows dd { color: #f7f1e7 !important; }
-.pp-save-panel .pp-save-panel__score dd { color: #ff5b23 !important; }
+/* Navigation pages force muted dd text with !important at specificity 0,3,1
+   and load later; the ticket values are the readout, so they outrank it (0,4,1)
+   to keep cream and the earned orange score. */
+.pp-save-panel.pp-save-panel .pp-save-panel__ticket .pp-save-panel__rows dd { color: #f7f1e7 !important; }
+.pp-save-panel.pp-save-panel .pp-save-panel__ticket .pp-save-panel__score dd { color: #ff5b23 !important; }

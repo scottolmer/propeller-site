@@ -193,7 +193,7 @@ def render(page: dict) -> str:
 <meta name="twitter:image" content="{SITE}/images/og-image.png">
 <link rel="preload" href="/assets/fonts/familjen-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/analyzer-sport.css?v={ASSET_VERSION}">
-<link rel="stylesheet" href="/assets/css/analyzer-save-panel.css?v={ASSET_VERSION}">
+<link rel="stylesheet" href="/assets/css/analyzer-save-panel.css?v={ASSET_VERSION}b">
 <script src="/assets/js/analyzer-events.js?v=20260715" defer></script>
 <script src="/assets/js/analyzer-save-panel.js?v={ASSET_VERSION}" defer></script>
 <script src="/assets/js/sport-analyzer.js?v={ASSET_VERSION}" defer></script>
