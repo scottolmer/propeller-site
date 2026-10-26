@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-26T10:13:47Z",
+  "generated_at": "2026-10-26T10:41:38Z",
   "latest_sample_game_date": "2026-10-25",
   "canonical_report": "https://propellerpicks.com/results/",
   "historical_database": {
@@ -263,11 +263,11 @@
       "bookmaker": "caesars"
     },
     {
-      "result_id": "pr_91702340e4a8458da4f7",
+      "result_id": "pr_0796d4cfce8672eb6952",
       "sport": "nfl",
       "player_name": "Geno Smith",
       "stat_type": "player_pass_yds",
-      "line": 219.5,
+      "line": 218.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.6,
       "confidence_pct": 63.400001525878906,
@@ -277,11 +277,11 @@
       "bookmaker": "draftkings"
     },
     {
-      "result_id": "pr_0796d4cfce8672eb6952",
+      "result_id": "pr_91702340e4a8458da4f7",
       "sport": "nfl",
       "player_name": "Geno Smith",
       "stat_type": "player_pass_yds",
-      "line": 218.5,
+      "line": 219.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.6,
       "confidence_pct": 63.400001525878906,
@@ -361,6 +361,20 @@
       "bookmaker": "prizepicks"
     },
     {
+      "result_id": "pr_4d34650e5688e21439ac",
+      "sport": "nfl",
+      "player_name": "Geno Smith",
+      "stat_type": "pass_completions",
+      "line": 33.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 36.7,
+      "confidence_pct": 63.29999923706055,
+      "result": "win",
+      "actual_value": 23.0,
+      "game_date": "2026-10-25",
+      "bookmaker": "prizepicks"
+    },
+    {
       "result_id": "pr_f4f4a71f4cfd8c950b64",
       "sport": "nfl",
       "player_name": "Geno Smith",
@@ -389,20 +403,6 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_446e59b99d948a671e9e",
-      "sport": "nfl",
-      "player_name": "Geno Smith",
-      "stat_type": "pass_yds",
-      "line": 343.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 36.7,
-      "confidence_pct": 63.29999923706055,
-      "result": "win",
-      "actual_value": 287.0,
-      "game_date": "2026-10-25",
-      "bookmaker": "prizepicks"
-    },
-    {
       "result_id": "pr_0c72e7b57d1e6d248e0d",
       "sport": "nfl",
       "player_name": "Geno Smith",
@@ -413,6 +413,20 @@
       "confidence_pct": 63.29999923706055,
       "result": "win",
       "actual_value": 0.0,
+      "game_date": "2026-10-25",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_446e59b99d948a671e9e",
+      "sport": "nfl",
+      "player_name": "Geno Smith",
+      "stat_type": "pass_yds",
+      "line": 343.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 36.7,
+      "confidence_pct": 63.29999923706055,
+      "result": "win",
+      "actual_value": 287.0,
       "game_date": "2026-10-25",
       "bookmaker": "prizepicks"
     },
@@ -431,16 +445,16 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_2b558654dd3b6ae88c84",
+      "result_id": "pr_16afea204ba682205b66",
       "sport": "nfl",
       "player_name": "Geno Smith",
-      "stat_type": "pass_yds",
-      "line": 213.5,
+      "stat_type": "pass_completions",
+      "line": 29.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.7,
       "confidence_pct": 63.29999923706055,
-      "result": "loss",
-      "actual_value": 287.0,
+      "result": "win",
+      "actual_value": 23.0,
       "game_date": "2026-10-25",
       "bookmaker": "prizepicks"
     },
@@ -450,20 +464,6 @@
       "player_name": "Geno Smith",
       "stat_type": "pass_yds",
       "line": 216.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 36.7,
-      "confidence_pct": 63.29999923706055,
-      "result": "loss",
-      "actual_value": 287.0,
-      "game_date": "2026-10-25",
-      "bookmaker": "prizepicks"
-    },
-    {
-      "result_id": "pr_c5d7d025fcf40327ee9a",
-      "sport": "nfl",
-      "player_name": "Geno Smith",
-      "stat_type": "pass_yds",
-      "line": 212.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.7,
       "confidence_pct": 63.29999923706055,
@@ -487,16 +487,16 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_4d34650e5688e21439ac",
+      "result_id": "pr_c5d7d025fcf40327ee9a",
       "sport": "nfl",
       "player_name": "Geno Smith",
-      "stat_type": "pass_completions",
-      "line": 33.5,
+      "stat_type": "pass_yds",
+      "line": 212.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.7,
       "confidence_pct": 63.29999923706055,
-      "result": "win",
-      "actual_value": 23.0,
+      "result": "loss",
+      "actual_value": 287.0,
       "game_date": "2026-10-25",
       "bookmaker": "prizepicks"
     }
