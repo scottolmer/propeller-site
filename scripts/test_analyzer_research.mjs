@@ -102,3 +102,40 @@ test("analyzer page wires research assets and mount point", () => {
   assert.ok(html.indexOf('id="researchChat"') < html.indexOf('id="picksGrid"'));
   assert.match(html, /<section id="researchChat" hidden>/);
 });
+
+test("fixture hook is ignored on production hosts and honored on localhost", async () => {
+  for (const [hostname, expectFixture] of [["propellerpicks.com", false], ["www.propellerpicks.com", false], ["localhost", true], ["127.0.0.1", true], ["[::1]", true]]) {
+    const api = load();
+    const urls = [];
+    const ctl = api.createController({
+      location: { hostname, search: "?researchFixture=full" },
+      fetch: async (u) => { urls.push(u); return { ok: true, json: async () => ({ status: "ok", player: { name: "x" }, props: [] }) }; },
+      delay: 0,
+      ui: { hide() {}, mount() {}, message() {} },
+    });
+    ctl.update({ sport: "nfl", picks: [brissett()], immediate: true });
+    await tick();
+    assert.equal(urls.length, 1);
+    assert.equal(urls[0].includes("/scripts/fixtures/research-nfl-full.json"), expectFixture, hostname);
+    if (!expectFixture) assert.ok(urls[0].startsWith(api.RESEARCH_API), hostname);
+  }
+});
+
+test("fixture down simulates a backend failure on localhost only", async () => {
+  const api = load();
+  assert.equal(api.fixtureMode({ hostname: "localhost", search: "?researchFixture=down" }), "down");
+  assert.equal(api.fixtureMode({ hostname: "propellerpicks.com", search: "?researchFixture=down" }), null);
+  assert.equal(api.fixtureMode({ hostname: "localhost", search: "?researchFixture=bogus" }), null);
+  let calls = 0;
+  const log = { hide: 0, mounted: 0 };
+  const ctl = api.createController({
+    location: { hostname: "localhost", search: "?researchFixture=down" },
+    fetch: async () => { calls += 1; return { ok: true, json: async () => ({}) }; },
+    delay: 0,
+    ui: { hide() { log.hide += 1; }, mount() { log.mounted += 1; }, message() {} },
+  });
+  ctl.update({ sport: "nfl", picks: [brissett()], immediate: true });
+  await tick();
+  assert.equal(calls, 0);
+  assert.equal(log.mounted, 0);
+});

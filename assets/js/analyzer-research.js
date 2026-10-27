@@ -52,6 +52,15 @@
     return name;
   }
 
+  // Local-only preview hook: ?researchFixture=full|summary|down swaps the backend for a
+  // checked-in fixture. Honored only on loopback hosts; never active in production.
+  var LOCAL_HOSTS = { "localhost": 1, "127.0.0.1": 1, "[::1]": 1 };
+  function fixtureMode(loc) {
+    if (!loc || !Object.prototype.hasOwnProperty.call(LOCAL_HOSTS, loc.hostname)) return null;
+    var m = /[?&]researchFixture=([a-z]+)(?:&|$)/.exec(String(loc.search || ""));
+    return m && (m[1] === "full" || m[1] === "summary" || m[1] === "down") ? m[1] : null;
+  }
+
   function createController(opts) {
     var doFetch = opts.fetch || (typeof window.fetch === "function" ? window.fetch.bind(window) : null);
     var ui = opts.ui;
@@ -65,7 +74,11 @@
       var ctl = typeof AbortController === "function" ? new AbortController() : null;
       var t = setTimeout(function () { if (ctl) ctl.abort(); }, TIMEOUT_MS);
       try {
-        var res = await doFetch(RESEARCH_API + "/nfl?player=" + encodeURIComponent(player), ctl ? { signal: ctl.signal } : {});
+        var mode = fixtureMode(opts.location || window.location);
+        var url = RESEARCH_API + "/nfl?player=" + encodeURIComponent(player);
+        if (mode === "down") throw new Error("fixture down");
+        if (mode) url = "/scripts/fixtures/research-nfl-" + mode + ".json";
+        var res = await doFetch(url, ctl ? { signal: ctl.signal } : {});
         if (!res || !res.ok) throw new Error("http");
         var data = await res.json();
         if (stale(id)) return;
@@ -98,6 +111,7 @@
     lineMovedNotice: lineMovedNotice,
     noCurrentPropMessage: noCurrentPropMessage,
     singlePlayer: singlePlayer,
+    fixtureMode: fixtureMode,
     createController: createController
   };
 })(window);

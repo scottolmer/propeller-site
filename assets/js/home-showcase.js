@@ -3,6 +3,14 @@
 
   var ENDPOINT = "https://web-production-3c1c4.up.railway.app/api/social/research/nfl/showcase";
 
+  // Local-only preview hook: ?researchFixture=showcase|down. Loopback hosts only.
+  var LOCAL_HOSTS = { "localhost": 1, "127.0.0.1": 1, "[::1]": 1 };
+  function fixtureMode(loc) {
+    if (!loc || !Object.prototype.hasOwnProperty.call(LOCAL_HOSTS, loc.hostname)) return null;
+    var m = /[?&]researchFixture=([a-z]+)(?:&|$)/.exec(String(loc.search || ""));
+    return m && (m[1] === "showcase" || m[1] === "down") ? m[1] : null;
+  }
+
   // Fetches the daily conversation only once the placeholder nears the viewport, so the
   // homepage load path never waits on it. Any failure leaves the section hidden.
   function init(deps) {
@@ -22,7 +30,11 @@
       if (started) return;
       started = true;
       Promise.resolve()
-        .then(function () { return fetchFn(ENDPOINT); })
+        .then(function () {
+          var mode = fixtureMode(deps.location || window.location);
+          if (mode === "down") throw new Error("fixture down");
+          return fetchFn(mode ? "/scripts/fixtures/research-nfl-showcase.json" : ENDPOINT);
+        })
         .then(function (res) {
           if (!res || !res.ok) throw new Error("showcase unavailable");
           return res.json();
@@ -58,7 +70,7 @@
     return done;
   }
 
-  window.ppHomeShowcase = { init: init };
+  window.ppHomeShowcase = { init: init, fixtureMode: fixtureMode };
 
   if (window.document && window.document.getElementById && typeof window.fetch === "function") {
     var d = window.document;

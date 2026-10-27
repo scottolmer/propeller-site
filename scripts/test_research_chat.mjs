@@ -331,3 +331,40 @@ test("showcase CTAs are not duplicated inside the chat when the page owns them",
   await s.done;
   assert.ok(!s.mount.innerHTML.includes("data-cta-id"));
 });
+
+test("showcase fixture hook: ignored on production, honored on localhost, down hides", async () => {
+  for (const [hostname, search, want] of [
+    ["propellerpicks.com", "?researchFixture=showcase", "https://web-production-3c1c4.up.railway.app/api/social/research/nfl/showcase"],
+    ["localhost", "?researchFixture=showcase", "/scripts/fixtures/research-nfl-showcase.json"],
+  ]) {
+    const win = loadShowcase();
+    const calls = [];
+    let cb;
+    class IO { constructor(f) { cb = f; } observe() {} disconnect() {} }
+    const section = { hidden: true };
+    const mount = { innerHTML: "", addEventListener() {}, removeEventListener() {}, querySelectorAll() { return []; } };
+    const sentinel = {};
+    const done = win.ppHomeShowcase.init({
+      section, mount, sentinel, IntersectionObserver: IO,
+      location: { hostname, search },
+      fetchFn: (u) => { calls.push(u); return jsonResponse(showcaseFixture()); },
+    });
+    cb([{ isIntersecting: true, target: sentinel }]);
+    await done;
+    assert.deepEqual(calls, [want], hostname);
+  }
+  const win = loadShowcase();
+  let n = 0, cb;
+  class IO { constructor(f) { cb = f; } observe() {} disconnect() {} }
+  const section = { hidden: true };
+  const sentinel = {};
+  const done = win.ppHomeShowcase.init({
+    section, mount: { innerHTML: "" }, sentinel, IntersectionObserver: IO,
+    location: { hostname: "localhost", search: "?researchFixture=down" },
+    fetchFn: () => { n += 1; return jsonResponse(showcaseFixture()); },
+  });
+  cb([{ isIntersecting: true, target: sentinel }]);
+  await done;
+  assert.equal(n, 0);
+  assert.equal(section.hidden, true);
+});
