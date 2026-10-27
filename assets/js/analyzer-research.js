@@ -39,17 +39,20 @@
     return when ? base + " The next NFL slate starts " + when + "." : base;
   }
 
-  // Returns the single player name when sport is NFL and picks hold exactly one distinct player.
-  function singlePlayer(sport, picks) {
-    if (sport !== "nfl" || !Array.isArray(picks) || !picks.length) return null;
+  // Returns the name to send, or null. Gate: NFL, query >= 3 chars, at most one distinct matched player.
+  function singlePlayer(sport, picks, query) {
+    if (sport !== "nfl") return null;
+    var q = String(query == null ? "" : query).trim();
+    if (q.length < 3) return null;
     var name = null;
-    for (var i = 0; i < picks.length; i++) {
-      var n = picks[i] && picks[i].player_name;
-      if (!n) return null;
+    var list = Array.isArray(picks) ? picks : [];
+    for (var i = 0; i < list.length; i++) {
+      var n = list[i] && list[i].player_name;
+      if (!n) continue;
       if (name === null) name = n;
       else if (name !== n) return null;
     }
-    return name;
+    return name || q;
   }
 
   // Local-only preview hook: ?researchFixture=full|summary|down swaps the backend for a
@@ -96,7 +99,7 @@
       counter += 1;
       var id = counter;
       if (timer) { clearTimeout(timer); timer = null; }
-      var player = singlePlayer(state.sport, state.picks);
+      var player = singlePlayer(state.sport, state.picks, state.query);
       ui.hide();
       if (!player) return;
       if (state.immediate || !delay) { run(id, player); return; }

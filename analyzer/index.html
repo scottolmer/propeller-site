@@ -3385,7 +3385,7 @@ function researchLookup(immediate) {
       }
     });
   }
-  researchController.update({ sport: activeSport, picks: searchQuery ? filteredPicks : [], immediate: !!immediate });
+  researchController.update({ sport: activeSport, picks: searchQuery ? filteredPicks : [], query: searchQuery, immediate: !!immediate });
 }
 
 const handleSearch = debounce(() => {

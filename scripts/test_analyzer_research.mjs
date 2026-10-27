@@ -31,17 +31,22 @@ function harness(fetchImpl) {
 
 const tick = () => new Promise((r) => setTimeout(r, 10));
 
-test("fetches only for nfl and single-player matches", async () => {
-  let calls = 0;
-  const { ctl } = harness(async () => { calls += 1; return { ok: true, json: async () => ({ status: "ok", player: { name: "x" }, props: [] }) }; });
-  ctl.update({ sport: "nba", picks: [brissett()] });
-  ctl.update({ sport: "nfl", picks: [brissett(), { player_name: "Josh Allen" }] });
+test("fetch gate: nfl, query >= 3 chars, at most one matched player", async () => {
+  const urls = [];
+  const { ctl } = harness(async (url) => { urls.push(url); return { ok: true, json: async () => ({ status: "ok", player: { name: "x" }, props: [] }) }; });
+  ctl.update({ sport: "nba", picks: [brissett()], query: "brissett" });
+  ctl.update({ sport: "nfl", picks: [brissett(), { player_name: "Josh Allen" }], query: "jo" + "sh" });
+  ctl.update({ sport: "nfl", picks: [], query: "ja" });
   ctl.update({ sport: "nfl", picks: [], query: "" });
   await tick();
-  assert.equal(calls, 0);
-  ctl.update({ sport: "nfl", picks: [brissett(), brissett({ stat_type: "pass_tds" })], query: "brissett" });
+  assert.equal(urls.length, 0);
+  ctl.update({ sport: "nfl", picks: [], query: " Jacoby Brissett " });
   await tick();
-  assert.equal(calls, 1);
+  assert.equal(urls.length, 1);
+  assert.match(urls[0], /player=Jacoby%20Brissett$/);
+  ctl.update({ sport: "nfl", picks: [brissett(), brissett({ stat_type: "pass_tds" })], query: "briss" });
+  await tick();
+  assert.match(urls[1], /player=Jacoby%20Brissett$/);
 });
 
 test("stale response is dropped", async () => {
@@ -113,7 +118,7 @@ test("fixture hook is ignored on production hosts and honored on localhost", asy
       delay: 0,
       ui: { hide() {}, mount() {}, message() {} },
     });
-    ctl.update({ sport: "nfl", picks: [brissett()], immediate: true });
+    ctl.update({ sport: "nfl", picks: [brissett()], query: "brissett", immediate: true });
     await tick();
     assert.equal(urls.length, 1);
     assert.equal(urls[0].includes("/scripts/fixtures/research-nfl-full.json"), expectFixture, hostname);
@@ -134,7 +139,7 @@ test("fixture down simulates a backend failure on localhost only", async () => {
     delay: 0,
     ui: { hide() { log.hide += 1; }, mount() { log.mounted += 1; }, message() {} },
   });
-  ctl.update({ sport: "nfl", picks: [brissett()], immediate: true });
+  ctl.update({ sport: "nfl", picks: [brissett()], query: "brissett", immediate: true });
   await tick();
   assert.equal(calls, 0);
   assert.equal(log.mounted, 0);
