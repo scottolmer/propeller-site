@@ -102,6 +102,15 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
 .hero__phone img{border-radius:34px 34px 0 0;width:100%}
 
 /* ---------- What you get ---------- */
+.works{margin-top:16px;font-size:17px;color:var(--muted)}
+.showcase-sentinel{height:1px}
+.showcase{padding:var(--gap-section) 0;background:var(--night)}
+.showcase__head{max-width:62ch}
+.showcase h2{font-size:clamp(40px,4.6vw,72px);line-height:.95}
+.showcase__head p{margin-top:18px;color:var(--muted)}
+.showcase__chat{margin-top:44px;max-width:860px}
+.showcase__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+@media (max-width:560px){.showcase__cta .pill{flex:1 1 100%}}
 .see{padding:var(--gap-section) 0;background:var(--night-2)}
 .see__grid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,6vw,112px);align-items:center}
 .see h2{font-size:clamp(44px,5vw,80px);line-height:.92}

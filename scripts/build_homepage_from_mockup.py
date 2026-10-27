@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MOCKUP = ROOT / "mockups" / "home-lookup.html"
 OUTPUT = ROOT / "index.html"
 CSS_OUTPUT = ROOT / "assets" / "css" / "home-lookup.css"
-CSS_VERSION = "20261026"
+CSS_VERSION = "20261027"
 BODY_CLASS = "pp-site-system pp-home pp-lookup"
 
 TITLE = "Propeller Picks: AI Player Prop Research in Plain English"
@@ -197,6 +197,7 @@ def head() -> str:
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/images/mobile-props-board-phone.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="/assets/css/home-lookup.css?v={CSS_VERSION}">
+  <link rel="stylesheet" href="/assets/css/research-chat.css?v=20261027">
 </head>"""
 
 

@@ -483,19 +483,20 @@
     return step('<div class="pp-rc-tools">' + rows + "</div>");
   }
 
-  function renderPaywall(surface) {
+  function renderPaywall(surface, external) {
     var home = surface === "home";
     var id = home ? "home-showcase-mcp" : "analyzer-research-mcp";
     var steps = PAYWALL_STEPS.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
     var secondary = home
       ? cta("home-showcase-analyzer", "home", "analyzer", "research_cta_click", "/analyzer/?sport=nfl", "Look up a player", "pp-rc-link")
       : cta("analyzer-research-signup", "analyzer", "signup", "signup_click", "https://app.propellerpicks.com/signup", "Create a free account", "pp-rc-link");
+    var actions = external ? "" : '<div class="pp-rc-actions">' +
+      cta(id, home ? "home" : "analyzer", "mcp", "research_cta_click", "/pricing/#ai-connections", "Get full access", "pp-rc-btn") +
+      secondary + "</div>";
     return '<div class="pp-rc-gate"><strong>' + esc(PAYWALL_HEADING) + "</strong><small>" + esc(PAYWALL_LINE) + "</small>" +
       "<ol>" + steps + "</ol>" +
       '<div class="pp-rc-url"><code>' + esc(MCP_ADDRESS) + '</code><button type="button" data-copy="' + esc(MCP_ADDRESS) + '">Copy</button></div>' +
-      '<div class="pp-rc-actions">' +
-      cta(id, home ? "home" : "analyzer", "mcp", "research_cta_click", "/pricing/#ai-connections", "Get full access", "pp-rc-btn") +
-      secondary + "</div></div>";
+      actions + "</div>";
   }
 
   // Placeholder only: the locked text itself never enters the page.
@@ -526,11 +527,11 @@
     if (showcase) {
       answer = String(cur.answer || "").split(/\n\s*\n/).filter(function (p) { return p.trim(); })
         .map(function (p) { return step("<p>" + esc(p.trim()) + "</p>"); }).join("") +
-        step(renderPaywall(surface));
+        step(renderPaywall(surface, opts.externalCtas));
     } else {
       answer = (cur.free || []).map(renderBlock).join("");
       if (cur.locked && cur.locked.length) {
-        answer += step('<div class="pp-rc-lock">' + renderLockedFiller() + renderPaywall(surface) + "</div>");
+        answer += step('<div class="pp-rc-lock">' + renderLockedFiller() + renderPaywall(surface, opts.externalCtas) + "</div>");
       }
     }
 
@@ -608,6 +609,7 @@
         stamp: stamp,
         compactTools: !!(mq && mq.matches),
         surface: surface,
+        externalCtas: !!opts.externalCtas,
         active: active,
         stage: stage
       });

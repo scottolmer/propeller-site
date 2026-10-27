@@ -256,3 +256,78 @@ test("CTA hrefs match the plan", () => {
   assert.equal(href(show, "home-showcase-mcp"), "/pricing/#ai-connections");
   assert.equal(href(show, "home-showcase-analyzer"), "/analyzer/?sport=nfl");
 });
+
+// ---- Homepage showcase loader ----
+const showcaseSource = readFileSync(new URL("../assets/js/home-showcase.js", import.meta.url), "utf8");
+const showcaseFixture = () => fixture("research-nfl-showcase.json");
+
+function loadShowcase() {
+  const window = {};
+  vm.runInNewContext(source, { window, Number, String, Array, Math, Object, JSON, RegExp, Error, Intl, Date });
+  vm.runInNewContext(showcaseSource, { window, Promise, Object, Array, JSON, Error });
+  return window;
+}
+
+function setup(fetchImpl) {
+  const win = loadShowcase();
+  const section = { hidden: true };
+  const mount = { innerHTML: "", addEventListener() {}, removeEventListener() {}, querySelectorAll() { return []; } };
+  let observed = null;
+  let disconnected = 0;
+  const calls = [];
+  class IO {
+    constructor(cb) { this.cb = cb; observed = this; }
+    observe(el) { this.el = el; }
+    disconnect() { disconnected += 1; }
+  }
+  const fetchFn = (url) => { calls.push(url); return fetchImpl(url); };
+  const sentinel = {};
+  const done = win.ppHomeShowcase.init({ section, mount, sentinel, fetchFn, IntersectionObserver: IO });
+  return {
+    section, mount, calls, done,
+    enter: () => observed.cb([{ isIntersecting: true, target: sentinel }]),
+    disconnected: () => disconnected,
+  };
+}
+const jsonResponse = (body, ok = true) => Promise.resolve({ ok, json: () => Promise.resolve(body) });
+
+test("showcase does not fetch until the placeholder enters the viewport", () => {
+  const s = setup(() => jsonResponse(showcaseFixture()));
+  assert.equal(s.calls.length, 0);
+  assert.equal(s.section.hidden, true);
+});
+
+test("showcase stays hidden on failure", async () => {
+  for (const impl of [
+    () => Promise.reject(new Error("network")),
+    () => jsonResponse({ status: "unavailable" }),
+    () => jsonResponse({}, false),
+    () => jsonResponse({ status: "ok", showcase: { payload: { questions: [] } } }),
+  ]) {
+    const s = setup(impl);
+    s.enter();
+    await s.done;
+    assert.equal(s.calls.length, 1);
+    assert.equal(s.section.hidden, true);
+    assert.equal(s.mount.innerHTML, "");
+  }
+});
+
+test("showcase renders the transcript's real tool calls", async () => {
+  const s = setup(() => jsonResponse(showcaseFixture()));
+  s.enter();
+  await s.done;
+  assert.equal(s.calls[0], "https://web-production-3c1c4.up.railway.app/api/social/research/nfl/showcase");
+  assert.equal(s.section.hidden, false);
+  const expected = showcaseFixture().showcase.payload.questions[0].tool_calls.map((t) => t.name);
+  const rows = [...s.mount.innerHTML.matchAll(/<div class="pp-rc-tool">.*?<code>([^<]+)<\/code>/g)].map((m) => m[1]);
+  assert.deepEqual(rows, expected);
+  assert.ok(s.disconnected() >= 1);
+});
+
+test("showcase CTAs are not duplicated inside the chat when the page owns them", async () => {
+  const s = setup(() => jsonResponse(showcaseFixture()));
+  s.enter();
+  await s.done;
+  assert.ok(!s.mount.innerHTML.includes("data-cta-id"));
+});

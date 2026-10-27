@@ -126,6 +126,8 @@ test("homepage and high-intent pages load the canonical CTA tracker with stable 
     "home-product-ios",
     "home-product-web-signup",
     "home-search-result",
+    "home-showcase-analyzer",
+    "home-showcase-mcp",
   ]);
   assert.match(homepage, /data-cta-id="site-nav-pricing"/);
   assert.match(homepage, /data-analytics-event="analyzer_cta_click"/);
