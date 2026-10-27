@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "player": {
+    "player_id": "nfl:bdl:4567",
+    "player_name": "Jacoby Brissett",
+    "team": "ARI",
+    "position": "QB"
+  },
+  "candidates": [],
+  "props": [
+    {
+      "stat_type": "pass_yds",
+      "line": 264.5,
+      "direction": "UNDER",
+      "confidence": 63,
+      "event_start": "2026-10-29T23:15:00Z",
+      "home_team": "DAL",
+      "away_team": "ARI",
+      "analyzed_at": "2026-10-27T15:02:00Z",
+      "detail": "summary",
+      "signal_summary": {
+        "agree": 3,
+        "against": 3,
+        "neutral": 0,
+        "total": 6
+      }
+    }
+  ],
+  "more_like_this": [],
+  "game_logs": [],
+  "next_event_start": "2026-10-29T23:15:00Z",
+  "checked_at": "2026-10-27T16:00:00Z",
+  "score_meaning": "Propeller NFL weighted-agent directional confidence on a 50–100 scale; not win probability or betting edge.",
+  "limitations": [
+    "Stored analysis only; no fresh scoring, projections or live prices.",
+    "Scores are directional confidence, not win probability or betting edge.",
+    "Full signal detail is shown only for the free-preview selection."
+  ],
+  "generated_at": "2026-10-27T16:00:01Z",
+  "source": "propeller-public-research-preview"
+}

@@ -1,0 +1,119 @@
+{
+  "status": "ok",
+  "showcase": {
+    "id": 1,
+    "sport": "nfl",
+    "slate_date": "2026-11-01",
+    "generated_at": "2026-11-01T16:02:00Z",
+    "model": "claude",
+    "status": "published",
+    "payload": {
+      "player": "Patrick Mahomes",
+      "prop": "Passing Yards 264.5",
+      "questions": [
+        {
+          "chip": "ou",
+          "question": "Is Patrick Mahomes over or under 264.5 passing yards?",
+          "tool_calls": [
+            {
+              "name": "search_nfl_players",
+              "input": {
+                "query": "Patrick Mahomes"
+              },
+              "output_excerpt": "",
+              "is_error": false
+            },
+            {
+              "name": "get_top_nfl_props",
+              "input": {
+                "limit": 5
+              },
+              "output_excerpt": "",
+              "is_error": false
+            },
+            {
+              "name": "get_nfl_player_context",
+              "input": {
+                "player_id": "mahomes"
+              },
+              "output_excerpt": "",
+              "is_error": false
+            }
+          ],
+          "answer": "Propeller leans under 264.5 with a Confidence Score of 63. Three of six signals point under.\n\nThis is research, and the result can go either way."
+        },
+        {
+          "chip": "matchup",
+          "question": "How is the matchup for Patrick Mahomes?",
+          "tool_calls": [
+            {
+              "name": "search_nfl_players",
+              "input": {
+                "query": "Patrick Mahomes"
+              },
+              "output_excerpt": "",
+              "is_error": false
+            },
+            {
+              "name": "get_nfl_player_context",
+              "input": {
+                "player_id": "mahomes"
+              },
+              "output_excerpt": "",
+              "is_error": false
+            }
+          ],
+          "answer": "The matchup signal points under. His recent role is steady."
+        },
+        {
+          "chip": "more",
+          "question": "Find more props like this one.",
+          "tool_calls": [
+            {
+              "name": "search_nfl_players",
+              "input": {
+                "query": "Patrick Mahomes"
+              },
+              "output_excerpt": "",
+              "is_error": false
+            },
+            {
+              "name": "get_top_nfl_props",
+              "input": {
+                "limit": 5
+              },
+              "output_excerpt": "",
+              "is_error": false
+            }
+          ],
+          "answer": "Two other passing yard lines show a similar lean today."
+        },
+        {
+          "chip": "risk",
+          "question": "What could go wrong with this lean?",
+          "tool_calls": [
+            {
+              "name": "search_nfl_players",
+              "input": {
+                "query": "Patrick Mahomes"
+              },
+              "output_excerpt": "",
+              "is_error": false
+            },
+            {
+              "name": "get_nfl_player_context",
+              "input": {
+                "player_id": "mahomes"
+              },
+              "output_excerpt": "",
+              "is_error": false
+            }
+          ],
+          "answer": "The pace of the game could change his volume. Injuries to receivers also matter."
+        }
+      ]
+    }
+  },
+  "generated_at": "2026-11-01T16:02:00Z",
+  "source": "showcase"
+}
