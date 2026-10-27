@@ -76,7 +76,8 @@ test("risk answer uses opposing signals only", () => {
 test("chart only with current-season logs", () => {
   const chartIn = (lookup) => {
     const ou = byChip(api.buildConversations(lookup), "ou");
-    return [...ou.free, ...ou.locked].filter((b) => b.type === "chart");
+    assert.equal(ou.locked.filter((b) => b.type === "chart").length, 0);
+    return ou.free.filter((b) => b.type === "chart");
   };
   const charts = chartIn(full());
   assert.equal(charts.length, 1);

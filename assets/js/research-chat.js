@@ -305,12 +305,12 @@
     // Over or under: lean card + first two agreeing signals free; the rest locked.
     ou.free = [leanBlock(player, prop), textBlock(countSentence(prop))];
     if (parts.agree.length) ou.free.push(signalList(parts.agree.slice(0, 2)));
+    if (chart) ou.free.push(chart);
     if (parts.agree.length > 2) ou.locked.push(signalList(parts.agree.slice(2)));
     if (parts.against.length) {
       ou.locked.push(textBlock(say("Pointing the other way ({other}):", { other: otherSide })));
       ou.locked.push(signalList(parts.against));
     }
-    if (chart) ou.locked.push(chart);
     ou.locked.push(textBlock(say("These are supporting signals, not a causal explanation.", {})));
 
     // Matchup: the Matchup and DVOA signals in plain words.
