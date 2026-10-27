@@ -186,13 +186,13 @@ test("summary mode shows the free-account prompt", () => {
 });
 
 test("showcase stamp verbatim and answers escaped", () => {
-  const stamp = "Written by Claude using Propeller's MCP · Sun, Nov 1 · 11:02 AM ET";
+  const stamp = "Written by Claude using Propeller's research tools · Sun, Nov 1 · 11:02 AM ET";
   const convs = [{
     chip: "ou", label: "Over or under?", question: "Q <b>?",
     toolCalls: [{ name: "search_nfl_players" }], answer: "Leans under.\n\nSecond <i>para</i>."
   }];
   const html = api.renderChat(convs, { mode: "showcase", stamp, compactTools: false, surface: "home" });
-  assert.ok(html.includes("Written by Claude using Propeller&#39;s MCP · Sun, Nov 1 · 11:02 AM ET") ||
+  assert.ok(html.includes("Written by Claude using Propeller&#39;s research tools · Sun, Nov 1 · 11:02 AM ET") ||
     html.includes(stamp));
   assert.ok(!html.includes("<i>para"));
   assert.ok(html.includes("&lt;i&gt;para&lt;/i&gt;"));
@@ -250,8 +250,8 @@ test("mount showcase drops questions failing the guard", () => {
   api.mountResearchChat(container, { transcript, surface: "home" });
   assert.ok(!container.innerHTML.includes("This is a lock"));
   assert.ok(container.innerHTML.includes("Fine answer."));
-  assert.ok(container.innerHTML.includes("Written by Claude using Propeller&#39;s MCP · Sun, Nov 1 · 11:02 AM ET") ||
-    container.innerHTML.includes("Written by Claude using Propeller's MCP · Sun, Nov 1 · 11:02 AM ET"));
+  assert.ok(container.innerHTML.includes("Written by Claude using Propeller&#39;s research tools · Sun, Nov 1 · 11:02 AM ET") ||
+    container.innerHTML.includes("Written by Claude using Propeller's research tools · Sun, Nov 1 · 11:02 AM ET"));
 });
 
 const fakeContainer = () => {
@@ -287,10 +287,10 @@ test("showcase label never drops when generated_at does not parse", () => {
   const c = fakeContainer();
   api.mountResearchChat(c, { transcript: showcaseTranscript({ generated_at: "not a date" }), surface: "home" });
   assert.ok(c.innerHTML.includes("Fine answer."));
-  assert.match(c.innerHTML, /<div class="pp-rc-bar"><span>Written by Claude using Propeller(&#39;|')s MCP<\/span>/);
+  assert.match(c.innerHTML, /<div class="pp-rc-bar"><span>Written by Claude using Propeller(&#39;|')s research tools<\/span>/);
   const bare = api.renderChat([{ chip: "ou", label: "x", question: "q", toolCalls: [], answer: "a" }],
     { mode: "showcase", compactTools: false, surface: "home" });
-  assert.match(bare, /<div class="pp-rc-bar"><span>Written by Claude using Propeller(&#39;|')s MCP<\/span>/);
+  assert.match(bare, /<div class="pp-rc-bar"><span>Written by Claude using Propeller(&#39;|')s research tools<\/span>/);
 });
 
 test("showcase mounts only for a Claude transcript", () => {

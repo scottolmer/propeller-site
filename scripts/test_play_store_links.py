@@ -75,7 +75,7 @@ class PlayStoreContracts(unittest.TestCase):
     def test_showcase_intro_describes_a_recent_slate(self) -> None:
         intro = (
             "Connect Propeller to an AI tool and ask about a player in your own words. "
-            "This is a real conversation Claude had through Propeller's MCP for a recent NFL slate. "
+            "This is a real conversation Claude had with Propeller's research tools, the same tools the MCP connection gives your AI assistant, for a recent NFL slate. "
             "The time stamp shows when it ran, and every Propeller source it checked is listed."
         )
         for relative in ("index.html", "mockups/home-lookup.html"):
