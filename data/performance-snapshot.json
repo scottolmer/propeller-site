@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-27T10:40:41Z",
+  "generated_at": "2026-10-27T15:03:40Z",
   "latest_sample_game_date": "2026-10-26",
   "canonical_report": "https://propellerpicks.com/results/",
   "historical_database": {
     "unit": "raw graded analysis rows",
-    "total": 3786145,
-    "wins": 2482979,
-    "losses": 1302127,
+    "total": 3786350,
+    "wins": 2483128,
+    "losses": 1302183,
     "pushes": 1039,
     "historical_outcome_rate": 65.6,
     "rate_formula": "wins / (wins + losses); pushes excluded",
@@ -15,9 +15,9 @@
   },
   "deduplicated_public_ledger": {
     "unit": "prop-result entries after the current public API collapse rules",
-    "total": 487808,
-    "wins": 323523,
-    "losses": 164166,
+    "total": 487891,
+    "wins": 323585,
+    "losses": 164187,
     "pushes": 119,
     "historical_outcome_rate": 66.3,
     "rate_formula": "wins / (wins + losses); pushes excluded",
@@ -57,9 +57,9 @@
     {
       "key": "nba",
       "label": "NBA",
-      "total": 45660,
-      "wins": 26612,
-      "losses": 19048,
+      "total": 45865,
+      "wins": 26761,
+      "losses": 19104,
       "pushes": 0,
       "win_rate": 58.3,
       "published": true
@@ -169,9 +169,9 @@
       "min": 55,
       "max": 64,
       "all": {
-        "total": 1629815,
-        "wins": 1010254,
-        "losses": 619145,
+        "total": 1630020,
+        "wins": 1010403,
+        "losses": 619201,
         "pushes": 416,
         "win_rate": 62.0
       },
@@ -183,9 +183,9 @@
         "win_rate": 55.5
       },
       "under": {
-        "total": 1238657,
-        "wins": 793337,
-        "losses": 445053,
+        "total": 1238862,
+        "wins": 793486,
+        "losses": 445109,
         "pushes": 267,
         "win_rate": 64.1
       }
@@ -263,10 +263,10 @@
       "bookmaker": "draftkings"
     },
     {
-      "result_id": "pr_f1a29a330e1c83d20581",
+      "result_id": "pr_29c1fbc3c13a1abc6dc6",
       "sport": "mlb",
-      "player_name": "Christian Yelich",
-      "stat_type": "stolen_bases",
+      "player_name": "Ben Williamson",
+      "stat_type": "doubles",
       "line": 0.5,
       "predicted_direction": "UNDER",
       "predicted_score": 21.8,
@@ -277,10 +277,10 @@
       "bookmaker": "draftkings"
     },
     {
-      "result_id": "pr_29c1fbc3c13a1abc6dc6",
+      "result_id": "pr_f1a29a330e1c83d20581",
       "sport": "mlb",
-      "player_name": "Ben Williamson",
-      "stat_type": "doubles",
+      "player_name": "Christian Yelich",
+      "stat_type": "stolen_bases",
       "line": 0.5,
       "predicted_direction": "UNDER",
       "predicted_score": 21.8,
