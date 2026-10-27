@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Propeller MCP Server: Use Propeller Research in Claude, ChatGPT and Cursor</title>
-<meta name="description" content="Connect Propeller Picks to Claude, ChatGPT, Cursor, VS Code and other MCP-compatible AI tools. Server URL, setup steps, available tools, example prompts and limits.">
+<meta name="description" content="Connect Propeller Picks to Claude, ChatGPT, Meta Muse, Cursor, VS Code and other MCP-compatible AI tools. Server URL, setup steps, available tools, example prompts and limits.">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://propellerpicks.com/mcp/">
 <meta property="og:type" content="article">
@@ -26,7 +26,7 @@
   "@type": "WebPage",
   "name": "Propeller MCP Server",
   "url": "https://propellerpicks.com/mcp/",
-  "description": "Connect Propeller Picks to Claude, ChatGPT, Cursor, VS Code and other MCP-compatible AI tools. Server URL, setup steps, available tools, example prompts and limits.",
+  "description": "Connect Propeller Picks to Claude, ChatGPT, Meta Muse, Cursor, VS Code and other MCP-compatible AI tools. Server URL, setup steps, available tools, example prompts and limits.",
   "dateModified": "2026-10-27",
   "inLanguage": "en-US",
   "isPartOf": {"@type": "WebSite", "name": "Propeller Picks", "url": "https://propellerpicks.com"},
@@ -186,7 +186,7 @@ body.pp-wave-a-page .mcp-link { font: 600 14px/1.5 var(--mono); }
 <section class="air-hero"><div class="air-wrap">
   <p class="air-kicker">MCP server for AI tools</p>
   <h1>Use Propeller inside <em>your AI tool.</em></h1>
-  <p class="air-deck">Connect Claude, ChatGPT, Cursor or another MCP-compatible AI tool to your Propeller research. Then ask about a player, today's board or a saved pick in plain English, and your assistant answers from Propeller's stored data instead of guessing.</p>
+  <p class="air-deck">Connect Claude, ChatGPT, Meta Muse, Cursor or another MCP-compatible AI tool to your Propeller research. Then ask about a player, today's board or a saved pick in plain English, and your assistant answers from Propeller's stored data instead of guessing.</p>
   <div class="mcp-prompt" role="group" aria-labelledby="mcpPromptLabel">
     <div class="mcp-prompt__head">
       <span class="mcp-prompt__label" id="mcpPromptLabel">Copy this and paste it into your AI tool</span>
@@ -194,7 +194,7 @@ body.pp-wave-a-page .mcp-link { font: 600 14px/1.5 var(--mono); }
     </div>
     <p class="mcp-prompt__text" id="mcpPromptText">Connect me to the Propeller Picks MCP server at https://mcp.propellerpicks.com/mcp. It is a remote MCP server (Streamable HTTP) that uses OAuth, so I sign in with my Propeller account and no API key is needed. If you can add it yourself, please do. If you can't, give me the exact steps for the app I'm using right now. Once it's connected, tell me what you can look up with it.</p>
   </div>
-  <p class="mcp-prompt__note">Coding tools such as Claude Code and Cursor can usually add the server for you. Chat apps such as Claude and ChatGPT will walk you through their connector settings instead. Steps for each tool are <a href="#install">below</a>.</p>
+  <p class="mcp-prompt__note">Coding tools such as Claude Code and Cursor can usually add the server for you. Chat apps such as Claude and ChatGPT will point you to their connector settings, and Meta Muse walks you through connecting right in the chat. Steps for each tool are <a href="#install">below</a>.</p>
   <div class="air-meta"><span class="air-byline">By Scott Olmer · Checked October 27, 2026</span><span>Included with full workspace access</span><span>Sign in with your Propeller account</span><span>Read-only: never places entries</span></div>
 </div></section>
 
@@ -247,6 +247,17 @@ body.pp-wave-a-page .mcp-link { font: 600 14px/1.5 var(--mono); }
           <li>In a chat, add Propeller from the <strong>+</strong> menu under Developer mode.</li>
         </ol>
         <p class="mcp-small">Custom MCP connectors in ChatGPT depend on your ChatGPT plan and workspace settings.</p>
+      </div>
+    </details>
+    <details class="mcp-client">
+      <summary>Meta Muse <small>Chat</small></summary>
+      <div class="mcp-client__body">
+        <ol>
+          <li>Copy the message at the top of this page and paste it into a Muse chat.</li>
+          <li>Follow the connection steps Muse gives you.</li>
+          <li>When prompted, sign in to Propeller and approve access.</li>
+        </ol>
+        <p class="mcp-small">Muse sets up the connection from inside the chat, so you don't need to open a settings menu.</p>
       </div>
     </details>
     <details class="mcp-client">
