@@ -2,7 +2,7 @@
 version: 1
 slug: "mockups-home-ai-winning-v2-html"
 primary_target: "mockups/home-ai-winning-v2.html"
-related_targets: ["index.html","assets/css/home-ai.css"]
+related_targets: ["assets/css/home-ai.css"]
 ---
 
 Scope: Propeller Picks public homepage. Visitor mode: persuade a first-time, mobile-first visitor in plain English.

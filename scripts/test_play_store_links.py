@@ -19,14 +19,14 @@ PLAY_STORE_URL = (
 
 class PlayStoreContracts(unittest.TestCase):
     def test_homepage_and_source_link_to_google_play(self) -> None:
-        for relative in ("index.html", "mockups/home-ai-winning-v2.html"):
+        for relative in ("index.html", "mockups/home-lookup.html"):
             source = (ROOT / relative).read_text(encoding="utf-8")
             self.assertIn(PLAY_STORE_URL.replace("&", "&amp;"), source)
             self.assertIn("Get Propeller Picks on Google Play", source)
             self.assertIn("Google Play", source)
 
     def test_homepage_and_source_link_to_app_store(self) -> None:
-        for relative in ("index.html", "mockups/home-ai-winning-v2.html"):
+        for relative in ("index.html", "mockups/home-lookup.html"):
             source = (ROOT / relative).read_text(encoding="utf-8")
             self.assertIn(APP_STORE_URL, source)
             self.assertIn("Download Propeller Picks on the App Store", source)
@@ -57,7 +57,7 @@ class PlayStoreContracts(unittest.TestCase):
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn('host === "play.google.com"', analytics)
         self.assertIn('name: "play_store_click"', analytics)
-        self.assertIn("/assets/css/home-ai.css?v=20260815", homepage)
+        self.assertIn("/assets/css/home-lookup.css?v=20261026", homepage)
         self.assertIn("/assets/js/analytics-events.js?v=20260817", homepage)
 
 

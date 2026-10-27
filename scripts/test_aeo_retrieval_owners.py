@@ -129,7 +129,7 @@ def main() -> None:
         "homepage must clearly define Propeller's category in visible copy"
     )
     assert "First-observed capture" in homepage, "homepage publication boundary missing"
-    assert '"dateModified": "2026-08-15"' in homepage, "homepage schema date is stale"
+    assert '"dateModified": "2026-10-26"' in homepage, "homepage schema date is stale"
     assert "does not independently verify event-start ordering or outcome timing" in homepage, (
         "homepage must disclose the prospective ledger timing limitation"
     )
