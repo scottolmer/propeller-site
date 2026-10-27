@@ -217,3 +217,5 @@
 @media (prefers-reduced-motion: reduce) {
   .pp-rc-staged .pp-rc-step { opacity: 1; transform: none; transition: none; }
 }
+
+.research-notice { margin: 0 0 10px; font-size: 13px; color: var(--text-muted, #6b7280); }
