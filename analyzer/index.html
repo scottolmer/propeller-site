@@ -13,6 +13,9 @@
 </script>
 <script src="/assets/js/analyzer-events.js?v=20260715" defer></script>
 <script src="/assets/js/analyzer-save-panel.js?v=20261026" defer></script>
+<script src="/assets/js/research-chat.js?v=20261027" defer></script>
+<script src="/assets/js/analyzer-research.js?v=20261027" defer></script>
+<link rel="stylesheet" href="/assets/css/research-chat.css?v=20261027">
 <link rel="stylesheet" href="/assets/css/analyzer-save-panel.css?v=20261026b">
 <script src="/assets/js/analyzer-webmcp.js?v=20260827" defer></script>
 
@@ -2372,6 +2375,11 @@ footer {
       </div>
 
       <!-- Picks grid (populated by JS) -->
+      <section id="researchChat" hidden>
+        <p id="researchNotice" class="research-notice" hidden></p>
+        <div id="researchChatMount"></div>
+      </section>
+
       <div class="results-grid" id="picksGrid" style="display:none;" aria-live="polite" aria-label="Player prop results"></div>
     </div>
 
@@ -3300,6 +3308,7 @@ async function loadSport(sport) {
   searchInput.value = '';
   searchQuery       = '';
   clearBtn.classList.remove('visible');
+  researchLookup(false);
 
   if (feedStatusBySport[sport]) {
     hideSkeleton();
@@ -3336,6 +3345,52 @@ async function loadSport(sport) {
 // ============================================================
 // SEARCH
 // ============================================================
+// AI research chat: NFL single-player lookups only. Any failure leaves the card untouched.
+let researchChatHandle = null;
+let researchController = null;
+let researchImmediateOnce = false;
+function researchHide() {
+  const box = document.getElementById('researchChat');
+  if (researchChatHandle) { researchChatHandle.destroy(); researchChatHandle = null; }
+  if (box) {
+    box.hidden = true;
+    const note = document.getElementById('researchNotice');
+    note.hidden = true; note.textContent = '';
+    document.getElementById('researchChatMount').innerHTML = '';
+  }
+}
+function researchLookup(immediate) {
+  const api = window.ppAnalyzerResearch;
+  const chat = window.ppResearchChat;
+  if (!api || !chat) return;
+  if (!researchController) {
+    researchController = api.createController({
+      ui: {
+        hide: researchHide,
+        message: (text) => {
+          researchHide();
+          const note = document.getElementById('researchNotice');
+          note.textContent = text; note.hidden = false;
+          document.getElementById('researchChat').hidden = false;
+        },
+        mount: (lookup) => {
+          researchHide();
+          const mount = document.getElementById('researchChatMount');
+          researchChatHandle = chat.mountResearchChat(mount, { lookup, surface: 'analyzer' });
+          const who = lookup.player && lookup.player.name;
+          const norm = (n) => String(n || '').toLowerCase().replace(/\s+/g, ' ').trim();
+          const playerPicks = who ? allPicks.filter((p) => p && norm(p.player_name) === norm(who)) : [];
+          const moved = api.lineMovedNotice(lookup.player && lookup.player.name, (lookup.props || [])[0], playerPicks);
+          const note = document.getElementById('researchNotice');
+          if (moved) { note.textContent = moved; note.hidden = false; }
+          document.getElementById('researchChat').hidden = false;
+        }
+      }
+    });
+  }
+  researchController.update({ sport: activeSport, picks: searchQuery ? filteredPicks : [], query: searchQuery, immediate: !!immediate });
+}
+
 const handleSearch = debounce(() => {
   const q         = document.getElementById('searchInput').value.toLowerCase().trim();
   const clearBtn  = document.getElementById('searchClear');
@@ -3351,6 +3406,8 @@ const handleSearch = debounce(() => {
     );
   }
   renderPicks(filteredPicks);
+  researchLookup(researchImmediateOnce);
+  researchImmediateOnce = false;
 }, 200);
 
 // ============================================================
@@ -3386,6 +3443,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loadSport(initialSport).then(() => {
       if (!initialQuery || activeSport !== initialSport) return;
       document.getElementById('searchInput').value = initialQuery;
+      researchImmediateOnce = true;
       handleSearch();
       // Arriving with a player query (from the homepage lookup), show the results, not the hero.
       setTimeout(() => {

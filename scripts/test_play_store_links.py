@@ -57,8 +57,31 @@ class PlayStoreContracts(unittest.TestCase):
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn('host === "play.google.com"', analytics)
         self.assertIn('name: "play_store_click"', analytics)
-        self.assertIn("/assets/css/home-lookup.css?v=20261026", homepage)
+        self.assertIn("/assets/css/home-lookup.css?v=20261027", homepage)
         self.assertIn("/assets/js/analytics-events.js?v=20260817", homepage)
+
+
+    def test_homepage_does_not_block_render_on_research_chat_css(self) -> None:
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        head = homepage.split("</head>", 1)[0]
+        self.assertNotIn("research-chat.css", head)
+        builder = (ROOT / "scripts/build_homepage_from_mockup.py").read_text(encoding="utf-8")
+        self.assertNotIn("research-chat.css", builder)
+        showcase = (ROOT / "assets/js/home-showcase.js").read_text(encoding="utf-8")
+        self.assertEqual(len(re.findall(r"research-chat\.css\?v=\d+", showcase)), 1)
+        analyzer = (ROOT / "analyzer/index.html").read_text(encoding="utf-8")
+        self.assertIn('<link rel="stylesheet" href="/assets/css/research-chat.css?v=20261027">', analyzer)
+
+    def test_showcase_intro_describes_a_recent_slate(self) -> None:
+        intro = (
+            "Connect Propeller to an AI tool and ask about a player in your own words. "
+            "This is a real conversation Claude had through Propeller's MCP for a recent NFL slate. "
+            "The time stamp shows when it ran, and every Propeller source it checked is listed."
+        )
+        for relative in ("index.html", "mockups/home-lookup.html"):
+            source = (ROOT / relative).read_text(encoding="utf-8")
+            self.assertIn(intro, source, relative)
+            self.assertNotIn("today's slate", source, relative)
 
 
 if __name__ == "__main__":

@@ -179,7 +179,7 @@
   <link rel="preload" href="/assets/fonts/familjen-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/images/mobile-props-board-phone.webp" as="image" type="image/webp" fetchpriority="high">
-  <link rel="stylesheet" href="/assets/css/home-lookup.css?v=20261026">
+  <link rel="stylesheet" href="/assets/css/home-lookup.css?v=20261027">
   <script src="/assets/js/analytics-loader.js?v=20260915"></script>
   <!-- PP_SITE_HEAD_START -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -249,6 +249,8 @@
           </div>
         </form>
 
+        <p class="works" data-rise>Works with ChatGPT, Claude and other AI tools that support MCP.</p>
+
         <p class="try" data-rise>Try one:
           <a href="/analyzer/?sport=nfl&amp;q=Patrick%20Mahomes">Patrick Mahomes</a>
           <a href="/analyzer/?sport=nba&amp;q=Jalen%20Brunson">Jalen Brunson</a>
@@ -287,6 +289,21 @@
         <img src="/images/app-prop-detail-phone.jpg" alt="Propeller research for Andrew Abbott's strikeout line on the iPhone app, with a 78 Confidence Score and his recent games against the line" width="640" height="1391" loading="lazy">
         <figcaption>Andrew Abbott's strikeout line in the Propeller iPhone app.</figcaption>
       </figure>
+    </div>
+  </section>
+
+  <div id="showcase-sentinel" class="showcase-sentinel" aria-hidden="true"></div>
+  <section class="showcase" id="showcase" aria-labelledby="showcase-title" hidden>
+    <div class="wrap">
+      <div class="showcase__head">
+        <h2 id="showcase-title" data-rise>See what your AI assistant gets</h2>
+        <p data-rise style="--i:1">Connect Propeller to an AI tool and ask about a player in your own words. This is a real conversation Claude had through Propeller's MCP for a recent NFL slate. The time stamp shows when it ran, and every Propeller source it checked is listed.</p>
+      </div>
+      <div id="showcase-chat" class="showcase__chat"></div>
+      <div class="showcase__cta">
+        <a class="pill pill--store" href="/pricing/#ai-connections" data-analytics-event="research_cta_click" data-cta-id="home-showcase-mcp" data-cta-surface="home" data-cta-destination="mcp">Connect Propeller to your AI tool</a>
+        <a class="pill pill--quiet" href="/analyzer/?sport=nfl" data-analytics-event="research_cta_click" data-cta-id="home-showcase-analyzer" data-cta-surface="home" data-cta-destination="analyzer">Look up another player</a>
+      </div>
     </div>
   </section>
 
@@ -477,6 +494,8 @@
   }
 })();
 </script>
+<script src="/assets/js/research-chat.js?v=20261027" defer></script>
+<script src="/assets/js/home-showcase.js?v=20261027" defer></script>
 <script src="/assets/js/live-record.js?v=20260715-2"></script>
 <script src="/assets/js/analytics-events.js?v=20260817" defer></script>
 <!-- PP_SITE_FOOTER_START -->
