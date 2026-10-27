@@ -198,6 +198,15 @@ The Replay Panels, Confidence Score panel, Product Proof Stage, and Difference S
 - **Navigation:** translucent Replay Night with a blue bottom border and `blur(16px)` backdrop. The orange nav CTA is the lone filled nav element. At 1080px and below, the opened menu uses Studio Navy and blue dividers.
 - **FAQ:** details rows use blue hairlines, Familjen questions, orange plus signs, and muted Plex answers. The fourth disclosure carries the detailed public-record/methodology context and its hidden live-record data contract; it is not a visible record-strip component. The expansion behavior should stay native and accessible.
 
+### Research chat
+
+- **Where:** `assets/js/research-chat.js` and `assets/css/research-chat.css` render one component in two places: the analyzer, under a single-player NFL match (`analyzer-research.js` drives it), and the homepage showcase section (`home-showcase.js`, lazy-fetched when its sentinel nears the viewport). Both are hidden until data arrives.
+- **Character:** a conversation panel on the night ground. Chips pick the question, a tool-call list shows what ran, then the answer.
+- **Free vs locked:** the free part is the lean card, the prop count, and the first two agreeing signals with the chart. Remaining signals, matchup, and risks sit behind one locked block with the MCP paywall (full access, `$15` a month). The locked text is filler, never real content.
+- **Honest labels:** the analyzer bar reads "Built from Propeller's data" (rule-built, not a model). The showcase bar reads "Written by Claude using Propeller's MCP" with the ET timestamp. The footer always says research only, not a guarantee, and scores are model confidence, not win probabilities. Copy passes a banned-word guard (lock, guarantee, win probability, because).
+- **Fallback:** any fetch error, timeout (5s), non-`ok` status, or empty payload hides the whole block; `no_current_prop` shows a one-line notice. The page never shows a broken or loading chat. `?researchFixture=full|summary|showcase|down` swaps in fixtures or simulates failure on `localhost`, `127.0.0.1`, and `[::1]` only.
+- **Tokens:** `--rc-night`, `--rc-night-2`, `--rc-night-3`, `--rc-cream`, `--rc-orange`, `--rc-blue`, `--rc-muted`, `--rc-line`, `--rc-display` (Familjen Grotesk), `--rc-body` (Plex Sans), `--rc-mono`. Reduced motion skips the staged reveal; at 480px and below the chips and tool list stack.
+
 ## Do's and Don'ts
 
 ### Do:
