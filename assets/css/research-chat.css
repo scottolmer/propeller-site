@@ -76,6 +76,7 @@
   padding: 10px 14px;
 }
 .pp-rc-st::before { color: var(--rc-blue); content: "\2713"; font-weight: 700; }
+.pp-rc-st-fail::before { color: var(--text-tertiary, #94A3B8); content: "\2715"; }
 .pp-rc-tool code { font: inherit; white-space: nowrap; }
 .pp-rc-tool em { color: var(--rc-muted); font-style: normal; margin-left: auto; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .pp-rc-tools-compact { border: 1px solid var(--rc-line); border-radius: 12px; display: grid; gap: 8px; padding: 0; }
@@ -218,4 +219,4 @@
   .pp-rc-staged .pp-rc-step { opacity: 1; transform: none; transition: none; }
 }
 
-.research-notice { margin: 0 0 10px; font-size: 13px; color: var(--text-muted, #6b7280); }
+.research-notice { margin: 0 0 10px; font-size: 13px; color: var(--text-tertiary, #94A3B8); }

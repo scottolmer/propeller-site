@@ -197,7 +197,6 @@ def head() -> str:
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/images/mobile-props-board-phone.webp" as="image" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="/assets/css/home-lookup.css?v={CSS_VERSION}">
-  <link rel="stylesheet" href="/assets/css/research-chat.css?v=20261027">
 </head>"""
 
 

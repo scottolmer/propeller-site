@@ -3377,7 +3377,10 @@ function researchLookup(immediate) {
           researchHide();
           const mount = document.getElementById('researchChatMount');
           researchChatHandle = chat.mountResearchChat(mount, { lookup, surface: 'analyzer' });
-          const moved = api.lineMovedNotice((lookup.props || [])[0], allPicks);
+          const who = lookup.player && lookup.player.name;
+          const norm = (n) => String(n || '').toLowerCase().replace(/\s+/g, ' ').trim();
+          const playerPicks = who ? allPicks.filter((p) => p && norm(p.player_name) === norm(who)) : [];
+          const moved = api.lineMovedNotice(lookup.player && lookup.player.name, (lookup.props || [])[0], playerPicks);
           const note = document.getElementById('researchNotice');
           if (moved) { note.textContent = moved; note.hidden = false; }
           document.getElementById('researchChat').hidden = false;

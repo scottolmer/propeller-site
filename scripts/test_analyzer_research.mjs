@@ -87,9 +87,23 @@ test("backend failure keeps the card", async () => {
 test("line moved", () => {
   const api = load();
   const lookup = { stat_type: "pass_yds", line: 264.5 };
-  assert.equal(api.lineMovedNotice(lookup, [brissett()]), "The public preview line is now 259.5 (was 264.5).");
-  assert.equal(api.lineMovedNotice(lookup, [brissett({ line: 264.5 })]), null);
-  assert.equal(api.lineMovedNotice(lookup, [brissett({ stat_type: "pass_tds" })]), null);
+  assert.equal(api.lineMovedNotice("Jacoby Brissett", lookup, [brissett()]), "The public preview line is now 259.5 (was 264.5).");
+  assert.equal(api.lineMovedNotice("Jacoby Brissett", lookup, [brissett({ line: 264.5 })]), null);
+  assert.equal(api.lineMovedNotice("Jacoby Brissett", lookup, [brissett({ stat_type: "pass_tds" })]), null);
+});
+
+test("line moved notice matches the looked-up player, not another player's same stat", () => {
+  const api = load();
+  const lookup = { stat_type: "pass_yds", line: 264.5 };
+  const other = { player_name: "Kyler Murray", stat_type: "pass_yds", line: 231.5 };
+  assert.equal(api.lineMovedNotice("Jacoby Brissett", lookup, [other]), null);
+  assert.equal(api.lineMovedNotice("Jacoby Brissett", lookup, [other, brissett({ line: 264.5 })]), null);
+  assert.equal(api.lineMovedNotice("  jacoby  BRISSETT ", lookup, [other, brissett()]), "The public preview line is now 259.5 (was 264.5).");
+  assert.equal(api.lineMovedNotice("", lookup, [brissett()]), null);
+});
+
+test("analyzer passes the lookup player name to the line moved check", () => {
+  assert.match(html, /lineMovedNotice\(\s*lookup\.player && lookup\.player\.name,/);
 });
 
 test("no current prop shows next slate", async () => {

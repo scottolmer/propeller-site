@@ -5,12 +5,18 @@
   var TIMEOUT_MS = 5000;
   var DELAY_MS = 600;
 
-  function lineMovedNotice(lookupProp, currentPicks) {
-    if (!lookupProp || !Array.isArray(currentPicks)) return null;
+  function normName(n) {
+    return String(n == null ? "" : n).toLowerCase().replace(/\s+/g, " ").trim();
+  }
+
+  // Compares the lookup's line with the current pick for the same player and stat only.
+  function lineMovedNotice(playerName, lookupProp, currentPicks) {
+    var who = normName(playerName);
+    if (!who || !lookupProp || !Array.isArray(currentPicks)) return null;
     var oldLine = Number(lookupProp.line);
     for (var i = 0; i < currentPicks.length; i++) {
       var p = currentPicks[i];
-      if (p && p.stat_type === lookupProp.stat_type && p.line != null) {
+      if (p && normName(p.player_name) === who && p.stat_type === lookupProp.stat_type && p.line != null) {
         var now = Number(p.line);
         if (isFinite(now) && isFinite(oldLine) && now !== oldLine) {
           return "The public preview line is now " + now + " (was " + oldLine + ").";

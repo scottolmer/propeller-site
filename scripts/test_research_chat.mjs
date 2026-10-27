@@ -231,6 +231,7 @@ test("mount showcase drops questions failing the guard", () => {
   const container = { innerHTML: "", addEventListener() {}, removeEventListener() {}, querySelectorAll() { return []; } };
   const transcript = {
     generated_at: "2026-11-01T16:02:00Z",
+    model: "claude",
     payload: { player: "A", prop: "B", questions: [
       { chip: "ou", question: "q1", tool_calls: [{ name: "t" }], answer: "This is a lock." },
       { chip: "risk", question: "q2", tool_calls: [{ name: "t" }], answer: "Fine answer." }
@@ -241,6 +242,87 @@ test("mount showcase drops questions failing the guard", () => {
   assert.ok(container.innerHTML.includes("Fine answer."));
   assert.ok(container.innerHTML.includes("Written by Claude using Propeller&#39;s MCP · Sun, Nov 1 · 11:02 AM ET") ||
     container.innerHTML.includes("Written by Claude using Propeller's MCP · Sun, Nov 1 · 11:02 AM ET"));
+});
+
+const fakeContainer = () => {
+  const listeners = {};
+  return {
+    listeners,
+    innerHTML: "",
+    addEventListener(t, fn) { listeners[t] = fn; },
+    removeEventListener(t) { delete listeners[t]; },
+    querySelectorAll() { return []; }
+  };
+};
+const showcaseTranscript = (extra = {}) => ({
+  generated_at: "2026-11-01T16:02:00Z",
+  model: "claude-sonnet-4",
+  payload: { questions: [{ chip: "ou", question: "q1", tool_calls: [{ name: "search_nfl_players" }], answer: "Fine answer." }] },
+  ...extra
+});
+
+test("chip click keeps keyboard focus on the active chip", () => {
+  const c = fakeContainer();
+  const focused = [];
+  c.querySelectorAll = (sel) => sel === "[data-chip]"
+    ? ["ou", "matchup", "more", "risk"].map((chip) => ({ getAttribute: () => chip, focus: () => focused.push(chip) }))
+    : [];
+  api.mountResearchChat(c, { lookup: full(), surface: "analyzer" });
+  assert.deepEqual(focused, []);
+  c.listeners.click({ target: { closest: (sel) => (sel === "[data-chip]" ? { getAttribute: () => "risk" } : null) } });
+  assert.deepEqual(focused, ["risk"]);
+});
+
+test("showcase label never drops when generated_at does not parse", () => {
+  const c = fakeContainer();
+  api.mountResearchChat(c, { transcript: showcaseTranscript({ generated_at: "not a date" }), surface: "home" });
+  assert.ok(c.innerHTML.includes("Fine answer."));
+  assert.match(c.innerHTML, /<div class="pp-rc-bar"><span>Written by Claude using Propeller(&#39;|')s MCP<\/span>/);
+  const bare = api.renderChat([{ chip: "ou", label: "x", question: "q", toolCalls: [], answer: "a" }],
+    { mode: "showcase", compactTools: false, surface: "home" });
+  assert.match(bare, /<div class="pp-rc-bar"><span>Written by Claude using Propeller(&#39;|')s MCP<\/span>/);
+});
+
+test("showcase mounts only for a Claude transcript", () => {
+  for (const model of [undefined, "", "gpt-4o", "not-claude"]) {
+    const c = fakeContainer();
+    api.mountResearchChat(c, { transcript: showcaseTranscript({ model }), surface: "home" });
+    assert.equal(c.innerHTML, "", String(model));
+  }
+  for (const model of ["claude", "Claude-Opus", "claude-sonnet-4"]) {
+    const c = fakeContainer();
+    api.mountResearchChat(c, { transcript: showcaseTranscript({ model }), surface: "home" });
+    assert.ok(c.innerHTML.includes("Fine answer."), model);
+  }
+});
+
+test("showcase tool call with is_error is marked failed, not checked", () => {
+  const c = fakeContainer();
+  const t = showcaseTranscript();
+  t.payload.questions[0].tool_calls = [{ name: "search_nfl_players" }, { name: "get_top_nfl_props", is_error: true }];
+  api.mountResearchChat(c, { transcript: t, surface: "home" });
+  assert.match(c.innerHTML, /<div class="pp-rc-tool"><span class="pp-rc-st"[^>]*><\/span><code>search_nfl_players<\/code><\/div>/);
+  assert.match(c.innerHTML, /<div class="pp-rc-tool pp-rc-tool-failed"><span class="pp-rc-st pp-rc-st-fail"[^>]*><\/span><code>get_top_nfl_props<\/code> — failed<\/div>/);
+});
+
+test("count sentence is skipped when there are no signals", () => {
+  const lookup = summary();
+  for (const p of lookup.props) p.signal_summary = { agree: 0, against: 0, neutral: 0, total: 0 };
+  for (const c of api.buildConversations(lookup)) {
+    assert.doesNotMatch(allText(c.free), /of 0 signals/);
+    assert.ok(c.free.every((b) => b.type !== "text" || b.text));
+  }
+  const fullLookup = full();
+  for (const p of fullLookup.props) { p.signals = []; p.signal_summary = { agree: 0, against: 0, neutral: 0, total: 0 }; }
+  const ou = byChip(api.buildConversations(fullLookup), "ou");
+  assert.doesNotMatch(allText(ou.free), /of 0 signals/);
+});
+
+test("notice text uses the readable tertiary fallback", () => {
+  const css = readFileSync(new URL("../assets/css/research-chat.css", import.meta.url), "utf8");
+  const rule = css.match(/\.research-notice\s*\{[^}]*\}/)[0];
+  assert.match(rule, /color:\s*var\(--text-tertiary,\s*#94A3B8\)/i);
+  assert.doesNotMatch(rule, /#6b7280/i);
 });
 
 test("CTA hrefs match the plan", () => {
@@ -290,6 +372,49 @@ function setup(fetchImpl) {
   };
 }
 const jsonResponse = (body, ok = true) => Promise.resolve({ ok, json: () => Promise.resolve(body) });
+
+function fakeDocument(order) {
+  const links = [];
+  return {
+    links,
+    querySelector(sel) {
+      return links.find((l) => sel.includes("research-chat.css") && l.href.includes("research-chat.css")) || null;
+    },
+    createElement(tag) { return { tagName: tag }; },
+    head: {
+      appendChild(el) {
+        links.push(el);
+        order.push("css");
+        if (typeof el.onload === "function") el.onload();
+      }
+    }
+  };
+}
+
+test("showcase injects the chat stylesheet once, before mounting", async () => {
+  const win = loadShowcase();
+  const order = [];
+  const document = fakeDocument(order);
+  const chat = win.ppResearchChat;
+  const realMount = chat.mountResearchChat;
+  chat.mountResearchChat = (...args) => { order.push("mount"); return realMount(...args); };
+  let cb;
+  class IO { constructor(f) { cb = f; } observe() {} disconnect() {} }
+  const section = { hidden: true };
+  const mount = { innerHTML: "", addEventListener() {}, removeEventListener() {}, querySelectorAll() { return []; } };
+  const done = win.ppHomeShowcase.init({
+    section, mount, sentinel: {}, IntersectionObserver: IO, document,
+    fetchFn: () => jsonResponse(showcaseFixture()),
+  });
+  assert.equal(document.links.length, 0);
+  cb([{ isIntersecting: true }]);
+  assert.equal(await done, true);
+  assert.deepEqual(order, ["css", "mount"]);
+  assert.equal(document.links.length, 1);
+  assert.equal(document.links[0].rel, "stylesheet");
+  assert.match(document.links[0].href, /^\/assets\/css\/research-chat\.css\?v=\d+$/);
+  assert.equal(document.links[0].href, win.ppHomeShowcase.CSS_HREF);
+});
 
 test("showcase does not fetch until the placeholder enters the viewport", () => {
   const s = setup(() => jsonResponse(showcaseFixture()));

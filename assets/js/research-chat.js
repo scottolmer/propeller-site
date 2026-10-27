@@ -2,6 +2,7 @@
   "use strict";
 
   var SUMMARY_PROMPT = "See every signal for this player with a free account.";
+  var STAMP_LABEL = "Written by Claude using Propeller's MCP";
   var CURRENT_SEASON = 2026;
 
   var SIGNAL_LABELS = {
@@ -167,8 +168,10 @@
     };
   }
 
+  // Null when there are no signals, so "0 of 0" never renders.
   function countSentence(prop) {
     var s = summaryOf(prop);
+    if (!num(s.total)) return null;
     return say("{agree} of {total} signals point {side}.", {
       agree: s.agree, total: s.total, side: dir(prop.direction)
     });
@@ -241,7 +244,10 @@
   }
 
   function summaryConversation(c, player, prop) {
-    c.free = [leanBlock(player, prop), textBlock(countSentence(prop)), textBlock(SUMMARY_PROMPT)];
+    var count = countSentence(prop);
+    c.free = [leanBlock(player, prop)];
+    if (count) c.free.push(textBlock(count));
+    c.free.push(textBlock(SUMMARY_PROMPT));
     c.locked = [textBlock(say("The full read adds each signal, the matchup and the risks, and it comes with full access.", {}))];
     return c;
   }
@@ -303,7 +309,9 @@
     }
 
     // Over or under: lean card + first two agreeing signals free; the rest locked.
-    ou.free = [leanBlock(player, prop), textBlock(countSentence(prop))];
+    var count = countSentence(prop);
+    ou.free = [leanBlock(player, prop)];
+    if (count) ou.free.push(textBlock(count));
     if (parts.agree.length) ou.free.push(signalList(parts.agree.slice(0, 2)));
     if (chart) ou.free.push(chart);
     if (parts.agree.length > 2) ou.locked.push(signalList(parts.agree.slice(2)));
@@ -399,15 +407,16 @@
       ' data-cta-destination="' + esc(destination) + '">' + esc(label) + "</a>";
   }
 
+  // The label always shows; the time is added only when generated_at parses.
   function stampText(iso) {
     var d = new Date(iso);
-    if (isNaN(d.getTime())) return "";
+    if (isNaN(d.getTime())) return STAMP_LABEL;
     var parts = {};
     new Intl.DateTimeFormat("en-US", {
       timeZone: "America/New_York", weekday: "short", month: "short", day: "numeric",
       hour: "numeric", minute: "2-digit", hour12: true
     }).formatToParts(d).forEach(function (p) { parts[p.type] = p.value; });
-    return "Written by Claude using Propeller's MCP · " + parts.weekday + ", " + parts.month + " " +
+    return STAMP_LABEL + " · " + parts.weekday + ", " + parts.month + " " +
       parts.day + " · " + parts.hour + ":" + parts.minute + " " + String(parts.dayPeriod || "").toUpperCase() + " ET";
   }
 
@@ -473,6 +482,10 @@
 
   function renderTools(calls, opts, showcase) {
     var rows = calls.map(function (t) {
+      if (t.isError) {
+        return '<div class="pp-rc-tool pp-rc-tool-failed"><span class="pp-rc-st pp-rc-st-fail" aria-hidden="true"></span><code>' +
+          esc(t.name) + "</code> — failed</div>";
+      }
       return '<div class="pp-rc-tool"><span class="pp-rc-st" aria-hidden="true"></span><code>' + esc(t.name) + "</code>" +
         (!showcase && t.summary ? "<em>" + esc(t.summary) + "</em>" : "") + "</div>";
     }).join("");
@@ -522,7 +535,7 @@
     var cur = convs[0];
     convs.forEach(function (c) { if (c.chip === opts.active) cur = c; });
 
-    var barLeft = showcase ? esc(opts.stamp || "") : esc(RULE_LABEL);
+    var barLeft = showcase ? esc(opts.stamp || STAMP_LABEL) : esc(RULE_LABEL);
     var answer;
     if (showcase) {
       answer = String(cur.answer || "").split(/\n\s*\n/).filter(function (p) { return p.trim(); })
@@ -561,7 +574,7 @@
         chip: q.chip,
         label: labels[q.chip] || String(q.chip),
         question: q.question,
-        toolCalls: (Array.isArray(q.tool_calls) ? q.tool_calls : []).map(function (t) { return { name: t.name }; }),
+        toolCalls: (Array.isArray(q.tool_calls) ? q.tool_calls : []).map(function (t) { return { name: t.name, isError: t.is_error === true }; }),
         answer: q.answer
       });
     });
@@ -572,7 +585,11 @@
     opts = opts || {};
     var surface = opts.surface === "home" ? "home" : "analyzer";
     var showcase = !!opts.transcript && !opts.lookup;
-    var convs = showcase ? showcaseConversations(opts.transcript) : buildConversations(opts.lookup, opts.propIndex || 0);
+    // The showcase only ever presents a transcript Claude wrote.
+    var claudeWrote = showcase && /^claude/i.test(String(opts.transcript.model || ""));
+    var convs = showcase
+      ? (claudeWrote ? showcaseConversations(opts.transcript) : [])
+      : buildConversations(opts.lookup, opts.propIndex || 0);
     var stamp = showcase ? stampText(opts.transcript.generated_at) : "";
     var active = convs.length ? convs[0].chip : null;
     var timers = [];
@@ -616,6 +633,18 @@
       if (stage) reveal();
     }
 
+    // innerHTML replaces the clicked chip, so hand focus to its re-rendered twin.
+    function focusActiveChip() {
+      if (!container.querySelectorAll) return;
+      var chips = container.querySelectorAll("[data-chip]");
+      for (var i = 0; i < chips.length; i++) {
+        if (chips[i].getAttribute("data-chip") === active && typeof chips[i].focus === "function") {
+          chips[i].focus();
+          return;
+        }
+      }
+    }
+
     function onClick(ev) {
       var t = ev && ev.target;
       if (!t || !t.closest) return;
@@ -623,6 +652,7 @@
       if (chipEl) {
         active = chipEl.getAttribute("data-chip");
         render(true);
+        focusActiveChip();
         return;
       }
       var copyEl = t.closest("[data-copy]");
