@@ -17,12 +17,12 @@ CSS_OUTPUT = ROOT / "assets" / "css" / "home-lookup.css"
 CSS_VERSION = "20261026"
 BODY_CLASS = "pp-site-system pp-home pp-lookup"
 
-TITLE = "AI Player Prop Research in Plain English | Propeller Picks"
+TITLE = "Propeller Picks: AI Player Prop Research in Plain English"
 APP_STORE_URL = "https://apps.apple.com/app/id6760788202"
 PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&utm_source=na_Med"
 DESCRIPTION = (
-    "Use AI-assisted player prop research without confusing betting jargon. See Propeller's directional confidence score, "
-    "the context behind it, and free apps for iOS, Android, and the web."
+    "Free AI-assisted player prop research for DFS and pick'em players. Look up any player, see which way "
+    "the research leans and why, on iOS, Android, or web."
 )
 
 FAQS = [
@@ -55,7 +55,12 @@ def schema() -> str:
                 "name": "Propeller Picks",
                 "url": "https://propellerpicks.com/",
                 "logo": "https://propellerpicks.com/favicon.svg",
-                "sameAs": ["https://x.com/propellerpicks"],
+                "sameAs": [
+                    "https://x.com/propellerpicks",
+                    "https://www.youtube.com/@propellerpicks",
+                    "https://apps.apple.com/app/id6760788202",
+                    "https://play.google.com/store/apps/details?id=com.propellerpicks.propeller",
+                ],
             },
             {
                 "@type": "WebSite",
@@ -87,6 +92,23 @@ def schema() -> str:
                     PLAY_STORE_URL,
                 ],
                 "image": "https://propellerpicks.com/images/og-home-ai-1200x630.png",
+                "offers": [
+                    {
+                        "@type": "Offer",
+                        "name": "Free preview account",
+                        "price": "0",
+                        "priceCurrency": "USD",
+                        "description": "Free account with no payment card required.",
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Full workspace",
+                        "price": "15.00",
+                        "priceCurrency": "USD",
+                        "description": "Monthly subscription, tax included, with no automatic trial.",
+                        "url": "https://propellerpicks.com/pricing/",
+                    },
+                ],
                 "description": "AI-powered player prop research with inspectable confidence signals, line context, saved props, and a public historical results archive.",
                 "featureList": [
                     "Player prop research",

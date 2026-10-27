@@ -228,13 +228,13 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
     <div class="wrap hero__grid">
       <div>
         <h1 id="hero-title" data-rise>Look up any player prop.</h1>
-        <p class="hero__sub" data-rise>Propeller Picks is an AI-assisted player prop research tool. Type a name to see what matters about the line, which way the research leans, and why, in plain English.</p>
+        <p class="hero__sub" data-rise>Propeller Picks is an AI-assisted player prop research tool for DFS and pick&#39;em players. Type a name to see what matters about the line, which way the research leans, and why, in plain English.</p>
 
         <form class="finder" action="../analyzer/" method="get" role="search" id="finder" data-rise>
           <label class="finder__field">
             <svg aria-hidden="true"><use href="#i-search"/></svg>
             <span class="sr-only">Player name</span>
-            <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" maxlength="60" placeholder="Try Aaron Judge"
+            <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" maxlength="60" placeholder="Try Patrick Mahomes"
                    role="combobox" aria-expanded="false" aria-controls="results" aria-autocomplete="list">
             <input type="hidden" name="sport" id="sport-field" value="" disabled>
             <button class="finder__go" type="submit">Look up</button>
@@ -251,11 +251,11 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
         </form>
 
         <p class="try" data-rise>Try one:
-          <a href="../analyzer/mlb/aaron-judge/">Aaron Judge</a>
-          <a href="../analyzer/nba/jalen-brunson/">Jalen Brunson</a>
-          <a href="../analyzer/nhl/connor-mcdavid/">Connor McDavid</a>
-          <a href="../analyzer/nfl/patrick-mahomes/">Patrick Mahomes</a>
-          <a href="../analyzer/soccer/bukayo-saka/">Bukayo Saka</a>
+          <a href="../analyzer/?sport=nfl&amp;q=Patrick%20Mahomes">Patrick Mahomes</a>
+          <a href="../analyzer/?sport=nba&amp;q=Jalen%20Brunson">Jalen Brunson</a>
+          <a href="../analyzer/?sport=nhl&amp;q=Connor%20McDavid">Connor McDavid</a>
+          <a href="../analyzer/?sport=nba&amp;q=Nikola%20Jokic">Nikola Jokic</a>
+          <a href="../analyzer/?sport=soccer&amp;q=Bukayo%20Saka">Bukayo Saka</a>
         </p>
 
         <div class="hero__get" data-rise>
@@ -280,7 +280,7 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
         <h2 id="see-title" data-rise>What you get for each line.</h2>
         <ol>
           <li data-rise style="--i:1"><strong>A lean, More or Less.</strong><span>Which way the research points for the line you're looking at.</span></li>
-          <li data-rise style="--i:2"><strong>One Confidence Score.</strong><span>How strongly it leans, from 50 to 100. It is not a win chance or a guarantee. <a href="/how-it-works/">How the score works</a></span></li>
+          <li data-rise style="--i:2"><strong>One Confidence Score.</strong><span>How strongly it leans, from 50 to 100. It is not a win chance or a guarantee. <a href="/help/how-do-confidence-scores-work/">How the score works</a></span></li>
           <li data-rise style="--i:3"><strong>The reasons, in plain words.</strong><span>The matchup, his recent role, and where the line sits against his usual numbers.</span></li>
         </ol>
       </div>
@@ -342,7 +342,7 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
         <details class="home-faq__item"><summary>Is Propeller a sportsbook?<span aria-hidden="true">+</span></summary><p>No. Propeller is a research and analysis tool. We do not accept wagers or place bets for users.</p></details>
         <details class="home-faq__item"><summary>What does the record include?<span aria-hidden="true">+</span></summary><p>The public archive has two units: raw graded analysis rows and entries retained after the current API collapse rules. It includes repeated snapshots and legacy retrospective data, so it is not a uniquely published forward-test or ROI record.</p></details>
         <details class="home-faq__item"><summary>Why desktop and mobile?<span aria-hidden="true">+</span></summary><p>The desktop web app is built for deeper slate research. Mobile is for quick checks, saved props, alerts, and digest workflows when you are away from the desk.</p></details>
-        <details class="home-faq__item"><summary>Can I inspect Propeller's methodology and record?<span aria-hidden="true">+</span></summary><p>Yes. Review the <a href="/results/">historical graded analysis rows,</a> the separate <a href="/research/prospective-record/">First-observed capture,</a> and <a href="/how-it-works/">how Propeller works.</a> The current ledger does not independently verify event-start ordering or outcome timing. You can also read our <a href="/research/ai-player-prop-benchmark/">AI research transparency benchmark.</a></p><span class="record-contract" data-forward-roi data-roi-tone="neutral">—</span><span class="record-contract" data-forward-roi-detail>Waiting for eligible completed picks.</span><span class="record-contract" data-forward-priced-settled>0</span><span class="record-contract" data-forward-net-units data-roi-tone="neutral">0.00u</span><span class="record-contract" data-forward-roi-updated>Record updates after eligible results settle.</span><span class="record-contract" data-record-total>487K</span><span class="record-contract" data-record-total-detail>486,994 ledger entries</span><span class="record-contract" data-record-updated>Static API snapshot · October 26, 2026; live refresh enabled</span></details>
+        <details class="home-faq__item"><summary>Can I inspect Propeller's methodology and record?<span aria-hidden="true">+</span></summary><p>Yes. Review the <a href="/results/">historical graded analysis rows,</a> the separate <a href="/research/prospective-record/">First-observed capture,</a> and <a href="/how-it-works/">how Propeller works.</a> The current ledger does not independently verify event-start ordering or outcome timing. You can also read our <a href="/research/ai-player-prop-benchmark/">AI research transparency benchmark.</a></p><span class="record-contract" data-forward-roi data-roi-tone="neutral">—</span><span class="record-contract" data-forward-roi-detail>Waiting for eligible completed picks.</span><span class="record-contract" data-forward-priced-settled>0</span><span class="record-contract" data-forward-net-units data-roi-tone="neutral">0.00u</span><span class="record-contract" data-forward-roi-updated>Record updates after eligible results settle.</span><span class="record-contract" data-record-total>487K</span><span class="record-contract" data-record-total-detail>486,994 ledger entries</span><span class="record-contract" data-record-updated>Static API snapshot · October 27, 2026; live refresh enabled</span></details>
       </div>
     </div>
   </section>
@@ -371,13 +371,14 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
   document.documentElement.classList.add('js');
   const $ = id => document.getElementById(id);
   const LABEL = {nfl:'NFL', nba:'NBA', mlb:'MLB', nhl:'NHL', soccer:'Soccer'};
-  const HINT = {'':'Try Aaron Judge', nfl:'Try Patrick Mahomes', nba:'Try Jalen Brunson', mlb:'Try Aaron Judge', nhl:'Try Connor McDavid', soccer:'Try Bukayo Saka'};
+  const HINT = {'':'Try Patrick Mahomes', nfl:'Try Patrick Mahomes', nba:'Try Jalen Brunson', mlb:'Try Aaron Judge', nhl:'Try Connor McDavid', soccer:'Try Bukayo Saka'};
   const q = $('q'), list = $('results'), form = $('finder'), sportField = $('sport-field'), sportsGroup = $('sports');
   let players = null, loading = null, sport = '', hits = [], active = -1;
 
   const fold = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  const href = p => `../analyzer/${p.sport}/${p.slug}/`;
+  // Today's research lives on the analyzer; the per-player pages are dated archives.
+  const href = p => `../analyzer/?sport=${p.sport}&q=${encodeURIComponent(p.name)}`;
 
   // The index is fetched on first use so it never delays the first paint.
   function load(){
@@ -427,7 +428,7 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
       q.removeAttribute('aria-activedescendant');
       return;
     }
-    list.innerHTML = hits.map((p, i) => `<li role="presentation"><a id="opt-${i}" role="option" aria-selected="${i === active}" href="${href(p)}" data-analytics-event="analyzer_cta_click" data-cta-id="home-search-result" data-cta-surface="homepage_search" data-cta-destination="analyzer"><div><strong>${mark(p.name, t)}</strong><br><span>${LABEL[p.sport]}</span></div><em>See player research</em></a></li>`).join('');
+    list.innerHTML = hits.map((p, i) => `<li role="presentation"><a id="opt-${i}" role="option" aria-selected="${i === active}" href="${href(p)}" data-analytics-event="analyzer_cta_click" data-cta-id="home-search-result" data-cta-surface="homepage_search" data-cta-destination="analyzer"><div><strong>${mark(p.name, t)}</strong><br><span>${LABEL[p.sport]}</span></div><em>See today&#39;s research</em></a></li>`).join('');
     q.setAttribute('aria-activedescendant', 'opt-' + active);
   }
 
