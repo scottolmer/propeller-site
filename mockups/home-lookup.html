@@ -234,7 +234,7 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
           <label class="finder__field">
             <svg aria-hidden="true"><use href="#i-search"/></svg>
             <span class="sr-only">Player name</span>
-            <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" maxlength="60" placeholder="Try Aaron Judge"
+            <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" maxlength="60" placeholder="Try Patrick Mahomes"
                    role="combobox" aria-expanded="false" aria-controls="results" aria-autocomplete="list">
             <input type="hidden" name="sport" id="sport-field" value="" disabled>
             <button class="finder__go" type="submit">Look up</button>
@@ -251,11 +251,11 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
         </form>
 
         <p class="try" data-rise>Try one:
-          <a href="../analyzer/mlb/aaron-judge/">Aaron Judge</a>
-          <a href="../analyzer/nba/jalen-brunson/">Jalen Brunson</a>
-          <a href="../analyzer/nhl/connor-mcdavid/">Connor McDavid</a>
-          <a href="../analyzer/nfl/patrick-mahomes/">Patrick Mahomes</a>
-          <a href="../analyzer/soccer/bukayo-saka/">Bukayo Saka</a>
+          <a href="../analyzer/?sport=nfl&amp;q=Patrick%20Mahomes">Patrick Mahomes</a>
+          <a href="../analyzer/?sport=nba&amp;q=Jalen%20Brunson">Jalen Brunson</a>
+          <a href="../analyzer/?sport=nhl&amp;q=Connor%20McDavid">Connor McDavid</a>
+          <a href="../analyzer/?sport=nba&amp;q=Nikola%20Jokic">Nikola Jokic</a>
+          <a href="../analyzer/?sport=soccer&amp;q=Bukayo%20Saka">Bukayo Saka</a>
         </p>
 
         <div class="hero__get" data-rise>
@@ -371,13 +371,14 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
   document.documentElement.classList.add('js');
   const $ = id => document.getElementById(id);
   const LABEL = {nfl:'NFL', nba:'NBA', mlb:'MLB', nhl:'NHL', soccer:'Soccer'};
-  const HINT = {'':'Try Aaron Judge', nfl:'Try Patrick Mahomes', nba:'Try Jalen Brunson', mlb:'Try Aaron Judge', nhl:'Try Connor McDavid', soccer:'Try Bukayo Saka'};
+  const HINT = {'':'Try Patrick Mahomes', nfl:'Try Patrick Mahomes', nba:'Try Jalen Brunson', mlb:'Try Aaron Judge', nhl:'Try Connor McDavid', soccer:'Try Bukayo Saka'};
   const q = $('q'), list = $('results'), form = $('finder'), sportField = $('sport-field'), sportsGroup = $('sports');
   let players = null, loading = null, sport = '', hits = [], active = -1;
 
   const fold = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
   const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  const href = p => `../analyzer/${p.sport}/${p.slug}/`;
+  // Today's research lives on the analyzer; the per-player pages are dated archives.
+  const href = p => `../analyzer/?sport=${p.sport}&q=${encodeURIComponent(p.name)}`;
 
   // The index is fetched on first use so it never delays the first paint.
   function load(){
@@ -427,7 +428,7 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
       q.removeAttribute('aria-activedescendant');
       return;
     }
-    list.innerHTML = hits.map((p, i) => `<li role="presentation"><a id="opt-${i}" role="option" aria-selected="${i === active}" href="${href(p)}" data-analytics-event="analyzer_cta_click" data-cta-id="home-search-result" data-cta-surface="homepage_search" data-cta-destination="analyzer"><div><strong>${mark(p.name, t)}</strong><br><span>${LABEL[p.sport]}</span></div><em>See player research</em></a></li>`).join('');
+    list.innerHTML = hits.map((p, i) => `<li role="presentation"><a id="opt-${i}" role="option" aria-selected="${i === active}" href="${href(p)}" data-analytics-event="analyzer_cta_click" data-cta-id="home-search-result" data-cta-surface="homepage_search" data-cta-destination="analyzer"><div><strong>${mark(p.name, t)}</strong><br><span>${LABEL[p.sport]}</span></div><em>See today&#39;s research</em></a></li>`).join('');
     q.setAttribute('aria-activedescendant', 'opt-' + active);
   }
 

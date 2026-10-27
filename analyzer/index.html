@@ -2137,6 +2137,7 @@ footer {
     padding: 10px 14px;
   }
 }
+#searchCard{scroll-margin-top:96px}
 </style>
 <link rel="stylesheet" href="/assets/css/legacy-seo-nav.css?v=20260624-nav3">
 <style id="player-search-guide-styles">
@@ -3386,6 +3387,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!initialQuery || activeSport !== initialSport) return;
       document.getElementById('searchInput').value = initialQuery;
       handleSearch();
+      // Arriving with a player query (from the homepage lookup), show the results, not the hero.
+      setTimeout(() => {
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        document.getElementById('searchCard').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      }, 260);
     });
   }
 
