@@ -103,7 +103,7 @@ test("line moved notice matches the looked-up player, not another player's same 
 });
 
 test("analyzer passes the lookup player name to the line moved check", () => {
-  assert.match(html, /lineMovedNotice\(\s*lookup\.player && lookup\.player\.name,/);
+  assert.match(html, /lineMovedNotice\(\s*lookup\.player && \(lookup\.player\.player_name \|\| lookup\.player\.name\),/);
 });
 
 test("no current prop shows next slate", async () => {
@@ -116,7 +116,7 @@ test("no current prop shows next slate", async () => {
 
 test("analyzer page wires research assets and mount point", () => {
   assert.match(html, /analyzer-research\.js\?v=20261027/);
-  assert.match(html, /research-chat\.js\?v=20261027/);
+  assert.match(html, /research-chat\.js\?v=20261028/);
   assert.match(html, /research-chat\.css\?v=20261027/);
   assert.ok(html.indexOf('id="researchChat"') < html.indexOf('id="picksGrid"'));
   assert.match(html, /<section id="researchChat" hidden>/);
