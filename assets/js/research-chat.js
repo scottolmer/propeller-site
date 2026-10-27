@@ -154,7 +154,7 @@
   function leanBlock(player, prop) {
     return {
       type: "lean",
-      player: player.name,
+      player: (player.player_name || player.name),
       team: player.team,
       stat: prop.stat_type,
       statLabel: statLabel(prop.stat_type),
@@ -221,7 +221,7 @@
     var calls = [{
       name: "search_nfl_players",
       summary: say("Matched {name} ({team}, {pos}).", {
-        name: player.name, team: player.team, pos: player.position
+        name: (player.player_name || player.name), team: player.team, pos: player.position
       }),
       output: { player: player }
     }];
@@ -231,7 +231,7 @@
       summary: say("Read {n} stored ranked {noun}.", {
         n: rows.length, noun: rows.length === 1 ? "prop" : "props"
       }),
-      output: { player: player.name, props: rows }
+      output: { player: (player.player_name || player.name), props: rows }
     });
     if (extras.logs && extras.logs.length) {
       calls.push({
@@ -265,7 +265,7 @@
     var chart = full ? chartBlock(prop, logs) : null;
     var side = dir(prop.direction);
     var otherSide = side === "under" ? "over" : "under";
-    var name = player.name;
+    var name = (player.player_name || player.name);
     var likeRows = full && Array.isArray(lookup.more_like_this) ? lookup.more_like_this : [];
 
     function conv(chip, label, question, extras) {

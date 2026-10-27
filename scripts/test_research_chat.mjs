@@ -139,10 +139,20 @@ const lockedStrings = (convs) =>
 
 test("render escapes text", () => {
   const lookup = full();
-  lookup.player = { ...lookup.player, name: "<img onerror=alert(1)>" };
+  lookup.player = { ...lookup.player, player_name: "<img onerror=alert(1)>" };
   const html = api.renderChat(api.buildConversations(lookup), { mode: "rules", compactTools: false });
   assert.ok(!html.includes("<img onerror"));
   assert.ok(html.includes("&lt;img onerror=alert(1)&gt;"));
+});
+
+test("reads the backend player_name key, with name as a fallback", () => {
+  const live = full();
+  assert.equal(live.player.player_name, "Jacoby Brissett");
+  assert.match(api.renderChat(api.buildConversations(live), { mode: "rules", compactTools: false }), /Jacoby Brissett/);
+  const legacy = full();
+  legacy.player = { ...legacy.player, name: "Legacy Name" };
+  delete legacy.player.player_name;
+  assert.match(api.renderChat(api.buildConversations(legacy), { mode: "rules", compactTools: false }), /Legacy Name/);
 });
 
 test("locked blocks never reach the html in rules mode", () => {

@@ -2,7 +2,7 @@
   "status": "ok",
   "player": {
     "player_id": "nfl:bdl:4567",
-    "name": "Jacoby Brissett",
+    "player_name": "Jacoby Brissett",
     "team": "ARI",
     "position": "QB"
   },
