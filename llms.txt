@@ -93,10 +93,11 @@ Use the curated public agent API or data catalog before using the full API docs.
 - DraftKings Pick6 vs PrizePicks comparison: https://propellerpicks.com/compare/pick6-vs-prizepicks/
 - Help center: https://propellerpicks.com/help/
 - Pricing and access: https://propellerpicks.com/pricing/
+- MCP server setup for AI tools: https://propellerpicks.com/mcp/
 
 ## Pricing
 
-The public analyzer is free to use without an account. The standalone full-workspace subscription is $15 USD/month total, including applicable tax, with no automatic trial, available to eligible new accounts through the limited web purchase pilot. MCP access for compatible AI tools is included with full workspace access, including protected existing free accounts. Your AI tool's own plan and usage limits still apply. Existing free accounts keep their full access free. Existing Founder 500 lifetime core entitlements remain honored.
+The public analyzer is free to use without an account. The standalone full-workspace subscription is $15 USD/month total, including applicable tax, with no automatic trial, available to eligible new accounts through the limited web purchase pilot. MCP access for compatible AI tools is included with full workspace access, including protected existing free accounts. Your AI tool's own plan and usage limits still apply. Existing free accounts keep their full access free. Existing Founder 500 lifetime core entitlements remain honored. MCP server URL: https://mcp.propellerpicks.com/mcp (setup guide: https://propellerpicks.com/mcp/).
 
 ## Legal And Safety
 
