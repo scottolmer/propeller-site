@@ -111,8 +111,22 @@ test("preserves destination-based fallback classification for untagged legacy li
 });
 
 test("homepage and high-intent pages load the canonical CTA tracker with stable CTA IDs", () => {
-  const homepageIds = homepage.match(/data-cta-id="home-/g) ?? [];
-  assert.equal(homepageIds.length, 10);
+  const homepageIds = [...homepage.matchAll(/data-cta-id="(home-[a-z-]+)"/g)].map((match) => match[1]);
+  assert.deepEqual(homepageIds.sort(), [
+    "home-appbar-android",
+    "home-appbar-ios",
+    "home-difference-analyzer",
+    "home-final-android",
+    "home-final-ios",
+    "home-final-web-signup",
+    "home-hero-android",
+    "home-hero-ios",
+    "home-hero-web-signup",
+    "home-product-android",
+    "home-product-ios",
+    "home-product-web-signup",
+    "home-search-result",
+  ]);
   assert.match(homepage, /data-cta-id="site-nav-pricing"/);
   assert.match(homepage, /data-analytics-event="analyzer_cta_click"/);
   assert.match(homepage, /analytics-events\.js\?v=20260817/);
