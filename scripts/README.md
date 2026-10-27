@@ -90,6 +90,11 @@ All scripts are idempotent and safe to run repeatedly.
 - **check_product_fact_consistency.py** — verifies the canonical product fact
   ledger against public sports, access, confidence, platform, and agent-count
   claims across visible and machine-readable surfaces.
+- **generate_player_search_index.py** — rebuilds `data/player-search.json`, the
+  homepage player lookup index, from the analyzer player page titles.
+  `--check` fails when the committed index is out of date.
+- **build_homepage_from_mockup.py** — promotes `mockups/home-lookup.html` into
+  `index.html` and `assets/css/home-lookup.css`.
 - **set_archive_indexing.py** — keeps legacy monthly performance reports and
   design mockups `noindex` until the prospective publication ledger has enough
   settled data for defensible reporting.

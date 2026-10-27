@@ -71,6 +71,8 @@ components:
 
 **Creative North Star: "The Replay Room"**
 
+> **Homepage change, October 26, 2026.** The homepage (`/`) now uses the Player Lookup composition described in [Homepage: Player Lookup](#homepage-player-lookup). Replay Room remains the identity of the navigation pages, pricing, and the Wave A companion pages that load `home-ai.css`. The palette below is shared by both.
+
 This homepage treats player-prop research like a clear broadcast replay, not a generic SaaS dashboard or a sportsbook. Midnight panels create the analytical room; compressed cream headlines make the plain-English promise feel decisive; orange marks the point of action; electric blue supplies the technical field-line notation. Real product screens are the proof, not decoration.
 
 The composition moves from the big promise to an inspectable three-step sequence—line, Confidence Score, next research action—then into the real desktop and mobile experience. A four-row difference section makes the product's plain-language, single-score, explainable, DFS/pick'em research stance legible before the FAQ. Detailed record context belongs in the fourth FAQ disclosure rather than a standalone performance panel. The page stays firm about what the product is and is not: a research tool, never a wager flow or performance guarantee.
@@ -149,6 +151,8 @@ The base form is an outlined broadcast panel: `14px` corners, one-pixel blue bor
 
 ## Components
 
+The Replay Panels, Confidence Score panel, Product Proof Stage, and Difference Section below describe the retired Replay Room homepage. Their styles still live in `home-ai.css` for the Wave A companion pages; the current homepage components are listed under Homepage: Player Lookup.
+
 ### Store Actions
 
 - **Character:** equal, credible paths to the actual iOS and Android apps.
@@ -201,24 +205,49 @@ The base form is an outlined broadcast panel: `14px` corners, one-pixel blue bor
 - **Do** lead the hero with a plain-English promise before showing model mechanics.
 - **Do** use real desktop and mobile product screens as the main proof asset.
 - **Do** keep App Store, Google Play, and web access visible as distinct, real routes.
-- **Do** pair the 2.5M+ proof with its scope disclosure and a link to what the number means.
+- **Do** pair the graded-rows proof (the auto-refreshed `data-record-raw-total` figure) with its scope disclosure and a link to what the number means.
 - **Do** retain the explicit research-only boundary: directional signals are not probabilities or guarantees, and Propeller does not accept wagers.
-- **Do** use the four Difference rows to explain product fit before routing visitors to the free analyzer, Confidence Score explainer, and AI transparency benchmark.
+- **Do** keep the homepage's four research-only statements, the free analyzer action, the Confidence Score explainer, and the AI transparency benchmark link.
 
 ### Don't:
 
-- **Don't** replace Replay Room with a pale SaaS hero, generic feature-card grid, sportsbook chrome, or invented social proof.
+- **Don't** replace either identity with a pale SaaS hero, generic feature-card grid, sportsbook chrome, or invented social proof.
 - **Don't** use orange decoratively across the whole interface; reserve it for earned emphasis and action.
 - **Don't** turn the Confidence Score or historical rows into ROI, accuracy, or future-outcome claims.
 - **Don't** reintroduce a standalone homepage record strip; keep the detailed record evidence in the fourth FAQ disclosure.
 - **Don't** bury mobile acquisition behind a web-only primary path.
+
+## Homepage: Player Lookup
+
+**North star: the product is the homepage.** The first screen is a working search across every analyzer player page. A visitor types a name and lands on that player's research, with no account. Source: `mockups/home-lookup.html`; `scripts/build_homepage_from_mockup.py` writes `index.html` and `assets/css/home-lookup.css`.
+
+### Composition
+
+1. **Hero (Replay Night):** `h1` "Look up any player prop.", one sentence that names the category ("an AI-assisted player prop research tool"), the search field, sport filters with live counts, five "Try one" player links, equal App Store and Google Play buttons, and the web signup link. The real props-board phone screen fills the right column on desktop and peeks below the actions on phones.
+2. **What you get (Studio Navy):** lean, Confidence Score, and plain-language reasons, beside the real iPhone prop-detail screen.
+3. **Phone and web (Cream Mic field):** store buttons, the web signup link, and the current price line ("Free to start, no card. Full workspace $15 total a month, tax included."), beside the cropped web chart of results against the line.
+4. **Proof (Propeller Orange field):** the auto-refreshed graded-rows figure set at display size with its scope disclosure.
+5. **Research only (Replay Night):** four statements, the analyzer action, and the benchmark link.
+6. **FAQ (Studio Navy):** four `home-faq__item` disclosures; the fourth carries the hidden `record-contract` live-record hooks.
+7. **Close:** the name at full width in orange, then the store buttons and web link, then the shared site footer.
+
+### Rules specific to the homepage
+
+- **Frame:** content width `min(1220px, 100% - 2 × clamp(20px, 3vw, 40px))`, matching the shared nav and footer.
+- **Fields, not lines:** sections separate by a change of ground (night, navy, cream, orange), never by hairlines, outlines, or card shadows. The only shadow is on the open search results list, which floats.
+- **Buttons:** every button is a full pill. Store buttons are orange with night text; secondary actions use `--night-3`.
+- **Type:** Familjen for headings and the search field, Plex for text. No mono, no eyebrow labels, no section numbers.
+- **Search:** the index (`data/player-search.json`, built by `scripts/generate_player_search_index.py`) loads on first focus, not on page load. Results link to `/analyzer/<sport>/<slug>/`. Without JavaScript, or with no highlighted match, the form submits `q` (and `sport`) to `/analyzer/`.
+- **Mobile:** a fixed App Store / Google Play bar appears whenever the hero store buttons are off screen, and hides over the closing store row.
+- **Imagery:** only real product screens. Web screenshots that show odds, "Edge", or implied-probability figures stay off the homepage; the web chart is cropped to the results-against-the-line view.
+- **Tokens:** the homepage sets the shared `--pp-paper`, `--pp-text`, `--pp-body`, and `--pp-display` tokens on `body.pp-lookup` so `site-system.css` paints the night ground.
 
 ## Navigation Page Adoption
 
 - The public destinations `picks`, `results`, `track-record`, `how-it-works`, `guides`, `tools`, and `analyzer` adopt the existing Replay Room identity while preserving their route-specific content.
 - `apply_site_shell.py` assigns each route-managed page `pp-nav-page` and loads `navigation-pages.css` last, so the shared visual layer remains explicit and bounded.
 - Those seven pages remove the old white override and compatibility styles; pricing remains a separate dark page treatment.
-- This is an adoption of the existing system, with no new identity and no broad layout drift repair; the homepage design remains unchanged.
+- This is an adoption of the existing system, with no new identity and no broad layout drift repair.
 - At `760px` and below, page content stacks for readable mobile flow. Navigation opens into the Studio Navy treatment at `1080px` and below.
 - Semantic success and loss colors remain meaningful, and selected tabs, sort controls, and other active states retain readable contrast.
 - Review status: all 14 screenshots returned `SHIP`; no material fixes were required.

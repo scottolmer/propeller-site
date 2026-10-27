@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Promote the approved AI homepage mockup into the production homepage."""
+"""Promote the approved homepage mockup into the production homepage."""
 
 from __future__ import annotations
 
@@ -11,9 +11,11 @@ from apply_site_shell import migrate_html
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MOCKUP = ROOT / "mockups" / "home-ai-winning-v2.html"
+MOCKUP = ROOT / "mockups" / "home-lookup.html"
 OUTPUT = ROOT / "index.html"
-CSS_OUTPUT = ROOT / "assets" / "css" / "home-ai.css"
+CSS_OUTPUT = ROOT / "assets" / "css" / "home-lookup.css"
+CSS_VERSION = "20261026"
+BODY_CLASS = "pp-site-system pp-home pp-lookup"
 
 TITLE = "AI Player Prop Research in Plain English | Propeller Picks"
 APP_STORE_URL = "https://apps.apple.com/app/id6760788202"
@@ -70,7 +72,7 @@ def schema() -> str:
                 "description": DESCRIPTION,
                 "isPartOf": {"@id": "https://propellerpicks.com/#website"},
                 "about": {"@id": "https://propellerpicks.com/#software"},
-                "dateModified": "2026-08-15",
+                "dateModified": "2026-10-26",
             },
             {
                 "@type": "SoftwareApplication",
@@ -171,303 +173,9 @@ def head() -> str:
   </script>
   <link rel="preload" href="/assets/fonts/familjen-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260815">
+  <link rel="preload" href="/images/mobile-props-board-phone.webp" as="image" type="image/webp" fetchpriority="high">
+  <link rel="stylesheet" href="/assets/css/home-lookup.css?v={CSS_VERSION}">
 </head>"""
-
-
-def faq_section() -> str:
-    cards = "\n".join(
-        f"""          <details class="home-faq__item">
-            <summary>{question}<span aria-hidden="true">+</span></summary>
-            <p>{answer}</p>
-          </details>"""
-        for question, answer in FAQS
-    )
-    return f"""    <section class="home-faq" aria-labelledby="home-faq-title">
-      <div class="container home-faq__grid">
-        <div class="home-faq__intro scroll-reveal">
-          <p class="section-kicker">04 / The useful questions</p>
-          <h2 id="home-faq-title">Know what the system is—and what it is not.</h2>
-          <p>Direct answers about the product, the public record, and how desktop and mobile fit together.</p>
-        </div>
-        <div class="home-faq__list scroll-reveal">
-{cards}
-        </div>
-      </div>
-    </section>
-
-"""
-
-
-CSS_ADDITIONS = r"""
-
-/* Keep the largest above-the-fold content immediately paintable. */
-.hero .enter {
-  opacity: 1;
-  transform: none;
-  animation: none;
-}
-
-.record-update {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-}
-
-.record-source-links { display: inline-flex; flex-wrap: wrap; gap: 12px; }
-.record-source-links a { color: var(--orange-dark); font-weight: 600; text-decoration: none; }
-.record-source-links a:hover { text-decoration: underline; }
-
-.record-copy .record-method-link { margin-top: 18px; font-size: 14px; }
-.record-method-link a { color: var(--orange-dark); font-weight: 600; text-decoration: none; }
-.record-method-link a:hover { text-decoration: underline; }
-
-[data-forward-roi],
-[data-forward-priced-settled],
-[data-forward-net-units] { font-family: var(--mono); font-variant-numeric: tabular-nums; }
-[data-roi-tone="positive"] { color: var(--green); }
-[data-roi-tone="negative"] { color: #b4382d; }
-[data-roi-tone="neutral"] { color: var(--ink); }
-
-.home-faq {
-  padding: 112px 0;
-  border-top: 1px solid var(--line);
-  background: var(--paper-light);
-}
-
-.home-faq__grid {
-  display: grid;
-  grid-template-columns: 0.78fr 1.22fr;
-  gap: 95px;
-  align-items: start;
-}
-
-.home-faq__intro h2 {
-  max-width: 620px;
-  margin: 0;
-  font: 600 clamp(44px, 5vw, 68px)/0.96 var(--display);
-  letter-spacing: -0.056em;
-}
-
-.home-faq__intro > p:last-child {
-  max-width: 480px;
-  margin: 24px 0 0;
-  color: var(--sub);
-  font-size: 16px;
-  line-height: 1.68;
-}
-
-.home-faq__list { border-top: 1px solid var(--ink); }
-
-.home-faq__item {
-  border-bottom: 1px solid var(--line);
-}
-
-.home-faq__item summary {
-  min-height: 74px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  color: var(--ink);
-  font: 600 21px/1.25 var(--display);
-  cursor: pointer;
-  list-style: none;
-}
-
-.home-faq__item summary::-webkit-details-marker { display: none; }
-.home-faq__item summary span { color: var(--orange); font: 500 25px/1 var(--mono); transition: transform 180ms ease; }
-.home-faq__item[open] summary span { transform: rotate(45deg); }
-.home-faq__item p { max-width: 720px; margin: -3px 48px 23px 0; color: var(--sub); font-size: 14px; line-height: 1.7; }
-
-@media (max-width: 820px) {
-  .home-faq { padding: 80px 0; }
-  .home-faq__grid { grid-template-columns: 1fr; gap: 44px; }
-  .record-update { align-items: flex-start; flex-direction: column; gap: 8px; }
-}
-
-/* Mobile polish: readable evidence, compact rhythm, and connectors that stay out of the copy. */
-body.pp-home .pp-brand { min-height: 44px; }
-
-body.pp-home .pp-site-nav__menu {
-  width: 44px;
-  height: 44px;
-}
-
-body.pp-home .pp-site-nav__links > .pp-site-nav__cta { min-height: 44px; }
-
-body.pp-home .pp-site-nav__menu svg line {
-  transform-box: fill-box;
-  transform-origin: center;
-  transition: transform 180ms ease, opacity 180ms ease;
-}
-
-body.pp-home .pp-site-nav__menu[aria-expanded="true"] svg line:nth-child(1) {
-  transform: translateY(5px) rotate(45deg);
-}
-
-body.pp-home .pp-site-nav__menu[aria-expanded="true"] svg line:nth-child(2) {
-  opacity: 0;
-}
-
-body.pp-home .pp-site-nav__menu[aria-expanded="true"] svg line:nth-child(3) {
-  transform: translateY(-5px) rotate(-45deg);
-}
-
-body.pp-home .hero-actions .button:focus-visible {
-  outline: 3px solid var(--ink);
-  outline-offset: 4px;
-}
-
-@media (max-width: 1080px) {
-  .pipeline-map { margin-top: 48px; }
-
-  .pipeline-arrow {
-    min-height: 48px;
-    transform: none;
-  }
-
-  .pipeline-arrow::before {
-    inset: 0 auto 0 50%;
-    width: 1px;
-    height: auto;
-  }
-
-  .pipeline-arrow span {
-    padding: 4px 0;
-    transform: rotate(90deg);
-  }
-
-  .input-cell span {
-    color: rgba(255, 255, 255, 0.68);
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  .pipeline-stage p {
-    color: rgba(255, 255, 255, 0.68);
-    font-size: 15px;
-    line-height: 1.55;
-  }
-}
-
-@media (max-width: 820px) {
-  .pipeline,
-  .product,
-  .record,
-  .home-faq,
-  .final-cta {
-    padding: 64px 0;
-  }
-
-  .pipeline-map { margin-top: 40px; }
-  .product-intro { gap: 40px; }
-  .record-grid { gap: 36px; }
-  .home-faq__grid { gap: 32px; }
-
-  .risk-note {
-    font-size: 12px;
-    line-height: 1.5;
-  }
-
-  .app-hero-note {
-    font-size: 11px;
-    line-height: 1.5;
-  }
-
-  .proof-item small {
-    font-size: 11px;
-    line-height: 1.35;
-  }
-
-  .proof-item span {
-    font-size: 13px;
-    line-height: 1.45;
-  }
-
-  .benefit p {
-    font-size: 15px;
-    line-height: 1.55;
-  }
-
-  .record-head,
-  .record-primary small,
-  .record-stat small {
-    font-size: 11px;
-    line-height: 1.35;
-  }
-
-  .record-primary span {
-    font-size: 14px;
-    line-height: 1.5;
-  }
-
-  .record-update {
-    font-size: 12px;
-    line-height: 1.5;
-  }
-
-  .record-source-links {
-    width: 100%;
-    gap: 8px;
-  }
-
-  .record-source-links a {
-    min-height: 44px;
-    display: inline-flex;
-    align-items: center;
-    padding: 0 4px;
-    font-size: 13px;
-  }
-
-  .home-faq__item p {
-    font-size: 16px;
-    line-height: 1.65;
-  }
-}
-
-@media (max-width: 340px) {
-  .hero { padding: 42px 0 36px; }
-  .hero h1 { font-size: 50px; line-height: 0.88; }
-  .eyebrow { margin-bottom: 18px; }
-  .hero-lede { margin-top: 20px; line-height: 1.5; }
-  .hero-actions { margin-top: 22px; gap: 10px; }
-  .risk-note { margin-top: 12px; }
-}
-
-@media (max-width: 570px) {
-  body.pp-home .pp-site-footer__grid { gap: 30px; }
-
-  body.pp-home .pp-site-footer__copy { font-size: 15px; }
-
-  body.pp-home .pp-site-footer__column {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 16px;
-  }
-
-  body.pp-home .pp-site-footer__column h2 {
-    grid-column: 1 / -1;
-    margin-bottom: 6px;
-    font-size: 11px;
-  }
-
-  body.pp-home .pp-site-footer__column a {
-    width: 100%;
-    min-height: 44px;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-  }
-
-  body.pp-home .pp-site-footer__legal {
-    font-size: 12px;
-    line-height: 1.65;
-  }
-}
-"""
 
 
 def main() -> None:
@@ -475,11 +183,13 @@ def main() -> None:
     style = re.search(r"<style>(.*?)</style>", source, flags=re.DOTALL)
     if not style:
         raise SystemExit("Mockup style block not found")
-    CSS_OUTPUT.write_text(style.group(1).strip() + "\n", encoding="utf-8")
+    css = style.group(1).strip().replace("../assets/fonts/", "/assets/fonts/")
+    CSS_OUTPUT.write_text(css + "\n", encoding="utf-8")
 
     html = re.sub(r"<head>.*?</head>", head(), source, count=1, flags=re.DOTALL)
-    html = html.replace("<body>", '<body class="pp-site-system pp-home pp-replay-room">', 1)
-    html = html.replace("../images/", "/images/").replace("../assets/", "/assets/")
+    html = html.replace('<body class="pp-lookup">', f'<body class="{BODY_CLASS}">', 1)
+    for relative in ("images", "assets", "data", "analyzer"):
+        html = html.replace(f"../{relative}/", f"/{relative}/")
     html = migrate_html(html, OUTPUT, True)
     OUTPUT.write_text(html, encoding="utf-8")
     print(f"wrote={OUTPUT.relative_to(ROOT)} css={CSS_OUTPUT.relative_to(ROOT)}")
