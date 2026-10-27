@@ -242,3 +242,17 @@ test("mount showcase drops questions failing the guard", () => {
   assert.ok(container.innerHTML.includes("Written by Claude using Propeller&#39;s MCP · Sun, Nov 1 · 11:02 AM ET") ||
     container.innerHTML.includes("Written by Claude using Propeller's MCP · Sun, Nov 1 · 11:02 AM ET"));
 });
+
+test("CTA hrefs match the plan", () => {
+  const href = (html, id) => {
+    const m = html.match(new RegExp('<a[^>]*href="([^"]*)"[^>]*data-cta-id="' + id + '"'));
+    assert.ok(m, id);
+    return m[1];
+  };
+  const rules = api.renderChat(api.buildConversations(full()), { mode: "rules", compactTools: false });
+  assert.equal(href(rules, "analyzer-research-mcp"), "/pricing/#ai-connections");
+  const convs = [{ chip: "ou", label: "x", question: "q", toolCalls: [], answer: "a" }];
+  const show = api.renderChat(convs, { mode: "showcase", compactTools: false, surface: "home" });
+  assert.equal(href(show, "home-showcase-mcp"), "/pricing/#ai-connections");
+  assert.equal(href(show, "home-showcase-analyzer"), "/analyzer/?sport=nfl");
+});

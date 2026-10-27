@@ -488,13 +488,13 @@
     var id = home ? "home-showcase-mcp" : "analyzer-research-mcp";
     var steps = PAYWALL_STEPS.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
     var secondary = home
-      ? cta("home-showcase-analyzer", "home", "analyzer", "research_cta_click", "/analyzer/", "Look up a player", "pp-rc-link")
+      ? cta("home-showcase-analyzer", "home", "analyzer", "research_cta_click", "/analyzer/?sport=nfl", "Look up a player", "pp-rc-link")
       : cta("analyzer-research-signup", "analyzer", "signup", "signup_click", "https://app.propellerpicks.com/signup", "Create a free account", "pp-rc-link");
     return '<div class="pp-rc-gate"><strong>' + esc(PAYWALL_HEADING) + "</strong><small>" + esc(PAYWALL_LINE) + "</small>" +
       "<ol>" + steps + "</ol>" +
       '<div class="pp-rc-url"><code>' + esc(MCP_ADDRESS) + '</code><button type="button" data-copy="' + esc(MCP_ADDRESS) + '">Copy</button></div>' +
       '<div class="pp-rc-actions">' +
-      cta(id, home ? "home" : "analyzer", "mcp", "research_cta_click", "/pricing/", "Get full access", "pp-rc-btn") +
+      cta(id, home ? "home" : "analyzer", "mcp", "research_cta_click", "/pricing/#ai-connections", "Get full access", "pp-rc-btn") +
       secondary + "</div></div>";
   }
 
