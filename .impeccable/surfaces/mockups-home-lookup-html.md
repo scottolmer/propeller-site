@@ -11,7 +11,7 @@ Audience and job: Casual or newer DFS and pick'em users who already have a playe
 
 Proof and content: Working player search over every analyzer player page; equal App Store and Google Play actions; real phone screens and a cropped web chart with no odds or edge figures; the auto-refreshed graded-rows figure with its repeat-snapshot and retrospective-data disclosure; research-only statements; FAQ with the hidden live-record contract.
 
-Showcase: a hidden-by-default section (`#showcase`, between What you get and Phone and web) mounts the daily NFL research conversation via `assets/js/home-showcase.js` and the shared research chat. It fetches only near the viewport and stays hidden on any failure, so the page is complete without it. Its stamp reads "Written by Claude using Propeller's MCP"; its CTAs (connect MCP, look up another player) live on the page, not inside the chat.
+Showcase: a hidden-by-default section (`#showcase`, between What you get and Phone and web) mounts the daily NFL research conversation via `assets/js/home-showcase.js` and the shared research chat. It fetches only near the viewport and stays hidden on any failure, so the page is complete without it. Its stamp reads "Written by Claude using Propeller's research tools"; its CTAs (connect MCP, look up another player) live on the page, not inside the chat.
 
 Constraints: Research only; no wagers, outcome promises, calibrated-probability claims, ROI claims, invented testimonials, or unsupported web/mobile parity. Preserve schema, analytics CTA attributes, the shared shell, live-record attributes, generator ownership (`scripts/build_homepage_from_mockup.py`), and app-store URLs. Pricing copy must match the live offer.
 

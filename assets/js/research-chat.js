@@ -2,7 +2,7 @@
   "use strict";
 
   var SUMMARY_PROMPT = "See every signal for this player with a free account.";
-  var STAMP_LABEL = "Written by Claude using Propeller's MCP";
+  var STAMP_LABEL = "Written by Claude using Propeller's research tools";
   var CURRENT_SEASON = 2026;
 
   var SIGNAL_LABELS = {
