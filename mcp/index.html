@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Propeller MCP Server: Use Propeller Research in Claude, ChatGPT and Cursor</title>
+<meta name="description" content="Connect Propeller Picks to Claude, ChatGPT, Meta Muse, Grok Bot, Cursor, VS Code and other MCP-compatible AI tools. Server URL, setup steps, available tools, example prompts and limits.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://propellerpicks.com/mcp/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://propellerpicks.com/mcp/">
+<meta property="og:title" content="Propeller MCP Server">
+<meta property="og:description" content="Ask your AI tool about Propeller's stored player-prop research. Setup steps, tools, example prompts and limits.">
+<meta property="og:image" content="https://propellerpicks.com/images/og-image.png">
+<meta property="og:image:width" content="3000">
+<meta property="og:image:height" content="1000">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@propellerpicks">
+<meta name="twitter:title" content="Propeller MCP Server">
+<meta name="twitter:description" content="Ask your AI tool about Propeller's stored player-prop research. Setup steps, tools, example prompts and limits.">
+<meta name="twitter:image" content="https://propellerpicks.com/images/og-image.png">
+<meta name="author" content="Scott Olmer">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Propeller MCP Server",
+  "url": "https://propellerpicks.com/mcp/",
+  "description": "Connect Propeller Picks to Claude, ChatGPT, Meta Muse, Grok Bot, Cursor, VS Code and other MCP-compatible AI tools. Server URL, setup steps, available tools, example prompts and limits.",
+  "dateModified": "2026-10-27",
+  "inLanguage": "en-US",
+  "isPartOf": {"@type": "WebSite", "name": "Propeller Picks", "url": "https://propellerpicks.com"},
+  "publisher": {"@type": "Organization", "name": "Propeller Picks", "url": "https://propellerpicks.com"},
+  "author": {"@type": "Person", "name": "Scott Olmer", "url": "https://propellerpicks.com/about/"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://propellerpicks.com"},
+    {"@type": "ListItem", "position": 2, "name": "MCP Server", "item": "https://propellerpicks.com/mcp/"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is the Propeller MCP server?", "acceptedAnswer": {"@type": "Answer", "text": "It is a remote Model Context Protocol server at https://mcp.propellerpicks.com/mcp. After you sign in, a compatible AI tool can read your Propeller research: stored player props, confidence scores, game logs, injury reports and saved picks."}},
+    {"@type": "Question", "name": "Does the Propeller MCP server cost extra?", "acceptedAnswer": {"@type": "Answer", "text": "No. MCP access is included with full workspace access, including existing free accounts that keep their access free. Your AI tool's own plan and usage limits still apply."}},
+    {"@type": "Question", "name": "Can my AI tool place bets or submit entries through Propeller?", "acceptedAnswer": {"@type": "Answer", "text": "No. The server is read-only research. Propeller does not accept wagers, place wagers or submit DFS and pick'em entries, and neither does the MCP server."}},
+    {"@type": "Question", "name": "How do I disconnect an AI tool from Propeller?", "acceptedAnswer": {"@type": "Answer", "text": "Revoke the connection from Propeller assistant connections at https://app.propellerpicks.com/research/oauth. You can also remove the server inside your AI tool's settings."}}
+  ]
+}
+</script>
+  <link rel="stylesheet" href="/assets/css/ai-research.css?v=20260723">
+  <script src="/assets/js/analytics-loader.js?v=20260915"></script>
+  <!-- PP_SITE_HEAD_START -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#f2efe8">
+  <link rel="stylesheet" href="/assets/css/site-system.css?v=20260712">
+  <link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">
+  <link rel="stylesheet" href="/assets/css/home-ai.css?v=20260815">
+  <link rel="stylesheet" href="/assets/css/wave-a-companion-pages.css?v=20260817c">
+  <!-- PP_SITE_HEAD_END -->
+<style>
+/* MCP page: Replay Room additions not covered by the shared air-* components. */
+body.pp-wave-a-page code { font-family: var(--mono); }
+body.pp-wave-a-page :not(pre) > code { padding: 1px 6px; border-radius: 6px; background: rgba(84, 200, 255, 0.12); color: var(--cream); font-size: .9em; word-break: break-word; }
+
+.mcp-prompt { max-width: 760px; margin-top: 34px; border: 1px solid var(--blue); border-radius: 14px; background: #021522; overflow: hidden; }
+.mcp-prompt__head { display: flex; align-items: stretch; justify-content: space-between; border-bottom: 1px solid rgba(84, 200, 255, 0.35); }
+.mcp-prompt__label { display: flex; align-items: center; padding: 14px 18px; color: var(--blue); font: 600 13px/1.3 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+body.pp-site-system.pp-wave-a-page main .mcp-prompt__text { margin: 0; padding: 20px 18px 22px; color: var(--cream) !important; font-size: 17px; line-height: 1.6; }
+body.pp-site-system.pp-wave-a-page main .mcp-prompt__note { max-width: 760px; margin: 14px 0 0; color: var(--muted) !important; font-size: 15px; }
+body.pp-site-system.pp-wave-a-page main .mcp-prompt__note a { color: var(--blue-soft) !important; text-underline-offset: 4px; }
+.mcp-url__copy { flex: none; min-width: 96px; padding: 0 22px; border: 0; background: var(--orange); color: var(--night); font: 700 16px var(--display); cursor: pointer; }
+.mcp-url__copy:hover { background: #ff7442; }
+.mcp-url__copy:focus-visible { outline: 3px solid var(--cream); outline-offset: -5px; }
+
+.mcp-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.mcp-client { border: 1px solid rgba(84, 200, 255, 0.42); border-radius: 14px; background: rgba(2, 21, 34, 0.7); }
+.mcp-client[open] { border-color: var(--blue); }
+.mcp-client > summary { display: flex; align-items: center; gap: 14px; min-height: 68px; padding: 0 22px; color: var(--cream); font: 700 22px/1.1 var(--display); cursor: pointer; list-style: none; }
+.mcp-client > summary::-webkit-details-marker { display: none; }
+.mcp-client > summary small { margin-left: auto; color: var(--muted); font: 600 12px/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+.mcp-client > summary::after { content: "+"; color: var(--orange); font: 400 28px/1 var(--display); }
+.mcp-client[open] > summary::after { content: "−"; }
+.mcp-client__body { padding: 0 22px 22px; }
+.mcp-client ol { margin: 0 0 14px; padding-left: 22px; }
+body.pp-wave-a-page .mcp-client li { margin-bottom: 8px; color: var(--muted) !important; }
+body.pp-wave-a-page .mcp-client li strong { color: var(--cream) !important; }
+body.pp-wave-a-page .mcp-client p { margin: 0 0 12px; }
+body.pp-wave-a-page .mcp-small { font-size: 14px; }
+.mcp-pre { margin: 0 0 14px; padding: 16px 18px; overflow-x: auto; border: 1px solid rgba(84, 200, 255, 0.35); border-radius: 10px; background: var(--night); color: var(--cream); font: 400 14px/1.6 var(--mono); }
+.mcp-pre .k { color: var(--blue); }
+.mcp-pre .s { color: #ffc2a8; }
+.mcp-pre .c { color: #83a9ba; }
+
+.mcp-chat { max-width: 900px; border: 1px solid var(--blue); border-radius: 14px; background: #021522; overflow: hidden; box-shadow: 0 28px 60px rgba(0, 0, 0, 0.28); }
+.mcp-chat__bar { display: flex; align-items: center; gap: 8px; padding: 12px 18px; border-bottom: 1px solid rgba(84, 200, 255, 0.35); color: var(--blue); font: 600 12px/1 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+.mcp-chat__bar i { width: 9px; height: 9px; border-radius: 50%; background: rgba(84, 200, 255, 0.35); }
+.mcp-chat__bar span { margin-left: 6px; }
+.mcp-chat__body { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; padding: 24px; }
+.mcp-msg-user { justify-self: end; max-width: 78%; padding: 14px 18px; border-radius: 16px 16px 4px 16px; background: var(--orange); color: var(--night); font-weight: 600; }
+.mcp-msg-tool { justify-self: start; display: inline-flex; flex-wrap: wrap; gap: 4px 8px; padding: 7px 14px; border: 1px dashed rgba(84, 200, 255, 0.6); border-radius: 999px; color: var(--muted); font: 500 13px/1.4 var(--mono); }
+.mcp-msg-tool b { color: var(--blue); font-weight: 600; }
+body.pp-wave-a-page .mcp-msg-ai p { margin: 0 0 14px; color: var(--cream) !important; }
+.mcp-table-scroll { overflow-x: auto; }
+body.pp-site-system.pp-wave-a-page main .mcp-table { width: 100%; margin: 0 0 16px; border: 0; border-collapse: collapse; background: transparent !important; color: var(--cream) !important; font-family: var(--body) !important; box-shadow: none; font-size: 15px; }
+body.pp-site-system.pp-wave-a-page main .mcp-table th,
+body.pp-site-system.pp-wave-a-page main .mcp-table td { padding: 11px 12px; border: 0; border-bottom: 1px solid rgba(84, 200, 255, 0.22) !important; background: transparent !important; text-align: left; white-space: nowrap; }
+body.pp-site-system.pp-wave-a-page main .mcp-table th { color: var(--blue) !important; font: 600 11px/1.3 var(--mono) !important; letter-spacing: .06em; text-transform: uppercase; }
+body.pp-site-system.pp-wave-a-page main .mcp-table td { color: var(--cream) !important; }
+body.pp-site-system.pp-wave-a-page main .mcp-table td.num { font-family: var(--mono) !important; }
+body.pp-wave-a-page .air-answer-layout .air-prose + .air-prose { margin-top: 16px; }
+body.pp-wave-a-page .air-answer-steps span { font-size: 12px; }
+.mcp-table .num { font-family: var(--mono); }
+.mcp-table .mcp-score { color: var(--orange); font: 700 20px/1 var(--display); }
+.mcp-table .mcp-score small { margin-left: 6px; color: var(--muted); font: 500 12px var(--mono); }
+.mcp-dir { display: inline-block; padding: 2px 9px; border: 1px solid var(--blue); border-radius: 999px; color: var(--cream); font: 600 12px/1.5 var(--mono); }
+body.pp-wave-a-page .mcp-caption { max-width: 900px; margin: 16px 0 0; font-size: 14px; }
+.mcp-raw { max-width: 900px; margin-top: 18px; }
+.mcp-raw > summary { color: var(--cream); font: 600 14px/1.5 var(--mono); text-decoration: underline; text-decoration-color: var(--blue); text-underline-offset: 5px; cursor: pointer; }
+.mcp-raw .mcp-pre { margin-top: 14px; }
+
+.mcp-tools { border-top: 1px solid var(--blue); }
+.mcp-tool { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 24px; align-items: baseline; padding: 20px 0; border-bottom: 1px solid rgba(84, 200, 255, 0.35); }
+body.pp-wave-a-page .mcp-tool code { padding: 0; background: none; color: var(--cream); font: 600 15px/1.4 var(--mono); }
+body.pp-wave-a-page .mcp-tool p { margin: 0; }
+
+.mcp-prompts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 0; padding: 0; list-style: none; }
+body.pp-wave-a-page .mcp-prompts li { padding: 20px 22px; border: 1px solid rgba(84, 200, 255, 0.42); border-radius: 14px; background: rgba(2, 21, 34, 0.7); color: var(--cream) !important; font: 600 clamp(18px, 1.9vw, 22px)/1.25 var(--display); }
+
+.mcp-limits { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--blue); }
+body.pp-wave-a-page .mcp-limits li { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); gap: 24px; padding: 20px 0; border-bottom: 1px solid rgba(84, 200, 255, 0.35); }
+body.pp-wave-a-page .mcp-limits strong { color: var(--cream); font: 600 clamp(19px, 2vw, 24px)/1.2 var(--display); }
+
+body.pp-wave-a-page .home-faq__item p { color: var(--muted) !important; }
+body.pp-site-system.pp-wave-a-page main .home-faq__item a, body.pp-site-system.pp-wave-a-page main .mcp-link { color: var(--blue-soft) !important; text-underline-offset: 4px; }
+body.pp-wave-a-page .mcp-link { font: 600 14px/1.5 var(--mono); }
+.mcp-close { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; margin-top: 30px; }
+
+@media (max-width: 760px) {
+  .mcp-url__copy { min-width: 0; padding: 0 16px; }
+  .mcp-client > summary { padding: 0 16px; font-size: 20px; }
+  .mcp-client > summary small { display: none; }
+  .mcp-client__body { padding: 0 16px 18px; }
+  .mcp-chat__body { padding: 18px 14px; }
+  .mcp-msg-user { max-width: 92%; }
+  .mcp-tool, body.pp-wave-a-page .mcp-limits li { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+  .mcp-prompts { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+</head>
+<body class="pp-site-system pp-ai-page pp-family-core pp-replay-room pp-wave-a-page"><a class="air-skip" href="#main">Skip to content</a><!-- PP_SITE_NAV_START -->
+<nav class="pp-site-nav" aria-label="Primary navigation">
+  <div class="pp-site-nav__inner">
+    <a class="pp-brand" href="https://propellerpicks.com/" aria-label="Propeller Picks home">
+      <span class="pp-brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Propeller</span>
+    </a>
+    <button class="pp-site-nav__menu" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="ppSiteNavLinks">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg>
+    </button>
+    <div class="pp-site-nav__links" id="ppSiteNavLinks">
+      <a href="https://propellerpicks.com/picks/" data-section="picks">Picks</a>
+      <a href="https://propellerpicks.com/results/" data-section="results">Results</a>
+      <a href="https://propellerpicks.com/track-record/" data-section="track-record">Track Record</a>
+      <a href="https://propellerpicks.com/how-it-works/" data-section="how-it-works">Method</a>
+      <a href="https://propellerpicks.com/guides/" data-section="guides">Guides</a>
+      <a href="https://propellerpicks.com/tools/" data-section="tools">Tools</a>
+      <a href="https://propellerpicks.com/analyzer/" data-section="analyzer">Analyzer</a>
+      <a href="https://app.propellerpicks.com/app" rel="noopener noreferrer">Web App</a>
+      <a class="pp-site-nav__cta" href="https://propellerpicks.com/pricing/" data-analytics-event="signup_click" data-cta-id="site-nav-pricing" data-cta-surface="site_nav" data-cta-destination="pricing">See pricing</a>
+    </div>
+  </div>
+</nav>
+<!-- PP_SITE_NAV_END --><main id="main">
+<section class="air-hero"><div class="air-wrap">
+  <p class="air-kicker">MCP server for AI tools</p>
+  <h1>Use Propeller inside <em>your AI tool.</em></h1>
+  <p class="air-deck">Connect Claude, ChatGPT, Meta Muse, Grok Bot, Cursor or another MCP-compatible AI tool to your Propeller research. Then ask about a player, today's board or a saved pick in plain English, and your assistant answers from Propeller's stored data instead of guessing.</p>
+  <div class="mcp-prompt" role="group" aria-labelledby="mcpPromptLabel">
+    <div class="mcp-prompt__head">
+      <span class="mcp-prompt__label" id="mcpPromptLabel">Copy this and paste it into your AI tool</span>
+      <button class="mcp-url__copy mcp-prompt__copy" type="button" data-copy-target="mcpPromptText" data-analytics-event="mcp_prompt_copy">Copy</button>
+    </div>
+    <p class="mcp-prompt__text" id="mcpPromptText">Connect me to the Propeller Picks MCP server at https://mcp.propellerpicks.com/mcp. It is a remote MCP server (Streamable HTTP) that uses OAuth, so I sign in with my Propeller account and no API key is needed. If you can add it yourself, please do. If you can't, give me the exact steps for the app I'm using right now. Once it's connected, tell me what you can look up with it.</p>
+  </div>
+  <p class="mcp-prompt__note">Coding tools such as Claude Code and Cursor can usually add the server for you. Chat apps such as Claude and ChatGPT will point you to their connector settings, and Meta Muse and Grok Bot walk you through connecting right in the chat. Steps for each tool are <a href="#install">below</a>.</p>
+  <div class="air-meta"><span class="air-byline">By Scott Olmer · Checked October 27, 2026</span><span>Included with full workspace access</span><span>Sign in with your Propeller account</span><span>Read-only: never places entries</span></div>
+</div></section>
+
+<section class="air-section air-section--answer" aria-labelledby="mcp-answer-title"><div class="air-wrap air-answer-layout">
+  <div>
+    <p class="air-label">Direct answer</p>
+    <h2 id="mcp-answer-title">What is the Propeller MCP server?</h2>
+    <p class="air-prose">MCP (Model Context Protocol) is a standard way for AI assistants to use outside tools. Propeller's server gives your assistant <strong>read access to your Propeller research</strong>: stored props, Confidence Scores, game logs, injury reports and saved picks.</p>
+    <p class="air-prose">It is included with full workspace access, including existing free accounts. Your AI tool's own plan and usage limits still apply.</p>
+  </div>
+  <ol class="air-answer-steps">
+    <li><span>01</span><strong>Add the server</strong><small>Paste the server URL into your AI tool's connector or MCP settings.</small></li>
+    <li><span>02</span><strong>Sign in to Propeller</strong><small>Your tool opens a Propeller sign-in page. Review the permissions and approve.</small></li>
+    <li><span>03</span><strong>Ask a question</strong><small>Your assistant calls Propeller when a question needs prop, player or pick data.</small></li>
+  </ol>
+</div></section>
+
+<section class="air-section" id="install" aria-labelledby="install-title"><div class="air-wrap">
+  <div class="air-head"><p class="air-label">Install</p><div><h2 id="install-title">Add Propeller to your AI tool.</h2><p>It is a remote server with sign-in, so there is nothing to download. Menu names change between app versions. If a label differs, look for "connectors", "integrations" or "MCP servers".</p></div></div>
+  <div class="mcp-layout">
+    <details class="mcp-client" open>
+      <summary>Claude <small>Web, desktop and mobile</small></summary>
+      <div class="mcp-client__body">
+        <ol>
+          <li>Open <strong>Settings → Connectors</strong>.</li>
+          <li>Choose <strong>Add custom connector</strong>.</li>
+          <li>Name it <code>Propeller</code> and paste <code>https://mcp.propellerpicks.com/mcp</code> as the URL.</li>
+          <li>Select <strong>Connect</strong>, sign in to Propeller and approve access.</li>
+          <li>In a new chat, turn the Propeller connector on from the tools menu if it is not already on.</li>
+        </ol>
+        <p class="mcp-small">Connectors you add on the web also show up in Claude Desktop and the Claude mobile apps. On Team and Enterprise plans an owner may need to add the connector first.</p>
+      </div>
+    </details>
+    <details class="mcp-client">
+      <summary>Claude Code <small>Terminal</small></summary>
+      <div class="mcp-client__body">
+        <p>Run this once:</p>
+<pre class="mcp-pre">claude mcp add --transport http propeller https://mcp.propellerpicks.com/mcp</pre>
+        <p>Then start Claude Code, type <code>/mcp</code>, pick <strong>propeller</strong> and choose <strong>Authenticate</strong> to sign in. Add <code>--scope user</code> to make Propeller available in every project.</p>
+      </div>
+    </details>
+    <details class="mcp-client">
+      <summary>ChatGPT <small>Web</small></summary>
+      <div class="mcp-client__body">
+        <ol>
+          <li>Open <strong>Settings → Apps &amp; Connectors → Advanced settings</strong> and turn on <strong>Developer mode</strong>.</li>
+          <li>Back in <strong>Apps &amp; Connectors</strong>, choose <strong>Create</strong>.</li>
+          <li>Name it <code>Propeller</code>, paste the server URL and choose <strong>OAuth</strong> for authentication.</li>
+          <li>Save, sign in to Propeller and approve access.</li>
+          <li>In a chat, add Propeller from the <strong>+</strong> menu under Developer mode.</li>
+        </ol>
+        <p class="mcp-small">Custom MCP connectors in ChatGPT depend on your ChatGPT plan and workspace settings.</p>
+      </div>
+    </details>
+    <details class="mcp-client">
+      <summary>Meta Muse <small>Chat</small></summary>
+      <div class="mcp-client__body">
+        <ol>
+          <li>Copy the message at the top of this page and paste it into a Muse chat.</li>
+          <li>Follow the connection steps Muse gives you.</li>
+          <li>When prompted, sign in to Propeller and approve access.</li>
+        </ol>
+        <p class="mcp-small">Muse sets up the connection from inside the chat, so you don't need to open a settings menu.</p>
+      </div>
+    </details>
+    <details class="mcp-client">
+      <summary>Grok Bot <small>Chat</small></summary>
+      <div class="mcp-client__body">
+        <ol>
+          <li>Copy the message at the top of this page and paste it into a Grok Bot chat.</li>
+          <li>Follow the connection steps Grok Bot gives you.</li>
+          <li>When prompted, sign in to Propeller and approve access.</li>
+        </ol>
+        <p class="mcp-small">Grok Bot sets up the connection from inside the chat, so you don't need to open a settings menu.</p>
+      </div>
+    </details>
+    <details class="mcp-client">
+      <summary>Cursor <small>Editor</small></summary>
+      <div class="mcp-client__body">
+        <p>Add Propeller to <code>~/.cursor/mcp.json</code> (all projects) or <code>.cursor/mcp.json</code> (one project):</p>
+<pre class="mcp-pre">{
+  <span class="k">"mcpServers"</span>: {
+    <span class="k">"propeller"</span>: {
+      <span class="k">"url"</span>: <span class="s">"https://mcp.propellerpicks.com/mcp"</span>
+    }
+  }
+}</pre>
+        <p>Open <strong>Cursor Settings → MCP</strong> and select <strong>Login</strong> next to propeller to sign in.</p>
+      </div>
+    </details>
+    <details class="mcp-client">
+      <summary>VS Code <small>GitHub Copilot agent mode</small></summary>
+      <div class="mcp-client__body">
+        <p>Add Propeller to <code>.vscode/mcp.json</code>, or run <strong>MCP: Add Server</strong> from the Command Palette and choose HTTP:</p>
+<pre class="mcp-pre">{
+  <span class="k">"servers"</span>: {
+    <span class="k">"propeller"</span>: {
+      <span class="k">"type"</span>: <span class="s">"http"</span>,
+      <span class="k">"url"</span>: <span class="s">"https://mcp.propellerpicks.com/mcp"</span>
+    }
+  }
+}</pre>
+        <p>Select <strong>Start</strong> above the server entry, then follow the sign-in prompt.</p>
+      </div>
+    </details>
+    <details class="mcp-client">
+      <summary>Other MCP clients</summary>
+      <div class="mcp-client__body">
+        <p>Any client that supports remote MCP servers with OAuth sign-in should work:</p>
+        <ol>
+          <li><strong>URL:</strong> <code>https://mcp.propellerpicks.com/mcp</code></li>
+          <li><strong>Transport:</strong> Streamable HTTP</li>
+          <li><strong>Authentication:</strong> OAuth. You sign in with your Propeller account; there is no API key to paste.</li>
+        </ol>
+      </div>
+    </details>
+  </div>
+</div></section>
+
+<section class="air-section air-section--ink" id="example" aria-labelledby="example-title"><div class="air-wrap">
+  <div class="air-head"><p class="air-label">What it looks like</p><div><h2 id="example-title">A real answer, from stored research.</h2><p>Here is a real response from the server, shown the way an AI assistant might present it. The assistant asks Propeller for the NBA board, then explains the result in plain English.</p></div></div>
+  <div class="mcp-chat" aria-label="Example AI conversation using the Propeller MCP server">
+    <div class="mcp-chat__bar" aria-hidden="true"><i></i><i></i><i></i><span>AI assistant + Propeller</span></div>
+    <div class="mcp-chat__body">
+      <div class="mcp-msg-user">What are the highest-confidence NBA props on Propeller's board tonight?</div>
+      <div class="mcp-msg-tool">Used tool <b>read_nba_data</b> · top_picks · limit 3</div>
+      <div class="mcp-msg-ai">
+        <p>Here are the top three of 97 eligible NBA props on Propeller's stored board for October 27, 2026. All three come from the Celtics–Nets game:</p>
+        <div class="mcp-table-scroll">
+          <table class="mcp-table">
+            <thead><tr><th>Player</th><th>Prop</th><th>Line</th><th>Lean</th><th>Confidence</th></tr></thead>
+            <tbody>
+              <tr><td>Jayson Tatum</td><td>Points</td><td class="num">25.5</td><td><span class="mcp-dir">Less</span></td><td><span class="mcp-score">61<small>moderate</small></span></td></tr>
+              <tr><td>Jayson Tatum</td><td>Pts + Asts</td><td class="num">33.5</td><td><span class="mcp-dir">Less</span></td><td><span class="mcp-score">61<small>moderate</small></span></td></tr>
+              <tr><td>Paul George</td><td>Pts + Asts</td><td class="num">22.5</td><td><span class="mcp-dir">Less</span></td><td><span class="mcp-score">60<small>lean</small></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>These scores are on Propeller's 50–100 directional scale. They are not win probabilities. The lines were captured from DraftKings at 4:15 p.m. ET, so check what your platform shows now. Want me to pull Tatum's recent game logs before you decide?</p>
+      </div>
+    </div>
+  </div>
+  <p class="mcp-caption">Tool response captured October 27, 2026. The assistant's wording is illustrative; your AI tool writes its own reply. Shown as research, not a recommendation to enter.</p>
+  <details class="mcp-raw">
+    <summary>See the raw tool response (shortened)</summary>
+<pre class="mcp-pre">{
+  <span class="k">"sport"</span>: <span class="s">"nba"</span>,
+  <span class="k">"capability"</span>: <span class="s">"top_picks"</span>,
+  <span class="k">"status"</span>: <span class="s">"available"</span>,
+  <span class="k">"records"</span>: [
+    {
+      <span class="k">"label"</span>: <span class="s">"Jayson Tatum at points"</span>,
+      <span class="k">"observed_at"</span>: <span class="s">"2026-10-27T20:15:02"</span>,
+      <span class="k">"fields"</span>: [
+        { <span class="k">"name"</span>: <span class="s">"team"</span>, <span class="k">"value"</span>: <span class="s">"BOS"</span> },
+        { <span class="k">"name"</span>: <span class="s">"opponent"</span>, <span class="k">"value"</span>: <span class="s">"BKN"</span> },
+        { <span class="k">"name"</span>: <span class="s">"line"</span>, <span class="k">"value"</span>: 25.5 },
+        { <span class="k">"name"</span>: <span class="s">"recommended_direction"</span>, <span class="k">"value"</span>: <span class="s">"UNDER"</span> },
+        { <span class="k">"name"</span>: <span class="s">"displayed_confidence"</span>, <span class="k">"value"</span>: 61 },
+        { <span class="k">"name"</span>: <span class="s">"confidence_tier"</span>, <span class="k">"value"</span>: <span class="s">"moderate"</span> },
+        { <span class="k">"name"</span>: <span class="s">"rank"</span>, <span class="k">"value"</span>: 1 }
+      ]
+    }
+    <span class="c">/* … 2 more records … */</span>
+  ],
+  <span class="k">"limited"</span>: true,
+  <span class="k">"notice"</span>: <span class="s">"Stored Propeller data only; freshness and coverage are not verified live. A recorded confidence score is not a win probability. …"</span>,
+  <span class="k">"ranking"</span>: { <span class="k">"total_eligible"</span>: 97, <span class="k">"has_more"</span>: true }
+}</pre>
+  </details>
+  <p class="mcp-caption">Every response carries its own timestamps and limitations, so your assistant can tell you how old the data is and what it does not cover.</p>
+</div></section>
+
+<section class="air-section" id="tools" aria-labelledby="tools-title"><div class="air-wrap">
+  <div class="air-head"><p class="air-label">Available tools</p><div><h2 id="tools-title">What your assistant can look up.</h2><p>Your AI tool picks the right tool on its own. You do not need to name them.</p></div></div>
+  <div class="mcp-tools">
+    <div class="mcp-tool"><code>read_nba_data</code><p>NBA players, teams, schedule, results, game-log statistics, props, picks and the ranked top-picks board.</p></div>
+    <div class="mcp-tool"><code>read_mlb_data</code><p>The same capabilities for MLB.</p></div>
+    <div class="mcp-tool"><code>read_nhl_data</code><p>The same capabilities for NHL.</p></div>
+    <div class="mcp-tool"><code>read_soccer_data</code><p>The same capabilities for soccer.</p></div>
+    <div class="mcp-tool"><code>read_nfl_data</code><p>The same capabilities for NFL.</p></div>
+    <div class="mcp-tool"><code>search_nfl_players</code><p>Finds an NFL player by name, with typo tolerance. If more than one player matches, your assistant should ask which one you mean.</p></div>
+    <div class="mcp-tool"><code>get_top_nfl_props</code><p>Upcoming NFL props ranked by Confidence Score. Filter by player, game or platform, or return one prop per player.</p></div>
+    <div class="mcp-tool"><code>get_nfl_player_context</code><p>A player's recent stored game logs and latest stored injury report.</p></div>
+    <div class="mcp-tool"><code>get_nfl_parlay_candidates</code><p>One 2–6 leg NFL research combination for a platform you name, with different players and games, an adjusted confidence and risk flags. No payout or joint probability.</p></div>
+    <div class="mcp-tool"><code>review_saved_pick</code><p>Reviews a line and side you saved in Propeller against timestamped evidence.</p></div>
+  </div>
+  <p class="mcp-caption">Sport coverage varies by season, slate and available data. The NFL tools accept PrizePicks, Underdog, DraftKings Pick6, Sleeper and Betr, plus sportsbook lines as market context.</p>
+</div></section>
+
+<section class="air-section" id="prompts" aria-labelledby="prompts-title"><div class="air-wrap">
+  <div class="air-head"><p class="air-label">Things to ask</p><h2 id="prompts-title">Start with a plain question.</h2></div>
+  <ul class="mcp-prompts">
+    <li>"What are Propeller's top NHL picks today?"</li>
+    <li>"Show me the best NFL prop for each player this Sunday, one per player."</li>
+    <li>"Pull Josh Allen's last five games and his latest injury report."</li>
+    <li>"Build a 3-leg NFL research combo for Underdog and explain the risk flags."</li>
+    <li>"Why does Propeller lean Less on this NBA points line?"</li>
+    <li>"Review the pick I saved yesterday. Has anything changed?"</li>
+  </ul>
+</div></section>
+
+<section class="air-section" id="limits" aria-labelledby="limits-title"><div class="air-wrap">
+  <div class="air-head"><p class="air-label">Use safely</p><h2 id="limits-title">What it does not do.</h2></div>
+  <ul class="mcp-limits">
+    <li><strong>Bets and entries</strong><p>The server only reads research. It cannot place bets or submit DFS or pick'em entries, and Propeller does not accept wagers.</p></li>
+    <li><strong>Line freshness</strong><p>Answers come from Propeller's recorded analyses and captured lines. Check the line on your platform before you decide.</p></li>
+    <li><strong>Confidence Scores</strong><p>The 50–100 Confidence Score is a directional research signal, not a win probability or a guarantee.</p></li>
+    <li><strong>Payouts and combined odds</strong><p>Combination tools do not calculate payouts or the chance that every leg hits.</p></li>
+    <li><strong>Your AI tool's limits</strong><p>Your assistant's plan, message limits and accuracy are set by that tool. It can still misread a result, so check anything important in the Propeller app.</p></li>
+  </ul>
+</div></section>
+
+<section class="air-section" aria-labelledby="mcp-faq-title"><div class="air-wrap">
+  <div class="air-head"><p class="air-label">Questions</p><h2 id="mcp-faq-title">Before you connect.</h2></div>
+  <div class="mcp-faq">
+    <details class="home-faq__item"><summary>What is the Propeller MCP server?<span aria-hidden="true">+</span></summary><p>It is a remote Model Context Protocol server at <code>https://mcp.propellerpicks.com/mcp</code>. After you sign in, a compatible AI tool can read your Propeller research: stored player props, Confidence Scores, game logs, injury reports and saved picks.</p></details>
+    <details class="home-faq__item"><summary>Does the Propeller MCP server cost extra?<span aria-hidden="true">+</span></summary><p>No. MCP access is included with full workspace access, including existing free accounts that keep their access free. Your AI tool's own plan and usage limits still apply. See <a href="/pricing/">pricing</a> for current access details.</p></details>
+    <details class="home-faq__item"><summary>Can my AI tool place bets or submit entries through Propeller?<span aria-hidden="true">+</span></summary><p>No. The server is read-only research. Propeller does not accept wagers, place wagers or submit DFS and pick'em entries, and neither does the MCP server.</p></details>
+    <details class="home-faq__item"><summary>How do I disconnect an AI tool from Propeller?<span aria-hidden="true">+</span></summary><p>Revoke the connection from <a href="https://app.propellerpicks.com/research/oauth">Propeller assistant connections</a>. You can also remove the server inside your AI tool's settings.</p></details>
+  </div>
+  <div class="mcp-close">
+    <a class="air-button" href="https://app.propellerpicks.com/signup" rel="noopener" data-analytics-event="signup_click" data-cta-id="mcp-page-cta" data-cta-surface="mcp_page">Create a free account</a>
+    <a class="air-button air-button--secondary" href="/help/how-do-confidence-scores-work/">How Confidence Scores work</a>
+    <a class="mcp-link" href="/tools/ai-betting-prompt-builder/">No MCP? Try the AI prompt builder</a>
+  </div>
+</div></section>
+</main><!-- PP_SITE_FOOTER_START -->
+<footer class="pp-site-footer">
+  <div class="pp-site-footer__inner">
+    <div class="pp-site-footer__grid">
+      <div class="pp-site-footer__brand">
+        <a class="pp-brand" href="https://propellerpicks.com/" aria-label="Propeller Picks home">
+          <span class="pp-brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>Propeller</span>
+        </a>
+        <p class="pp-site-footer__copy">AI-powered player prop research with inspectable signals, practical tools, and a documented historical archive.</p>
+      </div>
+      <div class="pp-site-footer__column">
+        <h2>Research</h2>
+        <a href="https://propellerpicks.com/picks/">Picks</a>
+        <a href="https://propellerpicks.com/analyzer/">Analyzer</a>
+        <a href="https://propellerpicks.com/tools/">Tools</a>
+        <a href="https://propellerpicks.com/guides/">Guides</a>
+      </div>
+      <div class="pp-site-footer__column">
+        <h2>Proof</h2>
+        <a href="https://propellerpicks.com/results/">Results</a>
+        <a href="https://propellerpicks.com/track-record/">Track Record</a>
+        <a href="https://propellerpicks.com/how-it-works/">Method</a>
+        <a href="https://propellerpicks.com/help/">Help</a>
+        <a href="https://propellerpicks.com/blog/">Blog</a>
+      </div>
+      <div class="pp-site-footer__column">
+        <h2>Company</h2>
+        <a href="https://propellerpicks.com/about/">About</a>
+        <a href="https://propellerpicks.com/editorial-policy/">Editorial Policy</a>
+        <a href="https://propellerpicks.com/privacy/">Privacy</a>
+        <a href="https://propellerpicks.com/pricing/">Pricing</a>
+        <a href="https://propellerpicks.com/delete-account/">Delete Account</a>
+        <a href="https://propellerpicks.com/terms/">Terms</a>
+        <a href="mailto:support@propellerpicks.com">Support</a>
+        <a href="https://x.com/propellerpicks" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+      </div>
+    </div>
+    <p class="pp-site-footer__legal">Propeller is a research and analysis tool. We do not accept wagers or operate as a sportsbook. All analysis is for informational purposes only and does not constitute gambling advice. Must be 18+. If gambling is a problem, call <a href="tel:18004262537">1-800-GAMBLER</a>. Past performance does not guarantee future results.<br>© 2026 Propeller Picks.</p>
+  </div>
+</footer>
+<!-- PP_SITE_FOOTER_END -->
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());</script>
+<script>
+document.querySelectorAll('[data-copy], [data-copy-target]').forEach(function (btn) {
+  btn.addEventListener('click', function () {
+    if (!navigator.clipboard) return;
+    var target = btn.dataset.copyTarget && document.getElementById(btn.dataset.copyTarget);
+    var text = target ? target.textContent.trim() : btn.dataset.copy;
+    navigator.clipboard.writeText(text).then(function () {
+      btn.textContent = 'Copied';
+      setTimeout(function () { btn.textContent = 'Copy'; }, 1600);
+    }, function () {});
+  });
+});
+</script>
+  <script src="/assets/js/site-nav.js?v=20260712" defer></script>
+</body></html>
