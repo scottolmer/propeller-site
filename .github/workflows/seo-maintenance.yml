@@ -98,6 +98,7 @@ jobs:
           python3 -m unittest scripts/test_normalize_platform_intent_links.py
           python3 -m unittest scripts/test_help_attribution.py
           python3 -m unittest scripts/test_seo_audit_remediation.py
+          python3 -m unittest scripts/test_picks_freshness_season.py
           node --test scripts/test_nfl_slate_state.mjs
           node --test scripts/test_analyzer_availability.mjs
           node --test scripts/test_calculator_events.mjs scripts/test_research_handoff.mjs scripts/test_growth_entries.mjs
