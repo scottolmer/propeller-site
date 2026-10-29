@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-29T15:17:56Z",
+  "generated_at": "2026-10-29T15:59:31Z",
   "publication_definition": "First observed in the Propeller public picks preview. Event-start ordering and outcome timing are not verified because the public preview does not expose event start time.",
   "before_event_start_verified": false,
   "records": [
@@ -329561,6 +329561,23 @@
       "direction": "OVER",
       "model_score": 58.1,
       "confidence": 58,
+      "status": "open",
+      "settled_at": null,
+      "actual_value": null,
+      "result_id": null
+    },
+    {
+      "publication_id": "pub_1fad832f6093e44a5311",
+      "published_at": "2026-10-29T15:59:28Z",
+      "captured_at": "2026-10-29T15:59:31Z",
+      "sport": "nfl",
+      "game_date": "2026-10-29",
+      "player_name": "Christian Watson",
+      "stat_type": "player_reception_yds",
+      "line": 72.5,
+      "direction": "OVER",
+      "model_score": 59.2,
+      "confidence": 59,
       "status": "open",
       "settled_at": null,
       "actual_value": null,
