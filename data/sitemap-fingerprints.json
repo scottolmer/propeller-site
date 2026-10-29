@@ -341,9 +341,14 @@
       "source": "research/prospective-record/index.html"
     },
     "https://propellerpicks.com/results/": {
-      "fingerprint": "b08485cecc6db675183414aa2884f810c40381d217f3a1f98bbef04c367fdf97",
+      "fingerprint": "947cbb4c839e150ed1e4067c8e41f33cf490d8594e275f68d554aa552a6e4921",
       "lastmod": "2026-10-29",
       "source": "results/index.html"
+    },
+    "https://propellerpicks.com/results/mlb-2026-season/": {
+      "fingerprint": "72729981e6c8fbade50ff3897d7f64c6d188ffcd7ab0f7aea6407eabbdb7470a",
+      "lastmod": "2026-10-29",
+      "source": "results/mlb-2026-season/index.html"
     },
     "https://propellerpicks.com/terms/": {
       "fingerprint": "d4537335b9aa8bcfe70050fa91acf1a3146cf145f733ec9b3c4c9b7e8c23eee0",
