@@ -16,7 +16,7 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "10d3c4b240586f811a1057ab1f76b5de834abdd873e6f79b975294c11729c6a7",
+      "fingerprint": "0188a2d017da74648aaa5761e04108883f122afcdb16f237987bc920b7fa1b1e",
       "lastmod": "2026-10-29",
       "source": "analyzer/index.html"
     },
@@ -24,16 +24,6 @@
       "fingerprint": "d26ac75ba5b33de71ce77889bf3b803d7c267312af9fbc5ed39f58b64b2b0ffb",
       "lastmod": "2026-10-26",
       "source": "analyzer/nba/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/donovan-clingan/": {
-      "fingerprint": "d8bd2bc158917bd7f337af0d8105c44eb48e88e1e9ea2676aecf78bd35c02ee5",
-      "lastmod": "2026-10-29",
-      "source": "analyzer/nba/donovan-clingan/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/toumani-camara/": {
-      "fingerprint": "fc1bc2545c3e5c3a956b96f7f927bfdd694ce82cf953d178743d58a1477afdff",
-      "lastmod": "2026-10-29",
-      "source": "analyzer/nba/toumani-camara/index.html"
     },
     "https://propellerpicks.com/analyzer/nfl/": {
       "fingerprint": "584209c582cb126efbed95308702225b303edf3fca4fc29c4f786d3bed7b4438",
@@ -276,7 +266,7 @@
       "source": "picks/mlb/index.html"
     },
     "https://propellerpicks.com/picks/nba/": {
-      "fingerprint": "61e0af53eead5dd4f80b611e1d32b0515d23598ab3271cf2cef5797492163687",
+      "fingerprint": "ab68048d448f4cbf153f31ea00e1ca349e033ee4541995fd37adc1ab00b1d94a",
       "lastmod": "2026-10-29",
       "source": "picks/nba/index.html"
     },
