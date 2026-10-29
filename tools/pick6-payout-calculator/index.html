@@ -73,7 +73,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
 <link rel="stylesheet" href="/assets/css/home-redesign.css?v=20260624-nav3">
 <link rel="stylesheet" href="/assets/css/tools-redesign.css">
   <link rel="stylesheet" href="/assets/css/site-white-overrides.css?v=20260625-white-site">
-<link rel="stylesheet" href="/assets/css/calculator-leg-check.css?v=20261026">
+<link rel="stylesheet" href="/assets/css/calculator-leg-check.css?v=20261029">
 <script src="/assets/js/calculator-leg-check.js?v=20261026" defer></script>
   <script src="/assets/js/analytics-loader.js?v=20260915"></script>
   <!-- PP_SITE_HEAD_START -->
@@ -171,13 +171,9 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
       <div class="result-grid" id="resultGrid"></div>
       <div class="prob-bar" id="probBar"></div>
       <p class="result-note" id="resultNote"></p>
-      <div class="result-actions">
-        <a class="result-link primary" href="/picks/pick6/" data-cta-id="calculator-pick6-result-research" data-cta-surface="calculator_result">Research DraftKings Pick6 props</a>
-        <a class="result-link secondary" href="/analyzer/" data-cta-id="calculator-pick6-result-analyzer" data-cta-surface="calculator_result">Free AI player prop analyzer</a>
-      </div>
       <form class="pp-leg-check" data-calculator="pick6" action="/analyzer/" method="get" aria-labelledby="legCheckHeading">
         <h3 class="pp-leg-check__heading" id="legCheckHeading" data-leg-check-heading>Check the players in this entry.</h3>
-        <p class="pp-leg-check__copy">Search one player at a time in the free analyzer to see which way the research leans on their line.</p>
+        <p class="pp-leg-check__copy">Your payout only comes if your picks hit. Type a player and the free analyzer shows which way the research leans on their line, in plain English. No account needed.</p>
         <div class="pp-leg-check__row">
           <label class="pp-leg-check__label" for="legCheckSport">Sport</label>
           <select id="legCheckSport" name="sport"><option value="nfl">NFL</option><option value="nba">NBA</option><option value="nhl">NHL</option><option value="mlb">MLB</option><option value="soccer">Soccer</option></select>
@@ -185,13 +181,14 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
           <input id="legCheckPlayer" name="q" type="search" autocomplete="off" placeholder="Player name">
           <button type="submit">Check player</button>
         </div>
+        <p class="pp-leg-check__alt">Or browse <a href="/picks/pick6/" data-cta-id="calculator-pick6-result-research" data-cta-surface="calculator_result">today's Pick6 research</a>.</p>
       </form>
-      <aside class="trial-invite" aria-label="Propeller Picks free account"><p class="trial-invite__eyebrow">Take the next research step</p><h3>Keep your research in one workspace.</h3><p>Put this payout math beside player research, line context, and supporting evidence. Explore the account workspace and review its current access terms. This public calculator stays free.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-pick6-result-signup" data-cta-surface="calculator_result" data-cta-destination="signup">Explore Propeller</a><a class="trial-invite__secondary" href="/analyzer/">Keep using the free analyzer</a></div></aside>
+      <aside class="trial-invite" aria-label="Propeller Picks free account"><p class="trial-invite__eyebrow">Take the next research step</p><h3>Keep your research in one workspace.</h3><p>Put this payout math beside player research, line context, and supporting evidence. Explore the account workspace and review its current access terms. This public calculator stays free.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-pick6-result-signup" data-cta-surface="calculator_result" data-cta-destination="signup">Explore Propeller</a><a class="trial-invite__secondary" href="/analyzer/" data-cta-id="calculator-pick6-result-invite-analyzer" data-cta-surface="calculator_result" data-cta-destination="analyzer">Keep using the free analyzer</a></div></aside>
       <div style="margin-top:16px;text-align:center;"><button class="copy-btn" onclick="copyResults()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy Results</button></div>
     </div>
   </div>
 
-  <aside class="trial-invite trial-invite--static" aria-label="Propeller Picks free account"><p class="trial-invite__eyebrow">Beyond payout math</p><h3>Research the props behind the entry.</h3><p>Explore the account workspace and review its current access terms. This calculator remains free without an account.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-pick6-static-signup" data-cta-surface="calculator_static" data-cta-destination="signup">Explore Propeller</a><a class="trial-invite__secondary" href="/picks/pick6/">Review Pick6 research</a></div></aside>
+  <aside class="trial-invite trial-invite--static" aria-label="Free player prop analyzer"><p class="trial-invite__eyebrow">Beyond payout math</p><h3>See which way a player leans before you lock in.</h3><p>Payout math shows what you could win. The free analyzer shows whether the research leans More or Less on a player's line, in plain English. No account needed.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="/analyzer/" data-cta-id="calculator-pick6-static-analyzer" data-cta-surface="calculator_static" data-cta-destination="analyzer">Try the free analyzer</a><a class="trial-invite__secondary" href="/picks/pick6/">Review Pick6 research</a></div></aside>
 
   <section class="content-section answer-block" aria-labelledby="quick-answer-heading">
     <h2 id="quick-answer-heading">How are DraftKings Pick6 payouts calculated?</h2>
@@ -237,6 +234,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
         <tr><td>Extra Winnings</td><td>Contest winnings above the Base Payout, determined after the field is scored.</td><td>No</td></tr>
       </tbody>
     </table>
+    <p class="pp-chart-next-step">A payout chart shows what an entry pays, not whether each pick will hit. To see which way the research leans on a player's line, look them up in our <a href="/analyzer/" data-cta-id="calculator-pick6-chart-analyzer" data-cta-surface="calculator_chart" data-cta-destination="analyzer">free player prop analyzer</a>.</p>
   </section>
 
   <section class="content-section">
@@ -411,7 +409,7 @@ function copyResults() {
 function toggleFaq(el){const open=el.classList.toggle('open');el.setAttribute('aria-expanded',String(open));el.nextElementSibling.classList.toggle('open',open)}
 </script>
 <script src="/assets/js/mobile-nav.js?v=20260624-nav3" defer></script>
-<script src="/assets/js/paid-search-events.js?v=20260817" defer></script>
+<script src="/assets/js/paid-search-events.js?v=20261029" defer></script>
   <script src="/assets/js/site-nav.js?v=20260712" defer></script>
 </body>
 </html>

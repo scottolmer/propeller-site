@@ -140,7 +140,7 @@ select,input[type="number"]{background:var(--surface-2);border:1px solid var(--b
 .cta-box{text-align:center;padding:48px 24px;background:var(--surface);border:1px solid var(--border);border-radius:20px;margin:48px 0}.cta-box h2{margin-bottom:12px}.cta-box p{max-width:480px;margin:0 auto 24px}.cta-btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;background:linear-gradient(135deg,#F97316,#EA580C);color:#000;font-weight:800;font-size:16px;border-radius:12px;transition:transform .2s,box-shadow .2s}.cta-btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px var(--accent-glow);opacity:1}
 footer{border-top:1px solid var(--border);padding:32px 0}footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}footer a,footer span{font-size:13px;color:var(--text-3)}footer a:hover{color:var(--text-2)}
 </style>
-<link rel="stylesheet" href="/assets/css/calculator-leg-check.css?v=20261026">
+<link rel="stylesheet" href="/assets/css/calculator-leg-check.css?v=20261029">
 <script src="/assets/js/calculator-leg-check.js?v=20261026" defer></script>
   <script src="/assets/js/analytics-loader.js?v=20260915"></script>
   <!-- PP_SITE_HEAD_START -->
@@ -248,11 +248,9 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
       <div id="flexBreakdown"></div>
       <div id="scenarioNote"></div>
       <p class="result-sub" style="margin-top:16px;text-align:center">Base-table estimate only. Confirm the final multiplier and grading in Underdog.</p>
-      <p class="scenario-note">Choose NFL, MLB, or NBA, then select a player, upcoming game, market, and your line. Start with one complete guest result; account limits are shown in the tool. For other sports or unavailable research, use the free analyzer.</p>
-      <div class="result-actions" aria-label="Next research steps"><a class="result-link primary" href="/tools/research-my-pick/?research_source=underdog_calculator" data-cta-id="calculator-underdog-result-my-pick" data-cta-surface="calculator_result" data-cta-destination="research_my_pick" data-research-source="underdog_calculator">Research a player prop</a><a class="result-link" href="/analyzer/" data-cta-id="calculator-underdog-result-analyzer" data-cta-surface="calculator_result">Free AI player prop analyzer</a></div>
       <form class="pp-leg-check" data-calculator="underdog" action="/analyzer/" method="get" aria-labelledby="legCheckHeading">
         <h3 class="pp-leg-check__heading" id="legCheckHeading" data-leg-check-heading>Check the players in this entry.</h3>
-        <p class="pp-leg-check__copy">Search one player at a time in the free analyzer to see which way the research leans on their line.</p>
+        <p class="pp-leg-check__copy">Your payout only comes if your picks hit. Type a player and the free analyzer shows which way the research leans on their line, in plain English. No account needed.</p>
         <div class="pp-leg-check__row">
           <label class="pp-leg-check__label" for="legCheckSport">Sport</label>
           <select id="legCheckSport" name="sport"><option value="nfl">NFL</option><option value="nba">NBA</option><option value="nhl">NHL</option><option value="mlb">MLB</option><option value="soccer">Soccer</option></select>
@@ -260,13 +258,14 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
           <input id="legCheckPlayer" name="q" type="search" autocomplete="off" placeholder="Player name">
           <button type="submit">Check player</button>
         </div>
+        <p class="pp-leg-check__alt">Have an exact line in mind? <a href="/tools/research-my-pick/?research_source=underdog_calculator" data-cta-id="calculator-underdog-result-my-pick" data-cta-surface="calculator_result" data-cta-destination="research_my_pick" data-research-source="underdog_calculator">Research My Pick</a> checks your exact number.</p>
       </form>
-      <aside class="trial-invite" aria-label="Propeller Picks free account"><p class="trial-invite__eyebrow">Take the next research step</p><h3>Keep your research in one workspace.</h3><p>Put this payout math beside player research, line context, and supporting evidence. Explore the account workspace and review its current access terms. This public calculator stays free.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-underdog-result-signup" data-cta-surface="calculator_result" data-cta-destination="signup">Explore Propeller</a><a class="trial-invite__secondary" href="/analyzer/">Keep using the free analyzer</a></div></aside>
+      <aside class="trial-invite" aria-label="Propeller Picks free account"><p class="trial-invite__eyebrow">Take the next research step</p><h3>Keep your research in one workspace.</h3><p>Put this payout math beside player research, line context, and supporting evidence. Explore the account workspace and review its current access terms. This public calculator stays free.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-underdog-result-signup" data-cta-surface="calculator_result" data-cta-destination="signup">Explore Propeller</a><a class="trial-invite__secondary" href="/analyzer/" data-cta-id="calculator-underdog-result-invite-analyzer" data-cta-surface="calculator_result" data-cta-destination="analyzer">Keep using the free analyzer</a></div></aside>
       <div style="margin-top:16px;text-align:center"><button class="copy-btn" type="button" onclick="copyResults()"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>Copy Results</button></div>
     </div>
   </div>
 
-  <aside class="trial-invite trial-invite--static" aria-label="Propeller Picks free account"><p class="trial-invite__eyebrow">Beyond payout math</p><h3>Research the props behind the entry.</h3><p>Explore the account workspace and review its current access terms. This calculator remains free without an account.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-underdog-static-signup" data-cta-surface="calculator_static" data-cta-destination="signup">Explore Propeller</a><a class="trial-invite__secondary" href="/picks/underdog/">Review Underdog research</a></div></aside>
+  <aside class="trial-invite trial-invite--static" aria-label="Free player prop analyzer"><p class="trial-invite__eyebrow">Beyond payout math</p><h3>See which way a player leans before you lock in.</h3><p>Payout math shows what you could win. The free analyzer shows whether the research leans More or Less on a player's line, in plain English. No account needed.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="/analyzer/" data-cta-id="calculator-underdog-static-analyzer" data-cta-surface="calculator_static" data-cta-destination="analyzer">Try the free analyzer</a><a class="trial-invite__secondary" href="/picks/underdog/">Review Underdog research</a></div></aside>
 
   <section class="answer-block" aria-labelledby="calculator-answer-heading">
     <h2 id="calculator-answer-heading">How this Underdog payout calculator works</h2>
@@ -291,6 +290,7 @@ footer{border-top:1px solid var(--border);padding:32px 0}footer .container{displ
   <section class="content-section">
     <h2 id="payout-chart">Underdog Payout Chart 2026</h2>
     <p><strong style="color:var(--text-1)">Quick answers:</strong> Underdog's published base Standard payouts range from 3.5x for 2 picks to 120x for 8 picks. A 4-pick Standard entry has a 12x base payout if all four active picks are correct. A 4-pick Flex has a 6x base payout for 4/4 and an up-to 1.5x return for 3/4.</p>
+    <p class="pp-chart-next-step">A payout chart shows what an entry pays, not whether each pick will hit. To see which way the research leans on a player's line, look them up in our <a href="/analyzer/" data-cta-id="calculator-underdog-chart-analyzer" data-cta-surface="calculator_chart" data-cta-destination="analyzer">free player prop analyzer</a>.</p>
 
     <h3 style="font-size:18px;margin:24px 0 8px;color:var(--accent)">Standard Payouts (All-or-Nothing)</h3>
     <div class="payout-table-wrap" role="region" aria-label="Underdog Standard payout chart" tabindex="0"><table class="payout-table">
@@ -491,7 +491,7 @@ function toggleFaq(el){const open=el.classList.toggle('open');el.nextElementSibl
 updateUI();
 </script>
 <script src="/assets/js/mobile-nav.js?v=20260624-nav3" defer></script>
-<script src="/assets/js/paid-search-events.js?v=20261014" defer></script>
+<script src="/assets/js/paid-search-events.js?v=20261029" defer></script>
 <script src="/assets/js/video-embeds.js?v=20260720" defer></script>
   <script src="/assets/js/site-nav.js?v=20260712" defer></script>
 </body>

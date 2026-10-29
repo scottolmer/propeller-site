@@ -189,3 +189,30 @@ test("new result research handoff emits one source-scoped event and navigates on
   events[0][2].event_callback(); timers[0].fn();
   assert.deepEqual(navigations, [link.href]);
 });
+
+
+test("analyzer links emit analyzer_cta_click without delaying navigation", () => {
+  const {events, click, timers} = load();
+  const attrs = {
+    "data-cta-id": "calculator-prizepicks-static-analyzer",
+    "data-cta-surface": "calculator_static",
+    "data-cta-destination": "analyzer",
+    href: "/analyzer/",
+  };
+  const link = {
+    href: "https://propellerpicks.com/analyzer/",
+    textContent: "Try the free analyzer",
+    getAttribute: name => attrs[name] ?? null,
+    closest: () => null,
+    classList: {contains: () => false},
+  };
+  let prevented = false;
+  click({target: {closest: () => link}, button: 0, preventDefault: () => {prevented = true;}});
+  assert.equal(prevented, false);
+  assert.equal(timers.length, 0);
+  assert.equal(events.length, 1);
+  assert.equal(events[0][1], "analyzer_cta_click");
+  assert.equal(events[0][2].cta_id, "calculator-prizepicks-static-analyzer");
+  assert.equal(events[0][2].cta_surface, "calculator_static");
+  assert.equal(events[0][2].cta_destination, "analyzer");
+});
