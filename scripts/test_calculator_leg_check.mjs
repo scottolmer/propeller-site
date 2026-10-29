@@ -82,3 +82,22 @@ test("every payout calculator renders the leg check inside its result", () => {
     assert.ok(html.indexOf('class="pp-leg-check"') < html.indexOf('<aside class="trial-invite"'), name);
   }
 });
+
+test("the analyzer search is the first next step after each calculator result", () => {
+  for (const { name, html } of calculators) {
+    const results = html.slice(html.indexOf('id="results"'), html.indexOf('class="pp-leg-check"'));
+    assert.doesNotMatch(results, /class="result-actions"/, name);
+    assert.doesNotMatch(results, /class="result-link primary"/, name);
+    assert.doesNotMatch(html, /Choose NFL, MLB, or NBA, then select a player/, name);
+    assert.match(html, /class="pp-leg-check__alt"/, name);
+  }
+});
+
+test("calculator readers who skip Calculate still get a tracked analyzer route", () => {
+  for (const { name, html } of calculators) {
+    const staticInvite = html.match(/<aside class="trial-invite trial-invite--static"[\s\S]*?<\/aside>/)[0];
+    assert.match(staticInvite, new RegExp(`href="/analyzer/" data-cta-id="calculator-${name}-static-analyzer" data-cta-surface="calculator_static" data-cta-destination="analyzer"`), name);
+    const chart = html.slice(html.indexOf('id="payout-chart"'));
+    assert.match(chart, new RegExp(`class="pp-chart-next-step"[^\\n]*href="/analyzer/" data-cta-id="calculator-${name}-chart-analyzer"[^\\n]*>free player prop analyzer</a>`), name);
+  }
+});

@@ -131,9 +131,10 @@
     var isSignup = /app\.propellerpicks\.com\/signup/.test(absoluteHref);
     var isApp = /app\.propellerpicks\.com/.test(absoluteHref);
     var isResearchHandoff = link.getAttribute("data-cta-destination") === "research_my_pick";
+    var isAnalyzer = link.getAttribute("data-cta-destination") === "analyzer";
     var isProductCta = isResearchHandoff || link.classList.contains("cta-btn") || /^\/picks\//.test(href);
 
-    if (!isSignup && !isApp && !isProductCta) return;
+    if (!isSignup && !isApp && !isProductCta && !isAnalyzer) return;
 
     var common = {
       link_url: absoluteHref,
@@ -158,6 +159,13 @@
         navigate();
       };
       track(isSignup ? "signup_click" : "research_cta_click", common);
+      return;
+    }
+
+    // Same event name as the in-result player search, so one GA report covers every calculator route to the analyzer.
+    if (isAnalyzer) {
+      common.cta_destination = "analyzer";
+      track("analyzer_cta_click", common);
       return;
     }
 

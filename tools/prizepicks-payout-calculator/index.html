@@ -300,7 +300,7 @@ footer .container { display: flex; justify-content: space-between; align-items: 
 footer a, footer span { font-size: 13px; color: var(--text-3); }
 footer a:hover { color: var(--text-2); }
 </style>
-<link rel="stylesheet" href="/assets/css/calculator-leg-check.css?v=20261026">
+<link rel="stylesheet" href="/assets/css/calculator-leg-check.css?v=20261029">
 <script src="/assets/js/calculator-leg-check.js?v=20261026" defer></script>
   <script src="/assets/js/analytics-loader.js?v=20260915"></script>
   <!-- PP_SITE_HEAD_START -->
@@ -405,14 +405,9 @@ footer a:hover { color: var(--text-2); }
       <div id="flexBreakdown"></div>
       <div class="prob-bar" id="probBar"></div>
       <p class="scenario-note">Scenario probabilities and expected returns use only the hit rate you entered. They are mathematical illustrations, not Propeller predictions.</p>
-      <p class="scenario-note">Choose NFL, MLB, or NBA, then select a player, upcoming game, market, and your line. Start with one complete guest result; account limits are shown in the tool. For other sports or unavailable research, use the free analyzer.</p>
-      <div class="result-actions" aria-label="Next research steps">
-        <a class="result-link primary" href="/tools/research-my-pick/?research_source=prizepicks_calculator" data-cta-id="calculator-prizepicks-result-my-pick" data-cta-surface="calculator_result" data-cta-destination="research_my_pick" data-research-source="prizepicks_calculator">Research a player prop</a>
-        <a class="result-link" href="/analyzer/" data-cta-id="calculator-prizepicks-result-analyzer" data-cta-surface="calculator_result">Free AI player prop analyzer</a>
-      </div>
       <form class="pp-leg-check" data-calculator="prizepicks" action="/analyzer/" method="get" aria-labelledby="legCheckHeading">
         <h3 class="pp-leg-check__heading" id="legCheckHeading" data-leg-check-heading>Check the players in this entry.</h3>
-        <p class="pp-leg-check__copy">Search one player at a time in the free analyzer to see which way the research leans on their line.</p>
+        <p class="pp-leg-check__copy">Your payout only comes if your picks hit. Type a player and the free analyzer shows which way the research leans on their line, in plain English. No account needed.</p>
         <div class="pp-leg-check__row">
           <label class="pp-leg-check__label" for="legCheckSport">Sport</label>
           <select id="legCheckSport" name="sport"><option value="nfl">NFL</option><option value="nba">NBA</option><option value="nhl">NHL</option><option value="mlb">MLB</option><option value="soccer">Soccer</option></select>
@@ -420,6 +415,7 @@ footer a:hover { color: var(--text-2); }
           <input id="legCheckPlayer" name="q" type="search" autocomplete="off" placeholder="Player name">
           <button type="submit">Check player</button>
         </div>
+        <p class="pp-leg-check__alt">Have an exact line in mind? <a href="/tools/research-my-pick/?research_source=prizepicks_calculator" data-cta-id="calculator-prizepicks-result-my-pick" data-cta-surface="calculator_result" data-cta-destination="research_my_pick" data-research-source="prizepicks_calculator">Research My Pick</a> checks your exact number.</p>
       </form>
       <aside class="trial-invite" aria-label="Propeller Picks free account">
         <p class="trial-invite__eyebrow">Take the next research step</p>
@@ -427,7 +423,7 @@ footer a:hover { color: var(--text-2); }
         <p>Put this payout math beside player research, line context, and supporting evidence. Explore the account workspace and review its current access terms. This public calculator stays free.</p>
         <div class="trial-invite__actions">
           <a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-prizepicks-result-signup" data-cta-surface="calculator_result" data-cta-destination="signup">Explore Propeller</a>
-          <a class="trial-invite__secondary" href="/analyzer/">Keep using the free analyzer</a>
+          <a class="trial-invite__secondary" href="/analyzer/" data-cta-id="calculator-prizepicks-result-invite-analyzer" data-cta-surface="calculator_result" data-cta-destination="analyzer">Keep using the free analyzer</a>
         </div>
       </aside>
       <div style="margin-top:16px;text-align:center;">
@@ -439,15 +435,7 @@ footer a:hover { color: var(--text-2); }
     </div>
   </div>
 
-  <aside class="trial-invite trial-invite--static" aria-label="Propeller Picks free account">
-    <p class="trial-invite__eyebrow">Beyond payout math</p>
-    <h3>Research the props behind the entry.</h3>
-    <p>Explore the account workspace and review its current access terms. This calculator remains free without an account.</p>
-    <div class="trial-invite__actions">
-      <a class="trial-invite__primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="calculator-prizepicks-static-signup" data-cta-surface="calculator_static" data-cta-destination="signup">Explore Propeller</a>
-      <a class="trial-invite__secondary" href="/picks/prizepicks/">Review PrizePicks research</a>
-    </div>
-  </aside>
+  <aside class="trial-invite trial-invite--static" aria-label="Free player prop analyzer"><p class="trial-invite__eyebrow">Beyond payout math</p><h3>See which way a player leans before you lock in.</h3><p>Payout math shows what you could win. The free analyzer shows whether the research leans More or Less on a player's line, in plain English. No account needed.</p><div class="trial-invite__actions"><a class="trial-invite__primary" href="/analyzer/" data-cta-id="calculator-prizepicks-static-analyzer" data-cta-surface="calculator_static" data-cta-destination="analyzer">Try the free analyzer</a><a class="trial-invite__secondary" href="/picks/prizepicks/">Review PrizePicks research</a></div></aside>
 
   <section class="answer-block" aria-labelledby="calculator-answer-heading">
     <h2 id="calculator-answer-heading">How this PrizePicks payout calculator works</h2>
@@ -484,6 +472,7 @@ footer a:hover { color: var(--text-2); }
     <p>Every standard payout multiplier for Power Play and Flex Play entries, updated for 2026. PrizePicks can vary multipliers for promotions, special projections, or certain pick combinations, so always confirm the final payout shown in the app before submitting.</p>
 
     <p><strong style="color:var(--text-1)">Quick answers:</strong> At the standard Player Pick rates checked September 9, 2026, a 6-pick Power Play returns 37.5x if all 6 active picks are correct. A 2-pick Flex returns 2x for 2/2 and 0.5x for 1/2, while a 6-pick Flex returns 25x for 6/6, 2x for 5/6, and 0.4x for 4/6. The details screen can display a different multiplier.</p>
+    <p class="pp-chart-next-step">A payout chart shows what an entry pays, not whether each pick will hit. To see which way the research leans on a player's line, look them up in our <a href="/analyzer/" data-cta-id="calculator-prizepicks-chart-analyzer" data-cta-surface="calculator_chart" data-cta-destination="analyzer">free player prop analyzer</a>.</p>
 
     <h2 style="font-size:clamp(20px,3vw,26px);margin:32px 0 8px;">PrizePicks Power Play Payout Chart</h2>
     <div class="payout-table-wrap" role="region" aria-label="PrizePicks Power Play payout chart" tabindex="0"><table class="payout-table">
@@ -875,7 +864,7 @@ function toggleFaq(el) {
 updateUI();
 </script>
 <script src="/assets/js/mobile-nav.js?v=20260624-nav3" defer></script>
-<script src="/assets/js/paid-search-events.js?v=20261009" defer></script>
+<script src="/assets/js/paid-search-events.js?v=20261029" defer></script>
 <script src="/assets/js/video-embeds.js?v=20260720" defer></script>
   <script src="/assets/js/site-nav.js?v=20260712" defer></script>
 </body>
