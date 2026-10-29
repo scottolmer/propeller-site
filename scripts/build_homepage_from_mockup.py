@@ -95,7 +95,7 @@ def schema() -> str:
                 "offers": [
                     {
                         "@type": "Offer",
-                        "name": "Free preview account",
+                        "name": "Free tier",
                         "price": "0",
                         "priceCurrency": "USD",
                         "description": "Free account with no payment card required.",
