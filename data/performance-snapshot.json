@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-10-29T10:35:12Z",
+  "generated_at": "2026-10-29T15:03:34Z",
   "latest_sample_game_date": "2026-10-28",
   "canonical_report": "https://propellerpicks.com/results/",
   "historical_database": {
     "unit": "raw graded analysis rows",
-    "total": 3790841,
-    "wins": 2485966,
-    "losses": 1303836,
+    "total": 3793089,
+    "wins": 2487461,
+    "losses": 1304589,
     "pushes": 1039,
     "historical_outcome_rate": 65.6,
     "rate_formula": "wins / (wins + losses); pushes excluded",
@@ -15,13 +15,13 @@
   },
   "deduplicated_public_ledger": {
     "unit": "prop-result entries after the current public API collapse rules",
-    "total": 488513,
-    "wins": 323962,
-    "losses": 164432,
+    "total": 489588,
+    "wins": 324767,
+    "losses": 164702,
     "pushes": 119,
-    "historical_outcome_rate": 66.3,
+    "historical_outcome_rate": 66.4,
     "rate_formula": "wins / (wins + losses); pushes excluded",
-    "raw_to_ledger_ratio": 7.76,
+    "raw_to_ledger_ratio": 7.75,
     "source": "https://web-production-3c1c4.up.railway.app/api/public/results?days=3650&min_confidence=0&limit=20&offset=0"
   },
   "coverage": {
@@ -41,7 +41,7 @@
       "MLS"
     ],
     "top_raw_bucket": "MLB",
-    "top_raw_bucket_share": 85.7
+    "top_raw_bucket_share": 85.6
   },
   "raw_sport_buckets": [
     {
@@ -57,9 +57,9 @@
     {
       "key": "nba",
       "label": "NBA",
-      "total": 46082,
-      "wins": 26844,
-      "losses": 19238,
+      "total": 47645,
+      "wins": 27759,
+      "losses": 19886,
       "pushes": 0,
       "win_rate": 58.3,
       "published": true
@@ -97,9 +97,9 @@
     {
       "key": "mls",
       "label": "MLS",
-      "total": 20827,
-      "wins": 17703,
-      "losses": 3124,
+      "total": 21512,
+      "wins": 18283,
+      "losses": 3229,
       "pushes": 0,
       "win_rate": 85.0,
       "published": true
@@ -169,23 +169,23 @@
       "min": 55,
       "max": 64,
       "all": {
-        "total": 1632249,
-        "wins": 1011778,
-        "losses": 620055,
+        "total": 1634276,
+        "wins": 1013116,
+        "losses": 620744,
         "pushes": 416,
         "win_rate": 62.0
       },
       "over": {
-        "total": 391823,
-        "wins": 217221,
-        "losses": 174453,
+        "total": 391846,
+        "wins": 217228,
+        "losses": 174469,
         "pushes": 149,
         "win_rate": 55.5
       },
       "under": {
-        "total": 1240426,
-        "wins": 794557,
-        "losses": 445602,
+        "total": 1242430,
+        "wins": 795888,
+        "losses": 446275,
         "pushes": 267,
         "win_rate": 64.1
       }
@@ -197,25 +197,25 @@
       "min": null,
       "max": 54,
       "all": {
-        "total": 921028,
-        "wins": 480780,
-        "losses": 439663,
+        "total": 921249,
+        "wins": 480937,
+        "losses": 439727,
         "pushes": 585,
         "win_rate": 52.2
       },
       "over": {
-        "total": 420611,
-        "wins": 204907,
-        "losses": 215272,
+        "total": 420663,
+        "wins": 204917,
+        "losses": 215314,
         "pushes": 432,
         "win_rate": 48.8
       },
       "under": {
-        "total": 500417,
-        "wins": 275873,
-        "losses": 224391,
+        "total": 500586,
+        "wins": 276020,
+        "losses": 224413,
         "pushes": 153,
-        "win_rate": 55.1
+        "win_rate": 55.2
       }
     }
   ],
@@ -249,9 +249,9 @@
       "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_9b498a961d7ea96eb715",
+      "result_id": "pr_8ac013bb8f487b8913e9",
       "sport": "mlb",
-      "player_name": "Jonny DeLuca",
+      "player_name": "Victor Mesa Jr.",
       "stat_type": "stolen_bases",
       "line": 0.5,
       "predicted_direction": "UNDER",
@@ -263,9 +263,9 @@
       "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_8ac013bb8f487b8913e9",
+      "result_id": "pr_9b498a961d7ea96eb715",
       "sport": "mlb",
-      "player_name": "Victor Mesa Jr.",
+      "player_name": "Jonny DeLuca",
       "stat_type": "stolen_bases",
       "line": 0.5,
       "predicted_direction": "UNDER",
@@ -305,20 +305,6 @@
       "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_8ad21036faeaf4cded32",
-      "sport": "mlb",
-      "player_name": "Brice Turang",
-      "stat_type": "stolen_bases",
-      "line": 0.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 22.1,
-      "confidence_pct": 77.89999961853027,
-      "result": "loss",
-      "actual_value": 1.0,
-      "game_date": "2026-10-28",
-      "bookmaker": "betmgm"
-    },
-    {
       "result_id": "pr_8a41bd17be2063040906",
       "sport": "mlb",
       "player_name": "Taylor Walls",
@@ -329,6 +315,20 @@
       "confidence_pct": 77.89999961853027,
       "result": "win",
       "actual_value": 0.0,
+      "game_date": "2026-10-28",
+      "bookmaker": "betmgm"
+    },
+    {
+      "result_id": "pr_8ad21036faeaf4cded32",
+      "sport": "mlb",
+      "player_name": "Brice Turang",
+      "stat_type": "stolen_bases",
+      "line": 0.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 22.1,
+      "confidence_pct": 77.89999961853027,
+      "result": "loss",
+      "actual_value": 1.0,
       "game_date": "2026-10-28",
       "bookmaker": "betmgm"
     },
@@ -431,20 +431,6 @@
       "bookmaker": "betmgm"
     },
     {
-      "result_id": "pr_38d3d9d7cb69cba84932",
-      "sport": "mlb",
-      "player_name": "Chandler Simpson",
-      "stat_type": "walks",
-      "line": 0.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 24.9,
-      "confidence_pct": 75.10000038146973,
-      "result": "win",
-      "actual_value": 0.0,
-      "game_date": "2026-10-28",
-      "bookmaker": "draftkings"
-    },
-    {
       "result_id": "pr_777f81c43c72c0fe991a",
       "sport": "mlb",
       "player_name": "Victor Mesa Jr.",
@@ -457,6 +443,20 @@
       "actual_value": 0.0,
       "game_date": "2026-10-28",
       "bookmaker": "betmgm"
+    },
+    {
+      "result_id": "pr_38d3d9d7cb69cba84932",
+      "sport": "mlb",
+      "player_name": "Chandler Simpson",
+      "stat_type": "walks",
+      "line": 0.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 24.9,
+      "confidence_pct": 75.10000038146973,
+      "result": "win",
+      "actual_value": 0.0,
+      "game_date": "2026-10-28",
+      "bookmaker": "draftkings"
     },
     {
       "result_id": "pr_e41535014ed3dd9a6562",

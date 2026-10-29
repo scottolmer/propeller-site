@@ -1,7 +1,7 @@
 {
   "entries": {
     "https://propellerpicks.com/": {
-      "fingerprint": "c7028a877a9640cce1346839bb09f5d9da6f7b61ff1fd6ce80770bc8907ab416",
+      "fingerprint": "4b54f85bb7ec92d08d19d9e65f6f0f870be6cd9715301c6a53dd6f3c0539965f",
       "lastmod": "2026-10-29",
       "source": "index.html"
     },
@@ -16,7 +16,7 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "1b2d5b49c41582831908264af489afb2284b4bb2acdefbc215bb8f5d15ef17e3",
+      "fingerprint": "10d3c4b240586f811a1057ab1f76b5de834abdd873e6f79b975294c11729c6a7",
       "lastmod": "2026-10-29",
       "source": "analyzer/index.html"
     },
@@ -26,17 +26,12 @@
       "source": "analyzer/nba/index.html"
     },
     "https://propellerpicks.com/analyzer/nba/donovan-clingan/": {
-      "fingerprint": "545d3acfd4167335579198d74505c100882bf58bcbf94497e0ad5e28735f8933",
+      "fingerprint": "f16945b525ee408a0c754ca807d2e60585da507f445f58b4b5131061dde2c662",
       "lastmod": "2026-10-29",
       "source": "analyzer/nba/donovan-clingan/index.html"
     },
-    "https://propellerpicks.com/analyzer/nba/jrue-holiday/": {
-      "fingerprint": "547feae98bdda2f71aa82680be1ed9f5af7d635409557ae8cb494b9941e24881",
-      "lastmod": "2026-10-29",
-      "source": "analyzer/nba/jrue-holiday/index.html"
-    },
     "https://propellerpicks.com/analyzer/nba/toumani-camara/": {
-      "fingerprint": "e8e5e9a99683e5b0c61cccc2dc4d1913b1e5123448e8b50b48da0dc0959d2429",
+      "fingerprint": "5f573b3c80907bb7961c067eaf79513e0f00a4cad4437dad69c3dff309698d5b",
       "lastmod": "2026-10-29",
       "source": "analyzer/nba/toumani-camara/index.html"
     },
@@ -46,8 +41,8 @@
       "source": "analyzer/nfl/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "c767147dab8f675d49f7993c49436c2dea57aade0bf0264ae921ac8b5d430fa4",
-      "lastmod": "2026-10-28",
+      "fingerprint": "ca7c5113340c4aced2c0b26393fdae40383be7c83bfcb56d6db2817b102012ae",
+      "lastmod": "2026-10-29",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -281,7 +276,7 @@
       "source": "picks/mlb/index.html"
     },
     "https://propellerpicks.com/picks/nba/": {
-      "fingerprint": "7240f582458b73dde38a4d2810f51af80ed24f4d32fc09610a6ae8b6fc565623",
+      "fingerprint": "61e0af53eead5dd4f80b611e1d32b0515d23598ab3271cf2cef5797492163687",
       "lastmod": "2026-10-29",
       "source": "picks/nba/index.html"
     },
@@ -346,7 +341,7 @@
       "source": "research/prospective-record/index.html"
     },
     "https://propellerpicks.com/results/": {
-      "fingerprint": "42d5a81ef448a604f37d3183b77ae0754d47f7f9f47270662f21880cc94da3c5",
+      "fingerprint": "b08485cecc6db675183414aa2884f810c40381d217f3a1f98bbef04c367fdf97",
       "lastmod": "2026-10-29",
       "source": "results/index.html"
     },
@@ -386,7 +381,7 @@
       "source": "tools/underdog-payout-calculator/index.html"
     },
     "https://propellerpicks.com/track-record/": {
-      "fingerprint": "6c84190d8eed3ca47f9f32134084f108d3d52acab892cd8faeb925bbbcb5f282",
+      "fingerprint": "7c76fb033a071afa64b3579e6f8ec8af2553e93b006c0bb52b02651142eb8fef",
       "lastmod": "2026-10-29",
       "source": "track-record/index.html"
     }
