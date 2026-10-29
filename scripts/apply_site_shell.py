@@ -291,7 +291,7 @@ def migrate_html(original: str, path: Path, home: bool) -> str:
         )
     html = remove_legacy_analytics_config(html)
     html = ensure_analytics_loader(html)
-    compat = "" if navigation_page or home or "pp-pricing" in original or "pp-daily-archive" in original else '<link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">\n  '
+    compat = "" if navigation_page or home or "pp-pricing" in original or "pp-daily-archive" in original or "pp-lookup" in original else '<link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">\n  '
     page_styles = ""
     if path.relative_to(ROOT).as_posix() == "fantasy/methodology/index.html":
         page_styles += (
