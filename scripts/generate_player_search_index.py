@@ -18,7 +18,10 @@ TITLE_RE = re.compile(r"<title>(.*?)</title>", re.DOTALL | re.IGNORECASE)
 
 def player_name(title: str) -> str:
     name = html.unescape(title)
-    for separator in (" Historical", " —", " |"):
+    # Archive pages read "Name Historical Prop Analysis", current ones
+    # "Name Prop Analysis Today"; cut both so the name does not change when
+    # normalize_analyzer_archive_language.py flips a page to archive wording.
+    for separator in (" Historical", " Prop Analysis", " —", " |"):
         name = name.split(separator)[0]
     name = " ".join(name.split())
     if name == name.lower():

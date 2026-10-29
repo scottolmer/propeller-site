@@ -49,10 +49,38 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {"@type": "Question", "name": "What is the Propeller MCP server?", "acceptedAnswer": {"@type": "Answer", "text": "It is a remote Model Context Protocol server at https://mcp.propellerpicks.com/mcp. After you sign in, a compatible AI tool can read your Propeller research: stored player props, confidence scores, game logs, injury reports and saved picks."}},
-    {"@type": "Question", "name": "Does the Propeller MCP server cost extra?", "acceptedAnswer": {"@type": "Answer", "text": "No. MCP access is included with full workspace access, including existing free accounts that keep their access free. Your AI tool's own plan and usage limits still apply."}},
-    {"@type": "Question", "name": "Can my AI tool place bets or submit entries through Propeller?", "acceptedAnswer": {"@type": "Answer", "text": "No. The server is read-only research. Propeller does not accept wagers, place wagers or submit DFS and pick'em entries, and neither does the MCP server."}},
-    {"@type": "Question", "name": "How do I disconnect an AI tool from Propeller?", "acceptedAnswer": {"@type": "Answer", "text": "Revoke the connection from Propeller assistant connections at https://app.propellerpicks.com/research/oauth. You can also remove the server inside your AI tool's settings."}}
+    {
+      "@type": "Question",
+      "name": "What is the Propeller MCP server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is a remote Model Context Protocol server. Its address is https://mcp.propellerpicks.com/mcp and after you sign in, a compatible AI tool can read your Propeller research: stored player props, Confidence Scores, game logs, injury reports and saved picks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the Propeller MCP server cost extra?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. MCP access is included with full workspace access, including existing free accounts that keep their access free. Your AI tool's own plan and usage limits still apply. See pricing for current access details."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can my AI tool place bets or submit entries through Propeller?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The server is read-only research. Propeller does not accept wagers, place wagers or submit DFS and pick'em entries, and neither does the MCP server."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I disconnect an AI tool from Propeller?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Revoke the connection from Propeller assistant connections in your account. You can also remove the server inside your AI tool's settings."
+      }
+    }
   ]
 }
 </script>
@@ -411,10 +439,10 @@ body.pp-wave-a-page .mcp-link { font: 600 14px/1.5 var(--mono); }
 <section class="air-section" aria-labelledby="mcp-faq-title"><div class="air-wrap">
   <div class="air-head"><p class="air-label">Questions</p><h2 id="mcp-faq-title">Before you connect.</h2></div>
   <div class="mcp-faq">
-    <details class="home-faq__item"><summary>What is the Propeller MCP server?<span aria-hidden="true">+</span></summary><p>It is a remote Model Context Protocol server at <code>https://mcp.propellerpicks.com/mcp</code>. After you sign in, a compatible AI tool can read your Propeller research: stored player props, Confidence Scores, game logs, injury reports and saved picks.</p></details>
+    <details class="home-faq__item"><summary>What is the Propeller MCP server?<span aria-hidden="true">+</span></summary><p>It is a remote Model Context Protocol server. Its address is <code>https://mcp.propellerpicks.com/mcp</code> and after you sign in, a compatible AI tool can read your Propeller research: stored player props, Confidence Scores, game logs, injury reports and saved picks.</p></details>
     <details class="home-faq__item"><summary>Does the Propeller MCP server cost extra?<span aria-hidden="true">+</span></summary><p>No. MCP access is included with full workspace access, including existing free accounts that keep their access free. Your AI tool's own plan and usage limits still apply. See <a href="/pricing/">pricing</a> for current access details.</p></details>
     <details class="home-faq__item"><summary>Can my AI tool place bets or submit entries through Propeller?<span aria-hidden="true">+</span></summary><p>No. The server is read-only research. Propeller does not accept wagers, place wagers or submit DFS and pick'em entries, and neither does the MCP server.</p></details>
-    <details class="home-faq__item"><summary>How do I disconnect an AI tool from Propeller?<span aria-hidden="true">+</span></summary><p>Revoke the connection from <a href="https://app.propellerpicks.com/research/oauth">Propeller assistant connections</a>. You can also remove the server inside your AI tool's settings.</p></details>
+    <details class="home-faq__item"><summary>How do I disconnect an AI tool from Propeller?<span aria-hidden="true">+</span></summary><p>Revoke the connection from <a href="https://app.propellerpicks.com/research/oauth">Propeller assistant connections</a> in your account. You can also remove the server inside your AI tool's settings.</p></details>
   </div>
   <div class="mcp-close">
     <a class="air-button" href="https://app.propellerpicks.com/signup" rel="noopener" data-analytics-event="signup_click" data-cta-id="mcp-page-cta" data-cta-surface="mcp_page">Create a free account</a>

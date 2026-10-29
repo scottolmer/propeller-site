@@ -18,6 +18,11 @@ SCRIPT_RE = re.compile(
 )
 
 
+# Must cover every item class FAQParser recognizes, or pages using that class
+# are skipped here while check_schema_parity.py still checks them.
+FAQ_ITEM_MARKERS = ("faq-item", "home-faq__item", "faq-card")
+
+
 def classes(attrs: list[tuple[str, str | None]]) -> set[str]:
     return set(dict(attrs).get("class", "").split())
 
@@ -43,7 +48,7 @@ class FAQParser(HTMLParser):
         if dict(attrs).get("aria-hidden") == "true" and self.ignored_depth is None:
             self.ignored_depth = self.depth
         css = classes(attrs)
-        if css.intersection({"faq-item", "home-faq__item", "faq-card"}) and self.item_depth is None:
+        if css.intersection(FAQ_ITEM_MARKERS) and self.item_depth is None:
             self.item_depth = self.depth
             self.question, self.answer = [], []
             return
@@ -135,7 +140,7 @@ def main() -> None:
         if any(part in EXCLUDED for part in path.relative_to(ROOT).parts):
             continue
         source = path.read_text(encoding="utf-8")
-        if "FAQPage" not in source or "faq-item" not in source:
+        if "FAQPage" not in source or not any(marker in source for marker in FAQ_ITEM_MARKERS):
             continue
         updated, count = sync(source, path)
         if count:
