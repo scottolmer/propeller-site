@@ -11,7 +11,7 @@ Existing free accounts keep their access. Existing Founder 500 lifetime core ent
 
 ## Full Workspace Subscription
 
-The standalone Propeller Picks subscription is $15 USD total per month including applicable tax, charged immediately and renewed monthly until canceled. The limited web purchase pilot is for eligible new accounts. Existing accounts retain full free access. Rally is excluded. Free signup requires no card and never automatically converts to paid. New unpaid accounts receive a preview of up to five current picks per supported sport with complete available details.
+The standalone Propeller Picks subscription is $15 USD total per month including applicable tax, charged immediately and renewed monthly until canceled. The limited web purchase pilot is for eligible new accounts. Existing accounts retain full free access. Rally is excluded. Free signup requires no card and never automatically converts to paid. New unpaid accounts get the free tier: up to five current picks per supported sport with complete available details.
 
 Included core access:
 

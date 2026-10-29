@@ -31,8 +31,8 @@ REPLACEMENTS = (
     ("Get lifetime-free access", "Explore Propeller free"),
     ("get lifetime-free access", "explore Propeller free"),
     ("Lifetime-free access. No card required.", "Explore free. No card required."),
-    ("Free lifetime core access is currently available while Founder 500 launch spots remain.", "Explore Propeller free. Existing accounts keep full access free. New accounts can explore a free preview."),
-    ("Free lifetime core access while Founder 500 launch spots remain", "Free preview access"),
+    ("Free lifetime core access is currently available while Founder 500 launch spots remain.", "Explore Propeller free. Existing accounts keep full access free. New accounts can start on the free tier."),
+    ("Free lifetime core access while Founder 500 launch spots remain", "Free tier access"),
 
     ("Get Free Lifetime Access", "Explore Propeller free"),
     ("Get Free Access", "Explore Propeller free"),
@@ -74,8 +74,8 @@ def normalize(source: str, *, growth_entry: bool = False) -> str:
             source = source.replace(old, new)
     source = source.replace("Get lifetime-free access", "Explore Propeller free")
     source = source.replace("get lifetime-free access", "explore Propeller free")
-    source = source.replace("Free lifetime core access is currently available while Founder 500 launch spots remain.", "Explore Propeller free. Existing accounts keep full access free. New accounts can explore a free preview.")
-    source = source.replace("Free lifetime core access while Founder 500 launch spots remain", "Free preview access")
+    source = source.replace("Free lifetime core access is currently available while Founder 500 launch spots remain.", "Explore Propeller free. Existing accounts keep full access free. New accounts can start on the free tier.")
+    source = source.replace("Free lifetime core access while Founder 500 launch spots remain", "Free tier access")
     return source
 
 
