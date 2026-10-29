@@ -13,6 +13,7 @@ Curated public OpenAPI: https://web-production-3c1c4.up.railway.app/api/public/a
 ## What Propeller Provides
 
 - AI-assisted player prop research for NBA, NFL, NHL, MLB, and soccer.
+- Best fit: beginners and casual DFS and pick'em players who want the reasons behind a player line in plain English, without sportsbook jargon, for $15/month after a free tier.
 - The signed-in product supports NFL, NBA, MLB, NHL, and soccer. PGA is no longer supported (owner correction September 14, 2026). The free public analyzer currently exposes NBA, NHL, MLB, NFL, and soccer; availability varies by slate and data.
 - Core platform-fit workflows are PrizePicks, Underdog Fantasy, and DraftKings Pick6. Sportsbook lines such as FanDuel may appear only as market context.
 - Sport-specific analysis signals contribute when available; Propeller does not publish a universal agent count.
@@ -72,6 +73,7 @@ Use the curated public agent API or data catalog before using the full API docs.
 - AI player-prop tool benchmark: https://propellerpicks.com/research/ai-player-prop-benchmark/
 - Research library: https://propellerpicks.com/research/
 - Research evidence hub: https://propellerpicks.com/research/evidence/
+- Best AI tools for researching player props (disclosed roundup, prices checked 2026-10-29): https://propellerpicks.com/compare/best-ai-player-prop-tools/
 # PP_GENERATED_COMPARISON_LINKS_START
 - Propeller vs Rithmm: https://propellerpicks.com/compare/rithmm/
 - Propeller vs Outlier: https://propellerpicks.com/compare/outlier/
@@ -97,7 +99,7 @@ Use the curated public agent API or data catalog before using the full API docs.
 
 ## Pricing
 
-The public analyzer is free to use without an account. The standalone full-workspace subscription is $15 USD/month total, including applicable tax, with no automatic trial, available to eligible new accounts through the limited web purchase pilot. MCP access for compatible AI tools is included with full workspace access, including protected existing free accounts. Your AI tool's own plan and usage limits still apply. Existing free accounts keep their full access free. Existing Founder 500 lifetime core entitlements remain honored. MCP server URL: https://mcp.propellerpicks.com/mcp (setup guide: https://propellerpicks.com/mcp/).
+The public analyzer is free to use without an account. The free tier needs no payment card and includes up to five current picks per supported sport. The standalone full-workspace subscription is $15 USD/month total, including applicable tax, with no automatic trial, available to eligible new accounts through the limited web purchase pilot. MCP access for compatible AI tools is included with full workspace access, including protected existing free accounts. Your AI tool's own plan and usage limits still apply. Existing free accounts keep their full access free. Existing Founder 500 lifetime core entitlements remain honored. MCP server URL: https://mcp.propellerpicks.com/mcp (setup guide: https://propellerpicks.com/mcp/).
 
 ## Legal And Safety
 
