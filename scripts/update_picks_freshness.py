@@ -27,8 +27,36 @@ PAGES = [
     "picks/underdog/index.html",
 ]
 
-# Matches "Today" optionally followed by a previously stamped date.
-TODAY_RE = re.compile(r"Today(?:, [A-Z][a-z]+ \d{1,2})?")
+# Seasonal hubs and the Eastern-time months they are in season. Out of
+# season the "Today" label becomes OFFSEASON_LABEL and dateModified stops
+# moving, so the page never claims a slate that does not exist. The next
+# in-season run restores the dated "Today" label. MLB: March (Opening Day
+# is late March) through October (World Series).
+SEASONAL_PAGES = {
+    "picks/mlb/index.html": frozenset(range(3, 11)),
+}
+OFFSEASON_LABEL = "Back for Opening Day"
+
+# Matches "Today" optionally followed by a previously stamped date, or the
+# offseason label a seasonal hub carries between seasons.
+TODAY_RE = re.compile(r"Today(?:, [A-Z][a-z]+ \d{1,2})?|" + OFFSEASON_LABEL)
+
+
+def in_season(rel: str, day: datetime.date) -> bool:
+    months = SEASONAL_PAGES.get(rel)
+    return months is None or day.month in months
+
+
+def stamp_offseason(html: str) -> str:
+    """Swap the dated "Today" label for the offseason label; keep dateModified."""
+    def label_sub(m):
+        return TODAY_RE.sub(OFFSEASON_LABEL, m.group(0), count=1)
+
+    html = re.sub(r"<title>[^<]*</title>", label_sub, html, count=1)
+    html = re.sub(r'<meta property="og:title" content="[^"]*"', label_sub, html, count=1)
+    html = re.sub(r'<meta name="twitter:title" content="[^"]*"', label_sub, html, count=1)
+    html = re.sub(r"<h1[^>]*>.*?</h1>", label_sub, html, count=1, flags=re.S)
+    return html
 
 
 def stamp(html: str, day: datetime.date) -> str:
@@ -77,7 +105,7 @@ def main() -> int:
             failures += 1
             continue
         html = path.read_text()
-        out = stamp(html, day)
+        out = stamp(html, day) if in_season(rel, day) else stamp_offseason(html)
         changed = out != html
         if changed:
             path.write_text(out)
