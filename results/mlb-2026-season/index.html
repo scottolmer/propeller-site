@@ -77,39 +77,37 @@
   ]
 }</script>
   <style>
-    .mlb-recap{--night:#031a2c;--night-2:#06243a;--cream:#f7f1e7;--orange:#ff5b23;--blue:#54c8ff;--muted:#b8d3df;--line:rgba(84,200,255,.28);background:var(--night);color:var(--cream);font:18px/1.6 Plex,Inter,-apple-system,sans-serif}
+    .mlb-recap{color:var(--pp-text);font:18px/1.6 var(--pp-body)}
     .mlb-recap .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-    .mlb-recap a{color:var(--blue)}
-    .mlb-recap .hero{padding:64px 0 40px;border-bottom:1px solid var(--line)}
-    .mlb-recap .crumbs{font:600 14px/1.3 PlexMono,monospace;color:var(--muted);margin-bottom:22px}
-    .mlb-recap .crumbs a{color:var(--muted)}
-    .mlb-recap .eyebrow{font:600 14px/1.25 PlexMono,monospace;letter-spacing:.04em;text-transform:uppercase;color:var(--blue);margin:0 0 10px}
-    .mlb-recap h1{font:700 clamp(40px,6vw,72px)/.95 Familjen,'Arial Narrow',sans-serif;letter-spacing:-.03em;margin:0 0 20px;color:var(--cream)}
-    .mlb-recap h2{font:700 clamp(28px,3.6vw,40px)/1.05 Familjen,'Arial Narrow',sans-serif;letter-spacing:-.02em;margin:0 0 14px;color:var(--cream)}
-    .mlb-recap h3{font-size:19px;margin:0 0 6px;color:var(--cream)}
-    .mlb-recap .lede{font-size:21px;max-width:760px;color:var(--cream);margin:0 0 12px}
-    .mlb-recap .byline{font-size:15px;color:var(--muted);margin:0}
-    .mlb-recap section.band{padding:48px 0;border-bottom:1px solid var(--line)}
-    .mlb-recap section.band>.wrap>p{max-width:760px;color:var(--muted)}
+    .mlb-recap .hero{padding:64px 0 40px;border-bottom:1px solid var(--pp-line)}
+    .mlb-recap .crumbs{font:600 14px/1.3 var(--pp-mono);margin-bottom:22px}
+    .mlb-recap .eyebrow{font:600 14px/1.25 var(--pp-mono);letter-spacing:.04em;text-transform:uppercase;color:var(--pp-orange-dark);margin:0 0 10px}
+    .mlb-recap h1{font:700 clamp(40px,6vw,72px)/.95 var(--pp-display);letter-spacing:-.03em;margin:0 0 20px}
+    .mlb-recap h2{font:700 clamp(28px,3.6vw,40px)/1.05 var(--pp-display);letter-spacing:-.02em;margin:0 0 14px}
+    .mlb-recap h3{font-size:19px;margin:0 0 6px}
+    .mlb-recap .lede{font-size:21px;max-width:760px;margin:0 0 12px}
+    .mlb-recap .byline{font-size:15px;margin:0}
+    .mlb-recap section.band{padding:48px 0;border-bottom:1px solid var(--pp-line)}
+    .mlb-recap section.band>.wrap>p{max-width:760px}
     .mlb-recap .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:28px}
-    .mlb-recap .tile{background:rgba(2,21,34,.6);border:1px solid var(--line);border-radius:14px;padding:20px}
-    .mlb-recap .tile strong{display:block;font:700 40px/1 Familjen,'Arial Narrow',sans-serif;color:var(--orange);margin-bottom:8px}
-    .mlb-recap .tile span{font-size:16px;color:var(--muted)}
+    .mlb-recap .tile{background:var(--pp-paper-light);border:1px solid var(--pp-line);border-radius:var(--pp-radius-card);padding:20px}
+    .mlb-recap .tile strong{display:block;font:700 40px/1 var(--pp-display);color:var(--pp-orange-dark);margin-bottom:8px;font-variant-numeric:tabular-nums}
+    .mlb-recap .tile span{font-size:16px;color:var(--pp-sub)}
     .mlb-recap .table-scroll{overflow-x:auto;margin:22px 0 8px}
     .mlb-recap table{width:100%;border-collapse:collapse;font-size:16px;min-width:460px}
-    .mlb-recap th,.mlb-recap td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}
-    .mlb-recap th{font:600 13px/1.25 PlexMono,monospace;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+    .mlb-recap th,.mlb-recap td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--pp-line)}
+    .mlb-recap th{font:600 13px/1.25 var(--pp-mono);text-transform:uppercase;letter-spacing:.04em}
     .mlb-recap td.num,.mlb-recap th.num{text-align:right;font-variant-numeric:tabular-nums}
-    .mlb-recap .note{font-size:15px;color:var(--muted)}
-    .mlb-recap .callout{background:rgba(255,91,35,.08);border-left:3px solid var(--orange);border-radius:0 12px 12px 0;padding:16px 20px;margin:22px 0;max-width:760px}
-    .mlb-recap .callout p{margin:0;color:var(--cream)}
-    .mlb-recap ul.plain{max-width:760px;color:var(--muted);padding-left:20px}
+    .mlb-recap .note{font-size:15px}
+    .mlb-recap .callout{background:var(--pp-orange-wash);border-left:3px solid var(--pp-orange);border-radius:0 var(--pp-radius-card) var(--pp-radius-card) 0;padding:16px 20px;margin:22px 0;max-width:760px}
+    .mlb-recap .callout p{margin:0}
+    .mlb-recap ul.plain{max-width:760px;padding-left:20px}
     .mlb-recap ul.plain li{margin-bottom:10px}
     .mlb-recap .faq-grid{display:grid;gap:14px;margin-top:22px}
-    .mlb-recap .faq-item{background:rgba(2,21,34,.6);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
-    .mlb-recap .faq-item p{margin:0;color:var(--muted)}
-    .mlb-recap .cta{padding:56px 0 72px}
-    .mlb-recap .cta-button{display:inline-block;background:var(--orange);color:#fff;text-decoration:none;font-weight:700;border-radius:10px;padding:16px 28px;margin:10px 12px 0 0}
+    .mlb-recap .faq-item{border:1px solid var(--pp-line);padding:18px 20px}
+    .mlb-recap .faq-item p{margin:0}
+    .mlb-recap .closing{padding:56px 0 72px}
+    .mlb-recap .cta-button{display:inline-block;text-decoration:none;font-weight:600;padding:14px 26px;margin:10px 16px 0 0}
     .mlb-recap .cta-link{display:inline-block;margin-top:10px}
   </style>
   <script src="/assets/js/analytics-loader.js?v=20260915"></script>
@@ -295,12 +293,12 @@
     </div>
   </section>
 
-  <section class="cta" aria-labelledby="cta-heading">
+  <section class="closing" aria-labelledby="cta-heading">
     <div class="wrap">
       <p class="eyebrow">Baseball's done. The research isn't.</p>
       <h2 id="cta-heading">Look up tonight's NFL, NBA or NHL player lines</h2>
       <p>The free analyzer shows the research lean and the reasons behind it, with no account needed.</p>
-      <a class="cta-button" href="/analyzer/">Open the free analyzer</a>
+      <a class="cta-button btn" href="/analyzer/">Open the free analyzer</a>
       <a class="cta-link" href="/pricing/">See pricing</a>
     </div>
   </section>
