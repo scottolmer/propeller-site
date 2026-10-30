@@ -16,7 +16,7 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "b4023a2f5ccb08168e845ce327c32807efd28a2ed2aaba01f4b50c3c90b32490",
+      "fingerprint": "0188a2d017da74648aaa5761e04108883f122afcdb16f237987bc920b7fa1b1e",
       "lastmod": "2026-10-30",
       "source": "analyzer/index.html"
     },
@@ -24,16 +24,6 @@
       "fingerprint": "d26ac75ba5b33de71ce77889bf3b803d7c267312af9fbc5ed39f58b64b2b0ffb",
       "lastmod": "2026-10-26",
       "source": "analyzer/nba/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/julius-randle/": {
-      "fingerprint": "0ccbbb2b837208acec1f9eb3601574539a80bdafb6800eebcfc50735e4850a92",
-      "lastmod": "2026-10-30",
-      "source": "analyzer/nba/julius-randle/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/kelly-oubre-jr/": {
-      "fingerprint": "2f1c6275f96356e69781c33da1d8779c4b64580aad4b7b6d170ee9bc984c80a3",
-      "lastmod": "2026-10-30",
-      "source": "analyzer/nba/kelly-oubre-jr/index.html"
     },
     "https://propellerpicks.com/analyzer/nfl/": {
       "fingerprint": "584209c582cb126efbed95308702225b303edf3fca4fc29c4f786d3bed7b4438",
@@ -281,7 +271,7 @@
       "source": "picks/mlb/index.html"
     },
     "https://propellerpicks.com/picks/nba/": {
-      "fingerprint": "ace0d8f8e0e12f530e19e3a40c69cb9783459996e90276db055a343f3bf32a7c",
+      "fingerprint": "f2f45212292ea36c64ef693042e5b4bff914099cc5d5b875a4c96ad2aff37bbd",
       "lastmod": "2026-10-30",
       "source": "picks/nba/index.html"
     },
