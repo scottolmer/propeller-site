@@ -1,7 +1,7 @@
 {
   "entries": {
     "https://propellerpicks.com/": {
-      "fingerprint": "8e56071c63815e126d84f2963231fd9c92a4643353d1e19edb03f440025db757",
+      "fingerprint": "93388721e54b04680cd2e8e3edf2cde8788b466710850662f1852b24b650e312",
       "lastmod": "2026-10-30",
       "source": "index.html"
     },
@@ -16,7 +16,7 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "dd3b12a4f5742ad7e1227f8919084d6bf1c9865929146cd6ae26e5b0803fd077",
+      "fingerprint": "b4023a2f5ccb08168e845ce327c32807efd28a2ed2aaba01f4b50c3c90b32490",
       "lastmod": "2026-10-30",
       "source": "analyzer/index.html"
     },
@@ -25,25 +25,15 @@
       "lastmod": "2026-10-26",
       "source": "analyzer/nba/index.html"
     },
-    "https://propellerpicks.com/analyzer/nba/daniss-jenkins/": {
-      "fingerprint": "d1013ee961590660620142b2c0791bb6e15c52ebe81187698ced2413341efbc2",
-      "lastmod": "2026-10-30",
-      "source": "analyzer/nba/daniss-jenkins/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/isaiah-joe/": {
-      "fingerprint": "c463e2959da0f2356f8768f6188d7003eda71f544e366b498fcb4f794f3da92c",
-      "lastmod": "2026-10-30",
-      "source": "analyzer/nba/isaiah-joe/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/jalen-green/": {
-      "fingerprint": "9e542937b1fb81833a4bf3a53814d8cbeaaeff02f9bc0d3d21d04d83403e0eea",
-      "lastmod": "2026-10-30",
-      "source": "analyzer/nba/jalen-green/index.html"
-    },
     "https://propellerpicks.com/analyzer/nba/julius-randle/": {
-      "fingerprint": "6d6eccf1d0184a13978fc766db320bb8db2060858a70babf0f0b107a5f85f527",
+      "fingerprint": "8da947e8abaf04042e1a4635b7a6e39b6997ca9255810ade50859a558e029031",
       "lastmod": "2026-10-30",
       "source": "analyzer/nba/julius-randle/index.html"
+    },
+    "https://propellerpicks.com/analyzer/nba/kelly-oubre-jr/": {
+      "fingerprint": "489667521040d0a2995b8601ab03a3f55453e667c436591cdd66b95a6c67e1d6",
+      "lastmod": "2026-10-30",
+      "source": "analyzer/nba/kelly-oubre-jr/index.html"
     },
     "https://propellerpicks.com/analyzer/nfl/": {
       "fingerprint": "584209c582cb126efbed95308702225b303edf3fca4fc29c4f786d3bed7b4438",
@@ -51,8 +41,8 @@
       "source": "analyzer/nfl/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "ca7c5113340c4aced2c0b26393fdae40383be7c83bfcb56d6db2817b102012ae",
-      "lastmod": "2026-10-29",
+      "fingerprint": "5372a332657b95d80b0574690bc32254003ca149bd814952a64b55a1554e00c8",
+      "lastmod": "2026-10-30",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -291,7 +281,7 @@
       "source": "picks/mlb/index.html"
     },
     "https://propellerpicks.com/picks/nba/": {
-      "fingerprint": "af317829fb8582b597ffa96de29a0a84166e231bef3a4c138053f5d6c8fffbfd",
+      "fingerprint": "ace0d8f8e0e12f530e19e3a40c69cb9783459996e90276db055a343f3bf32a7c",
       "lastmod": "2026-10-30",
       "source": "picks/nba/index.html"
     },
@@ -356,7 +346,7 @@
       "source": "research/prospective-record/index.html"
     },
     "https://propellerpicks.com/results/": {
-      "fingerprint": "bde7d15f4fda70d6f2904f309d9ce66c80b88058a516642ef859247a67581f93",
+      "fingerprint": "fc30a3c5eb45462c3020e43b6248ad77af4fb992fe392a834b2d03622334ef8d",
       "lastmod": "2026-10-30",
       "source": "results/index.html"
     },
@@ -401,7 +391,7 @@
       "source": "tools/underdog-payout-calculator/index.html"
     },
     "https://propellerpicks.com/track-record/": {
-      "fingerprint": "16bff3fdf540076ef0061e77b8d17e9d1a18c54512d61b412aa44e85f98f13a1",
+      "fingerprint": "cbd2f19f66d0629fac5022230de8aea2063d1fab2f7acb7a572ee77de73f05e7",
       "lastmod": "2026-10-30",
       "source": "track-record/index.html"
     }
