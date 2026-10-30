@@ -12,6 +12,7 @@ import datetime as dt
 import json
 import re
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 
 YOUTUBE_ID_RE = re.compile(r"^[A-Za-z0-9_-]{11}$")
@@ -49,6 +50,13 @@ def replace_managed(text: str, start: str, end: str, body: str) -> str:
     return text[: match.start()] + f"<!-- {start} -->\n{body}\n<!-- {end} -->" + text[match.end() :]
 
 
+def upload_datetime(upload_date: str) -> str:
+    """Google's video rich results want a full datetime with a timezone."""
+    day = dt.date.fromisoformat(upload_date)
+    noon = dt.datetime(day.year, day.month, day.day, 12, tzinfo=ZoneInfo("America/New_York"))
+    return noon.isoformat()
+
+
 def video_object(
     *,
     title: str,
@@ -64,7 +72,7 @@ def video_object(
         "name": title,
         "description": description,
         "thumbnailUrl": f"https://i.ytimg.com/vi/{video_id}/maxresdefault.jpg",
-        "uploadDate": upload_date,
+        "uploadDate": upload_datetime(upload_date),
         "duration": duration,
         "embedUrl": f"https://www.youtube.com/embed/{video_id}",
         "contentUrl": f"https://www.youtube.com/watch?v={video_id}",
