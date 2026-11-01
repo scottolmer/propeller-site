@@ -200,6 +200,8 @@ body.pp-site-system.pp-nav-page .pp-desk .pp-desk-brief li::marker { color:#2142
 .pp-nav-analyzer .hero { padding-bottom:24px; }
 .pp-nav-analyzer .hero h1 { font-size:clamp(36px,4vw,56px) !important; line-height:1.08; }
 .pp-nav-analyzer .hero .hero-subtitle { max-width:65ch; margin:14px auto; font-size:16px; }
+.pp-nav-analyzer .hero .hero-ai-credit { margin:8px auto 0; color:#b8d0d8; font:400 13px/1.6 var(--font-body,sans-serif); }
+.pp-nav-analyzer .hero .hero-ai-credit strong { color:#f7f1e7; font-weight:600; }
 .pp-nav-analyzer .hero-evidence { display:block; width:fit-content; max-width:100%; margin:14px auto 0; padding:0; border:0; background:transparent; font-size:12px; text-align:center; }
 .pp-nav-analyzer .hero-evidence > summary { color:var(--text-secondary,#b8d0d8); cursor:pointer; }
 .pp-nav-analyzer .hero-evidence-links { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; padding-top:12px; }
