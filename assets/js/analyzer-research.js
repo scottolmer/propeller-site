@@ -153,7 +153,7 @@
             // Only opening an exact result consumes the complete-analysis allowance.
             // Typing a player name remains a public, unclaimed summary.
             if (selection && sport === 'nfl' && typeof opts.claim === 'function' && !mode && !localPreviewBase(opts.location || window.location)) {
-              data = await opts.claim(data, selectedIndex);
+              data = await opts.claim(data, selectedIndex, sport);
               if (stale(id)) return;
             }
             ui.mount(data, selectedIndex);

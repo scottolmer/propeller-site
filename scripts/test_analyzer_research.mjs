@@ -118,7 +118,7 @@ test("no current prop shows next slate", async () => {
 });
 
 test("analyzer page wires research assets and mount point", () => {
-  assert.match(html, /analyzer-research\.js\?v=20261031e/);
+  assert.match(html, /analyzer-research\.js\?v=20261031f/);
   assert.match(html, /research-chat\.js\?v=20261028b/);
   assert.match(html, /research-chat\.css\?v=20261027/);
   assert.ok(html.indexOf('id="researchChat"') < html.indexOf('id="picksGrid"'));
@@ -168,9 +168,9 @@ test('local preview endpoint is available only on loopback with explicit flag',(
 test('only an explicit exact selection claims, and stale claims cannot mount', async () => {
   const api=load(), pending=[], mounted=[];
   const prop={stat_type:'interceptions',line:.5,direction:'OVER',event_id:'1392333',platform:'sleeper',period:'full_game',variant:null};
-  const data={status:'ok',sport:'nfl',player:{player_name:'Patrick Mahomes'},props:[prop]};
+  const data={status:'ok',player:{player_name:'Patrick Mahomes'},props:[prop]};
   let claims=0;
-  const ctl=api.createController({delay:0,fetch:async()=>({ok:true,json:async()=>data}),claim:()=>{claims++;return new Promise(r=>pending.push(r));},ui:{hide(){},message(){},mount(x){mounted.push(x);}}});
+  const ctl=api.createController({delay:0,fetch:async()=>({ok:true,json:async()=>data}),claim:(_lookup,_index,sport)=>{assert.equal(sport,'nfl');assert.equal(_lookup.sport,undefined);claims++;return new Promise(r=>pending.push(r));},ui:{hide(){},message(){},mount(x){mounted.push(x);}}});
   ctl.update({sport:'nfl',picks:[],query:'Patrick Mahomes'});await tick();
   assert.equal(claims,0);assert.equal(mounted.length,1);
   ctl.update({sport:'nfl',picks:[],query:'Patrick Mahomes',selection:{...prop,player:'Patrick Mahomes',sport:'nfl'}});await tick();
