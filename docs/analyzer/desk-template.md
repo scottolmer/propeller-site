@@ -33,3 +33,7 @@ node --test scripts/test_analyzer_desk.mjs scripts/test_analyzer_research.mjs sc
 The initial view now prioritizes the takeaway, all recorded signals, historical chart and compact offer comparison. The complete original analyst prose and checklist remain inside **Read the analysis**; quote fields and source timestamps remain inside **Quote details & timestamps**. No generated answer or captured source data was rewritten.
 
 The hero introduction is one sentence, redundant timestamps and instructional copy are consolidated, and the existing page guides/FAQs remain accessible through **How the analyzer works & FAQs**. The player-help fragment opens that disclosure before navigating. Site fonts and the existing research interactions are retained. The fuller prior presentation is saved outside the repository in the private artifact directory's `desk-before-distill` snapshot.
+
+## Offer comparison removed
+
+The user requested removal of Compare offers. The Desk no longer renders the offer table or quote-detail disclosure; the historical chart spans the available width. The prop selector and analyst narrative retain their existing behavior.

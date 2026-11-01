@@ -128,7 +128,6 @@
     return '<section class="pp-desk-history" aria-label="Player history"><span class="pp-desk-kicker">The player history</span><h3>Put the sample in context.</h3><p>Dated appearances with the available workload. The selected line is a reference, not the line offered for those games.</p>'+filters+result+'</section>';
   }
 
-  function marketHtml(m){if(window.ppDeskEvidence)return window.ppDeskEvidence.market(m);return '<section class="pp-desk-market" aria-label="Market verification"><span class="pp-desk-kicker">The market check</span><h3>Verify the exact offer.</h3><p>Selected reference: <strong class="pp-desk-num">'+esc(m.prop.direction+' '+m.prop.line)+'</strong> '+esc(label(m.prop.stat))+'.</p><div class="pp-desk-empty"><h4>Quote not verified.</h4><p>Platform: '+esc(m.prop.platform||'Not supplied')+'. Period: '+esc(m.prop.period||'Not supplied')+'. Variant: '+esc(m.prop.variant||'Not supplied')+'. Quote observation: '+esc(when(m.prop.quoteObservedAt))+'. Price or payout: not supplied.</p></div><p>Other player lines are available in the selector. They are separate research records, not verified equivalent offers across books. This response cannot establish a best price or betting edge.</p></section>';}
 
   function sourcesHtml(m) {
     var signalRows=m.signals.map(function(signal){return '<tr><th scope="row">'+esc(signal.name)+'</th><td class="pp-desk-num">'+signal.score+'</td><td>'+esc(signal.direction)+'</td><td>'+esc(signal.reasons&&signal.reasons.length?'Recorded explanations available':'Not recorded in this response')+'</td></tr>';}).join('');
@@ -147,7 +146,7 @@
       '<div class="pp-desk-result"><div><span class="pp-desk-kicker">The stored research leans</span><h3>'+esc(m.prop.direction)+' <span class="pp-desk-num">'+m.prop.line+'</span> '+esc(label(m.prop.stat))+'</h3><p>'+ (m.full?'Complete preview':'Summary only') +'</p></div><div class="pp-desk-confidence"><strong>'+(m.prop.confidence===null?'—':m.prop.confidence)+'</strong><small>Confidence Score<br>Not a win probability.</small></div></div>'+
       '<div class="pp-desk-freshness"><dl>'+field('Analysis',when(m.prop.analyzedAt))+field('Data read',when(m.checkedAt))+field('Line check','Not live-verified')+'</dl></div>'+
       '<div class="pp-desk-grid">'+briefHtml(m,generated,requestState,canRequest)+signalsHtml(m)+'</div>'+
-      '<div class="pp-desk-evidence-grid">'+historyHtml(m,sample,venue,selectedDate)+marketHtml(m)+'</div>'+
+      '<div class="pp-desk-evidence-grid">'+historyHtml(m,sample,venue,selectedDate)+'</div>'+
       '<section class="pp-desk-followup"><h3>Explore this prop</h3>'+followups.map(function(item){return '<button type="button" data-desk-question="'+item[0]+'" aria-pressed="'+(activeQuestion===item[0])+'" aria-controls="'+(item[0]==='evidence'?'pp-desk-source':'pp-desk-followup-answer')+'">'+item[1]+'</button>';}).join('')+(answer?'<div id="pp-desk-followup-answer" class="pp-desk-answer" role="status"><span class="pp-desk-kicker">From this research snapshot</span><h4>'+esc(activeQuestion==='score'?'How to read the score':'What could change this read')+'</h4><p>'+esc(answer)+'</p><small>Explanation from the saved evidence. No new model call.</small></div>':'')+'</section>'+
       sourcesHtml(m)+'<div class="pp-desk-cta"><div><h3>Keep researching.</h3><p>Your first complete analysis is free.</p></div><a href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="analyzer-desk-signup" data-cta-surface="analyzer_result" data-cta-destination="signup">Create a free account ↗</a><a href="/mcp/" data-analytics-event="research_cta_click" data-cta-id="analyzer-desk-mcp" data-cta-surface="analyzer_result" data-cta-destination="mcp">Connect your AI tool ↗</a></div><p class="pp-desk-footnote">Research only. Confidence is not win probability or betting edge. Stored data may be incomplete or stale. Past performance does not guarantee future results.</p></article>';
   }
@@ -160,7 +159,7 @@
     function draw(focus) {
       if(destroyed)return;
       var scrollY=typeof window.scrollY==='number'?window.scrollY:null;
-      var selectors=['.pp-desk-deep','[data-desk-source]','[data-desk-context]','[data-desk-history-source]','[data-desk-market-source]'];
+      var selectors=['.pp-desk-deep','[data-desk-source]','[data-desk-context]','[data-desk-history-source]'];
       for(var i=1;i<=12;i++)selectors.push('.pp-desk-signal:nth-of-type('+i+')');
       var opened=resetDisclosures?[]:selectors.filter(function(selector){var node=container.querySelector(selector);return node && node.open;});
       resetDisclosures=false;
