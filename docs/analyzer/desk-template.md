@@ -37,3 +37,7 @@ The hero introduction is one sentence, redundant timestamps and instructional co
 ## Offer comparison removed
 
 The user requested removal of Compare offers. The Desk no longer renders the offer table or quote-detail disclosure; the historical chart spans the available width. The prop selector and analyst narrative retain their existing behavior.
+
+## Open research from a result card
+
+Unlocked NFL/NBA search results have a keyboard-accessible card link and View analysis action, separate from the prompt builder. The destination carries the exact player, stat, line, direction and available offer/source identity. The research controller resolves exactly one matching returned prop and passes its index to the Desk; missing or ambiguous matches show a message instead of selecting another prop. Summary records retain their existing restrictions, locked cards retain signup, and unsupported sports keep their current behavior. Opening a result performs saved-data reads only; generation remains an explicit separate action. New input, clearing and sport changes invalidate pending selection, including during the initial feed load.

@@ -14,7 +14,7 @@
 <script src="/assets/js/analyzer-events.js?v=20260715" defer></script>
 <script src="/assets/js/analyzer-save-panel.js?v=20261026" defer></script>
 <script src="/assets/js/research-chat.js?v=20261028b" defer></script>
-<script src="/assets/js/analyzer-research.js?v=20261030b" defer></script>
+<script src="/assets/js/analyzer-research.js?v=20261031d" defer></script>
 <script src="/assets/js/analyzer-desk-evidence.js?v=20261031c" defer></script>
 <script src="/assets/js/analyzer-desk.js?v=20261031c" defer></script>
 <link rel="stylesheet" href="/assets/css/research-chat.css?v=20261027">
@@ -2172,8 +2172,8 @@ footer {
   <meta name="theme-color" content="#031a2c">
   <link rel="stylesheet" href="/assets/css/site-system.css?v=20260712">
   <link rel="stylesheet" href="/assets/css/navigation-pages.css?v=20260918">
-  <link rel="stylesheet" href="/assets/css/analyzer-desk.css?v=20261031c">
-  <link rel="stylesheet" href="/assets/css/analyzer-desk-evidence.css?v=20261031c">
+  <link rel="stylesheet" href="/assets/css/analyzer-desk.css?v=20261031d">
+  <link rel="stylesheet" href="/assets/css/analyzer-desk-evidence.css?v=20261031d">
   <!-- PP_SITE_HEAD_END -->
 </head>
 <body class="legacy-redesign-page pp-site-system pp-family-core pp-nav-page pp-nav-analyzer">
@@ -3005,7 +3005,15 @@ function buildPickCard(prop, locked) {
   });
   const promptLink = `/tools/ai-betting-prompt-builder/?${promptQuery.toString()}`;
 
+  const researchHref = !locked && window.ppAnalyzerResearch
+    ? window.ppAnalyzerResearch.resultHref(activeSport, prop) : null;
+  const analysisOpen = researchHref
+    ? `<a class="pick-analysis-link" href="${escHtml(researchHref)}" aria-label="${escHtml(`View analysis for ${prop.player_name}, ${isOver ? 'OVER' : 'UNDER'} ${prop.line} ${statLabel}`)}">`
+    : '<div class="pick-analysis-body">';
+  const analysisClose = researchHref ? '</a>' : '</div>';
+
   const inner = `
+      ${analysisOpen}
       <div class="pick-card-top">
         <div class="pick-player-info">
           <span class="pick-player-name">${escHtml(prop.player_name)}</span>
@@ -3031,7 +3039,9 @@ function buildPickCard(prop, locked) {
       <div class="confidence-bar-track" role="none">
         <div class="confidence-bar-fill" data-width="${barWidth}" style="background:${barBg};" role="progressbar" aria-valuenow="${confidence}" aria-valuemin="50" aria-valuemax="100"></div>
       </div>
+      ${analysisClose}
       <div class="pick-card-actions">
+        ${researchHref ? `<a class="pick-view-analysis" href="${escHtml(researchHref)}">View analysis ↗</a>` : ''}
         <a class="pick-research-prompt" href="${promptLink}">Build AI research prompt</a>
       </div>
   `;
@@ -3355,6 +3365,17 @@ document.addEventListener('click', (event) => {
 let researchChatHandle = null;
 let researchController = null;
 let researchImmediateOnce = false;
+let researchSelection = null;
+let searchInteractionVersion = 0;
+function clearResearchSelection() {
+  searchInteractionVersion++;
+  if (!researchSelection) return;
+  researchSelection = null;
+  const url = new URL(window.location.href);
+  for (const key of [...url.searchParams.keys()]) if (key.startsWith('prop_')) url.searchParams.delete(key);
+  url.searchParams.delete('q');
+  window.history.replaceState({}, '', url);
+}
 function researchHide() {
   const box = document.getElementById('researchChat');
   if (researchChatHandle) { researchChatHandle.destroy(); researchChatHandle = null; }
@@ -3379,11 +3400,11 @@ function researchLookup(immediate) {
           note.textContent = text; note.hidden = false;
           document.getElementById('researchChat').hidden = false;
         },
-        mount: (lookup) => {
+        mount: (lookup, propIndex) => {
           researchHide();
           const mount = document.getElementById('researchChatMount');
           researchChatHandle = chat.mountResearchChat(mount, {
-            lookup, sport: activeSport, surface: 'analyzer', fixture: !!api.fixtureMode(window.location),
+            lookup, propIndex, sport: activeSport, surface: 'analyzer', fixture: !!api.fixtureMode(window.location),
             savedBrief: api.localPreviewBase(window.location) ? lookup.savedBrief : null,
             evidenceSources: api.localPreviewBase(window.location) ? lookup.evidenceSources : [],
             requestBrief: async (selectedProp) => {
@@ -3425,7 +3446,7 @@ function researchLookup(immediate) {
       }
     });
   }
-  researchController.update({ sport: activeSport, picks: searchQuery ? filteredPicks : [], query: searchQuery, immediate: !!immediate });
+  researchController.update({ sport: activeSport, picks: searchQuery ? filteredPicks : [], query: searchQuery, selection: researchSelection, immediate: !!immediate });
 }
 
 const handleSearch = debounce(() => {
@@ -3464,6 +3485,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tab.addEventListener('click', () => {
       const sport = tab.dataset.sport;
       if (sport === activeSport) return;
+      clearResearchSelection();
       activateSportTab(tab);
       const url = new URL(window.location.href);
       url.searchParams.set('sport', sport);
@@ -3475,11 +3497,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // The sport query parameter makes NFL entry points land on the intended board.
   const initTab = document.querySelector(`.sport-tab[data-sport="${initialSport}"]`);
   const initialQuery = (new URLSearchParams(window.location.search).get('q') || '').trim().slice(0, 60);
+  const initialSearchVersion = searchInteractionVersion;
   if (initTab) {
     activateSportTab(initTab);
     loadSport(initialSport).then(() => {
-      if (!initialQuery || activeSport !== initialSport) return;
+      if (!initialQuery || activeSport !== initialSport || searchInteractionVersion !== initialSearchVersion) return;
       document.getElementById('searchInput').value = initialQuery;
+      researchSelection = window.ppAnalyzerResearch?.readSelection(window.location) || null;
       researchImmediateOnce = true;
       handleSearch();
       // Arriving with a player query (from the homepage lookup), show the results, not the hero.
@@ -3495,11 +3519,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchCard  = document.getElementById('searchCard');
   const clearBtn    = document.getElementById('searchClear');
 
-  searchInput.addEventListener('input', handleSearch);
+  searchInput.addEventListener('input', () => {
+    clearResearchSelection();
+    researchController?.update({sport: activeSport, picks: [], query: ''});
+    handleSearch();
+  });
   searchInput.addEventListener('focus', () => searchCard.classList.add('focused'));
   searchInput.addEventListener('blur',  () => searchCard.classList.remove('focused'));
 
   clearBtn.addEventListener('click', () => {
+    clearResearchSelection();
+    researchController?.update({sport: activeSport, picks: [], query: ''});
     searchInput.value = '';
     handleSearch();
     searchInput.focus();
