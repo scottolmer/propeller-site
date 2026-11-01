@@ -15,7 +15,7 @@
 <script src="/assets/js/analyzer-save-panel.js?v=20261026" defer></script>
 <script src="/assets/js/research-chat.js?v=20261028b" defer></script>
 <script src="/assets/js/analyzer-access.js?v=20261031a" defer></script>
-<script src="/assets/js/analyzer-research.js?v=20261031e" defer></script>
+<script src="/assets/js/analyzer-research.js?v=20261031f" defer></script>
 <script src="/assets/js/analyzer-desk-evidence.js?v=20261031e" defer></script>
 <script src="/assets/js/analyzer-desk.js?v=20261031f" defer></script>
 <link rel="stylesheet" href="/assets/css/research-chat.css?v=20261027">
@@ -3453,9 +3453,9 @@ function researchLookup(immediate) {
   if (!api || !chat) return;
   if (!researchController) {
     researchController = api.createController({
-      claim: async (lookup, index) => {
+      claim: async (lookup, index, sport) => {
         const access = window.ppAnalyzerAccess;
-        if (!access || lookup.sport !== 'nfl') return lookup;
+        if (!access || sport !== 'nfl') return lookup;
         const selected = lookup.props[index];
         const player = lookup.player.player_name || lookup.player.name;
         const result = await access.post('nfl', 'claim', {player, selection: access.selection(selected)});
