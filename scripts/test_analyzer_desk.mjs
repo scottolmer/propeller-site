@@ -35,3 +35,37 @@ test('duplicate enriched signal names fail closed for recorded reasons',()=>{con
 test('saved brief is accepted only for exact source and time without requesting generation',()=>{const api=load(),c=fakeContainer();let calls=0;api.mountResearchChat(c,{lookup:approved,...options,savedBrief:approved.savedBrief,requestBrief:()=>{calls++;}});assert.match(c.innerHTML,/history calls for caution/i);assert.match(c.innerHTML,/Read the analysis/i);assert.equal(calls,0);const wrong=clone(approved.savedBrief);wrong.provenance.source_analysis_id='different';const other=fakeContainer();api.mountResearchChat(other,{lookup:approved,...options,savedBrief:wrong,requestBrief:()=>{calls++;}});assert.doesNotMatch(other.innerHTML,/history calls for caution/i);assert.equal(calls,0);});
 
 test('history interactions select games, filter current season and reset chart and table',()=>{const api=load(),c=fakeContainer();api.mountResearchChat(c,{lookup:approved,...options});function click(attrs){const target={closest(){return this},hasAttribute(k){return Object.hasOwn(attrs,k)},getAttribute(k){return Object.hasOwn(attrs,k)?attrs[k]:null}};c.dispatchClick(target);}click({'data-desk-game':'2025-11-23'});assert.match(c.innerHTML,/data-desk-game="2025-11-23" aria-pressed="true"/);assert.match(c.innerHTML,/2025-11-23 · GB vs MIN/);click({'data-desk-sample':'current'});assert.match(c.innerHTML,/No stored games returned/);assert.match(c.innerHTML,/data-desk-reset/);click({'data-desk-reset':''});assert.match(c.innerHTML,/2025-12-28/);assert.match(c.innerHTML,/<svg/);});
+
+test('history freshness identifies prior-season evidence without discarding its dated chart',()=>{
+  const api=load(),data=clone(approved);
+  data.history_freshness={status:'current_season_not_returned',expected_season:2026,latest_game_date:'2025-12-28'};
+  const m=api.buildModel(data,0,options),html=api.render(m,0,'all','all','');
+  assert.equal(m.logs.length,4);assert.equal(m.season,2026);
+  assert.match(html,/No 2026 interceptions records were returned/);
+  assert.match(html,/Latest returned game: 2025-12-28/);
+  assert.match(html,/Prior-season history is shown below/);assert.match(html,/<svg/);
+});
+test('current verified NFL history uses the server season across the January boundary',()=>{
+  const api=load(),data=clone(approved);
+  data.checked_at='2027-01-10T12:00:00Z';
+  data.game_logs=[{game_date:'2027-01-03',season:2026,team:'GB',opponent:'MIN',home_away:'home',passing_ints:1,passing_attempts:25}];
+  data.history_freshness={status:'current_season_present',expected_season:2026,latest_game_date:'2027-01-03'};
+  const m=api.buildModel(data,0,{now:'2027-01-10T12:00:00Z'}),html=api.render(m,0,'current','all','');
+  assert.equal(m.season,2026);assert.equal(m.logs.length,1);
+  assert.match(html,/2026 season: 1 returned interceptions records/);
+  assert.doesNotMatch(html,/No 2026 interceptions records|Prior-season history is shown/);
+});
+test('restricted history does not masquerade as zero appearances or offer ineffective filters',()=>{
+  const api=load(),data=clone(approved);data.props[0].detail='summary';
+  data.history_freshness={status:'current_season_present',expected_season:2026,latest_game_date:'2026-10-25'};
+  const m=api.buildModel(data,0,options),html=api.render(m,0,'all','all','');
+  assert.equal(m.logs.length,0);assert.equal(m.historyFreshness,null);
+  assert.match(html,/History is restricted in this preview/);
+  assert.doesNotMatch(html,/0 appearances|data-desk-reset|data-desk-sample|2026-10-25/);
+});
+test('unknown and unavailable freshness cannot present old games as current-season evidence',()=>{
+  const api=load(),data=clone(approved);let m=api.buildModel(data,0,options);
+  assert.match(api.render(m,0,'all','all',''),/Current-season history coverage was not supplied/);
+  data.history_freshness={status:'unavailable',expected_season:2026};m=api.buildModel(data,0,options);
+  assert.match(api.render(m,0,'all','all',''),/Current-season coverage is unverified/);
+});
