@@ -1,7 +1,7 @@
 {
   "entries": {
     "https://propellerpicks.com/": {
-      "fingerprint": "43e0c9a071cfb38707dfa7f084139cbf1b4f1e97216a6a0a4b57d9d75165d49a",
+      "fingerprint": "f8d6a4edafbbe9724c27dc89fbcdd6ce3ed481fa84d75a8edb570778b98535b6",
       "lastmod": "2026-10-31",
       "source": "index.html"
     },
@@ -16,7 +16,7 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "1d9fd44a550a26fe46110bc91c7e63861be23463f61c2901f7c5851c311230d9",
+      "fingerprint": "b54bf3090b3005adec66a2485fdf94b86b644568eb16ad50c61b6d4544056e83",
       "lastmod": "2026-10-31",
       "source": "analyzer/index.html"
     },
@@ -25,8 +25,13 @@
       "lastmod": "2026-10-26",
       "source": "analyzer/nba/index.html"
     },
+    "https://propellerpicks.com/analyzer/nba/keldon-johnson/": {
+      "fingerprint": "7ea1501fd41a7b9b3d70e076feb6a76829ae64f865ced0bc344f95cc270b6a40",
+      "lastmod": "2026-10-31",
+      "source": "analyzer/nba/keldon-johnson/index.html"
+    },
     "https://propellerpicks.com/analyzer/nba/scoot-henderson/": {
-      "fingerprint": "6a8433698f58ed58ed3f597051a017d596a2747145b421cc6053873225c25614",
+      "fingerprint": "2b716787dbccf013ae895d68d4a16225240bab6d253d5d9be6a39443a351bfab",
       "lastmod": "2026-10-31",
       "source": "analyzer/nba/scoot-henderson/index.html"
     },
@@ -276,7 +281,7 @@
       "source": "picks/mlb/index.html"
     },
     "https://propellerpicks.com/picks/nba/": {
-      "fingerprint": "19a4fa495793c6ed8e2c5385151c94678c83b1346df7134484417c31acdf920e",
+      "fingerprint": "015e3741c7eb0505d4d401fe6411924a7d9ff52648bb8ec341ae50de35281f74",
       "lastmod": "2026-10-31",
       "source": "picks/nba/index.html"
     },
@@ -341,7 +346,7 @@
       "source": "research/prospective-record/index.html"
     },
     "https://propellerpicks.com/results/": {
-      "fingerprint": "455851db20b6e8768801b624069b3a1c610a0d1b16b69023d7ffcfd76ae41e3c",
+      "fingerprint": "a2de5649f69333fc4d66b2a9aeacca263934a93983a695b11bb6c24ad80499d7",
       "lastmod": "2026-10-31",
       "source": "results/index.html"
     },
@@ -386,7 +391,7 @@
       "source": "tools/underdog-payout-calculator/index.html"
     },
     "https://propellerpicks.com/track-record/": {
-      "fingerprint": "5881bf1f2554f74816a8fe3476c7e7440de719453e7575d0492d5d59fd6b3af6",
+      "fingerprint": "6bf8ac1eaf5978a291fc2fd2d3a0c56a63821c7b04699f4558986c065f3d29ef",
       "lastmod": "2026-10-31",
       "source": "track-record/index.html"
     }
