@@ -22,7 +22,7 @@
 <script src="/assets/js/analyzer-webmcp.js?v=20260827" defer></script>
 
 <title>Free Player Prop Analyzer &amp; Research Tool | Propeller</title>
-<meta name="description" content="Free player prop research tool with no account needed. Search today's NFL, NBA, NHL, MLB, and soccer lines and see the AI's over or under lean and why.">
+<meta name="description" content="Free player prop research tool with no account needed. Search upcoming NFL props and current NBA, NHL, MLB, and soccer lines and see the AI's over or under lean and why.">
 <meta name="keywords" content="free AI player prop analyzer, AI player prop analyzer, player prop analyzer free, DFS prop analyzer, pick'em research tool, player prop research tool">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://propellerpicks.com/analyzer/">
@@ -31,7 +31,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://propellerpicks.com/analyzer/">
 <meta property="og:title" content="Free Player Prop Analyzer &amp; Research Tool | Propeller">
-<meta property="og:description" content="Free player prop research tool with no account needed. Search today's NFL, NBA, NHL, MLB, and soccer lines and see the AI's over or under lean and why.">
+<meta property="og:description" content="Free player prop research tool with no account needed. Search upcoming NFL props and current NBA, NHL, MLB, and soccer lines and see the AI's over or under lean and why.">
 <meta property="og:image" content="https://propellerpicks.com/images/og-image.png">
 <meta property="og:image:width" content="3000">
 <meta property="og:image:height" content="1000">
@@ -43,7 +43,7 @@
 <meta name="twitter:site" content="@propellerpicks">
 <meta name="twitter:creator" content="@propellerpicks">
 <meta name="twitter:title" content="Free Player Prop Analyzer &amp; Research Tool | Propeller">
-<meta name="twitter:description" content="Free player prop research tool with no account needed. Search today's NFL, NBA, NHL, MLB, and soccer lines and see the AI's over or under lean and why.">
+<meta name="twitter:description" content="Free player prop research tool with no account needed. Search upcoming NFL props and current NBA, NHL, MLB, and soccer lines and see the AI's over or under lean and why.">
 <meta name="twitter:image" content="https://propellerpicks.com/images/og-image.png">
 
 <!-- Additional SEO -->
@@ -65,7 +65,7 @@
   "@type": "WebPage",
   "name": "Free Player Prop Analyzer & Research Tool",
   "url": "https://propellerpicks.com/analyzer/",
-  "description": "Free player prop research tool with no account needed. Search today's NFL, NBA, NHL, MLB, and soccer lines and see the AI's over or under lean and why.",
+  "description": "Free player prop research tool with no account needed. Search upcoming NFL props and current NBA, NHL, MLB, and soccer lines and see the AI's over or under lean and why.",
   "publisher": {
     "@type": "Organization",
     "name": "Propeller Picks",
@@ -2302,6 +2302,7 @@ footer {
       </div>
     </div>
 
+    <p id="searchScope" class="confidence-note" style="text-align:center;margin:0 0 12px" aria-live="polite"></p>
     <p style="text-align:center;margin:0 0 24px"><a class="search-help-jump" href="#find-player">Help finding a player</a></p>
     <p class="analyzer-sport-pages">Sport pages with matchup notes: <a href="/analyzer/nfl/">NFL prop analyzer</a> <a href="/analyzer/nba/">NBA prop analyzer</a></p>
 
@@ -2830,6 +2831,9 @@ const SPORT_CONFIG = [
 // ============================================================
 let cache       = {};       // { nba: [...], nhl: [...], ... }
 let generatedAtBySport = {}; // API snapshot timestamps, kept separate from pick data
+let feedMetaBySport = {}; // scope and coverage from the public feed
+let searchFeedMeta = null;
+let nflSearchFailed = false;
 let feedStatusBySport = {}; // successful feed checks: "available" or "empty"
 let activeSport = 'nba';
 let activeGeneratedAt = '';
@@ -2850,6 +2854,24 @@ function getETDate() {
   const m     = String(et.getMonth() + 1).padStart(2, '0');
   const d     = String(et.getDate()).padStart(2, '0');
   return `${y}-${m}-${d}`;
+}
+
+function formatKickoff(value) {
+  if (typeof value !== 'string' || !Number.isFinite(Date.parse(value))) return '';
+  return new Date(value).toLocaleString('en-US', {
+    timeZone: 'America/New_York', weekday: 'short', month: 'short', day: 'numeric',
+    hour: 'numeric', minute: '2-digit'
+  }) + ' ET';
+}
+
+function updateSearchScope() {
+  const node = document.getElementById('searchScope');
+  if (!node) return;
+  const end = feedMetaBySport.nfl?.game_date_end;
+  node.textContent = activeSport === 'nfl'
+    ? (end ? `Upcoming NFL games through ${formatDisplayDate(end)} (ET). Props appear as they are posted and analyzed.`
+      : 'Searching upcoming NFL games. Props appear as they are posted and analyzed.')
+    : '';
 }
 
 function formatDisplayDate(isoDate) {
@@ -2995,6 +3017,8 @@ function buildPickCard(prop, locked) {
   const teamHtml = prop.team
     ? `<span class="pick-team">${escHtml(prop.team)}</span>`
     : '';
+  const kickoff = activeSport === 'nfl' ? formatKickoff(prop.event_start) : '';
+  const gameHtml = kickoff ? `<p class="confidence-note pick-game">Kickoff: <time datetime="${escHtml(prop.event_start)}">${escHtml(kickoff)}</time></p>` : '';
   const promptQuery = new URLSearchParams({
     sport: activeSport,
     market: statLabel,
@@ -3028,6 +3052,7 @@ function buildPickCard(prop, locked) {
         <span class="pick-line">${prop.line != null ? prop.line : '&mdash;'}</span>
         <span class="pick-line-label">line</span>
       </div>
+      ${gameHtml}
       <div class="confidence-row">
         <span class="confidence-label">Confidence</span>
         <div class="confidence-right">
@@ -3060,6 +3085,7 @@ function buildPickCard(prop, locked) {
           <span class="pick-line">${prop.line != null ? prop.line : '&mdash;'}</span>
           <span class="pick-line-label">line</span>
         </div>
+        ${gameHtml}
         <div class="locked-section">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
           <a href="https://app.propellerpicks.com/signup" class="lock-cta" data-analytics-event="signup_click" data-cta-id="analyzer-locked-pick-signup" data-cta-surface="analyzer_result" data-cta-destination="signup">Unlock Pick</a>
@@ -3095,6 +3121,9 @@ function renderPicks(picks) {
   const controls = document.getElementById('resultsControls');
   const sportCfg = SPORT_CONFIG.find(s => s.key === activeSport) || SPORT_CONFIG[0];
 
+  if (activeSport === 'nfl') picks = picks.filter(p => Date.parse(p.event_start) > Date.now());
+  const scope = activeSport === 'nfl' ? 'for upcoming games' : 'today';
+
   // Re-apply sort btn colors after sport switch
   document.querySelectorAll('.sort-btn').forEach(b => {
     if (b.classList.contains('active')) {
@@ -3111,6 +3140,7 @@ function renderPicks(picks) {
   // Hide results until user searches
   if (!searchQuery) {
     const hasCurrent = allPicks.length > 0;
+    const availableCount = activeSport === 'nfl' ? (feedMetaBySport.nfl?.total ?? allPicks.length) : allPicks.length;
     const findSportAction = !hasCurrent
       ? `<button class="btn btn-secondary results-empty-action" type="button" data-find-current-sport>Find a sport with current props</button>
          <p class="results-empty-availability-status" role="status" aria-live="polite"></p>`
@@ -3120,15 +3150,15 @@ function renderPicks(picks) {
         <div class="results-empty-icon" style="background:${sportCfg.muted}; color:${sportCfg.color};" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
-        <h3>${hasCurrent ? `${allPicks.length} current ${sportCfg.label} props available` : `No current ${sportCfg.label} props available`}</h3>
-        <p>${hasCurrent ? 'Start typing a player name to inspect the current public slate.' : 'The current public feed returned no props or could not be reached. This does not tell us whether games are scheduled, and no older slate is being shown as current.'}</p>
+        <h3>${hasCurrent ? `${availableCount} current ${sportCfg.label} props available` : `No current ${sportCfg.label} props available`}</h3>
+        <p>${hasCurrent ? (activeSport === 'nfl' ? 'Search a player to see available props for upcoming games, including games later this week.' : 'Start typing a player name to inspect the current public slate.') : (activeSport === 'nfl' ? 'No analyzed props for upcoming NFL games were returned, or the feed could not be reached. Check again as lines are posted. This does not tell us whether games are scheduled.' : 'The current public feed returned no props or could not be reached. This does not tell us whether games are scheduled, and no older slate is being shown as current.')}</p>
         ${findSportAction}
       </div>
     `;
     grid.style.display = 'grid';
     controls.style.display = 'none';
     meta.innerHTML = allPicks.length > 0
-      ? `<span style="color:var(--text-tertiary)">${allPicks.length} ${sportCfg.label} props available today — start typing to search</span>`
+      ? `<span style="color:var(--text-tertiary)">${availableCount} ${sportCfg.label} props available ${scope} — start typing to search</span>`
       : `<span style="color:var(--text-tertiary)">No current ${sportCfg.label} props in the public feed</span>`;
     grid.querySelector('[data-find-current-sport]')?.addEventListener('click', event => {
       findAndShowSportWithCurrentProps(event.currentTarget);
@@ -3138,8 +3168,11 @@ function renderPicks(picks) {
 
   if (picks.length === 0) {
     const isSearch = searchQuery.length > 0;
-    const msg = isSearch
-      ? `No props found for "<strong>${escHtml(searchQuery)}</strong>" today. Try a different name or check another sport.`
+    meta.textContent = '';
+    const msg = nflSearchFailed && activeSport === 'nfl'
+      ? 'Upcoming NFL props could not be reached. Try searching again in a moment.'
+      : isSearch
+      ? `No props found for "<strong>${escHtml(searchQuery)}</strong>" ${scope}. Try a different name or check another sport.`
       : `No current ${sportCfg.label} props are available in the public feed.`;
 
     grid.innerHTML = `
@@ -3147,7 +3180,7 @@ function renderPicks(picks) {
         <div class="results-empty-icon" style="background:${sportCfg.muted}; color:${sportCfg.color};" aria-hidden="true">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         </div>
-        <h3>${isSearch ? 'No Results' : `No current ${sportCfg.label} props available`}</h3>
+        <h3>${nflSearchFailed && activeSport === 'nfl' ? 'Search unavailable' : isSearch ? 'No Results' : `No current ${sportCfg.label} props available`}</h3>
         <p>${msg}</p>
       </div>
     `;
@@ -3192,9 +3225,11 @@ function renderPicks(picks) {
   const total = allPicks.length;
   const shown = picks.length;
   const sport = sportCfg.label;
+  const matchCount = activeSport === 'nfl' && searchFeedMeta?.truncated
+    ? `Showing ${shown} of ${searchFeedMeta.total}` : String(shown);
   meta.innerHTML = searchQuery
-    ? `${shown} ${sport} props matching "<strong>${escHtml(searchQuery)}</strong>" — ${Math.min(5, shown)} unlocked`
-    : `${shown} ${sport} props today — top 5 confidence scores unlocked`;
+    ? `${matchCount} ${sport} props matching "<strong>${escHtml(searchQuery)}</strong>" ${activeSport === 'nfl' ? 'for upcoming games ' : ''}— ${Math.min(5, shown)} unlocked${searchFeedMeta?.truncated ? '; refine your name to see more' : ''}`
+    : `${shown} ${sport} props ${scope} — top 5 confidence scores unlocked`;
 
   controls.style.display = 'flex';
   grid.style.display = 'grid';
@@ -3235,19 +3270,33 @@ function isValidCurrentProp(prop) {
     && ['OVER', 'UNDER'].includes(String(prop.final_direction || '').toUpperCase());
 }
 
-async function requestSportFeed(sport) {
-  const today = getETDate();
-  const res = await fetch(`${API_BASE}/${sport}?game_date=${today}&limit=100`, {
-    signal: AbortSignal.timeout(10000)
+async function fetchSportFeed(sport, player = '') {
+  const params = new URLSearchParams({ limit: sport === 'nfl' ? '200' : '100' });
+  if (sport === 'nfl') {
+    if (player) params.set('player', player);
+  } else params.set('game_date', getETDate());
+  const path = sport === 'nfl' ? 'nfl/upcoming' : sport;
+  const res = await fetch(`${API_BASE}/${path}?${params}`, {
+    signal: AbortSignal.timeout(15000)
   });
-
   if (!res.ok) throw new Error(`HTTP ${res.status}`);
   const data = await res.json();
-  const props = Array.isArray(data.props) ? data.props.filter(isValidCurrentProp) : [];
-  cache[sport] = props;
+  if (sport === 'nfl' && (!['ok', 'empty'].includes(data.status)
+    || data.coverage?.stored_read_complete !== true || data.coverage?.truncated)) {
+    throw new Error('Upcoming NFL feed unavailable');
+  }
+  const props = Array.isArray(data.props) ? data.props.filter(p => isValidCurrentProp(p)
+    && (sport !== 'nfl' || Date.parse(p.event_start) > Date.now())) : [];
+  return { ...data, props };
+}
+
+async function requestSportFeed(sport) {
+  const data = await fetchSportFeed(sport);
+  cache[sport] = data.props;
+  feedMetaBySport[sport] = data;
   generatedAtBySport[sport] = typeof data.generated_at === 'string' ? data.generated_at : '';
-  feedStatusBySport[sport] = props.length > 0 ? 'available' : 'empty';
-  return props;
+  feedStatusBySport[sport] = data.props.length > 0 ? 'available' : 'empty';
+  return data.props;
 }
 
 async function findFirstSportWithCurrentProps(originSport, isCurrent) {
@@ -3307,8 +3356,12 @@ async function findAndShowSportWithCurrentProps(button) {
 
 async function loadSport(sport) {
   const loadVersion = ++selectionVersion;
+  const loadSearchVersion = searchInteractionVersion;
   activeSport = sport;
+  searchFeedMeta = null;
+  nflSearchFailed = false;
   applySportTheme(sport);
+  updateSearchScope();
 
   // Clear search when switching sports
   const searchInput = document.getElementById('searchInput');
@@ -3318,7 +3371,7 @@ async function loadSport(sport) {
   clearBtn.classList.remove('visible');
   researchLookup(false);
 
-  if (feedStatusBySport[sport]) {
+  if (feedStatusBySport[sport] && sport !== 'nfl') {
     hideSkeleton();
     activeGeneratedAt = generatedAtBySport[sport] || '';
     allPicks      = cache[sport];
@@ -3327,26 +3380,33 @@ async function loadSport(sport) {
     return;
   }
 
+  allPicks = [];
+  filteredPicks = [];
   showSkeleton();
 
   try {
     await requestSportFeed(sport);
     if (loadVersion !== selectionVersion || sport !== activeSport) return;
+    allPicks = cache[sport];
+    updateSearchScope();
+    if (sport === 'nfl' && searchQuery && loadSearchVersion !== searchInteractionVersion) return;
     activeGeneratedAt = generatedAtBySport[sport];
-    allPicks      = cache[sport];
-    filteredPicks = allPicks;
+    filteredPicks = searchQuery ? allPicks.filter(p => p.player_name.toLowerCase().includes(searchQuery)) : allPicks;
   } catch (err) {
     console.warn('Fetch error:', err);
     delete cache[sport];
     delete feedStatusBySport[sport];
     generatedAtBySport[sport] = '';
+    delete feedMetaBySport[sport];
     if (loadVersion !== selectionVersion || sport !== activeSport) return;
+    if (sport === 'nfl' && searchQuery && loadSearchVersion !== searchInteractionVersion) return;
     activeGeneratedAt = '';
     allPicks      = [];
     filteredPicks = [];
   }
 
   hideSkeleton();
+  updateSearchScope();
   renderPicks(filteredPicks);
 }
 
@@ -3425,7 +3485,7 @@ function researchLookup(immediate) {
             onPropChange: (selectedProp) => {
               const who = lookup.player && (lookup.player.player_name || lookup.player.name);
               const norm = (n) => String(n || '').toLowerCase().replace(/\s+/g, ' ').trim();
-              const playerPicks = who ? allPicks.filter((p) => p && norm(p.player_name) === norm(who)) : [];
+              const playerPicks = who ? (searchQuery ? filteredPicks : allPicks).filter((p) => p && norm(p.player_name) === norm(who)) : [];
               const moved = window.ppAnalyzerDesk
                 ? window.ppAnalyzerDesk.lineNotice(who, selectedProp, playerPicks)
                 : api.lineMovedNotice(lookup.player && (lookup.player.player_name || lookup.player.name), selectedProp, playerPicks);
@@ -3435,7 +3495,7 @@ function researchLookup(immediate) {
           });
           const who = lookup.player && (lookup.player.player_name || lookup.player.name);
           const norm = (n) => String(n || '').toLowerCase().replace(/\s+/g, ' ').trim();
-          const playerPicks = who ? allPicks.filter((p) => p && norm(p.player_name) === norm(who)) : [];
+          const playerPicks = who ? (searchQuery ? filteredPicks : allPicks).filter((p) => p && norm(p.player_name) === norm(who)) : [];
           const moved = window.ppAnalyzerDesk
             ? window.ppAnalyzerDesk.lineNotice(who, researchChatHandle.getSelectedProp(), playerPicks)
             : api.lineMovedNotice(lookup.player && (lookup.player.player_name || lookup.player.name), (lookup.props || [])[0], playerPicks);
@@ -3449,24 +3509,40 @@ function researchLookup(immediate) {
   researchController.update({ sport: activeSport, picks: searchQuery ? filteredPicks : [], query: searchQuery, selection: researchSelection, immediate: !!immediate });
 }
 
-const handleSearch = debounce(() => {
-  const q         = document.getElementById('searchInput').value.toLowerCase().trim();
-  const clearBtn  = document.getElementById('searchClear');
-  searchQuery     = q;
+async function runPlayerSearch() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim().slice(0, 80);
+  const sport = activeSport;
+  const interaction = searchInteractionVersion;
+  const version = selectionVersion;
+  searchQuery = q;
+  nflSearchFailed = false;
+  searchFeedMeta = null;
+  document.getElementById('searchClear').classList.toggle('visible', q.length > 0);
 
-  clearBtn.classList.toggle('visible', q.length > 0);
-
-  if (!q) {
-    filteredPicks = allPicks;
+  if (sport === 'nfl' && q) {
+    showSkeleton();
+    try {
+      // Filter the full upcoming inventory on the server before its response cap.
+      const data = await fetchSportFeed('nfl', q);
+      if (interaction !== searchInteractionVersion || version !== selectionVersion || activeSport !== sport) return;
+      filteredPicks = data.props;
+      searchFeedMeta = data;
+      activeGeneratedAt = data.generated_at || '';
+    } catch (_err) {
+      if (interaction !== searchInteractionVersion || version !== selectionVersion || activeSport !== sport) return;
+      filteredPicks = [];
+      nflSearchFailed = true;
+    }
+    hideSkeleton();
   } else {
-    filteredPicks = allPicks.filter(p =>
-      (p.player_name || '').toLowerCase().includes(q)
-    );
+    filteredPicks = q ? allPicks.filter(p => (p.player_name || '').toLowerCase().includes(q)) : allPicks;
+    hideSkeleton();
   }
   renderPicks(filteredPicks);
   researchLookup(researchImmediateOnce);
   researchImmediateOnce = false;
-}, 200);
+}
+const handleSearch = debounce(runPlayerSearch, 200);
 
 // ============================================================
 // INIT
