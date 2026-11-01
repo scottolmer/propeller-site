@@ -116,6 +116,8 @@
     var support=m.signals.length?'The returned signals include '+m.signals.map(function(signal){return signal.name+' '+signal.score+' '+signal.direction;}).join(', ')+'. These are components of one model record, not independent votes. Only recorded explanations are shown; missing reasons and weights remain unknown.':'Only summary counts are available for this record. Individual scores and underlying reasons are not supplied.';
     var message='';
     if(requestState==='allowance_exhausted')message='<p role="status">Your free AI preview is complete. <a href="https://app.propellerpicks.com/signup">Create a free account to continue.</a></p>';
+    else if(requestState==='selection_unavailable'||requestState==='selection_changed')message='<p role="status">This research snapshot has changed. Search the player again to choose a current line.</p>';
+    else if(requestState==='session_unavailable')message='<p role="status">We could not verify your account. <a href="https://app.propellerpicks.com/login">Sign in again</a> to continue.</p>';
     else if(['unavailable','budget_exhausted','budget_unavailable'].indexOf(requestState)!==-1)message='<p role="status">AI briefs are unavailable right now. The saved evidence is still available.</p>';
     else if(requestState && requestState!=='loading')message='<p role="status">The brief could not finish. The saved evidence is still available.</p>';
     return '<section class="pp-desk-brief" aria-label="Analyst brief"><span class="pp-desk-kicker">Analyst brief · Data summary</span><h3>The stored research leans '+esc(p.direction.toLowerCase())+'.'+(count.against>0?' There is evidence on both sides.':'')+'</h3><p class="pp-desk-takeaway">'+esc(copy)+'</p>'+pulseHtml(m)+'<details class="pp-desk-deep"><summary>Read the analysis <span aria-hidden="true">+</span></summary>'+numberedSection(1,{title:'What supports the lean',text:support,evidence_ids:['selection','signals']})+numberedSection(2,{title:'Put the history in context',text:history,evidence_ids:['history']})+numberedSection(3,{title:'Verify the exact offer',text:'Check the platform, line, period and variant together. Reading the stored record does not verify current availability or price. The recorded offers below may have different terms.',evidence_ids:['provenance']})+numberedSection(4,{title:'What still needs checking',text:'Verify current playing status, expected workload, current-season evidence and an exact quote. Missing price or payout and calibrated probability prevent a fair-odds or expected-value conclusion.',evidence_ids:['availability','history']})+'</details><p class="pp-desk-limit">Data summary · not a newly generated LLM answer.</p>'+(canRequest&&(!requestState||requestState==='loading')?'<button type="button" data-desk-generate'+(requestState==='loading'?' disabled':'')+'>'+(requestState==='loading'?'Generating…':'Generate analyst brief')+'</button>':'')+message+'</section>';
@@ -165,6 +167,7 @@
     opts=opts||{};
     var lookup=opts.lookup,index=Number.isInteger(opts.propIndex)?opts.propIndex:0;
     var sample='all',venue='all',selectedDate='',answer='',activeQuestion='';
+    var claimState=lookup.claim_status||'';
     var destroyed=false,generated=null,requestState='',generation=0,resetDisclosures=false;
     function draw(focus) {
       if(destroyed)return;
@@ -179,6 +182,11 @@
         if(!generated && matchingBrief(opts.savedBrief,lookup.props[index]))generated=opts.savedBrief;
       }
       container.innerHTML=m?render(m,index,sample,venue,answer,generated,requestState,!!(m.enriched && typeof opts.requestBrief==='function'),selectedDate,activeQuestion):'';
+      if (m && !m.full && typeof opts.requestClaim==='function') {
+        var result=container.querySelector('.pp-desk-result');
+        var access=window.ppAnalyzerAccess;
+        if(result)result.insertAdjacentHTML('afterend','<div class="pp-desk-claim" aria-live="polite">'+(claimState && claimState!=='loading'?'<p>'+esc(access?access.message(claimState):'Complete analysis is unavailable.')+'</p>':'')+(claimState==='allowance_exhausted'||claimState==='session_unavailable'?'<a href="https://app.propellerpicks.com/login">Sign in</a> · <a href="https://app.propellerpicks.com/signup">Create a free account</a>':'<button type="button" data-desk-claim'+(claimState==='loading'?' disabled':'')+'>'+(claimState==='loading'?'Opening analysis…':'Open complete analysis')+'</button>')+'</div>');
+      }
       opened.forEach(function(selector){var node=container.querySelector(selector);if(node)node.open=true;});
       if(focus){var el=container.querySelector(focus);if(el)el.focus({preventScroll:true});}
       if(focus && scrollY!==null && typeof window.scrollTo==='function')window.scrollTo(0,scrollY);
@@ -197,6 +205,18 @@
       var target=event.target&&event.target.closest?event.target.closest('button,[data-desk-evidence]'):null;
       if(!target||!container.contains(target))return;
       if(target.hasAttribute('data-desk-evidence')){if(event.preventDefault)event.preventDefault();openEvidence(target.getAttribute('data-desk-evidence'));return;}
+      if(target.hasAttribute('data-desk-claim')) {
+        if(claimState==='loading'||typeof opts.requestClaim!=='function')return;
+        var claimGeneration=++generation,claimIndex=index;
+        claimState='loading';draw();
+        Promise.resolve().then(function(){return opts.requestClaim(lookup.props[claimIndex]);}).then(function(result){
+          if(destroyed||generation!==claimGeneration||index!==claimIndex)return;
+          var merged=window.ppAnalyzerAccess && window.ppAnalyzerAccess.mergeClaim(lookup,claimIndex,result);
+          if(merged){lookup=merged;claimState='';}else claimState=result&&result.status==='ok'?'selection_unavailable':result&&result.status||'unavailable';
+          draw();
+        }).catch(function(){if(!destroyed&&generation===claimGeneration&&index===claimIndex){claimState='unavailable';draw();}});
+        return;
+      }
       if(target.hasAttribute('data-desk-generate')) {
         var selected=lookup.props[index];
         if(requestState==='loading'||!boundAnalysis(selected)||typeof opts.requestBrief!=='function')return;
@@ -227,7 +247,7 @@
       if(!event.target.matches('[data-desk-select]'))return;
       var next=Number(event.target.value);
       if(!Number.isInteger(next)||!validProp((lookup.props||[])[next]))return;
-      generation++;generated=null;requestState='';index=next;sample='all';venue='all';selectedDate='';answer='';activeQuestion='';resetDisclosures=true;
+      generation++;generated=null;requestState='';claimState='';index=next;sample='all';venue='all';selectedDate='';answer='';activeQuestion='';resetDisclosures=true;
       draw('[data-desk-select]');
       if(typeof opts.onPropChange==='function')opts.onPropChange(lookup.props[index],index);
     }

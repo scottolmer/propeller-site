@@ -149,7 +149,15 @@
         if (data && data.status === "ok") {
           var selectedIndex = selection ? selectedPropIndex(data, selection) : undefined;
           if (selection && selectedIndex < 0) ui.message(SELECTION_UNAVAILABLE);
-          else ui.mount(data, selectedIndex);
+          else {
+            // Only opening an exact result consumes the complete-analysis allowance.
+            // Typing a player name remains a public, unclaimed summary.
+            if (selection && sport === 'nfl' && typeof opts.claim === 'function' && !mode && !localPreviewBase(opts.location || window.location)) {
+              data = await opts.claim(data, selectedIndex);
+              if (stale(id)) return;
+            }
+            ui.mount(data, selectedIndex);
+          }
         }
         else if (data && data.status === "no_current_prop") ui.message(noCurrentPropMessage(data.next_event_start, sport));
         else if (selection) ui.message(SELECTION_UNAVAILABLE);

@@ -14,9 +14,10 @@
 <script src="/assets/js/analyzer-events.js?v=20260715" defer></script>
 <script src="/assets/js/analyzer-save-panel.js?v=20261026" defer></script>
 <script src="/assets/js/research-chat.js?v=20261028b" defer></script>
-<script src="/assets/js/analyzer-research.js?v=20261031d" defer></script>
+<script src="/assets/js/analyzer-access.js?v=20261031a" defer></script>
+<script src="/assets/js/analyzer-research.js?v=20261031e" defer></script>
 <script src="/assets/js/analyzer-desk-evidence.js?v=20261031e" defer></script>
-<script src="/assets/js/analyzer-desk.js?v=20261031e" defer></script>
+<script src="/assets/js/analyzer-desk.js?v=20261031f" defer></script>
 <link rel="stylesheet" href="/assets/css/research-chat.css?v=20261027">
 <link rel="stylesheet" href="/assets/css/analyzer-save-panel.css?v=20261026b">
 <script src="/assets/js/analyzer-webmcp.js?v=20260827" defer></script>
@@ -2172,7 +2173,7 @@ footer {
   <meta name="theme-color" content="#031a2c">
   <link rel="stylesheet" href="/assets/css/site-system.css?v=20260712">
   <link rel="stylesheet" href="/assets/css/navigation-pages.css?v=20260918">
-  <link rel="stylesheet" href="/assets/css/analyzer-desk.css?v=20261031d">
+  <link rel="stylesheet" href="/assets/css/analyzer-desk.css?v=20261031e">
   <link rel="stylesheet" href="/assets/css/analyzer-desk-evidence.css?v=20261031d">
   <!-- PP_SITE_HEAD_END -->
 </head>
@@ -3452,6 +3453,14 @@ function researchLookup(immediate) {
   if (!api || !chat) return;
   if (!researchController) {
     researchController = api.createController({
+      claim: async (lookup, index) => {
+        const access = window.ppAnalyzerAccess;
+        if (!access || lookup.sport !== 'nfl') return lookup;
+        const selected = lookup.props[index];
+        const player = lookup.player.player_name || lookup.player.name;
+        const result = await access.post('nfl', 'claim', {player, selection: access.selection(selected)});
+        return access.mergeClaim(lookup, index, result) || {...lookup, claim_status: result.status === 'ok' ? 'selection_unavailable' : result.status};
+      },
       ui: {
         hide: researchHide,
         message: (text) => {
@@ -3467,20 +3476,21 @@ function researchLookup(immediate) {
             lookup, propIndex, sport: activeSport, surface: 'analyzer', fixture: !!api.fixtureMode(window.location),
             savedBrief: api.localPreviewBase(window.location) ? lookup.savedBrief : null,
             evidenceSources: api.localPreviewBase(window.location) ? lookup.evidenceSources : [],
+            requestClaim: (lookup.sport || activeSport) === 'nfl' && !api.fixtureMode(window.location) && !api.localPreviewBase(window.location) ? async (selectedProp) => {
+              const access = window.ppAnalyzerAccess;
+              const player = lookup.player.player_name || lookup.player.name;
+              return access.post('nfl', 'claim', {player, selection: access.selection(selectedProp)});
+            } : null,
             requestBrief: async (selectedProp) => {
+              const access = window.ppAnalyzerAccess;
               const sport = lookup.sport || activeSport;
-              const who = lookup.player && (lookup.player.player_name || lookup.player.name);
-              const controller = new AbortController();
-              const timeout = setTimeout(() => controller.abort(), 85000);
-              try {
-                const result = await fetch(api.RESEARCH_API + '/' + encodeURIComponent(sport) + '/brief', {
-                  method: 'POST', headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({ player: who, source_analysis_id: String(selectedProp.source_analysis_id) }),
-                  signal: controller.signal
-                });
-                if (!result.ok) throw new Error('Brief unavailable');
-                return await result.json();
-              } finally { clearTimeout(timeout); }
+              const player = lookup.player.player_name || lookup.player.name;
+              const body = {player, source_analysis_id: String(selectedProp.source_analysis_id)};
+              if (selectedProp.claim_id) {
+                body.claim_id = selectedProp.claim_id;
+                body.selection = access.selection(selectedProp);
+              }
+              return access.post(sport, 'brief', body);
             },
             onPropChange: (selectedProp) => {
               const who = lookup.player && (lookup.player.player_name || lookup.player.name);

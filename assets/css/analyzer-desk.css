@@ -224,3 +224,5 @@ body.pp-site-system.pp-nav-page .pp-desk .pp-desk-brief li::marker { color:#2142
 .pp-nav-analyzer .pick-analysis-link:hover .pick-player-name { text-decoration:underline; text-underline-offset:4px; }
 .pp-nav-analyzer .pick-card-actions { display:flex; flex-wrap:wrap; gap:10px 18px; align-items:center; }
 .pp-nav-analyzer .pick-view-analysis { color:#ff9c74; font:600 13px/1.5 var(--font-body,sans-serif); text-underline-offset:3px; }
+
+.pp-desk-claim{padding:16px 20px;border:1px solid var(--desk-border,#dedbd5);border-radius:12px;margin:0 0 20px;font-size:14px}.pp-desk-claim p{margin:0 0 10px}.pp-desk-claim button{padding:10px 16px;border:0;border-radius:8px;background:#f97316;color:#111827;font:inherit;font-weight:600;cursor:pointer}.pp-desk-claim button:disabled{opacity:.6;cursor:wait}.pp-desk-claim a{color:inherit;text-decoration:underline}
