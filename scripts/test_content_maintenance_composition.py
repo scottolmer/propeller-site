@@ -68,6 +68,23 @@ class ContentMaintenanceCompositionTests(unittest.TestCase):
         self.assertNotIn('pp-nav-page', other)
         self.assertIn('site-compat.css', other)
 
+    def test_analyzer_desk_styles_survive_repeated_maintenance(self):
+        path = ROOT / 'analyzer/index.html'
+        source = path.read_text()
+        rendered = optimize(migrate_html(source, path, False))
+        again = optimize(migrate_html(rendered, path, False))
+        self.assertEqual(rendered, again)
+        for asset in ('analyzer-desk.css', 'analyzer-desk-evidence.css'):
+            self.assertEqual(rendered.count('/assets/css/' + asset), 1)
+            self.assertLess(rendered.index('navigation-pages.css'), rendered.index(asset))
+            self.assertNotIn('/assets/css/' + asset,
+                             migrate_html('<html><head></head><body></body></html>',
+                                          ROOT / 'guides/example/index.html', False))
+        for script in ('analyzer-desk.js', 'analyzer-desk-evidence.js'):
+            self.assertEqual(rendered.count('/assets/js/' + script), 1)
+        self.assertIn('researchChatMount', rendered)
+        self.assertIn('How the analyzer works & FAQs', rendered)
+
     def test_real_help_and_comparison_composition_is_stable(self):
         payload = json.loads((ROOT / 'data/comparison-pages.json').read_text())
         cases = [(ROOT / 'help' / page['slug'] / 'index.html', render_page(page)) for page in PAGES]
