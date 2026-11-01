@@ -31,10 +31,10 @@ function harness(fetchImpl) {
 
 const tick = () => new Promise((r) => setTimeout(r, 10));
 
-test("fetch gate: nfl, query >= 3 chars, at most one matched player", async () => {
+test("fetch gate: nfl and nba, query >= 3 chars, at most one matched player", async () => {
   const urls = [];
   const { ctl } = harness(async (url) => { urls.push(url); return { ok: true, json: async () => ({ status: "ok", player: { name: "x" }, props: [] }) }; });
-  ctl.update({ sport: "nba", picks: [brissett()], query: "brissett" });
+  ctl.update({ sport: "mlb", picks: [brissett()], query: "brissett" });
   ctl.update({ sport: "nfl", picks: [brissett(), { player_name: "Josh Allen" }], query: "jo" + "sh" });
   ctl.update({ sport: "nfl", picks: [], query: "ja" });
   ctl.update({ sport: "nfl", picks: [], query: "" });
@@ -47,6 +47,9 @@ test("fetch gate: nfl, query >= 3 chars, at most one matched player", async () =
   ctl.update({ sport: "nfl", picks: [brissett(), brissett({ stat_type: "pass_tds" })], query: "briss" });
   await tick();
   assert.match(urls[1], /player=Jacoby%20Brissett$/);
+  ctl.update({ sport: "nba", picks: [], query: "James" });
+  await tick();
+  assert.match(urls[2], /research\/nba\?player=James$/);
 });
 
 test("stale response is dropped", async () => {
@@ -115,7 +118,7 @@ test("no current prop shows next slate", async () => {
 });
 
 test("analyzer page wires research assets and mount point", () => {
-  assert.match(html, /analyzer-research\.js\?v=20261027/);
+  assert.match(html, /analyzer-research\.js\?v=20261030b/);
   assert.match(html, /research-chat\.js\?v=20261028b/);
   assert.match(html, /research-chat\.css\?v=20261027/);
   assert.ok(html.indexOf('id="researchChat"') < html.indexOf('id="picksGrid"'));
@@ -158,3 +161,5 @@ test("fixture down simulates a backend failure on localhost only", async () => {
   assert.equal(calls, 0);
   assert.equal(log.mounted, 0);
 });
+
+test('local preview endpoint is available only on loopback with explicit flag',()=>{const api=load();assert.equal(api.localPreviewBase({hostname:'localhost',search:'?researchPreview=1'}),'/__analyst-preview/research');assert.equal(api.localPreviewBase({hostname:'127.0.0.1',search:'?researchPreview=1'}),'/__analyst-preview/research');assert.equal(api.localPreviewBase({hostname:'propellerpicks.com',search:'?researchPreview=1'}),null);assert.equal(api.localPreviewBase({hostname:'localhost',search:''}),null);});

@@ -1,31 +1,35 @@
 # Analyzer Desk template
 
-The Desk is the selected `/analyzer/` research-result template. It uses the site’s Familjen Grotesk, IBM Plex Sans and IBM Plex Mono fonts and the approved navy/cream/orange palette. The homepage, five-sport public cards, signup/save panel and query handoff remain owned by their existing code.
+The Desk is the selected `/analyzer/` research-result template. It uses the site's Familjen Grotesk, IBM Plex Sans and IBM Plex Mono fonts and the approved navy/cream/orange palette. The homepage, five-sport public cards, signup/save panel and query handoff retain their existing owners. Private comparisons and Version B remain preserved outside this source worktree.
 
-## Data and rendering
+## Evidence and brief
 
-`assets/js/analyzer-desk.js` consumes the existing NFL public-research response at the established `researchChatMount` seam. The old shared chat renderer remains available as a fallback and continues to own the homepage showcase. No new endpoint, model call, paid tool, or access policy is introduced.
+`assets/js/analyzer-desk.js` mounts at `researchChatMount`; the previous shared chat renderer remains the fallback and owns the homepage showcase. `analyzer-research.js` supports stored NFL and NBA lookups. Other sports retain their existing cards. A successful Desk lookup suppresses the small board's contradictory empty-results message without hiding available cards.
 
-The Desk renders the selected returned prop, a deterministic data summary, the signal scores allowed by the existing conversation’s public/free blocks, filtered dated history, and an explicit quote-verification gap. Selecting another prop binds the direction, confidence, stat history and signals to that record. Summary-only props never expose injected signals or logs. Signal rationales, weights, injuries, quote terms and prices are not invented.
+Full preview records may include the MCP's shared recorded-agent `analysis` projection. The renderer requires matching source analysis ID and timestamp. A full canonical preview shows all returned signals, including opposing and neutral components. Reasons require an exact name, score and direction match to the same recorded source. Summary-only records suppress injected scores, reasons, history and generation. Missing reasons, weights, player status and prices remain unknown.
 
-The current API does not return the approved prototype’s OpenAI brief, detailed signal reasons, or verified cross-platform offers. Those need a separate backend integration. The UI labels its current brief as a data summary and does not promise the prototype’s proposed daily allowances.
+The initial live brief is a labeled deterministic data summary. The loopback saved-example preview immediately displays the original reviewed OpenAI brief, with matching source/timestamp provenance; it does not call a model. **Generate analyst brief** sends only player and exact source ID to `POST /api/social/research/{sport}/brief`. The server rereads public admission, constructs evidence, reserves budget and generates narrative. Keys, model instructions, evidence and quotas stay on the server. Typing, page loads, prop selection and history filters never trigger generation. There is no automatic retry. Late responses after a selection change or destruction cannot replace the current record.
 
-Historical views deliberately include older returned rows for **full-preview records**, as requested in the selected design. They show exact dates and teams, maintain an explicit season filter and never describe them as recent/current-season games by default. Invalid dates, null/blank values, and observations on/after the earlier of the read date and today are excluded. Older public rows were previously hidden by the old chart’s freshness guard; summary-only visibility remains unchanged. Filters do not rewrite the full-sample summary. Results above, below and equal to the selected line are distinct; workload uses pass attempts, rush attempts or targets according to the market.
+Generated text is labeled AI, escaped, and accepted only with matching provenance. The response includes model, generation time and evidence hash. Failures preserve saved research; exhausted anonymous allowance offers registration. Proposed membership quotas are not hardcoded policy. The marketing page sends anonymous requests; account bearer-token admission is available on the API for the account workspace.
 
-The public-board notice describes a different recorded line without asserting that a verified equivalent quote moved. Platform and period identity are unavailable in this contract.
+## History and market identity
 
-## Local review
+Exact dates and teams remain visible. Invalid/null values and observations on/after the earlier of read date and today are excluded. Season and venue filters do not manufacture observations; above/below/equal counts are distinct. Available workload follows the market. History includes the bounded available cross-season sample for full previews. Game buttons inspect individual appearances; all/recent-two/current-season and venue filters update the chart, totals and source table, and an empty filtered sample offers a reset. NBA's adapter returns no history rather than inferring it from another source.
 
-Run a static server from the worktree and open:
+The market table compares returned offers only for the same event and stat family, identifying different lines, periods, variants and market identifiers. Known platform, period, variant and quote timestamps come from each exact source record. A different recorded line is not called movement of a verified equivalent offer. Missing odds or payout prevent value, fair-price and staking conclusions.
 
-`http://127.0.0.1:8816/analyzer/?sport=nfl&q=Jacoby%20Brissett&researchFixture=full`
+## Local review and validation
 
-The existing `researchFixture=full|summary|down` hook works only on loopback hosts; full and summary render a visible layout-test-data notice. These are examples for layout testing, not current research. Normal requests use the existing stored public API. No LLM call is made by the renderer.
+Loopback-only `researchFixture=full|summary|down` uses labeled layout examples. `researchPreview=1` selects a loopback review API; it is ignored on public hosts. The private server replays the approved saved MCP example: five signals, four dated 2025 Green Bay appearances, three distinct recorded offers, and the original reviewed OpenAI brief. This replaces the incomplete public-lookup demo without relabeling older history as current. It provides source links to the exact saved model input, MCP capture and reviewed output. It has no credentials or paid generation capability.
 
-Targeted checks:
-
-```
+```sh
 node --test scripts/test_analyzer_desk.mjs scripts/test_analyzer_research.mjs scripts/test_research_chat.mjs scripts/test_analyzer_events.mjs scripts/test_analyzer_save_panel.mjs scripts/test_analyzer_sport_query.mjs scripts/test_analyzer_availability.mjs scripts/test_analyzer_webmcp.mjs scripts/test_research_handoff.mjs
 ```
 
-Deployment is separate from preparing this replacement. The private design comparisons and original Version B remain preserved outside this production source worktree.
+100 targeted website checks passed. Desktop and 390px phone review passed; page width and scroll width both measured 390px. Backend activation is documented in its task worktree's `docs/analyzer-evidence-bridge.md`. No public deployment or production activation occurred.
+
+## Concise default view
+
+The initial view now prioritizes the takeaway, all recorded signals, historical chart and compact offer comparison. The complete original analyst prose and checklist remain inside **Read the analysis**; quote fields and source timestamps remain inside **Quote details & timestamps**. No generated answer or captured source data was rewritten.
+
+The hero introduction is one sentence, redundant timestamps and instructional copy are consolidated, and the existing page guides/FAQs remain accessible through **How the analyzer works & FAQs**. The player-help fragment opens that disclosure before navigating. Site fonts and the existing research interactions are retained. The fuller prior presentation is saved outside the repository in the private artifact directory's `desk-before-distill` snapshot.

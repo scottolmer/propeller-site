@@ -1,0 +1,20 @@
+.pp-desk .pp-desk-history-status { margin-top: 16px; padding-bottom: 12px; border-bottom: 1px solid #31566a; color: #c5dbe3; font-size: 11px; }
+.pp-desk .pp-desk-games { display: grid; grid-template-columns: repeat(auto-fit, minmax(105px, 1fr)); gap: 7px; }
+.pp-desk .pp-desk-games button { display: grid; gap: 4px; padding: 10px 5px; border: 1px solid #31566a; background: transparent; color: #d5e4e7; text-align: center; }
+.pp-desk .pp-desk-games button[aria-pressed="true"] { border-color: #9ed3d6; background: #16465c; }
+.pp-desk .pp-desk-games small, .pp-desk .pp-desk-games span { color: #aac7d2; font-size: 10px; }
+.pp-desk .pp-desk-games strong { font-size: 12px; }
+.pp-desk .pp-desk-game-detail { margin: 14px 0; color: #d5e4e7; font-size: 12px; }
+.pp-desk .pp-desk-history .pp-desk-limit, .pp-desk .pp-desk-market .pp-desk-limit { display: block; margin-top: 15px; }
+.pp-desk .pp-desk-empty button { margin-top: 14px; padding: 10px 12px; border: 1px solid #9ed3d6; background: transparent; color: #d5e4e7; }
+.pp-desk .pp-desk-market-table { min-width:0; width:100%; table-layout:fixed; }
+.pp-desk .pp-desk-market-table :is(th,td) { overflow-wrap:anywhere; }
+.pp-desk .pp-desk-market-table strong, .pp-desk .pp-desk-games :is(span,small), .pp-desk .pp-desk-history td:nth-child(n+3) { font-family:var(--font-mono,monospace); font-variant-numeric:tabular-nums; }
+.pp-desk .pp-desk-market-table strong, .pp-desk .pp-desk-market-table small, .pp-desk .pp-desk-selected { display: block; }
+.pp-desk .pp-desk-market-table strong { margin-top: 4px; font-size: 16px; }
+.pp-desk .pp-desk-market-table small { margin-top: 4px; color: #aac7d2; font-size: 10px; }
+.pp-desk .pp-desk-selected { margin-bottom: 5px; color: #ffad82; font-size: 9px; }
+@media(max-width:600px){.pp-desk .pp-desk-games { grid-template-columns: repeat(2,minmax(0,1fr)); }.pp-desk .pp-desk-chart .desk-label { font-size: 15px; }.pp-desk .pp-desk-market-table { min-width:540px; table-layout:auto; }}
+
+.pp-desk .pp-desk-chart .desk-label { font-size:13px; }
+@media(max-width:600px){.pp-desk .pp-desk-chart .desk-label { font-size:20px; }}
