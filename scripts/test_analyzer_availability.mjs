@@ -32,7 +32,7 @@ function loadAnalyzer(fetchImpl) {
 }
 
 function sportFromUrl(url) {
-  return new URL(url).pathname.split('/').at(-1);
+  return new URL(url).pathname.split('/')[4];
 }
 
 test('availability search selects only a verified nonempty current feed', async () => {
@@ -78,7 +78,7 @@ test('availability search reports empty and unreachable feeds without inventing 
   const helper = loadAnalyzer(async url => {
     const sport = sportFromUrl(url);
     if (sport === 'mlb' || sport === 'soccer') throw new Error('unreachable');
-    return { ok: true, json: async () => ({ props: [] }) };
+    return { ok: true, json: async () => ({ status: 'empty', coverage: { stored_read_complete: true, truncated: false }, props: [] }) };
   });
 
   const result = await helper.findFirstSportWithCurrentProps('nba', () => true);
