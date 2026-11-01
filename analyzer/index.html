@@ -14,7 +14,9 @@
 <script src="/assets/js/analyzer-events.js?v=20260715" defer></script>
 <script src="/assets/js/analyzer-save-panel.js?v=20261026" defer></script>
 <script src="/assets/js/research-chat.js?v=20261028b" defer></script>
-<script src="/assets/js/analyzer-research.js?v=20261027" defer></script>
+<script src="/assets/js/analyzer-research.js?v=20261030b" defer></script>
+<script src="/assets/js/analyzer-desk-evidence.js?v=20261031a" defer></script>
+<script src="/assets/js/analyzer-desk.js?v=20261031a" defer></script>
 <link rel="stylesheet" href="/assets/css/research-chat.css?v=20261027">
 <link rel="stylesheet" href="/assets/css/analyzer-save-panel.css?v=20261026b">
 <script src="/assets/js/analyzer-webmcp.js?v=20260827" defer></script>
@@ -2170,6 +2172,8 @@ footer {
   <meta name="theme-color" content="#031a2c">
   <link rel="stylesheet" href="/assets/css/site-system.css?v=20260712">
   <link rel="stylesheet" href="/assets/css/navigation-pages.css?v=20260918">
+<link rel="stylesheet" href="/assets/css/analyzer-desk.css?v=20261031a">
+<link rel="stylesheet" href="/assets/css/analyzer-desk-evidence.css?v=20261031a">
   <!-- PP_SITE_HEAD_END -->
 </head>
 <body class="legacy-redesign-page pp-site-system pp-family-core pp-nav-page pp-nav-analyzer">
@@ -2218,7 +2222,7 @@ footer {
 
       <div class="live-badge fade-in delay-1">
         <span class="live-dot" aria-hidden="true"></span>
-        Live AI Analysis &mdash; <span id="heroDateLabel">Loading...</span>
+        Player research &mdash; <span id="heroDateLabel">Loading...</span>
       </div>
 
       <h1 class="fade-in delay-1">
@@ -2226,40 +2230,19 @@ footer {
       </h1>
 
       <p class="hero-subtitle fade-in delay-2">
-        Propeller Picks is a free player prop analyzer with AI-assisted, plain-language research for DFS and pick'em platforms. Choose a sport, search current player lines, and read the model's over-or-under direction with confidence context. No account or betting jargon is required, and Propeller Picks never places entries or wagers.
+        Search a player to explore their lines, analyst brief, and supporting evidence.
       </p>
 
-      <div class="hero-evidence fade-in delay-2" aria-label="Propeller Picks analyzer evidence and permanent URL">
-        <strong>Evidence:</strong>
+      <details class="hero-evidence fade-in delay-2" aria-label="Propeller Picks analyzer evidence and permanent URL">
+        <summary>Sources & methodology</summary><div class="hero-evidence-links">
         <a href="/guides/how-ai-sports-betting-works/">How analysis works</a>
         <a href="/data/methodology-version.json">Current methodology version</a>
         <a href="/results/">Public results and limitations</a>
         <a href="/research/">Public research library</a>
         <a href="/research/prospective-record/">Forward publication record</a>
         <a href="https://propellerpicks.com/analyzer/">Permanent analyzer URL</a>
-      </div>
+      </div></details>
 
-      <div class="hero-stat-row fade-in" style="transition-delay:0.45s;">
-        <div class="hero-stat">
-          <span class="hero-stat-value">Free</span>
-          <span class="hero-stat-label">No account required</span>
-        </div>
-        <div class="hero-stat-divider" aria-hidden="true"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-value">5</span>
-          <span class="hero-stat-label">Sport tabs</span>
-        </div>
-        <div class="hero-stat-divider" aria-hidden="true"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-value">DFS</span>
-          <span class="hero-stat-label">Designed for pick'em</span>
-        </div>
-        <div class="hero-stat-divider" aria-hidden="true"></div>
-        <div class="hero-stat">
-          <span class="hero-stat-value">Independent</span>
-          <span class="hero-stat-label">No wager placement</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -2386,6 +2369,7 @@ footer {
   </div>
 </section>
 
+<details class="analyzer-about" id="analyzer-about"><summary>How the analyzer works & FAQs</summary><div class="analyzer-about-body">
 <!-- Category Definition + Worked Example -->
 <section class="category-section" aria-labelledby="category-heading">
   <div class="container">
@@ -2780,6 +2764,8 @@ footer {
   </div>
 </section>
 <!-- popular-players:end -->
+</div></details>
+
 <!-- PP_SITE_FOOTER_START -->
 <footer class="pp-site-footer">
   <div class="pp-site-footer__inner">
@@ -3355,7 +3341,15 @@ async function loadSport(sport) {
 // ============================================================
 // SEARCH
 // ============================================================
-// AI research chat: NFL single-player lookups only. Any failure leaves the card untouched.
+document.addEventListener('click', (event) => {
+  const link = event.target.closest && event.target.closest('a[href^="#"]');
+  const id = link && link.getAttribute('href').slice(1);
+  const target = id && document.getElementById(id);
+  const about = document.getElementById('analyzer-about');
+  if (target && about && about.contains(target)) about.open = true;
+});
+
+// Stored NFL/NBA player research. Failures retain the public card fallback.
 let researchChatHandle = null;
 let researchController = null;
 let researchImmediateOnce = false;
@@ -3371,7 +3365,7 @@ function researchHide() {
 }
 function researchLookup(immediate) {
   const api = window.ppAnalyzerResearch;
-  const chat = window.ppResearchChat;
+  const chat = window.ppAnalyzerDesk || window.ppResearchChat;
   if (!api || !chat) return;
   if (!researchController) {
     researchController = api.createController({
@@ -3386,11 +3380,42 @@ function researchLookup(immediate) {
         mount: (lookup) => {
           researchHide();
           const mount = document.getElementById('researchChatMount');
-          researchChatHandle = chat.mountResearchChat(mount, { lookup, surface: 'analyzer' });
+          researchChatHandle = chat.mountResearchChat(mount, {
+            lookup, sport: activeSport, surface: 'analyzer', fixture: !!api.fixtureMode(window.location),
+            savedBrief: api.localPreviewBase(window.location) ? lookup.savedBrief : null,
+            evidenceSources: api.localPreviewBase(window.location) ? lookup.evidenceSources : [],
+            requestBrief: async (selectedProp) => {
+              const sport = lookup.sport || activeSport;
+              const who = lookup.player && (lookup.player.player_name || lookup.player.name);
+              const controller = new AbortController();
+              const timeout = setTimeout(() => controller.abort(), 85000);
+              try {
+                const result = await fetch(api.RESEARCH_API + '/' + encodeURIComponent(sport) + '/brief', {
+                  method: 'POST', headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ player: who, source_analysis_id: String(selectedProp.source_analysis_id) }),
+                  signal: controller.signal
+                });
+                if (!result.ok) throw new Error('Brief unavailable');
+                return await result.json();
+              } finally { clearTimeout(timeout); }
+            },
+            onPropChange: (selectedProp) => {
+              const who = lookup.player && (lookup.player.player_name || lookup.player.name);
+              const norm = (n) => String(n || '').toLowerCase().replace(/\s+/g, ' ').trim();
+              const playerPicks = who ? allPicks.filter((p) => p && norm(p.player_name) === norm(who)) : [];
+              const moved = window.ppAnalyzerDesk
+                ? window.ppAnalyzerDesk.lineNotice(who, selectedProp, playerPicks)
+                : api.lineMovedNotice(lookup.player && (lookup.player.player_name || lookup.player.name), selectedProp, playerPicks);
+              const note = document.getElementById('researchNotice');
+              note.textContent = moved || ''; note.hidden = !moved;
+            }
+          });
           const who = lookup.player && (lookup.player.player_name || lookup.player.name);
           const norm = (n) => String(n || '').toLowerCase().replace(/\s+/g, ' ').trim();
           const playerPicks = who ? allPicks.filter((p) => p && norm(p.player_name) === norm(who)) : [];
-          const moved = api.lineMovedNotice(lookup.player && (lookup.player.player_name || lookup.player.name), (lookup.props || [])[0], playerPicks);
+          const moved = window.ppAnalyzerDesk
+            ? window.ppAnalyzerDesk.lineNotice(who, researchChatHandle.getSelectedProp(), playerPicks)
+            : api.lineMovedNotice(lookup.player && (lookup.player.player_name || lookup.player.name), (lookup.props || [])[0], playerPicks);
           const note = document.getElementById('researchNotice');
           if (moved) { note.textContent = moved; note.hidden = false; }
           document.getElementById('researchChat').hidden = false;

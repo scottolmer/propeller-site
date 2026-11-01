@@ -39,15 +39,15 @@
       parts.hour + ":" + parts.minute + " " + String(parts.dayPeriod || "").toUpperCase() + " ET";
   }
 
-  function noCurrentPropMessage(nextEventStart) {
+  function noCurrentPropMessage(nextEventStart, sport) {
     var base = "No current line for this player.";
     var when = nextEventStart ? slateText(nextEventStart) : "";
-    return when ? base + " The next NFL slate starts " + when + "." : base;
+    return when ? base + " The next " + (sport === "nba" ? "NBA" : "NFL") + " slate starts " + when + "." : base;
   }
 
   // Returns the name to send, or null. Gate: NFL, query >= 3 chars, at most one distinct matched player.
   function singlePlayer(sport, picks, query) {
-    if (sport !== "nfl") return null;
+    if (sport !== "nfl" && sport !== "nba") return null;
     var q = String(query == null ? "" : query).trim();
     if (q.length < 3) return null;
     var name = null;
@@ -64,6 +64,12 @@
   // Local-only preview hook: ?researchFixture=full|summary|down swaps the backend for a
   // checked-in fixture. Honored only on loopback hosts; never active in production.
   var LOCAL_HOSTS = { "localhost": 1, "127.0.0.1": 1, "[::1]": 1 };
+  function localPreviewBase(loc) {
+    return loc && Object.prototype.hasOwnProperty.call(LOCAL_HOSTS, loc.hostname) &&
+      /[?&]researchPreview=1(?:&|$)/.test(String(loc.search || ''))
+      ? '/__analyst-preview/research' : null;
+  }
+  RESEARCH_API = localPreviewBase(window.location) || RESEARCH_API;
   function fixtureMode(loc) {
     if (!loc || !Object.prototype.hasOwnProperty.call(LOCAL_HOSTS, loc.hostname)) return null;
     var m = /[?&]researchFixture=([a-z]+)(?:&|$)/.exec(String(loc.search || ""));
@@ -79,12 +85,12 @@
 
     function stale(id) { return id !== counter; }
 
-    async function run(id, player) {
+    async function run(id, player, sport) {
       var ctl = typeof AbortController === "function" ? new AbortController() : null;
       var t = setTimeout(function () { if (ctl) ctl.abort(); }, TIMEOUT_MS);
       try {
         var mode = fixtureMode(opts.location || window.location);
-        var url = RESEARCH_API + "/nfl?player=" + encodeURIComponent(player);
+        var url = RESEARCH_API + "/" + sport + "?player=" + encodeURIComponent(player);
         if (mode === "down") throw new Error("fixture down");
         if (mode) url = "/scripts/fixtures/research-nfl-" + mode + ".json";
         var res = await doFetch(url, ctl ? { signal: ctl.signal } : {});
@@ -92,7 +98,7 @@
         var data = await res.json();
         if (stale(id)) return;
         if (data && data.status === "ok") ui.mount(data);
-        else if (data && data.status === "no_current_prop") ui.message(noCurrentPropMessage(data.next_event_start));
+        else if (data && data.status === "no_current_prop") ui.message(noCurrentPropMessage(data.next_event_start, sport));
         else ui.hide();
       } catch (e) {
         if (!stale(id)) ui.hide();
@@ -108,8 +114,8 @@
       var player = singlePlayer(state.sport, state.picks, state.query);
       ui.hide();
       if (!player) return;
-      if (state.immediate || !delay) { run(id, player); return; }
-      timer = setTimeout(function () { timer = null; run(id, player); }, delay);
+      if (state.immediate || !delay) { run(id, player, state.sport); return; }
+      timer = setTimeout(function () { timer = null; run(id, player, state.sport); }, delay);
     }
 
     return { update: update };
@@ -121,6 +127,7 @@
     noCurrentPropMessage: noCurrentPropMessage,
     singlePlayer: singlePlayer,
     fixtureMode: fixtureMode,
+    localPreviewBase: localPreviewBase,
     createController: createController
   };
 })(window);
