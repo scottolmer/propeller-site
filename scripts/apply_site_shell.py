@@ -305,6 +305,11 @@ def migrate_html(original: str, path: Path, home: bool) -> str:
         )
     if navigation_page:
         page_styles += '<link rel="stylesheet" href="/assets/css/navigation-pages.css?v=20260918">\n  '
+    if path.relative_to(ROOT).as_posix() == "analyzer/index.html":
+        page_styles += (
+            '<link rel="stylesheet" href="/assets/css/analyzer-desk.css?v=20261031b">\n  '
+            '<link rel="stylesheet" href="/assets/css/analyzer-desk-evidence.css?v=20261031b">\n  '
+        )
     block = HEAD_BLOCK.format(compat=compat, page_styles=page_styles)
     # These pages declare a fully dark surface; retain it during maintenance.
     if navigation_page or "pp-compare-lines" in original or "pp-ai-source-audit" in original or "pp-research-log" in original or "pp-pricing" in original or "pp-daily-archive" in original:
