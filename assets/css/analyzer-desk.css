@@ -174,7 +174,7 @@ body.pp-site-system.pp-nav-page .pp-desk .pp-desk-brief .pp-desk-limit { color: 
 .pp-desk .pp-desk-recheck li + li { margin-top:7px; }
 .pp-desk .pp-desk-attribution { margin-top:20px; padding-top:14px; border-top:1px solid #cbd2cc; font-size:10px; line-height:1.6; }
 .pp-desk .pp-desk-signal-scale { display:flex; justify-content:space-between; gap:8px; margin:20px 0 8px; color:#9cbac6; font:500 9px/1.4 var(--font-mono,monospace); }
-.pp-desk .pp-desk-evidence-grid { grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); }
+.pp-desk .pp-desk-evidence-grid { grid-template-columns:minmax(0,1fr); }
 .pp-desk .pp-desk-provenance { display:flex; flex-wrap:wrap; gap:12px 30px; margin-top:16px; }
 .pp-desk .pp-desk-provenance dt { color:var(--desk-muted); font-size:10px; }
 .pp-desk .pp-desk-provenance dd { margin-top:4px; color:var(--desk-text); font:500 10px/1.5 var(--font-mono,monospace); }
