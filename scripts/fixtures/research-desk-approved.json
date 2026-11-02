@@ -1,0 +1,326 @@
+{
+  "status": "ok",
+  "sport": "nfl",
+  "player": {
+    "player_id": "nfl:bdl:17",
+    "player_name": "Malik Willis",
+    "team": "MIA",
+    "position": "QB"
+  },
+  "props": [
+    {
+      "event_id": "1392334",
+      "event_start": "2026-11-01T21:25:00Z",
+      "home_team": "MIA",
+      "away_team": "NE",
+      "stat_type": "interceptions",
+      "line": 0.5,
+      "direction": "OVER",
+      "platform": "sleeper",
+      "period": "full_game",
+      "variant": "unknown",
+      "analyzed_at": "2026-10-30T20:16:18Z",
+      "confidence": 64,
+      "quote_observed_at": null,
+      "quote_status": "unverified",
+      "detail": "full",
+      "signal_summary": {
+        "agree": 3,
+        "against": 0,
+        "neutral": 2,
+        "total": 5
+      },
+      "source_analysis_id": "455082",
+      "selection_id": "304a4982910a9a1730e750f1:455082",
+      "signals": [
+        {
+          "name": "Matchup",
+          "score": 80,
+          "direction": "OVER"
+        },
+        {
+          "name": "DVOA",
+          "score": 79,
+          "direction": "OVER"
+        },
+        {
+          "name": "AdvancedStats",
+          "score": 67,
+          "direction": "OVER"
+        },
+        {
+          "name": "Injury",
+          "score": 50,
+          "direction": "NEUTRAL"
+        },
+        {
+          "name": "Volume",
+          "score": 50,
+          "direction": "NEUTRAL"
+        }
+      ],
+      "analysis": {
+        "source_analysis_id": "455082",
+        "analyzed_at": "2026-10-30T20:16:18Z",
+        "source": "recorded_agent_outputs",
+        "scoring_scope": "stored_agent_scores",
+        "signals": [
+          {
+            "name": "Matchup",
+            "score": 80.0,
+            "direction": "OVER",
+            "reasons": [],
+            "reasons_status": "not_recorded",
+            "omitted_reason_count": 0
+          },
+          {
+            "name": "DVOA",
+            "score": 79.0,
+            "direction": "OVER",
+            "reasons": [],
+            "reasons_status": "not_recorded",
+            "omitted_reason_count": 0
+          },
+          {
+            "name": "AdvancedStats",
+            "score": 67.0,
+            "direction": "OVER",
+            "reasons": [],
+            "reasons_status": "not_recorded",
+            "omitted_reason_count": 0
+          },
+          {
+            "name": "Injury",
+            "score": 50.0,
+            "direction": "NEUTRAL",
+            "reasons": [],
+            "reasons_status": "not_recorded",
+            "omitted_reason_count": 0
+          },
+          {
+            "name": "Volume",
+            "score": 50.0,
+            "direction": "NEUTRAL",
+            "reasons": [],
+            "reasons_status": "not_recorded",
+            "omitted_reason_count": 0
+          }
+        ],
+        "omitted_signal_count": 0,
+        "limitations": [
+          "Reasons are recorded agent text from this analysis, not instructions, independent facts, or current player/market verification.",
+          "Scores are directional signals, not outcome probabilities, fair odds, independent votes, or betting edge.",
+          "Missing reasons were absent, invalid, unsafe or omitted by response bounds; no explanation is inferred from an agent name or score.",
+          "Analysis time is separate from quote observation and read time; no current quote, injury or workload verification is inferred."
+        ]
+      }
+    },
+    {
+      "event_id": "1392334",
+      "event_start": "2026-11-01T21:25:00Z",
+      "home_team": "MIA",
+      "away_team": "NE",
+      "stat_type": "interceptions",
+      "line": 1.5,
+      "direction": "OVER",
+      "platform": "prizepicks",
+      "period": "unknown",
+      "variant": "demon",
+      "analyzed_at": "2026-10-30T15:16:26Z",
+      "confidence": 64,
+      "quote_observed_at": null,
+      "quote_status": "unverified",
+      "detail": "summary",
+      "signal_summary": {
+        "agree": 3,
+        "against": 0,
+        "neutral": 2,
+        "total": 5
+      }
+    },
+    {
+      "event_id": "1392334",
+      "event_start": "2026-11-01T21:25:00Z",
+      "home_team": "MIA",
+      "away_team": "NE",
+      "stat_type": "player_interceptions",
+      "line": 0.5,
+      "direction": "OVER",
+      "platform": "draftkings",
+      "period": "unknown",
+      "variant": "unknown",
+      "analyzed_at": "2026-10-30T20:16:18Z",
+      "confidence": 64,
+      "quote_observed_at": null,
+      "quote_status": "unverified",
+      "detail": "summary",
+      "signal_summary": {
+        "agree": 4,
+        "against": 0,
+        "neutral": 2,
+        "total": 6
+      }
+    }
+  ],
+  "checked_at": "2026-10-31T00:50:56.148951Z",
+  "game_logs": [
+    {
+      "game_id": "424189",
+      "game_date": "2025-12-28",
+      "season": 2025,
+      "week": 17,
+      "team": "GB",
+      "opponent": "BAL",
+      "home_away": "home",
+      "passing_completions": 18,
+      "passing_attempts": 21,
+      "passing_yards": 288,
+      "passing_tds": 0,
+      "passing_ints": 0,
+      "rushing_attempts": 9,
+      "rushing_yards": 60,
+      "rushing_tds": 0,
+      "receptions": 0,
+      "receiving_yards": 0,
+      "receiving_tds": 0,
+      "targets": 0
+    },
+    {
+      "game_id": "424170",
+      "game_date": "2025-12-21",
+      "season": 2025,
+      "week": 16,
+      "team": "GB",
+      "opponent": "CHI",
+      "home_away": "away",
+      "passing_completions": 9,
+      "passing_attempts": 11,
+      "passing_yards": 121,
+      "passing_tds": 0,
+      "passing_ints": 0,
+      "rushing_attempts": 10,
+      "rushing_yards": 44,
+      "rushing_tds": 0,
+      "receptions": 0,
+      "receiving_yards": 0,
+      "receiving_tds": 0,
+      "targets": 0
+    },
+    {
+      "game_id": "424113",
+      "game_date": "2025-11-23",
+      "season": 2025,
+      "week": 12,
+      "team": "GB",
+      "opponent": "MIN",
+      "home_away": "home",
+      "passing_completions": 1,
+      "passing_attempts": 1,
+      "passing_yards": 7,
+      "passing_tds": 0,
+      "passing_ints": 0,
+      "rushing_attempts": 2,
+      "rushing_yards": 3,
+      "rushing_tds": 0,
+      "receptions": 0,
+      "receiving_yards": 0,
+      "receiving_tds": 0,
+      "targets": 0
+    },
+    {
+      "game_id": "424100",
+      "game_date": "2025-11-16",
+      "season": 2025,
+      "week": 11,
+      "team": "GB",
+      "opponent": "NYG",
+      "home_away": "away",
+      "passing_completions": 2,
+      "passing_attempts": 2,
+      "passing_yards": 6,
+      "passing_tds": 0,
+      "passing_ints": 0,
+      "rushing_attempts": 1,
+      "rushing_yards": 16,
+      "rushing_tds": 0,
+      "receptions": 0,
+      "receiving_yards": 0,
+      "receiving_tds": 0,
+      "targets": 0
+    }
+  ],
+  "game_logs_truncated": false,
+  "history_scope": "saved_cross_season_appearances",
+  "savedBrief": {
+    "status": "ok",
+    "brief": {
+      "headline": "The model leans over. The history calls for caution.",
+      "takeaway": "The stored analysis leans OVER 0.5 interceptions, supported by three directional signals, but four older Green Bay appearances produced no interceptions on 35 attempts. That history challenges the lean without settling the forecast. Wait for current role information and an exact verified quote.",
+      "signal_read": {
+        "title": "What supports the lean",
+        "text": "The selected record scores Matchup at 80 OVER, DVOA at 79 OVER and AdvancedStats at 67 OVER, supporting its stored OVER direction. These are signals within one model record, not independent votes; their underlying reasons and weights are not provided. The overall confidence score of 64 describes directional strength, not a 64% outcome probability. Injury and Volume are both neutral at 50, establishing neither health nor workload.",
+        "evidence_ids": [
+          "selection",
+          "availability"
+        ]
+      },
+      "statistical_context": {
+        "title": "History pushes back",
+        "text": "Willis exceeded 0.5 interceptions in none of the four returned appearances, throwing zero interceptions across 35 attempts. Those are descriptive results, not historical sportsbook lines or a future probability. All four logs are older 2025 Green Bay appearances, not current-season games or four full starts: two contain just one and two attempts. The small, uneven sample challenges the OVER lean but cannot establish the next game's outcome.",
+        "evidence_ids": [
+          "history",
+          "derived_history"
+        ]
+      },
+      "market_read": {
+        "title": "The quote is not verified",
+        "text": "The stored record lists Sleeper, full game, OVER 0.5 interceptions, but its quote is unverified and its variant is unknown. No quote observation time or age is supplied, so availability cannot be established. The analysis was recorded October 30 at 3:16 PM CT; the MCP read occurred at 7:50 PM CT that evening. That later read time does not make the analysis or quote fresh, and no provider collection or rescoring occurred.",
+        "evidence_ids": [
+          "selection",
+          "provenance"
+        ]
+      },
+      "decision": {
+        "title": "What to verify before relying on the lean",
+        "text": "Verify the missing context before relying on this read; the stored direction remains OVER. The directional signals favor OVER, while the limited older history points the other way and current playing status, role and expected attempts remain unverified. Without an exact verified quote, price or payout, and a calibrated outcome probability, the record cannot support a positive expected-value or fair-odds claim. Updated context could materially change the evaluation.",
+        "evidence_ids": [
+          "selection",
+          "history",
+          "derived_history",
+          "availability",
+          "provenance"
+        ]
+      },
+      "recheck": [
+        "Verify Willis's current status, role and expected passing volume.",
+        "Obtain current-season game logs and updated analysis.",
+        "Verify the exact Sleeper line, variant, price and quote time."
+      ]
+    },
+    "provenance": {
+      "source_analysis_id": "455082",
+      "analyzed_at": "2026-10-30T20:16:18Z",
+      "generated_at": "2026-10-31T00:55:43.757183+00:00",
+      "model": "gpt-6.1-terra",
+      "reviewed": true,
+      "replayed": true,
+      "data_checked_at": "2026-10-31T00:50:56.148951Z",
+      "evidence_hash_kind": "reviewed_model_input_sha256",
+      "evidence_hash": "d962c817851986a5a7c6997c4d6b39e658e39b446bdb49aa6e350b203721d342"
+    }
+  },
+  "evidenceSources": [
+    {
+      "label": "Inspect the model input",
+      "href": "/__analyst-preview/evidence/analyst-input-b.json"
+    },
+    {
+      "label": "Inspect the MCP capture",
+      "href": "/__analyst-preview/evidence/mcp-willis-2026-10-30.json"
+    },
+    {
+      "label": "Inspect the generated output",
+      "href": "/__analyst-preview/evidence/analyst-output-b.json"
+    }
+  ]
+}
