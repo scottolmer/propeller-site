@@ -16,7 +16,7 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "4428ea1e24a539e5d37331d013bcfa0591e1fcce2ed6cf70c482253603d7ed42",
+      "fingerprint": "6e3c9b6e0c806b1595dc6a4855776be620d86f2df15792379768936fc317c7a7",
       "lastmod": "2026-11-03",
       "source": "analyzer/index.html"
     },
@@ -29,46 +29,6 @@
       "fingerprint": "584209c582cb126efbed95308702225b303edf3fca4fc29c4f786d3bed7b4438",
       "lastmod": "2026-10-26",
       "source": "analyzer/nfl/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/alex-ovechkin/": {
-      "fingerprint": "ca616b03186906455a23e5a73a6c7f1543549a54c2e32a17192276493640eee9",
-      "lastmod": "2026-11-03",
-      "source": "analyzer/nhl/alex-ovechkin/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/alex-tuch/": {
-      "fingerprint": "aaadef60c4fc4aa627c7c48beeed5a47ab96b78157d711ba60f6a747584776cb",
-      "lastmod": "2026-11-03",
-      "source": "analyzer/nhl/alex-tuch/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/dylan-strome/": {
-      "fingerprint": "284e757da9fb15f69fc56866b2357c8dd811c466c033310571a549d394f331b5",
-      "lastmod": "2026-11-03",
-      "source": "analyzer/nhl/dylan-strome/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/jakob-chychrun/": {
-      "fingerprint": "c6c9e75caecba8fbdd313c4fc911675781e2a9b1a74e4abcca876e2902536588",
-      "lastmod": "2026-11-03",
-      "source": "analyzer/nhl/jakob-chychrun/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/jason-robertson/": {
-      "fingerprint": "aefa8bd3e8affbb7fd4047c8b9322c1dae3e7a0492f9cf873db3eeec1b807acb",
-      "lastmod": "2026-11-03",
-      "source": "analyzer/nhl/jason-robertson/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/jordan-kyrou/": {
-      "fingerprint": "7b5d78aaae11aab3218fb7d7216128a5fc51140cd62f4ac1115bba2ad7433fd5",
-      "lastmod": "2026-11-03",
-      "source": "analyzer/nhl/jordan-kyrou/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/mikko-rantanen/": {
-      "fingerprint": "4d1567a9e32cb55942234eb4c88e4d28eb4edc5d3918795291a5f1afbeaeb65e",
-      "lastmod": "2026-11-03",
-      "source": "analyzer/nhl/mikko-rantanen/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nhl/miro-heiskanen/": {
-      "fingerprint": "3372cfede4e44b5bf4bc0e483318bb039278b378037572d671dda9ba6eb012bc",
-      "lastmod": "2026-11-03",
-      "source": "analyzer/nhl/miro-heiskanen/index.html"
     },
     "https://propellerpicks.com/blog/": {
       "fingerprint": "d318f5e1aa5daa3972e4a7b5982e787b972549cc0210053c4987943e1d8e3104",
@@ -321,7 +281,7 @@
       "source": "picks/nfl/index.html"
     },
     "https://propellerpicks.com/picks/nhl/": {
-      "fingerprint": "0d381d1e512135fa63427258086c4e32629bf1da81cdb0a95e31e328021ea2f1",
+      "fingerprint": "1fff19aa423f6a1015c7d6378f4c6c13354e04747eb4416f83ec3afdfcc1def1",
       "lastmod": "2026-11-03",
       "source": "picks/nhl/index.html"
     },
