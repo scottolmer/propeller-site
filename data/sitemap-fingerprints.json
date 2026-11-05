@@ -1,7 +1,7 @@
 {
   "entries": {
     "https://propellerpicks.com/": {
-      "fingerprint": "116d056945c675afe182aeea92f1ca1244fef2260c7691154dfecfb6a7d80582",
+      "fingerprint": "6e194482b8f7ae1e34a0cf06603704eb252de0e2953fff4341c37aa3185e848f",
       "lastmod": "2026-11-05",
       "source": "index.html"
     },
@@ -26,7 +26,7 @@
       "source": "analyzer/nba/index.html"
     },
     "https://propellerpicks.com/analyzer/nba/tristan-da-silva/": {
-      "fingerprint": "c9e209bf9a53639877b39fe5ae9e2ad38915968e55d3ac99f609dba6a4b56a6d",
+      "fingerprint": "c9dab5ae6754ddbc0de8d72ebc70fca63fa44d1aa5956cb51ad4e920a66555f4",
       "lastmod": "2026-11-05",
       "source": "analyzer/nba/tristan-da-silva/index.html"
     },
@@ -36,8 +36,8 @@
       "source": "analyzer/nfl/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "25e880e33240cf39c4c78474dfa21925842d4e9def901e102e0dac0f23a94c3f",
-      "lastmod": "2026-11-04",
+      "fingerprint": "8e5818bacec8c505d58980c30ea48058167c183d9008922dbeaee88325d24cb0",
+      "lastmod": "2026-11-05",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -341,7 +341,7 @@
       "source": "research/prospective-record/index.html"
     },
     "https://propellerpicks.com/results/": {
-      "fingerprint": "38390f7ad367a0a284b982b51230eabe1ef9b74cd601db8ca669c10f36943dfd",
+      "fingerprint": "b9f67a24ccd239fa90fe67615de6b359bd7b81e30a30b596ce8fa2c129b23a5a",
       "lastmod": "2026-11-05",
       "source": "results/index.html"
     },
@@ -386,7 +386,7 @@
       "source": "tools/underdog-payout-calculator/index.html"
     },
     "https://propellerpicks.com/track-record/": {
-      "fingerprint": "dc1ee50f3e4e93595504ffdf844cf7747b46125b34f996e1ef23e831e63a7590",
+      "fingerprint": "323d71e0b00f790941a9b3c26e8eda63322d2ff097549b74c26d1eb493486b97",
       "lastmod": "2026-11-05",
       "source": "track-record/index.html"
     }
