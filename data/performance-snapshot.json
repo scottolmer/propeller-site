@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-06T10:34:45Z",
+  "generated_at": "2026-11-06T16:03:18Z",
   "latest_sample_game_date": "2026-11-05",
   "canonical_report": "https://propellerpicks.com/results/",
   "historical_database": {
     "unit": "raw graded analysis rows",
-    "total": 3873827,
-    "wins": 2529752,
-    "losses": 1343010,
+    "total": 3874209,
+    "wins": 2529968,
+    "losses": 1343176,
     "pushes": 1065,
     "historical_outcome_rate": 65.3,
     "rate_formula": "wins / (wins + losses); pushes excluded",
@@ -15,13 +15,13 @@
   },
   "deduplicated_public_ledger": {
     "unit": "prop-result entries after the current public API collapse rules",
-    "total": 508013,
-    "wins": 335731,
-    "losses": 172151,
+    "total": 508101,
+    "wins": 335782,
+    "losses": 172188,
     "pushes": 131,
     "historical_outcome_rate": 66.1,
     "rate_formula": "wins / (wins + losses); pushes excluded",
-    "raw_to_ledger_ratio": 7.63,
+    "raw_to_ledger_ratio": 7.62,
     "source": "https://web-production-3c1c4.up.railway.app/api/public/results?days=3650&min_confidence=0&limit=20&offset=0"
   },
   "coverage": {
@@ -41,7 +41,7 @@
       "MLS"
     ],
     "top_raw_bucket": "MLB",
-    "top_raw_bucket_share": 83.9
+    "top_raw_bucket_share": 83.8
   },
   "raw_sport_buckets": [
     {
@@ -57,9 +57,9 @@
     {
       "key": "nba",
       "label": "NBA",
-      "total": 55505,
-      "wins": 32162,
-      "losses": 23343,
+      "total": 55887,
+      "wins": 32378,
+      "losses": 23509,
       "pushes": 0,
       "win_rate": 57.9,
       "published": true
@@ -169,23 +169,23 @@
       "min": 55,
       "max": 64,
       "all": {
-        "total": 1676092,
-        "wins": 1036685,
-        "losses": 638980,
+        "total": 1676474,
+        "wins": 1036901,
+        "losses": 639146,
         "pushes": 427,
         "win_rate": 61.9
       },
       "over": {
-        "total": 409997,
-        "wins": 225939,
-        "losses": 183909,
+        "total": 410014,
+        "wins": 225955,
+        "losses": 183910,
         "pushes": 149,
         "win_rate": 55.1
       },
       "under": {
-        "total": 1266095,
-        "wins": 810746,
-        "losses": 455071,
+        "total": 1266460,
+        "wins": 810946,
+        "losses": 455236,
         "pushes": 278,
         "win_rate": 64.0
       }
@@ -221,44 +221,16 @@
   ],
   "recent_ledger_sample": [
     {
-      "result_id": "pr_c52bd5c73024ccebefff",
-      "sport": "nfl",
-      "player_name": "Joe Fagnano",
-      "stat_type": "rush_yds",
-      "line": 19.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 36.9,
-      "confidence_pct": 63.099998474121094,
-      "result": "win",
-      "actual_value": 13.0,
-      "game_date": "2026-11-05",
-      "bookmaker": "prizepicks"
-    },
-    {
-      "result_id": "pr_606049cdc4dee37346e1",
+      "result_id": "pr_8b71c19347e8b48b2ffe",
       "sport": "nfl",
       "player_name": "Joe Fagnano",
       "stat_type": "pass_completions",
-      "line": 12.5,
+      "line": 14.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.9,
       "confidence_pct": 63.099998474121094,
       "result": "win",
       "actual_value": 10.0,
-      "game_date": "2026-11-05",
-      "bookmaker": "prizepicks"
-    },
-    {
-      "result_id": "pr_855fbfc255101fcd7579",
-      "sport": "nfl",
-      "player_name": "Joe Fagnano",
-      "stat_type": "pass_yds",
-      "line": 177.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 36.9,
-      "confidence_pct": 63.099998474121094,
-      "result": "win",
-      "actual_value": 60.0,
       "game_date": "2026-11-05",
       "bookmaker": "prizepicks"
     },
@@ -277,18 +249,32 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_a76f1e233c80bce6e2f0",
+      "result_id": "pr_c52bd5c73024ccebefff",
+      "sport": "nfl",
+      "player_name": "Joe Fagnano",
+      "stat_type": "rush_yds",
+      "line": 19.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 36.9,
+      "confidence_pct": 63.099998474121094,
+      "result": "win",
+      "actual_value": 13.0,
+      "game_date": "2026-11-05",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_9f9fd2efb8f3bbe4a842",
       "sport": "nfl",
       "player_name": "Joe Fagnano",
       "stat_type": "pass_yds",
-      "line": 169.5,
+      "line": 167.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.9,
       "confidence_pct": 63.099998474121094,
       "result": "win",
       "actual_value": 60.0,
       "game_date": "2026-11-05",
-      "bookmaker": "prizepicks"
+      "bookmaker": "draftkings_pick6"
     },
     {
       "result_id": "pr_0c11345693b13a95a3d1",
@@ -305,11 +291,11 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_1013b0f171c6bdb23ba5",
+      "result_id": "pr_855fbfc255101fcd7579",
       "sport": "nfl",
       "player_name": "Joe Fagnano",
       "stat_type": "pass_yds",
-      "line": 124.5,
+      "line": 177.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.9,
       "confidence_pct": 63.099998474121094,
@@ -317,20 +303,6 @@
       "actual_value": 60.0,
       "game_date": "2026-11-05",
       "bookmaker": "prizepicks"
-    },
-    {
-      "result_id": "pr_326e2d13832a2f0d1246",
-      "sport": "nfl",
-      "player_name": "Joe Fagnano",
-      "stat_type": "pass_yds",
-      "line": 159.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 36.9,
-      "confidence_pct": 63.099998474121094,
-      "result": "win",
-      "actual_value": 60.0,
-      "game_date": "2026-11-05",
-      "bookmaker": "draftkings_pick6"
     },
     {
       "result_id": "pr_b68cdf94234749eeddbe",
@@ -347,11 +319,11 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_55e11fd00ee9ad4f2994",
+      "result_id": "pr_a76f1e233c80bce6e2f0",
       "sport": "nfl",
       "player_name": "Joe Fagnano",
       "stat_type": "pass_yds",
-      "line": 147.5,
+      "line": 169.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.9,
       "confidence_pct": 63.099998474121094,
@@ -375,25 +347,11 @@
       "bookmaker": "draftkings_pick6"
     },
     {
-      "result_id": "pr_87fa83f6971588b8b5d3",
+      "result_id": "pr_326e2d13832a2f0d1246",
       "sport": "nfl",
       "player_name": "Joe Fagnano",
       "stat_type": "pass_yds",
-      "line": 164.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 36.9,
-      "confidence_pct": 63.099998474121094,
-      "result": "win",
-      "actual_value": 60.0,
-      "game_date": "2026-11-05",
-      "bookmaker": "prizepicks"
-    },
-    {
-      "result_id": "pr_9f9fd2efb8f3bbe4a842",
-      "sport": "nfl",
-      "player_name": "Joe Fagnano",
-      "stat_type": "pass_yds",
-      "line": 167.5,
+      "line": 159.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.9,
       "confidence_pct": 63.099998474121094,
@@ -417,11 +375,39 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_8b71c19347e8b48b2ffe",
+      "result_id": "pr_87fa83f6971588b8b5d3",
+      "sport": "nfl",
+      "player_name": "Joe Fagnano",
+      "stat_type": "pass_yds",
+      "line": 164.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 36.9,
+      "confidence_pct": 63.099998474121094,
+      "result": "win",
+      "actual_value": 60.0,
+      "game_date": "2026-11-05",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_55e11fd00ee9ad4f2994",
+      "sport": "nfl",
+      "player_name": "Joe Fagnano",
+      "stat_type": "pass_yds",
+      "line": 147.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 36.9,
+      "confidence_pct": 63.099998474121094,
+      "result": "win",
+      "actual_value": 60.0,
+      "game_date": "2026-11-05",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_606049cdc4dee37346e1",
       "sport": "nfl",
       "player_name": "Joe Fagnano",
       "stat_type": "pass_completions",
-      "line": 14.5,
+      "line": 12.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.9,
       "confidence_pct": 63.099998474121094,
@@ -431,16 +417,30 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_79f6bbff597c95daa862",
+      "result_id": "pr_2f213ce5e8262f875a17",
       "sport": "nfl",
       "player_name": "Joe Fagnano",
-      "stat_type": "pass_completions",
-      "line": 15.5,
+      "stat_type": "interceptions",
+      "line": 0.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 36.9,
+      "confidence_pct": 63.099998474121094,
+      "result": "loss",
+      "actual_value": 2.0,
+      "game_date": "2026-11-05",
+      "bookmaker": "prizepicks"
+    },
+    {
+      "result_id": "pr_1013b0f171c6bdb23ba5",
+      "sport": "nfl",
+      "player_name": "Joe Fagnano",
+      "stat_type": "pass_yds",
+      "line": 124.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.9,
       "confidence_pct": 63.099998474121094,
       "result": "win",
-      "actual_value": 10.0,
+      "actual_value": 60.0,
       "game_date": "2026-11-05",
       "bookmaker": "prizepicks"
     },
@@ -459,16 +459,16 @@
       "bookmaker": "prizepicks"
     },
     {
-      "result_id": "pr_2f213ce5e8262f875a17",
+      "result_id": "pr_79f6bbff597c95daa862",
       "sport": "nfl",
       "player_name": "Joe Fagnano",
-      "stat_type": "interceptions",
-      "line": 0.5,
+      "stat_type": "pass_completions",
+      "line": 15.5,
       "predicted_direction": "UNDER",
       "predicted_score": 36.9,
       "confidence_pct": 63.099998474121094,
-      "result": "loss",
-      "actual_value": 2.0,
+      "result": "win",
+      "actual_value": 10.0,
       "game_date": "2026-11-05",
       "bookmaker": "prizepicks"
     },
