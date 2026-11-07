@@ -1,7 +1,7 @@
 {
   "entries": {
     "https://propellerpicks.com/": {
-      "fingerprint": "8eb83525fa33658171cc2309d42b24b582414afa5f55a47ec6cfeaa8a0ae576c",
+      "fingerprint": "caf1dbda52d6c31bebe14ce25592a4f8ad7d3a600a6f58359983d4def50334c4",
       "lastmod": "2026-11-07",
       "source": "index.html"
     },
@@ -31,8 +31,8 @@
       "source": "analyzer/nfl/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "25f384df111010941df550b8d0758859d31c8a527ac2d708efe889d9eb775f3b",
-      "lastmod": "2026-11-06",
+      "fingerprint": "119311af1c663657bcf586e0f4fd967d61579090790fd5ba7afd941fc016ad3c",
+      "lastmod": "2026-11-07",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -336,7 +336,7 @@
       "source": "research/prospective-record/index.html"
     },
     "https://propellerpicks.com/results/": {
-      "fingerprint": "fb3d6128b5bd6ddd6c53d22a6761fd3eb8fb4437a44b90cb5387ec2f3c2c8392",
+      "fingerprint": "f300b2d2611a43b9b606c45bcd1c83f522100a76249b34052651c5d6b3c39ef6",
       "lastmod": "2026-11-07",
       "source": "results/index.html"
     },
@@ -381,7 +381,7 @@
       "source": "tools/underdog-payout-calculator/index.html"
     },
     "https://propellerpicks.com/track-record/": {
-      "fingerprint": "2859ac9e7a438a10ff2ce9cf0bc74cd48c1ab62e3d814f69908c921c390125e6",
+      "fingerprint": "d794b1a4130cedecfc3642568493635bb6ef55a21501e6e37df302089eeceb5c",
       "lastmod": "2026-11-07",
       "source": "track-record/index.html"
     }
