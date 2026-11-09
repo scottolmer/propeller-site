@@ -1,0 +1,5 @@
+{"sport":"nfl","state":"ready","season":2026,"week":9,"slate_key":"2026-W09","props":[
+{"player_name":"Josh Allen","player_id":38,"team":"BUF","opponent":"MIN","stat_type":"pass_yds","line":231.5,"position":"QB","confidence":64,"final_score":64.3,"final_direction":"OVER","confidence_tier":"moderate","agent_breakdown":{"Matchup":{"score":68,"direction":"OVER","rationale":[],"confidence":1.0},"DVOA":{"score":83,"direction":"OVER","rationale":[],"confidence":1.0},"Injury":{"score":50,"direction":"UNDER","rationale":[],"confidence":1.0},"EnhancedTrends":{"score":67,"direction":"OVER","rationale":[],"confidence":1.0},"AdvancedStats":{"score":52,"direction":"OVER","rationale":[],"confidence":1.0},"Volume":{"score":50,"direction":"UNDER","rationale":[],"confidence":1.0}}},
+{"player_name":"Josh Allen","player_id":38,"team":"BUF","opponent":"MIN","stat_type":"pass_yds","line":229.5,"confidence":64,"final_score":64.3,"final_direction":"OVER"},
+{"player_name":"<script>alert(1)</script>","team":"BUF","opponent":"MIN","stat_type":"rush_yds","line":"x","final_score":64.3,"final_direction":"OVER"}
+]}
