@@ -1607,7 +1607,7 @@ footer {
 
       <div class="hero-stat-row fade-in" style="transition-delay:0.55s;">
         <div class="hero-stat">
-          <span class="hero-stat-value">6</span>
+          <span class="hero-stat-value">5</span>
           <span class="hero-stat-label">Sports Supported</span>
         </div>
         <div class="hero-stat-divider" aria-hidden="true"></div>
@@ -1636,6 +1636,20 @@ footer {
     <p class="label section-label fade-in">This Week's Analysis</p>
     <h2 class="section-title fade-in" id="picks-heading">Top NFL Prop Picks</h2>
 
+<!-- picks-snapshot:start -->
+<div id="picksSnapshot" data-slate-date="2026-11-09" data-captured-at="2026-11-09T23:30:00Z" data-row-count="1" style="margin:0 0 28px;">
+<p style="font-size:14px;color:var(--text-secondary);margin:0 0 16px;"><strong>1 free research row for Monday, November 9, 2026</strong> (NFL). Snapshot captured November 9, 2026 at 6:30 PM ET. The page loads the latest rows when it opens. Each row shows which way the research leans and a 50 to 100 confidence score, which is not a win probability. Lines move, so confirm the player, stat, and current line before you act.</p>
+<div style="overflow-x:auto;margin:0 0 20px;">
+<table style="width:100%;border-collapse:collapse;font-size:15px;">
+<caption style="text-align:left;font-weight:600;padding:0 0 8px;color:var(--text-primary);">NFL Week 9 player prop research, Monday, November 9, 2026</caption>
+<thead><tr><th scope="col" style="padding:8px 12px;border-bottom:1px solid var(--glass-border-active);text-align:left;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-tertiary);font-weight:600;">Player</th><th scope="col" style="padding:8px 12px;border-bottom:1px solid var(--glass-border-active);text-align:left;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-tertiary);font-weight:600;">Game</th><th scope="col" style="padding:8px 12px;border-bottom:1px solid var(--glass-border-active);text-align:left;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-tertiary);font-weight:600;">Stat</th><th scope="col" style="padding:8px 12px;border-bottom:1px solid var(--glass-border-active);text-align:left;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-tertiary);font-weight:600;">Line</th><th scope="col" style="padding:8px 12px;border-bottom:1px solid var(--glass-border-active);text-align:left;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-tertiary);font-weight:600;">Lean</th><th scope="col" style="padding:8px 12px;border-bottom:1px solid var(--glass-border-active);text-align:left;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-tertiary);font-weight:600;">Confidence (50 to 100)</th><th scope="col" style="padding:8px 12px;border-bottom:1px solid var(--glass-border-active);text-align:left;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-tertiary);font-weight:600;">Why</th></tr></thead>
+<tbody>
+<tr><td style="padding:10px 12px;border-bottom:1px solid var(--glass-border);text-align:left;vertical-align:top;"><a href="/analyzer/?sport=nfl&amp;q=Josh%20Allen" style="color:var(--accent);font-weight:600;text-decoration:none;">Josh Allen</a></td><td style="padding:10px 12px;border-bottom:1px solid var(--glass-border);text-align:left;vertical-align:top;">BUF vs MIN</td><td style="padding:10px 12px;border-bottom:1px solid var(--glass-border);text-align:left;vertical-align:top;">Passing Yards</td><td style="padding:10px 12px;border-bottom:1px solid var(--glass-border);text-align:left;vertical-align:top;">231.5</td><td style="padding:10px 12px;border-bottom:1px solid var(--glass-border);text-align:left;vertical-align:top;">Over</td><td style="padding:10px 12px;border-bottom:1px solid var(--glass-border);text-align:left;vertical-align:top;">64/100</td><td style="padding:10px 12px;border-bottom:1px solid var(--glass-border);text-align:left;vertical-align:top;">Leans this way on how the opposing defense has played, the matchup and recent results.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- picks-snapshot:end -->
     <div id="picks-container">
       <div class="picks-loading" id="picks-loading" role="status" aria-live="polite">
         <div class="picks-loading-spinner" aria-hidden="true"></div>
@@ -2332,7 +2346,7 @@ document.querySelectorAll('.nav-item > .nav-item-link[href]').forEach(function(l
       <div class="pick-confidence-bar">
         <div class="pick-confidence-fill ${fillClass}" style="width:${pct}%"></div>
       </div>
-      <div class="pick-confidence-label">Confidence ${conf}%</div>
+      <div class="pick-confidence-label">Confidence ${conf}/100</div>
       ${locked ? `
       <a href="https://app.propellerpicks.com/signup" class="pick-lock-overlay" aria-label="Open the full slate">
         <div class="pick-lock-icon" aria-hidden="true">
@@ -2440,6 +2454,7 @@ document.querySelectorAll('.nav-item > .nav-item-link[href]').forEach(function(l
   if (window.lucide) { lucide.createIcons(); }
   loadPicks();
 </script>
+<script src="/assets/js/picks-snapshot.js?v=20261109"></script>
   <script src="/assets/js/site-nav.js?v=20260712" defer></script>
 </body>
 </html>
