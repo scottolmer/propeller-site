@@ -47,7 +47,7 @@
       "answer_module": {
         "eyebrow": "PrizePicks cheat sheet explained",
         "heading": "What powers today's free PrizePicks cheat sheet?",
-        "direct_answer": "Today's free PrizePicks cheat sheet is Propeller Picks' current player-prop research, not a PrizePicks-native feed. It combines the sport-specific signals available for each listed player, stat, and line, then shows a More/Over or Less/Under direction with confidence context. Always compare that row with the current PrizePicks Player Picks projection.",
+        "direct_answer": "Today's free PrizePicks cheat sheet is a short list of Propeller Picks' current player-prop research: the players and stats where our models lean most clearly More or Less, each with a confidence score from 50 to 100. It isn't made by PrizePicks, so check each pick against the live line in the PrizePicks app before you use it.",
         "cards": [
           {
             "title": "How are injuries reflected?",
@@ -59,10 +59,10 @@
           },
           {
             "title": "How should confidence be read?",
-            "body": "The 50-100 directional model-confidence score shows how strongly the available signals support the displayed More/Over or Less/Under direction. It is not a calibrated win probability or a guarantee."
+            "body": "The score runs from 50 to 100. Higher means more of the evidence points the same way. It is not a calibrated win probability or a guarantee, and even strong picks miss."
           }
         ],
-        "availability_note": "This page requests Propeller's current public preview. If no current player-prop research is available, it should show an honest empty state instead of relabeling an older row as today.",
+        "availability_note": "Picks load fresh each time you open the page. If nothing current is available, the page says so instead of showing yesterday's picks as today's.",
         "platform_note": "For PrizePicks Player Picks, compare Propeller's displayed direction with the current PrizePicks More or Less projection. Confirm the player, stat, projection, and timestamp before submitting your own Lineup."
       }
     },

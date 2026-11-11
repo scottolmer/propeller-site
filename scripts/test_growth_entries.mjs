@@ -35,6 +35,42 @@ test('a response generation time is preserved without becoming an analysis time'
   assert.equal(state.analysisTime, undefined);
 });
 
+test('one row per player keeps a short board from repeating one player', () => {
+  const rows = [row, {...row, stat_type: 'assists'}, {...row, player_name: 'Second Player'}];
+  assert.equal(inspect({game_date: today, props: rows}, today).props.length, 3);
+  const state = inspect({game_date: today, props: rows}, today, {onePerPlayer: true});
+  assert.deepEqual(state.props.map(p => p.player_name), ['Example Player', 'Second Player']);
+});
+
+const inspectNflWeek = helperContext.window.ppPrizePicksSlate.inspectNflWeek;
+const now = Date.parse('2026-10-30T15:00:00Z');
+const nflRow = {...row, stat_type: 'rush_yds', commence_time: '2026-11-01T12:00:00-05:00'};
+
+test('the NFL week board only counts a ready slate', () => {
+  for (const payload of [null, {}, {state: 'building', props: [nflRow]}, {state: 'ready', props: 'bad'}]) {
+    assert.equal(inspectNflWeek(payload, now).valid, false);
+  }
+  const state = inspectNflWeek({state: 'ready', week: 8, props: [nflRow]}, now);
+  assert.equal(state.valid, true);
+  assert.equal(state.week, 8);
+  assert.equal(state.props.length, 1);
+});
+
+test('NFL games that already kicked off, or have no kickoff time, never show as current', () => {
+  const started = {...nflRow, player_name: 'Started Player', commence_time: '2026-10-29T20:15:00-04:00'};
+  const undated = {...nflRow, player_name: 'Undated Player', commence_time: null};
+  const state = inspectNflWeek({state: 'ready', props: [started, undated, nflRow]}, now);
+  assert.deepEqual(state.props.map(p => p.player_name), ['Example Player']);
+});
+
+test('the NFL board shows one row per player, up to five', () => {
+  const rows = [nflRow, {...nflRow, line: 60.5}, ...Array.from({length: 8}, (_, i) => ({...nflRow, player_name: `Player ${i}`}))];
+  const state = inspectNflWeek({state: 'ready', props: rows}, now);
+  assert.equal(state.props.length, 5);
+  assert.equal(state.props[0].line, 20.5);
+  assert.equal(new Set(state.props.map(p => p.player_name)).size, 5);
+});
+
 const underdog = readFileSync(new URL('../tools/underdog-payout-calculator/index.html', import.meta.url), 'utf8');
 const calculatorScript = [...underdog.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => m[1]).find(s => s.includes('const STD='));
 function loadCalculator() {
