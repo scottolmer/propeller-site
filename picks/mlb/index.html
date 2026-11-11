@@ -1687,7 +1687,7 @@ footer {
 
       <div class="hero-stat-row fade-in" style="transition-delay:0.55s;">
         <div class="hero-stat">
-          <span class="hero-stat-value mlb-val">6</span>
+          <span class="hero-stat-value mlb-val">5</span>
           <span class="hero-stat-label">Sports Supported</span>
         </div>
         <div class="hero-stat-divider" aria-hidden="true"></div>
@@ -2369,10 +2369,10 @@ document.querySelectorAll('.nav-item > .nav-item-link[href]').forEach(function(l
             <span class="pick-line">${prop.line != null ? prop.line : '&mdash;'}</span>
           </div>
           <div class="confidence-wrap">
-            <div class="confidence-bar-track" role="progressbar" aria-valuenow="${conf}" aria-valuemin="50" aria-valuemax="99" aria-label="Confidence ${conf}%">
+            <div class="confidence-bar-track" role="progressbar" aria-valuenow="${conf}" aria-valuemin="50" aria-valuemax="99" aria-label="Confidence ${conf} out of 100">
               <div class="confidence-bar-fill" style="width:${pct}%"></div>
             </div>
-            <span class="confidence-label">${conf}%</span>
+            <span class="confidence-label">${conf}/100</span>
           </div>
           <div class="confidence-text">${getConfidenceLabel(conf)} Confidence</div>
         </div>

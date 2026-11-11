@@ -34,6 +34,7 @@ jobs:
           python3 scripts/update_prospective_record.py
           python3 scripts/build_lucide_subset.py
           python3 scripts/update_picks_freshness.py
+          python3 scripts/render_picks_snapshot.py
           python3 scripts/refresh_player_cards.py
           python3 scripts/apply_analyzer_indexing.py
           python3 scripts/inject_popular_players.py
@@ -99,6 +100,7 @@ jobs:
           python3 -m unittest scripts/test_help_attribution.py
           python3 -m unittest scripts/test_seo_audit_remediation.py
           python3 -m unittest scripts/test_picks_freshness_season.py
+          python3 -m unittest scripts/test_picks_snapshot.py
           node --test scripts/test_nfl_slate_state.mjs
           node --test scripts/test_analyzer_availability.mjs
           node --test scripts/test_calculator_events.mjs scripts/test_research_handoff.mjs scripts/test_growth_entries.mjs

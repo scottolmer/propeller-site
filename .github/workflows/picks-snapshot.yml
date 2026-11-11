@@ -1,0 +1,49 @@
+name: Picks snapshot
+
+# Refreshes the static, dated research rows on the /picks/ pages during the
+# day (see scripts/render_picks_snapshot.py). The morning SEO maintenance run
+# also writes a snapshot, but most slates are not published that early.
+# Pushes use GITHUB_TOKEN, which does not re-trigger push workflows.
+
+on:
+  schedule:
+    - cron: "5 16 * * *"  # 11:05 ET (12:05 EDT)
+    - cron: "5 20 * * *"  # 15:05 ET (16:05 EDT)
+    - cron: "35 22 * * *" # 17:35 ET (18:35 EDT)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: seo-maintenance
+  cancel-in-progress: false
+
+jobs:
+  snapshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+
+      - name: Write snapshot
+        run: python3 scripts/render_picks_snapshot.py
+
+      - name: Verify
+        run: |
+          python3 -m unittest scripts/test_picks_snapshot.py
+          python3 scripts/check_site_consistency.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name "picks-snapshot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add picks
+          git commit -m "chore: refresh picks snapshot"
+          git pull --rebase origin master
+          git push origin master

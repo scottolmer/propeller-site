@@ -36,6 +36,7 @@ pipeline should run them in this order after it regenerates pages:
 ```bash
 python3 scripts/update_prospective_record.py # append current preview rows, settle exact matches
 python3 scripts/update_picks_freshness.py     # date-stamp the /picks/ "today" pages
+python3 scripts/render_picks_snapshot.py      # write the dated static rows into /picks/ pages
 python3 scripts/refresh_player_cards.py       # replace stale player modules with current/empty states
 python3 scripts/apply_analyzer_indexing.py    # re-select top analyzer players to index
 python3 scripts/inject_popular_players.py     # refresh player link sections
@@ -59,6 +60,12 @@ All scripts are idempotent and safe to run repeatedly.
 - **update_picks_freshness.py** — stamps today's date into title/H1/og/JSON-LD
   `dateModified` and the hero date label of every `/picks/*` page. The pages
   are indexed for "… today" queries; Google demotes them when they look stale.
+- **render_picks_snapshot.py** — writes the public preview rows into the
+  `/picks/` pages as a dated, marker-delimited HTML table, so readers that do
+  not run JavaScript (AI crawlers, a search engine's first pass) see the rows.
+  `assets/js/picks-snapshot.js` hides the snapshot in the browser once live
+  rows load, or at once when its slate date is not today. Feed failures never
+  fail the run and never carry an older slate forward.
 - **update_prospective_record.py** — appends deterministic public-preview captures
   to the forward ledger and settles only exact, unambiguous public-result matches.
   It does not claim event-start ordering because the source API lacks event time.
