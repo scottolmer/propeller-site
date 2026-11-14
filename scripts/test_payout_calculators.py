@@ -40,7 +40,7 @@ class SharedCalculatorContracts(unittest.TestCase):
             "underdog": "/picks/underdog/",
             "pick6": "/picks/pick6/",
         }
-        expected_faq_counts = {"prizepicks": 8, "underdog": 8, "pick6": 8}
+        expected_faq_counts = {"prizepicks": 12, "underdog": 8, "pick6": 8}
         for name, picks_link in expected_pick_links.items():
             with self.subTest(page=name):
                 page = source(name)
@@ -61,6 +61,35 @@ class PrizePicksContracts(unittest.TestCase):
         self.assertIn("standard Player Pick", page)
         self.assertIn("details screen can display a different multiplier", page)
         self.assertIn("https://www.prizepicks.com/help-center/payouts", page)
+
+    def test_payout_by_result_answers_use_published_rates(self):
+        page = source("prizepicks")
+        for heading in (
+            "6-pick Power Play payout",
+            "5-pick Power Play payout",
+            "5-pick Flex payout",
+            "6-pick Flex payout",
+            "PrizePicks DNP payout",
+            "What happens if you tie on PrizePicks",
+            "How PrizePicks multipliers work",
+            "What are PrizePicks payouts?",
+            "What is a 5-pick Flex payout on PrizePicks by number correct?",
+            "What is a 6-pick Flex payout on PrizePicks by number correct?",
+        ):
+            self.assertIn(heading, page)
+        self.assertEqual(page.count('href="/guides/prizepicks-strategy/">Power vs Flex, which is better?</a>'), 1)
+        self.assertIn('id="payouts-by-result"', page)
+        for rel, needle in (
+            ("picks/prizepicks/index.html", 'href="/tools/prizepicks-payout-calculator/"'),
+            ("guides/index.html", 'href="/tools/prizepicks-payout-calculator/"'),
+            (
+                "guides/prizepicks-strategy/index.html",
+                'href="/tools/prizepicks-payout-calculator/#payouts-by-result"',
+            ),
+        ):
+            linked = (ROOT / rel).read_text(encoding="utf-8")
+            self.assertIn(needle, linked)
+        self.assertIn("1-800-GAMBLER", page)
 
     def test_invalid_custom_amount_resets_visible_state(self):
         page = source("prizepicks")
