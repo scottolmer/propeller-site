@@ -51,6 +51,23 @@ class PicksSnapshot(unittest.TestCase):
         self.assertEqual(once.count("picks-snapshot.js"), 1)
         self.assertLess(once.index(snap.START), once.index('<div id="picksOutput"'))
 
+    def test_prizepicks_hero_time_matches_its_snapshot(self):
+        source = (ROOT / "picks/prizepicks/index.html").read_text()
+        captured = re.search(r'id="picksSnapshot"[^>]*data-captured-at="([^"]+)"', source)
+        hero = re.search(r'<time id="cheatSheetUpdated" datetime="([^"]+)">([^<]+)</time>', source)
+        self.assertIsNotNone(captured)
+        self.assertIsNotNone(hero)
+        self.assertEqual(hero.group(1), captured.group(1))
+        self.assertIn("ET", hero.group(2))
+
+    def test_hero_last_updated_uses_the_capture_time(self):
+        page = '<p>Last updated <time id="cheatSheetUpdated" datetime="2020-01-01T00:00:00Z">old</time>.</p>'
+        out = snap.stamp_hero_updated(page, CAPTURED)
+        self.assertIn('datetime="2026-11-09T23:30:00Z"', out)
+        self.assertIn(">November 9, 2026 at 6:30 PM ET<", out)
+        self.assertEqual(snap.stamp_hero_updated(out, CAPTURED), out)
+        self.assertEqual(snap.stamp_hero_updated("<p>none</p>", CAPTURED), "<p>none</p>")
+
     def test_pages_carry_a_snapshot_and_keep_empty_state_copy_out_of_page_text(self):
         for rel in snap.PAGES:
             with self.subTest(page=rel):

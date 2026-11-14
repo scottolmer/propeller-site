@@ -107,6 +107,38 @@
   "mainEntity": [
     {
       "@type": "Question",
+      "name": "What is this PrizePicks cheat sheet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "This free PrizePicks cheat sheet today is Propeller Picks’ current player-prop research: a player, a stat, a displayed line, and a More or Less lean. It is a beginner research tool, not a sportsbook and not a PrizePicks feed. Confirm the same player, stat, and line in the PrizePicks app before you use a row. The PrizePicks cheat sheet guide explains what belongs on the sheet."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which sports are covered?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "NFL, NBA, NHL, and MLB. NFL rows cover the current week and only include games that have not started. NBA, NHL, and MLB appear when those leagues have games. Each sport also has its own page: NFL, NBA, NHL, and MLB."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How often is it updated?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is updated for the current slate. The last-updated time next to the heading is the research snapshot time, or the time the live rows were generated when that time is available. Opening the page loads the latest rows. If nothing current is available, the page says so instead of showing an older slate as today."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a Propeller score mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A Propeller score is research signal strength for the displayed More or Less lean, on a scale from 50 to 100. A higher score means more of the available evidence points the same way. It is not win odds, a win probability, or a guarantee."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "What are the best PrizePicks picks today?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -143,14 +175,6 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "Propeller publishes the current performance record on the results page , with every graded leg included. PrizePicks entries carry inherent variance, and past performance does not guarantee future results. Use the live results ledger to evaluate current performance instead of relying on stale numbers inside a static guide page."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What sports does Propeller cover for PrizePicks?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "This page shows NFL and NBA picks during their seasons, plus NHL and MLB when those leagues have games. NFL picks cover the current game week and only include games that haven’t started yet. Each sport has its own page with more detail: NFL , NBA , NHL , and MLB ."
       }
     }
   ]
@@ -651,12 +675,38 @@ nav .btn { padding: 10px 20px; font-size: 14px; flex-shrink: 0; }
 
 .hero-subtitle {
   font-size: 18px;
-  max-width: 580px;
-  margin-bottom: 20px;
+  max-width: 740px;
+  margin-bottom: 16px;
   margin-left: auto;
   margin-right: auto;
   color: var(--text-secondary);
 }
+
+.hero-subtitle strong,
+.hero-subtitle time {
+  color: var(--text-primary);
+  font-weight: 700;
+}
+
+.hero-subtitle time { white-space: nowrap; }
+
+.hero-related {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px 18px;
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.hero-related a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hero-related a:hover { text-decoration: underline; }
 
 .live-badge {
   display: inline-flex;
@@ -1832,7 +1882,13 @@ body.pp-site-system #prizepicks-research-walkthrough h2{color:#f8fafc!important}
       </h1>
 
       <p class="hero-subtitle fade-in delay-2">
-        Our strongest free PrizePicks picks for today&rsquo;s NFL and NBA games (plus NHL and MLB when they have games), each with a simple More or Less lean and a confidence score. No account needed. Check each line in the PrizePicks app before you pick.
+        Free PrizePicks cheat sheet today. Sports covered: NFL, NBA, NHL, and MLB.
+        <span id="heroFreshness">Last updated <time id="cheatSheetUpdated" datetime="2026-11-14T17:21:43Z">November 14, 2026 at 12:21 PM ET</time>.</span>
+        <span id="heroFreshnessFallback" hidden>This page checks for today&rsquo;s slate when it opens. An older slate is not shown as today.</span>
+      </p>
+      <p class="hero-related fade-in delay-2">
+        <a href="/guides/prizepicks-cheat-sheet/">What is in a PrizePicks cheat sheet</a>
+        <a href="/tools/prizepicks-payout-calculator/">PrizePicks payout calculator</a>
       </p>
 
       <div class="sport-tabs fade-in delay-2">
@@ -1861,7 +1917,7 @@ body.pp-site-system #prizepicks-research-walkthrough h2{color:#f8fafc!important}
         </div>
         <div class="hero-stat-divider" aria-hidden="true"></div>
         <div class="hero-stat">
-          <span class="hero-stat-value">5</span>
+          <span class="hero-stat-value">4</span>
           <span class="hero-stat-label">Sports Covered</span>
         </div>
         <div class="hero-stat-divider" aria-hidden="true"></div>
@@ -2139,6 +2195,54 @@ body.pp-site-system #prizepicks-research-walkthrough h2{color:#f8fafc!important}
 
       <div class="faq-item" role="listitem">
         <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">What is this PrizePicks cheat sheet?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            This free PrizePicks cheat sheet today is Propeller Picks&rsquo; current player-prop research: a player, a stat, a displayed line, and a More or Less lean. It is a beginner research tool, not a sportsbook and not a PrizePicks feed. Confirm the same player, stat, and line in the PrizePicks app before you use a row. The <a href="/guides/prizepicks-cheat-sheet/" style="color:var(--accent); text-decoration:none;">PrizePicks cheat sheet guide</a> explains what belongs on the sheet.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">Which sports are covered?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            NFL, NBA, NHL, and MLB. NFL rows cover the current week and only include games that have not started. NBA, NHL, and MLB appear when those leagues have games. Each sport also has its own page: <a href="/picks/nfl/" style="color:var(--accent); text-decoration:none;">NFL,</a> <a href="/picks/nba/" style="color:var(--accent); text-decoration:none;">NBA,</a> <a href="/picks/nhl/" style="color:var(--accent); text-decoration:none;">NHL,</a> and <a href="/picks/mlb/" style="color:var(--accent); text-decoration:none;">MLB.</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">How often is it updated?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            It is updated for the current slate. The last-updated time next to the heading is the research snapshot time, or the time the live rows were generated when that time is available. Opening the page loads the latest rows. If nothing current is available, the page says so instead of showing an older slate as today.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
+          <span class="faq-question-text">What does a Propeller score mean?</span>
+          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            A Propeller score is research signal strength for the displayed More or Less lean, on a scale from 50 to 100. A higher score means more of the available evidence points the same way. It is not win odds, a win probability, or a guarantee.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-question" aria-expanded="false">
           <span class="faq-question-text">What are the best PrizePicks picks today?</span>
           <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
@@ -2193,18 +2297,6 @@ body.pp-site-system #prizepicks-research-walkthrough h2{color:#f8fafc!important}
         <div class="faq-answer">
           <div class="faq-answer-inner">
             Propeller publishes the current performance record on the <a href="/results/" style="color:var(--accent); text-decoration:none;">results page</a>, with every graded leg included. PrizePicks entries carry inherent variance, and past performance does not guarantee future results. Use the live results ledger to evaluate current performance instead of relying on stale numbers inside a static guide page.
-          </div>
-        </div>
-      </div>
-
-      <div class="faq-item" role="listitem">
-        <button class="faq-question" aria-expanded="false">
-          <span class="faq-question-text">What sports does Propeller cover for PrizePicks?</span>
-          <svg class="faq-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            This page shows NFL and NBA picks during their seasons, plus NHL and MLB when those leagues have games. NFL picks cover the current game week and only include games that haven&rsquo;t started yet. Each sport has its own page with more detail: <a href="/picks/nfl/" style="color:var(--accent); text-decoration:none;">NFL</a>, <a href="/picks/nba/" style="color:var(--accent); text-decoration:none;">NBA</a>, <a href="/picks/nhl/" style="color:var(--accent); text-decoration:none;">NHL</a>, and <a href="/picks/mlb/" style="color:var(--accent); text-decoration:none;">MLB</a>.
           </div>
         </div>
       </div>
@@ -2463,6 +2555,46 @@ function buildSportGroup(sportConfig, props, totalCount) {
   `;
 }
 
+// Last-updated time comes from the static snapshot capture, then from a live
+// feed's generated_at when that timestamp is present. Never invent a clock time.
+function formatCaptureLabel(iso) {
+  const dt = new Date(iso);
+  if (!Number.isFinite(dt.getTime())) return null;
+  const date = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/New_York', month: 'long', day: 'numeric', year: 'numeric'
+  }).format(dt);
+  const time = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'America/New_York', hour: 'numeric', minute: '2-digit'
+  }).format(dt);
+  return date + ' at ' + time + ' ET';
+}
+
+function setCheatSheetUpdated(iso) {
+  const el = document.getElementById('cheatSheetUpdated');
+  const line = document.getElementById('heroFreshness');
+  const fallback = document.getElementById('heroFreshnessFallback');
+  const label = formatCaptureLabel(iso);
+  if (!el || !label) return;
+  el.setAttribute('datetime', iso);
+  el.textContent = label;
+  if (line) line.hidden = false;
+  if (fallback) fallback.hidden = true;
+}
+
+function prepareCheatSheetUpdated(today) {
+  const snap = document.getElementById('picksSnapshot');
+  const line = document.getElementById('heroFreshness');
+  const fallback = document.getElementById('heroFreshnessFallback');
+  if (!snap || !line || !fallback) return;
+  const captured = snap.getAttribute('data-captured-at');
+  if (snap.getAttribute('data-slate-date') === today && captured) {
+    setCheatSheetUpdated(captured);
+    return;
+  }
+  line.hidden = true;
+  fallback.hidden = false;
+}
+
 // ---- Fetch all sports in parallel and render ----
 async function loadPicks() {
   const today = getTodayET();
@@ -2470,6 +2602,7 @@ async function loadPicks() {
 
   document.getElementById('heroDateLabel').textContent = displayDate;
   document.getElementById('picksDateDisplay').textContent = displayDate;
+  prepareCheatSheetUpdated(today);
 
   const skeleton = document.getElementById('picksSkeletonGrid');
   const output = document.getElementById('picksOutput');
@@ -2502,6 +2635,7 @@ async function loadPicks() {
     let html = '';
     let totalShown = 0;
     let unavailableSports = 0;
+    const generatedAts = [];
 
     results.forEach((result, idx) => {
       const sportConfig = sports[idx];
@@ -2529,10 +2663,18 @@ async function loadPicks() {
 
       hasAnyPicks = true;
       totalShown += props.length;
+      if (state.generatedAt) generatedAts.push(state.generatedAt);
 
       html += buildSportGroup(sportConfig, props, props.length);
       html += `<p class="scenario-note">${escHtml(sportConfig.label)}: games on ${escHtml(formatDisplayDate(data.game_date))}. ${state.generatedAt ? 'Loaded ' + escHtml(new Date(state.generatedAt).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', timeZone: 'America/New_York' })) + ' ET. ' : ''}Check each line in the PrizePicks app.</p>`;
     });
+
+    const newestGeneratedAt = generatedAts.reduce((best, iso) => {
+      const ms = Date.parse(iso);
+      if (!Number.isFinite(ms)) return best;
+      return !best || ms > best.ms ? { iso: iso, ms: ms } : best;
+    }, null);
+    if (newestGeneratedAt) setCheatSheetUpdated(newestGeneratedAt.iso);
 
     if (!hasAnyPicks) {
       empty.style.display = 'block';
