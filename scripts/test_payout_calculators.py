@@ -40,7 +40,7 @@ class SharedCalculatorContracts(unittest.TestCase):
             "underdog": "/picks/underdog/",
             "pick6": "/picks/pick6/",
         }
-        expected_faq_counts = {"prizepicks": 12, "underdog": 8, "pick6": 8}
+        expected_faq_counts = {"prizepicks": 12, "underdog": 13, "pick6": 8}
         for name, picks_link in expected_pick_links.items():
             with self.subTest(page=name):
                 page = source(name)
@@ -128,6 +128,27 @@ class UnderdogContracts(unittest.TestCase):
         self.assertIn("if(!Number.isFinite(raw)||raw<=0)", page)
         self.assertIn("amount=20", page)
         self.assertIn("refreshIfVisible()", page)
+
+    def test_striking_distance_sections_use_published_structure(self):
+        page = source("underdog")
+        self.assertIn(
+            "<title>Underdog Payout Calculator: Flex, Streaks &amp; Champions</title>",
+            page,
+        )
+        self.assertLessEqual(len("Underdog Payout Calculator: Flex, Streaks & Champions"), 60)
+        for anchor in (
+            "flex-payout",
+            "streaks-payout",
+            "champions-payout",
+            "rescue",
+            "twenty-by-two-hundred",
+            "cant-calculate",
+        ):
+            self.assertIn(f'id="{anchor}"', page)
+        self.assertIn("{need:3,mult:1.4}", page)
+        self.assertIn("1,000x", page)
+        self.assertIn("$10,000", page)
+        self.assertNotIn("{need:3,mult:1.5}", page)
 
 
 class Pick6Contracts(unittest.TestCase):

@@ -248,12 +248,38 @@ def table(sport: str, feed: dict, words, long_date: str) -> str:
     return "\n".join(lines)
 
 
+def captured_label(captured: datetime.datetime) -> str:
+    captured_et = captured.astimezone(ET)
+    return (f"{captured_et.strftime('%B')} {captured_et.day}, {captured_et.year} at "
+            f"{captured_et.strftime('%I:%M %p').lstrip('0')} ET")
+
+
+def stamp_hero_updated(page: str, captured: datetime.datetime) -> str:
+    """Keep a hero <time id="cheatSheetUpdated"> aligned with the snapshot capture.
+
+    Pages without that element are unchanged. The clock time is the capture
+    instant, never a made-up freshness claim.
+    """
+    if 'id="cheatSheetUpdated"' not in page:
+        return page
+    iso = html.escape(captured.strftime("%Y-%m-%dT%H:%M:%SZ"))
+    label = html.escape(captured_label(captured))
+    replacement = f'<time id="cheatSheetUpdated" datetime="{iso}">{label}</time>'
+    updated, count = re.subn(
+        r'<time\b(?=[^>]*\bid="cheatSheetUpdated")[^>]*>[^<]*</time>',
+        replacement,
+        page,
+        count=1,
+    )
+    if count != 1:
+        raise ValueError("cheatSheetUpdated time element was not stamped")
+    return updated
+
+
 def render_block(config: dict, feeds: dict, slate_date: str, captured: datetime.datetime) -> str:
     day = datetime.date.fromisoformat(slate_date)
     long_date = f"{day.strftime('%A, %B')} {day.day}, {day.year}"
-    captured_et = captured.astimezone(ET)
-    captured_label = (f"{captured_et.strftime('%B')} {captured_et.day}, {captured_et.year} at "
-                      f"{captured_et.strftime('%I:%M %p').lstrip('0')} ET")
+    captured_label_text = captured_label(captured)
     with_rows = [s for s in config["feeds"] if feeds[s]["status"] == "ok"]
     unavailable = [s for s in config["feeds"] if feeds[s]["status"] == "unavailable"]
     total = sum(len(feeds[s]["rows"]) for s in with_rows)
@@ -274,7 +300,7 @@ def render_block(config: dict, feeds: dict, slate_date: str, captured: datetime.
         sports = ", ".join(SPORT_LABELS[s] for s in with_rows)
         parts.append(
             f'<p {note_style}><strong>{total} free research {"row" if total == 1 else "rows"} for {esc(long_date)}</strong> '
-            f'({esc(sports)}). Snapshot captured {esc(captured_label)}. The page loads the latest rows when it opens. '
+            f'({esc(sports)}). Snapshot captured {esc(captured_label_text)}. The page loads the latest rows when it opens. '
             f'Each row shows which way the research leans and a 50 to 100 confidence score, which is not a win probability. '
             f'{esc(check)}</p>')
         for sport in with_rows:
@@ -284,7 +310,7 @@ def render_block(config: dict, feeds: dict, slate_date: str, captured: datetime.
                   else "No public research rows were available")
         parts.append(
             f'<p {note_style}>{reason} for {esc(long_date)} when this page was last refreshed, '
-            f'{esc(captured_label)}. The page checks again when it opens. No older slate is shown as current.</p>')
+            f'{esc(captured_label_text)}. The page checks again when it opens. No older slate is shown as current.</p>')
     parts += ["</div>", END]
     return "\n".join(parts) + "\n"
 
@@ -339,7 +365,10 @@ def main() -> int:
             print(f"kept {rel} (feed unavailable, same-day snapshot retained)")
             continue
         try:
-            out = apply(page, render_block(config, feeds, slate_date, captured), config["anchor"])
+            out = stamp_hero_updated(
+                apply(page, render_block(config, feeds, slate_date, captured), config["anchor"]),
+                captured,
+            )
         except ValueError as error:
             print(f"SKIP {rel}: {error}", file=sys.stderr)
             continue
