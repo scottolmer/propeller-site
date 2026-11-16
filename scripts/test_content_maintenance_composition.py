@@ -8,6 +8,7 @@ import sys
 sys.path.insert(0, str(ROOT / "scripts"))
 from scripts.generate_comparison_pages import render as render_comparison
 import json
+import re
 
 class ContentMaintenanceCompositionTests(unittest.TestCase):
     def test_shell_optimizer_repeated_composition_is_stable(self):
@@ -82,6 +83,9 @@ class ContentMaintenanceCompositionTests(unittest.TestCase):
                                           ROOT / 'guides/example/index.html', False))
         for script in ('analyzer-desk.js', 'analyzer-desk-evidence.js'):
             self.assertEqual(rendered.count('/assets/js/' + script), 1)
+        # A maintenance pass must not restore an older CSS cache key after a repair.
+        evidence_css = r'/assets/css/analyzer-desk-evidence\.css\?v=[^"\s]+'
+        self.assertEqual(re.findall(evidence_css, rendered), re.findall(evidence_css, source))
         self.assertIn('researchChatMount', rendered)
         self.assertIn('How the analyzer works & FAQs', rendered)
 
