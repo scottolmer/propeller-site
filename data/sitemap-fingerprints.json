@@ -16,7 +16,7 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "156ecc059579f7f746bab71d531f39f17484f76e47a8bb8ae353269ed43e777c",
+      "fingerprint": "63ea1e022d3d04c31a374c6b1ca50c3d63cfe8865cf307b834892f7efbe02226",
       "lastmod": "2026-11-16",
       "source": "analyzer/index.html"
     },
@@ -26,34 +26,24 @@
       "source": "analyzer/nba/index.html"
     },
     "https://propellerpicks.com/analyzer/nba/donovan-clingan/": {
-      "fingerprint": "c9880bc6d10c731002efa993dc3af20495a529713afc384681131ab29a8be69d",
+      "fingerprint": "1705d0c0c997f84613417aab5c9113a88927c1ac16b924277afa4d3f6e2a10a7",
       "lastmod": "2026-11-16",
       "source": "analyzer/nba/donovan-clingan/index.html"
     },
     "https://propellerpicks.com/analyzer/nba/franz-wagner/": {
-      "fingerprint": "b2e46bf4fed8091f368b55c3912613c09fcf50bcebd684725e5bf44b17241832",
+      "fingerprint": "d2613c09363d2fe302657e3a3610013daea2e231f1c50aa1a248f2dcc68eef4f",
       "lastmod": "2026-11-16",
       "source": "analyzer/nba/franz-wagner/index.html"
     },
     "https://propellerpicks.com/analyzer/nba/jayson-tatum/": {
-      "fingerprint": "4569343f305d1972b20f3a7f9f66d9cc9d29670c95c74a936f81cbb2e3611e7b",
+      "fingerprint": "64abf426f3c8c9e28a36132c634a2385597f1c58dbbde3f193b8c23cf6501171",
       "lastmod": "2026-11-16",
       "source": "analyzer/nba/jayson-tatum/index.html"
     },
-    "https://propellerpicks.com/analyzer/nba/neemias-queta/": {
-      "fingerprint": "ee9a5be93b22c64edacc581a1485a51eb2cc98ab8ae3da2efeddf9b2e8b69735",
-      "lastmod": "2026-11-16",
-      "source": "analyzer/nba/neemias-queta/index.html"
-    },
     "https://propellerpicks.com/analyzer/nba/reed-sheppard/": {
-      "fingerprint": "d595d9ddc8fd149892c2dd77ff3f3d1f5bfc53f5b3cc372fd4dc129f6e2320d7",
+      "fingerprint": "6d1892bcbbbacc1a9292391680809a312bda76b157d689c47e63ccb67383ddcb",
       "lastmod": "2026-11-16",
       "source": "analyzer/nba/reed-sheppard/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/toumani-camara/": {
-      "fingerprint": "415a4a2bfb4af390064472e60b59697b81bd61221f6ff1fd46b8adc3e72d0d80",
-      "lastmod": "2026-11-16",
-      "source": "analyzer/nba/toumani-camara/index.html"
     },
     "https://propellerpicks.com/analyzer/nfl/": {
       "fingerprint": "584209c582cb126efbed95308702225b303edf3fca4fc29c4f786d3bed7b4438",
@@ -306,12 +296,12 @@
       "source": "picks/mlb/index.html"
     },
     "https://propellerpicks.com/picks/nba/": {
-      "fingerprint": "b0bcc33f0b0a38eaefb64be10c911bf9bf2f2a46b4cc5bf8c5980a763ee5ae07",
+      "fingerprint": "42518e2e797c370a8a798628b023fadb633636048af3271b413b2f558ae9e60c",
       "lastmod": "2026-11-16",
       "source": "picks/nba/index.html"
     },
     "https://propellerpicks.com/picks/nfl/": {
-      "fingerprint": "4d9335c4e9f96cef24b79cee8e8e943bf8230827aecb1d61021fa3f8dbc97216",
+      "fingerprint": "fc641c2a8caafde7b85d15a238248cae6bda340d9fc3e308acfc2d6a8011f71b",
       "lastmod": "2026-11-16",
       "source": "picks/nfl/index.html"
     },
@@ -321,12 +311,12 @@
       "source": "picks/nhl/index.html"
     },
     "https://propellerpicks.com/picks/pick6/": {
-      "fingerprint": "1a03f23dcdf9ee8fa4e3e044eb32086e384e9be0a0d67a25fcad732f35bfa14b",
+      "fingerprint": "52b3675a639cc7ab07781e0a50d2d07ecc4876ba98a3281b5b261cd6e51a9966",
       "lastmod": "2026-11-16",
       "source": "picks/pick6/index.html"
     },
     "https://propellerpicks.com/picks/prizepicks/": {
-      "fingerprint": "09a53abea88c8a4ef8d1a99df9f278145e194f5d705653897c753db63dfa3cda",
+      "fingerprint": "e6091b39dd7ff74ebeed4429a946bef6ebe3cfb907dd5c6c96787d3a7ebbe9cb",
       "lastmod": "2026-11-16",
       "source": "picks/prizepicks/index.html"
     },
@@ -336,7 +326,7 @@
       "source": "picks/soccer/index.html"
     },
     "https://propellerpicks.com/picks/underdog/": {
-      "fingerprint": "119162d7d797d15d8418a25ec8cb703d97724995638f6ec4ac983760d56313b0",
+      "fingerprint": "d7991f063619b85dbb68dbee416fc033b31207fedb045a57026b037b300d2256",
       "lastmod": "2026-11-16",
       "source": "picks/underdog/index.html"
     },
