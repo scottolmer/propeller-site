@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-16T16:02:06Z",
+  "generated_at": "2026-11-16T16:07:50Z",
   "publication_definition": "First observed in the Propeller public picks preview. Event-start ordering and outcome timing are not verified because the public preview does not expose event start time.",
   "before_event_start_verified": false,
   "records": [
@@ -412572,6 +412572,23 @@
       "direction": "UNDER",
       "model_score": 43,
       "confidence": 57,
+      "status": "open",
+      "settled_at": null,
+      "actual_value": null,
+      "result_id": null
+    },
+    {
+      "publication_id": "pub_9fa4350e3fc9e09e484a",
+      "published_at": "2026-11-16T16:07:46Z",
+      "captured_at": "2026-11-16T16:07:49Z",
+      "sport": "nfl",
+      "game_date": "2026-11-16",
+      "player_name": "Rashod Bateman",
+      "stat_type": "receptions",
+      "line": 2,
+      "direction": "UNDER",
+      "model_score": 43.8,
+      "confidence": 56,
       "status": "open",
       "settled_at": null,
       "actual_value": null,
