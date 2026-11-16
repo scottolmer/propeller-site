@@ -308,7 +308,7 @@ def migrate_html(original: str, path: Path, home: bool) -> str:
     if path.relative_to(ROOT).as_posix() == "analyzer/index.html":
         page_styles += (
             '<link rel="stylesheet" href="/assets/css/analyzer-desk.css?v=20261031e">\n  '
-            '<link rel="stylesheet" href="/assets/css/analyzer-desk-evidence.css?v=20261031d">\n  '
+            '<link rel="stylesheet" href="/assets/css/analyzer-desk-evidence.css?v=20261116b">\n  '
         )
     block = HEAD_BLOCK.format(compat=compat, page_styles=page_styles)
     # These pages declare a fully dark surface; retain it during maintenance.
