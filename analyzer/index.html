@@ -3483,9 +3483,11 @@ function researchLookup(immediate) {
               const player = lookup.player.player_name || lookup.player.name;
               return access.post('nfl', 'claim', {player, selection: access.selection(selectedProp)});
             } : null,
-            // Real visitors get the AI breakdown without a click; crawlers and
+            // Real visitors who opened an exact line get its AI breakdown without a
+            // click. Typing a name only previews the player, so it never spends the
+            // one free breakdown before the visitor picks a line; crawlers and
             // automated browsers never trigger paid generation on their own.
-            autoBrief: !navigator.webdriver && !/bot|crawl|spider|slurp|headless|lighthouse|preview/i.test(navigator.userAgent || ''),
+            autoBrief: Number.isInteger(propIndex) && !navigator.webdriver && !/bot|crawl|spider|slurp|headless|lighthouse|preview/i.test(navigator.userAgent || ''),
             requestBrief: async (selectedProp) => {
               const access = window.ppAnalyzerAccess;
               const sport = lookup.sport || activeSport;
