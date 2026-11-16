@@ -17,7 +17,7 @@
 <script src="/assets/js/analyzer-access.js?v=20261031a" defer></script>
 <script src="/assets/js/analyzer-research.js?v=20261031f" defer></script>
 <script src="/assets/js/analyzer-desk-evidence.js?v=20261116b" defer></script>
-<script src="/assets/js/analyzer-desk.js?v=20261116b" defer></script>
+<script src="/assets/js/analyzer-desk.js?v=20261116c" defer></script>
 <link rel="stylesheet" href="/assets/css/research-chat.css?v=20261027">
 <link rel="stylesheet" href="/assets/css/analyzer-save-panel.css?v=20261026b">
 <script src="/assets/js/analyzer-webmcp.js?v=20260827" defer></script>
@@ -2231,7 +2231,7 @@ footer {
       </h1>
 
       <p class="hero-subtitle fade-in delay-2">
-        Search a player to explore their lines, analyst brief, and supporting evidence.
+        Search a player to explore their lines, an AI breakdown, and supporting evidence.
       </p>
       <p class="hero-ai-credit fade-in delay-2">AI briefs powered by <strong>ChatGPT</strong></p>
 
@@ -3483,6 +3483,9 @@ function researchLookup(immediate) {
               const player = lookup.player.player_name || lookup.player.name;
               return access.post('nfl', 'claim', {player, selection: access.selection(selectedProp)});
             } : null,
+            // Real visitors get the AI breakdown without a click; crawlers and
+            // automated browsers never trigger paid generation on their own.
+            autoBrief: !navigator.webdriver && !/bot|crawl|spider|slurp|headless|lighthouse|preview/i.test(navigator.userAgent || ''),
             requestBrief: async (selectedProp) => {
               const access = window.ppAnalyzerAccess;
               const sport = lookup.sport || activeSport;
