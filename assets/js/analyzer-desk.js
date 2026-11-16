@@ -108,7 +108,7 @@
   function briefHtml(m,generated,requestState,canRequest) {
     if(generated) {
       var b=generated.brief,p=generated.provenance;
-      return '<section class="pp-desk-brief" aria-label="Analyst brief"><div class="pp-desk-brief-byline"><span class="pp-desk-kicker">Analyst brief</span><span>OPENAI GENERATED'+(p.reviewed?' · REVIEWED':'')+'</span></div><h3>'+esc(b.headline)+'</h3><p class="pp-desk-takeaway">'+esc(b.takeaway)+'</p>'+pulseHtml(m)+'<details class="pp-desk-deep"><summary>Read the analysis <span aria-hidden="true">+</span></summary>'+numberedSection(1,b.signal_read)+numberedSection(2,b.statistical_context)+numberedSection(3,b.market_read)+numberedSection(4,b.decision)+(Array.isArray(b.recheck)?'<div class="pp-desk-recheck"><h4>Before revisiting this prop</h4><ol>'+b.recheck.map(function(item){return '<li>'+esc(item)+'</li>';}).join('')+'</ol></div>':'')+'</details><p class="pp-desk-attribution">Generated · '+esc(when(p.generated_at))+(p.replayed?' · Saved example':'')+'</p></section>';
+      return '<section class="pp-desk-brief" aria-label="AI breakdown"><div class="pp-desk-brief-byline"><span class="pp-desk-kicker">AI breakdown</span><span>AI GENERATED'+(p.reviewed?' · REVIEWED':'')+'</span></div><h3>'+esc(b.headline)+'</h3><p class="pp-desk-takeaway">'+esc(b.takeaway)+'</p>'+pulseHtml(m)+'<details class="pp-desk-deep"><summary>Read the analysis <span aria-hidden="true">+</span></summary>'+numberedSection(1,b.signal_read)+numberedSection(2,b.statistical_context)+numberedSection(3,b.market_read)+numberedSection(4,b.decision)+(Array.isArray(b.recheck)?'<div class="pp-desk-recheck"><h4>Before revisiting this prop</h4><ol>'+b.recheck.map(function(item){return '<li>'+esc(item)+'</li>';}).join('')+'</ol></div>':'')+'</details><p class="pp-desk-attribution">Written by AI from this prop\'s data · '+esc(when(p.generated_at))+(p.replayed?' · Saved example':'')+'</p></section>';
     }
     var count=m.summary,p=m.prop;
     var copy=m.player+'’s stored '+label(p.stat)+' analysis leans '+p.direction+' '+p.line+'. ';
@@ -116,12 +116,13 @@
     var history=!m.full?'Detailed game history is restricted in this public preview. This view does not establish whether current-season records exist.':m.logs.length?m.logs.length+' returned appearances span '+m.logs[0].date+' to '+m.logs[m.logs.length-1].date+'. They are descriptive game records, not historical offered lines or a forecast. Inspect the dated workload below.':'No dated game history is available for this stat in this public response. Missing history does not mean the player did not play.';
     var support=m.signals.length?'The returned signals include '+m.signals.map(function(signal){return signal.name+' '+signal.score+' '+signal.direction;}).join(', ')+'. These are components of one model record, not independent votes. Only recorded explanations are shown; missing reasons and weights remain unknown.':'Only summary counts are available for this record. Individual scores and underlying reasons are not supplied.';
     var message='';
-    if(requestState==='allowance_exhausted')message='<p role="status">Your free AI preview is complete. <a href="https://app.propellerpicks.com/signup">Create a free account to continue.</a></p>';
+    if(requestState==='allowance_exhausted')message='<p role="status">You\'ve used your free AI breakdown. <a href="https://app.propellerpicks.com/signup">Create a free account to get more.</a></p>';
     else if(requestState==='selection_unavailable'||requestState==='selection_changed')message='<p role="status">This research snapshot has changed. Search the player again to choose a current line.</p>';
+    else if(requestState==='account_allowance_unavailable')message='<p role="status">AI breakdowns aren\'t included with your account yet. The data summary above is still here.</p>';
     else if(requestState==='session_unavailable')message='<p role="status">We could not verify your account. <a href="https://app.propellerpicks.com/login">Sign in again</a> to continue.</p>';
-    else if(['unavailable','budget_exhausted','budget_unavailable'].indexOf(requestState)!==-1)message='<p role="status">AI briefs are unavailable right now. The saved evidence is still available.</p>';
-    else if(requestState && requestState!=='loading')message='<p role="status">The brief could not finish. The saved evidence is still available.</p>';
-    return '<section class="pp-desk-brief" aria-label="Analyst brief"><span class="pp-desk-kicker">Analyst brief · Data summary</span><h3>The stored research leans '+esc(p.direction.toLowerCase())+'.'+(count.against>0?' There is evidence on both sides.':'')+'</h3><p class="pp-desk-takeaway">'+esc(copy)+'</p>'+pulseHtml(m)+'<details class="pp-desk-deep"><summary>Read the analysis <span aria-hidden="true">+</span></summary>'+numberedSection(1,{title:'What supports the lean',text:support,evidence_ids:['selection','signals']})+numberedSection(2,{title:'Put the history in context',text:history,evidence_ids:['history']})+numberedSection(3,{title:'Verify the exact offer',text:'Check the platform, line, period and variant together. Reading the stored record does not verify current availability or price. The recorded offers below may have different terms.',evidence_ids:['provenance']})+numberedSection(4,{title:'What still needs checking',text:'Verify current playing status, expected workload, current-season evidence and an exact quote. Missing price or payout and calibrated probability prevent a fair-odds or expected-value conclusion.',evidence_ids:['availability','history']})+'</details><p class="pp-desk-limit">Data summary · not a newly generated LLM answer.</p>'+(canRequest&&(!requestState||requestState==='loading')?'<button type="button" data-desk-generate'+(requestState==='loading'?' disabled':'')+'>'+(requestState==='loading'?'Generating…':'Generate analyst brief')+'</button>':'')+message+'</section>';
+    else if(['unavailable','budget_exhausted','budget_unavailable'].indexOf(requestState)!==-1)message='<p role="status">The AI breakdown isn\'t available right now. The data summary above is still here.</p>';
+    else if(requestState && requestState!=='loading')message='<p role="status">The AI breakdown couldn\'t finish. The data summary above is still here.</p>';
+    return '<section class="pp-desk-brief" aria-label="Data summary"><span class="pp-desk-kicker">Data summary</span><h3>The stored research leans '+esc(p.direction.toLowerCase())+'.'+(count.against>0?' There is evidence on both sides.':'')+'</h3><p class="pp-desk-takeaway">'+esc(copy)+'</p>'+pulseHtml(m)+'<details class="pp-desk-deep"><summary>Read the analysis <span aria-hidden="true">+</span></summary>'+numberedSection(1,{title:'What supports the lean',text:support,evidence_ids:['selection','signals']})+numberedSection(2,{title:'Put the history in context',text:history,evidence_ids:['history']})+numberedSection(3,{title:'Verify the exact offer',text:'Check the platform, line, period and variant together. Reading the stored record does not verify current availability or price. The recorded offers below may have different terms.',evidence_ids:['provenance']})+numberedSection(4,{title:'What still needs checking',text:'Verify current playing status, expected workload, current-season evidence and an exact quote. Missing price or payout and calibrated probability prevent a fair-odds or expected-value conclusion.',evidence_ids:['availability','history']})+'</details><p class="pp-desk-limit">Straight from our stored data, not written by AI.'+(canRequest?' The AI breakdown is written by AI from this same data, like the answers members get when they connect their AI assistant to Propeller.':'')+'</p>'+(canRequest&&(!requestState||requestState==='loading')?'<button type="button" data-desk-generate'+(requestState==='loading'?' disabled aria-busy="true"':'')+'>'+(requestState==='loading'?'Writing your AI breakdown…':'Get AI breakdown')+'</button>':'')+message+'</section>';
   }
 
   function historyHtml(m,sample,venue,selectedDate) {
@@ -211,6 +212,30 @@
       var focus=el.querySelector('summary,h3');
       if(focus){if(focus.tagName!=='SUMMARY')focus.setAttribute('tabindex','-1');focus.focus({preventScroll:true});}
     }
+    function requestGeneration() {
+        var selected=lookup.props[index];
+        if(requestState==='loading'||!boundAnalysis(selected)||typeof opts.requestBrief!=='function')return;
+        var requestId=++generation,selectedIndex=index;
+        requestState='loading';draw();
+        Promise.resolve().then(function(){return opts.requestBrief(selected);}).then(function(result){
+          if(destroyed||requestId!==generation||index!==selectedIndex)return;
+          if(result && result.status!=='ok'){requestState=['allowance_exhausted','account_allowance_unavailable','unavailable','budget_exhausted','budget_unavailable','already_attempted','generation_unavailable'].indexOf(result.status)!==-1?result.status:'error';draw();return;}
+          if(!matchingBrief(result,selected))throw new Error('Mismatched provenance');
+          generated=result;requestState='';draw();
+        }).catch(function(){if(!destroyed&&requestId===generation&&index===selectedIndex){requestState='error';draw();}});
+    }
+    // Load the AI breakdown once per selected record without a click. A failed or
+    // refused attempt is not retried automatically; the button stays as the fallback.
+    var autoTried={};
+    function autoGenerate() {
+      if(destroyed||!opts.autoBrief||generated||requestState||typeof opts.requestBrief!=='function')return;
+      var selected=lookup.props[index];
+      if(!boundAnalysis(selected))return;
+      var key=index+':'+String(selected.source_analysis_id);
+      if(autoTried[key])return;
+      autoTried[key]=true;
+      requestGeneration();
+    }
     function click(event) {
       var target=event.target&&event.target.closest?event.target.closest('button,[data-desk-evidence]'):null;
       if(!target||!container.contains(target))return;
@@ -224,23 +249,14 @@
           var merged=window.ppAnalyzerAccess && window.ppAnalyzerAccess.mergeClaim(lookup,claimIndex,result);
           if(merged){lookup=merged;claimState='';}else claimState=result&&result.status==='ok'?'selection_unavailable':result&&result.status||'unavailable';
           draw();
+          if(merged)autoGenerate();
         }).catch(function(){if(!destroyed&&generation===claimGeneration&&index===claimIndex){claimState='unavailable';draw();}});
         return;
       }
       if(target.hasAttribute('data-desk-generate')) {
-        var selected=lookup.props[index];
-        if(requestState==='loading'||!boundAnalysis(selected)||typeof opts.requestBrief!=='function')return;
-        var requestId=++generation,selectedIndex=index;
-        requestState='loading';draw();
-        Promise.resolve().then(function(){return opts.requestBrief(selected);}).then(function(result){
-          if(destroyed||requestId!==generation||index!==selectedIndex)return;
-          if(result && result.status!=='ok'){requestState=['allowance_exhausted','unavailable','budget_exhausted','budget_unavailable','already_attempted','generation_unavailable'].indexOf(result.status)!==-1?result.status:'error';draw();return;}
-          if(!matchingBrief(result,selected))throw new Error('Mismatched provenance');
-          generated=result;requestState='';draw();
-        }).catch(function(){if(!destroyed&&requestId===generation&&index===selectedIndex){requestState='error';draw();}});
+        requestGeneration();
         return;
-      }
-      if(target.hasAttribute('data-desk-reset')){sample='all';venue='all';selectedDate='';draw('[data-desk-sample="all"]');return;}
+      }      if(target.hasAttribute('data-desk-reset')){sample='all';venue='all';selectedDate='';draw('[data-desk-sample="all"]');return;}
       var key=target.getAttribute('data-desk-sample'),where=target.getAttribute('data-desk-venue');
       var game=target.getAttribute('data-desk-game'),question=target.getAttribute('data-desk-question');
       if(key!==null){sample=key;selectedDate='';draw('[data-desk-sample="'+key+'"]');}
@@ -264,8 +280,9 @@
       generation++;generated=null;requestState='';claimState='';index=next;sample='all';venue='all';selectedDate='';answer='';activeQuestion='';resetDisclosures=true;
       draw('[data-desk-select]');
       if(typeof opts.onPropChange==='function')opts.onPropChange(lookup.props[index],index);
+      autoGenerate();
     }
-    container.addEventListener('click',click);container.addEventListener('change',change);draw();
+    container.addEventListener('click',click);container.addEventListener('change',change);draw();autoGenerate();
     return {getSelectedProp:function(){return (lookup.props||[])[index];},destroy:function(){destroyed=true;generation++;container.removeEventListener('click',click);container.removeEventListener('change',change);container.innerHTML='';}};
   }
 
