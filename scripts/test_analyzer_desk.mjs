@@ -69,3 +69,34 @@ test('unknown and unavailable freshness cannot present old games as current-seas
   data.history_freshness={status:'unavailable',expected_season:2026};m=api.buildModel(data,0,options);
   assert.match(api.render(m,0,'all','all',''),/Current-season coverage is unverified/);
 });
+
+test('Trae Young combined NBA markets render returned games with all sample and venue filters',()=>{
+  const api=load(),data=clone(fixture);
+  data.sport='nba';data.player={player_name:'Trae Young',team:'WAS'};
+  data.checked_at='2026-11-16T12:00:00Z';
+  data.props=[{...data.props[0],stat_type:'pts_asts',line:28.5},{...data.props[0],stat_type:'pts_rebs',line:22.5}];
+  data.game_logs=[
+    {game_date:'2026-11-14',season:2026,team:'WAS',opponent:'ATL',home_away:'home',minutes:32,pts_asts:30,pts_rebs:23},
+    {game_date:'2026-11-12',season:2026,team:'WAS',opponent:'BOS',home_away:'away',minutes:28,pts_asts:0,pts_rebs:0}
+  ];
+  for(const index of [0,1]){
+    const m=api.buildModel(data,index,{now:'2026-11-16T12:00:00Z'});
+    assert.equal(m.logs.length,2);
+    assert.equal(api.filteredHistory(m,'all','all').rows.length,2);
+    assert.equal(api.filteredHistory(m,'current','all').rows.length,2);
+    assert.equal(api.filteredHistory(m,'all','home').rows.length,1);
+    assert.equal(api.filteredHistory(m,'all','away').rows.length,1);
+    const html=api.render(m,index,'all','all','');
+    assert.match(html,/All returned games.*2 appearances/);
+    assert.doesNotMatch(html,/No stored games returned for this view/);
+  }
+});
+
+test('NBA current season follows the October boundary through the spring',()=>{
+  const api=load(),data=clone(fixture);data.sport='nba';
+  data.checked_at='2027-04-10T12:00:00Z';data.props[0].stat_type='points';
+  data.game_logs=[{game_date:'2027-04-08',season:2026,points:20,minutes:30}];
+  const m=api.buildModel(data,0,{now:'2027-04-10T12:00:00Z'});
+  assert.equal(m.season,2026);
+  assert.equal(api.filteredHistory(m,'current','all').rows.length,1);
+});

@@ -5,8 +5,8 @@
   // It never calls a model, rescoring endpoint or authenticated MCP tool.
   var FIELDS = { pass_yds:'passing_yards', passing_yards:'passing_yards', pass_tds:'passing_tds', passing_tds:'passing_tds', pass_att:'passing_attempts', pass_comp:'passing_completions', rush_yds:'rushing_yards', rushing_yards:'rushing_yards', rush_attempts:'rushing_attempts', rec_yds:'receiving_yards', receiving_yards:'receiving_yards', receptions:'receptions', targets:'targets', interceptions:'passing_ints', player_interceptions:'passing_ints' };
   var LABELS = { pass_yds:'passing yards', passing_yards:'passing yards', pass_tds:'passing touchdowns', passing_tds:'passing touchdowns', pass_att:'pass attempts', pass_comp:'pass completions', rush_yds:'rushing yards', rushing_yards:'rushing yards', rush_attempts:'rush attempts', rec_yds:'receiving yards', receiving_yards:'receiving yards', receptions:'receptions', targets:'targets', interceptions:'interceptions', player_interceptions:'interceptions' };
-  Object.assign(FIELDS,{points:'points',rebounds:'rebounds',assists:'assists',three_pointers_made:'three_pointers_made',threes:'three_pointers_made',pts_rebs_asts:'pts_rebs_asts'});
-  Object.assign(LABELS,{points:'points',rebounds:'rebounds',assists:'assists',three_pointers_made:'3-pointers made',threes:'3-pointers made',pts_rebs_asts:'points + rebounds + assists'});
+  Object.assign(FIELDS,{points:'points',rebounds:'rebounds',assists:'assists',three_pointers_made:'three_pointers_made',threes:'three_pointers_made',pts_rebs_asts:'pts_rebs_asts',pts_asts:'pts_asts',pts_rebs:'pts_rebs',rebs_asts:'rebs_asts'});
+  Object.assign(LABELS,{points:'points',rebounds:'rebounds',assists:'assists',three_pointers_made:'3-pointers made',threes:'3-pointers made',pts_rebs_asts:'points + rebounds + assists',pts_asts:'points + assists',pts_rebs:'points + rebounds',rebs_asts:'rebounds + assists'});
   var TIME_ZONE = 'America/Chicago';
   function sameTime(a,b){var x=Date.parse(a),y=Date.parse(b);return typeof a==='string' && typeof b==='string' && Number.isFinite(x) && Number.isFinite(y) && x===y;}
   function boundAnalysis(p){var a=p&&p.analysis;return p&&p.detail==='full' && p.source_analysis_id!=null && a && a.source==='recorded_agent_outputs' && String(p.source_analysis_id)===String(a.source_analysis_id) && sameTime(p.analyzed_at,a.analyzed_at) ? a : null;}
@@ -41,6 +41,7 @@
     var cutoff=dateOnly(checked)&&checked<today ? checked : today;
     var season=now.getUTCFullYear()-(now.getUTCMonth()<2?1:0);
     var nba=String(lookup.sport||opts.sport||'').toLowerCase()==='nba';
+    if(nba)season=now.getUTCFullYear()-(now.getUTCMonth()<9?1:0);
     var freshness=null, rawFreshness=lookup.history_freshness;
     if (!nba && full && rawFreshness && typeof rawFreshness==='object') {
       var expected=number(rawFreshness.expected_season);
