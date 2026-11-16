@@ -173,6 +173,8 @@
     function draw(focus) {
       if(destroyed)return;
       var scrollY=typeof window.scrollY==='number'?window.scrollY:null;
+      var previousChart=container.querySelector('.pp-desk-chart-scroll');
+      var chartLeft=previousChart?previousChart.scrollLeft:null;
       var selectors=['.pp-desk-deep','[data-desk-source]','[data-desk-context]','[data-desk-history-source]'];
       for(var i=1;i<=12;i++)selectors.push('.pp-desk-signal:nth-of-type('+i+')');
       var opened=resetDisclosures?[]:selectors.filter(function(selector){var node=container.querySelector(selector);return node && node.open;});
@@ -189,6 +191,13 @@
         if(result)result.insertAdjacentHTML('afterend','<div class="pp-desk-claim" aria-live="polite">'+(claimState && claimState!=='loading'?'<p>'+esc(access?access.message(claimState):'Complete analysis is unavailable.')+'</p>':'')+(claimState==='allowance_exhausted'||claimState==='session_unavailable'?'<a href="https://app.propellerpicks.com/login">Sign in</a> · <a href="https://app.propellerpicks.com/signup">Create a free account</a>':'<button type="button" data-desk-claim'+(claimState==='loading'?' disabled':'')+'>'+(claimState==='loading'?'Opening analysis…':'Open complete analysis')+'</button>')+'</div>');
       }
       opened.forEach(function(selector){var node=container.querySelector(selector);if(node)node.open=true;});
+      var chart=container.querySelector('.pp-desk-chart-scroll');
+      if(chart){
+        var selectedPoint=chart.querySelector('[data-desk-selected-game]');
+        if(selectedPoint && (chartLeft===null || focus && /data-desk-(history-game|sample|venue|select)/.test(focus))){
+          chart.scrollLeft=selectedPoint.getBoundingClientRect().left-chart.getBoundingClientRect().left-chart.clientWidth/2;
+        }else if(chartLeft!==null)chart.scrollLeft=chartLeft;
+      }
       if(focus){var el=container.querySelector(focus);if(el)el.focus({preventScroll:true});}
       if(focus && scrollY!==null && typeof window.scrollTo==='function')window.scrollTo(0,scrollY);
     }
@@ -245,6 +254,10 @@
       }
     }
     function change(event) {
+      if(event.target.matches('[data-desk-history-game]')){
+        if(dateOnly(event.target.value)){selectedDate=event.target.value;draw('[data-desk-history-game]');}
+        return;
+      }
       if(!event.target.matches('[data-desk-select]'))return;
       var next=Number(event.target.value);
       if(!Number.isInteger(next)||!validProp((lookup.props||[])[next]))return;
