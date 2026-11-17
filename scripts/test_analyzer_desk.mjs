@@ -32,7 +32,7 @@ test('generation rejects mismatched provenance and handles allowance and availab
 const approved=JSON.parse(readFileSync(new URL('fixtures/research-desk-approved.json',import.meta.url),'utf8'));
 test('approved example retains all signals, four dated games and three market offers',()=>{const api=load();const m=api.buildModel(approved,0,options);assert.equal(m.signals.length,5);assert.equal(m.logs.length,4);assert.equal(m.offers.length,3);const h=api.filteredHistory(m,'all','all');assert.equal(h.attempts,35);assert.equal(h.above,0);assert.equal(h.totalValue,0);assert.equal(api.filteredHistory(m,'current','all').rows.length,0);const html=api.render(m,0,'all','all','');assert.match(html,/2025-11-16/);assert.match(html,/2025-12-28/);assert.match(html,/data-desk-history-game/);assert.match(html,/Sleeper/i);assert.match(html,/PrizePicks/i);assert.match(html,/DraftKings/i);});
 test('duplicate enriched signal names fail closed for recorded reasons',()=>{const api=load(),data=boundFixture();const signal=data.props[0].signals[0];data.props[0].analysis.signals=[{...signal,reasons:['SHOULD NOT RENDER']},{...signal,reasons:['SHOULD NOT RENDER']}];const html=api.render(api.buildModel(data,0,options),0,'all','all','');assert.doesNotMatch(html,/SHOULD NOT RENDER/);});
-test('saved brief is accepted only for exact source and time without requesting generation',()=>{const api=load(),c=fakeContainer();let calls=0;api.mountResearchChat(c,{lookup:approved,...options,savedBrief:approved.savedBrief,requestBrief:()=>{calls++;}});assert.match(c.innerHTML,/history calls for caution/i);assert.match(c.innerHTML,/Read the analysis/i);assert.equal(calls,0);const wrong=clone(approved.savedBrief);wrong.provenance.source_analysis_id='different';const other=fakeContainer();api.mountResearchChat(other,{lookup:approved,...options,savedBrief:wrong,requestBrief:()=>{calls++;}});assert.doesNotMatch(other.innerHTML,/history calls for caution/i);assert.equal(calls,0);});
+test('saved brief is accepted only for exact source and time without requesting generation',()=>{const api=load(),c=fakeContainer();let calls=0;api.mountResearchChat(c,{lookup:approved,...options,savedBrief:approved.savedBrief,requestBrief:()=>{calls++;}});assert.match(c.innerHTML,/history calls for caution/i);assert.match(c.innerHTML,/History pushes back/);assert.doesNotMatch(c.innerHTML.split('pp-desk-answer-body')[1].split('</section></div>')[0],/<details/);assert.equal(calls,0);const wrong=clone(approved.savedBrief);wrong.provenance.source_analysis_id='different';const other=fakeContainer();api.mountResearchChat(other,{lookup:approved,...options,savedBrief:wrong,requestBrief:()=>{calls++;}});assert.doesNotMatch(other.innerHTML,/history calls for caution/i);assert.equal(calls,0);});
 
 test('history interactions select games, filter current season and reset chart and table',()=>{const api=load(),c=fakeContainer();api.mountResearchChat(c,{lookup:approved,...options});function click(attrs){const target={closest(){return this},hasAttribute(k){return Object.hasOwn(attrs,k)},getAttribute(k){return Object.hasOwn(attrs,k)?attrs[k]:null}};c.dispatchClick(target);}c.historyChange('2025-11-23');assert.match(c.innerHTML,/<option value="2025-11-23" selected>/);assert.match(c.innerHTML,/2025-11-23 · GB vs MIN/);click({'data-desk-sample':'current'});assert.match(c.innerHTML,/No stored games returned/);assert.match(c.innerHTML,/data-desk-reset/);click({'data-desk-reset':''});assert.match(c.innerHTML,/2025-12-28/);assert.match(c.innerHTML,/<svg/);});
 
@@ -101,8 +101,63 @@ test('NBA current season follows the October boundary through the spring',()=>{
   assert.equal(api.filteredHistory(m,'current','all').rows.length,1);
 });
 
-test('the request button and generated brief say plainly that the answer is AI written',async()=>{const api=load(),c=fakeContainer();let resolve;api.mountResearchChat(c,{lookup:boundFixture(),...options,requestBrief:()=>new Promise(r=>resolve=r)});assert.match(c.innerHTML,/>Get AI breakdown</);assert.doesNotMatch(c.innerHTML,/Generate analyst brief|not a newly generated LLM answer/);c.click();await flush();assert.match(c.innerHTML,/Writing your AI breakdown/);resolve(response());await flush();assert.match(c.innerHTML,/AI GENERATED/);assert.match(c.innerHTML,/Written by AI/);});
+test('the request button and generated brief say plainly that the answer is AI written',async()=>{const api=load(),c=fakeContainer();let resolve;api.mountResearchChat(c,{lookup:boundFixture(),...options,requestBrief:()=>new Promise(r=>resolve=r)});assert.match(c.innerHTML,/>Get AI breakdown</);assert.doesNotMatch(c.innerHTML,/Generate analyst brief|not a newly generated LLM answer/);c.click();await flush();assert.match(c.innerHTML,/Writing your AI breakdown/);resolve(response());await flush();assert.match(c.innerHTML,/AI generated/);assert.match(c.innerHTML,/Written by AI/);});
 test('auto brief loads once per selected record without a click and never retries a refusal',async()=>{const api=load(),c=fakeContainer();let calls=0;const desk=api.mountResearchChat(c,{lookup:boundFixture(),...options,autoBrief:true,requestBrief:async()=>{calls++;return {status:'unavailable'};}});await flush();assert.equal(calls,1);assert.match(c.innerHTML,/AI breakdown isn't available/);assert.doesNotMatch(c.innerHTML,/data-desk-generate/);c.historyChange('2026-09-21');await flush();assert.equal(calls,1);desk.destroy();});
 test('auto brief stays off unless the page opts in',async()=>{const api=load(),c=fakeContainer();let calls=0;api.mountResearchChat(c,{lookup:boundFixture(),...options,requestBrief:async()=>{calls++;return response();}});await flush();assert.equal(calls,0);});
 test('auto brief skips summary-only records that cannot be generated',async()=>{const api=load(),c=fakeContainer();let calls=0;api.mountResearchChat(c,{lookup:clone(fixture),...options,autoBrief:true,requestBrief:async()=>{calls++;return response();}});await flush();assert.equal(calls,0);});
 test('the analyzer auto-loads only an opened line for real visitors and keeps crawlers out',()=>{const html=readFileSync(new URL('../analyzer/index.html',import.meta.url),'utf8');assert.match(html,/autoBrief: Number\.isInteger\(propIndex\) && !navigator\.webdriver && !\/bot\|crawl/);});
+
+test('Ask Propeller opens with the question in More/Less words and lists only what was returned',()=>{
+  const api=load(),m=api.buildModel(approved,0,options),html=api.render(m,0,'all','all','');
+  assert.match(html,/class="pp-desk-ask"/);
+  assert.match(html,/Is Malik Willis More or Less than <span class="pp-desk-num">0.5<\/span> interceptions\?/);
+  assert.match(html,/Propeller looked up/);
+  assert.match(html,/<li>4 recent games<\/li>/);
+  assert.match(html,/<li>5 research signals<\/li>/);
+  assert.match(html,/<li>Lines on 3 apps<\/li>/);
+  assert.match(html,/<em>More<\/em> than/);
+  assert.doesNotMatch(html,/pp-desk-result|Explore this prop|0 · UNDER/);
+  const empty=clone(approved);empty.game_logs=[];empty.props=[{...empty.props[0],detail:'summary',signals:[],signal_summary:{},analyzed_at:null,platform:null}];
+  const bare=api.render(api.buildModel(empty,0,options),0,'all','all','');
+  assert.doesNotMatch(bare,/recent game|research signal|Lines on/);
+});
+test('the page names no AI provider or AI app anywhere in the result',async()=>{
+  const api=load(),c=fakeContainer();let resolve;
+  api.mountResearchChat(c,{lookup:approved,...options,savedBrief:approved.savedBrief});
+  const pages=[c.innerHTML,api.render(api.buildModel(boundFixture(),0,options),0,'all','all','')];
+  const d=fakeContainer();api.mountResearchChat(d,{lookup:boundFixture(),...options,requestBrief:()=>new Promise(r=>resolve=r)});d.click();await flush();pages.push(d.innerHTML);
+  for(const html of pages)assert.doesNotMatch(html,/deepseek|openai|chatgpt|gpt-|claude|anthropic|gemini|grok|cursor|llama|mistral/i);
+});
+test('the writing state replaces the data summary until the answer arrives',async()=>{
+  const api=load(),c=fakeContainer();let resolve;
+  api.mountResearchChat(c,{lookup:boundFixture(),...options,requestBrief:()=>new Promise(r=>resolve=r)});
+  c.click();await flush();
+  assert.match(c.innerHTML,/pp-desk-typing/);assert.doesNotMatch(c.innerHTML,/data-desk-generate|Data summary/);
+  resolve(response());await flush();
+  assert.doesNotMatch(c.innerHTML,/pp-desk-typing/);assert.match(c.innerHTML,/From Propeller's own data/);
+});
+test('follow-ups are locked: a tap opens the signup panel with that question and never calls the model',async()=>{
+  const api=load(),c=fakeContainer();let calls=0;
+  api.mountResearchChat(c,{lookup:approved,...options,requestBrief:()=>{calls++;return new Promise(()=>{});}});
+  assert.match(c.innerHTML,/Ask a follow-up/);
+  assert.equal((c.innerHTML.match(/class="pp-desk-fu"/g)||[]).length,3);
+  assert.doesNotMatch(c.innerHTML,/pp-desk-gate-note/);
+  function tap(value){const target={closest(){return this},hasAttribute(k){return k==='data-desk-followup'},getAttribute(k){return k==='data-desk-followup'?value:null}};c.dispatchClick(target);}
+  tap('1');
+  assert.match(c.innerHTML,/pp-desk-gate-note/);
+  assert.match(c.innerHTML,/Follow-up questions are for members/);
+  assert.match(c.innerHTML,/<span>How does Malik Willis do at home versus on the road\?<\/span><i aria-hidden="true">/);
+  assert.match(c.innerHTML,/data-desk-followup="1" aria-pressed="true"/);
+  tap('custom');assert.match(c.innerHTML,/Ask anything about Malik Willis/);assert.match(c.innerHTML,/pp-desk-gate-note/);
+  tap('nonsense');assert.doesNotMatch(c.innerHTML,/pp-desk-gate-note/);
+  assert.equal(calls,0);
+  assert.match(c.innerHTML,/href="https:\/\/app\.propellerpicks\.com\/signup" data-analytics-event="signup_click" data-cta-id="analyzer-desk-signup"/);
+  assert.match(c.innerHTML,/href="\/mcp\/" data-analytics-event="research_cta_click" data-cta-id="analyzer-desk-mcp"/);
+  assert.match(c.innerHTML,/\$15 a month, tax included/);
+});
+test('summary-only records still offer the complete-analysis claim inside the chat',()=>{
+  const api=load(),data=clone(approved);data.props[0].detail='summary';
+  const nodes={};const c={innerHTML:'',addEventListener(){},removeEventListener(){},contains:()=>true,querySelector(sel){if(sel==='[data-desk-claim-anchor]'&&/data-desk-claim-anchor/.test(this.innerHTML))return {insertAdjacentHTML:(where,html)=>{nodes.claim=html;}};return null;}};
+  api.mountResearchChat(c,{lookup:data,...options,requestClaim:async()=>({status:'unavailable'})});
+  assert.match(nodes.claim||'',/Open complete analysis/);
+});

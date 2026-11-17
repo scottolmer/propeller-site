@@ -59,7 +59,7 @@
     var summary={};['agree','against','neutral','total'].forEach(function(k){var n=number(counts[k]);summary[k]=n!==null&&n>=0&&Number.isInteger(n)?n:null;});
     var offers=lookup.props.filter(function(p){return validProp(p) && (p===prop || (prop.event_id!=null && String(p.event_id)===String(prop.event_id))) && (p.stat_type===prop.stat_type || (FIELDS[p.stat_type] && FIELDS[p.stat_type]===field));}).slice(0,10).map(function(p){return {stat:p.stat_type,line:number(p.line),direction:p.direction,platform:p.platform,period:p.period,variant:p.variant,quoteObservedAt:p.quote_observed_at,analyzedAt:p.analyzed_at,eventId:p.event_id,eventStart:p.event_start,home:p.home_team,away:p.away_team,selected:p===prop || (prop.source_analysis_id!=null && p.source_analysis_id!=null && String(p.source_analysis_id)===String(prop.source_analysis_id))};});
     var sources=Array.isArray(opts.evidenceSources)?opts.evidenceSources.filter(function(s){return s && typeof s.label==='string' && typeof s.href==='string' && /^\/__analyst-preview\/evidence\/[a-z0-9-]+\.json$/.test(s.href);}):[];
-    return {fixture:!!opts.fixture,sport:nba?'NBA':'NFL',enriched:!!enriched,sourceId:prop.source_analysis_id,index:index,player:String(lookup.player.player_name||lookup.player.name||'Player'),team:String(lookup.player.team||'Not supplied'),position:String(lookup.player.position||''),prop:{stat:prop.stat_type,line:number(prop.line),direction:prop.direction,confidence:number(prop.confidence)!==null&&number(prop.confidence)>=50&&number(prop.confidence)<=100?number(prop.confidence):null,analyzedAt:prop.analyzed_at,home:prop.home_team,away:prop.away_team,eventId:prop.event_id,eventStart:prop.event_start,platform:prop.platform,period:prop.period,variant:prop.variant,quoteObservedAt:prop.quote_observed_at},full:full,signals:visible,summary:summary,logs:logs,logsTruncated:!!lookup.game_logs_truncated,historyScope:lookup.history_scope,historyFreshness:freshness,offers:offers,sources:sources,season:season,checkedAt:lookup.checked_at,workloadLabel:workload.label,conversations:conversations,active:active,choices:lookup.props.map(function(p,i){return validProp(p)?{index:i,text:p.direction+' '+p.line+' '+label(p.stat_type)+(p.platform?' · '+p.platform:''),detail:p.detail}:null;}).filter(Boolean)};
+    return {fixture:!!opts.fixture,sport:nba?'NBA':'NFL',enriched:!!enriched,sourceId:prop.source_analysis_id,index:index,player:String(lookup.player.player_name||lookup.player.name||'Player'),team:String(lookup.player.team||'Not supplied'),position:String(lookup.player.position||''),prop:{stat:prop.stat_type,line:number(prop.line),direction:prop.direction,confidence:number(prop.confidence)!==null&&number(prop.confidence)>=50&&number(prop.confidence)<=100?number(prop.confidence):null,analyzedAt:prop.analyzed_at,home:prop.home_team,away:prop.away_team,eventId:prop.event_id,eventStart:prop.event_start,platform:prop.platform,period:prop.period,variant:prop.variant,quoteObservedAt:prop.quote_observed_at},full:full,signals:visible,summary:summary,logs:logs,logsTruncated:!!lookup.game_logs_truncated,historyScope:lookup.history_scope,historyFreshness:freshness,offers:offers,sources:sources,season:season,checkedAt:lookup.checked_at,workloadLabel:workload.label,conversations:conversations,active:active,choices:lookup.props.map(function(p,i){return validProp(p)?{index:i,text:moreLess(p.direction)+' '+p.line+' '+label(p.stat_type)+(p.platform?' · '+p.platform:''),detail:p.detail}:null;}).filter(Boolean)};
   }
 
   function filteredHistory(model,sample,venue) {
@@ -77,9 +77,56 @@
   }
   function field(name,value){return '<div><dt>'+esc(name)+'</dt><dd>'+esc(value)+'</dd></div>';}
   function section(title,copy){return '<div class="pp-desk-section"><h4>'+esc(title)+'</h4><p>'+esc(copy)+'</p></div>';}
+  // Pick'em words on screen; the data keeps OVER/UNDER.
+  function moreLess(direction){return direction==='OVER'?'More':direction==='UNDER'?'Less':'Neutral';}
+  var SPARK='<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0l1.8 5.2L15 7l-5.2 1.8L8 14l-1.8-5.2L1 7l5.2-1.8z"/></svg>';
+  var LOCK='<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 7V5a4 4 0 118 0v2h1a1 1 0 011 1v7a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1h1zm2 0h4V5a2 2 0 10-4 0v2z"/></svg>';
   function signalsHtml(m) {
-    var rows=m.signals.map(function(s){var start=Math.min(50,s.score),width=Math.abs(s.score-50);return '<details class="pp-desk-signal"><summary><span class="pp-desk-signal-name">'+esc(s.name)+'<small>Inspect evidence ↗</small></span><span class="pp-desk-track" aria-hidden="true"><i'+(s.score===50?' class="neutral-marker"':'')+' style="--start:'+start+'%;--width:'+width+'%"></i></span><span class="pp-desk-signal-value"><strong>'+s.score+'</strong> '+esc(s.direction)+'</span></summary><div><p>Recorded directional score: '+s.score+' / 100. Analysis recorded '+esc(when(m.prop.analyzedAt))+'.</p>'+(s.reasons&&s.reasons.length?'<p><strong>Recorded explanation</strong> · '+esc(when(m.prop.analyzedAt))+'</p><ul>'+s.reasons.map(function(r){return '<li>'+esc(r)+'</li>';}).join('')+'</ul>'+(s.omitted>0?'<p>'+esc(s.omitted)+' additional recorded explanation(s) omitted from this response.</p>':''):'<p>The response does not supply this signal’s underlying reasons or supporting measurements.</p>')+'<p>'+(s.direction==='NEUTRAL'?'A neutral score does not confirm health or workload.':'This signal supports a direction; it does not establish a cause or a probability.')+'</p></div></details>';}).join('');
-    return '<section class="pp-desk-signals" id="pp-desk-signals" aria-label="Available model signals"><h3>Model signals</h3><div class="pp-desk-signal-scale" aria-hidden="true"><span>0 · UNDER</span><span>50 · NEUTRAL</span><span>100 · OVER</span></div>'+ (rows||'<div class="pp-desk-empty"><p>No individual signal scores are available in this public read.</p></div>')+'<p class="pp-desk-limit">'+(m.full?'':'Individual signals are unavailable for this summary-only record.')+' Scores are not win probabilities.</p></section>';
+    var rows=m.signals.map(function(s){var start=Math.min(50,s.score),width=Math.abs(s.score-50),side=s.direction==='OVER'?' is-more':s.direction==='UNDER'?' is-less':'';return '<details class="pp-desk-signal"><summary><span class="pp-desk-signal-name">'+esc(s.name)+'<small>See why ↗</small></span><span class="pp-desk-track" aria-hidden="true"><i class="'+(s.score===50?'neutral-marker':side.trim())+'" style="--start:'+start+'%;--width:'+width+'%"></i></span><span class="pp-desk-signal-value'+side+'"><strong>'+s.score+'</strong> '+esc(moreLess(s.direction).toUpperCase())+'</span></summary><div><p>Recorded directional score: '+s.score+' / 100. Analysis recorded '+esc(when(m.prop.analyzedAt))+'.</p>'+(s.reasons&&s.reasons.length?'<p><strong>Recorded explanation</strong> · '+esc(when(m.prop.analyzedAt))+'</p><ul>'+s.reasons.map(function(r){return '<li>'+esc(r)+'</li>';}).join('')+'</ul>'+(s.omitted>0?'<p>'+esc(s.omitted)+' additional recorded explanation(s) omitted from this response.</p>':''):'<p>The response does not supply this signal’s underlying reasons or supporting measurements.</p>')+'<p>'+(s.direction==='NEUTRAL'?'A neutral score does not confirm health or workload.':'This signal supports a direction; it does not establish a cause or a probability.')+'</p></div></details>';}).join('');
+    return '<section class="pp-desk-signals" id="pp-desk-signals" aria-label="Signals the answer used"><h3>Signals it used</h3><div class="pp-desk-signal-scale" aria-hidden="true"><span>0 · LESS</span><span>50</span><span>MORE · 100</span></div>'+ (rows||'<div class="pp-desk-empty"><p>No individual signal scores are available in this public read.</p></div>')+'<p class="pp-desk-limit">'+(m.full?'':'Individual signals are unavailable for this summary-only record.')+' Scores are not win probabilities.</p></section>';
+  }
+
+  // The visitor's question, as the chat opens with it.
+  function askHtml(m) {
+    return '<div class="pp-desk-ask"><span class="pp-desk-sr">You asked: </span>Is '+esc(m.player)+' More or Less than <span class="pp-desk-num">'+esc(m.prop.line)+'</span> '+esc(label(m.prop.stat))+'?</div>';
+  }
+
+  // Only what this record actually returned; nothing is claimed that was not looked up.
+  function lookedUpHtml(m) {
+    var items=[];
+    if(m.full&&m.logs.length)items.push(m.logs.length+' recent game'+(m.logs.length===1?'':'s'));
+    var signalCount=m.signals.length||m.summary.total;
+    if(signalCount)items.push(signalCount+' research signal'+(signalCount===1?'':'s'));
+    var platforms=[];
+    m.offers.forEach(function(o){var name=String(o.platform||'').trim();if(name&&platforms.indexOf(name.toLowerCase())===-1)platforms.push(name.toLowerCase());});
+    if(platforms.length)items.push('Lines on '+platforms.length+' app'+(platforms.length===1?'':'s'));
+    if(when(m.prop.analyzedAt)!=='Not supplied')items.push('Research from '+when(m.prop.analyzedAt));
+    if(!items.length)return '';
+    return '<div class="pp-desk-lookedup" aria-label="What Propeller looked up"><span class="pp-desk-kicker">Propeller looked up</span><ul>'+items.map(function(item){return '<li>'+esc(item)+'</li>';}).join('')+'</ul></div>';
+  }
+
+  function leanHtml(m) {
+    var p=m.prop;
+    return '<div class="pp-desk-lean"><div><span class="pp-desk-lean-k">Leans</span><span class="pp-desk-lean-dir"><em>'+esc(moreLess(p.direction))+'</em> than <span class="pp-desk-num">'+esc(p.line)+'</span> '+esc(label(p.stat))+'</span></div><div class="pp-desk-lean-score"><strong class="pp-desk-num">'+(p.confidence===null?'—':p.confidence)+'</strong><span>Confidence,<br>not a win chance</span></div></div>';
+  }
+
+  function followupQuestions(m) {
+    return ['What could change this read before game time?','How does '+m.player+' do at home versus on the road?',m.choices.length>1?'Is another '+m.player+' line a better look?':'How does this line compare with the rest of the slate?'];
+  }
+
+  // Follow-ups are a member feature (asked through the member's own AI app), so the
+  // buttons open the signup panel with the chosen question instead of answering here.
+  function followupHtml(m,followup) {
+    var questions=followupQuestions(m),chosen=Number.isInteger(followup)&&questions[followup]?questions[followup]:followup==='custom'?'custom':'';
+    var list=questions.map(function(q,i){return '<button type="button" class="pp-desk-fu" data-desk-followup="'+i+'" aria-pressed="'+(followup===i)+'" aria-controls="pp-desk-composer"><span>'+esc(q)+'</span>'+LOCK+'</button>';}).join('');
+    return '<section class="pp-desk-followups" aria-labelledby="pp-desk-followups-title"><h3 id="pp-desk-followups-title">Ask a follow-up</h3><div class="pp-desk-fu-list">'+list+'</div></section>'+
+      '<section class="pp-desk-composer" id="pp-desk-composer" aria-label="Keep asking">'+
+      '<button type="button" class="pp-desk-fake-input" data-desk-followup="custom" aria-controls="pp-desk-composer"><span>'+esc(chosen&&chosen!=='custom'?chosen:'Ask anything about '+m.player+'…')+'</span><i aria-hidden="true">↑</i></button>'+
+      (chosen?'<p class="pp-desk-gate-note" role="status">'+LOCK+'Follow-up questions are for members. Start free to keep going.</p>':'')+
+      '<h3>Keep the conversation going.</h3><p>Members ask follow-ups about any player and any line by connecting Propeller to the AI app they already use.</p>'+
+      '<a class="pp-desk-btn pp-desk-btn-primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="analyzer-desk-signup" data-cta-surface="analyzer_result" data-cta-destination="signup">Start free</a>'+
+      '<div class="pp-desk-mcp"><p>Already use an AI app? Connect Propeller once and ask right where you chat.</p><a class="pp-desk-btn pp-desk-btn-ghost" href="/mcp/" data-analytics-event="research_cta_click" data-cta-id="analyzer-desk-mcp" data-cta-surface="analyzer_result" data-cta-destination="mcp">Connect your AI app</a></div>'+
+      '<p class="pp-desk-price">Free tier, no card needed. Full workspace $15 a month, tax included, with AI app access.</p></section>';
   }
 
   function evidenceLink(id) {
@@ -90,10 +137,11 @@
 
   function pulseHtml(m) {
     var items=[];
-    if(m.summary.agree!==null)items.push(m.summary.agree+' signals '+m.prop.direction.toLowerCase());
-    if(m.summary.against>0)items.push(m.summary.against+' against');
-    if(m.summary.neutral!==null)items.push(m.summary.neutral+' neutral');
-    return '<div class="pp-desk-pulse" aria-label="Model support and evidence readiness">'+items.map(function(item){return '<span>'+esc(item)+'</span>';}).join('')+'<span class="pp-desk-pulse-caution">Current context needs verification</span></div>';
+    var side=moreLess(m.prop.direction),other=side==='More'?'Less':side==='Less'?'More':'the other way';
+    if(m.summary.agree!==null)items.push(m.summary.agree+(m.summary.agree===1?' leans ':' lean ')+side);
+    if(m.summary.against>0)items.push(m.summary.against+(m.summary.against===1?' leans ':' lean ')+other);
+    if(m.summary.neutral)items.push(m.summary.neutral+' neutral');
+    return '<div class="pp-desk-pulse" aria-label="How the signals split">'+items.map(function(item){return '<span>'+esc(item)+'</span>';}).join('')+'<span class="pp-desk-pulse-caution">Check the lineup before game time</span></div>';
   }
 
   function numberedSection(index,part) {
@@ -108,13 +156,15 @@
   function briefHtml(m,generated,requestState,canRequest) {
     if(generated) {
       var b=generated.brief,p=generated.provenance;
-      return '<section class="pp-desk-brief" aria-label="AI breakdown"><div class="pp-desk-brief-byline"><span class="pp-desk-kicker">AI breakdown</span><span>AI GENERATED'+(p.reviewed?' · REVIEWED':'')+'</span></div><h3>'+esc(b.headline)+'</h3><p class="pp-desk-takeaway">'+esc(b.takeaway)+'</p>'+pulseHtml(m)+'<details class="pp-desk-deep"><summary>Read the analysis <span aria-hidden="true">+</span></summary>'+numberedSection(1,b.signal_read)+numberedSection(2,b.statistical_context)+numberedSection(3,b.market_read)+numberedSection(4,b.decision)+(Array.isArray(b.recheck)?'<div class="pp-desk-recheck"><h4>Before revisiting this prop</h4><ol>'+b.recheck.map(function(item){return '<li>'+esc(item)+'</li>';}).join('')+'</ol></div>':'')+'</details><p class="pp-desk-attribution">Written by AI from this prop\'s data · '+esc(when(p.generated_at))+(p.replayed?' · Saved example':'')+'</p></section>';
+      // The whole first answer stays open: it is the free part of the conversation.
+      return '<section class="pp-desk-brief pp-desk-bubble" aria-label="AI breakdown"><div class="pp-desk-brief-byline"><span class="pp-desk-ai-tag">'+SPARK+'AI generated'+(p.reviewed?' · reviewed':'')+'</span><span>From Propeller\'s own data</span></div>'+leanHtml(m)+'<h3>'+esc(b.headline)+'</h3><p class="pp-desk-takeaway">'+esc(b.takeaway)+'</p>'+pulseHtml(m)+'<div class="pp-desk-answer-body">'+numberedSection(1,b.signal_read)+numberedSection(2,b.statistical_context)+numberedSection(3,b.market_read)+numberedSection(4,b.decision)+'</div>'+(Array.isArray(b.recheck)&&b.recheck.length?'<div class="pp-desk-recheck"><h4>Before you decide</h4><ol>'+b.recheck.map(function(item){return '<li>'+esc(item)+'</li>';}).join('')+'</ol></div>':'')+'<p class="pp-desk-attribution">Written by AI from this prop\'s data · '+esc(when(p.generated_at))+(p.replayed?' · Saved example':'')+'. Research only. The score is model confidence, not a win chance, and lines are not live-checked.</p></section>';
     }
+    if(requestState==='loading')return '<section class="pp-desk-typing pp-desk-bubble" aria-label="AI breakdown" aria-busy="true"><span class="pp-desk-ai-tag">'+SPARK+'AI generated</span><p role="status"><span class="pp-desk-dots" aria-hidden="true"><i></i><i></i><i></i></span>Writing your AI breakdown…</p><p class="pp-desk-limit">Reading this prop\'s signals, recent games and lines. This can take up to a minute.</p></section>';
     var count=m.summary,p=m.prop;
-    var copy=m.player+'’s stored '+label(p.stat)+' analysis leans '+p.direction+' '+p.line+'. ';
+    var copy=m.player+'’s stored '+label(p.stat)+' analysis leans '+moreLess(p.direction)+' than '+p.line+'. ';
     copy+=(count.agree!==null&&count.total!==null?count.agree+' of '+count.total+' signals support the lean. ':'')+'Verify the current role and exact quote.';
     var history=!m.full?'Detailed game history is restricted in this public preview. This view does not establish whether current-season records exist.':m.logs.length?m.logs.length+' returned appearances span '+m.logs[0].date+' to '+m.logs[m.logs.length-1].date+'. They are descriptive game records, not historical offered lines or a forecast. Inspect the dated workload below.':'No dated game history is available for this stat in this public response. Missing history does not mean the player did not play.';
-    var support=m.signals.length?'The returned signals include '+m.signals.map(function(signal){return signal.name+' '+signal.score+' '+signal.direction;}).join(', ')+'. These are components of one model record, not independent votes. Only recorded explanations are shown; missing reasons and weights remain unknown.':'Only summary counts are available for this record. Individual scores and underlying reasons are not supplied.';
+    var support=m.signals.length?'The returned signals include '+m.signals.map(function(signal){return signal.name+' '+signal.score+' '+moreLess(signal.direction);}).join(', ')+'. These are components of one model record, not independent votes. Only recorded explanations are shown; missing reasons and weights remain unknown.':'Only summary counts are available for this record. Individual scores and underlying reasons are not supplied.';
     var message='';
     if(requestState==='allowance_exhausted')message='<p role="status">You\'ve used your free AI breakdown. <a href="https://app.propellerpicks.com/signup">Create a free account to get more.</a></p>';
     else if(requestState==='selection_unavailable'||requestState==='selection_changed')message='<p role="status">This research snapshot has changed. Search the player again to choose a current line.</p>';
@@ -122,7 +172,7 @@
     else if(requestState==='session_unavailable')message='<p role="status">We could not verify your account. <a href="https://app.propellerpicks.com/login">Sign in again</a> to continue.</p>';
     else if(['unavailable','budget_exhausted','budget_unavailable'].indexOf(requestState)!==-1)message='<p role="status">The AI breakdown isn\'t available right now. The data summary above is still here.</p>';
     else if(requestState && requestState!=='loading')message='<p role="status">The AI breakdown couldn\'t finish. The data summary above is still here.</p>';
-    return '<section class="pp-desk-brief" aria-label="Data summary"><span class="pp-desk-kicker">Data summary</span><h3>The stored research leans '+esc(p.direction.toLowerCase())+'.'+(count.against>0?' There is evidence on both sides.':'')+'</h3><p class="pp-desk-takeaway">'+esc(copy)+'</p>'+pulseHtml(m)+'<details class="pp-desk-deep"><summary>Read the analysis <span aria-hidden="true">+</span></summary>'+numberedSection(1,{title:'What supports the lean',text:support,evidence_ids:['selection','signals']})+numberedSection(2,{title:'Put the history in context',text:history,evidence_ids:['history']})+numberedSection(3,{title:'Verify the exact offer',text:'Check the platform, line, period and variant together. Reading the stored record does not verify current availability or price. The recorded offers below may have different terms.',evidence_ids:['provenance']})+numberedSection(4,{title:'What still needs checking',text:'Verify current playing status, expected workload, current-season evidence and an exact quote. Missing price or payout and calibrated probability prevent a fair-odds or expected-value conclusion.',evidence_ids:['availability','history']})+'</details><p class="pp-desk-limit">Straight from our stored data, not written by AI.'+(canRequest?' The AI breakdown is written by AI from this same data, like the answers members get when they connect their AI assistant to Propeller.':'')+'</p>'+(canRequest&&(!requestState||requestState==='loading')?'<button type="button" data-desk-generate'+(requestState==='loading'?' disabled aria-busy="true"':'')+'>'+(requestState==='loading'?'Writing your AI breakdown…':'Get AI breakdown')+'</button>':'')+message+'</section>';
+    return '<section class="pp-desk-brief pp-desk-bubble" aria-label="Data summary"><div class="pp-desk-brief-byline"><span class="pp-desk-ai-tag is-data">Data summary</span><span>Straight from our stored data</span></div>'+leanHtml(m)+'<h3>The stored research leans '+esc(moreLess(p.direction))+'.'+(count.against>0?' There is evidence on both sides.':'')+'</h3><p class="pp-desk-takeaway">'+esc(copy)+'</p>'+pulseHtml(m)+'<details class="pp-desk-deep"><summary>Read the analysis <span aria-hidden="true">+</span></summary>'+numberedSection(1,{title:'What supports the lean',text:support,evidence_ids:['selection','signals']})+numberedSection(2,{title:'Put the history in context',text:history,evidence_ids:['history']})+numberedSection(3,{title:'Verify the exact offer',text:'Check the platform, line, period and variant together. Reading the stored record does not verify current availability or price. The recorded offers below may have different terms.',evidence_ids:['provenance']})+numberedSection(4,{title:'What still needs checking',text:'Verify current playing status, expected workload, current-season evidence and an exact quote. Missing price or payout and calibrated probability prevent a fair-odds or expected-value conclusion.',evidence_ids:['availability','history']})+'</details><p class="pp-desk-limit">Straight from our stored data, not written by AI.'+(canRequest?' The AI breakdown is written by AI from this same data, like the answers members get when they connect their AI assistant to Propeller.':'')+'</p>'+(canRequest&&!requestState?'<button type="button" data-desk-generate>Get AI breakdown</button>':'')+message+'</section>';
   }
 
   function historyHtml(m,sample,venue,selectedDate) {
@@ -144,31 +194,31 @@
 
 
   function sourcesHtml(m) {
-    var signalRows=m.signals.map(function(signal){return '<tr><th scope="row">'+esc(signal.name)+'</th><td class="pp-desk-num">'+signal.score+'</td><td>'+esc(signal.direction)+'</td><td>'+esc(signal.reasons&&signal.reasons.length?'Recorded explanations available':'Not recorded in this response')+'</td></tr>';}).join('');
+    var signalRows=m.signals.map(function(signal){return '<tr><th scope="row">'+esc(signal.name)+'</th><td class="pp-desk-num">'+signal.score+'</td><td>'+esc(moreLess(signal.direction))+'</td><td>'+esc(signal.reasons&&signal.reasons.length?'Recorded explanations available':'Not recorded in this response')+'</td></tr>';}).join('');
     var links=m.sources.map(function(source){return '<a href="'+esc(source.href)+'" target="_blank" rel="noopener">'+esc(source.label)+' ↗</a>';}).join(' · ');
-    return '<details class="pp-desk-source" id="pp-desk-source" data-desk-source><summary>The evidence behind this brief</summary><p>Selected record: '+esc(m.player+' · '+m.prop.stat+' · '+m.prop.direction+' '+m.prop.line)+'. Platform '+esc(m.prop.platform||'not supplied')+'; period '+esc(m.prop.period||'not supplied')+'; variant '+esc(m.prop.variant||'not supplied')+'.</p><dl class="pp-desk-provenance">'+field('Source analysis ID',m.full?(m.sourceId||'Not supplied'):'Summary-only')+field('Analysis recorded',when(m.prop.analyzedAt))+field('Data read',when(m.checkedAt))+'</dl>'+(signalRows?'<div class="pp-desk-table-scroll"><table><caption>Recorded signals for the selected prop · midpoint 50</caption><thead><tr><th scope="col">Signal</th><th scope="col">Score</th><th scope="col">Direction</th><th scope="col">Reasons</th></tr></thead><tbody>'+signalRows+'</tbody></table></div>':'<p>Individual signal evidence is unavailable for this summary-only record.</p>')+(links?'<p class="pp-desk-source-links">'+links+'</p>':'')+'</details><details class="pp-desk-source" id="pp-desk-context" data-desk-context><summary>Freshness, scope, and missing inputs</summary><p>Analysis recorded '+esc(when(m.prop.analyzedAt))+'. Data read '+esc(when(m.checkedAt))+'. A later read does not refresh scoring or verify a live quote.</p><p>'+esc(m.logs.length?m.logs.length+' dated appearances were returned, from '+m.logs[0].date+' to '+m.logs[m.logs.length-1].date+'.':'No dated appearances were returned.')+(m.logsTruncated?' Additional history may exist beyond this bounded read.':'')+' These records are not historical sportsbook offers.</p><p>Current player status, expected workload, a calibrated outcome probability, model weights, and verified live price or payout are not supplied. Neutral signals do not confirm health or a stable role. Available recorded explanations describe their analysis snapshot.</p><p>The analyst brief and confidence describe this selected record; historical filters and offer comparisons do not rescore it.</p></details>';
+    return '<details class="pp-desk-source" id="pp-desk-source" data-desk-source><summary>The data behind this answer</summary><p>Selected record: '+esc(m.player+' · '+m.prop.stat+' · '+m.prop.direction+' '+m.prop.line)+'. Platform '+esc(m.prop.platform||'not supplied')+'; period '+esc(m.prop.period||'not supplied')+'; variant '+esc(m.prop.variant||'not supplied')+'.</p><dl class="pp-desk-provenance">'+field('Source analysis ID',m.full?(m.sourceId||'Not supplied'):'Summary-only')+field('Analysis recorded',when(m.prop.analyzedAt))+field('Data read',when(m.checkedAt))+'</dl>'+(signalRows?'<div class="pp-desk-table-scroll"><table><caption>Recorded signals for the selected prop · midpoint 50</caption><thead><tr><th scope="col">Signal</th><th scope="col">Score</th><th scope="col">Direction</th><th scope="col">Reasons</th></tr></thead><tbody>'+signalRows+'</tbody></table></div>':'<p>Individual signal evidence is unavailable for this summary-only record.</p>')+(links?'<p class="pp-desk-source-links">'+links+'</p>':'')+'</details><details class="pp-desk-source" id="pp-desk-context" data-desk-context><summary>Freshness, scope, and missing inputs</summary><p>Analysis recorded '+esc(when(m.prop.analyzedAt))+'. Data read '+esc(when(m.checkedAt))+'. A later read does not refresh scoring or verify a live quote.</p><p>'+esc(m.logs.length?m.logs.length+' dated appearances were returned, from '+m.logs[0].date+' to '+m.logs[m.logs.length-1].date+'.':'No dated appearances were returned.')+(m.logsTruncated?' Additional history may exist beyond this bounded read.':'')+' These records are not historical sportsbook offers.</p><p>Current player status, expected workload, a calibrated outcome probability, model weights, and verified live price or payout are not supplied. Neutral signals do not confirm health or a stable role. Available recorded explanations describe their analysis snapshot.</p><p>The analyst brief and confidence describe this selected record; historical filters and offer comparisons do not rescore it.</p></details>';
   }
 
-  function render(m,index,sample,venue,answer,generated,requestState,canRequest,selectedDate,activeQuestion) {
+  function render(m,index,sample,venue,answer,generated,requestState,canRequest,selectedDate,followup) {
     var initials=m.player.split(/\s+/).slice(0,2).map(function(name){return name.charAt(0);}).join('');
     var matchup=m.prop.away&&m.prop.home?m.prop.away+' at '+m.prop.home:'Not supplied';
     var options=m.choices.map(function(choice){return '<option value="'+choice.index+'"'+(choice.index===index?' selected':'')+'>'+esc(choice.text)+'</option>';}).join('');
-    var followups=[['score','Explain the score ↗'],['missing','What would change the read? ↗'],['evidence','Show supporting evidence ↓']];
-    return '<article class="pp-desk" aria-label="Player research desk">'+(m.fixture?'<p class="pp-desk-fixture">Layout test data · example records, not current research</p>':'')+
-      '<div class="pp-desk-profile"><div class="pp-desk-avatar" aria-hidden="true">'+esc(initials)+'</div><div><span class="pp-desk-kicker">'+esc(m.sport)+' · Player research</span><h2>'+esc(m.player)+'</h2><p>'+esc(m.team+' · '+m.position)+'</p></div><dl>'+field('Recorded matchup',matchup)+field('Event start',when(m.prop.eventStart))+field('Platform / period',(m.prop.platform||'Not supplied')+' / '+(m.prop.period||'Not supplied'))+'</dl></div>'+
-      '<div class="pp-desk-selector"><label for="desk-prop-select">Choose a returned player line</label><select id="desk-prop-select" data-desk-select>'+options+'</select></div>'+
-      '<div class="pp-desk-result"><div><span class="pp-desk-kicker">The stored research leans</span><h3>'+esc(m.prop.direction)+' <span class="pp-desk-num">'+m.prop.line+'</span> '+esc(label(m.prop.stat))+'</h3><p>'+ (m.full?'Complete preview':'Summary only') +'</p></div><div class="pp-desk-confidence"><strong>'+(m.prop.confidence===null?'—':m.prop.confidence)+'</strong><small>Confidence Score<br>Not a win probability.</small></div></div>'+
-      '<div class="pp-desk-freshness"><dl>'+field('Analysis',when(m.prop.analyzedAt))+field('Data read',when(m.checkedAt))+field('Line check','Not live-verified')+'</dl></div>'+
+    // Ask Propeller: the page reads as one chat. The question, what was looked up,
+    // the full first answer, then follow-ups that open the signup panel.
+    return '<article class="pp-desk pp-desk-chat" aria-label="Ask Propeller about this player">'+(m.fixture?'<p class="pp-desk-fixture">Layout test data · example records, not current research</p>':'')+
+      '<div class="pp-desk-profile"><div class="pp-desk-avatar" aria-hidden="true">'+esc(initials)+'</div><div><span class="pp-desk-kicker">'+esc(m.sport)+' · Ask Propeller</span><h2>'+esc(m.player)+'</h2><p>'+esc([m.team,m.position].filter(Boolean).join(' · '))+'<span class="pp-desk-profile-game">'+esc((m.prop.away&&m.prop.home?matchup+' · ':'')+(when(m.prop.eventStart)!=='Not supplied'?when(m.prop.eventStart):''))+'</span></p></div><dl>'+field('Matchup',matchup)+field('Game time',when(m.prop.eventStart))+field('App / period',(m.prop.platform||'Not supplied')+' / '+(m.prop.period||'Not supplied'))+'</dl></div>'+
+      '<div class="pp-desk-selector"><label for="desk-prop-select">Ask about another line</label><select id="desk-prop-select" data-desk-select>'+options+'</select></div>'+
+      '<div class="pp-desk-thread">'+askHtml(m)+lookedUpHtml(m)+'<div data-desk-claim-anchor></div></div>'+
       '<div class="pp-desk-grid">'+briefHtml(m,generated,requestState,canRequest)+signalsHtml(m)+'</div>'+
+      followupHtml(m,followup)+
       '<div class="pp-desk-evidence-grid">'+historyHtml(m,sample,venue,selectedDate)+'</div>'+
-      '<section class="pp-desk-followup"><h3>Explore this prop</h3>'+followups.map(function(item){return '<button type="button" data-desk-question="'+item[0]+'" aria-pressed="'+(activeQuestion===item[0])+'" aria-controls="'+(item[0]==='evidence'?'pp-desk-source':'pp-desk-followup-answer')+'">'+item[1]+'</button>';}).join('')+(answer?'<div id="pp-desk-followup-answer" class="pp-desk-answer" role="status"><span class="pp-desk-kicker">From this research snapshot</span><h4>'+esc(activeQuestion==='score'?'How to read the score':'What could change this read')+'</h4><p>'+esc(answer)+'</p><small>Explanation from the saved evidence. No new model call.</small></div>':'')+'</section>'+
-      sourcesHtml(m)+'<div class="pp-desk-cta"><div><h3>Keep researching.</h3><p>Your first complete analysis is free.</p></div><a href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="analyzer-desk-signup" data-cta-surface="analyzer_result" data-cta-destination="signup">Create a free account ↗</a><a href="/mcp/" data-analytics-event="research_cta_click" data-cta-id="analyzer-desk-mcp" data-cta-surface="analyzer_result" data-cta-destination="mcp">Connect your AI tool ↗</a></div><p class="pp-desk-footnote">Research only. Confidence is not win probability or betting edge. Stored data may be incomplete or stale. Past performance does not guarantee future results.</p></article>';
+      sourcesHtml(m)+'<p class="pp-desk-footnote">Research only. Confidence is not win probability or betting edge. Stored data may be incomplete or stale. Past performance does not guarantee future results.</p></article>';
   }
 
   function mountResearchChat(container,opts) {
     opts=opts||{};
     var lookup=opts.lookup,index=Number.isInteger(opts.propIndex)?opts.propIndex:0;
-    var sample='all',venue='all',selectedDate='',answer='',activeQuestion='';
+    var sample='all',venue='all',selectedDate='',followup=null;
     var claimState=lookup.claim_status||'';
     var destroyed=false,generated=null,requestState='',generation=0,resetDisclosures=false;
     function draw(focus) {
@@ -185,9 +235,9 @@
         index=m.index;
         if(!generated && matchingBrief(opts.savedBrief,lookup.props[index]))generated=opts.savedBrief;
       }
-      container.innerHTML=m?render(m,index,sample,venue,answer,generated,requestState,!!(m.enriched && typeof opts.requestBrief==='function'),selectedDate,activeQuestion):'';
+      container.innerHTML=m?render(m,index,sample,venue,'',generated,requestState,!!(m.enriched && typeof opts.requestBrief==='function'),selectedDate,followup):'';
       if (m && !m.full && typeof opts.requestClaim==='function') {
-        var result=container.querySelector('.pp-desk-result');
+        var result=container.querySelector('[data-desk-claim-anchor]');
         var access=window.ppAnalyzerAccess;
         if(result)result.insertAdjacentHTML('afterend','<div class="pp-desk-claim" aria-live="polite">'+(claimState && claimState!=='loading'?'<p>'+esc(access?access.message(claimState):'Complete analysis is unavailable.')+'</p>':'')+(claimState==='allowance_exhausted'||claimState==='session_unavailable'?'<a href="https://app.propellerpicks.com/login">Sign in</a> · <a href="https://app.propellerpicks.com/signup">Create a free account</a>':'<button type="button" data-desk-claim'+(claimState==='loading'?' disabled':'')+'>'+(claimState==='loading'?'Opening analysis…':'Open complete analysis')+'</button>')+'</div>');
       }
@@ -258,15 +308,16 @@
         return;
       }      if(target.hasAttribute('data-desk-reset')){sample='all';venue='all';selectedDate='';draw('[data-desk-sample="all"]');return;}
       var key=target.getAttribute('data-desk-sample'),where=target.getAttribute('data-desk-venue');
-      var game=target.getAttribute('data-desk-game'),question=target.getAttribute('data-desk-question');
+      var game=target.getAttribute('data-desk-game'),ask=target.getAttribute('data-desk-followup');
       if(key!==null){sample=key;selectedDate='';draw('[data-desk-sample="'+key+'"]');}
       else if(where!==null){venue=where;selectedDate='';draw('[data-desk-venue="'+where+'"]');}
       else if(game!==null && dateOnly(game)){selectedDate=game;draw('[data-desk-game="'+game+'"]');}
-      else if(question==='evidence'){activeQuestion=question;draw();openEvidence('selection');}
-      else if(question) {
-        var m=buildModel(lookup,index,opts);activeQuestion=question;
-        answer=question==='score'?'The stored confidence score is '+(m.prop.confidence===null?'not supplied':m.prop.confidence)+'. '+(m.signals.length?'The selected record contains '+m.signals.map(function(signal){return signal.name+' '+signal.score+' '+signal.direction;}).join(', ')+'. ':'Individual signal scores are not supplied. ')+'It measures directional strength, not the probability of the outcome. Signals are components of one model, and their weights are not supplied.':'Verify current playing status, expected role and workload, newer relevant games, and the exact platform quote. '+(m.logs.length?'The dated history spans '+m.logs[0].date+' to '+m.logs[m.logs.length-1].date+'. ':'No dated game history was returned. ')+'Missing current context and price can materially change the evaluation. A later read alone does not update the stored analysis.';
-        draw('[data-desk-question="'+question+'"]');
+      else if(ask!==null){
+        followup=ask==='custom'?'custom':Number(ask);
+        if(followup!=='custom'&&!Number.isInteger(followup))followup=null;
+        draw('#pp-desk-composer .pp-desk-btn-primary');
+        var composer=container.querySelector('#pp-desk-composer');
+        if(composer&&composer.scrollIntoView)composer.scrollIntoView({behavior:'auto',block:'center'});
       }
     }
     function change(event) {
@@ -277,7 +328,7 @@
       if(!event.target.matches('[data-desk-select]'))return;
       var next=Number(event.target.value);
       if(!Number.isInteger(next)||!validProp((lookup.props||[])[next]))return;
-      generation++;generated=null;requestState='';claimState='';index=next;sample='all';venue='all';selectedDate='';answer='';activeQuestion='';resetDisclosures=true;
+      generation++;generated=null;requestState='';claimState='';index=next;sample='all';venue='all';selectedDate='';followup=null;resetDisclosures=true;
       draw('[data-desk-select]');
       if(typeof opts.onPropChange==='function')opts.onPropChange(lookup.props[index],index);
       autoGenerate();
