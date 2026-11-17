@@ -603,7 +603,8 @@ PAGES = [
                                       'without fantasy-scoring weights.',
                                       'A PRA line is one combined total. The player does not need to beat '
                                       'separate points, rebounds and assists lines. Those individual markets ask '
-                                      'different questions.']},
+                                      'different questions.'],
+                       'links': [('New to PRA? Start with what PRA means', '/guides/what-does-pra-mean/')]},
                       {'title': 'Same PRA, different contributions',
                        'id': 'pra-components-example',
                        'paragraphs': [],
