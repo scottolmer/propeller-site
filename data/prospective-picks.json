@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-16T23:51:23Z",
+  "generated_at": "2026-11-17T00:11:05Z",
   "publication_definition": "First observed in the Propeller public picks preview. Event-start ordering and outcome timing are not verified because the public preview does not expose event start time.",
   "before_event_start_verified": false,
   "records": [
@@ -415275,6 +415275,23 @@
       "direction": "UNDER",
       "model_score": 38.9,
       "confidence": 61,
+      "status": "open",
+      "settled_at": null,
+      "actual_value": null,
+      "result_id": null
+    },
+    {
+      "publication_id": "pub_589d01b489fa99dde07c",
+      "published_at": "2026-11-17T00:11:02Z",
+      "captured_at": "2026-11-17T00:11:05Z",
+      "sport": "nfl",
+      "game_date": "2026-11-16",
+      "player_name": "Zay Flowers",
+      "stat_type": "rush_rec_yds",
+      "line": 81.5,
+      "direction": "UNDER",
+      "model_score": 42.7,
+      "confidence": 57,
       "status": "open",
       "settled_at": null,
       "actual_value": null,
