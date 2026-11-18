@@ -16,7 +16,7 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "32f95ac99e46c56c394788774c0130843bcecf27cd06f0bd8e1f68297b2431d1",
+      "fingerprint": "3b78a520266fa49dff6ead71e3ea55ce041da014ce8f1a65f513d53d64e66bfd",
       "lastmod": "2026-11-18",
       "source": "analyzer/index.html"
     },
@@ -24,41 +24,6 @@
       "fingerprint": "d26ac75ba5b33de71ce77889bf3b803d7c267312af9fbc5ed39f58b64b2b0ffb",
       "lastmod": "2026-10-26",
       "source": "analyzer/nba/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/ajay-mitchell/": {
-      "fingerprint": "e9ae0e0aed1a2fec86e994d2c52020b63e73f5dc7ab8292cb8c514cc1632e8e4",
-      "lastmod": "2026-11-18",
-      "source": "analyzer/nba/ajay-mitchell/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/dean-wade/": {
-      "fingerprint": "25798ddb46c379d28c5437fc42d75c371dec4f73b46a5d59174e2ca414a2bf32",
-      "lastmod": "2026-11-18",
-      "source": "analyzer/nba/dean-wade/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/jalen-suggs/": {
-      "fingerprint": "128f81db3c3c1a251dd6ce375c9c24cafad649593097500bf31cb9016e628416",
-      "lastmod": "2026-11-18",
-      "source": "analyzer/nba/jalen-suggs/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/myles-turner/": {
-      "fingerprint": "c6c047520df3d932a80dddd2e9bc98ac28dc079810adf791105e51ab41f57bbd",
-      "lastmod": "2026-11-18",
-      "source": "analyzer/nba/myles-turner/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/ryan-rollins/": {
-      "fingerprint": "7514531ef622113ed509c3e2957d27b2a412f0947b3af61d1674716ac3b1b7fa",
-      "lastmod": "2026-11-18",
-      "source": "analyzer/nba/ryan-rollins/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/shai-gilgeous-alexander/": {
-      "fingerprint": "1a036525fc30aa5cabaa4fa6a4b61208571f71f9fcb2aa2f4a4629784fe308f7",
-      "lastmod": "2026-11-18",
-      "source": "analyzer/nba/shai-gilgeous-alexander/index.html"
-    },
-    "https://propellerpicks.com/analyzer/nba/tyler-herro/": {
-      "fingerprint": "da6afbb8b03e0e9735cfc3908b921ea7eac3983ef06730d9a1f34707688dba2b",
-      "lastmod": "2026-11-18",
-      "source": "analyzer/nba/tyler-herro/index.html"
     },
     "https://propellerpicks.com/analyzer/nfl/": {
       "fingerprint": "584209c582cb126efbed95308702225b303edf3fca4fc29c4f786d3bed7b4438",
@@ -316,12 +281,12 @@
       "source": "picks/mlb/index.html"
     },
     "https://propellerpicks.com/picks/nba/": {
-      "fingerprint": "e9c874be3472d907000d84fce494acf55578272fcb22dc1bed58e4992443fd9f",
+      "fingerprint": "43ed496fca4c6f69594d96fed225efcbb48fe1d90b45218e9d97d887c066ebfc",
       "lastmod": "2026-11-18",
       "source": "picks/nba/index.html"
     },
     "https://propellerpicks.com/picks/nfl/": {
-      "fingerprint": "601d5ff71827ababb4d4da0fe4d334c1a3c7cd97b0014b225df4127f24429b4e",
+      "fingerprint": "c2490a8ad8f73430049464b5180f362ad9f985110605287cce8c39a09f8ebba6",
       "lastmod": "2026-11-18",
       "source": "picks/nfl/index.html"
     },
@@ -331,12 +296,12 @@
       "source": "picks/nhl/index.html"
     },
     "https://propellerpicks.com/picks/pick6/": {
-      "fingerprint": "0d5f504d3f713490514def9c3003876710b4165c637860094f3fe360d6b19378",
+      "fingerprint": "b4e1501478b963af5988828547a190f78aeb9c35256052754f99b69b61a4df64",
       "lastmod": "2026-11-18",
       "source": "picks/pick6/index.html"
     },
     "https://propellerpicks.com/picks/prizepicks/": {
-      "fingerprint": "74f7d5466ae1644defc714ed74c51573c001284ae0061ec1bdd0c2ec55fa1aca",
+      "fingerprint": "fc3dd71baf24bc0472892c532d65c55c865b9daab5adb322d5d7206e3376505a",
       "lastmod": "2026-11-18",
       "source": "picks/prizepicks/index.html"
     },
@@ -346,7 +311,7 @@
       "source": "picks/soccer/index.html"
     },
     "https://propellerpicks.com/picks/underdog/": {
-      "fingerprint": "8bf4b56071e9ffdf439828b9c662911d146588df3267750a5a22a62844974cd5",
+      "fingerprint": "768d2880153fd18e45da13d39ed7d0d1a64ae2e036a80777ea3f81f78d533670",
       "lastmod": "2026-11-18",
       "source": "picks/underdog/index.html"
     },
