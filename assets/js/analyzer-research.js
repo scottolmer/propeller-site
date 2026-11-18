@@ -1,7 +1,15 @@
 (function (window) {
   "use strict";
 
-  var RESEARCH_API = "https://web-production-3c1c4.up.railway.app/api/social/research";
+  var API_ORIGIN = "https://web-production-3c1c4.up.railway.app";
+  var RESEARCH_API = API_ORIGIN + "/api/social/research";
+  // Sports with a stored research endpoint, and sports a deep link may open.
+  // NHL/MLB have no research endpoint; their view is built from the public picks feed.
+  var RESEARCH_SPORTS = { nfl: 1, nba: 1 };
+  var DEEP_LINK_SPORTS = { nfl: 1, nba: 1, nhl: 1, mlb: 1 };
+  // Public box-score history (values only). NFL history comes from the research response.
+  var HISTORY_SPORTS = { nba: 1, nhl: 1, mlb: 1 };
+  function has(map, key) { return Object.prototype.hasOwnProperty.call(map, key); }
   var TIMEOUT_MS = 5000;
   var DELAY_MS = 600;
 
@@ -42,12 +50,12 @@
   function noCurrentPropMessage(nextEventStart, sport) {
     var base = "No current line for this player.";
     var when = nextEventStart ? slateText(nextEventStart) : "";
-    return when ? base + " The next " + (sport === "nba" ? "NBA" : "NFL") + " slate starts " + when + "." : base;
+    return when ? base + " The next " + String(sport || "").toUpperCase() + " slate starts " + when + "." : base;
   }
 
   // Returns the name to send, or null. Gate: NFL, query >= 3 chars, at most one distinct matched player.
   function singlePlayer(sport, picks, query) {
-    if (sport !== "nfl" && sport !== "nba") return null;
+    if (!has(DEEP_LINK_SPORTS, sport)) return null;
     var q = String(query == null ? "" : query).trim();
     if (q.length < 3) return null;
     var name = null;
@@ -81,12 +89,14 @@
     return value != null && String(value).trim() !== '' && Number.isFinite(Number(value)) && Number(value) >= 0 ? Number(value) : null;
   }
   function validSelection(s) {
-    return s && !s.invalid && (s.sport === 'nfl' || s.sport === 'nba') &&
+    return s && !s.invalid && has(DEEP_LINK_SPORTS, s.sport) &&
       typeof s.player === 'string' && s.player.trim().length >= 2 && s.player.length <= 60 &&
       typeof s.stat_type === 'string' && /^[a-z0-9_]{1,80}$/i.test(s.stat_type) &&
       numericLine(s.line) !== null && (s.direction === 'OVER' || s.direction === 'UNDER');
   }
   function resultHref(sport, prop) {
+    // Board cards link only where stored research exists; NHL/MLB deep links come from social posts.
+    if (!has(RESEARCH_SPORTS, sport)) return null;
     var selection = {sport: sport, player: prop.player_name, stat_type: prop.stat_type,
       line: prop.line, direction: String(prop.final_direction || prop.direction || '').toUpperCase()};
     if (!validSelection(selection)) return null;
@@ -123,6 +133,37 @@
     });
     return matches.length === 1 ? matches[0] : -1;
   }
+  // Builds a summary-only lookup from public feed rows (same contract as the research API).
+  function feedLookup(sport, player, picks) {
+    var who = normName(player), rows = (Array.isArray(picks) ? picks : []).filter(function (p) {
+      return p && normName(p.player_name) === who;
+    });
+    if (!who || !rows.length) return { sport: sport, status: "not_found", player: null, props: [], game_logs: [] };
+    var seen = {}, props = [];
+    rows.forEach(function (p) {
+      var direction = String(p.final_direction || p.direction || "").toUpperCase();
+      var line = numericLine(p.line);
+      if (typeof p.stat_type !== "string" || line === null || (direction !== "OVER" && direction !== "UNDER")) return;
+      var key = p.stat_type + "|" + line + "|" + direction;
+      if (seen[key]) return;
+      seen[key] = 1;
+      var confidence = Number(p.confidence);
+      props.push({ stat_type: p.stat_type, line: line, direction: direction, detail: "summary",
+        confidence: Number.isFinite(confidence) ? Math.round(confidence) : null,
+        event_start: p.event_start || null, home_team: p.home_team || null, away_team: p.away_team || null,
+        signal_summary: {} });
+    });
+    props.sort(function (a, b) { return (b.confidence || 0) - (a.confidence || 0); });
+    return { sport: sport, status: props.length ? "ok" : "not_found", source: "public-picks-feed",
+      player: { player_name: rows[0].player_name, team: rows[0].team || null, sport: sport },
+      props: props, game_logs: [], history_status: "summary_only" };
+  }
+  function historyUrl(sport, player, statType) {
+    if (!has(HISTORY_SPORTS, sport) || typeof player !== "string" || player.trim().length < 2 ||
+      typeof statType !== "string" || !/^[a-z0-9_]{1,80}$/i.test(statType)) return null;
+    return API_ORIGIN + "/api/" + sport + "/props/player-history?" + new URLSearchParams({
+      player_name: player.trim(), stat_type: statType, games: "10" }).toString();
+  }
   var SELECTION_UNAVAILABLE = 'This exact line is not available in the current research response. Choose another returned line or search the player again.';
 
   function createController(opts) {
@@ -139,12 +180,18 @@
       var t = setTimeout(function () { if (ctl) ctl.abort(); }, TIMEOUT_MS);
       try {
         var mode = fixtureMode(opts.location || window.location);
-        var url = RESEARCH_API + "/" + sport + "?player=" + encodeURIComponent(player);
-        if (mode === "down") throw new Error("fixture down");
-        if (mode) url = "/scripts/fixtures/research-nfl-" + mode + ".json";
-        var res = await doFetch(url, ctl ? { signal: ctl.signal } : {});
-        if (!res || !res.ok) throw new Error("http");
-        var data = await res.json();
+        var data;
+        if (!has(RESEARCH_SPORTS, sport)) {
+          if (typeof opts.feedLookup !== "function") { ui.hide(); return; }
+          data = await opts.feedLookup(sport, player);
+        } else {
+          var url = RESEARCH_API + "/" + sport + "?player=" + encodeURIComponent(player);
+          if (mode === "down") throw new Error("fixture down");
+          if (mode) url = "/scripts/fixtures/research-nfl-" + mode + ".json";
+          var res = await doFetch(url, ctl ? { signal: ctl.signal } : {});
+          if (!res || !res.ok) throw new Error("http");
+          data = await res.json();
+        }
         if (stale(id)) return;
         if (data && data.status === "ok") {
           var selectedIndex = selection ? selectedPropIndex(data, selection) : undefined;
@@ -195,6 +242,8 @@
     localPreviewBase: localPreviewBase,
     resultHref: resultHref,
     readSelection: readSelection,
+    feedLookup: feedLookup,
+    historyUrl: historyUrl,
     selectedPropIndex: selectedPropIndex,
     createController: createController
   };
