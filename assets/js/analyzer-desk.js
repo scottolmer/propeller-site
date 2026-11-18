@@ -7,6 +7,11 @@
   var LABELS = { pass_yds:'passing yards', passing_yards:'passing yards', pass_tds:'passing touchdowns', passing_tds:'passing touchdowns', pass_att:'pass attempts', pass_comp:'pass completions', rush_yds:'rushing yards', rushing_yards:'rushing yards', rush_attempts:'rush attempts', rec_yds:'receiving yards', receiving_yards:'receiving yards', receptions:'receptions', targets:'targets', interceptions:'interceptions', player_interceptions:'interceptions' };
   Object.assign(FIELDS,{points:'points',rebounds:'rebounds',assists:'assists',three_pointers_made:'three_pointers_made',threes:'three_pointers_made',pts_rebs_asts:'pts_rebs_asts',pts_asts:'pts_asts',pts_rebs:'pts_rebs',rebs_asts:'rebs_asts'});
   Object.assign(LABELS,{points:'points',rebounds:'rebounds',assists:'assists',three_pointers_made:'3-pointers made',threes:'3-pointers made',pts_rebs_asts:'points + rebounds + assists',pts_asts:'points + assists',pts_rebs:'points + rebounds',rebs_asts:'rebounds + assists'});
+  // Social-feed and board stat names (player_*, combos) map onto the same game-log fields.
+  Object.assign(FIELDS,{player_receptions:'receptions',player_reception_yds:'receiving_yards',player_rush_yds:'rushing_yards',player_pass_yds:'passing_yards',pass_completions:'passing_completions',player_pass_completions:'passing_completions',player_pass_attempts:'passing_attempts',player_pass_tds:'passing_tds',player_rush_attempts:'rushing_attempts',rush_rec_yds:'rush_rec_yds',player_rush_reception_yds:'rush_rec_yds'});
+  Object.assign(LABELS,{player_receptions:'receptions',player_reception_yds:'receiving yards',player_rush_yds:'rushing yards',player_pass_yds:'passing yards',pass_completions:'pass completions',player_pass_completions:'pass completions',player_pass_attempts:'pass attempts',player_pass_tds:'passing touchdowns',player_rush_attempts:'rush attempts',rush_rec_yds:'rushing + receiving yards',player_rush_reception_yds:'rushing + receiving yards'});
+  var COMBOS = { rush_rec_yds:['rushing_yards','receiving_yards'] };
+  var SIGNUP = 'https://app.propellerpicks.com/signup';
   var TIME_ZONE = 'America/Chicago';
   function sameTime(a,b){var x=Date.parse(a),y=Date.parse(b);return typeof a==='string' && typeof b==='string' && Number.isFinite(x) && Number.isFinite(y) && x===y;}
   function boundAnalysis(p){var a=p&&p.analysis;return p&&p.detail==='full' && p.source_analysis_id!=null && a && a.source==='recorded_agent_outputs' && String(p.source_analysis_id)===String(a.source_analysis_id) && sameTime(p.analyzed_at,a.analyzed_at) ? a : null;}
@@ -20,6 +25,17 @@
     return new Intl.DateTimeFormat('en-US',{timeZone:TIME_ZONE,month:'short',day:'numeric',year:'numeric',hour:'numeric',minute:'2-digit'}).format(d)+' CT';
   }
   function dateOnly(v) { return typeof v==='string' && /^\d{4}-\d{2}-\d{2}$/.test(v) && Number.isFinite(Date.parse(v+'T00:00:00Z')) && new Date(v+'T00:00:00Z').toISOString().slice(0,10)===v; }
+  function logValue(g,field){if(!g||!field)return null;if(COMBOS[field]){var parts=COMBOS[field].map(function(k){return number(g[k]);});return parts.every(function(v){return v!==null;})?parts.reduce(function(a,b){return a+b;},0):null;}return number(g[field]);}
+  // Public stat history (values only, most recent first) for summary-only records.
+  function publicHistoryModel(raw,prop){
+    if(!raw||raw.stat!==prop.stat_type)return null;
+    if(raw.status!=='ok')return {status:raw.status==='loading'?'loading':'unavailable'};
+    var line=number(prop.line),values=(Array.isArray(raw.values)?raw.values:[]).map(number).filter(function(v){return v!==null&&v>=0;}).slice(0,20).reverse();
+    if(!values.length||line===null)return {status:'unavailable'};
+    var over=values.filter(function(v){return v>line;}).length,under=values.filter(function(v){return v<line;}).length;
+    return {status:'ok',values:values,games:values.length,over:over,under:under,push:values.length-over-under,
+      hits:prop.direction==='OVER'?over:under,average:Math.round(values.reduce(function(a,b){return a+b;},0)/values.length*10)/10};
+  }
   function validProp(p) { return p && typeof p.stat_type==='string' && number(p.line)!==null && number(p.line)>=0 && ['OVER','UNDER'].indexOf(p.direction)!==-1; }
 
   function buildModel(lookup, index, opts) {
@@ -53,13 +69,13 @@
       }
     }
     var field=Object.prototype.hasOwnProperty.call(FIELDS,prop.stat_type)?FIELDS[prop.stat_type]:null;
-    var workload=nba?{field:'minutes',label:'minutes'}:/^(pass|passing|interceptions|player_interceptions)/.test(prop.stat_type)?{field:'passing_attempts',label:'pass attempts'}:/^(rush|rushing)/.test(prop.stat_type)?{field:'rushing_attempts',label:'rush attempts'}:{field:'targets',label:'targets'};
-    var logs=full && field && Array.isArray(lookup.game_logs) ? lookup.game_logs.filter(function(g){return g && dateOnly(g.game_date) && g.game_date<cutoff && number(g[field])!==null && number(g[field])>=0;}).map(function(g){return {date:g.game_date,season:number(g.season),team:String(g.team||''),opponent:String(g.opponent||'Unknown'),venue:g.home_away==='home'?'home':g.home_away==='away'?'away':'unknown',value:number(g[field]),attempts:number(g[workload.field])};}).sort(function(a,b){return a.date.localeCompare(b.date);}) : [];
+    var workload=nba?{field:'minutes',label:'minutes'}:/^(pass|passing|interceptions|player_interceptions|player_pass)/.test(prop.stat_type)?{field:'passing_attempts',label:'pass attempts'}:/^(rush|rushing|player_rush)/.test(prop.stat_type)?{field:'rushing_attempts',label:'rush attempts'}:{field:'targets',label:'targets'};
+    var logs=full && field && Array.isArray(lookup.game_logs) ? lookup.game_logs.filter(function(g){return g && dateOnly(g.game_date) && g.game_date<cutoff && logValue(g,field)!==null && logValue(g,field)>=0;}).map(function(g){return {date:g.game_date,season:number(g.season),team:String(g.team||''),opponent:String(g.opponent||'Unknown'),venue:g.home_away==='home'?'home':g.home_away==='away'?'away':'unknown',value:logValue(g,field),attempts:number(g[workload.field])};}).sort(function(a,b){return a.date.localeCompare(b.date);}) : [];
     var counts=prop.signal_summary||{};
     var summary={};['agree','against','neutral','total'].forEach(function(k){var n=number(counts[k]);summary[k]=n!==null&&n>=0&&Number.isInteger(n)?n:null;});
     var offers=lookup.props.filter(function(p){return validProp(p) && (p===prop || (prop.event_id!=null && String(p.event_id)===String(prop.event_id))) && (p.stat_type===prop.stat_type || (FIELDS[p.stat_type] && FIELDS[p.stat_type]===field));}).slice(0,10).map(function(p){return {stat:p.stat_type,line:number(p.line),direction:p.direction,platform:p.platform,period:p.period,variant:p.variant,quoteObservedAt:p.quote_observed_at,analyzedAt:p.analyzed_at,eventId:p.event_id,eventStart:p.event_start,home:p.home_team,away:p.away_team,selected:p===prop || (prop.source_analysis_id!=null && p.source_analysis_id!=null && String(p.source_analysis_id)===String(prop.source_analysis_id))};});
     var sources=Array.isArray(opts.evidenceSources)?opts.evidenceSources.filter(function(s){return s && typeof s.label==='string' && typeof s.href==='string' && /^\/__analyst-preview\/evidence\/[a-z0-9-]+\.json$/.test(s.href);}):[];
-    return {fixture:!!opts.fixture,sport:nba?'NBA':'NFL',enriched:!!enriched,sourceId:prop.source_analysis_id,index:index,player:String(lookup.player.player_name||lookup.player.name||'Player'),team:String(lookup.player.team||'Not supplied'),position:String(lookup.player.position||''),prop:{stat:prop.stat_type,line:number(prop.line),direction:prop.direction,confidence:number(prop.confidence)!==null&&number(prop.confidence)>=50&&number(prop.confidence)<=100?number(prop.confidence):null,analyzedAt:prop.analyzed_at,home:prop.home_team,away:prop.away_team,eventId:prop.event_id,eventStart:prop.event_start,platform:prop.platform,period:prop.period,variant:prop.variant,quoteObservedAt:prop.quote_observed_at},full:full,signals:visible,summary:summary,logs:logs,logsTruncated:!!lookup.game_logs_truncated,historyScope:lookup.history_scope,historyFreshness:freshness,offers:offers,sources:sources,season:season,checkedAt:lookup.checked_at,workloadLabel:workload.label,conversations:conversations,active:active,choices:lookup.props.map(function(p,i){return validProp(p)?{index:i,text:moreLess(p.direction)+' '+p.line+' '+label(p.stat_type)+(p.platform?' · '+p.platform:''),detail:p.detail}:null;}).filter(Boolean)};
+    return {fixture:!!opts.fixture,sport:String(lookup.sport||opts.sport||'nfl').toUpperCase(),publicHistory:full?null:publicHistoryModel(opts.publicHistory,prop),claimable:!!opts.claimable,enriched:!!enriched,sourceId:prop.source_analysis_id,index:index,player:String(lookup.player.player_name||lookup.player.name||'Player'),team:String(lookup.player.team||'Not supplied'),position:String(lookup.player.position||''),prop:{stat:prop.stat_type,line:number(prop.line),direction:prop.direction,confidence:number(prop.confidence)!==null&&number(prop.confidence)>=50&&number(prop.confidence)<=100?number(prop.confidence):null,analyzedAt:prop.analyzed_at,home:prop.home_team,away:prop.away_team,eventId:prop.event_id,eventStart:prop.event_start,platform:prop.platform,period:prop.period,variant:prop.variant,quoteObservedAt:prop.quote_observed_at},full:full,signals:visible,summary:summary,logs:logs,logsTruncated:!!lookup.game_logs_truncated,historyScope:lookup.history_scope,historyFreshness:freshness,offers:offers,sources:sources,season:season,checkedAt:lookup.checked_at,workloadLabel:workload.label,conversations:conversations,active:active,choices:lookup.props.map(function(p,i){return validProp(p)?{index:i,text:moreLess(p.direction)+' '+p.line+' '+label(p.stat_type)+(p.platform?' · '+p.platform:''),detail:p.detail}:null;}).filter(Boolean)};
   }
 
   function filteredHistory(model,sample,venue) {
@@ -81,9 +97,44 @@
   function moreLess(direction){return direction==='OVER'?'More':direction==='UNDER'?'Less':'Neutral';}
   var SPARK='<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0l1.8 5.2L15 7l-5.2 1.8L8 14l-1.8-5.2L1 7l5.2-1.8z"/></svg>';
   var LOCK='<svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path fill="currentColor" d="M4 7V5a4 4 0 118 0v2h1a1 1 0 011 1v7a1 1 0 01-1 1H3a1 1 0 01-1-1V8a1 1 0 011-1h1zm2 0h4V5a2 2 0 10-4 0v2z"/></svg>';
+  // Subscriber-only detail stays locked: show what the public record supports, then a CTA.
+  function lockedCta(id,text) {
+    return '<div class="pp-desk-locked" data-desk-locked="'+esc(id)+'">'+LOCK+'<div><p>'+esc(text)+'</p><div class="pp-desk-locked-actions">'+
+      '<a class="pp-desk-btn pp-desk-btn-primary" href="'+SIGNUP+'" data-analytics-event="signup_click" data-cta-id="analyzer-'+esc(id)+'-locked" data-cta-surface="analyzer_result" data-cta-destination="signup">Start free</a>'+
+      '<a class="pp-desk-btn pp-desk-btn-ghost" href="/pricing/" data-analytics-event="signup_click" data-cta-id="analyzer-'+esc(id)+'-pricing" data-cta-surface="analyzer_result" data-cta-destination="pricing">See plans</a></div></div></div>';
+  }
+  function signalTeaserHtml(m) {
+    var c=m.summary,side=moreLess(m.prop.direction),other=side==='More'?'Less':'More',rows=[];
+    if(c.agree)rows.push([c.agree,side,'is-'+(side==='More'?'more':'less')]);
+    if(c.against)rows.push([c.against,other,'is-'+(other==='More'?'more':'less')]);
+    if(c.neutral)rows.push([c.neutral,null,'is-neutral']);
+    var bars=c.total?'<ul class="pp-desk-signal-split" aria-label="How the '+c.total+' signals split">'+rows.map(function(r){return '<li><span>'+r[0]+(r[1]?(r[0]===1?' leans ':' lean ')+esc(r[1]):' neutral')+'</span><span class="pp-desk-track" aria-hidden="true"><i class="'+r[2]+'" style="--start:0%;--width:'+Math.round(r[0]/c.total*100)+'%"></i></span></li>';}).join('')+'</ul>':'';
+    var text=m.claimable?'Open the complete analysis above to see each signal’s score and the reasons behind it.':'Each signal’s score and the reasons behind it are part of the full analysis for members.';
+    return bars+lockedCta('signals',text);
+  }
+  function aiLockedHtml(m) {
+    return '<div class="pp-desk-ai-locked" aria-label="AI breakdown"><span class="pp-desk-ai-tag">'+SPARK+'AI breakdown · members</span>'+
+      '<h4>Get the written breakdown of this '+esc(moreLess(m.prop.direction))+' '+esc(m.prop.line)+' '+esc(label(m.prop.stat))+' pick.</h4>'+
+      '<p>The AI write-up explains what supports the lean, how the player’s latest games stack up against the line, and what to recheck before game time.</p>'+
+      lockedCta('brief',m.claimable?'Open the complete analysis above to unlock the AI breakdown. Members get more every day.':'Written AI breakdowns are part of the Propeller workspace. Start free, or see what each plan includes.')+'</div>';
+  }
+  function lockedHistoryHtml(m) {
+    var h=m.publicHistory,stat=label(m.prop.stat),line=m.prop.line,side=moreLess(m.prop.direction);
+    var head='<section class="pp-desk-history" id="pp-desk-history" aria-label="Player history"><h3>Player history</h3>';
+    if(h&&h.status==='loading')return head+'<p class="pp-desk-limit" role="status">Loading recent games…</p></section>';
+    if(!h||h.status!=='ok')return head+'<div class="pp-desk-empty"><h4>History is restricted in this preview.</h4><p>Game records are restricted in this public preview. This does not mean the player has no history.</p></div>'+lockedCta('history','Dated game logs with opponents and venue splits are part of the full analysis.')+'</section>';
+    var rate=Math.round(h.hits/h.games*100),top=Math.max(1,line,Math.max.apply(null,h.values))*1.15;
+    var bars=h.values.map(function(v,i){var hit=m.prop.direction==='OVER'?v>line:v<line,push=v===line;return '<li class="'+(push?'is-push':hit?'is-hit':'is-miss')+'" style="--h:'+Math.round(v/top*100)+'%"><span class="pp-desk-bar-value">'+esc(v)+'</span><span class="pp-desk-sr">Game '+(i+1)+' of '+h.games+': '+esc(v)+(push?' (at the line)':hit?' (hit)':' (miss)')+'</span></li>';}).join('');
+    return head+'<p class="pp-desk-kicker">Last '+h.games+' games vs '+esc(line)+'</p>'+
+      '<div class="pp-desk-stats pp-desk-history-stats"><div><strong>'+h.hits+' / '+h.games+'</strong><span>'+esc(side)+' than '+esc(line)+' ('+rate+'%)</span></div><div><strong>'+esc(h.average)+'</strong><span>average '+esc(stat)+'</span></div><div><strong>'+h.over+' · '+h.under+(h.push?' · '+h.push:'')+'</strong><span>over · under'+(h.push?' · at line':'')+'</span></div></div>'+
+      '<div class="pp-desk-bars" role="img" aria-label="'+esc(stat+', last '+h.games+' games oldest to newest: '+h.values.join(', ')+'. Line '+line+'.')+'"><div class="pp-desk-bars-plot"><span class="pp-desk-bars-line" style="--h:'+Math.round(line/top*100)+'%"><em>'+esc(line)+'</em></span><ol>'+bars+'</ol></div></div>'+
+      '<p class="pp-desk-limit">Oldest to newest. Box-score values from recent games with a recorded '+esc(stat)+'; the line is today’s reference, not the line offered in those games. Past results do not predict future ones.</p>'+
+      lockedCta('history','Dates, opponents, minutes and home/away splits are part of the full analysis.')+'</section>';
+  }
+
   function signalsHtml(m) {
     var rows=m.signals.map(function(s){var start=Math.min(50,s.score),width=Math.abs(s.score-50),side=s.direction==='OVER'?' is-more':s.direction==='UNDER'?' is-less':'';return '<details class="pp-desk-signal"><summary><span class="pp-desk-signal-name">'+esc(s.name)+'<small>See why ↗</small></span><span class="pp-desk-track" aria-hidden="true"><i class="'+(s.score===50?'neutral-marker':side.trim())+'" style="--start:'+start+'%;--width:'+width+'%"></i></span><span class="pp-desk-signal-value'+side+'"><strong>'+s.score+'</strong> '+esc(moreLess(s.direction).toUpperCase())+'</span></summary><div><p>Recorded directional score: '+s.score+' / 100. Analysis recorded '+esc(when(m.prop.analyzedAt))+'.</p>'+(s.reasons&&s.reasons.length?'<p><strong>Recorded explanation</strong> · '+esc(when(m.prop.analyzedAt))+'</p><ul>'+s.reasons.map(function(r){return '<li>'+esc(r)+'</li>';}).join('')+'</ul>'+(s.omitted>0?'<p>'+esc(s.omitted)+' additional recorded explanation(s) omitted from this response.</p>':''):'<p>The response does not supply this signal’s underlying reasons or supporting measurements.</p>')+'<p>'+(s.direction==='NEUTRAL'?'A neutral score does not confirm health or workload.':'This signal supports a direction; it does not establish a cause or a probability.')+'</p></div></details>';}).join('');
-    return '<section class="pp-desk-signals" id="pp-desk-signals" aria-label="Signals the answer used"><h3>Signals it used</h3><div class="pp-desk-signal-scale" aria-hidden="true"><span>0 · LESS</span><span>50</span><span>MORE · 100</span></div>'+ (rows||'<div class="pp-desk-empty"><p>No individual signal scores are available in this public read.</p></div>')+'<p class="pp-desk-limit">'+(m.full?'':'Individual signals are unavailable for this summary-only record.')+' Scores are not win probabilities.</p></section>';
+    return '<section class="pp-desk-signals" id="pp-desk-signals" aria-label="Signals the answer used"><h3>Signals it used</h3>'+(rows?'<div class="pp-desk-signal-scale" aria-hidden="true"><span>0 · LESS</span><span>50</span><span>MORE · 100</span></div>':'')+ (rows||(m.full?'<div class="pp-desk-empty"><p>No individual signal scores are available in this public read.</p></div>':signalTeaserHtml(m)))+'<p class="pp-desk-limit">'+(m.full?'':'Individual signals are unavailable for this summary-only record.')+' Scores are not win probabilities.</p></section>';
   }
 
   // The visitor's question, as the chat opens with it.
@@ -172,10 +223,11 @@
     else if(requestState==='session_unavailable')message='<p role="status">We could not verify your account. <a href="https://app.propellerpicks.com/login">Sign in again</a> to continue.</p>';
     else if(['unavailable','budget_exhausted','budget_unavailable'].indexOf(requestState)!==-1)message='<p role="status">The AI breakdown isn\'t available right now. The data summary above is still here.</p>';
     else if(requestState && requestState!=='loading')message='<p role="status">The AI breakdown couldn\'t finish. The data summary above is still here.</p>';
-    return '<section class="pp-desk-brief pp-desk-bubble" aria-label="Data summary"><div class="pp-desk-brief-byline"><span class="pp-desk-ai-tag is-data">Data summary</span><span>Straight from our stored data</span></div>'+leanHtml(m)+'<h3>The stored research leans '+esc(moreLess(p.direction))+'.'+(count.against>0?' There is evidence on both sides.':'')+'</h3><p class="pp-desk-takeaway">'+esc(copy)+'</p>'+pulseHtml(m)+'<details class="pp-desk-deep"><summary>Read the analysis <span aria-hidden="true">+</span></summary>'+numberedSection(1,{title:'What supports the lean',text:support,evidence_ids:['selection','signals']})+numberedSection(2,{title:'Put the history in context',text:history,evidence_ids:['history']})+numberedSection(3,{title:'Verify the exact offer',text:'Check the platform, line, period and variant together. Reading the stored record does not verify current availability or price. The recorded offers below may have different terms.',evidence_ids:['provenance']})+numberedSection(4,{title:'What still needs checking',text:'Verify current playing status, expected workload, current-season evidence and an exact quote. Missing price or payout and calibrated probability prevent a fair-odds or expected-value conclusion.',evidence_ids:['availability','history']})+'</details><p class="pp-desk-limit">Straight from our stored data, not written by AI.'+(canRequest?' The AI breakdown is written by AI from this same data, like the answers members get when they connect their AI assistant to Propeller.':'')+'</p>'+(canRequest&&!requestState?'<button type="button" data-desk-generate>Get AI breakdown</button>':'')+message+'</section>';
+    return '<section class="pp-desk-brief pp-desk-bubble" aria-label="Data summary"><div class="pp-desk-brief-byline"><span class="pp-desk-ai-tag is-data">Data summary</span><span>Straight from our stored data</span></div>'+leanHtml(m)+'<h3>The stored research leans '+esc(moreLess(p.direction))+'.'+(count.against>0?' There is evidence on both sides.':'')+'</h3><p class="pp-desk-takeaway">'+esc(copy)+'</p>'+pulseHtml(m)+'<details class="pp-desk-deep"><summary>Read the analysis <span aria-hidden="true">+</span></summary>'+numberedSection(1,{title:'What supports the lean',text:support,evidence_ids:['selection','signals']})+numberedSection(2,{title:'Put the history in context',text:history,evidence_ids:['history']})+numberedSection(3,{title:'Verify the exact offer',text:'Check the platform, line, period and variant together. Reading the stored record does not verify current availability or price. The recorded offers below may have different terms.',evidence_ids:['provenance']})+numberedSection(4,{title:'What still needs checking',text:'Verify current playing status, expected workload, current-season evidence and an exact quote. Missing price or payout and calibrated probability prevent a fair-odds or expected-value conclusion.',evidence_ids:['availability','history']})+'</details><p class="pp-desk-limit">Straight from our stored data, not written by AI.'+(canRequest?' The AI breakdown is written by AI from this same data, like the answers members get when they connect their AI assistant to Propeller.':'')+'</p>'+(canRequest&&!requestState?'<button type="button" data-desk-generate>Get AI breakdown</button>':'')+message+(m.full?'':aiLockedHtml(m))+'</section>';
   }
 
   function historyHtml(m,sample,venue,selectedDate) {
+    if(!m.full)return lockedHistoryHtml(m);
     if(window.ppDeskEvidence)return window.ppDeskEvidence.history(m,sample,venue,selectedDate);
     var h=filteredHistory(m,sample,venue), rows=h.rows,fieldLabel=label(m.prop.stat);
     function buttons(key,values,active){return values.map(function(v){return '<button type="button" data-desk-'+key+'="'+v[0]+'" aria-pressed="'+(active===v[0])+'">'+esc(v[1])+'</button>';}).join('');}
@@ -230,7 +282,7 @@
       for(var i=1;i<=12;i++)selectors.push('.pp-desk-signal:nth-of-type('+i+')');
       var opened=resetDisclosures?[]:selectors.filter(function(selector){var node=container.querySelector(selector);return node && node.open;});
       resetDisclosures=false;
-      var m=buildModel(lookup,index,opts);
+      var m=buildModel(lookup,index,Object.assign({},opts,{claimable:typeof opts.requestClaim==='function'&&['allowance_exhausted','session_unavailable'].indexOf(claimState)===-1}));
       if(m) {
         index=m.index;
         if(!generated && matchingBrief(opts.savedBrief,lookup.props[index]))generated=opts.savedBrief;
@@ -334,8 +386,8 @@
       autoGenerate();
     }
     container.addEventListener('click',click);container.addEventListener('change',change);draw();autoGenerate();
-    return {getSelectedProp:function(){return (lookup.props||[])[index];},destroy:function(){destroyed=true;generation++;container.removeEventListener('click',click);container.removeEventListener('change',change);container.innerHTML='';}};
+    return {setPublicHistory:function(h){if(destroyed)return;opts.publicHistory=h;draw();},getSelectedProp:function(){return (lookup.props||[])[index];},destroy:function(){destroyed=true;generation++;container.removeEventListener('click',click);container.removeEventListener('change',change);container.innerHTML='';}};
   }
 
-  window.ppAnalyzerDesk={lineNotice:lineNotice,buildModel:buildModel,filteredHistory:filteredHistory,render:render,mountResearchChat:mountResearchChat};
+  window.ppAnalyzerDesk={lockedHistoryHtml:lockedHistoryHtml,publicHistoryModel:publicHistoryModel,lineNotice:lineNotice,buildModel:buildModel,filteredHistory:filteredHistory,render:render,mountResearchChat:mountResearchChat};
 })(window);
