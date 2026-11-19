@@ -95,17 +95,17 @@ def schema() -> str:
                 "offers": [
                     {
                         "@type": "Offer",
-                        "name": "Free tier",
+                        "name": "Free public player prop analyzer",
                         "price": "0",
                         "priceCurrency": "USD",
-                        "description": "Free account with no payment card required.",
+                        "description": "Free to use without an account.",
                     },
                     {
                         "@type": "Offer",
                         "name": "Full workspace",
                         "price": "15.00",
                         "priceCurrency": "USD",
-                        "description": "Monthly subscription, tax included, with no automatic trial.",
+                        "description": "7-day free trial, then $15/month. Card required; cancel anytime before the trial ends and you won't be charged.",
                         "url": "https://propellerpicks.com/pricing/",
                     },
                 ],
@@ -212,6 +212,20 @@ def main() -> None:
     html = html.replace('<body class="pp-lookup">', f'<body class="{BODY_CLASS}">', 1)
     for relative in ("images", "assets", "data", "analyzer"):
         html = html.replace(f"../{relative}/", f"/{relative}/")
+    html = html.replace(
+        "explore Propeller free on the web",
+        "start your 7-day free trial on the web",
+    )
+    html = re.sub(
+        r"Free to start, no\s+card\. Full workspace \$15 total a month, tax included\.",
+        "7 days free, then $15 total a month, tax included. Card required. Cancel anytime before day 7 and you won't be charged.",
+        html,
+    )
+    html = re.sub(
+        r"No\s+card\s+required\.",
+        "Card required. Cancel anytime before day 7 and you won't be charged.",
+        html,
+    )
     html = migrate_html(html, OUTPUT, True)
     OUTPUT.write_text(html, encoding="utf-8")
     print(f"wrote={OUTPUT.relative_to(ROOT)} css={CSS_OUTPUT.relative_to(ROOT)}")

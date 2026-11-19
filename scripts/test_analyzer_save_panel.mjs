@@ -40,7 +40,7 @@ test("names the single searched player and counts the locked lines", () => {
   assert.match(html, /not a win probability/);
   assert.match(html, /data-analytics-event="signup_click"/);
   assert.match(html, /data-cta-surface="analyzer_save_panel"/);
-  assert.match(html, /Public tools stay free\./);
+  assert.match(html, /Card required\. Cancel anytime before day 7 and you won't be charged\./);
 });
 
 test("falls back to the visitor's query and escapes it", () => {

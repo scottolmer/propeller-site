@@ -42,7 +42,7 @@
     return Object.assign({},lookup,claim,{props:props});
   }
   function message(status) {
-    if (status === 'allowance_exhausted') return 'Your analysis allowance is used. Sign in or create a free account to continue.';
+    if (status === 'allowance_exhausted') return 'Your analysis allowance is used. Sign in or start your 7-day free trial to continue.';
     if (status === 'session_unavailable') return 'We could not verify your account. Please sign in again to open the complete analysis.';
     if (status === 'selection_unavailable' || status === 'selection_changed') return 'This research snapshot has changed. Search the player again to choose a current line.';
     return 'Complete analysis is temporarily unavailable. You can still review the public summary.';

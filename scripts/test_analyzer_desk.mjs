@@ -153,7 +153,8 @@ test('follow-ups are locked: a tap opens the signup panel with that question and
   assert.equal(calls,0);
   assert.match(c.innerHTML,/href="https:\/\/app\.propellerpicks\.com\/signup" data-analytics-event="signup_click" data-cta-id="analyzer-desk-signup"/);
   assert.match(c.innerHTML,/href="\/mcp\/" data-analytics-event="research_cta_click" data-cta-id="analyzer-desk-mcp"/);
-  assert.match(c.innerHTML,/\$15 a month, tax included/);
+  assert.match(c.innerHTML,/7 days free, then \$15\/mo/);
+  assert.match(c.innerHTML,/Card required\. Cancel anytime before day 7 and you won't be charged\./);
 });
 test('summary-only records still offer the complete-analysis claim inside the chat',()=>{
   const api=load(),data=clone(approved);data.props[0].detail='summary';

@@ -67,13 +67,13 @@
     "public_analyzer": "Free to use without an account.",
     "existing_free_access": "Existing free accounts keep their access.",
     "founder_500_offer": "Existing Founder 500 lifetime core entitlements remain honored.",
-    "availability_note": "Start on the free tier without a payment card. Eligible new accounts can subscribe to the full workspace for $15 total per month.",
+    "availability_note": "Start a 7-day free trial, then $15 total per month. A card is required to start the trial. Cancel anytime before the trial ends and you won't be charged.",
     "pricing_url": "https://propellerpicks.com/pricing/",
     "signup_url": "https://app.propellerpicks.com/signup",
     "subscription_offer": {
       "offer_id": "propeller-monthly-15",
-      "status": "pilot",
-      "status_verified_on": "2026-10-19",
+      "status": "trial",
+      "status_verified_on": "2026-11-18",
       "currency": "USD",
       "monthly_price": "15.00",
       "billing_period": "month",
@@ -81,9 +81,9 @@
         "Propeller Picks"
       ],
       "launch_date": "2026-10-19",
-      "trial_days": 0,
+      "trial_days": 7,
       "card_required": true,
-      "checkout_authority": "The live app verifies current pilot availability and account eligibility before explicit purchase.",
+      "checkout_authority": "The live app presents the 7-day free trial and the $15 total monthly price, requires a payment card to start the trial, and charges only after the trial ends unless the account is canceled before then.",
       "checkout_enabled": true,
       "features": [
         "Full player-prop research workspace",
@@ -96,7 +96,7 @@
       "customer_total": "15.00",
       "mcp_server_url": "https://mcp.propellerpicks.com/mcp"
     },
-    "future_preview": "New unpaid accounts can explore up to five current picks per supported sport with complete available details. Existing accounts retain their full free access."
+    "player_history": "Player history stays free and is not part of the paywall."
   },
   "payout_calculators": {
     "last_verified": "2026-07-25",

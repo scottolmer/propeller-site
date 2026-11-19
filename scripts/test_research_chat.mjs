@@ -48,7 +48,7 @@ test("summary fixture exposes counts only", () => {
   for (const c of convs) {
     for (const call of c.toolCalls) assert.equal(hasKey(call.output, "signals"), false);
     assert.match(allText(c.free), /3 of 6 signals point under/);
-    assert.ok(blockText(c.free).includes("See every signal for this player with a free account."));
+    assert.ok(blockText(c.free).includes("Start a 7-day free trial to see every signal for this player."));
   }
 });
 
@@ -169,7 +169,7 @@ test("locked blocks never reach the html in rules mode", () => {
   }
   const html = api.renderChat(convs, { mode: "rules", compactTools: false, active: "ou" });
   assert.ok(html.includes("Get the full read in your own AI tool"));
-  assert.ok(html.includes("Connect Propeller to ChatGPT, Claude or another tool that supports MCP. Included with full access, $15 a month."));
+  assert.ok(html.includes("Connect Propeller to ChatGPT, Claude or another tool that supports MCP. Included with full access: 7 days free, then $15 a month."));
   assert.ok(html.includes("Copy the Propeller MCP address"));
   assert.ok(html.includes("Paste it into ChatGPT, Claude or another tool that supports MCP"));
   assert.ok(html.includes("Sign in to Propeller and approve access"));
@@ -182,7 +182,7 @@ test("locked blocks never reach the html in rules mode", () => {
 
 test("summary mode shows the free-account prompt", () => {
   const html = api.renderChat(api.buildConversations(summary()), { mode: "rules", compactTools: false });
-  assert.ok(html.includes("See every signal for this player with a free account."));
+  assert.ok(html.includes("Start a 7-day free trial to see every signal for this player."));
 });
 
 test("showcase stamp verbatim and answers escaped", () => {

@@ -100,7 +100,7 @@
   // Subscriber-only detail stays locked: show what the public record supports, then a CTA.
   function lockedCta(id,text) {
     return '<div class="pp-desk-locked" data-desk-locked="'+esc(id)+'">'+LOCK+'<div><p>'+esc(text)+'</p><div class="pp-desk-locked-actions">'+
-      '<a class="pp-desk-btn pp-desk-btn-primary" href="'+SIGNUP+'" data-analytics-event="signup_click" data-cta-id="analyzer-'+esc(id)+'-locked" data-cta-surface="analyzer_result" data-cta-destination="signup">Start free</a>'+
+      '<a class="pp-desk-btn pp-desk-btn-primary" href="'+SIGNUP+'" data-analytics-event="signup_click" data-cta-id="analyzer-'+esc(id)+'-locked" data-cta-surface="analyzer_result" data-cta-destination="signup">Start your 7-day free trial</a>'+
       '<a class="pp-desk-btn pp-desk-btn-ghost" href="/pricing/" data-analytics-event="signup_click" data-cta-id="analyzer-'+esc(id)+'-pricing" data-cta-surface="analyzer_result" data-cta-destination="pricing">See plans</a></div></div></div>';
   }
   function signalTeaserHtml(m) {
@@ -116,7 +116,7 @@
     return '<div class="pp-desk-ai-locked" aria-label="AI breakdown"><span class="pp-desk-ai-tag">'+SPARK+'AI breakdown · members</span>'+
       '<h4>Get the written breakdown of this '+esc(moreLess(m.prop.direction))+' '+esc(m.prop.line)+' '+esc(label(m.prop.stat))+' pick.</h4>'+
       '<p>The AI write-up explains what supports the lean, how the player’s latest games stack up against the line, and what to recheck before game time.</p>'+
-      lockedCta('brief',m.claimable?'Open the complete analysis above to unlock the AI breakdown. Members get more every day.':'Written AI breakdowns are part of the Propeller workspace. Start free, or see what each plan includes.')+'</div>';
+      lockedCta('brief',m.claimable?'Open the complete analysis above to unlock the AI breakdown. Members get more every day.':'Written AI breakdowns are part of the Propeller workspace. Start your 7-day free trial, or see what each plan includes.')+'</div>';
   }
   function lockedHistoryHtml(m) {
     var h=m.publicHistory,stat=label(m.prop.stat),line=m.prop.line,side=moreLess(m.prop.direction);
@@ -173,11 +173,11 @@
     return '<section class="pp-desk-followups" aria-labelledby="pp-desk-followups-title"><h3 id="pp-desk-followups-title">Ask a follow-up</h3><div class="pp-desk-fu-list">'+list+'</div></section>'+
       '<section class="pp-desk-composer" id="pp-desk-composer" aria-label="Keep asking">'+
       '<button type="button" class="pp-desk-fake-input" data-desk-followup="custom" aria-controls="pp-desk-composer"><span>'+esc(chosen&&chosen!=='custom'?chosen:'Ask anything about '+m.player+'…')+'</span><i aria-hidden="true">↑</i></button>'+
-      (chosen?'<p class="pp-desk-gate-note" role="status">'+LOCK+'Follow-up questions are for members. Start free to keep going.</p>':'')+
+      (chosen?'<p class="pp-desk-gate-note" role="status">'+LOCK+'Follow-up questions are for members. Start your 7-day free trial to keep going.</p>':'')+
       '<h3>Keep the conversation going.</h3><p>Members ask follow-ups about any player and any line by connecting Propeller to the AI app they already use.</p>'+
-      '<a class="pp-desk-btn pp-desk-btn-primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="analyzer-desk-signup" data-cta-surface="analyzer_result" data-cta-destination="signup">Start free</a>'+
+      '<a class="pp-desk-btn pp-desk-btn-primary" href="https://app.propellerpicks.com/signup" data-analytics-event="signup_click" data-cta-id="analyzer-desk-signup" data-cta-surface="analyzer_result" data-cta-destination="signup">Start your 7-day free trial</a>'+
       '<div class="pp-desk-mcp"><p>Already use an AI app? Connect Propeller once and ask right where you chat.</p><a class="pp-desk-btn pp-desk-btn-ghost" href="/mcp/" data-analytics-event="research_cta_click" data-cta-id="analyzer-desk-mcp" data-cta-surface="analyzer_result" data-cta-destination="mcp">Connect your AI app</a></div>'+
-      '<p class="pp-desk-price">Free tier, no card needed. Full workspace $15 a month, tax included, with AI app access.</p></section>';
+      '<p class="pp-desk-price">7 days free, then $15/mo. Card required. Cancel anytime before day 7 and you won\'t be charged. AI app access is included.</p></section>';
   }
 
   function evidenceLink(id) {
@@ -217,7 +217,7 @@
     var history=!m.full?'Detailed game history is restricted in this public preview. This view does not establish whether current-season records exist.':m.logs.length?m.logs.length+' returned appearances span '+m.logs[0].date+' to '+m.logs[m.logs.length-1].date+'. They are descriptive game records, not historical offered lines or a forecast. Inspect the dated workload below.':'No dated game history is available for this stat in this public response. Missing history does not mean the player did not play.';
     var support=m.signals.length?'The returned signals include '+m.signals.map(function(signal){return signal.name+' '+signal.score+' '+moreLess(signal.direction);}).join(', ')+'. These are components of one model record, not independent votes. Only recorded explanations are shown; missing reasons and weights remain unknown.':'Only summary counts are available for this record. Individual scores and underlying reasons are not supplied.';
     var message='';
-    if(requestState==='allowance_exhausted')message='<p role="status">You\'ve used your free AI breakdown. <a href="https://app.propellerpicks.com/signup">Create a free account to get more.</a></p>';
+    if(requestState==='allowance_exhausted')message='<p role="status">You\'ve used your free AI breakdown. <a href="https://app.propellerpicks.com/signup">Start your 7-day free trial to get more.</a></p>';
     else if(requestState==='selection_unavailable'||requestState==='selection_changed')message='<p role="status">This research snapshot has changed. Search the player again to choose a current line.</p>';
     else if(requestState==='account_allowance_unavailable')message='<p role="status">AI breakdowns aren\'t included with your account yet. The data summary above is still here.</p>';
     else if(requestState==='session_unavailable')message='<p role="status">We could not verify your account. <a href="https://app.propellerpicks.com/login">Sign in again</a> to continue.</p>';
@@ -291,7 +291,7 @@
       if (m && !m.full && typeof opts.requestClaim==='function') {
         var result=container.querySelector('[data-desk-claim-anchor]');
         var access=window.ppAnalyzerAccess;
-        if(result)result.insertAdjacentHTML('afterend','<div class="pp-desk-claim" aria-live="polite">'+(claimState && claimState!=='loading'?'<p>'+esc(access?access.message(claimState):'Complete analysis is unavailable.')+'</p>':'')+(claimState==='allowance_exhausted'||claimState==='session_unavailable'?'<a href="https://app.propellerpicks.com/login">Sign in</a> · <a href="https://app.propellerpicks.com/signup">Create a free account</a>':'<button type="button" data-desk-claim'+(claimState==='loading'?' disabled':'')+'>'+(claimState==='loading'?'Opening analysis…':'Open complete analysis')+'</button>')+'</div>');
+        if(result)result.insertAdjacentHTML('afterend','<div class="pp-desk-claim" aria-live="polite">'+(claimState && claimState!=='loading'?'<p>'+esc(access?access.message(claimState):'Complete analysis is unavailable.')+'</p>':'')+(claimState==='allowance_exhausted'||claimState==='session_unavailable'?'<a href="https://app.propellerpicks.com/login">Sign in</a> · <a href="https://app.propellerpicks.com/signup">Start your 7-day free trial</a>':'<button type="button" data-desk-claim'+(claimState==='loading'?' disabled':'')+'>'+(claimState==='loading'?'Opening analysis…':'Open complete analysis')+'</button>')+'</div>');
       }
       opened.forEach(function(selector){var node=container.querySelector(selector);if(node)node.open=true;});
       var chart=container.querySelector('.pp-desk-chart-scroll');

@@ -1,7 +1,7 @@
 (function (window) {
   "use strict";
 
-  var SUMMARY_PROMPT = "See every signal for this player with a free account.";
+  var SUMMARY_PROMPT = "Start a 7-day free trial to see every signal for this player.";
   var STAMP_LABEL = "Written by Claude using Propeller's research tools";
   var CURRENT_SEASON = 2026;
 
@@ -382,7 +382,7 @@
   var RULE_LABEL = "Built from Propeller's data";
   var FOOTER = "Research only, not a guarantee. Scores are model confidence on a 50 to 100 scale, not win probabilities.";
   var PAYWALL_HEADING = "Get the full read in your own AI tool";
-  var PAYWALL_LINE = "Connect Propeller to ChatGPT, Claude or another tool that supports MCP. Included with full access, $15 a month.";
+  var PAYWALL_LINE = "Connect Propeller to ChatGPT, Claude or another tool that supports MCP. Included with full access: 7 days free, then $15 a month.";
   var PAYWALL_STEPS = [
     "Copy the Propeller MCP address",
     "Paste it into ChatGPT, Claude or another tool that supports MCP",
@@ -502,7 +502,7 @@
     var steps = PAYWALL_STEPS.map(function (t) { return "<li>" + esc(t) + "</li>"; }).join("");
     var secondary = home
       ? cta("home-showcase-analyzer", "home", "analyzer", "research_cta_click", "/analyzer/?sport=nfl", "Look up a player", "pp-rc-link")
-      : cta("analyzer-research-signup", "analyzer", "signup", "signup_click", "https://app.propellerpicks.com/signup", "Create a free account", "pp-rc-link");
+      : cta("analyzer-research-signup", "analyzer", "signup", "signup_click", "https://app.propellerpicks.com/signup", "Start your 7-day free trial", "pp-rc-link");
     var actions = external ? "" : '<div class="pp-rc-actions">' +
       cta(id, home ? "home" : "analyzer", "mcp", "research_cta_click", "/pricing/#ai-connections", "Get full access", "pp-rc-btn") +
       secondary + "</div>";
