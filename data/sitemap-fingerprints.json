@@ -31,8 +31,8 @@
       "source": "analyzer/nfl/index.html"
     },
     "https://propellerpicks.com/blog/": {
-      "fingerprint": "1db8decd04ce3ae1e59bff4b583c049396363e56a9a2a43b824a43d6bb7dcffe",
-      "lastmod": "2026-11-18",
+      "fingerprint": "b1d9d0656daf022823c4cf48835e036fa3c04d0a0bcd11f83a5a75223c16e934",
+      "lastmod": "2026-11-19",
       "source": "blog/index.html"
     },
     "https://propellerpicks.com/compare/": {
@@ -281,12 +281,12 @@
       "source": "picks/mlb/index.html"
     },
     "https://propellerpicks.com/picks/nba/": {
-      "fingerprint": "ba5575d57fd65405c0f1c8845dcbc27fd961fe61c131de65bfa22eb3b4d6e77b",
+      "fingerprint": "8a9aa14827ef3d97c517f4d8367f39c8dbf72d5acedb3df43f1ba27039f9512f",
       "lastmod": "2026-11-19",
       "source": "picks/nba/index.html"
     },
     "https://propellerpicks.com/picks/nfl/": {
-      "fingerprint": "9a0ec40d56ae41c66a27bbf049f6e1d3e68e299278a3e51dfd906beab0a26a09",
+      "fingerprint": "6f4131070eaa3db426bfbb3832418b80c8fbba2c0c6404a09c62c927ca57f369",
       "lastmod": "2026-11-19",
       "source": "picks/nfl/index.html"
     },
@@ -296,12 +296,12 @@
       "source": "picks/nhl/index.html"
     },
     "https://propellerpicks.com/picks/pick6/": {
-      "fingerprint": "238423cd10a083b077d5e83341d93b14e09f848bd262daa075a1aa15c856d034",
+      "fingerprint": "c210382a08124b152705d7a8d137052f1bc52a6a8e8673239f11b98dea6a07a9",
       "lastmod": "2026-11-19",
       "source": "picks/pick6/index.html"
     },
     "https://propellerpicks.com/picks/prizepicks/": {
-      "fingerprint": "a892553f6c7f2570d91610e7a385dc94cf5ee3eb4949e040e0423c412b0edbe2",
+      "fingerprint": "16e12af05c1ce680c3519c6848b21f65ddcff4e30b12483cb40ebc85eebe808b",
       "lastmod": "2026-11-19",
       "source": "picks/prizepicks/index.html"
     },
@@ -311,7 +311,7 @@
       "source": "picks/soccer/index.html"
     },
     "https://propellerpicks.com/picks/underdog/": {
-      "fingerprint": "32fe03b9ac20028036d3949347e13b02d4ae4dd089d9f57613c7e33f10abe770",
+      "fingerprint": "59c3225e7c25f5bc9300adbf1915a814b696a0f90ed11e3d8c5f208dd7f81a6c",
       "lastmod": "2026-11-19",
       "source": "picks/underdog/index.html"
     },
