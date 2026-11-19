@@ -16,53 +16,57 @@ GROWTH_ENTRY_PAGES = {
     "tools/pick6-payout-calculator/index.html",
 }
 
+TRIAL_NOTE = "Card required. Cancel anytime before day 7 and you won't be charged."
+
 # Public acquisition tools stay free. Their account CTAs must survive the
 # prospective launch without promising a new permanent full-workspace grant.
 ENTRY_REPLACEMENTS = (
-    ("Explore Propeller free", "Explore Propeller"),
+    ("Explore Propeller free", "Start your 7-day free trial"),
     ("Get lifetime-free core access to the full research workspace.", "Keep your research in one workspace."),
     ("Research the props behind the entry with lifetime-free core access.", "Research the props behind the entry."),
-    ("Launch spots remain. Save your research and put this payout math beside confidence, line value, movement, and supporting context. No card is required. This public calculator stays free and separate.", "Put this payout math beside player research, line context, and supporting evidence. Explore the account workspace and review its current access terms. This public calculator stays free."),
-    ("Launch spots remain. Create an account to save your research and use the full workspace. No card is required. This calculator remains free.", "Explore the account workspace and review its current access terms. This calculator remains free without an account."),
-    ("No card required.", "Public tools stay free. Account access terms are shown in the app."),
+    ("Launch spots remain. Save your research and put this payout math beside confidence, line value, movement, and supporting context. No card is required. This public calculator stays free and separate.", "Put this payout math beside player research, line context, and supporting evidence. Start a 7-day free trial to open the full workspace. This public calculator stays free."),
+    ("Launch spots remain. Create an account to save your research and use the full workspace. No card is required. This calculator remains free.", "Start a 7-day free trial to save your research and use the full workspace. This calculator remains free without an account."),
+    ("No card required.", TRIAL_NOTE),
+    ("Public tools stay free. Account access terms are shown in the app.", TRIAL_NOTE),
 )
 
 REPLACEMENTS = (
-    ("Get lifetime-free access", "Explore Propeller free"),
-    ("get lifetime-free access", "explore Propeller free"),
-    ("Lifetime-free access. No card required.", "Explore free. No card required."),
-    ("Free lifetime core access is currently available while Founder 500 launch spots remain.", "Explore Propeller free. Existing accounts keep full access free. New accounts can start on the free tier."),
-    ("Free lifetime core access while Founder 500 launch spots remain", "Free tier access"),
+    ("Get lifetime-free access", "Start your 7-day free trial"),
+    ("get lifetime-free access", "start your 7-day free trial"),
+    ("Lifetime-free access. No card required.", "7 days free, then $15/mo. " + TRIAL_NOTE),
+    ("Free lifetime core access is currently available while Founder 500 launch spots remain.", "Start your 7-day free trial. Existing accounts keep full access free."),
+    ("Free lifetime core access while Founder 500 launch spots remain", "7-day free trial"),
 
-    ("Get Free Lifetime Access", "Explore Propeller free"),
-    ("Get Free Access", "Explore Propeller free"),
-    ("Get free access", "Explore Propeller free"),
-    ("get free access", "explore Propeller free"),
-    ("Start Free Trial", "Explore Propeller free"),
-    ("Start Free", "Explore Propeller free"),
-    ("Launch Propeller Free", "Explore Propeller free"),
-    ("Start 14-day free trial", "Explore Propeller free"),
-    ("Card required. Then $9.99/month unless canceled.", "No card required."),
-    ("Get All Picks Free", "Open the full research workspace"),
-    ("Get All ${allPicks.length} Picks Free\n        </a>", "Explore Propeller free\n        </a>\n        <p style=\"font-size:13px; color:var(--text-tertiary); margin:10px 0 0;\">No card required.</p>"),
-    ("Get All ${totalAvailable} Picks Free\n        </a>", "Get lifetime-free access\n        </a>\n        <p style=\"font-size:13px; color:var(--text-tertiary); margin:10px 0 0;\">No card required.</p>"),
+    ("Get Free Lifetime Access", "Start your 7-day free trial"),
+    ("Get Free Access", "Start your 7-day free trial"),
+    ("Get free access", "Start your 7-day free trial"),
+    ("get free access", "start your 7-day free trial"),
+    ("Start Free Trial", "Start your 7-day free trial"),
+    ("Start Free", "Start your 7-day free trial"),
+    ("Launch Propeller Free", "Start your 7-day free trial"),
+    ("Start 14-day free trial", "Start your 7-day free trial"),
+    ("Card required. Then $9.99/month unless canceled.", TRIAL_NOTE),
+    ("Get All Picks Free", "Start your 7-day free trial"),
+    ("Get All ${allPicks.length} Picks Free\n        </a>", "Start your 7-day free trial\n        </a>\n        <p style=\"font-size:13px; color:var(--text-tertiary); margin:10px 0 0;\">" + TRIAL_NOTE + "</p>"),
+    ("Get All ${totalAvailable} Picks Free\n        </a>", "Start your 7-day free trial\n        </a>\n        <p style=\"font-size:13px; color:var(--text-tertiary); margin:10px 0 0;\">" + TRIAL_NOTE + "</p>"),
     ('href="/#pricing"', 'href="/pricing/"'),
-    ("Free tier includes 5 analyzed props per day. No credit card required.", "Current access and availability are shown at signup."),
-    ("5 fully analyzed picks per day. No credit card. See exactly why each prop is scored the way it is - before you enter.", "Open the workspace to inspect the reasoning behind available props. Current access terms are shown at signup."),
-    ("with premium access available through the Propeller app.", "with current access details shown in the Propeller app."),
-    ("Free users receive the top 3 picks each day. Premium subscribers unlock the full ranked slate across all sports.", "A public sample may be shown on this page. Current full-slate availability and access details are shown in the app."),
-    ("Showing <strong>5 free picks</strong> today. Unlock all NHL picks plus NBA, NFL, MLB, and more with Propeller Premium.", "Showing a public sample when available. Open the Propeller app for current full-slate availability and access details."),
-    ("Unlock premium picks", "Open the full slate"),
-    ("Unlock Premium", "Open Full Slate"),
+    ("Free tier includes 5 analyzed props per day. No credit card required.", "Start your 7-day free trial, then $15/month. A card is required at signup; cancel anytime before the trial ends and you won't be charged."),
+    ("5 fully analyzed picks per day. No credit card. See exactly why each prop is scored the way it is - before you enter.", "Start a 7-day free trial to inspect the reasoning behind available props. A card is required at signup; cancel anytime before the trial ends and you won't be charged."),
+    ("with premium access available through the Propeller app.", "with the full workspace available through the Propeller app."),
+    ("Free users receive the top 3 picks each day. Premium subscribers unlock the full ranked slate across all sports.", "The public analyzer shows a sample. The full workspace starts with a 7-day free trial, then $15/month."),
+    ("Showing <strong>5 free picks</strong> today. Unlock all NHL picks plus NBA, NFL, MLB, and more with Propeller Premium.", "Showing a public sample when available. Start a 7-day free trial to open the full slate."),
+    ("Unlock premium picks", "Start your 7-day free trial"),
+    ("Unlock Premium", "Start your 7-day free trial"),
     ("Premium pick — unlock to view", "Full app pick — open to view"),
     ("Premium Pick", "Full App Pick"),
-    ("Founder 500 members get free lifetime core access while launch spots remain.", "Free lifetime core access is currently available while Founder 500 launch spots remain. No card required."),
-    ("Free lifetime core access while launch spots remain.", "Free lifetime core access is currently available while Founder 500 launch spots remain. No card required."),
-    ("Founder 500 free lifetime core access while launch spots remain", "Free lifetime core access while Founder 500 launch spots remain"),
-    ("Founder 500 core access is free while launch spots remain.", "Free lifetime core access is currently available while Founder 500 launch spots remain."),
-    ("Free core access while spots remain", "Free lifetime core access while Founder 500 launch spots remain"),
+    ("Founder 500 members get free lifetime core access while launch spots remain.", "Existing Founder 500 lifetime core entitlements remain honored."),
+    ("Free lifetime core access while launch spots remain.", "Existing Founder 500 lifetime core entitlements remain honored."),
+    ("Founder 500 free lifetime core access while launch spots remain", "Existing Founder 500 lifetime core entitlements remain honored"),
+    ("Founder 500 core access is free while launch spots remain.", "Existing Founder 500 lifetime core entitlements remain honored."),
+    ("Free core access while spots remain", "Existing Founder 500 lifetime core entitlements remain honored"),
     ("Propeller Picks is a free AI-assisted player-prop research tool designed for DFS and pick'em platforms.", "Propeller Picks offers a free public AI-assisted player-prop analyzer designed for DFS and pick'em research. The public tool is separate from the subscriber workspace."),
-    ("Current access and availability are shown at signup.", "No card required. Current availability is confirmed at signup."),
+    ("Current access and availability are shown at signup.", "Start your 7-day free trial. A card is required at signup."),
+    ("No card required.", TRIAL_NOTE),
 )
 
 
@@ -72,10 +76,10 @@ def normalize(source: str, *, growth_entry: bool = False) -> str:
     if growth_entry:
         for old, new in ENTRY_REPLACEMENTS:
             source = source.replace(old, new)
-    source = source.replace("Get lifetime-free access", "Explore Propeller free")
-    source = source.replace("get lifetime-free access", "explore Propeller free")
-    source = source.replace("Free lifetime core access is currently available while Founder 500 launch spots remain.", "Explore Propeller free. Existing accounts keep full access free. New accounts can start on the free tier.")
-    source = source.replace("Free lifetime core access while Founder 500 launch spots remain", "Free tier access")
+    source = source.replace("Get lifetime-free access", "Start your 7-day free trial")
+    source = source.replace("get lifetime-free access", "start your 7-day free trial")
+    source = source.replace("Free lifetime core access is currently available while Founder 500 launch spots remain.", "Start your 7-day free trial. Existing accounts keep full access free.")
+    source = source.replace("Free lifetime core access while Founder 500 launch spots remain", "7-day free trial")
     return source
 
 

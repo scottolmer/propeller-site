@@ -60,7 +60,7 @@
             '<a class="pp-save-panel__store" href="' + appStoreUrl + '" rel="noopener" data-cta-id="analyzer-save-panel-ios" data-cta-surface="' + surface + '_save_panel">iPhone app</a>' +
             '<a class="pp-save-panel__store" href="' + playStoreUrl + '" rel="noopener" data-cta-id="analyzer-save-panel-android" data-cta-surface="' + surface + '_save_panel">Android app</a>' +
           '</div>' +
-          '<p class="pp-save-panel__terms">Public tools stay free. Account access terms are shown in the app.</p>' +
+          '<p class="pp-save-panel__terms">Card required. Cancel anytime before day 7 and you won\'t be charged.</p>' +
         '</div>' +
         '<div class="pp-save-panel__ticket" aria-label="Summary of this search">' +
           '<p class="pp-save-panel__ticket-title">' + ticketTitle + (sportLabel ? ' <span>' + sportLabel + '</span>' : '') + '</p>' +

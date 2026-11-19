@@ -155,8 +155,9 @@ test("all calculator pages use the single completion contract and result signup 
     assert.match(page, /trackCalculatorCompletion\(/);
     assert.doesNotMatch(page, /calculator_used/);
     assert.doesNotMatch(page, /trackCalculatorResult/);
-    assert.match(page, /Explore Propeller/);
-    assert.doesNotMatch(page, /Get lifetime-free access|Launch spots remain/);
+    assert.match(page, /Start your 7-day free trial/);
+    assert.match(page, /Card required\. Cancel anytime before day 7 and you won't be charged\./);
+    assert.doesNotMatch(page, /Get lifetime-free access|Launch spots remain|Explore Propeller|free tier/);
     assert.match(page, /data-cta-surface="calculator_result"/);
     assert.match(page, /analytics-loader\.js\?v=\d{8}/);
     assert.match(page, /paid-search-events\.js\?v=\d{8}/);

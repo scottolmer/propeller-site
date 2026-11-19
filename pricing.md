@@ -1,17 +1,17 @@
 # Propeller Picks Pricing
 
-Last verified: 2026-10-19
+Last verified: 2026-11-18
 Canonical signup: https://app.propellerpicks.com/signup
 
 ## Current Public Access
 
-New accounts can explore up to five current picks per supported sport for free. No payment card is required for signup. Eligible new accounts can explicitly purchase full access through the limited web subscription pilot.
+The full workspace starts with a 7-day free trial, then $15 USD total per month, including applicable tax. A card is required at signup. Cancel anytime before the trial ends and you won't be charged. After the trial, the subscription renews monthly until canceled.
 
-Existing free accounts keep their access. Existing Founder 500 lifetime core entitlements remain honored. Public tools and research previews remain free where offered. The site does not publish a remaining-spots count; availability is decided at signup.
+Existing free accounts keep their access. Existing Founder 500 lifetime core entitlements remain honored. Player history stays free and is not part of the paywall. Public tools and research previews remain free where offered.
 
 ## Full Workspace Subscription
 
-The standalone Propeller Picks subscription is $15 USD total per month including applicable tax, charged immediately and renewed monthly until canceled. The limited web purchase pilot is for eligible new accounts. Existing accounts retain full free access. Rally is excluded. Free signup requires no card and never automatically converts to paid. New unpaid accounts get the free tier: up to five current picks per supported sport with complete available details.
+The standalone Propeller Picks subscription is $15 USD total per month including applicable tax, charged when the 7-day free trial ends unless canceled before then, and renewed monthly until canceled. A card is required at signup. Existing accounts retain full free access. Rally is excluded.
 
 Included core access:
 

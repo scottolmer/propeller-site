@@ -93,7 +93,7 @@ All scripts are idempotent and safe to run repeatedly.
 - **normalize_strategy_claims.py** — removes audited certainty, profitability,
   stale payout, and unsupported advantage claims from platform strategy guides.
 - **normalize_access_language.py** — removes stale hard-coded free/premium
-  limits from generated pages and defers current availability to signup.
+  limits from generated pages and replaces removed free-tier promises with trial terms.
 - **check_product_fact_consistency.py** — verifies the canonical product fact
   ledger against public sports, access, confidence, platform, and agent-count
   claims across visible and machine-readable surfaces.

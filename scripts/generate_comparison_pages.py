@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the disclosed Propeller competitor-comparison pilot.
+"""Generate the disclosed Propeller competitor-comparison pages.
 
 The source data is intentionally small and editorially reviewed. This is not a
 Cartesian-product page generator: every page needs competitor-specific facts,
