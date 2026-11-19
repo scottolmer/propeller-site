@@ -110,7 +110,7 @@ def faq_items(page: dict) -> list[tuple[str, str]]:
     label = page["label"]
     return [
         (f"Is the {label} prop analyzer free?",
-         f"Yes. You can search current {label} player lines and read the research lean without an account. The full workspace starts with a 7-day free trial, then $15/month; a card is required at signup, and player history stays free."),
+         f"Yes. You can search current {label} player lines and read the research lean without an account. The full workspace starts with a 7-day free trial, then $15/month; a card is required to start the trial, and player history stays free."),
         (f"Why don't I see any {label} props?", page["empty_answer"]),
         ("What does the confidence score mean?", CONFIDENCE_ANSWER),
         ("Does Propeller place bets or entries?", WAGER_ANSWER),

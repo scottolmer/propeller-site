@@ -5,13 +5,13 @@ Canonical signup: https://app.propellerpicks.com/signup
 
 ## Current Public Access
 
-The full workspace starts with a 7-day free trial, then $15 USD total per month, including applicable tax. A card is required at signup. Cancel anytime before the trial ends and you won't be charged. After the trial, the subscription renews monthly until canceled.
+The full workspace starts with a 7-day free trial, then $15 USD total per month, including applicable tax. A card is required to start the trial. Cancel anytime before the trial ends and you won't be charged. After the trial, the subscription renews monthly until canceled.
 
 Existing free accounts keep their access. Existing Founder 500 lifetime core entitlements remain honored. Player history stays free and is not part of the paywall. Public tools and research previews remain free where offered.
 
 ## Full Workspace Subscription
 
-The standalone Propeller Picks subscription is $15 USD total per month including applicable tax, charged when the 7-day free trial ends unless canceled before then, and renewed monthly until canceled. A card is required at signup. Existing accounts retain full free access. Rally is excluded.
+The standalone Propeller Picks subscription is $15 USD total per month including applicable tax, charged when the 7-day free trial ends unless canceled before then, and renewed monthly until canceled. A card is required to start the trial. Existing accounts retain full free access. Rally is excluded.
 
 Included core access:
 

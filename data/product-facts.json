@@ -67,7 +67,7 @@
     "public_analyzer": "Free to use without an account.",
     "existing_free_access": "Existing free accounts keep their access.",
     "founder_500_offer": "Existing Founder 500 lifetime core entitlements remain honored.",
-    "availability_note": "Start a 7-day free trial, then $15 total per month. A card is required at signup. Cancel anytime before the trial ends and you won't be charged.",
+    "availability_note": "Start a 7-day free trial, then $15 total per month. A card is required to start the trial. Cancel anytime before the trial ends and you won't be charged.",
     "pricing_url": "https://propellerpicks.com/pricing/",
     "signup_url": "https://app.propellerpicks.com/signup",
     "subscription_offer": {
@@ -83,7 +83,7 @@
       "launch_date": "2026-10-19",
       "trial_days": 7,
       "card_required": true,
-      "checkout_authority": "The live app presents the 7-day free trial and the $15 total monthly price, requires a payment card at signup, and charges only after the trial ends unless the account is canceled before then.",
+      "checkout_authority": "The live app presents the 7-day free trial and the $15 total monthly price, requires a payment card to start the trial, and charges only after the trial ends unless the account is canceled before then.",
       "checkout_enabled": true,
       "features": [
         "Full player-prop research workspace",

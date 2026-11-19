@@ -50,8 +50,8 @@ REPLACEMENTS = (
     ("Get All ${allPicks.length} Picks Free\n        </a>", "Start your 7-day free trial\n        </a>\n        <p style=\"font-size:13px; color:var(--text-tertiary); margin:10px 0 0;\">" + TRIAL_NOTE + "</p>"),
     ("Get All ${totalAvailable} Picks Free\n        </a>", "Start your 7-day free trial\n        </a>\n        <p style=\"font-size:13px; color:var(--text-tertiary); margin:10px 0 0;\">" + TRIAL_NOTE + "</p>"),
     ('href="/#pricing"', 'href="/pricing/"'),
-    ("Free tier includes 5 analyzed props per day. No credit card required.", "Start your 7-day free trial, then $15/month. A card is required at signup; cancel anytime before the trial ends and you won't be charged."),
-    ("5 fully analyzed picks per day. No credit card. See exactly why each prop is scored the way it is - before you enter.", "Start a 7-day free trial to inspect the reasoning behind available props. A card is required at signup; cancel anytime before the trial ends and you won't be charged."),
+    ("Free tier includes 5 analyzed props per day. No credit card required.", "Start your 7-day free trial, then $15/month. A card is required to start the trial; cancel anytime before the trial ends and you won't be charged."),
+    ("5 fully analyzed picks per day. No credit card. See exactly why each prop is scored the way it is - before you enter.", "Start a 7-day free trial to inspect the reasoning behind available props. A card is required to start the trial; cancel anytime before the trial ends and you won't be charged."),
     ("with premium access available through the Propeller app.", "with the full workspace available through the Propeller app."),
     ("Free users receive the top 3 picks each day. Premium subscribers unlock the full ranked slate across all sports.", "The public analyzer shows a sample. The full workspace starts with a 7-day free trial, then $15/month."),
     ("Showing <strong>5 free picks</strong> today. Unlock all NHL picks plus NBA, NFL, MLB, and more with Propeller Premium.", "Showing a public sample when available. Start a 7-day free trial to open the full slate."),
@@ -65,7 +65,7 @@ REPLACEMENTS = (
     ("Founder 500 core access is free while launch spots remain.", "Existing Founder 500 lifetime core entitlements remain honored."),
     ("Free core access while spots remain", "Existing Founder 500 lifetime core entitlements remain honored"),
     ("Propeller Picks is a free AI-assisted player-prop research tool designed for DFS and pick'em platforms.", "Propeller Picks offers a free public AI-assisted player-prop analyzer designed for DFS and pick'em research. The public tool is separate from the subscriber workspace."),
-    ("Current access and availability are shown at signup.", "Start your 7-day free trial. A card is required at signup."),
+    ("Current access and availability are shown at signup.", "Start your 7-day free trial. A card is required to start the trial."),
     ("No card required.", TRIAL_NOTE),
 )
 
