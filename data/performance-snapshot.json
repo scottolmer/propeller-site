@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-11-20T10:34:42Z",
+  "generated_at": "2026-11-20T15:21:42Z",
   "latest_sample_game_date": "2026-11-19",
   "canonical_report": "https://propellerpicks.com/results/",
   "historical_database": {
     "unit": "raw graded analysis rows",
-    "total": 4062854,
-    "wins": 2628589,
-    "losses": 1432881,
+    "total": 4064272,
+    "wins": 2629390,
+    "losses": 1433498,
     "pushes": 1384,
     "historical_outcome_rate": 64.7,
     "rate_formula": "wins / (wins + losses); pushes excluded",
@@ -15,9 +15,9 @@
   },
   "deduplicated_public_ledger": {
     "unit": "prop-result entries after the current public API collapse rules",
-    "total": 536358,
-    "wins": 351760,
-    "losses": 184445,
+    "total": 536893,
+    "wins": 352154,
+    "losses": 184586,
     "pushes": 153,
     "historical_outcome_rate": 65.6,
     "rate_formula": "wins / (wins + losses); pushes excluded",
@@ -41,7 +41,7 @@
       "MLS"
     ],
     "top_raw_bucket": "MLB",
-    "top_raw_bucket_share": 80.0
+    "top_raw_bucket_share": 79.9
   },
   "raw_sport_buckets": [
     {
@@ -57,11 +57,11 @@
     {
       "key": "nba",
       "label": "NBA",
-      "total": 76758,
-      "wins": 42848,
-      "losses": 33910,
+      "total": 77826,
+      "wins": 43353,
+      "losses": 34473,
       "pushes": 0,
-      "win_rate": 55.8,
+      "win_rate": 55.7,
       "published": true
     },
     {
@@ -97,9 +97,9 @@
     {
       "key": "mls",
       "label": "MLS",
-      "total": 26366,
-      "wins": 22423,
-      "losses": 3943,
+      "total": 26716,
+      "wins": 22719,
+      "losses": 3997,
       "pushes": 0,
       "win_rate": 85.0,
       "published": true
@@ -169,23 +169,23 @@
       "min": 55,
       "max": 64,
       "all": {
-        "total": 1780028,
-        "wins": 1091681,
-        "losses": 687717,
+        "total": 1781294,
+        "wins": 1092371,
+        "losses": 688293,
         "pushes": 630,
-        "win_rate": 61.4
+        "win_rate": 61.3
       },
       "over": {
-        "total": 446715,
-        "wins": 243349,
-        "losses": 203107,
+        "total": 446818,
+        "wins": 243415,
+        "losses": 203144,
         "pushes": 259,
         "win_rate": 54.5
       },
       "under": {
-        "total": 1333313,
-        "wins": 848332,
-        "losses": 484610,
+        "total": 1334476,
+        "wins": 848956,
+        "losses": 485149,
         "pushes": 371,
         "win_rate": 63.6
       }
@@ -197,23 +197,23 @@
       "min": null,
       "max": 54,
       "all": {
-        "total": 1044575,
-        "wins": 543295,
-        "losses": 500564,
+        "total": 1044727,
+        "wins": 543406,
+        "losses": 500605,
         "pushes": 716,
         "win_rate": 52.0
       },
       "over": {
-        "total": 476549,
-        "wins": 230479,
-        "losses": 245567,
+        "total": 476584,
+        "wins": 230486,
+        "losses": 245595,
         "pushes": 503,
         "win_rate": 48.4
       },
       "under": {
-        "total": 568026,
-        "wins": 312816,
-        "losses": 254997,
+        "total": 568143,
+        "wins": 312920,
+        "losses": 255010,
         "pushes": 213,
         "win_rate": 55.1
       }
@@ -277,44 +277,30 @@
       "bookmaker": "draftkings_pick6"
     },
     {
-      "result_id": "pr_58e755f685f352ee7095",
+      "result_id": "pr_14de7b136c97ece5011c",
       "sport": "nfl",
-      "player_name": "Anthony Gould",
-      "stat_type": "player_reception_yds",
-      "line": 20.5,
+      "player_name": "Ashton Dulin",
+      "stat_type": "player_receptions",
+      "line": 1.5,
       "predicted_direction": "UNDER",
       "predicted_score": 35.0,
       "confidence_pct": 65.0,
       "result": "loss",
-      "actual_value": 48.0,
-      "game_date": "2026-11-19",
-      "bookmaker": "draftkings"
-    },
-    {
-      "result_id": "pr_cfbbb42dccd52a78ed94",
-      "sport": "nfl",
-      "player_name": "Anthony Gould",
-      "stat_type": "player_receptions",
-      "line": 2.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 35.0,
-      "confidence_pct": 65.0,
-      "result": "win",
       "actual_value": 2.0,
       "game_date": "2026-11-19",
       "bookmaker": "draftkings"
     },
     {
-      "result_id": "pr_2578b7458b6d8bbfa29d",
+      "result_id": "pr_39c351639f0a681d4232",
       "sport": "nfl",
-      "player_name": "Daniel Jones",
-      "stat_type": "pass_yds",
-      "line": 180.5,
+      "player_name": "Anthony Gould",
+      "stat_type": "rec_yds",
+      "line": 23.5,
       "predicted_direction": "UNDER",
       "predicted_score": 35.0,
       "confidence_pct": 65.0,
-      "result": "win",
-      "actual_value": 144.0,
+      "result": "loss",
+      "actual_value": 48.0,
       "game_date": "2026-11-19",
       "bookmaker": "draftkings_pick6"
     },
@@ -333,18 +319,32 @@
       "bookmaker": "draftkings_pick6"
     },
     {
-      "result_id": "pr_d2d6baded5cd81401660",
+      "result_id": "pr_6b2163a72ba88596653d",
       "sport": "nfl",
-      "player_name": "Dalton Schultz",
-      "stat_type": "player_receptions",
-      "line": 3.5,
+      "player_name": "Anthony Gould",
+      "stat_type": "rec_yds",
+      "line": 22.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 35.0,
+      "confidence_pct": 65.0,
+      "result": "loss",
+      "actual_value": 48.0,
+      "game_date": "2026-11-19",
+      "bookmaker": "draftkings_pick6"
+    },
+    {
+      "result_id": "pr_2578b7458b6d8bbfa29d",
+      "sport": "nfl",
+      "player_name": "Daniel Jones",
+      "stat_type": "pass_yds",
+      "line": 180.5,
       "predicted_direction": "UNDER",
       "predicted_score": 35.0,
       "confidence_pct": 65.0,
       "result": "win",
-      "actual_value": 1.0,
+      "actual_value": 144.0,
       "game_date": "2026-11-19",
-      "bookmaker": "draftkings"
+      "bookmaker": "draftkings_pick6"
     },
     {
       "result_id": "pr_3a0db7aaaf754191c956",
@@ -361,34 +361,6 @@
       "bookmaker": "draftkings_pick6"
     },
     {
-      "result_id": "pr_6b3a280046b0a5493064",
-      "sport": "nfl",
-      "player_name": "Anthony Gould",
-      "stat_type": "rec_yds",
-      "line": 19.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 35.0,
-      "confidence_pct": 65.0,
-      "result": "loss",
-      "actual_value": 48.0,
-      "game_date": "2026-11-19",
-      "bookmaker": "draftkings_pick6"
-    },
-    {
-      "result_id": "pr_92693e2de61a1e84d638",
-      "sport": "nfl",
-      "player_name": "Anthony Gould",
-      "stat_type": "rec_yds",
-      "line": 20.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 35.0,
-      "confidence_pct": 65.0,
-      "result": "loss",
-      "actual_value": 48.0,
-      "game_date": "2026-11-19",
-      "bookmaker": "draftkings_pick6"
-    },
-    {
       "result_id": "pr_f61620608ebf2267b409",
       "sport": "nfl",
       "player_name": "Anthony Gould",
@@ -401,34 +373,6 @@
       "actual_value": 48.0,
       "game_date": "2026-11-19",
       "bookmaker": "prizepicks"
-    },
-    {
-      "result_id": "pr_6b2163a72ba88596653d",
-      "sport": "nfl",
-      "player_name": "Anthony Gould",
-      "stat_type": "rec_yds",
-      "line": 22.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 35.0,
-      "confidence_pct": 65.0,
-      "result": "loss",
-      "actual_value": 48.0,
-      "game_date": "2026-11-19",
-      "bookmaker": "draftkings_pick6"
-    },
-    {
-      "result_id": "pr_39c351639f0a681d4232",
-      "sport": "nfl",
-      "player_name": "Anthony Gould",
-      "stat_type": "rec_yds",
-      "line": 23.5,
-      "predicted_direction": "UNDER",
-      "predicted_score": 35.0,
-      "confidence_pct": 65.0,
-      "result": "loss",
-      "actual_value": 48.0,
-      "game_date": "2026-11-19",
-      "bookmaker": "draftkings_pick6"
     },
     {
       "result_id": "pr_35fc6df9501625d815b1",
@@ -459,16 +403,44 @@
       "bookmaker": "draftkings"
     },
     {
-      "result_id": "pr_14de7b136c97ece5011c",
+      "result_id": "pr_92693e2de61a1e84d638",
       "sport": "nfl",
-      "player_name": "Ashton Dulin",
-      "stat_type": "player_receptions",
-      "line": 1.5,
+      "player_name": "Anthony Gould",
+      "stat_type": "rec_yds",
+      "line": 20.5,
       "predicted_direction": "UNDER",
       "predicted_score": 35.0,
       "confidence_pct": 65.0,
       "result": "loss",
+      "actual_value": 48.0,
+      "game_date": "2026-11-19",
+      "bookmaker": "draftkings_pick6"
+    },
+    {
+      "result_id": "pr_cfbbb42dccd52a78ed94",
+      "sport": "nfl",
+      "player_name": "Anthony Gould",
+      "stat_type": "player_receptions",
+      "line": 2.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 35.0,
+      "confidence_pct": 65.0,
+      "result": "win",
       "actual_value": 2.0,
+      "game_date": "2026-11-19",
+      "bookmaker": "draftkings"
+    },
+    {
+      "result_id": "pr_d2d6baded5cd81401660",
+      "sport": "nfl",
+      "player_name": "Dalton Schultz",
+      "stat_type": "player_receptions",
+      "line": 3.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 35.0,
+      "confidence_pct": 65.0,
+      "result": "win",
+      "actual_value": 1.0,
       "game_date": "2026-11-19",
       "bookmaker": "draftkings"
     },
@@ -485,6 +457,34 @@
       "actual_value": 48.0,
       "game_date": "2026-11-19",
       "bookmaker": "betmgm"
+    },
+    {
+      "result_id": "pr_58e755f685f352ee7095",
+      "sport": "nfl",
+      "player_name": "Anthony Gould",
+      "stat_type": "player_reception_yds",
+      "line": 20.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 35.0,
+      "confidence_pct": 65.0,
+      "result": "loss",
+      "actual_value": 48.0,
+      "game_date": "2026-11-19",
+      "bookmaker": "draftkings"
+    },
+    {
+      "result_id": "pr_6b3a280046b0a5493064",
+      "sport": "nfl",
+      "player_name": "Anthony Gould",
+      "stat_type": "rec_yds",
+      "line": 19.5,
+      "predicted_direction": "UNDER",
+      "predicted_score": 35.0,
+      "confidence_pct": 65.0,
+      "result": "loss",
+      "actual_value": 48.0,
+      "game_date": "2026-11-19",
+      "bookmaker": "draftkings_pick6"
     },
     {
       "result_id": "pr_62b47d4b1a0f0e5080bf",
