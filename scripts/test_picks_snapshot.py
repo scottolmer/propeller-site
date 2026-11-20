@@ -18,7 +18,9 @@ def feeds(day=DAY):
 class PicksSnapshot(unittest.TestCase):
     def test_rows_are_rendered_with_date_capture_time_and_score_scale(self):
         block = snap.render_block(snap.PAGES["picks/prizepicks/index.html"], feeds(), DAY, CAPTURED)
-        self.assertIn("5 free research rows for Monday, November 9, 2026", block)
+        self.assertIn("6 free research rows for Monday, November 9, 2026", block)
+        self.assertIn("(NFL, NBA)", block)
+        self.assertLess(block.index("Josh Allen"), block.index("C.J. McCollum"))
         self.assertIn("Snapshot captured November 9, 2026 at 6:30 PM ET", block)
         self.assertIn("C.J. McCollum", block)
         self.assertIn("More (Over)", block)
@@ -42,6 +44,21 @@ class PicksSnapshot(unittest.TestCase):
         self.assertIn("BUF vs MIN", block)
         self.assertIn("Leans this way on how the opposing defense has played, the matchup and recent results.", block)
         self.assertNotIn("<script>alert", block)
+
+    def test_each_player_appears_once_per_table(self):
+        rows = [
+            {"player_name": "Brandon Miller", "stat_type": stat, "line": 20.5,
+             "final_score": 38, "final_direction": "UNDER"}
+            for stat in ("pts_ast", "pra", "pts_reb")
+        ] + [
+            {"player_name": "Ivica Zubac", "stat_type": "rebounds", "line": 11.5,
+             "final_score": 39, "final_direction": "UNDER"},
+            {"player_name": " brandon miller ", "stat_type": "rebounds", "line": 5.5,
+             "final_score": 40, "final_direction": "UNDER"},
+        ]
+        kept = snap.valid_rows(rows)
+        self.assertEqual([row["player_name"] for row in kept], ["Brandon Miller", "Ivica Zubac"])
+        self.assertEqual(kept[0]["stat_type"], "pts_ast")
 
     def test_apply_is_idempotent_and_adds_the_companion_script_once(self):
         page = '<main>\n    <div id="picksOutput" style="display:none;"></div>\n</main>\n</body>'
