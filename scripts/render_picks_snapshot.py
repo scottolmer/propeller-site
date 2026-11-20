@@ -44,6 +44,8 @@ END = "<!-- picks-snapshot:end -->"
 BLOCK_RE = re.compile(re.escape(START) + r".*?" + re.escape(END) + r"\n?", re.S)
 SCRIPT_TAG = '<script src="/assets/js/picks-snapshot.js?v=20261109"></script>'
 ROW_LIMIT = 5
+# Ask the feed for more rows than we show, so one row per player can still fill the table.
+FETCH_LIMIT = 25
 
 SPORT_LABELS = {"nba": "NBA", "mlb": "MLB", "nhl": "NHL", "nfl": "NFL", "soccer": "Soccer"}
 
@@ -51,7 +53,7 @@ SPORT_LABELS = {"nba": "NBA", "mlb": "MLB", "nhl": "NHL", "nfl": "NFL", "soccer"
 # and the platform named in the "check the line" note.
 PAGES = {
     "picks/prizepicks/index.html": {
-        "feeds": ["nba", "mlb", "nhl"], "anchor": '<div id="picksOutput"',
+        "feeds": ["nfl", "nba", "mlb", "nhl"], "anchor": '<div id="picksOutput"',
         "words": ("More", "Less"), "platform": "PrizePicks",
     },
     "picks/underdog/index.html": {
@@ -125,7 +127,11 @@ def confidence(row) -> int:
 
 
 def valid_rows(rows, slate_date=None):
-    """Mirror assets/js/prizepicks-slate.js, then keep one row per player and stat."""
+    """Mirror assets/js/prizepicks-slate.js, then keep one row per player.
+
+    One row per player keeps a short table from repeating the same name on
+    several stats; the feed is already ordered strongest first.
+    """
     seen, out = set(), []
     for row in rows if isinstance(rows, list) else []:
         if not isinstance(row, dict):
@@ -141,7 +147,7 @@ def valid_rows(rows, slate_date=None):
             continue
         if slate_date and row.get("game_date") and row["game_date"] != slate_date:
             continue
-        key = (name.strip().lower(), stat.strip().lower())
+        key = name.strip().lower()
         if key in seen:
             continue
         seen.add(key)
@@ -165,7 +171,7 @@ def load_feed(sport: str, slate_date: str, fixtures):
         elif sport == "nfl":
             data = fetch_json(f"{API}/api/nfl/props/public-slate")
         else:
-            data = fetch_json(f"{API}/api/social/picks/{sport}?game_date={slate_date}&limit={ROW_LIMIT}")
+            data = fetch_json(f"{API}/api/social/picks/{sport}?game_date={slate_date}&limit={FETCH_LIMIT}")
     except (OSError, ValueError, urllib.error.URLError) as error:
         print(f"WARN {sport}: feed unavailable ({error})", file=sys.stderr)
         return {"status": "unavailable", "rows": [], "note": ""}
