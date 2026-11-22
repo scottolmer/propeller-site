@@ -3,6 +3,19 @@
 
   var SUMMARY_PROMPT = "Start a 7-day free trial to see every signal for this player.";
   var STAMP_LABEL = "Written by Claude using Propeller's research tools";
+  // The showcase names the model that actually wrote the transcript.
+  var SHOWCASE_WRITERS = [
+    { pattern: /^claude/i, label: STAMP_LABEL },
+    { pattern: /^deepseek/i, label: "Written by DeepSeek using Propeller's research tools" }
+  ];
+
+  function showcaseWriter(model) {
+    var name = String(model || "");
+    for (var i = 0; i < SHOWCASE_WRITERS.length; i++) {
+      if (SHOWCASE_WRITERS[i].pattern.test(name)) return SHOWCASE_WRITERS[i].label;
+    }
+    return null;
+  }
   var CURRENT_SEASON = 2026;
 
   var SIGNAL_LABELS = {
@@ -408,15 +421,16 @@
   }
 
   // The label always shows; the time is added only when generated_at parses.
-  function stampText(iso) {
+  function stampText(iso, label) {
+    label = label || STAMP_LABEL;
     var d = new Date(iso);
-    if (isNaN(d.getTime())) return STAMP_LABEL;
+    if (isNaN(d.getTime())) return label;
     var parts = {};
     new Intl.DateTimeFormat("en-US", {
       timeZone: "America/New_York", weekday: "short", month: "short", day: "numeric",
       hour: "numeric", minute: "2-digit", hour12: true
     }).formatToParts(d).forEach(function (p) { parts[p.type] = p.value; });
-    return STAMP_LABEL + " · " + parts.weekday + ", " + parts.month + " " +
+    return label + " · " + parts.weekday + ", " + parts.month + " " +
       parts.day + " · " + parts.hour + ":" + parts.minute + " " + String(parts.dayPeriod || "").toUpperCase() + " ET";
   }
 
@@ -585,12 +599,12 @@
     opts = opts || {};
     var surface = opts.surface === "home" ? "home" : "analyzer";
     var showcase = !!opts.transcript && !opts.lookup;
-    // The showcase only ever presents a transcript Claude wrote.
-    var claudeWrote = showcase && /^claude/i.test(String(opts.transcript.model || ""));
+    // The showcase only presents a transcript from a model it can name.
+    var writer = showcase ? showcaseWriter(opts.transcript.model) : null;
     var convs = showcase
-      ? (claudeWrote ? showcaseConversations(opts.transcript) : [])
+      ? (writer ? showcaseConversations(opts.transcript) : [])
       : buildConversations(opts.lookup, opts.propIndex || 0);
-    var stamp = showcase ? stampText(opts.transcript.generated_at) : "";
+    var stamp = showcase ? stampText(opts.transcript.generated_at, writer) : "";
     var active = convs.length ? convs[0].chip : null;
     var timers = [];
     var mq = null;

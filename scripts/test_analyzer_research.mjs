@@ -119,7 +119,7 @@ test("no current prop shows next slate", async () => {
 
 test("analyzer page wires research assets and mount point", () => {
   assert.match(html, /analyzer-research\.js\?v=20261118a/);
-  assert.match(html, /research-chat\.js\?v=20261028b/);
+  assert.match(html, /research-chat\.js\?v=20261122/);
   assert.match(html, /research-chat\.css\?v=20261027/);
   assert.ok(html.indexOf('id="researchChat"') < html.indexOf('id="picksGrid"'));
   assert.match(html, /<section id="researchChat" hidden>/);
