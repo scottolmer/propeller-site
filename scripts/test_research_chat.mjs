@@ -293,8 +293,8 @@ test("showcase label never drops when generated_at does not parse", () => {
   assert.match(bare, /<div class="pp-rc-bar"><span>Written by Claude using Propeller(&#39;|')s research tools<\/span>/);
 });
 
-test("showcase mounts only for a Claude transcript", () => {
-  for (const model of [undefined, "", "gpt-4o", "not-claude"]) {
+test("showcase mounts only for a model it can name", () => {
+  for (const model of [undefined, "", "gpt-4o", "not-claude", "not-deepseek"]) {
     const c = fakeContainer();
     api.mountResearchChat(c, { transcript: showcaseTranscript({ model }), surface: "home" });
     assert.equal(c.innerHTML, "", String(model));
@@ -303,6 +303,16 @@ test("showcase mounts only for a Claude transcript", () => {
     const c = fakeContainer();
     api.mountResearchChat(c, { transcript: showcaseTranscript({ model }), surface: "home" });
     assert.ok(c.innerHTML.includes("Fine answer."), model);
+  }
+});
+
+test("a DeepSeek showcase says DeepSeek wrote it", () => {
+  for (const model of ["deepseek-flash", "DeepSeek-V4-Pro"]) {
+    const c = fakeContainer();
+    api.mountResearchChat(c, { transcript: showcaseTranscript({ model }), surface: "home" });
+    assert.ok(c.innerHTML.includes("Fine answer."), model);
+    assert.match(c.innerHTML, /Written by DeepSeek using Propeller(&#39;|')s research tools · /);
+    assert.doesNotMatch(c.innerHTML, /Written by Claude/);
   }
 });
 
