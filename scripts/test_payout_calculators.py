@@ -132,10 +132,10 @@ class UnderdogContracts(unittest.TestCase):
     def test_striking_distance_sections_use_published_structure(self):
         page = source("underdog")
         self.assertIn(
-            "<title>Underdog Payout Calculator: Flex, Streaks &amp; Champions</title>",
+            "<title>Underdog Payouts 2026: Flex &amp; Streaks Chart + Calculator</title>",
             page,
         )
-        self.assertLessEqual(len("Underdog Payout Calculator: Flex, Streaks & Champions"), 60)
+        self.assertLessEqual(len("Underdog Payouts 2026: Flex & Streaks Chart + Calculator"), 60)
         for anchor in (
             "flex-payout",
             "streaks-payout",
