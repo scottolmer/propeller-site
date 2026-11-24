@@ -243,3 +243,29 @@ test("decorated signup URLs preserve the server contract and strip stale attribu
   assert.equal(decorated.searchParams.get("pp_lt_captured_at"), null);
   assert.ok(store.value(storageKey));
 });
+
+test("page load leaves signup hrefs clean; click, middle-click and context menu decorate them", () => {
+  const signup = "https://app.propellerpicks.com/signup?offer=free";
+  const link = { href: signup, closest() { return this; } };
+  const listeners = {};
+  const document = {
+    readyState: "complete",
+    referrer: "",
+    querySelectorAll() { return [link]; },
+    addEventListener(type, handler) { (listeners[type] ||= []).push(handler); },
+  };
+  const url = new URL("https://propellerpicks.com/?utm_source=meta&utm_campaign=campaign-a");
+  const window = {
+    location: { href: url.href, origin: url.origin, pathname: url.pathname, search: url.search },
+    localStorage: storage(),
+  };
+  vm.runInNewContext(source, { window, document, URL, URLSearchParams, Date, Number, JSON });
+
+  assert.equal(link.href, signup, "crawlers rendering the page must not see pp_ft_/pp_lt_ params");
+  for (const type of ["click", "auxclick", "contextmenu"]) {
+    assert.equal(listeners[type]?.length, 1, `${type} listener registered`);
+  }
+  listeners.contextmenu[0]({ target: link });
+  assert.equal(new URL(link.href).searchParams.get("pp_lt_campaign"), "campaign-a");
+  assert.equal(new URL(link.href).searchParams.get("offer"), "free");
+});

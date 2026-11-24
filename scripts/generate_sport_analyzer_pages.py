@@ -267,7 +267,7 @@ def render(page: dict) -> str:
 
 <footer></footer>
 <script src="/assets/js/analytics-events.js?v=20260817" defer></script>
-<script src="/assets/js/signup-attribution.js?v=20260712" defer></script>
+<script src="/assets/js/signup-attribution.js?v=20261124" defer></script>
 </body>
 </html>
 """
