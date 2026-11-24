@@ -62,3 +62,21 @@ test("does not insert a second remote script when a preserved legacy source exis
   assert.equal(appended.length, 0);
   assert.equal(window.ppAnalyticsLoadStarted, true);
 });
+
+test("never loads the remote tag in an automated browser", () => {
+  const appended = [];
+  const listeners = new Map();
+  const window = {
+    navigator: { webdriver: true },
+    addEventListener: (name, listener) => listeners.set(name, listener),
+  };
+  const document = {
+    createElement: () => ({}),
+    head: { appendChild: (node) => appended.push(node) },
+  };
+  vm.runInNewContext(source, { window, document });
+  window.ppLoadAnalytics();
+  listeners.get("pointerdown")();
+  assert.equal(appended.length, 0);
+  assert.equal(typeof window.gtag, "function");
+});

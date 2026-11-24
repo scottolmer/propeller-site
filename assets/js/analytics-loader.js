@@ -24,8 +24,14 @@
   }
 
   let started = Boolean(window.ppAnalyticsLoadStarted);
+  // Automated browsers (headless Chrome, Puppeteer, Playwright) report
+  // navigator.webdriver. Data-center crawlers of this kind showed up as
+  // one-session, zero-engagement "Direct" visits from Singapore and China in
+  // Nov 2026 and skewed every rate, so the remote tag never loads for them.
+  const automated = Boolean(window.navigator && window.navigator.webdriver);
+
   function loadAnalytics() {
-    if (started) return;
+    if (started || automated) return;
     // Older generated pages retain their legacy gtag source. Reuse it instead
     // of inserting a second remote script when this shared loader runs there.
     if (document.querySelector && document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
