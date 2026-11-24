@@ -14,16 +14,21 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 ALIASES = {
-    "nba": ("NBA", "/picks/nba/"),
-    "nfl": ("NFL", "/picks/nfl/"),
-    "nhl": ("NHL", "/picks/nhl/"),
-    "mlb": ("MLB", "/picks/mlb/"),
-    "soccer": ("Soccer", "/picks/soccer/"),
+    "nba": ("NBA", "/picks/nba/", "/analyzer/nba/"),
+    "nfl": ("NFL", "/picks/nfl/", "/analyzer/nfl/"),
+    "nhl": ("NHL", "/picks/nhl/", None),
+    "mlb": ("MLB", "/picks/mlb/", None),
+    "soccer": ("Soccer", "/picks/soccer/", None),
 }
 
 
-def alias_document(label: str, target: str) -> str:
+def alias_document(label: str, target: str, hub: str | None = None) -> str:
     canonical = f"https://propellerpicks.com{target}"
+    hub_link = (
+        f'    <p>The <a href="{hub}">{label} player prop analyzer</a> is also free to use.</p>\n'
+        if hub
+        else ""
+    )
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -45,7 +50,7 @@ def alias_document(label: str, target: str) -> str:
   <main>
     <h1>{label} player prop research moved</h1>
     <p>The current {label} research board now lives at its canonical URL.</p>
-    <p><a href="{target}">Continue to {label} player prop research</a></p>
+{hub_link}    <p><a href="{target}">Continue to {label} player prop research</a></p>
   </main>
 </body>
 </html>
@@ -57,9 +62,9 @@ def main() -> int:
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     changed: list[Path] = []
-    for sport, (label, target) in ALIASES.items():
+    for sport, (label, target, hub) in ALIASES.items():
         path = ROOT / sport / "index.html"
-        expected = alias_document(label, target)
+        expected = alias_document(label, target, hub)
         source = path.read_text(encoding="utf-8")
         if source != expected:
             changed.append(path)

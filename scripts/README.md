@@ -48,6 +48,7 @@ python3 scripts/apply_site_shell.py --include-home
 python3 scripts/normalize_entity_metadata.py  # keep one formal entity name
 python3 scripts/normalize_alias_metadata.py   # align alias metadata to canonicals
 python3 scripts/normalize_analyzer_archive_language.py
+python3 scripts/normalize_sport_hub_links.py  # player breadcrumbs point at sport hubs
 python3 scripts/normalize_access_language.py
 python3 scripts/set_archive_indexing.py       # noindex legacy performance reports
 python3 scripts/sync_faq_schema.py            # visible FAQ copy is canonical
@@ -87,6 +88,9 @@ All scripts are idempotent and safe to run repeatedly.
 - **normalize_analyzer_archive_language.py** — labels player-page rates as
   historical outcome summaries over graded analysis rows and adds the same
   repeat/retrospective-data limitation used by the canonical Results page.
+- **normalize_sport_hub_links.py** — points the player-page breadcrumb (visible
+  nav and `BreadcrumbList` JSON-LD) at `/analyzer/<sport>/` for sports whose
+  hub page exists, and leaves filtered `/analyzer/?sport=` links elsewhere.
 - **normalize_coverage_claims.py** — limits coverage wording to listed or
   currently available props and keeps confidence language distinct from a
   calibrated win-probability claim.
@@ -148,6 +152,7 @@ python3 scripts/apply_site_shell.py --check --include-home
 python3 scripts/normalize_entity_metadata.py --check
 python3 scripts/normalize_alias_metadata.py --check
 python3 scripts/normalize_analyzer_archive_language.py --check
+python3 scripts/normalize_sport_hub_links.py --check
 python3 scripts/normalize_coverage_claims.py --check
 python3 scripts/normalize_strategy_claims.py --check
 python3 scripts/normalize_access_language.py --check
