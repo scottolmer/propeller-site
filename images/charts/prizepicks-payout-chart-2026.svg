@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1198" width="1200" height="1198" font-family="Helvetica, Arial, sans-serif" role="img" aria-labelledby="t">
+<title id="t">PrizePicks Payout Chart 2026</title>
+<rect width="1200" height="1198" fill="#031a2c"/>
+<text x="48" y="92" font-size="38" font-weight="700" fill="#f7f1e7">PrizePicks Payout Chart 2026</text>
+<text x="48" y="156" font-size="24" font-weight="700" fill="#54c8ff">Power Play (all picks must hit)</text>
+<rect x="48" y="174" width="1104" height="40" fill="#06243a"/>
+<text x="64" y="200" font-size="17" font-weight="700" fill="#b8d3df">PICKS</text>
+<text x="340" y="200" font-size="17" font-weight="700" fill="#b8d3df">RESULT</text>
+<text x="616" y="200" font-size="17" font-weight="700" fill="#b8d3df">MULTIPLIER</text>
+<text x="892" y="200" font-size="17" font-weight="700" fill="#b8d3df">$20 ENTRY</text>
+<text x="64" y="244" font-size="21" font-weight="400" fill="#f7f1e7">2 Picks</text>
+<text x="340" y="244" font-size="21" font-weight="400" fill="#f7f1e7">2/2 correct</text>
+<text x="616" y="244" font-size="21" font-weight="700" fill="#ff5b23">3x</text>
+<text x="892" y="244" font-size="21" font-weight="400" fill="#f7f1e7">$60</text>
+<rect x="48" y="260" width="1104" height="46" fill="#06243a" opacity=".55"/>
+<text x="64" y="290" font-size="21" font-weight="400" fill="#f7f1e7">3 Picks</text>
+<text x="340" y="290" font-size="21" font-weight="400" fill="#f7f1e7">3/3 correct</text>
+<text x="616" y="290" font-size="21" font-weight="700" fill="#ff5b23">6x</text>
+<text x="892" y="290" font-size="21" font-weight="400" fill="#f7f1e7">$120</text>
+<text x="64" y="336" font-size="21" font-weight="400" fill="#f7f1e7">4 Picks</text>
+<text x="340" y="336" font-size="21" font-weight="400" fill="#f7f1e7">4/4 correct</text>
+<text x="616" y="336" font-size="21" font-weight="700" fill="#ff5b23">10x</text>
+<text x="892" y="336" font-size="21" font-weight="400" fill="#f7f1e7">$200</text>
+<rect x="48" y="352" width="1104" height="46" fill="#06243a" opacity=".55"/>
+<text x="64" y="382" font-size="21" font-weight="400" fill="#f7f1e7">5 Picks</text>
+<text x="340" y="382" font-size="21" font-weight="400" fill="#f7f1e7">5/5 correct</text>
+<text x="616" y="382" font-size="21" font-weight="700" fill="#ff5b23">20x</text>
+<text x="892" y="382" font-size="21" font-weight="400" fill="#f7f1e7">$400</text>
+<text x="64" y="428" font-size="21" font-weight="400" fill="#f7f1e7">6 Picks</text>
+<text x="340" y="428" font-size="21" font-weight="400" fill="#f7f1e7">6/6 correct</text>
+<text x="616" y="428" font-size="21" font-weight="700" fill="#ff5b23">37.5x</text>
+<text x="892" y="428" font-size="21" font-weight="400" fill="#f7f1e7">$750</text>
+<line x1="48" y1="444" x2="1152" y2="444" stroke="#54c8ff" stroke-opacity=".5"/>
+<text x="48" y="484" font-size="24" font-weight="700" fill="#54c8ff">Flex Play (partial wins)</text>
+<rect x="48" y="502" width="1104" height="40" fill="#06243a"/>
+<text x="64" y="528" font-size="17" font-weight="700" fill="#b8d3df">PICKS</text>
+<text x="340" y="528" font-size="17" font-weight="700" fill="#b8d3df">RESULT</text>
+<text x="616" y="528" font-size="17" font-weight="700" fill="#b8d3df">MULTIPLIER</text>
+<text x="892" y="528" font-size="17" font-weight="700" fill="#b8d3df">$20 ENTRY</text>
+<text x="64" y="572" font-size="21" font-weight="400" fill="#f7f1e7">2-Pick Flex</text>
+<text x="340" y="572" font-size="21" font-weight="400" fill="#f7f1e7">2/2 correct</text>
+<text x="616" y="572" font-size="21" font-weight="700" fill="#ff5b23">2x</text>
+<text x="892" y="572" font-size="21" font-weight="400" fill="#f7f1e7">$40</text>
+<rect x="48" y="588" width="1104" height="46" fill="#06243a" opacity=".55"/>
+<text x="64" y="618" font-size="21" font-weight="400" fill="#f7f1e7">2-Pick Flex</text>
+<text x="340" y="618" font-size="21" font-weight="400" fill="#f7f1e7">1/2 correct</text>
+<text x="616" y="618" font-size="21" font-weight="700" fill="#ff5b23">0.5x</text>
+<text x="892" y="618" font-size="21" font-weight="400" fill="#f7f1e7">$10</text>
+<text x="64" y="664" font-size="21" font-weight="400" fill="#f7f1e7">3-Pick Flex</text>
+<text x="340" y="664" font-size="21" font-weight="400" fill="#f7f1e7">3/3 correct</text>
+<text x="616" y="664" font-size="21" font-weight="700" fill="#ff5b23">3x</text>
+<text x="892" y="664" font-size="21" font-weight="400" fill="#f7f1e7">$60</text>
+<rect x="48" y="680" width="1104" height="46" fill="#06243a" opacity=".55"/>
+<text x="64" y="710" font-size="21" font-weight="400" fill="#f7f1e7">3-Pick Flex</text>
+<text x="340" y="710" font-size="21" font-weight="400" fill="#f7f1e7">2/3 correct</text>
+<text x="616" y="710" font-size="21" font-weight="700" fill="#ff5b23">1x</text>
+<text x="892" y="710" font-size="21" font-weight="400" fill="#f7f1e7">$20</text>
+<text x="64" y="756" font-size="21" font-weight="400" fill="#f7f1e7">4-Pick Flex</text>
+<text x="340" y="756" font-size="21" font-weight="400" fill="#f7f1e7">4/4 correct</text>
+<text x="616" y="756" font-size="21" font-weight="700" fill="#ff5b23">6x</text>
+<text x="892" y="756" font-size="21" font-weight="400" fill="#f7f1e7">$120</text>
+<rect x="48" y="772" width="1104" height="46" fill="#06243a" opacity=".55"/>
+<text x="64" y="802" font-size="21" font-weight="400" fill="#f7f1e7">4-Pick Flex</text>
+<text x="340" y="802" font-size="21" font-weight="400" fill="#f7f1e7">3/4 correct</text>
+<text x="616" y="802" font-size="21" font-weight="700" fill="#ff5b23">1.5x</text>
+<text x="892" y="802" font-size="21" font-weight="400" fill="#f7f1e7">$30</text>
+<text x="64" y="848" font-size="21" font-weight="400" fill="#f7f1e7">5-Pick Flex</text>
+<text x="340" y="848" font-size="21" font-weight="400" fill="#f7f1e7">5/5 correct</text>
+<text x="616" y="848" font-size="21" font-weight="700" fill="#ff5b23">10x</text>
+<text x="892" y="848" font-size="21" font-weight="400" fill="#f7f1e7">$200</text>
+<rect x="48" y="864" width="1104" height="46" fill="#06243a" opacity=".55"/>
+<text x="64" y="894" font-size="21" font-weight="400" fill="#f7f1e7">5-Pick Flex</text>
+<text x="340" y="894" font-size="21" font-weight="400" fill="#f7f1e7">4/5 correct</text>
+<text x="616" y="894" font-size="21" font-weight="700" fill="#ff5b23">2x</text>
+<text x="892" y="894" font-size="21" font-weight="400" fill="#f7f1e7">$40</text>
+<text x="64" y="940" font-size="21" font-weight="400" fill="#f7f1e7">5-Pick Flex</text>
+<text x="340" y="940" font-size="21" font-weight="400" fill="#f7f1e7">3/5 correct</text>
+<text x="616" y="940" font-size="21" font-weight="700" fill="#ff5b23">0.4x</text>
+<text x="892" y="940" font-size="21" font-weight="400" fill="#f7f1e7">$8</text>
+<rect x="48" y="956" width="1104" height="46" fill="#06243a" opacity=".55"/>
+<text x="64" y="986" font-size="21" font-weight="400" fill="#f7f1e7">6-Pick Flex</text>
+<text x="340" y="986" font-size="21" font-weight="400" fill="#f7f1e7">6/6 correct</text>
+<text x="616" y="986" font-size="21" font-weight="700" fill="#ff5b23">25x</text>
+<text x="892" y="986" font-size="21" font-weight="400" fill="#f7f1e7">$500</text>
+<text x="64" y="1032" font-size="21" font-weight="400" fill="#f7f1e7">6-Pick Flex</text>
+<text x="340" y="1032" font-size="21" font-weight="400" fill="#f7f1e7">5/6 correct</text>
+<text x="616" y="1032" font-size="21" font-weight="700" fill="#ff5b23">2x</text>
+<text x="892" y="1032" font-size="21" font-weight="400" fill="#f7f1e7">$40</text>
+<rect x="48" y="1048" width="1104" height="46" fill="#06243a" opacity=".55"/>
+<text x="64" y="1078" font-size="21" font-weight="400" fill="#f7f1e7">6-Pick Flex</text>
+<text x="340" y="1078" font-size="21" font-weight="400" fill="#f7f1e7">4/6 correct</text>
+<text x="616" y="1078" font-size="21" font-weight="700" fill="#ff5b23">0.4x</text>
+<text x="892" y="1078" font-size="21" font-weight="400" fill="#f7f1e7">$8</text>
+<line x1="48" y1="1094" x2="1152" y2="1094" stroke="#54c8ff" stroke-opacity=".5"/>
+<text x="48" y="1134" font-size="16" fill="#b8d3df">Standard Player Pick rates. Promotions and special projections can change the payout; confirm the final screen in the PrizePicks app.</text>
+<text x="48" y="1160" font-size="16" fill="#b8d3df">propellerpicks.com</text>
+</svg>
