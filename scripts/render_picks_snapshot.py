@@ -77,7 +77,7 @@ PAGES = {
     # block stays visible beside live search (keep_live) and is hidden only
     # when its slate date is not today.
     "analyzer/index.html": {
-        "feeds": ["nfl", "nba", "nhl", "mlb"], "anchor": "    <!-- Results Controls -->",
+        "feeds": ["nfl", "nba", "nhl", "mlb"], "anchor": "<!-- Results Controls -->",
         "words": ("More", "Less"), "platform": None,
         "per_sport": 3, "keep_live": True,
         "heading": "Top player prop research for {date}",
@@ -379,6 +379,7 @@ def main() -> int:
                 else datetime.datetime.now(datetime.timezone.utc))
     fixtures = pathlib.Path(args.fixtures) if args.fixtures else None
 
+    skipped = []
     needed = sorted({sport for config in PAGES.values() for sport in config["feeds"]})
     feeds = {sport: load_feed(sport, slate_date, fixtures) for sport in needed}
 
@@ -399,11 +400,15 @@ def main() -> int:
             )
         except ValueError as error:
             print(f"SKIP {rel}: {error}", file=sys.stderr)
+            skipped.append(rel)
             continue
         if out != page:
             path.write_text(out)
         rows = sum(len(page_rows(config, feeds[s])) for s in config["feeds"])
         print(f"snapshot {rel}: {rows} rows")
+    if skipped:
+        print(f"ERROR snapshot anchor missing on: {', '.join(skipped)}", file=sys.stderr)
+        return 1
     return 0
 
 

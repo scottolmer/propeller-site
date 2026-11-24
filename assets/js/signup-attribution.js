@@ -179,15 +179,6 @@
     }
   }
 
-  function decorateSignupLinks(attribution) {
-    Array.prototype.forEach.call(
-      document.querySelectorAll('a[href*="app.propellerpicks.com/signup"]'),
-      function (link) {
-        link.href = decoratedSignupUrl(link.href, attribution);
-      }
-    );
-  }
-
   // Links are decorated only when a visitor acts on them. Decorating every
   // link at page load put pp_ft_/pp_lt_ query strings into the rendered DOM,
   // and Google indexed those one-off signup URLs.
