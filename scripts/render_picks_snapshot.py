@@ -23,6 +23,7 @@ Idempotent for a given feed response. Marker-delimited; replaces its own block.
 Usage:
   python3 scripts/render_picks_snapshot.py
   python3 scripts/render_picks_snapshot.py --date 2026-11-09 --fixtures scripts/fixtures/picks_snapshot
+  python3 scripts/render_picks_snapshot.py --state-only
 """
 import argparse
 import datetime
@@ -362,6 +363,101 @@ def existing_slate_date(page: str):
     return match.group(1) if match else None
 
 
+def snapshot_row_count(page: str) -> int:
+    block = BLOCK_RE.search(page)
+    match = re.search(r'data-row-count="(\d+)"', block.group(0)) if block else None
+    return int(match.group(1)) if match else 0
+
+
+def hide_element_by_id(page: str, element_id: str) -> str:
+    """Add an inline display:none to one element, idempotently."""
+    pattern = re.compile(rf'<div\b[^>]*\bid="{re.escape(element_id)}"[^>]*>', re.I)
+
+    def replace(match: re.Match[str]) -> str:
+        tag = match.group(0)
+        style = re.search(r'\bstyle\s*=\s*"([^"]*)"', tag, re.I)
+        if style:
+            value = style.group(1)
+            if re.search(r'display\s*:\s*none', value, re.I):
+                return tag
+            value = value.rstrip()
+            if value and not value.endswith(";"):
+                value += ";"
+            value += "display:none;"
+            return tag[:style.start(1)] + value + tag[style.end(1):]
+        return tag[:-1] + ' style="display:none;"' + tag[-1:]
+
+    return pattern.sub(replace, page, count=1)
+
+
+def remove_element_by_id(page: str, element_id: str) -> str:
+    """Remove one balanced <div id="..."> block, including its indentation."""
+    opening = re.search(rf'<div\b[^>]*\bid="{re.escape(element_id)}"[^>]*>', page, re.I)
+    if not opening:
+        return page
+    depth = 1
+    for tag in re.finditer(r'<div\b[^>]*>|</div\s*>', page[opening.end():], re.I):
+        if tag.group(0).lower().startswith("</"):
+            depth -= 1
+            if depth == 0:
+                start, end = opening.start(), opening.end() + tag.end()
+                line_start = page.rfind("\n", 0, start) + 1
+                if not page[line_start:start].strip():
+                    start = line_start
+                if page[end:end + 1] == "\n":
+                    end += 1
+                return page[:start] + page[end:]
+        else:
+            depth += 1
+    return page
+
+
+def set_static_state(page: str, slate_date: str, has_rows: bool) -> str:
+    """Make the no-JS HTML agree with the snapshot block.
+
+    The loading status and skeleton are only needed while JavaScript fetches
+    live rows. When the snapshot already has rows, the raw HTML shows a dated
+    status and no loading state. An empty snapshot shows its own dated empty
+    message instead of loading text, so the two states are never shown together.
+    """
+    day = datetime.date.fromisoformat(slate_date)
+    long_date = f"{day.strftime('%A, %B')} {day.day}, {day.year}"
+    status = (f"Showing research from {long_date}." if has_rows
+              else f"No research rows for {long_date}.")
+    page = re.sub(
+        r'(<p\b[^>]*\bid="picksAvailability"[^>]*>)(.*?)(</p>)',
+        lambda match: match.group(1) + esc(status) + match.group(3),
+        page,
+        count=1,
+        flags=re.S | re.I,
+    )
+    page = hide_element_by_id(page, "picksSkeletonGrid")
+    # The NFL-style container shows its own "Loading today's ..." block. Remove
+    # it rather than hide it so the loading copy is not in the raw HTML.
+    page = remove_element_by_id(page, "picks-loading")
+    return page
+
+
+def refresh_static_state() -> int:
+    """Align the loading/status shell with already-rendered snapshot blocks."""
+    for rel in PAGES:
+        path = ROOT / rel
+        if not path.exists():
+            print(f"MISSING {rel}", file=sys.stderr)
+            continue
+        page = path.read_text()
+        slate_date = existing_slate_date(page)
+        if not slate_date:
+            print(f"SKIP {rel}: no snapshot block", file=sys.stderr)
+            continue
+        rows = snapshot_row_count(page)
+        updated = set_static_state(page, slate_date, rows > 0)
+        if updated != page:
+            path.write_text(updated)
+        print(f"static state {rel}: {rows} rows")
+    return 0
+
+
 def apply(page: str, block: str, anchor: str) -> str:
     if BLOCK_RE.search(page):
         page = BLOCK_RE.sub(lambda _: block, page, count=1)
@@ -385,7 +481,15 @@ def main() -> int:
     parser.add_argument("--date", help="Slate date YYYY-MM-DD (default: today, Eastern time)")
     parser.add_argument("--fixtures", help="Read <sport>.json from this directory instead of the network")
     parser.add_argument("--captured-at", help="Override capture time (ISO 8601, UTC) for reproducible output")
+    parser.add_argument(
+        "--state-only",
+        action="store_true",
+        help="Only align the loading/status shell with existing snapshot blocks; do not fetch feeds",
+    )
     args = parser.parse_args()
+
+    if args.state_only:
+        return refresh_static_state()
 
     slate_date = args.date or datetime.datetime.now(ET).date().isoformat()
     captured = (datetime.datetime.fromisoformat(args.captured_at.replace("Z", "+00:00")) if args.captured_at
@@ -404,13 +508,15 @@ def main() -> int:
         page = path.read_text()
         all_down = all(feeds[s]["status"] == "unavailable" for s in config["feeds"])
         if all_down and existing_slate_date(page) == slate_date:
+            updated = set_static_state(page, slate_date, snapshot_row_count(page) > 0)
+            if updated != page:
+                path.write_text(updated)
             print(f"kept {rel} (feed unavailable, same-day snapshot retained)")
             continue
         try:
-            out = stamp_hero_updated(
-                apply(page, render_block(config, feeds, slate_date, captured), config["anchor"]),
-                captured,
-            )
+            out = apply(page, render_block(config, feeds, slate_date, captured), config["anchor"])
+            out = set_static_state(out, slate_date, snapshot_row_count(out) > 0)
+            out = stamp_hero_updated(out, captured)
         except ValueError as error:
             print(f"SKIP {rel}: {error}", file=sys.stderr)
             skipped.append(rel)
