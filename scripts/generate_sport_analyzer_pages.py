@@ -18,8 +18,10 @@ from pathlib import Path
 
 try:
     from scripts.apply_site_shell import migrate_html
+    from scripts import render_picks_snapshot as picks_snapshot
 except ModuleNotFoundError:
     from apply_site_shell import migrate_html
+    import render_picks_snapshot as picks_snapshot
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -273,6 +275,20 @@ def render(page: dict) -> str:
 """
 
 
+def carry_snapshot(output: str, current: str | None, slug: str) -> str:
+    """Keep the dated research snapshot that render_picks_snapshot.py wrote.
+
+    This generator rebuilds the page from scratch; without this, every nightly
+    run would wipe the server-rendered rows the snapshot step just added.
+    """
+    rel = f"analyzer/{slug}/index.html"
+    config = picks_snapshot.PAGES.get(rel)
+    block = picks_snapshot.BLOCK_RE.search(current or "")
+    if not config or not block:
+        return output
+    return picks_snapshot.apply(output, block.group(0), config["anchor"])
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--check", action="store_true")
@@ -280,8 +296,8 @@ def main() -> int:
     changed = []
     for page in PAGES:
         path = ROOT / "analyzer" / page["slug"] / "index.html"
-        output = migrate_html(render(page), path, False)
         current = path.read_text(encoding="utf-8") if path.exists() else None
+        output = carry_snapshot(migrate_html(render(page), path, False), current, page["slug"])
         if current != output:
             changed.append(path)
             if not args.check:

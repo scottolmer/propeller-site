@@ -24,8 +24,23 @@
   }
 
   let started = Boolean(window.ppAnalyticsLoadStarted);
+  // Automated browsers (headless Chrome, Puppeteer, Playwright) report
+  // navigator.webdriver. Data-center crawlers of this kind showed up as
+  // one-session, zero-engagement "Direct" visits from Singapore and China in
+  // Nov 2026 and skewed every rate, so the remote tag never loads for them.
+  const automated = Boolean(window.navigator && window.navigator.webdriver);
+  if (automated) {
+    // About 4,300 older pages (blog posts, player pages) also hardcode the
+    // legacy gtag.js source after this synchronous loader. Google's documented
+    // opt-out flags stop every tag on the page from sending hits, so those
+    // pages stay quiet for automated browsers too.
+    ['GT-57326MMH', 'G-NLXM4C2G7D', 'G-2Z7JMN1JTL'].forEach((id) => {
+      window['ga-disable-' + id] = true;
+    });
+  }
+
   function loadAnalytics() {
-    if (started) return;
+    if (started || automated) return;
     // Older generated pages retain their legacy gtag source. Reuse it instead
     // of inserting a second remote script when this shared loader runs there.
     if (document.querySelector && document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {

@@ -161,7 +161,7 @@ PAGES = [
  'visual_system': 'replay-room',
  'body_class': 'pp-grading-page',
  'updated': '2026-09-23',
- 'summary': 'Once the final result is available, Propeller compares it with the stored line and direction. Over wins above the line, Under wins below it, and an exact tie is a push. Match the player, event and stat first. When quoting the historical archive, say whether you mean raw analysis rows or entries retained under current collapse rules. Neither total alone proves unique recommendations, pre-event publication or profit.',
+ 'summary': 'Propeller Picks grades historical prop outcomes against the stored line and direction once the final result is available. Over wins above the line, Under wins below it, and an exact tie is a push. Match the player, event and stat first. When quoting the historical archive, say whether you mean raw analysis rows or entries retained under current collapse rules. Neither total alone proves unique recommendations, pre-event publication or profit.',
  'sections': [],
  'hero_image': {'src': '/help/how-does-propeller-grade-picks/cover.png',
                 'width': 1200,

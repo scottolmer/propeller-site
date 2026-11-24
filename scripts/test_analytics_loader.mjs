@@ -62,3 +62,33 @@ test("does not insert a second remote script when a preserved legacy source exis
   assert.equal(appended.length, 0);
   assert.equal(window.ppAnalyticsLoadStarted, true);
 });
+
+test("never loads the remote tag in an automated browser", () => {
+  const appended = [];
+  const listeners = new Map();
+  const window = {
+    navigator: { webdriver: true },
+    addEventListener: (name, listener) => listeners.set(name, listener),
+  };
+  const document = {
+    createElement: () => ({}),
+    head: { appendChild: (node) => appended.push(node) },
+  };
+  vm.runInNewContext(source, { window, document });
+  window.ppLoadAnalytics();
+  listeners.get("pointerdown")();
+  assert.equal(appended.length, 0);
+  assert.equal(typeof window.gtag, "function");
+  // Legacy pages load gtag.js themselves; the opt-out flags cover them.
+  for (const id of ["GT-57326MMH", "G-NLXM4C2G7D", "G-2Z7JMN1JTL"]) {
+    assert.equal(window[`ga-disable-${id}`], true, id);
+  }
+});
+
+test("real browsers are not opted out", () => {
+  const window = { navigator: { webdriver: false }, addEventListener: () => {} };
+  const document = { createElement: () => ({}), head: { appendChild: () => {} } };
+  vm.runInNewContext(source, { window, document });
+  assert.equal(window["ga-disable-GT-57326MMH"], undefined);
+  assert.equal(window["ga-disable-G-NLXM4C2G7D"], undefined);
+});

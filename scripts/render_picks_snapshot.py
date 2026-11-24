@@ -82,6 +82,19 @@ PAGES = {
         "per_sport": 3, "keep_live": True,
         "heading": "Top player prop research for {date}",
     },
+    # Sport hubs: generate_sport_analyzer_pages.py rebuilds these nightly and
+    # carries this block forward (carry_snapshot), so keep the anchor in sync
+    # with its template.
+    "analyzer/nba/index.html": {
+        "feeds": ["nba"], "anchor": '<section class="sa-band" aria-labelledby="sa-signals-heading">',
+        "words": ("More", "Less"), "platform": None, "keep_live": True,
+        "heading": "Top NBA player prop research for {date}",
+    },
+    "analyzer/nfl/index.html": {
+        "feeds": ["nfl"], "anchor": '<section class="sa-band" aria-labelledby="sa-signals-heading">',
+        "words": ("More", "Less"), "platform": None, "keep_live": True,
+        "heading": "Top NFL player prop research for {date}",
+    },
 }
 
 STAT_LABELS = {
@@ -223,8 +236,8 @@ def nfl_reasons(row) -> str:
     return f"Leans this way on {joined}."
 
 
-CELL = 'style="padding:10px 12px;border-bottom:1px solid var(--glass-border);text-align:left;vertical-align:top;"'
-HEAD = ('style="padding:8px 12px;border-bottom:1px solid var(--glass-border-active);text-align:left;'
+CELL = 'style="padding:10px 12px;border-bottom:1px solid var(--glass-border, rgba(84,200,255,.18));text-align:left;vertical-align:top;"'
+HEAD = ('style="padding:8px 12px;border-bottom:1px solid var(--glass-border-active, rgba(84,200,255,.4));text-align:left;'
         'font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-tertiary);font-weight:600;"')
 
 
