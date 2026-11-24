@@ -60,6 +60,25 @@ class PicksSnapshot(unittest.TestCase):
         self.assertEqual([row["player_name"] for row in kept], ["Brandon Miller", "Ivica Zubac"])
         self.assertEqual(kept[0]["stat_type"], "pts_ast")
 
+    def test_analyzer_hub_caps_rows_per_sport_and_stays_visible_beside_search(self):
+        config = snap.PAGES["analyzer/index.html"]
+        block = snap.render_block(config, feeds(), DAY, CAPTURED)
+        self.assertIn('data-keep-live="true"', block)
+        self.assertIn("<h2", block)
+        self.assertIn("Top player prop research for Monday, November 9, 2026", block)
+        self.assertIn("Search above to see any player&#x27;s current lines.", block)
+        self.assertNotIn("The page loads the latest rows", block)
+        for sport in config["feeds"]:
+            self.assertLessEqual(len(snap.page_rows(config, feeds()[sport])), 3)
+        rows = block.count("<tr>") - block.count("<thead><tr>")
+        self.assertEqual(int(re.search(r'data-row-count="(\d+)"', block).group(1)), rows)
+        self.assertNotRegex(block, r">\d+%<")
+        self.assertNotIn('data-keep-live', snap.render_block(snap.PAGES["picks/nba/index.html"], feeds(), DAY, CAPTURED))
+
+    def test_analyzer_anchor_exists_on_the_page(self):
+        source = (ROOT / "analyzer/index.html").read_text()
+        self.assertIn(snap.PAGES["analyzer/index.html"]["anchor"], source)
+
     def test_apply_is_idempotent_and_adds_the_companion_script_once(self):
         page = '<main>\n    <div id="picksOutput" style="display:none;"></div>\n</main>\n</body>'
         block = snap.render_block(snap.PAGES["picks/nba/index.html"], feeds(), DAY, CAPTURED)

@@ -31,6 +31,10 @@
 
   if (snapshot.getAttribute("data-slate-date") !== todayET()) { hide(); return; }
 
+  // Pages whose live UI shows different rows (the analyzer hub's search)
+  // keep a same-day snapshot visible; only a stale slate is hidden.
+  if (snapshot.getAttribute("data-keep-live") === "true") return;
+
   var skeleton = document.getElementById("picksSkeletonGrid");
   if (skeleton && Number(snapshot.getAttribute("data-row-count")) > 0) {
     skeleton.style.display = "none";

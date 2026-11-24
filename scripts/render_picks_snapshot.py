@@ -42,7 +42,7 @@ ET = ZoneInfo("America/New_York")
 START = "<!-- picks-snapshot:start -->"
 END = "<!-- picks-snapshot:end -->"
 BLOCK_RE = re.compile(re.escape(START) + r".*?" + re.escape(END) + r"\n?", re.S)
-SCRIPT_TAG = '<script src="/assets/js/picks-snapshot.js?v=20261109"></script>'
+SCRIPT_TAG = '<script src="/assets/js/picks-snapshot.js?v=20261124"></script>'
 ROW_LIMIT = 5
 # Ask the feed for more rows than we show, so one row per player can still fill the table.
 FETCH_LIMIT = 25
@@ -71,6 +71,16 @@ PAGES = {
     "picks/nfl/index.html": {
         "feeds": ["nfl"], "anchor": '<div id="picks-container"',
         "words": ("Over", "Under"), "platform": None,
+    },
+    # The analyzer hub's own results load by JavaScript, so without this block
+    # its first HTML pass shows a search box and copy but no research. The
+    # block stays visible beside live search (keep_live) and is hidden only
+    # when its slate date is not today.
+    "analyzer/index.html": {
+        "feeds": ["nfl", "nba", "nhl", "mlb"], "anchor": "    <!-- Results Controls -->",
+        "words": ("More", "Less"), "platform": None,
+        "per_sport": 3, "keep_live": True,
+        "heading": "Top player prop research for {date}",
     },
 }
 
@@ -218,7 +228,12 @@ HEAD = ('style="padding:8px 12px;border-bottom:1px solid var(--glass-border-acti
         'font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--text-tertiary);font-weight:600;"')
 
 
-def table(sport: str, feed: dict, words, long_date: str) -> str:
+def page_rows(config: dict, feed: dict) -> list:
+    """The rows one page shows from a shared feed (per_sport caps it below ROW_LIMIT)."""
+    return feed["rows"][: config.get("per_sport", ROW_LIMIT)]
+
+
+def table(sport: str, feed: dict, words, long_date: str, rows=None) -> str:
     label = SPORT_LABELS[sport]
     over_word, under_word = words
     is_nfl = sport == "nfl"
@@ -235,7 +250,7 @@ def table(sport: str, feed: dict, words, long_date: str) -> str:
         "<thead><tr>" + "".join(f"<th scope=\"col\" {HEAD}>{esc(h)}</th>" for h in head) + "</tr></thead>",
         "<tbody>",
     ]
-    for row in feed["rows"]:
+    for row in feed["rows"] if rows is None else rows:
         name = row["player_name"].strip()
         href = f"/analyzer/?sport={sport}&q={urllib.parse.quote(name)}"
         over = row["final_direction"] == "OVER"
@@ -288,7 +303,7 @@ def render_block(config: dict, feeds: dict, slate_date: str, captured: datetime.
     captured_label_text = captured_label(captured)
     with_rows = [s for s in config["feeds"] if feeds[s]["status"] == "ok"]
     unavailable = [s for s in config["feeds"] if feeds[s]["status"] == "unavailable"]
-    total = sum(len(feeds[s]["rows"]) for s in with_rows)
+    total = sum(len(page_rows(config, feeds[s])) for s in with_rows)
     platform = config["platform"]
     check = (f"These are Propeller Picks research rows, not a {platform} feed. Lines move, so match the player, "
              f"stat, and line on {platform} before you play."
@@ -300,17 +315,24 @@ def render_block(config: dict, feeds: dict, slate_date: str, captured: datetime.
         START,
         f'<div id="picksSnapshot" data-slate-date="{esc(slate_date)}" '
         f'data-captured-at="{esc(captured.strftime("%Y-%m-%dT%H:%M:%SZ"))}" data-row-count="{total}" '
-        'style="margin:0 0 28px;">',
+        + ('data-keep-live="true" ' if config.get("keep_live") else "")
+        + 'style="margin:0 0 28px;">',
     ]
+    if config.get("heading"):
+        parts.append(
+            '<h2 style="font-size:clamp(20px,3vw,26px);margin:0 0 10px;color:var(--text-primary);">'
+            f'{esc(config["heading"].format(date=long_date))}</h2>')
+    refresh = ("Search above to see any player's current lines."
+               if config.get("keep_live") else "The page loads the latest rows when it opens.")
     if total:
         sports = ", ".join(SPORT_LABELS[s] for s in with_rows)
         parts.append(
             f'<p {note_style}><strong>{total} free research {"row" if total == 1 else "rows"} for {esc(long_date)}</strong> '
-            f'({esc(sports)}). Snapshot captured {esc(captured_label_text)}. The page loads the latest rows when it opens. '
+            f'({esc(sports)}). Snapshot captured {esc(captured_label_text)}. {esc(refresh)} '
             f'Each row shows which way the research leans and a 50 to 100 confidence score, which is not a win probability. '
             f'{esc(check)}</p>')
         for sport in with_rows:
-            parts.append(table(sport, feeds[sport], config["words"], long_date))
+            parts.append(table(sport, feeds[sport], config["words"], long_date, page_rows(config, feeds[sport])))
     else:
         reason = ("The research feed could not be reached" if len(unavailable) == len(config["feeds"])
                   else "No public research rows were available")
@@ -380,7 +402,7 @@ def main() -> int:
             continue
         if out != page:
             path.write_text(out)
-        rows = sum(len(feeds[s]["rows"]) for s in config["feeds"])
+        rows = sum(len(page_rows(config, feeds[s])) for s in config["feeds"])
         print(f"snapshot {rel}: {rows} rows")
     return 0
 
