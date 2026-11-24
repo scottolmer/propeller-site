@@ -1259,6 +1259,17 @@ def render_related(paths: list[str], label_overrides: dict | None = None) -> str
     return "\n          ".join(items)
 
 
+def upload_datetime(upload_date: str) -> str:
+    """Google's video rich results want a full datetime with a timezone."""
+    import datetime as _dt
+    from zoneinfo import ZoneInfo as _ZoneInfo
+
+    if "T" in upload_date:
+        return upload_date
+    day = _dt.date.fromisoformat(upload_date)
+    return _dt.datetime(day.year, day.month, day.day, 12, tzinfo=_ZoneInfo("America/New_York")).isoformat()
+
+
 def render_video(page: dict) -> tuple[str, str, str]:
     video = page.get("video")
     if not video:
@@ -1270,7 +1281,7 @@ def render_video(page: dict) -> tuple[str, str, str]:
         "name": video["title"],
         "description": video["description"],
         "thumbnailUrl": f"https://i.ytimg.com/vi/{video['id']}/maxresdefault.jpg",
-        "uploadDate": video["upload_date"],
+        "uploadDate": upload_datetime(video["upload_date"]),
         "duration": video["duration"],
         "embedUrl": f"https://www.youtube.com/embed/{video['id']}",
         "contentUrl": f"https://www.youtube.com/watch?v={video['id']}",
