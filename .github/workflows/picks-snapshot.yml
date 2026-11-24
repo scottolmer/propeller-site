@@ -43,7 +43,7 @@ jobs:
           fi
           git config user.name "picks-snapshot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add picks analyzer/index.html
+          git add picks analyzer/index.html analyzer/nba/index.html analyzer/nfl/index.html
           git commit -m "chore: refresh picks snapshot"
           git pull --rebase origin master
           git push origin master

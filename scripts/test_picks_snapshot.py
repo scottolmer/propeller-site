@@ -79,6 +79,23 @@ class PicksSnapshot(unittest.TestCase):
         source = (ROOT / "analyzer/index.html").read_text()
         self.assertIn(snap.PAGES["analyzer/index.html"]["anchor"], source)
 
+    def test_sport_hub_generator_keeps_the_snapshot_block(self):
+        from scripts import generate_sport_analyzer_pages as gen
+        for slug in ("nba", "nfl"):
+            with self.subTest(hub=slug):
+                rel = f"analyzer/{slug}/index.html"
+                config = snap.PAGES[rel]
+                self.assertTrue(config["keep_live"])
+                page = next(p for p in gen.PAGES if p["slug"] == slug)
+                fresh = gen.migrate_html(gen.render(page), ROOT / rel, False)
+                self.assertIn(config["anchor"], fresh)
+                block = snap.render_block(config, feeds(), DAY, CAPTURED)
+                current = snap.apply(fresh, block, config["anchor"])
+                carried = gen.carry_snapshot(fresh, current, slug)
+                self.assertEqual(carried.count(snap.START), 1)
+                self.assertIn(block, carried)
+                self.assertEqual(gen.carry_snapshot(fresh, None, slug), fresh)
+
     def test_apply_is_idempotent_and_adds_the_companion_script_once(self):
         page = '<main>\n    <div id="picksOutput" style="display:none;"></div>\n</main>\n</body>'
         block = snap.render_block(snap.PAGES["picks/nba/index.html"], feeds(), DAY, CAPTURED)
