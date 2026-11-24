@@ -41,7 +41,44 @@ class BreakEvenMath(unittest.TestCase):
         )
         probability = be.break_even(entry)
         self.assertAlmostEqual(probability, 0.54659, delta=0.00001)
-        self.assertEqual(be.format_pct(probability), "54.6%")
+        self.assertEqual(be.format_pct(probability), "54.7%")
+        self.assertIn(
+            '<tr data-entry="Power Play" data-picks="6"><td>Power Play</td><td>6</td>'
+            '<td class="multiplier">54.7%</td></tr>',
+            PAGES["PrizePicks"].read_text(encoding="utf-8"),
+        )
+
+    def test_display_values_round_half_up_to_one_decimal(self):
+        expected = {
+            ("PrizePicks", "Power Play", 2): "57.7%",
+            ("PrizePicks", "Power Play", 3): "55.0%",
+            ("PrizePicks", "Power Play", 4): "56.2%",
+            ("PrizePicks", "Power Play", 5): "54.9%",
+            ("PrizePicks", "Power Play", 6): "54.7%",
+            ("PrizePicks", "Flex Play", 2): "61.8%",
+            ("PrizePicks", "Flex Play", 3): "57.7%",
+            ("PrizePicks", "Flex Play", 4): "55.0%",
+            ("PrizePicks", "Flex Play", 5): "54.3%",
+            ("PrizePicks", "Flex Play", 6): "54.2%",
+            ("Underdog", "Standard", 2): "53.5%",
+            ("Underdog", "Standard", 3): "53.6%",
+            ("Underdog", "Standard", 4): "53.7%",
+            ("Underdog", "Standard", 5): "54.9%",
+            ("Underdog", "Standard", 6): "55.3%",
+            ("Underdog", "Standard", 7): "55.1%",
+            ("Underdog", "Standard", 8): "55.0%",
+            ("Underdog", "Flex", 3): "55.4%",
+            ("Underdog", "Flex", 4): "55.6%",
+            ("Underdog", "Flex", 5): "54.7%",
+            ("Underdog", "Flex", 6): "53.8%",
+            ("Underdog", "Flex", 7): "55.4%",
+            ("Underdog", "Flex", 8): "55.1%",
+        }
+        actual = {
+            (entry.platform, entry.label, entry.picks): be.format_pct(be.break_even(entry))
+            for entry in be.ENTRIES
+        }
+        self.assertEqual(actual, expected)
 
     def test_flex_entries_solve_the_binomial_break_even_equation(self):
         for entry in be.ENTRIES:
@@ -146,13 +183,13 @@ class BreakEvenTables(unittest.TestCase):
                 PAGES["PrizePicks"],
                 "September 9, 2026",
                 "At the standard rates checked September 9, 2026, a 6-pick PrizePicks "
-                "Power Play needs each pick to hit about 54.6% of the time to break even.",
+                "Power Play needs each pick to hit about 54.7% of the time to break even.",
             ),
             (
                 PAGES["Underdog"],
                 "November 14, 2026",
                 "At the standard rates checked November 14, 2026, a 6-pick Underdog "
-                "Standard entry needs each pick to hit about 55.2% of the time to break even.",
+                "Standard entry needs each pick to hit about 55.3% of the time to break even.",
             ),
         )
         for path, date, sentence in checks:

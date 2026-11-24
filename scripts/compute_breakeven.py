@@ -13,13 +13,15 @@ Math:
 - Flex / insurance entries:
       sum_k C(n, k) * p**k * (1-p)**(n-k) * M_k = 1, solved by bisection.
 
-Display values truncate to one decimal place so the break-even rate is never
-overstated. For example, a 6-pick Power at 37.5x is 54.659%, shown as 54.6%.
+Display values round half-up to one decimal place so the displayed break-even
+rate is not understated. For example, a 6-pick Power at 37.5x is 54.659%, shown
+as 54.7%.
 """
 from __future__ import annotations
 
 import math
 from dataclasses import dataclass
+from decimal import Decimal, ROUND_HALF_UP
 from typing import Mapping
 
 
@@ -118,9 +120,10 @@ def break_even(entry: BreakEvenEntry) -> float:
 
 
 def format_pct(probability: float) -> str:
-    """Format a probability as a one-decimal percentage, truncated."""
-    tenths = math.floor(probability * 1000.0 + 1e-9)
-    return f"{tenths / 10.0:.1f}%"
+    """Format a probability as a one-decimal percentage, rounded half-up."""
+    percentage = Decimal(str(probability)) * 100
+    rounded = percentage.quantize(Decimal("0.1"), rounding=ROUND_HALF_UP)
+    return f"{rounded}%"
 
 
 def main() -> int:
