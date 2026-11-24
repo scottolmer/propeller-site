@@ -37,9 +37,9 @@ OWNERS = {
     ],
     "/ai-sports-betting/": [
         "What is a free AI sports betting tool for player props?",
-        "Propeller Picks is a free AI-assisted player-prop research tool",
+        "Propeller Picks offers a free public AI-assisted player-prop analyzer",
         "public analyzer works without an account",
-        "designed for DFS and pick'em platforms",
+        "designed for DFS and pick'em research",
         "does not accept wagers, place entries, or operate as a sportsbook",
         "/analyzer/",
         "/guides/how-ai-sports-betting-works/",
