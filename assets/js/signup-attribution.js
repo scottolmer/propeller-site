@@ -179,27 +179,27 @@
     }
   }
 
-  function decorateSignupLinks(attribution) {
-    Array.prototype.forEach.call(
-      document.querySelectorAll('a[href*="app.propellerpicks.com/signup"]'),
-      function (link) {
-        link.href = decoratedSignupUrl(link.href, attribution);
-      }
-    );
+  // Links are decorated only when a visitor acts on them. Decorating every
+  // link at page load put pp_ft_/pp_lt_ query strings into the rendered DOM,
+  // and Google indexed those one-off signup URLs.
+  function decorateOnInteraction(event) {
+    var link = event.target && event.target.closest && event.target.closest('a[href*="app.propellerpicks.com/signup"]');
+    if (!link) return;
+    link.href = decoratedSignupUrl(link.href, captureAttribution());
   }
 
   function init() {
     if (initialized) {
-      decorateSignupLinks(captureAttribution());
+      captureAttribution();
       return;
     }
     initialized = true;
-    decorateSignupLinks(captureAttribution());
-    document.addEventListener("click", function (event) {
-      var link = event.target.closest && event.target.closest('a[href*="app.propellerpicks.com/signup"]');
-      if (!link) return;
-      link.href = decoratedSignupUrl(link.href, captureAttribution());
-    }, true);
+    captureAttribution();
+    // click: normal and keyboard activation; auxclick: middle-click;
+    // contextmenu: "open in new tab" and "copy link" from the menu.
+    ["click", "auxclick", "contextmenu"].forEach(function (type) {
+      document.addEventListener(type, decorateOnInteraction, true);
+    });
   }
 
   window.ppSignupAttribution = {

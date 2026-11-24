@@ -7,7 +7,7 @@
     if (document.getElementById("pp-signup-attribution-script")) return;
     var script = document.createElement("script");
     script.id = "pp-signup-attribution-script";
-    script.src = "/assets/js/signup-attribution.js?v=20260712";
+    script.src = "/assets/js/signup-attribution.js?v=20261124";
     script.defer = true;
     document.head.appendChild(script);
   }

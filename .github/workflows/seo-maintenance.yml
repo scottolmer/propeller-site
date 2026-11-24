@@ -42,6 +42,7 @@ jobs:
           python3 scripts/generate_comparison_pages.py
           python3 scripts/generate_sport_answer_modules.py
           python3 scripts/generate_sport_analyzer_pages.py
+          python3 scripts/render_payout_charts.py
           python3 scripts/generate_platform_answer_modules.py
           python3 scripts/generate_player_search_index.py
           python3 scripts/apply_site_shell.py --include-home
@@ -90,6 +91,7 @@ jobs:
           python3 scripts/generate_comparison_pages.py --check
           python3 scripts/generate_sport_answer_modules.py --check
           python3 scripts/generate_sport_analyzer_pages.py --check
+          python3 scripts/render_payout_charts.py --check
           python3 scripts/generate_platform_answer_modules.py --check
           python3 scripts/generate_player_search_index.py --check
           python3 -m unittest scripts/test_ai_search_assets.py
