@@ -268,16 +268,23 @@ def render_html(snapshot: dict) -> None:
         f"{len(snapshot['coverage']['reported_buckets'])} buckets"
     )
 
-    home_path = ROOT / "index.html"
-    home = home_path.read_text(encoding="utf-8")
-    for attr, value in (
-        ("data-record-updated", update_text),
-        ("data-record-total", format_short(ledger["total"])),
-        ("data-record-total-detail", f"{format_number(ledger['total'])} ledger entries"),
-        ("data-record-raw-total", format_short(archive["total"])),
-    ):
-        home = replace_text(home, attr, value)
-    home_path.write_text(home, encoding="utf-8")
+    # The homepage proof strip and the paid-ad ledger page share the same
+    # static fallback contract, so a snapshot refresh cannot leave them
+    # disagreeing before live-record.js hydrates.
+    snapshot_pages = [ROOT / "index.html"]
+    ledger_landing_path = ROOT / "lp" / "ledger" / "index.html"
+    if ledger_landing_path.exists():
+        snapshot_pages.append(ledger_landing_path)
+    for page_path in snapshot_pages:
+        page = page_path.read_text(encoding="utf-8")
+        for attr, value in (
+            ("data-record-updated", update_text),
+            ("data-record-total", format_short(ledger["total"])),
+            ("data-record-total-detail", f"{format_number(ledger['total'])} ledger entries"),
+            ("data-record-raw-total", format_short(archive["total"])),
+        ):
+            page = replace_text(page, attr, value)
+        page_path.write_text(page, encoding="utf-8")
 
     results_path = ROOT / "results" / "index.html"
     results = results_path.read_text(encoding="utf-8")
