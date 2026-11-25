@@ -79,7 +79,7 @@
     "name": "Propeller Picks",
     "url": "https://propellerpicks.com"
   },
-  "dateModified": "2026-10-15",
+  "dateModified": "2026-11-25",
   "author": {
     "@type": "Person",
     "name": "Scott Olmer",
@@ -2223,7 +2223,7 @@ footer {
 
       <div class="live-badge fade-in delay-1">
         <span class="live-dot" aria-hidden="true"></span>
-        Player research &mdash; <span id="heroDateLabel">Loading...</span>
+        Player research &mdash; <span id="heroDateLabel">today’s slate</span>
       </div>
 
       <h1 class="fade-in delay-1">
@@ -2495,51 +2495,16 @@ footer {
 
 <section id="find-player" class="player-search-guide" aria-labelledby="find-player-heading">
   <div class="search-guide-inner">
-    <p class="search-guide-label">Player search field guide</p>
+    <p class="search-guide-label">Player search help</p>
     <h2 id="find-player-heading">Can’t find a player? Check the name and the public view.</h2>
-    <p class="search-guide-answer">Choose the intended sport, then enter a distinctive part of the player’s name. The analyzer searches that sport’s loaded public preview. An empty field waits for a search; “No Results” means the entered name found no matching rows. If you change sports, enter the name again. Check the player, stat and displayed line before using the research. A missing match does not establish an injury or sport removal.</p>
-    <p class="search-guide-credit">By <a href="/about/">Scott Olmer</a>, designated author and editorial owner. <a href="/editorial-policy/">Produced and reviewed through automated AI workflows.</a><br>Guide updated <time datetime="2026-10-15">October 15, 2026</time>.</p>
-
-    <h3>What the dated player search showed</h3>
-    <p>In an AI-operated check on September 10, 2026, selecting MLB and searching Ben Rice returned a matching public card. That historical walkthrough shows the search sequence, not his current availability or a recommended line.</p>
-    <p>The useful sequence is sport, name, then card. A name alone does not tell the whole story: the selected sport determines which public rows the field can search. The examples below show how the text match works without relying on a real player being available today.</p>
-
-    <h3>What text does the name field match?</h3>
-    <p>Try part of the name as it appears on the player label. Capital letters do not change the match, and spaces before or after the name are ignored. You do not need the full name, but the text you enter must occur in the name being searched.</p>
-    <p>These fictional rows use Alex Lane for points, Blake Lane for rebounds and Casey Reed for points. They were passed through the analyzer’s name-matching code locally. They are teaching examples, not live props, and the matching names are not a ranking.</p>
-    <div class="search-table-scroll" role="region" aria-label="Fictional search examples; scroll horizontally on small screens" tabindex="0">
-      <table>
-        <caption>Fictional name-search examples using three mock public rows.</caption>
-        <thead><tr><th scope="col">Text entered</th><th scope="col">Matching fictional names</th><th scope="col">What it demonstrates</th></tr></thead>
-        <tbody>
-          <tr><th scope="row">lane</th><td>Alex Lane; Blake Lane</td><td>A name fragment can match more than one player.</td></tr>
-          <tr><th scope="row">LANE with a leading and trailing space</th><td>Alex Lane; Blake Lane</td><td>Capitalization and outer spaces do not change this match.</td></tr>
-          <tr><th scope="row">Casey</th><td>Casey Reed</td><td>A first-name fragment can match a returned label.</td></tr>
-          <tr><th scope="row">points</th><td>None</td><td>The field tests names, not the rows’ stat labels.</td></tr>
-          <tr><th scope="row">A. Lane</th><td>None</td><td>This abbreviation does not occur in “Alex Lane”; try “Lane.”</td></tr>
-          <tr><th scope="row">Empty field</th><td>No cards shown; start-search message</td><td>Loaded rows can exist while the interface waits for a name.</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p>A shared surname can return several players, as “lane” does here. Use a longer part of the name to narrow the match, then read each card. Several matching props do not necessarily mean several different players.</p>
-    <p>A blank input retains the mock rows internally, but the display asks for a name instead of showing cards. Likewise, “points” fails here because none of these names contains that text. The search does not look at their points stat.</p>
-
-    <h3>Which empty state are you looking at?</h3>
-    <figure><img src="/images/content/PP-20260928/search-states.svg" width="1600" height="900" loading="lazy" alt="Three search states call for different next steps: enter a name, retry the selected sport and name, or treat public research as unavailable without guessing why."><figcaption>Illustrated search guide · Research only.</figcaption></figure>
-    <ul>
-      <li><strong>Empty name, rows available:</strong> enter a player name. The start-search message can appear even though the sport has loaded props.</li>
-      <li><strong>No name match:</strong> check the sport and try part of the name. Clear the field to inspect availability; no match can also happen when no rows are loaded.</li>
-      <li><strong>No loaded rows:</strong> current public research is unavailable and the cause is not established. An empty feed or an unreachable feed does not tell you whether games are scheduled.</li>
-    </ul>
-
-    <h3>Three steps to retry without guessing</h3>
+    <p class="search-guide-answer">Choose the right sport first, then type part of the player’s name, like a last name. Capital letters don’t matter. If nothing shows up, that player may not have a line on today’s slate yet. It doesn’t mean they’re hurt.</p>
     <ol>
-      <li><strong>Clear the name.</strong> Read the selected sport’s availability message before trying more spellings.</li>
-      <li><strong>Check the sport.</strong> If no rows are loaded, use “Find a sport with current props” when offered, or select your intended sport. The button checks other sports for props; it does not search for your player. It may find nothing. Enter a distinctive name fragment after a sport change.</li>
-      <li><strong>Inspect the card.</strong> Confirm its player, stat and line using the <a href="/guides/compare-player-prop-lines/">line comparison guide</a>. If no match appears, leave that player’s public research unavailable instead of assigning a reason.</li>
+      <li><strong>Check the sport.</strong> Each sport tab only searches its own players. If you switch sports, type the name again.</li>
+      <li><strong>Try less of the name.</strong> A last name usually works best. If several players share it, open each card and check the stat and line.</li>
+      <li><strong>Try another sport with lines.</strong> If a tab has no lines right now, use “Find a sport with current props” when you see it.</li>
     </ol>
-    <p>For an empty sport tab, see <a href="/help/what-sports-does-propeller-support/">supported versus available coverage</a>. For questions about how current the evidence is, see <a href="/help/how-often-are-propeller-picks-updated/">the freshness guide</a>.</p>
-    <p class="search-guide-source">Source note: <a href="https://github.com/scottolmer/propeller-site/blob/e2f210ce48fdeafc2119a484d629b7d494e2ea49/analyzer/index.html#L3010-L3256">search, display and sport-switch code</a> checked October 15, 2026. That source check and the fictional exercise are separate from the September 10 browser observation.</p>
+    <p>For an empty sport tab, see <a href="/help/what-sports-does-propeller-support/">which sports have lines and when</a>. For how often lines update, see <a href="/help/how-often-are-propeller-picks-updated/">the freshness guide</a>.</p>
+    <p class="search-guide-credit">By <a href="/about/">Scott Olmer</a>. <a href="/editorial-policy/">Produced and reviewed through automated AI workflows.</a><br>Updated <time datetime="2026-11-25">November 25, 2026</time>.</p>
     <a class="search-guide-return" href="/analyzer/#analyzer">Return to player search</a>
   </div>
 </section>
@@ -2567,7 +2532,7 @@ footer {
         <a href="/results/" class="fade-in delay-2" style="display:block;padding:22px;border-radius:18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);text-decoration:none;color:inherit;">
           <p style="margin-bottom:8px;color:var(--text-tertiary);font-size:12px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;">Verify it</p>
           <h3 style="font-family:var(--font-display);font-size:24px;color:var(--text-primary);margin-bottom:10px;">Check the results</h3>
-          <p style="color:var(--text-secondary);margin-bottom:14px;">Keep the public record close to the analyzer so the tool is anchored by proof instead of just interface polish.</p>
+          <p style="color:var(--text-secondary);margin-bottom:14px;">See every graded pick, wins and losses included, before you trust a score.</p>
           <span style="display:inline-flex;align-items:center;gap:8px;color:var(--accent);font-family:var(--font-display);font-size:14px;">Review results <i data-lucide="arrow-right" style="width:15px;height:15px;"></i></span>
         </a>
         <a href="/research/prospective-record/" class="fade-in delay-2" style="display:block;padding:22px;border-radius:18px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);text-decoration:none;color:inherit;">
