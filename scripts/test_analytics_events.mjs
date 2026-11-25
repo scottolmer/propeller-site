@@ -120,6 +120,7 @@ test("homepage and high-intent pages load the canonical CTA tracker with stable 
     "home-final-ios",
     "home-final-web-signup",
     "home-hero-android",
+    "home-hero-entry-check",
     "home-hero-ios",
     "home-hero-web-signup",
     "home-product-android",

@@ -103,6 +103,9 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
 .try{margin-top:22px;font-size:17px;color:var(--muted)}
 .try a{color:var(--cream);margin-right:14px;white-space:nowrap}
 .try a:hover{color:var(--orange)}
+.entry-check{margin-top:18px;font-size:17px;color:var(--muted)}
+.entry-check a{color:var(--blue);text-decoration-color:rgba(84,200,255,.55)}
+.entry-check a:hover{color:var(--cream)}
 
 .hero__get{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:52px}
 .hero__get p{font-size:17px;color:var(--muted)}
@@ -269,6 +272,8 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
           <a href="../analyzer/?sport=soccer&amp;q=Bukayo%20Saka">Bukayo Saka</a>
         </p>
 
+        <p class="entry-check" data-rise>Building an entry? <a href="/lp/entry-check/" data-analytics-event="research_cta_click" data-cta-id="home-hero-entry-check" data-cta-surface="homepage_hero" data-cta-destination="entry_check">See which legs are weakest</a> before you lock it in.</p>
+
         <div class="hero__get" data-rise>
           <div class="stores">
             <a class="pill pill--store" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store" data-analytics-event="app_store_click" data-cta-id="home-hero-ios" data-cta-surface="homepage_hero" data-cta-destination="app_store"><svg aria-hidden="true"><use href="#i-apple"/></svg><span><small>Download on the</small>App Store</span></a>
@@ -302,6 +307,34 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
     </div>
   </section>
 
+  <section class="web" aria-labelledby="web-title">
+    <div class="wrap web__grid">
+      <div class="web__copy">
+        <h2 id="web-title" data-rise>On your phone or the web.</h2>
+        <p data-rise style="--i:1">Save players and check a line before you lock your entry. When you want the whole slate, open the full workspace in your browser.</p>
+        <div class="stores" data-rise style="--i:2">
+          <a class="pill pill--store" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store" data-analytics-event="app_store_click" data-cta-id="home-product-ios" data-cta-surface="homepage_product" data-cta-destination="app_store"><svg aria-hidden="true"><use href="#i-apple"/></svg><span><small>Download on the</small>App Store</span></a>
+          <a class="pill pill--store" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&amp;utm_source=na_Med" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play" data-analytics-event="play_store_click" data-cta-id="home-product-android" data-cta-surface="homepage_product" data-cta-destination="google_play"><svg aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small>Google Play</span></a>
+        </div>
+        <p class="web__links" data-rise style="--i:3"><a href="https://app.propellerpicks.com/signup" rel="noopener" data-analytics-event="signup_click" data-cta-id="home-product-web-signup" data-cta-surface="homepage_product" data-cta-destination="signup">Start your 7-day free trial</a> <span>Free to start, no card. Full workspace $15 total a month, tax included. <a href="/pricing/">See pricing</a></span></p>
+      </div>
+      <figure data-rise style="--i:1">
+        <img src="../images/home-web-recent-results.jpg" alt="Propeller web app chart of Andrew Abbott's strikeouts in his last 10 games against a 2.5 line" width="800" height="272" loading="lazy">
+        <figcaption>On the web: how a player has done against this exact line in his last 10 games.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="proof" aria-labelledby="proof-title">
+    <div class="wrap proof__grid">
+      <p class="proof__num" aria-hidden="true" data-rise><span data-record-raw-total>4.14M</span></p>
+      <div>
+        <h2 id="proof-title" data-rise style="--i:1">Graded props behind the research.</h2>
+        <p class="proof__body" data-rise style="--i:2">Historical prop-analysis rows graded. They include repeated snapshots and retrospective data, so they show how deep the research goes. They are not unique customer bets or proof of future results. <a href="/results/">What that number means</a></p>
+      </div>
+    </div>
+  </section>
+
   <div id="showcase-sentinel" class="showcase-sentinel" aria-hidden="true"></div>
   <section class="showcase" id="showcase" aria-labelledby="showcase-title" hidden>
     <div class="wrap">
@@ -313,34 +346,6 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
       <div class="showcase__cta">
         <a class="pill pill--store" href="/pricing/#ai-connections" data-analytics-event="research_cta_click" data-cta-id="home-showcase-mcp" data-cta-surface="home" data-cta-destination="mcp">Connect Propeller to your AI tool</a>
         <a class="pill pill--quiet" href="/analyzer/?sport=nfl" data-analytics-event="research_cta_click" data-cta-id="home-showcase-analyzer" data-cta-surface="home" data-cta-destination="analyzer">Look up another player</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="web" aria-labelledby="web-title">
-    <div class="wrap web__grid">
-      <div class="web__copy">
-        <h2 id="web-title" data-rise>On your phone or the web.</h2>
-        <p data-rise style="--i:1">Save players and check a line before you lock your entry. When you want the whole slate, open the full workspace in your browser.</p>
-        <div class="stores" data-rise style="--i:2">
-          <a class="pill pill--store" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store" data-analytics-event="app_store_click" data-cta-id="home-product-ios" data-cta-surface="homepage_product" data-cta-destination="app_store"><svg aria-hidden="true"><use href="#i-apple"/></svg><span><small>Download on the</small>App Store</span></a>
-          <a class="pill pill--store" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&amp;utm_source=na_Med" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play" data-analytics-event="play_store_click" data-cta-id="home-product-android" data-cta-surface="homepage_product" data-cta-destination="google_play"><svg aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small>Google Play</span></a>
-        </div>
-        <p class="web__links" data-rise style="--i:3"><a href="https://app.propellerpicks.com/signup" rel="noopener" data-analytics-event="signup_click" data-cta-id="home-product-web-signup" data-cta-surface="homepage_product" data-cta-destination="signup">Use it on the web</a> <span>Free to start, no card. Full workspace $15 total a month, tax included. <a href="/pricing/">See pricing</a></span></p>
-      </div>
-      <figure data-rise style="--i:1">
-        <img src="../images/home-web-recent-results.jpg" alt="Propeller web app chart of Andrew Abbott's strikeouts in his last 10 games against a 2.5 line" width="800" height="272" loading="lazy">
-        <figcaption>On the web: how a player has done against this exact line in his last 10 games.</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <section class="proof" aria-labelledby="proof-title">
-    <div class="wrap proof__grid">
-      <p class="proof__num" aria-hidden="true" data-rise><span data-record-raw-total>3.79M</span></p>
-      <div>
-        <h2 id="proof-title" data-rise style="--i:1">Graded props behind the research.</h2>
-        <p class="proof__body" data-rise style="--i:2">Historical prop-analysis rows graded. They include repeated snapshots and retrospective data, so they show how deep the research goes. They are not unique customer bets or proof of future results. <a href="/results/">What that number means</a></p>
       </div>
     </div>
   </section>
@@ -368,7 +373,7 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
         <details class="home-faq__item"><summary>Is Propeller a sportsbook?<span aria-hidden="true">+</span></summary><p>No. Propeller is a research and analysis tool. We do not accept wagers or place bets for users.</p></details>
         <details class="home-faq__item"><summary>What does the record include?<span aria-hidden="true">+</span></summary><p>The public archive has two units: raw graded analysis rows and entries retained after the current API collapse rules. It includes repeated snapshots and legacy retrospective data, so it is not a uniquely published forward-test or ROI record.</p></details>
         <details class="home-faq__item"><summary>Why desktop and mobile?<span aria-hidden="true">+</span></summary><p>The desktop web app is built for deeper slate research. Mobile is for quick checks, saved props, alerts, and digest workflows when you are away from the desk.</p></details>
-        <details class="home-faq__item"><summary>Can I inspect Propeller's methodology and record?<span aria-hidden="true">+</span></summary><p>Yes. Review the <a href="/results/">historical graded analysis rows,</a> the separate <a href="/research/prospective-record/">First-observed capture,</a> and <a href="/how-it-works/">how Propeller works.</a> The current ledger does not independently verify event-start ordering or outcome timing. You can also read our <a href="/research/ai-player-prop-benchmark/">AI research transparency benchmark.</a></p><span class="record-contract" data-forward-roi data-roi-tone="neutral">—</span><span class="record-contract" data-forward-roi-detail>Waiting for eligible completed picks.</span><span class="record-contract" data-forward-priced-settled>0</span><span class="record-contract" data-forward-net-units data-roi-tone="neutral">0.00u</span><span class="record-contract" data-forward-roi-updated>Record updates after eligible results settle.</span><span class="record-contract" data-record-total>488K</span><span class="record-contract" data-record-total-detail>487,891 ledger entries</span><span class="record-contract" data-record-updated>Static API snapshot · October 27, 2026; live refresh enabled</span></details>
+        <details class="home-faq__item"><summary>Can I inspect Propeller's methodology and record?<span aria-hidden="true">+</span></summary><p>Yes. Review the <a href="/results/">historical graded analysis rows,</a> the separate <a href="/research/prospective-record/">First-observed capture,</a> and <a href="/how-it-works/">how Propeller works.</a> The current ledger does not independently verify event-start ordering or outcome timing. You can also read our <a href="/research/ai-player-prop-benchmark/">AI research transparency benchmark.</a></p><span class="record-contract" data-forward-roi data-roi-tone="neutral">—</span><span class="record-contract" data-forward-roi-detail>Waiting for eligible completed picks.</span><span class="record-contract" data-forward-priced-settled>0</span><span class="record-contract" data-forward-net-units data-roi-tone="neutral">0.00u</span><span class="record-contract" data-forward-roi-updated>Record updates after eligible results settle.</span><span class="record-contract" data-record-total>548K</span><span class="record-contract" data-record-total-detail>547,510 ledger entries</span><span class="record-contract" data-record-updated>Static API snapshot · November 25, 2026; live refresh enabled</span></details>
       </div>
     </div>
   </section>
