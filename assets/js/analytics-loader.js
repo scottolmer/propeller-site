@@ -1,6 +1,33 @@
 /* Queue analytics immediately, then load gtag after the critical render. */
 (function () {
   'use strict';
+  // Meta pixel: queue the PageView immediately and load fbevents.js on the
+  // normal page load, not on first interaction, so bounce visits are counted.
+  // This site never fires a signup or conversion event from the pixel;
+  // signup happens on app.propellerpicks.com and owns that event.
+  const metaPixelId = '1778482833277254';
+  if (!window.fbq && !window.ppMetaPixelStarted) {
+    window.ppMetaPixelStarted = true;
+    const fbq = function () {
+      fbq.callMethod ? fbq.callMethod.apply(fbq, arguments) : fbq.queue.push(arguments);
+    };
+    if (!window._fbq) window._fbq = fbq;
+    fbq.push = fbq;
+    fbq.loaded = true;
+    fbq.version = '2.0';
+    fbq.queue = [];
+    window.fbq = fbq;
+    window._fbq = window._fbq || fbq;
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://connect.facebook.net/en_US/fbevents.js';
+    (document.head || document.documentElement).appendChild(script);
+
+    window.fbq('init', metaPixelId);
+    window.fbq('track', 'PageView');
+  }
+
   // This reporting stream is a destination of the shared Google tag.
   const googleTagId = 'GT-57326MMH';
   const crossDomainLinker = { domains: ['propellerpicks.com', 'app.propellerpicks.com'] };
