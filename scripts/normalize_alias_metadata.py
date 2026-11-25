@@ -38,7 +38,6 @@ def alias_document(label: str, target: str, hub: str | None = None) -> str:
   <meta name="description" content="Propeller's {label} player prop research page has moved to its canonical location.">
   <meta name="robots" content="noindex,follow">
   <link rel="canonical" href="{canonical}">
-  <script src="/assets/js/analytics-loader.js?v=20260915"></script>
   <meta http-equiv="refresh" content="0;url={target}">
   <script>window.location.replace('{target}');</script>
   <style>
