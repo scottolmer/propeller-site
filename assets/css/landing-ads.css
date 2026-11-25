@@ -186,6 +186,10 @@ body.lp-page .pp-site-footer__legal a {
   line-height: 1.52;
 }
 
+body.pp-site-system.lp-page main p.lp-eyebrow {
+  color: var(--lp-blue) !important;
+}
+
 body.pp-site-system.lp-page main p.lp-lede {
   color: var(--lp-cream) !important;
 }
