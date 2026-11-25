@@ -42,9 +42,13 @@ test("configures the shared Google tag once and exposes an idempotent loader", (
   assert.equal(typeof window.ppLoadAnalytics, "function");
   window.ppLoadAnalytics();
   window.ppLoadAnalytics();
-  assert.equal(appended.length, 1);
-  assert.equal(appended[0].async, true);
-  assert.match(appended[0].src, /gtag\/js\?id=GT-57326MMH/);
+  const gtagScripts = appended.filter((node) => /googletagmanager\.com\/gtag\/js/.test(node.src));
+  assert.equal(gtagScripts.length, 1);
+  assert.equal(gtagScripts[0].async, true);
+  assert.match(gtagScripts[0].src, /gtag\/js\?id=GT-57326MMH/);
+  // The Meta pixel loads on page load; the Google tag stays idle-deferred.
+  const metaScripts = appended.filter((node) => /connect\.facebook\.net\/en_US\/fbevents\.js/.test(node.src));
+  assert.equal(metaScripts.length, 1);
   assert.equal(typeof window.gtag, "function");
   assert.ok(listeners.has("pointerdown"));
 });
@@ -59,7 +63,8 @@ test("does not insert a second remote script when a preserved legacy source exis
   };
   vm.runInNewContext(source, { window, document });
   window.ppLoadAnalytics();
-  assert.equal(appended.length, 0);
+  const gtagScripts = appended.filter((node) => /googletagmanager\.com\/gtag\/js/.test(node.src));
+  assert.equal(gtagScripts.length, 0);
   assert.equal(window.ppAnalyticsLoadStarted, true);
 });
 
@@ -77,7 +82,11 @@ test("never loads the remote tag in an automated browser", () => {
   vm.runInNewContext(source, { window, document });
   window.ppLoadAnalytics();
   listeners.get("pointerdown")();
-  assert.equal(appended.length, 0);
+  const gtagScripts = appended.filter((node) => /googletagmanager\.com\/gtag\/js/.test(node.src));
+  assert.equal(gtagScripts.length, 0);
+  // The Meta pixel is intentionally not suppressed for automated browsers.
+  const metaScripts = appended.filter((node) => /connect\.facebook\.net\/en_US\/fbevents\.js/.test(node.src));
+  assert.equal(metaScripts.length, 1);
   assert.equal(typeof window.gtag, "function");
   // Legacy pages load gtag.js themselves; the opt-out flags cover them.
   for (const id of ["GT-57326MMH", "G-NLXM4C2G7D", "G-2Z7JMN1JTL"]) {
