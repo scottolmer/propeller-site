@@ -94,6 +94,9 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
 .try{margin-top:22px;font-size:17px;color:var(--muted)}
 .try a{color:var(--cream);margin-right:14px;white-space:nowrap}
 .try a:hover{color:var(--orange)}
+.entry-check{margin-top:18px;font-size:17px;color:var(--muted)}
+.entry-check a{color:var(--blue);text-decoration-color:rgba(84,200,255,.55)}
+.entry-check a:hover{color:var(--cream)}
 
 .hero__get{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:52px}
 .hero__get p{font-size:17px;color:var(--muted)}

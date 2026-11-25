@@ -30,6 +30,13 @@ NAVIGATION_PAGES = frozenset({
     "analyzer/index.html", "analyzer/nfl/index.html", "analyzer/nba/index.html",
     "fantasy/methodology/index.html",
 })
+# Paid-ad landing pages keep the shared shell but get their own dark visual
+# layer last, after site-system.css and the compatibility layer.
+LANDING_PAGES = frozenset({
+    "lp/entry-check/index.html", "lp/tonights-board/index.html",
+    "lp/ledger/index.html",
+})
+LANDING_STYLES = '<link rel="stylesheet" href="/assets/css/landing-ads.css?v=20261125">\n  '
 LEGACY_ANALYTICS_ID = "G-NLXM4C2G7D"
 ANALYTICS_LOADER = '  <script src="/assets/js/analytics-loader.js?v=20260915"></script>\n'
 LEGACY_ANALYTICS_CONFIG_RE = re.compile(
@@ -310,9 +317,11 @@ def migrate_html(original: str, path: Path, home: bool) -> str:
             '<link rel="stylesheet" href="/assets/css/analyzer-desk.css?v=20261118a">\n  '
             '<link rel="stylesheet" href="/assets/css/analyzer-desk-evidence.css?v=20261116b">\n  '
         )
+    if path.relative_to(ROOT).as_posix() in LANDING_PAGES:
+        page_styles += LANDING_STYLES
     block = HEAD_BLOCK.format(compat=compat, page_styles=page_styles)
     # These pages declare a fully dark surface; retain it during maintenance.
-    if navigation_page or "pp-compare-lines" in original or "pp-ai-source-audit" in original or "pp-research-log" in original or "pp-pricing" in original or "pp-daily-archive" in original:
+    if navigation_page or path.relative_to(ROOT).as_posix() in LANDING_PAGES or "pp-compare-lines" in original or "pp-ai-source-audit" in original or "pp-research-log" in original or "pp-pricing" in original or "pp-daily-archive" in original:
         html = re.sub(r'<meta\s+name=["\']theme-color["\'][^>]*>\s*', "", html, flags=re.IGNORECASE)
         block = block.replace('content="#f2efe8"', 'content="#031a2c"')
     html = re.sub(r"</head>", block + "\n</head>", html, count=1, flags=re.IGNORECASE)

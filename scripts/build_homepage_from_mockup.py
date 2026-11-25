@@ -14,14 +14,14 @@ ROOT = Path(__file__).resolve().parents[1]
 MOCKUP = ROOT / "mockups" / "home-lookup.html"
 OUTPUT = ROOT / "index.html"
 CSS_OUTPUT = ROOT / "assets" / "css" / "home-lookup.css"
-CSS_VERSION = "20261027"
+CSS_VERSION = "20261125"
 BODY_CLASS = "pp-site-system pp-home pp-lookup"
 
 TITLE = "Propeller Picks: AI Player Prop Research in Plain English"
 APP_STORE_URL = "https://apps.apple.com/app/id6760788202"
 PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&utm_source=na_Med"
 DESCRIPTION = (
-    "Free AI-assisted player prop research for DFS and pick'em players. Look up any player, see which way "
+    "AI-assisted player prop research for DFS and pick'em players. Look up any player free, see which way "
     "the research leans and why, on iOS, Android, or web."
 )
 
