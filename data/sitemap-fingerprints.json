@@ -1,7 +1,7 @@
 {
   "entries": {
     "https://propellerpicks.com/": {
-      "fingerprint": "8356b044c4f7b2ed611c531bcd47f3a1d931b81f018dd431362d35da71aa8b97",
+      "fingerprint": "be37eef746c7033ad8d4076841223b1ba745bebc99964ee9bfe6592e7bc5aec0",
       "lastmod": "2026-11-24",
       "source": "index.html"
     },
@@ -16,22 +16,22 @@
       "source": "ai-sports-betting/index.html"
     },
     "https://propellerpicks.com/analyzer/": {
-      "fingerprint": "95a268e3ee61d520a10add07e16244b50d2ea9c3bb40f616aaee86ff32675346",
+      "fingerprint": "781ae9591e9731d2218b12f500ad23c1eddeab7ba8f0079dbe672ed5b6d17b88",
       "lastmod": "2026-11-24",
       "source": "analyzer/index.html"
     },
     "https://propellerpicks.com/analyzer/nba/": {
-      "fingerprint": "4900d62b63a3ef1c99257e3bda7bd5166787871d475eebfb1056e913dcb43bd2",
+      "fingerprint": "27f75335c7bb9e6828a4502c99c67b7653b0595fb02051d2d81f0dddd1035a9c",
       "lastmod": "2026-11-24",
       "source": "analyzer/nba/index.html"
     },
     "https://propellerpicks.com/analyzer/nba/sam-hauser/": {
-      "fingerprint": "383f6268b895596ddbead58a57a4c3be1390f50d1b71db476641f7b0637c0324",
+      "fingerprint": "3787f4362030ad0a4e1f0579b6a71c8cc4b7df4e3ff0b0e16964a2f707ad32f7",
       "lastmod": "2026-11-24",
       "source": "analyzer/nba/sam-hauser/index.html"
     },
     "https://propellerpicks.com/analyzer/nfl/": {
-      "fingerprint": "3c2bcbfc50bba83e8bdb6f28b5a91a0e8667d07b85d35a359cf224b16228796f",
+      "fingerprint": "1f48bec5f2f584eba0c54fea742d9bf653c4209884d48bcab9d2a784fa4e0414",
       "lastmod": "2026-11-24",
       "source": "analyzer/nfl/index.html"
     },
@@ -291,12 +291,12 @@
       "source": "picks/mlb/index.html"
     },
     "https://propellerpicks.com/picks/nba/": {
-      "fingerprint": "1089578dda4d0e4a25a5798423f54e72e98b0377367bce7d490ffd5e852f21e4",
+      "fingerprint": "a80b95d36c4977d28c5f661a497fd519d2afb08f4bb1cad434638a2d99d8ee93",
       "lastmod": "2026-11-24",
       "source": "picks/nba/index.html"
     },
     "https://propellerpicks.com/picks/nfl/": {
-      "fingerprint": "aa99c95b649a2eaf45da1160b3be60b819f133f30f3441acbf3f0fc136111738",
+      "fingerprint": "78bbafbc92ed0da350726f9df695d634bfc0e48b836db0596479f33cf5766d5f",
       "lastmod": "2026-11-24",
       "source": "picks/nfl/index.html"
     },
@@ -306,12 +306,12 @@
       "source": "picks/nhl/index.html"
     },
     "https://propellerpicks.com/picks/pick6/": {
-      "fingerprint": "7a86f30bcdb201a82203e04432d45b31f07f1c7953458f0c08a5c099742238e6",
+      "fingerprint": "d0e6de913d069a089a1ba506f5a5211cb6ad2a5bf82febadfda9564cbc8595a9",
       "lastmod": "2026-11-24",
       "source": "picks/pick6/index.html"
     },
     "https://propellerpicks.com/picks/prizepicks/": {
-      "fingerprint": "ca7b28dddcd3e350af6671ca62f9d4c1ecf229b1025694bcc3494861f6b40177",
+      "fingerprint": "b2ab3ba1fb5425d6f9e813ac56c908fc21840d426d7c925abb5469b8e5adabb6",
       "lastmod": "2026-11-24",
       "source": "picks/prizepicks/index.html"
     },
@@ -321,7 +321,7 @@
       "source": "picks/soccer/index.html"
     },
     "https://propellerpicks.com/picks/underdog/": {
-      "fingerprint": "97ded88ae0980a3abc17954d890aaee0e3108242d06f244f945a93cfb0967f58",
+      "fingerprint": "3cdaecbb4f88785160cc2b1b1f16d7769fffb5e267c17c862810a451434c2ea5",
       "lastmod": "2026-11-24",
       "source": "picks/underdog/index.html"
     },
@@ -356,7 +356,7 @@
       "source": "research/prospective-record/index.html"
     },
     "https://propellerpicks.com/results/": {
-      "fingerprint": "a86c3b8b04ac101a8aafcc85f56ad3447e1fdad679ee05bfad2918cda291ff08",
+      "fingerprint": "2b1558cafd45612244bd18d762712b498538f208d663a72ac926c1c154b2da50",
       "lastmod": "2026-11-24",
       "source": "results/index.html"
     },
@@ -401,7 +401,7 @@
       "source": "tools/underdog-payout-calculator/index.html"
     },
     "https://propellerpicks.com/track-record/": {
-      "fingerprint": "c4d10fa7b1173d2e8f3b67518871e2c764cdd9b1d9c3c6ea489706286e7d972a",
+      "fingerprint": "d07e29d4338549529e4a91ee993ecd60e1fa6571a6f2b1f07b34ab7304df3c22",
       "lastmod": "2026-11-24",
       "source": "track-record/index.html"
     }
