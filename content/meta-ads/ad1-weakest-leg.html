@@ -1,0 +1,33 @@
+<!doctype html><meta charset="utf-8"><link rel="stylesheet" href="ads.css">
+<style>
+.grid{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 53px,rgba(84,200,255,.16) 53px 54px);-webkit-mask-image:linear-gradient(to left,#000,transparent 70%)}
+.slip{margin-top:44px;border:1px solid rgba(84,200,255,.72);border-radius:14px;background:rgba(2,21,34,.6);position:relative}
+.leg{display:grid;grid-template-columns:86px 1fr 250px 110px;align-items:center;height:106px;padding:0 26px;border-top:1px solid rgba(84,200,255,.22)}
+.leg:first-child{border-top:0}
+.leg .n{color:var(--blue)}
+.leg b{font:600 29px/1.1 Plex,sans-serif;display:block}
+.leg i{font-style:normal;font-size:19px;color:var(--muted);display:block;margin-top:5px}
+.bar{height:8px;border-radius:4px;background:rgba(84,200,255,.16);position:relative}
+.bar u{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--blue)}
+.sc{font:700 54px/1 Familjen,sans-serif;letter-spacing:-.03em;text-align:right;position:relative;justify-self:end}
+.weak i{color:var(--orange)}
+.weak .bar u{background:var(--orange)}
+.weak .sc{color:var(--orange)}
+.weak .sc::after{content:"";position:absolute;left:-22px;right:-18px;top:-14px;bottom:-12px;border:4px solid var(--orange);border-radius:52% 48% 46% 54%;transform:rotate(-5deg)}
+.note{position:absolute;right:28px;top:-17px;background:var(--night);padding:4px 12px;color:var(--orange)}
+</style>
+<div class="ad night"><div class="grid"></div>
+<div class="top" style="position:relative"><div class="logo"><svg viewBox="0 0 100 100"><g transform="translate(50 52)" fill="#ff5b23"><rect x="-6" y="-46" width="12" height="42" rx="6"/><rect x="-6" y="-46" width="12" height="42" rx="6" transform="rotate(120)"/><rect x="-6" y="-46" width="12" height="42" rx="6" transform="rotate(240)"/><circle r="9"/></g></svg>Propeller</div><div class="mono" style="color:var(--blue)">Entry check</div></div>
+<h1 style="position:relative">Your entry has 6 legs.<span>Which 2 are you sure about?</span></h1>
+<div class="slip">
+<div class="mono note">Confidence Score</div>
+<div class="leg"><div class="mono n">Leg 1</div><div><b>Points, More 26.5</b><i>Guard</i></div><div class="bar"><u style="width:68%"></u></div><div class="sc">84</div></div>
+<div class="leg weak"><div class="mono n">Leg 2</div><div><b>Rebounds, More 10.5</b><i>Minutes are down three games running</i></div><div class="bar"><u style="width:14%"></u></div><div class="sc">57</div></div>
+<div class="leg"><div class="mono n">Leg 3</div><div><b>Assists, Less 7.5</b><i>Guard</i></div><div class="bar"><u style="width:58%"></u></div><div class="sc">79</div></div>
+<div class="leg"><div class="mono n">Leg 4</div><div><b>Threes made, More 2.5</b><i>Forward</i></div><div class="bar"><u style="width:46%"></u></div><div class="sc">73</div></div>
+<div class="leg weak"><div class="mono n">Leg 5</div><div><b>Pts + Reb + Ast, More 38.5</b><i>Line sits above his last-10 average</i></div><div class="bar"><u style="width:8%"></u></div><div class="sc">54</div></div>
+<div class="leg"><div class="mono n">Leg 6</div><div><b>Steals, Less 1.5</b><i>Guard</i></div><div class="bar"><u style="width:62%"></u></div><div class="sc">81</div></div>
+</div>
+<div class="foot" style="position:relative"><p>See the weakest legs before you lock it in. One score, reasons in plain English.</p><div class="cta">7 days free<small>then $15 a month</small></div></div>
+<p class="fine">Research tool for DFS and pick&rsquo;em. Propeller does not accept wagers. The Confidence Score is a 50&ndash;100 research score, not a win probability. Example entry shown.</p>
+</div>
