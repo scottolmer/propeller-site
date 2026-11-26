@@ -150,6 +150,20 @@ def confidence(row) -> int:
     return round(abs(float(row["final_score"]) - 50) + 50)
 
 
+NAME_SUFFIX_RE = re.compile(r"\s+(?:jr|sr|ii|iii|iv|v)$")
+
+
+def player_key(name: str) -> str:
+    """Fold name variants from different books into one key.
+
+    "Joe Milton III" and "Joe Milton", or "Jaime Jaquez Jr." and
+    "Jaime Jaquez Jr", are the same player and should share one row.
+    """
+    folded = re.sub(r"[.'’]", "", name).strip().lower()
+    folded = re.sub(r"\s+", " ", folded)
+    return NAME_SUFFIX_RE.sub("", folded)
+
+
 def valid_rows(rows, slate_date=None):
     """Mirror assets/js/prizepicks-slate.js, then keep one row per player.
 
@@ -171,7 +185,7 @@ def valid_rows(rows, slate_date=None):
             continue
         if slate_date and row.get("game_date") and row["game_date"] != slate_date:
             continue
-        key = name.strip().lower()
+        key = player_key(name)
         if key in seen:
             continue
         seen.add(key)

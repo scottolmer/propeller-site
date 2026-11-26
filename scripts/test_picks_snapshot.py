@@ -96,6 +96,20 @@ class PicksSnapshot(unittest.TestCase):
                 self.assertIn(block, carried)
                 self.assertEqual(gen.carry_snapshot(fresh, None, slug), fresh)
 
+    def test_name_variants_of_one_player_share_a_row(self):
+        rows = [
+            {"player_name": name, "stat_type": stat, "line": 18.5,
+             "final_score": 35, "final_direction": "UNDER"}
+            for name, stat in (("Joe Milton", "pass_completions"),
+                               ("Joe Milton III", "player_pass_completions"),
+                               ("Jaime Jaquez Jr.", "points"),
+                               ("Jaime Jaquez Jr", "rebounds"),
+                               ("De'Anthony Melton", "points"))
+        ]
+        kept = snap.valid_rows(rows)
+        self.assertEqual([row["player_name"] for row in kept],
+                         ["Joe Milton", "Jaime Jaquez Jr.", "De'Anthony Melton"])
+
     def test_apply_is_idempotent_and_adds_the_companion_script_once(self):
         page = '<main>\n    <div id="picksOutput" style="display:none;"></div>\n</main>\n</body>'
         block = snap.render_block(snap.PAGES["picks/nba/index.html"], feeds(), DAY, CAPTURED)
