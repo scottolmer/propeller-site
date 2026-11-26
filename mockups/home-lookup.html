@@ -58,14 +58,18 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
 .pill svg{width:22px;height:22px;flex:none}
 .pill--store{background:var(--orange);color:var(--night)!important}
 .pill--store:hover{background:var(--orange-hover)}
-.pill--store small{display:block;font:500 12px/1 var(--body);opacity:.8;margin-bottom:3px}
-.pill--store span{text-align:left;line-height:1;white-space:nowrap}
+.pill--store-quiet{background:var(--night-2);color:var(--cream)!important;border:1px solid rgba(84,200,255,.35)}
+.pill--store-quiet:hover{background:var(--night-3)}
+.pill--store small,.pill--store-quiet small{display:block;font:500 12px/1 var(--body);opacity:.8;margin-bottom:3px}
+.pill--store span,.pill--store-quiet span{text-align:left;line-height:1;white-space:nowrap}
+.pill--trial{background:var(--orange);color:var(--night)!important;font:700 18px/1 var(--display);letter-spacing:-.01em;padding:0 30px}
+.pill--trial:hover{background:var(--orange-hover)}
 .pill--quiet{background:var(--night-3);color:var(--cream)!important}
 .pill--quiet:hover{background:var(--night-4)}
 .stores{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .web-link{font-weight:600;color:var(--cream)}
 .web-link:hover{color:var(--orange)}
-@media (max-width:560px){.stores .pill--store{flex:1 1 0;padding:0 16px}}
+@media (max-width:560px){.stores .pill--store,.stores .pill--store-quiet{flex:1 1 0;padding:0 14px}}
 
 /* ---------- Hero: the product is the homepage ---------- */
 .hero{padding:clamp(32px,5vw,80px) 0 0;overflow:hidden}
@@ -107,10 +111,14 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
 .entry-check a{color:var(--blue);text-decoration-color:rgba(84,200,255,.55)}
 .entry-check a:hover{color:var(--cream)}
 
-.hero__get{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:52px}
-.hero__get p{font-size:17px;color:var(--muted)}
+.hero__get{display:grid;gap:14px;margin-top:30px}
+.hero__cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.hero__offer{font-size:15px;line-height:1.45;color:var(--muted);max-width:48ch}
+.hero__offer strong{color:var(--cream);font-weight:600}
+.hero__get .stores{margin-top:2px}
+.hero__get p{font-size:15px;color:var(--muted)}
 
-.hero__phone{align-self:end;justify-self:end;width:min(380px,100%);margin-top:24px;background:var(--night-2);border-radius:44px 44px 0 0;padding:12px 12px 0;height:clamp(520px,46vw,700px);overflow:hidden}
+.hero__phone{align-self:end;justify-self:end;width:min(380px,100%);margin-top:24px;background:var(--night-2);border-radius:44px 44px 0 0;padding:12px 12px 0;overflow:hidden}
 .hero__phone img{border-radius:34px 34px 0 0;width:100%}
 
 /* ---------- What you get ---------- */
@@ -211,7 +219,8 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
   .results{top:80px;border-radius:22px}
   .results a{grid-template-columns:1fr;gap:4px}
   .sport{padding:0 14px}
-  .hero__get{margin-top:40px}
+  .hero__get{margin-top:24px}
+  .hero__cta-row .pill--trial{width:100%}
   .hero__phone{height:340px;border-radius:36px 36px 0 0;padding:8px 8px 0}
   .only__list{grid-template-columns:1fr;margin-top:44px;gap:40px}
 }
@@ -262,8 +271,6 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
           </div>
         </form>
 
-        <p class="works" data-rise>Works with ChatGPT, Claude and other AI tools that support MCP.</p>
-
         <p class="try" data-rise>Try one:
           <a href="../analyzer/?sport=nfl&amp;q=Patrick%20Mahomes">Patrick Mahomes</a>
           <a href="../analyzer/?sport=nba&amp;q=Jalen%20Brunson">Jalen Brunson</a>
@@ -275,17 +282,20 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
         <p class="entry-check" data-rise>Building an entry? <a href="/lp/entry-check/" data-analytics-event="research_cta_click" data-cta-id="home-hero-entry-check" data-cta-surface="homepage_hero" data-cta-destination="entry_check">See which legs are weakest</a> before you lock it in.</p>
 
         <div class="hero__get" data-rise>
+          <div class="hero__cta-row">
+            <a class="pill pill--trial" href="https://app.propellerpicks.com/signup" rel="noopener" data-analytics-event="signup_click" data-cta-id="home-hero-web-signup" data-cta-surface="homepage_hero" data-cta-destination="signup">Start 7-day free trial</a>
+            <p class="hero__offer"><strong>7 days free, then $15/mo</strong> (tax included). Card required. Cancel anytime before day 7 and you won't be charged.</p>
+          </div>
           <div class="stores">
-            <a class="pill pill--store" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store" data-analytics-event="app_store_click" data-cta-id="home-hero-ios" data-cta-surface="homepage_hero" data-cta-destination="app_store"><svg aria-hidden="true"><use href="#i-apple"/></svg><span><small>Download on the</small>App Store</span></a>
-            <a class="pill pill--store" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&amp;utm_source=na_Med" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play" data-analytics-event="play_store_click" data-cta-id="home-hero-android" data-cta-surface="homepage_hero" data-cta-destination="google_play"><svg aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small>Google Play</span></a>
+            <a class="pill pill--store-quiet" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store" data-analytics-event="app_store_click" data-cta-id="home-hero-ios" data-cta-surface="homepage_hero" data-cta-destination="app_store"><svg aria-hidden="true"><use href="#i-apple"/></svg><span><small>Download on the</small>App Store</span></a>
+            <a class="pill pill--store-quiet" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play" data-analytics-event="play_store_click" data-cta-id="home-hero-android" data-cta-surface="homepage_hero" data-cta-destination="google_play"><svg aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small>Google Play</span></a>
           </div>
           <span class="sr-only">Get the mobile app · iOS + Android</span>
-          <p>Faster on your phone. Or <a class="web-link" href="https://app.propellerpicks.com/signup" rel="noopener" data-analytics-event="signup_click" data-cta-id="home-hero-web-signup" data-cta-surface="homepage_hero" data-cta-destination="signup">explore Propeller free on the web</a>. No card required.</p>
         </div>
       </div>
 
       <div class="hero__phone" data-rise>
-        <img src="../images/mobile-props-board-phone.webp" alt="The Propeller app's props board on a phone, listing today's player lines with their Confidence Scores" width="1028" height="2176" fetchpriority="high">
+        <img src="../images/mobile-props-board-phone.jpg" alt="The Propeller app's props board on a phone, listing player lines with their Confidence Scores" width="1028" height="1300" fetchpriority="high">
       </div>
     </div>
   </section>
@@ -301,7 +311,7 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
         </ol>
       </div>
       <figure data-rise style="--i:1">
-        <img src="../images/app-prop-detail-phone.jpg" alt="Propeller research for Andrew Abbott's strikeout line on the iPhone app, with a 78 Confidence Score and his recent games against the line" width="640" height="1391" loading="lazy">
+        <img src="../images/app-prop-detail-phone.jpg" alt="Propeller research for Andrew Abbott's strikeout line on the iPhone app, with a 78 Confidence Score and his recent games against the line" width="640" height="1150" loading="lazy">
         <figcaption>Andrew Abbott's strikeout line in the Propeller iPhone app.</figcaption>
       </figure>
     </div>
@@ -314,7 +324,7 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
         <p data-rise style="--i:1">Save players and check a line before you lock your entry. When you want the whole slate, open the full workspace in your browser.</p>
         <div class="stores" data-rise style="--i:2">
           <a class="pill pill--store" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store" data-analytics-event="app_store_click" data-cta-id="home-product-ios" data-cta-surface="homepage_product" data-cta-destination="app_store"><svg aria-hidden="true"><use href="#i-apple"/></svg><span><small>Download on the</small>App Store</span></a>
-          <a class="pill pill--store" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&amp;utm_source=na_Med" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play" data-analytics-event="play_store_click" data-cta-id="home-product-android" data-cta-surface="homepage_product" data-cta-destination="google_play"><svg aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small>Google Play</span></a>
+          <a class="pill pill--store" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play" data-analytics-event="play_store_click" data-cta-id="home-product-android" data-cta-surface="homepage_product" data-cta-destination="google_play"><svg aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small>Google Play</span></a>
         </div>
         <p class="web__links" data-rise style="--i:3"><a href="https://app.propellerpicks.com/signup" rel="noopener" data-analytics-event="signup_click" data-cta-id="home-product-web-signup" data-cta-surface="homepage_product" data-cta-destination="signup">Start your 7-day free trial</a> <span>Free to start, no card. Full workspace $15 total a month, tax included. <a href="/pricing/">See pricing</a></span></p>
       </div>
@@ -382,19 +392,20 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
     <div class="wrap">
       <p class="close__name" aria-hidden="true">Propeller</p>
       <div class="close__row">
+        <a class="pill pill--trial" href="https://app.propellerpicks.com/signup" rel="noopener" data-analytics-event="signup_click" data-cta-id="home-final-web-signup" data-cta-surface="homepage_final" data-cta-destination="signup">Start 7-day free trial</a>
         <div class="stores">
-          <a class="pill pill--store" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store" data-analytics-event="app_store_click" data-cta-id="home-final-ios" data-cta-surface="homepage_final" data-cta-destination="app_store"><svg aria-hidden="true"><use href="#i-apple"/></svg><span><small>Download on the</small>App Store</span></a>
-          <a class="pill pill--store" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&amp;utm_source=na_Med" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play" data-analytics-event="play_store_click" data-cta-id="home-final-android" data-cta-surface="homepage_final" data-cta-destination="google_play"><svg aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small>Google Play</span></a>
+          <a class="pill pill--store-quiet" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store" data-analytics-event="app_store_click" data-cta-id="home-final-ios" data-cta-surface="homepage_final" data-cta-destination="app_store"><svg aria-hidden="true"><use href="#i-apple"/></svg><span><small>Download on the</small>App Store</span></a>
+          <a class="pill pill--store-quiet" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play" data-analytics-event="play_store_click" data-cta-id="home-final-android" data-cta-surface="homepage_final" data-cta-destination="google_play"><svg aria-hidden="true"><use href="#i-play"/></svg><span><small>Get it on</small>Google Play</span></a>
         </div>
-        <p>Or <a class="web-link" href="https://app.propellerpicks.com/signup" rel="noopener" data-analytics-event="signup_click" data-cta-id="home-final-web-signup" data-cta-surface="homepage_final" data-cta-destination="signup">explore Propeller free on the web</a>.</p>
       </div>
     </div>
   </section>
 </main>
 
 <div class="appbar" id="appbar">
-  <a class="pill pill--store" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store" data-analytics-event="app_store_click" data-cta-id="home-appbar-ios" data-cta-surface="homepage_appbar" data-cta-destination="app_store"><svg aria-hidden="true"><use href="#i-apple"/></svg>App Store</a>
-  <a class="pill pill--store" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller&amp;utm_source=na_Med" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play" data-analytics-event="play_store_click" data-cta-id="home-appbar-android" data-cta-surface="homepage_appbar" data-cta-destination="google_play"><svg aria-hidden="true"><use href="#i-play"/></svg>Google Play</a>
+  <a class="pill pill--trial" href="https://app.propellerpicks.com/signup" rel="noopener" data-analytics-event="signup_click" data-cta-id="home-appbar-web-signup" data-cta-surface="homepage_appbar" data-cta-destination="signup">7-day trial</a>
+  <a class="pill pill--store-quiet" href="https://apps.apple.com/app/id6760788202" target="_blank" rel="noopener noreferrer" aria-label="Download Propeller Picks on the App Store" data-analytics-event="app_store_click" data-cta-id="home-appbar-ios" data-cta-surface="homepage_appbar" data-cta-destination="app_store"><svg aria-hidden="true"><use href="#i-apple"/></svg>iOS</a>
+  <a class="pill pill--store-quiet" href="https://play.google.com/store/apps/details?id=com.propellerpicks.propeller" target="_blank" rel="noopener noreferrer" aria-label="Get Propeller Picks on Google Play" data-analytics-event="play_store_click" data-cta-id="home-appbar-android" data-cta-surface="homepage_appbar" data-cta-destination="google_play"><svg aria-hidden="true"><use href="#i-play"/></svg>Android</a>
 </div>
 
 <script>

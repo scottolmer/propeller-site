@@ -5,6 +5,38 @@
  * serving every other route unchanged.
  */
 
+@font-face {
+  font-family: "Familjen Grotesk";
+  src: url("/assets/fonts/familjen-grotesk-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  src: url("/assets/fonts/ibm-plex-sans-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/assets/fonts/ibm-plex-mono-500-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: url("/assets/fonts/ibm-plex-mono-600-latin.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+}
+
 :root {
   --lp-night: #031a2c;
   --lp-night-2: #06243a;
@@ -232,6 +264,26 @@ body.pp-site-system.lp-page main a.lp-cta {
   color: var(--lp-muted) !important;
   font-size: 12.5px;
   line-height: 1.55;
+}
+
+.lp-callout {
+  max-width: 470px;
+  margin: 16px 0 0;
+  padding: 13px 15px;
+  border: 1px solid var(--lp-line);
+  border-radius: 12px;
+  background: rgba(6, 36, 58, 0.72);
+  color: var(--lp-cream) !important;
+  font-size: 13.5px;
+  line-height: 1.52;
+}
+
+.lp-callout strong {
+  color: var(--lp-cream);
+}
+
+body.pp-site-system.lp-page main p.lp-callout {
+  color: var(--lp-cream) !important;
 }
 
 .lp-stores {

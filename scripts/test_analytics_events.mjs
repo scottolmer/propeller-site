@@ -115,6 +115,7 @@ test("homepage and high-intent pages load the canonical CTA tracker with stable 
   assert.deepEqual(homepageIds.sort(), [
     "home-appbar-android",
     "home-appbar-ios",
+    "home-appbar-web-signup",
     "home-difference-analyzer",
     "home-final-android",
     "home-final-ios",
@@ -130,7 +131,7 @@ test("homepage and high-intent pages load the canonical CTA tracker with stable 
     "home-showcase-analyzer",
     "home-showcase-mcp",
   ]);
-  assert.match(homepage, /data-cta-id="site-nav-pricing"/);
+  assert.match(homepage, /data-analytics-event="pricing_click"[^>]*data-cta-id="site-nav-pricing"/);
   assert.match(homepage, /data-analytics-event="analyzer_cta_click"/);
   assert.match(homepage, /analytics-events\.js\?v=20260817/);
   assert.match(analyzer, /analytics-events\.js\?v=20260817/);

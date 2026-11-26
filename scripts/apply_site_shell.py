@@ -36,7 +36,24 @@ LANDING_PAGES = frozenset({
     "lp/entry-check/index.html", "lp/tonights-board/index.html",
     "lp/ledger/index.html",
 })
-LANDING_STYLES = '<link rel="stylesheet" href="/assets/css/landing-ads.css?v=20261125">\n  '
+CONVERSION_TRACKED_PAGES = frozenset({
+    "pricing/index.html", "results/index.html", "track-record/index.html",
+    "how-it-works/index.html", "picks/index.html",
+})
+ATTRIBUTION_HEAD_PAGES = NAVIGATION_PAGES | LANDING_PAGES | frozenset({
+    "index.html", "pricing/index.html",
+})
+LANDING_STYLES = '<link rel="stylesheet" href="/assets/css/landing-ads.css?v=20261126">\n  '
+SIGNUP_ATTRIBUTION_SCRIPT = '<script src="/assets/js/signup-attribution.js?v=20261124" defer></script>\n  '
+SIGNUP_ATTRIBUTION_RE = re.compile(
+    r"\s*<script\b[^>]+src=[\"']/assets/js/signup-attribution\.js[^\"']*[\"'][^>]*>\s*</script>\s*",
+    re.IGNORECASE,
+)
+ANALYTICS_EVENTS_SCRIPT = '  <script src="/assets/js/analytics-events.js?v=20260817" defer></script>\n'
+ANALYTICS_EVENTS_RE = re.compile(
+    r"\s*<script\b[^>]+src=[\"']/assets/js/analytics-events\.js[^\"']*[\"'][^>]*>\s*</script>\s*",
+    re.IGNORECASE,
+)
 LEGACY_ANALYTICS_ID = "G-NLXM4C2G7D"
 ANALYTICS_LOADER = '  <script src="/assets/js/analytics-loader.js?v=20260915"></script>\n'
 LEGACY_ANALYTICS_CONFIG_RE = re.compile(
@@ -72,8 +89,19 @@ NAV = """<!-- PP_SITE_NAV_START -->
       <a href="https://propellerpicks.com/tools/" data-section="tools">Tools</a>
       <a href="https://propellerpicks.com/analyzer/" data-section="analyzer">Analyzer</a>
       <a href="https://app.propellerpicks.com/app" rel="noopener noreferrer">Web App</a>
-      <a class="pp-site-nav__cta" href="https://propellerpicks.com/pricing/" data-analytics-event="signup_click" data-cta-id="site-nav-pricing" data-cta-surface="site_nav" data-cta-destination="pricing">See pricing</a>
+      <a class="pp-site-nav__cta" href="https://propellerpicks.com/pricing/" data-analytics-event="pricing_click" data-cta-id="site-nav-pricing" data-cta-surface="site_nav" data-cta-destination="pricing">See pricing</a>
     </div>
+  </div>
+</nav>
+<!-- PP_SITE_NAV_END -->"""
+
+LANDING_NAV = """<!-- PP_SITE_NAV_START -->
+<nav class="pp-site-nav" aria-label="Propeller Picks">
+  <div class="pp-site-nav__inner">
+    <span class="pp-brand" aria-label="Propeller Picks">
+      <span class="pp-brand__mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span>Propeller</span>
+    </span>
   </div>
 </nav>
 <!-- PP_SITE_NAV_END -->"""
@@ -116,6 +144,14 @@ FOOTER = """<!-- PP_SITE_FOOTER_START -->
         <a href="https://x.com/propellerpicks" target="_blank" rel="noopener noreferrer">Twitter / X</a>
       </div>
     </div>
+    <p class="pp-site-footer__legal">Propeller is a research and analysis tool. We do not accept wagers or operate as a sportsbook. All analysis is for informational purposes only and does not constitute gambling advice. Must be 18+. If gambling is a problem, call <a href="tel:18004262537">1-800-GAMBLER</a>. Past performance does not guarantee future results.<br>© 2026 Propeller Picks.</p>
+  </div>
+</footer>
+<!-- PP_SITE_FOOTER_END -->"""
+
+LANDING_FOOTER = """<!-- PP_SITE_FOOTER_START -->
+<footer class="pp-site-footer">
+  <div class="pp-site-footer__inner">
     <p class="pp-site-footer__legal">Propeller is a research and analysis tool. We do not accept wagers or operate as a sportsbook. All analysis is for informational purposes only and does not constitute gambling advice. Must be 18+. If gambling is a problem, call <a href="tel:18004262537">1-800-GAMBLER</a>. Past performance does not guarantee future results.<br>© 2026 Propeller Picks.</p>
   </div>
 </footer>
@@ -207,54 +243,58 @@ def add_body_class(html: str, home: bool, family: str | None) -> str:
     return BODY_RE.sub(replace, html, count=1)
 
 
-def replace_primary_nav(html: str) -> str:
+def replace_primary_nav(html: str, landing: bool = False) -> str:
+    nav_markup = LANDING_NAV if landing else NAV
     managed = re.search(
         r"<!-- PP_SITE_NAV_START -->.*?<!-- PP_SITE_NAV_END -->",
         html,
         flags=re.IGNORECASE | re.DOTALL,
     )
     if managed:
-        return html[: managed.start()] + NAV + html[managed.end() :]
+        return html[: managed.start()] + nav_markup + html[managed.end() :]
     for match in NAV_RE.finditer(html):
         opening = html[match.start() : html.find(">", match.start()) + 1].lower()
         if "breadcrumb" in opening:
             continue
-        return html[: match.start()] + NAV + html[match.end() :]
+        return html[: match.start()] + nav_markup + html[match.end() :]
     body = BODY_RE.search(html)
     if not body:
         raise ValueError("No <body> tag")
-    return html[: body.end()] + "\n" + NAV + html[body.end() :]
+    return html[: body.end()] + "\n" + nav_markup + html[body.end() :]
 
 
-def replace_footer(html: str) -> str:
+def replace_footer(html: str, landing: bool = False) -> str:
+    footer_markup = LANDING_FOOTER if landing else FOOTER
     managed = re.search(
         r"<!-- PP_SITE_FOOTER_START -->.*?<!-- PP_SITE_FOOTER_END -->",
         html,
         flags=re.IGNORECASE | re.DOTALL,
     )
     if managed:
-        return html[: managed.start()] + FOOTER + html[managed.end() :]
+        return html[: managed.start()] + footer_markup + html[managed.end() :]
     match = FOOTER_RE.search(html)
     if match:
-        return html[: match.start()] + FOOTER + html[match.end() :]
+        return html[: match.start()] + footer_markup + html[match.end() :]
     closing = re.search(r"</body>", html, flags=re.IGNORECASE)
     if not closing:
         raise ValueError("No </body> tag")
-    return html[: closing.start()] + FOOTER + "\n" + html[closing.start() :]
+    return html[: closing.start()] + footer_markup + "\n" + html[closing.start() :]
 
 
-def ensure_script(html: str) -> str:
+def ensure_script(html: str, include_events: bool = False) -> str:
     html = re.sub(
         r"\s*<script\b[^>]+src=[\"']/assets/js/site-nav\.js[^\"']*[\"'][^>]*>\s*</script>\s*",
         "\n",
         html,
         flags=re.IGNORECASE,
     )
+    if include_events:
+        html = ANALYTICS_EVENTS_RE.sub("\n", html)
     closing = re.search(r"</body>", html, flags=re.IGNORECASE)
     if not closing:
         raise ValueError("No </body> tag")
-    script = '  <script src="/assets/js/site-nav.js?v=20260712" defer></script>\n'
-    return html[: closing.start()] + script + html[closing.start() :]
+    scripts = (ANALYTICS_EVENTS_SCRIPT if include_events else "") + '  <script src="/assets/js/site-nav.js?v=20260712" defer></script>\n'
+    return html[: closing.start()] + scripts + html[closing.start() :]
 
 
 def ensure_analytics_loader(html: str) -> str:
@@ -285,8 +325,12 @@ def remove_legacy_analytics_config(html: str) -> str:
 
 
 def migrate_html(original: str, path: Path, home: bool) -> str:
-    navigation_page = path.relative_to(ROOT).as_posix() in NAVIGATION_PAGES
+    rel = path.relative_to(ROOT).as_posix()
+    navigation_page = rel in NAVIGATION_PAGES
+    landing_page = rel in LANDING_PAGES
     html = remove_managed_head(original)
+    if rel in ATTRIBUTION_HEAD_PAGES:
+        html = SIGNUP_ATTRIBUTION_RE.sub("\n", html)
     if navigation_page:
         html = re.sub(
             r'<meta\s+name=["\']color-scheme["\'][^>]*>',
@@ -300,7 +344,7 @@ def migrate_html(original: str, path: Path, home: bool) -> str:
     html = ensure_analytics_loader(html)
     compat = "" if navigation_page or home or "pp-pricing" in original or "pp-daily-archive" in original or "pp-lookup" in original else '<link rel="stylesheet" href="/assets/css/site-compat.css?v=20260712">\n  '
     page_styles = ""
-    if path.relative_to(ROOT).as_posix() == "fantasy/methodology/index.html":
+    if rel == "fantasy/methodology/index.html":
         page_styles += (
             '<link rel="stylesheet" href="/assets/css/fantasy.css?v=20260717">\n  '
             '<link rel="stylesheet" href="/assets/css/fantasy-methodology.css?v=20261008">\n  '
@@ -312,16 +356,18 @@ def migrate_html(original: str, path: Path, home: bool) -> str:
         )
     if navigation_page:
         page_styles += '<link rel="stylesheet" href="/assets/css/navigation-pages.css?v=20260918">\n  '
-    if path.relative_to(ROOT).as_posix() == "analyzer/index.html":
+    if rel == "analyzer/index.html":
         page_styles += (
             '<link rel="stylesheet" href="/assets/css/analyzer-desk.css?v=20261118a">\n  '
             '<link rel="stylesheet" href="/assets/css/analyzer-desk-evidence.css?v=20261116b">\n  '
         )
-    if path.relative_to(ROOT).as_posix() in LANDING_PAGES:
+    if landing_page:
         page_styles += LANDING_STYLES
+    if rel in ATTRIBUTION_HEAD_PAGES:
+        page_styles += SIGNUP_ATTRIBUTION_SCRIPT
     block = HEAD_BLOCK.format(compat=compat, page_styles=page_styles)
     # These pages declare a fully dark surface; retain it during maintenance.
-    if navigation_page or path.relative_to(ROOT).as_posix() in LANDING_PAGES or "pp-compare-lines" in original or "pp-ai-source-audit" in original or "pp-research-log" in original or "pp-pricing" in original or "pp-daily-archive" in original:
+    if home or navigation_page or landing_page or "pp-compare-lines" in original or "pp-ai-source-audit" in original or "pp-research-log" in original or "pp-pricing" in original or "pp-daily-archive" in original:
         html = re.sub(r'<meta\s+name=["\']theme-color["\'][^>]*>\s*', "", html, flags=re.IGNORECASE)
         block = block.replace('content="#f2efe8"', 'content="#031a2c"')
     html = re.sub(r"</head>", block + "\n</head>", html, count=1, flags=re.IGNORECASE)
@@ -329,9 +375,9 @@ def migrate_html(original: str, path: Path, home: bool) -> str:
     if navigation_page:
         html = add_body_class(html, False, "pp-nav-page")
         html = add_body_class(html, False, "pp-nav-" + path.parent.name)
-    html = replace_primary_nav(html)
-    html = replace_footer(html)
-    html = ensure_script(html)
+    html = replace_primary_nav(html, landing=landing_page)
+    html = replace_footer(html, landing=landing_page)
+    html = ensure_script(html, include_events=(rel in CONVERSION_TRACKED_PAGES))
     return html
 
 
