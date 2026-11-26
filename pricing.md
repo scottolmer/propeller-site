@@ -16,6 +16,7 @@ The standalone Propeller Picks subscription is $15 USD total per month including
 Included core access:
 
 - Web app prop board and research workspace
+- Check My Slip weakest-leg entry check on web and mobile
 - Mobile companion access
 - MCP access for compatible AI tools — included with full access
 - Saved props and tracking workflows
