@@ -6,6 +6,7 @@
 
   var supportedEvents = {
     signup_click: true,
+    pricing_click: true,
     web_app_click: true,
     app_store_click: true,
     play_store_click: true,

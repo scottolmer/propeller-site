@@ -49,14 +49,18 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
 .pill svg{width:22px;height:22px;flex:none}
 .pill--store{background:var(--orange);color:var(--night)!important}
 .pill--store:hover{background:var(--orange-hover)}
-.pill--store small{display:block;font:500 12px/1 var(--body);opacity:.8;margin-bottom:3px}
-.pill--store span{text-align:left;line-height:1;white-space:nowrap}
+.pill--store-quiet{background:var(--night-2);color:var(--cream)!important;border:1px solid rgba(84,200,255,.35)}
+.pill--store-quiet:hover{background:var(--night-3)}
+.pill--store small,.pill--store-quiet small{display:block;font:500 12px/1 var(--body);opacity:.8;margin-bottom:3px}
+.pill--store span,.pill--store-quiet span{text-align:left;line-height:1;white-space:nowrap}
+.pill--trial{background:var(--orange);color:var(--night)!important;font:700 18px/1 var(--display);letter-spacing:-.01em;padding:0 30px}
+.pill--trial:hover{background:var(--orange-hover)}
 .pill--quiet{background:var(--night-3);color:var(--cream)!important}
 .pill--quiet:hover{background:var(--night-4)}
 .stores{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
 .web-link{font-weight:600;color:var(--cream)}
 .web-link:hover{color:var(--orange)}
-@media (max-width:560px){.stores .pill--store{flex:1 1 0;padding:0 16px}}
+@media (max-width:560px){.stores .pill--store,.stores .pill--store-quiet{flex:1 1 0;padding:0 14px}}
 
 /* ---------- Hero: the product is the homepage ---------- */
 .hero{padding:clamp(32px,5vw,80px) 0 0;overflow:hidden}
@@ -98,10 +102,14 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
 .entry-check a{color:var(--blue);text-decoration-color:rgba(84,200,255,.55)}
 .entry-check a:hover{color:var(--cream)}
 
-.hero__get{display:flex;flex-wrap:wrap;align-items:center;gap:16px 28px;margin-top:52px}
-.hero__get p{font-size:17px;color:var(--muted)}
+.hero__get{display:grid;gap:14px;margin-top:30px}
+.hero__cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px}
+.hero__offer{font-size:15px;line-height:1.45;color:var(--muted);max-width:48ch}
+.hero__offer strong{color:var(--cream);font-weight:600}
+.hero__get .stores{margin-top:2px}
+.hero__get p{font-size:15px;color:var(--muted)}
 
-.hero__phone{align-self:end;justify-self:end;width:min(380px,100%);margin-top:24px;background:var(--night-2);border-radius:44px 44px 0 0;padding:12px 12px 0;height:clamp(520px,46vw,700px);overflow:hidden}
+.hero__phone{align-self:end;justify-self:end;width:min(380px,100%);margin-top:24px;background:var(--night-2);border-radius:44px 44px 0 0;padding:12px 12px 0;overflow:hidden}
 .hero__phone img{border-radius:34px 34px 0 0;width:100%}
 
 /* ---------- What you get ---------- */
@@ -202,7 +210,8 @@ body.pp-lookup .pp-site-footer__copy,body.pp-lookup .pp-site-footer__legal{color
   .results{top:80px;border-radius:22px}
   .results a{grid-template-columns:1fr;gap:4px}
   .sport{padding:0 14px}
-  .hero__get{margin-top:40px}
+  .hero__get{margin-top:24px}
+  .hero__cta-row .pill--trial{width:100%}
   .hero__phone{height:340px;border-radius:36px 36px 0 0;padding:8px 8px 0}
   .only__list{grid-template-columns:1fr;margin-top:44px;gap:40px}
 }

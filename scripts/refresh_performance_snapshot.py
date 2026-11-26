@@ -25,7 +25,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 API_BASE = "https://web-production-3c1c4.up.railway.app"
 RAW_SUMMARY_URL = f"{API_BASE}/api/public/results-summary"
-LEDGER_URL = f"{API_BASE}/api/public/results?days=3650&min_confidence=0&limit=20&offset=0"
+LEDGER_URL = f"{API_BASE}/api/public/results?days=3650&min_confidence=0&limit=100&offset=0"
 BUCKETS_URL = f"{API_BASE}/api/public/results-confidence-buckets?days=3650"
 SNAPSHOT_PATH = ROOT / "data" / "performance-snapshot.json"
 
@@ -232,13 +232,57 @@ def bucket_cards(snapshot: dict) -> str:
 ''' + "\n".join(cards) + "\n        </div>"
 
 
+NAME_SUFFIX_RE = re.compile(r"\s+(?:jr|sr|ii|iii|iv|v)$")
+
+
+def player_key(name: str) -> str:
+    folded = re.sub(r"[.'’]", "", str(name or "")).strip().lower()
+    folded = re.sub(r"\s+", " ", folded)
+    return NAME_SUFFIX_RE.sub("", folded)
+
+
+def select_diverse_recent_rows(rows: list[dict], limit: int = 10) -> list[dict]:
+    """Keep at most one row per player and date, preserving both wins and losses."""
+    seen: set[tuple[str, str]] = set()
+    unique: list[dict] = []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        if str(row.get("sport") or "").lower() == "pga":
+            continue
+        key = (player_key(str(row.get("player_name") or "")), str(row.get("game_date") or ""))
+        if key in seen:
+            continue
+        seen.add(key)
+        unique.append(row)
+    if len(unique) <= limit:
+        return unique
+    top = unique[:limit]
+    has_win = any(str(r.get("result") or "").lower() == "win" for r in top)
+    has_loss = any(str(r.get("result") or "").lower() == "loss" for r in top)
+    wins = [r for r in unique if str(r.get("result") or "").lower() == "win"]
+    losses = [r for r in unique if str(r.get("result") or "").lower() == "loss"]
+    if (not has_win and wins) or (not has_loss and losses):
+        blended: list[dict] = []
+        wi = li = 0
+        while len(blended) < limit and (wi < len(wins) or li < len(losses)):
+            if wi < len(wins):
+                blended.append(wins[wi])
+                wi += 1
+            if len(blended) < limit and li < len(losses):
+                blended.append(losses[li])
+                li += 1
+        return blended
+    return top
+
+
 def ledger_rows(snapshot: dict) -> str:
     rows = []
-    for row in snapshot["recent_ledger_sample"][:10]:
+    for row in select_diverse_recent_rows(snapshot["recent_ledger_sample"], limit=10):
         result = str(row.get("result") or "push").lower()
         result_class = "result-win" if result == "win" else "result-loss" if result == "loss" else "result-push"
         direction = str(row.get("predicted_direction") or "").upper()
-        market = str(row.get("stat_type") or "").replace("_", " ").title()
+        market = re.sub(r"^player_", "", str(row.get("stat_type") or ""), flags=re.IGNORECASE).replace("_", " ").title()
         bookmaker = str(row.get("bookmaker") or "").replace("_", " ").title()
         rows.append(
             f'''                <tr>
@@ -255,6 +299,30 @@ def ledger_rows(snapshot: dict) -> str:
         )
     return '''              <tbody data-ledger-body>
 ''' + "\n".join(rows) + "\n              </tbody>"
+
+
+def lp_ledger_rows(snapshot: dict) -> str:
+    rows = []
+    for row in select_diverse_recent_rows(snapshot["recent_ledger_sample"], limit=8):
+        result = str(row.get("result") or "").lower()
+        if result not in ("win", "loss"):
+            continue
+        chip_class = "lp-chip--hit" if result == "win" else "lp-chip--miss"
+        chip_label = "Hit" if result == "win" else "Miss"
+        direction = "Less" if str(row.get("predicted_direction") or "").upper() == "UNDER" else "More"
+        market = re.sub(r"^player_", "", str(row.get("stat_type") or ""), flags=re.IGNORECASE).replace("_", " ").title()
+        sport = str(row.get("sport") or "").upper()
+        player = str(row.get("player_name") or "--")
+        line = str(row.get("line") if row.get("line") is not None else "--")
+        actual = str(row.get("actual_value") if row.get("actual_value") is not None else "--")
+        game_date = str(row.get("game_date") or "")
+        rows.append(
+            f'''          <div class="lp-rrow">
+            <div class="lp-rrow__lean"><b>{html.escape(f"{player} · {market}, {direction} {line}")}</b><i>{html.escape(f"{sport} · {game_date}")}</i></div>
+            <div class="lp-rrow__result"><span class="lp-rrow__final">final<strong>{html.escape(actual)}</strong></span><span class="lp-chip {chip_class}">{chip_label}</span></div>
+          </div>'''
+        )
+    return "\n".join(rows)
 
 
 def render_html(snapshot: dict) -> None:
@@ -284,6 +352,8 @@ def render_html(snapshot: dict) -> None:
             ("data-record-raw-total", format_short(archive["total"])),
         ):
             page = replace_text(page, attr, value)
+        if "<!-- PP_LP_LEDGER_ROWS_START -->" in page:
+            page = replace_marker(page, "LP_LEDGER_ROWS", lp_ledger_rows(snapshot))
         page_path.write_text(page, encoding="utf-8")
 
     results_path = ROOT / "results" / "index.html"
@@ -297,11 +367,12 @@ def render_html(snapshot: dict) -> None:
     for attr, value in (
         ("data-results-updated", update_text),
         ("data-results-total", format_short(ledger["total"])),
+        ("data-results-raw-total", format_short(archive["total"])),
         ("data-results-wins", format_number(ledger["wins"])),
         ("data-results-outcome", f"{format_number(ledger['wins'])}-{format_number(ledger['losses'])}-{format_number(ledger['pushes'])}"),
         ("data-results-sports", sports_text),
         ("data-confidence-note", f"{format_number(archive['total'])} raw historical rows; descriptive outcome rates, not ROI."),
-        ("data-ledger-summary", f"Sample from {format_number(ledger['total'])} entries under the current public-ledger collapse rules"),
+        ("data-ledger-summary", f"One recent row per player from {format_number(ledger['total'])} collapsed ledger entries (wins and losses)"),
     ):
         results = replace_text(results, attr, value)
     results = replace_marker(results, "SPORT_SNAPSHOT", sport_cards(snapshot))

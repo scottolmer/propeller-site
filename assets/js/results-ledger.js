@@ -1,10 +1,11 @@
 (function () {
   const SUMMARY_ENDPOINT = "https://web-production-3c1c4.up.railway.app/api/public/results-summary";
-  const LEDGER_ENDPOINT = "https://web-production-3c1c4.up.railway.app/api/public/results?days=3650&min_confidence=0&limit=20&offset=0";
+  const LEDGER_ENDPOINT = "https://web-production-3c1c4.up.railway.app/api/public/results?days=3650&min_confidence=0&limit=100&offset=0";
   const BUCKETS_ENDPOINT = "https://web-production-3c1c4.up.railway.app/api/public/results-confidence-buckets?days=3650";
   const formatNumber = new Intl.NumberFormat("en-US");
   const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[char]);
-  const titleCase = (value) => String(value || "").replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+  const titleCase = (value) => String(value || "").replace(/^player_/, "").replace(/_/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+  const playerKey = (name) => String(name || "").replace(/[.'’]/g, "").trim().toLowerCase().replace(/\s+/g, " ").replace(/\s+(?:jr|sr|ii|iii|iv|v)$/, "");
   const formatShort = (value) => {
     value = Number(value);
     if (!Number.isFinite(value)) return "--";
@@ -21,6 +22,35 @@
     return response.json();
   };
 
+  const selectDiverseRows = (items, limit) => {
+    const seen = new Set();
+    const unique = [];
+    for (const item of items) {
+      if (!item || String(item.sport || "").toLowerCase() === "pga") continue;
+      const key = `${playerKey(item.player_name)}|${item.game_date || ""}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      unique.push(item);
+    }
+    if (unique.length <= limit) return unique;
+    const top = unique.slice(0, limit);
+    const hasWin = top.some((item) => String(item.result || "").toLowerCase() === "win");
+    const hasLoss = top.some((item) => String(item.result || "").toLowerCase() === "loss");
+    const wins = unique.filter((item) => String(item.result || "").toLowerCase() === "win");
+    const losses = unique.filter((item) => String(item.result || "").toLowerCase() === "loss");
+    if ((!hasWin && wins.length) || (!hasLoss && losses.length)) {
+      const blended = [];
+      let wi = 0;
+      let li = 0;
+      while (blended.length < limit && (wi < wins.length || li < losses.length)) {
+        if (wi < wins.length) blended.push(wins[wi++]);
+        if (blended.length < limit && li < losses.length) blended.push(losses[li++]);
+      }
+      return blended;
+    }
+    return top;
+  };
+
   const createSportCard = (sport) => {
     const card = document.createElement("article");
     card.className = "sport-card";
@@ -32,6 +62,9 @@
 
   async function hydrateSummary() {
     const payload = await fetchJson(SUMMARY_ENDPOINT);
+    if (payload.overall && Number.isFinite(Number(payload.overall.total))) {
+      setText("[data-results-raw-total]", formatShort(payload.overall.total));
+    }
     const sports = Array.isArray(payload.sports)
       ? payload.sports.filter((sport) => sport.published && String(sport.key || "").toLowerCase() !== "pga")
       : [];
@@ -74,10 +107,8 @@
     setText("[data-results-wins]", formatNumber.format(Number(payload.wins || 0)));
     setText("[data-results-outcome]", `${formatNumber.format(Number(payload.wins || 0))}-${formatNumber.format(Number(payload.losses || 0))}-${formatNumber.format(Number(payload.pushes || 0))}`);
     setText("[data-results-updated]", "Live totals · historical archive");
-    setText("[data-ledger-summary]", `Sample from ${formatNumber.format(total)} entries under the current public-ledger collapse rules`);
-    const rows = Array.isArray(payload.results)
-      ? payload.results.filter((item) => String(item.sport || "").toLowerCase() !== "pga").slice(0, 10)
-      : [];
+    setText("[data-ledger-summary]", `One recent row per player from ${formatNumber.format(total)} collapsed ledger entries (wins and losses)`);
+    const rows = selectDiverseRows(Array.isArray(payload.results) ? payload.results : [], 10);
     const body = document.querySelector("[data-ledger-body]");
     if (body && rows.length) {
       body.textContent = "";

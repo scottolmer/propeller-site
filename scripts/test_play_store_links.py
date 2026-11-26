@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 APP_STORE_URL = "https://apps.apple.com/app/id6760788202"
 PLAY_STORE_URL = (
     "https://play.google.com/store/apps/details?"
-    "id=com.propellerpicks.propeller&utm_source=na_Med"
+    "id=com.propellerpicks.propeller"
 )
 
 
@@ -57,8 +57,9 @@ class PlayStoreContracts(unittest.TestCase):
         homepage = (ROOT / "index.html").read_text(encoding="utf-8")
         self.assertIn('host === "play.google.com"', analytics)
         self.assertIn('name: "play_store_click"', analytics)
-        self.assertIn("/assets/css/home-lookup.css?v=20261125", homepage)
+        self.assertIn("/assets/css/home-lookup.css?v=20261126", homepage)
         self.assertIn("/assets/js/analytics-events.js?v=20260817", homepage)
+        self.assertNotIn("utm_source=na_Med", homepage)
 
 
     def test_homepage_does_not_block_render_on_research_chat_css(self) -> None:
