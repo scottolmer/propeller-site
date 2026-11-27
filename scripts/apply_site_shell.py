@@ -43,7 +43,7 @@ CONVERSION_TRACKED_PAGES = frozenset({
 ATTRIBUTION_HEAD_PAGES = NAVIGATION_PAGES | LANDING_PAGES | frozenset({
     "index.html", "pricing/index.html",
 })
-LANDING_STYLES = '<link rel="stylesheet" href="/assets/css/landing-ads.css?v=20261126">\n  '
+LANDING_STYLES = '<link rel="stylesheet" href="/assets/css/landing-ads.css?v=20261127">\n  '
 SIGNUP_ATTRIBUTION_SCRIPT = '<script src="/assets/js/signup-attribution.js?v=20261124" defer></script>\n  '
 SIGNUP_ATTRIBUTION_RE = re.compile(
     r"\s*<script\b[^>]+src=[\"']/assets/js/signup-attribution\.js[^\"']*[\"'][^>]*>\s*</script>\s*",
@@ -152,6 +152,11 @@ FOOTER = """<!-- PP_SITE_FOOTER_START -->
 LANDING_FOOTER = """<!-- PP_SITE_FOOTER_START -->
 <footer class="pp-site-footer">
   <div class="pp-site-footer__inner">
+    <nav class="pp-site-footer__links" aria-label="Legal">
+      <a href="https://propellerpicks.com/privacy/">Privacy</a>
+      <a href="https://propellerpicks.com/terms/">Terms</a>
+      <a href="https://propellerpicks.com/delete-account/">Delete Account</a>
+    </nav>
     <p class="pp-site-footer__legal">Propeller is a research and analysis tool. We do not accept wagers or operate as a sportsbook. All analysis is for informational purposes only and does not constitute gambling advice. Must be 18+. If gambling is a problem, call <a href="tel:18004262537">1-800-GAMBLER</a>. Past performance does not guarantee future results.<br>© 2026 Propeller Picks.</p>
   </div>
 </footer>
